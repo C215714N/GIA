@@ -53,7 +53,7 @@ Begin VB.Form frmExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   89456641
+         Format          =   85590017
          CurrentDate     =   41978
       End
       Begin VB.TextBox txtPromedio 
@@ -450,16 +450,15 @@ Private Sub cmdAgregar_Click()
         .Find "Módulo='" & cmbModulo.Text & "'"
         If .BOF Or .EOF Then
         .Close
-        .Open "SELECT Fecha, Modulo, Teorico as [T], Practico as [P], Promedio as [F]  FROM examenes", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT CodAlumno, Fecha, Modulo, Teorico as [T], Practico as [P], Promedio as [F]  FROM examenes", Cn, adOpenDynamic, adLockPessimistic
         .Requery
         .AddNew
         !CodAlumno = Int(txtCodigo.Text)
         !fecha = DTPFecha.Value
-        !teorico = txtTeorico.Text
-        !practico = txtPractico.Text
-        !promedio = txtPromedio.Text
+        !t = txtTeorico.Text
+        !p = txtPractico.Text
+        !f = txtPromedio.Text
         !modulo = cmbModulo.Text
-        !retiro = ""
         .Update
         .Close
         
@@ -1116,7 +1115,7 @@ Sub formatoGrilla()
     Dim w As Integer
     For N = 0 To 4 Step 1
         If N < 2 Then
-            w = 1150 + N * 600
+            w = N * 2000
         Else: w = 350
         End If
         grilla.Columns(N).Width = w
