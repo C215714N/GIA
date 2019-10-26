@@ -1,0 +1,430 @@
+[Root]
+Most Recent Package=CR Software
+
+
+[Package|CR Gestion Integral del Alumno|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\SETUP
+
+[Package|CR Gestion Integral del Alumno|Configure DAO ISAMs]
+Applicable=No
+
+[Package|CR Gestion Integral del Alumno|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|CR Gestion Integral del Alumno|Files Found]
+
+[Package|CR Gestion Integral del Alumno|Files Released]
+
+[Package|CR Gestion Integral del Alumno|Missing Dependency Information]
+C:\Windows\System32\isButton.ocx=
+C:\Windows\System32\ieinfo5.OCX=
+C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA\MSCOMCTL.OCX=
+C:\Windows\System32\HookMenu.ocx=
+C:\Windows\System32\msscript.ocx=
+C:\Windows\System32\DTCRT.DLL=
+C:\Windows\System32\DTCSERV.DLL=
+C:\Program Files\Common Files\System\ado\msado28.tlb=
+
+[Package|CR Gestion Integral del Alumno|Out-of-Date Dependency Information]
+C:\Windows\System32\MSCAL.OCX=
+C:\Windows\System32\RICHTX32.OCX=
+C:\Windows\System32\DBLIST32.OCX=
+C:\Windows\System32\DBGRID32.OCX=
+C:\Windows\System32\COMCT332.OCX=
+C:\Windows\System32\MSSTDFMT.DLL=
+C:\Windows\System32\comdlg32.ocx=
+C:\Windows\System32\MSRDO20.DLL=
+
+[Package|CR Gestion Integral del Alumno|Files Added]
+
+[Package|CR Gestion Integral del Alumno|Files Removed]
+
+[Package|CR Gestion Integral del Alumno|Files In Project]
+C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\GIA.exe=Yes
+C:\Windows\System32\msvbvm60.dll=Yes
+C:\Windows\System32\oleaut32.dll=Yes
+C:\Windows\System32\olepro32.dll=Yes
+C:\Windows\System32\asycfilt.dll=Yes
+C:\Windows\System32\stdole2.tlb=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\Windows\System32\VB6ES.DLL=Yes
+C:\Program Files\Common Files\System\ado\msado28.tlb=Yes
+C:\Windows\System32\MSRDC20.OCX=Yes
+C:\Windows\System32\MSRDO20.DLL=Yes
+C:\Windows\System32\RDOCURS.DLL=Yes
+C:\Windows\System32\RDO20ES.DLL=Yes
+C:\Windows\System32\RDC20ES.DLL=Yes
+C:\Windows\System32\MSFLXGRD.OCX=Yes
+C:\Windows\System32\FLXGDES.DLL=Yes
+C:\Windows\System32\comdlg32.ocx=Yes
+C:\Windows\System32\CMDLGES.DLL=Yes
+C:\Windows\System32\MSDBRPTR.DLL=Yes
+C:\Windows\System32\MSSTDFMT.DLL=Yes
+C:\Windows\System32\STDFTES.DLL=Yes
+C:\Windows\System32\DBRPRES.DLL=Yes
+C:\Windows\System32\MSWINSCK.OCX=Yes
+C:\Windows\System32\WINSKES.DLL=Yes
+C:\Windows\System32\DTCSERV.DLL=Yes
+C:\Windows\System32\COMCT232.OCX=Yes
+C:\Windows\System32\CMCT2ES.DLL=Yes
+C:\Windows\System32\COMCT332.OCX=Yes
+C:\Windows\System32\CMCT3ES.DLL=Yes
+C:\Windows\System32\DBGRID32.OCX=Yes
+C:\Windows\System32\DBGRDES.DLL=Yes
+C:\Windows\System32\DBLIST32.OCX=Yes
+C:\Windows\System32\DBLSTES.DLL=Yes
+C:\Windows\System32\MSDATREP.OCX=Yes
+C:\Windows\System32\MSBIND.DLL=Yes
+C:\Windows\System32\DATRPES.DLL=Yes
+C:\Windows\System32\DTCRT.DLL=Yes
+C:\Windows\System32\MSDATGRD.OCX=Yes
+C:\Windows\System32\DATGDES.DLL=Yes
+C:\Windows\System32\MSDATLST.OCX=Yes
+C:\Windows\System32\DATLSES.DLL=Yes
+C:\Windows\System32\msscript.ocx=Yes
+C:\Windows\System32\RICHTX32.OCX=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=Yes
+C:\Windows\System32\RCHTXES.DLL=Yes
+C:\Windows\System32\MSCOMCT2.OCX=Yes
+C:\Windows\System32\MSCC2ES.DLL=Yes
+C:\Windows\System32\MSADODC.OCX=Yes
+C:\Windows\System32\ADODCES.DLL=Yes
+C:\Windows\System32\HookMenu.ocx=Yes
+C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA\MSCOMCTL.OCX=Yes
+C:\Windows\System32\COMCTL32.OCX=Yes
+C:\Windows\System32\CMCTLES.DLL=Yes
+C:\Windows\System32\MSCHRT20.OCX=Yes
+C:\Windows\System32\MSCH2ES.DLL=Yes
+C:\Windows\System32\MSCOMM32.OCX=Yes
+C:\Windows\System32\MSCOMES.DLL=Yes
+C:\Windows\System32\MSCAL.OCX=Yes
+C:\Windows\System32\ieinfo5.OCX=Yes
+C:\Windows\System32\isButton.ocx=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\Windows\System32\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|CR Gestion Integral del Alumno|Configure Registry Files]
+Applicable=No
+
+[Package|CR Gestion Integral del Alumno|Configure Remote Servers]
+Applicable=No
+
+[Package|CR Gestion Integral del Alumno|Install Locations]
+C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\GIA.exe=$(AppPath)
+C:\Windows\System32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\Windows\System32\oleaut32.dll=$(WinSysPathSysFile)
+C:\Windows\System32\olepro32.dll=$(WinSysPathSysFile)
+C:\Windows\System32\asycfilt.dll=$(WinSysPathSysFile)
+C:\Windows\System32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\VB6ES.DLL=$(WinSysPath)
+C:\Program Files\Common Files\System\ado\msado28.tlb=$(WinSysPath)
+C:\Windows\System32\MSRDC20.OCX=$(WinSysPath)
+C:\Windows\System32\MSRDO20.DLL=$(WinSysPath)
+C:\Windows\System32\RDOCURS.DLL=$(WinSysPath)
+C:\Windows\System32\RDO20ES.DLL=$(WinSysPath)
+C:\Windows\System32\RDC20ES.DLL=$(WinSysPath)
+C:\Windows\System32\MSFLXGRD.OCX=$(WinSysPath)
+C:\Windows\System32\FLXGDES.DLL=$(WinSysPath)
+C:\Windows\System32\comdlg32.ocx=$(WinSysPath)
+C:\Windows\System32\CMDLGES.DLL=$(WinSysPath)
+C:\Windows\System32\MSDBRPTR.DLL=$(WinSysPath)
+C:\Windows\System32\MSSTDFMT.DLL=$(WinSysPath)
+C:\Windows\System32\STDFTES.DLL=$(WinSysPath)
+C:\Windows\System32\DBRPRES.DLL=$(WinSysPath)
+C:\Windows\System32\MSWINSCK.OCX=$(WinSysPath)
+C:\Windows\System32\WINSKES.DLL=$(WinSysPath)
+C:\Windows\System32\DTCSERV.DLL=$(WinSysPath)
+C:\Windows\System32\COMCT232.OCX=$(WinSysPath)
+C:\Windows\System32\CMCT2ES.DLL=$(WinSysPath)
+C:\Windows\System32\COMCT332.OCX=$(WinSysPath)
+C:\Windows\System32\CMCT3ES.DLL=$(WinSysPath)
+C:\Windows\System32\DBGRID32.OCX=$(WinSysPath)
+C:\Windows\System32\DBGRDES.DLL=$(WinSysPath)
+C:\Windows\System32\DBLIST32.OCX=$(WinSysPath)
+C:\Windows\System32\DBLSTES.DLL=$(WinSysPath)
+C:\Windows\System32\MSDATREP.OCX=$(WinSysPath)
+C:\Windows\System32\MSBIND.DLL=$(WinSysPath)
+C:\Windows\System32\DATRPES.DLL=$(WinSysPath)
+C:\Windows\System32\DTCRT.DLL=$(WinSysPath)
+C:\Windows\System32\MSDATGRD.OCX=$(WinSysPath)
+C:\Windows\System32\DATGDES.DLL=$(WinSysPath)
+C:\Windows\System32\MSDATLST.OCX=$(WinSysPath)
+C:\Windows\System32\DATLSES.DLL=$(WinSysPath)
+C:\Windows\System32\msscript.ocx=$(WinSysPath)
+C:\Windows\System32\RICHTX32.OCX=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\RCHTXES.DLL=$(WinSysPath)
+C:\Windows\System32\MSCOMCT2.OCX=$(WinSysPath)
+C:\Windows\System32\MSCC2ES.DLL=$(WinSysPath)
+C:\Windows\System32\MSADODC.OCX=$(WinSysPath)
+C:\Windows\System32\ADODCES.DLL=$(WinSysPath)
+C:\Windows\System32\HookMenu.ocx=$(WinSysPath)
+C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA\MSCOMCTL.OCX=$(WinSysPath)
+C:\Windows\System32\COMCTL32.OCX=$(WinSysPath)
+C:\Windows\System32\CMCTLES.DLL=$(WinSysPath)
+C:\Windows\System32\MSCHRT20.OCX=$(WinSysPath)
+C:\Windows\System32\MSCH2ES.DLL=$(WinSysPath)
+C:\Windows\System32\MSCOMM32.OCX=$(WinSysPath)
+C:\Windows\System32\MSCOMES.DLL=$(WinSysPath)
+C:\Windows\System32\MSCAL.OCX=$(WinSysPath)
+C:\Windows\System32\ieinfo5.OCX=$(WinSysPath)
+C:\Windows\System32\isButton.ocx=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\Windows\System32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+
+[Package|CR Gestion Integral del Alumno|Configure Shared Files]
+Applicable=Yes
+C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\GIA.exe=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+
+[Package|CR Gestion Integral del Alumno|Distribution]
+Type=multi
+Size=2.88 MB
+Title=Gestion Integral del Alumno
+
+[Package|CR Gestion Integral del Alumno|IconGroups]
+Group0=CR Software
+PrivateGroup0=Falso
+Parent0=$(Programs)
+
+[Package|CR Gestion Integral del Alumno|CR Software]
+Icon1=GIA.exe
+Title1=Gestion Integral del Alumno
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|CR Gestion Integral del Alumno|Package]
+PackageFolder=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\SETUP
+ProjectFolder=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX
+ServerSideCab=
+File1=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\SETUP\setup.exe
+File2=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\SETUP\Setup.Lst
+File3=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\SETUP\GIA1.CAB
+File4=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\SETUP\GIA2.CAB
+File5=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\SETUP\GIA3.CAB
+File6=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\SETUP\GIA4.CAB
+File7=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\SETUP\GIA5.CAB
+File8=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\SETUP\GIA6.CAB
+Handler1=PDWizard.FloppyDplySubWiz
+Handler2=PDWizard.FolderDplySubWiz
+Handler3=PDWizard.WebPostDplySubWiz
+
+
+[Package|CR Software|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\Install
+
+[Package|CR Software|Configure DAO ISAMs]
+Applicable=No
+
+[Package|CR Software|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|CR Software|Files Found]
+
+[Package|CR Software|Files Released]
+
+[Package|CR Software|Missing Dependency Information]
+C:\Windows\System32\isButton.ocx=
+C:\Windows\System32\ieinfo5.OCX=
+C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA\MSCOMCTL.OCX=
+C:\Windows\System32\HookMenu.ocx=
+C:\Windows\System32\msscript.ocx=
+C:\Windows\System32\DTCRT.DLL=
+C:\Windows\System32\DTCSERV.DLL=
+C:\Program Files\Common Files\System\ado\msado28.tlb=
+
+[Package|CR Software|Out-of-Date Dependency Information]
+C:\Windows\System32\MSCAL.OCX=
+C:\Windows\System32\RICHTX32.OCX=
+C:\Windows\System32\DBLIST32.OCX=
+C:\Windows\System32\DBGRID32.OCX=
+C:\Windows\System32\COMCT332.OCX=
+C:\Windows\System32\MSSTDFMT.DLL=
+C:\Windows\System32\comdlg32.ocx=
+C:\Windows\System32\MSRDO20.DLL=
+
+[Package|CR Software|Files Added]
+
+[Package|CR Software|Files Removed]
+
+[Package|CR Software|Files In Project]
+C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\GIA.exe=Yes
+C:\Windows\System32\msvbvm60.dll=Yes
+C:\Windows\System32\oleaut32.dll=Yes
+C:\Windows\System32\olepro32.dll=Yes
+C:\Windows\System32\asycfilt.dll=Yes
+C:\Windows\System32\stdole2.tlb=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\Windows\System32\VB6ES.DLL=Yes
+C:\Program Files\Common Files\System\ado\msado28.tlb=Yes
+C:\Windows\System32\MSRDC20.OCX=Yes
+C:\Windows\System32\MSRDO20.DLL=Yes
+C:\Windows\System32\RDOCURS.DLL=Yes
+C:\Windows\System32\RDO20ES.DLL=Yes
+C:\Windows\System32\RDC20ES.DLL=Yes
+C:\Windows\System32\MSFLXGRD.OCX=Yes
+C:\Windows\System32\FLXGDES.DLL=Yes
+C:\Windows\System32\comdlg32.ocx=Yes
+C:\Windows\System32\CMDLGES.DLL=Yes
+C:\Windows\System32\MSDBRPTR.DLL=Yes
+C:\Windows\System32\MSSTDFMT.DLL=Yes
+C:\Windows\System32\STDFTES.DLL=Yes
+C:\Windows\System32\DBRPRES.DLL=Yes
+C:\Windows\System32\MSWINSCK.OCX=Yes
+C:\Windows\System32\WINSKES.DLL=Yes
+C:\Windows\System32\DTCSERV.DLL=Yes
+C:\Windows\System32\COMCT232.OCX=Yes
+C:\Windows\System32\CMCT2ES.DLL=Yes
+C:\Windows\System32\COMCT332.OCX=Yes
+C:\Windows\System32\CMCT3ES.DLL=Yes
+C:\Windows\System32\DBGRID32.OCX=Yes
+C:\Windows\System32\DBGRDES.DLL=Yes
+C:\Windows\System32\DBLIST32.OCX=Yes
+C:\Windows\System32\DBLSTES.DLL=Yes
+C:\Windows\System32\MSDATREP.OCX=Yes
+C:\Windows\System32\MSBIND.DLL=Yes
+C:\Windows\System32\DATRPES.DLL=Yes
+C:\Windows\System32\DTCRT.DLL=Yes
+C:\Windows\System32\MSDATGRD.OCX=Yes
+C:\Windows\System32\DATGDES.DLL=Yes
+C:\Windows\System32\MSDATLST.OCX=Yes
+C:\Windows\System32\DATLSES.DLL=Yes
+C:\Windows\System32\msscript.ocx=Yes
+C:\Windows\System32\RICHTX32.OCX=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=Yes
+C:\Windows\System32\RCHTXES.DLL=Yes
+C:\Windows\System32\MSCOMCT2.OCX=Yes
+C:\Windows\System32\MSCC2ES.DLL=Yes
+C:\Windows\System32\MSADODC.OCX=Yes
+C:\Windows\System32\ADODCES.DLL=Yes
+C:\Windows\System32\HookMenu.ocx=Yes
+C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA\MSCOMCTL.OCX=Yes
+C:\Windows\System32\COMCTL32.OCX=Yes
+C:\Windows\System32\CMCTLES.DLL=Yes
+C:\Windows\System32\MSCHRT20.OCX=Yes
+C:\Windows\System32\MSCH2ES.DLL=Yes
+C:\Windows\System32\MSCOMM32.OCX=Yes
+C:\Windows\System32\MSCOMES.DLL=Yes
+C:\Windows\System32\MSCAL.OCX=Yes
+C:\Windows\System32\ieinfo5.OCX=Yes
+C:\Windows\System32\isButton.ocx=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\Windows\System32\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|CR Software|Configure Registry Files]
+Applicable=No
+
+[Package|CR Software|Configure Remote Servers]
+Applicable=No
+
+[Package|CR Software|Install Locations]
+C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\GIA.exe=$(AppPath)
+C:\Windows\System32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\Windows\System32\oleaut32.dll=$(WinSysPathSysFile)
+C:\Windows\System32\olepro32.dll=$(WinSysPathSysFile)
+C:\Windows\System32\asycfilt.dll=$(WinSysPathSysFile)
+C:\Windows\System32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\VB6ES.DLL=$(WinSysPath)
+C:\Program Files\Common Files\System\ado\msado28.tlb=$(WinSysPath)
+C:\Windows\System32\MSRDC20.OCX=$(WinSysPath)
+C:\Windows\System32\MSRDO20.DLL=$(WinSysPath)
+C:\Windows\System32\RDOCURS.DLL=$(WinSysPath)
+C:\Windows\System32\RDO20ES.DLL=$(WinSysPath)
+C:\Windows\System32\RDC20ES.DLL=$(WinSysPath)
+C:\Windows\System32\MSFLXGRD.OCX=$(WinSysPath)
+C:\Windows\System32\FLXGDES.DLL=$(WinSysPath)
+C:\Windows\System32\comdlg32.ocx=$(WinSysPath)
+C:\Windows\System32\CMDLGES.DLL=$(WinSysPath)
+C:\Windows\System32\MSDBRPTR.DLL=$(WinSysPath)
+C:\Windows\System32\MSSTDFMT.DLL=$(WinSysPath)
+C:\Windows\System32\STDFTES.DLL=$(WinSysPath)
+C:\Windows\System32\DBRPRES.DLL=$(WinSysPath)
+C:\Windows\System32\MSWINSCK.OCX=$(WinSysPath)
+C:\Windows\System32\WINSKES.DLL=$(WinSysPath)
+C:\Windows\System32\DTCSERV.DLL=$(WinSysPath)
+C:\Windows\System32\COMCT232.OCX=$(WinSysPath)
+C:\Windows\System32\CMCT2ES.DLL=$(WinSysPath)
+C:\Windows\System32\COMCT332.OCX=$(WinSysPath)
+C:\Windows\System32\CMCT3ES.DLL=$(WinSysPath)
+C:\Windows\System32\DBGRID32.OCX=$(WinSysPath)
+C:\Windows\System32\DBGRDES.DLL=$(WinSysPath)
+C:\Windows\System32\DBLIST32.OCX=$(WinSysPath)
+C:\Windows\System32\DBLSTES.DLL=$(WinSysPath)
+C:\Windows\System32\MSDATREP.OCX=$(WinSysPath)
+C:\Windows\System32\MSBIND.DLL=$(WinSysPath)
+C:\Windows\System32\DATRPES.DLL=$(WinSysPath)
+C:\Windows\System32\DTCRT.DLL=$(WinSysPath)
+C:\Windows\System32\MSDATGRD.OCX=$(WinSysPath)
+C:\Windows\System32\DATGDES.DLL=$(WinSysPath)
+C:\Windows\System32\MSDATLST.OCX=$(WinSysPath)
+C:\Windows\System32\DATLSES.DLL=$(WinSysPath)
+C:\Windows\System32\msscript.ocx=$(WinSysPath)
+C:\Windows\System32\RICHTX32.OCX=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\RCHTXES.DLL=$(WinSysPath)
+C:\Windows\System32\MSCOMCT2.OCX=$(WinSysPath)
+C:\Windows\System32\MSCC2ES.DLL=$(WinSysPath)
+C:\Windows\System32\MSADODC.OCX=$(WinSysPath)
+C:\Windows\System32\ADODCES.DLL=$(WinSysPath)
+C:\Windows\System32\HookMenu.ocx=$(WinSysPath)
+C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA\MSCOMCTL.OCX=$(WinSysPath)
+C:\Windows\System32\COMCTL32.OCX=$(WinSysPath)
+C:\Windows\System32\CMCTLES.DLL=$(WinSysPath)
+C:\Windows\System32\MSCHRT20.OCX=$(WinSysPath)
+C:\Windows\System32\MSCH2ES.DLL=$(WinSysPath)
+C:\Windows\System32\MSCOMM32.OCX=$(WinSysPath)
+C:\Windows\System32\MSCOMES.DLL=$(WinSysPath)
+C:\Windows\System32\MSCAL.OCX=$(WinSysPath)
+C:\Windows\System32\ieinfo5.OCX=$(WinSysPath)
+C:\Windows\System32\isButton.ocx=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\Windows\System32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+
+[Package|CR Software|Configure Shared Files]
+Applicable=Yes
+C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\GIA.exe=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+
+[Package|CR Software|Distribution]
+Type=single
+Size=
+Title=Gestion Integral del Alumno
+
+[Package|CR Software|IconGroups]
+Group0=CR Software
+PrivateGroup0=Falso
+Parent0=$(Programs)
+
+[Package|CR Software|CR Software]
+Icon1=GIA.exe
+Title1=Gestion Integral del Alumno
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|CR Software|Package]
+PackageFolder=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\Install
+ProjectFolder=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX
+ServerSideCab=
+File1=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\Install\setup.exe
+File2=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\Install\Setup.Lst
+File3=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\Install\GIA.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
