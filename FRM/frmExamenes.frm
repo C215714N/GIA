@@ -447,7 +447,7 @@ Private Sub cmdAgregar_Click()
     If txtPromedio.Text = "" Then MsgBox "Ingrese nota promedio", vbOKOnly + vbCritical, "GIA - Exámenes": txtPromedio.SetFocus: Exit Sub
     
     With rsExamenes
-        .Find "Módulo='" & cmbModulo.Text & "'"
+        .Find "Modulo='" & cmbModulo.Text & "'"
         If .BOF Or .EOF Then
         .Close
         .Open "SELECT CodAlumno, Fecha, Modulo, Teorico as [T], Practico as [P], Promedio as [F]  FROM examenes", Cn, adOpenDynamic, adLockPessimistic
@@ -473,7 +473,7 @@ Private Sub cmdAgregar_Click()
             Exit Sub
         End If
         
-        .Open "SELECT Fecha, Modulo, Teorico, Practico, Promedio FROM examenes WHERE codalumno=" & Int(txtCodigo.Text) & " ORDER BY fecha,id", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT Fecha, Modulo, Teorico as [T], Practico as [P], Promedio as [F] FROM examenes WHERE codalumno=" & Int(txtCodigo.Text) & " ORDER BY fecha,id", Cn, adOpenDynamic, adLockPessimistic
         Set grilla.DataSource = rsExamenes
         formatoGrilla
         
@@ -675,8 +675,8 @@ Private Sub cmdAgregar_Click()
                 .UpdateBatch
             End With
             cmdAgregar.Enabled = False
-            
-                    ElseIf txtCurso.Text = "Técnico en Pc nivel II" And rsExamenes.RecordCount = 5 Then
+        '''Tecnico PC II (5 Examenes)
+        ElseIf txtCurso.Text = "Técnico en Pc nivel II" And rsExamenes.RecordCount = 5 Then
             MsgBox "El alumno " & txtAlumno.Text & " ha egresado del curso de " & txtCurso.Text, vbInformation, "Exámenes"
             With rsEgresados
                 If .State = 1 Then .Close
@@ -696,7 +696,8 @@ Private Sub cmdAgregar_Click()
                 .UpdateBatch
             End With
             cmdAgregar.Enabled = False
-            
+        
+        '''Ingles (3 Examenes)
         ElseIf txtCurso.Text = "Inglés" And rsExamenes.RecordCount = 3 Then
             MsgBox "El alumno " & txtAlumno.Text & " ha egresado del curso de " & txtCurso.Text, vbInformation, "Exámenes"
             With rsEgresados
@@ -864,7 +865,6 @@ Private Sub cmdAgregar_Click()
                 .UpdateBatch
             End With
             cmdAgregar.Enabled = False
-            
             With rsVerificaciones
                 If .State = 1 Then .Close
                 .Open "SELECT * FROM verificaciones WHERE codalumno=" & Int(txtCodigo.Text), Cn, adOpenDynamic, adLockPessimistic
@@ -1072,16 +1072,16 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
             .AddItem ("Auxiliar I")
             .AddItem ("Auxiliar II")
         End With
-    
-        ElseIf txtCurso.Text = "Paneles Solares" Then
+    '''Paneles Solares
+    ElseIf txtCurso.Text = "Paneles Solares" Then
         With cmbModulo
             .Clear
             .AddItem ("Paneles I")
             .AddItem ("Paneles II")
             .AddItem ("Paneles III")
         End With
-        
-            ElseIf (txtCurso.Text = "Asistente en Salud" Or txtCurso.Text = "Asistente Terapeutico") Then
+    '''Asistente en Salud & Asistente Terapeutico
+    ElseIf (txtCurso.Text = "Asistente en Salud" Or txtCurso.Text = "Asistente Terapeutico") Then
         With cmbModulo
             .Clear
             .AddItem ("Salud I")
