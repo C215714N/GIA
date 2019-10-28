@@ -53,7 +53,7 @@ Begin VB.Form frmExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   85590017
+         Format          =   85393409
          CurrentDate     =   41978
       End
       Begin VB.TextBox txtPromedio 
@@ -455,9 +455,9 @@ Private Sub cmdAgregar_Click()
         .AddNew
         !CodAlumno = Int(txtCodigo.Text)
         !fecha = DTPFecha.Value
-        !t = txtTeorico.Text
-        !p = txtPractico.Text
-        !f = txtPromedio.Text
+        !T = txtTeorico.Text
+        !P = txtPractico.Text
+        !F = txtPromedio.Text
         !modulo = cmbModulo.Text
         .Update
         .Close
@@ -472,7 +472,6 @@ Private Sub cmdAgregar_Click()
             cmbModulo.SetFocus
             Exit Sub
         End If
-        
         .Open "SELECT Fecha, Modulo, Teorico as [T], Practico as [P], Promedio as [F] FROM examenes WHERE codalumno=" & Int(txtCodigo.Text) & " ORDER BY fecha,id", Cn, adOpenDynamic, adLockPessimistic
         Set grilla.DataSource = rsExamenes
         formatoGrilla
@@ -675,6 +674,7 @@ Private Sub cmdAgregar_Click()
                 .UpdateBatch
             End With
             cmdAgregar.Enabled = False
+        
         '''Tecnico PC II (5 Examenes)
         ElseIf txtCurso.Text = "Técnico en Pc nivel II" And rsExamenes.RecordCount = 5 Then
             MsgBox "El alumno " & txtAlumno.Text & " ha egresado del curso de " & txtCurso.Text, vbInformation, "Exámenes"
@@ -719,6 +719,7 @@ Private Sub cmdAgregar_Click()
             End With
             cmdAgregar.Enabled = False
             
+        '''Diseño Web (4 Examenes)
         ElseIf txtCurso.Text = "Diseño Web" And rsExamenes.RecordCount = 4 Then
             MsgBox "El alumno " & txtAlumno.Text & " ha egresado del curso de " & txtCurso.Text, vbInformation, "Exámenes"
             With rsEgresados
@@ -740,7 +741,8 @@ Private Sub cmdAgregar_Click()
             End With
             cmdAgregar.Enabled = False
             
-                    ElseIf txtCurso.Text = "Electronica" And rsExamenes.RecordCount = 4 Then
+        '''Electronica (4 Examenes)
+        ElseIf txtCurso.Text = "Electronica" And rsExamenes.RecordCount = 4 Then
             MsgBox "El alumno " & txtAlumno.Text & " ha egresado del curso de " & txtCurso.Text, vbInformation, "Exámenes"
             With rsEgresados
                 If .State = 1 Then .Close
@@ -761,7 +763,8 @@ Private Sub cmdAgregar_Click()
             End With
             cmdAgregar.Enabled = False
             
-            ElseIf txtCurso.Text = "Telefonía Celular" And rsExamenes.RecordCount = 1 Then
+        '''Telefonia Celular (1 Examen)
+        ElseIf txtCurso.Text = "Telefonía Celular" And rsExamenes.RecordCount = 1 Then
             MsgBox "El alumno " & txtAlumno.Text & " ha egresado del curso de " & txtCurso.Text, vbInformation, "Exámenes"
             With rsEgresados
                 If .State = 1 Then .Close
@@ -782,8 +785,9 @@ Private Sub cmdAgregar_Click()
             End With
             cmdAgregar.Enabled = False
             
-            ElseIf txtCurso.Text = "Paneles Solares" And rsExamenes.RecordCount = 3 Then
-                MsgBox "El alumno " & txtAlumno.Text & " ha egresado del curso de " & txtCurso.Text, vbInformation, "Exámenes"
+        '''Paneles Solares (3 Examenes)
+        ElseIf txtCurso.Text = "Paneles Solares" And rsExamenes.RecordCount = 3 Then
+            MsgBox "El alumno " & txtAlumno.Text & " ha egresado del curso de " & txtCurso.Text, vbInformation, "Exámenes"
             With rsEgresados
                 If .State = 1 Then .Close
                 .Open "SELECT * FROM egresados", Cn, adOpenDynamic, adLockPessimistic
