@@ -81,6 +81,7 @@ Attribute VB_Name = "Declaraciones"
         Global Modi             As Boolean
         Global ModiReservas     As Boolean
         Global ModiLibro        As Boolean
+        Global Egregado         As Boolean
 
     ''' Variables Gestion Comercial
         Global CodCurso         As Long
