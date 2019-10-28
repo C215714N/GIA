@@ -53,7 +53,7 @@ Begin VB.Form frmExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   85393409
+         Format          =   85458945
          CurrentDate     =   41978
       End
       Begin VB.TextBox txtPromedio 
@@ -449,18 +449,18 @@ Private Sub cmdAgregar_Click()
     With rsExamenes
         .Find "Modulo='" & cmbModulo.Text & "'"
         If .BOF Or .EOF Then
-        .Close
-        .Open "SELECT CodAlumno, Fecha, Modulo, Teorico as [T], Practico as [P], Promedio as [F]  FROM examenes", Cn, adOpenDynamic, adLockPessimistic
-        .Requery
-        .AddNew
-        !CodAlumno = Int(txtCodigo.Text)
-        !fecha = DTPFecha.Value
-        !T = txtTeorico.Text
-        !P = txtPractico.Text
-        !F = txtPromedio.Text
-        !modulo = cmbModulo.Text
-        .Update
-        .Close
+            .Close
+            .Open "SELECT CodAlumno, Fecha, Modulo, Teorico as [T], Practico as [P], Promedio as [F]  FROM examenes", Cn, adOpenDynamic, adLockPessimistic
+            .Requery
+            .AddNew
+            !CodAlumno = Int(txtCodigo.Text)
+            !fecha = DTPFecha.Value
+            !T = txtTeorico.Text
+            !P = txtPractico.Text
+            !F = txtPromedio.Text
+            !modulo = cmbModulo.Text
+            .Update
+            .Close
         
     '''CONTROL DE EXAMENES:
     '''Verifica que no se vuelvan a ingresar las notas de un Modulo
@@ -472,35 +472,57 @@ Private Sub cmdAgregar_Click()
             cmbModulo.SetFocus
             Exit Sub
         End If
+        
         .Open "SELECT Fecha, Modulo, Teorico as [T], Practico as [P], Promedio as [F] FROM examenes WHERE codalumno=" & Int(txtCodigo.Text) & " ORDER BY fecha,id", Cn, adOpenDynamic, adLockPessimistic
         Set grilla.DataSource = rsExamenes
         formatoGrilla
         
     '''EGRESADOS
-        '''Operador de PC (5 Examenes)
-        If txtCurso.Text = "Operador de Pc" And rsExamenes.RecordCount = 5 Then
-            MsgBox "El alumno " & txtAlumno.Text & " ha egresado del curso de " & txtCurso.Text, vbInformation, "Exámenes"
-            With rsEgresados
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM egresados", Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .AddNew
-                !CodAlumno = Int(txtCodigo.Text)
-                !fecha = DTPFecha.Value
-                .Update
-            End With
-            cmdAgregar.Enabled = False
-            With rsVerificaciones
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM verificaciones WHERE codalumno=" & Int(txtCodigo.Text), Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .MoveFirst
-                !estado = "Egresado"
-                .UpdateBatch
-            End With
+    ''' 1 Examen
+        ''' Telefonia Celular
+        If rsExamenes.RecordCount = 1 And (txtCurso.Text = "Telefonía Celular") Then
+            Egresado = True
+            
+    ''' 2 Examenes
+        ''' Aire Acondicionado
+        ''' Aux.Farmacia
+        ''' Electricidad Domiciliaria
+        ''' Programacion
+        ElseIf rsExamenes.RecordCount = 2 And (txtCurso.Text = "Auxiliar de Farmacia" Or txtCurso.Text = "Programación" Or txtCurso.Text = "Técnico en aire acondicionado" Or txtCurso.Text = "Electricidad domiciliaria") Then
+            Egresado = True
+    
+    ''' 3 Examenes
+        ''' Asistente Salud
+        ''' Asistente Terapeutico
+        ''' Extraccionista
+        ''' Ingles I
+        ''' Ingles II
+        ''' Paneles Solares
+        ''' Programacion & Access
+        ''' Redes Informaticas
+        ''' Tecnico PC Nivel I
+        ElseIf rsExamenes.RecordCount = 3 And (txtCurso.Text = "Asistente en Salud" Or txtCurso.Text = "Asistente Terapeutico" Or txtCurso.Text = "Extracc. Adm. Y Asist. Tec. Laborat." Or txtCurso.Text = "Inglés" Or txtCurso.Text = "Inglés II" Or txtCurso.Text = "Paneles Solares" Or txtCurso.Text = "Programación + Access" Or txtCurso.Text = "Técnico en Pc nivel I" Or txtCurso.Text = "Redes") Then
+            Egresado = True
+    
+    ''' 4 Examenes
+        ''' Armado y Reparacion PC
+        ''' Diseño Grafico
+        ''' Diseño Web
+        ''' Electronica
+        ElseIf rsExamenes.RecordCount = 4 And (txtCurso.Text = "Armado y Reparación de PC" Or txtCurso.Text = "Diseño Gráfico" Or txtCurso.Text = "Diseño Web" Or txtCurso.Text = "Electronica") Then
+            Egresado = True
         
-        '''Diseño Grafico (4 Examenes)
-        ElseIf txtCurso.Text = "Diseño Gráfico" And rsExamenes.RecordCount = 4 Then
+    ''' 5 Examenes
+        ''' Operador de PC
+        ''' Tecnico PC Nivel II
+        ElseIf rsExamenes.RecordCount = 5 And (txtCurso.Text = "Operador de Pc" Or txtCurso.Text = "Técnico en Pc nivel II") Then Egresado = True
+    
+    ''' 7 Examenes
+        ''' Reparacion de PC y Redes
+        ElseIf rsExamenes.RecordCount = 7 And (txtCurso.Text = "Armado y Reparación de PC y Redes") Then
+        End If
+  
+        If Egresado = True Then
             MsgBox "El alumno " & txtAlumno.Text & " ha egresado del curso de " & txtCurso.Text, vbInformation, "Exámenes"
             With rsEgresados
                 If .State = 1 Then .Close
@@ -520,373 +542,14 @@ Private Sub cmdAgregar_Click()
                 !estado = "Egresado"
                 .UpdateBatch
             End With
-        
-        '''Programacion (2 Examenes)
-        ElseIf txtCurso.Text = "Programación" And rsExamenes.RecordCount = 2 Then
-            MsgBox "El alumno " & txtAlumno.Text & " ha egresado del curso de " & txtCurso.Text, vbInformation, "Exámenes"
-            With rsEgresados
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM egresados", Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .AddNew
-                !CodAlumno = Int(txtCodigo.Text)
-                !fecha = DTPFecha.Value
-                .Update
-            End With
-            cmdAgregar.Enabled = False
-            With rsVerificaciones
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM verificaciones WHERE codalumno=" & Int(txtCodigo.Text), Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .MoveFirst
-                !estado = "Egresado"
-                .UpdateBatch
-            End With
-        
-        '''Programacion & Access (3 Examenes)
-        ElseIf txtCurso.Text = "Programación + Access" And rsExamenes.RecordCount = 3 Then
-            MsgBox "El alumno " & txtAlumno.Text & " ha egresado del curso de " & txtCurso.Text, vbInformation, "Exámenes"
-            With rsEgresados
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM egresados", Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .AddNew
-                !CodAlumno = Int(txtCodigo.Text)
-                !fecha = DTPFecha.Value
-                .Update
-            End With
-            With rsVerificaciones
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM verificaciones WHERE codalumno=" & Int(txtCodigo.Text), Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .MoveFirst
-                !estado = "Egresado"
-                .UpdateBatch
-            End With
-            cmdAgregar.Enabled = False
-        
-        '''Telefonia Celular (1 Examen)
-        ElseIf txtCurso.Text = "Telefonía Celular" And rsExamenes.RecordCount = 1 Then
-            MsgBox "El alumno " & txtAlumno.Text & " ha egresado del curso de " & txtCurso.Text, vbInformation, "Exámenes"
-            With rsEgresados
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM egresados", Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .AddNew
-                !CodAlumno = Int(txtCodigo.Text)
-                !fecha = DTPFecha.Value
-                .Update
-            End With
-            With rsVerificaciones
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM verificaciones WHERE codalumno=" & Int(txtCodigo.Text), Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .MoveFirst
-                !estado = "Egresado"
-                .UpdateBatch
-            End With
-            cmdAgregar.Enabled = False
-            
-        '''Reparacion de PC y Redes (7 Examenes)
-        ElseIf txtCurso.Text = "Armado y Reparación de PC y Redes" And rsExamenes.RecordCount = 7 Then
-            MsgBox "El alumno " & txtAlumno.Text & " ha egresado del curso de " & txtCurso.Text, vbInformation, "Exámenes"
-            With rsEgresados
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM egresados", Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .AddNew
-                !CodAlumno = Int(txtCodigo.Text)
-                !fecha = DTPFecha.Value
-                .Update
-            End With
-            With rsVerificaciones
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM verificaciones WHERE codalumno=" & Int(txtCodigo.Text), Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .MoveFirst
-                !estado = "Egresado"
-                .UpdateBatch
-            End With
-            cmdAgregar.Enabled = False
-            
-        '''Armado y Reparacion de PC (4 Examenes)
-        ElseIf txtCurso.Text = "Armado y Reparación de PC" And rsExamenes.RecordCount = 4 Then
-            MsgBox "El alumno " & txtAlumno.Text & " ha egresado del curso de " & txtCurso.Text, vbInformation, "Exámenes"
-            With rsEgresados
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM egresados", Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .AddNew
-                !CodAlumno = Int(txtCodigo.Text)
-                !fecha = DTPFecha.Value
-                .Update
-            End With
-            With rsVerificaciones
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM verificaciones WHERE codalumno=" & Int(txtCodigo.Text), Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .MoveFirst
-                !estado = "Egresado"
-                .UpdateBatch
-            End With
-            cmdAgregar.Enabled = False
-            
-        '''Redes (3 Examenes)
-        ElseIf txtCurso.Text = "Redes" And rsExamenes.RecordCount = 3 Then
-            MsgBox "El alumno " & txtAlumno.Text & " ha egresado del curso de " & txtCurso.Text, vbInformation, "Exámenes"
-            With rsEgresados
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM egresados", Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .AddNew
-                !CodAlumno = Int(txtCodigo.Text)
-                !fecha = DTPFecha.Value
-                .Update
-            End With
-            With rsVerificaciones
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM verificaciones WHERE codalumno=" & Int(txtCodigo.Text), Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .MoveFirst
-                !estado = "Egresado"
-                .UpdateBatch
-            End With
-            cmdAgregar.Enabled = False
-            
-            '''Tecnico PC I (3 Examenes)
-            ElseIf txtCurso.Text = "Técnico en Pc nivel I" And rsExamenes.RecordCount = 3 Then
-            MsgBox "El alumno " & txtAlumno.Text & " ha egresado del curso de " & txtCurso.Text, vbInformation, "Exámenes"
-            With rsEgresados
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM egresados", Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .AddNew
-                !CodAlumno = Int(txtCodigo.Text)
-                !fecha = DTPFecha.Value
-                .Update
-            End With
-            With rsVerificaciones
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM verificaciones WHERE codalumno=" & Int(txtCodigo.Text), Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .MoveFirst
-                !estado = "Egresado"
-                .UpdateBatch
-            End With
-            cmdAgregar.Enabled = False
-        
-        '''Tecnico PC II (5 Examenes)
-        ElseIf txtCurso.Text = "Técnico en Pc nivel II" And rsExamenes.RecordCount = 5 Then
-            MsgBox "El alumno " & txtAlumno.Text & " ha egresado del curso de " & txtCurso.Text, vbInformation, "Exámenes"
-            With rsEgresados
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM egresados", Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .AddNew
-                !CodAlumno = Int(txtCodigo.Text)
-                !fecha = DTPFecha.Value
-                .Update
-            End With
-            With rsVerificaciones
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM verificaciones WHERE codalumno=" & Int(txtCodigo.Text), Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .MoveFirst
-                !estado = "Egresado"
-                .UpdateBatch
-            End With
-            cmdAgregar.Enabled = False
-        
-        '''Ingles (3 Examenes)
-        ElseIf txtCurso.Text = "Inglés" And rsExamenes.RecordCount = 3 Then
-            MsgBox "El alumno " & txtAlumno.Text & " ha egresado del curso de " & txtCurso.Text, vbInformation, "Exámenes"
-            With rsEgresados
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM egresados", Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .AddNew
-                !CodAlumno = Int(txtCodigo.Text)
-                !fecha = DTPFecha.Value
-                .Update
-            End With
-            With rsVerificaciones
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM verificaciones WHERE codalumno=" & Int(txtCodigo.Text), Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .MoveFirst
-                !estado = "Egresado"
-                .UpdateBatch
-            End With
-            cmdAgregar.Enabled = False
-            
-        '''Diseño Web (4 Examenes)
-        ElseIf txtCurso.Text = "Diseño Web" And rsExamenes.RecordCount = 4 Then
-            MsgBox "El alumno " & txtAlumno.Text & " ha egresado del curso de " & txtCurso.Text, vbInformation, "Exámenes"
-            With rsEgresados
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM egresados", Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .AddNew
-                !CodAlumno = Int(txtCodigo.Text)
-                !fecha = DTPFecha.Value
-                .Update
-            End With
-            With rsVerificaciones
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM verificaciones WHERE codalumno=" & Int(txtCodigo.Text), Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .MoveFirst
-                !estado = "Egresado"
-                .UpdateBatch
-            End With
-            cmdAgregar.Enabled = False
-            
-        '''Electronica (4 Examenes)
-        ElseIf txtCurso.Text = "Electronica" And rsExamenes.RecordCount = 4 Then
-            MsgBox "El alumno " & txtAlumno.Text & " ha egresado del curso de " & txtCurso.Text, vbInformation, "Exámenes"
-            With rsEgresados
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM egresados", Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .AddNew
-                !CodAlumno = Int(txtCodigo.Text)
-                !fecha = DTPFecha.Value
-                .Update
-            End With
-            With rsVerificaciones
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM verificaciones WHERE codalumno=" & Int(txtCodigo.Text), Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .MoveFirst
-                !estado = "Egresado"
-                .UpdateBatch
-            End With
-            cmdAgregar.Enabled = False
-            
-        '''Telefonia Celular (1 Examen)
-        ElseIf txtCurso.Text = "Telefonía Celular" And rsExamenes.RecordCount = 1 Then
-            MsgBox "El alumno " & txtAlumno.Text & " ha egresado del curso de " & txtCurso.Text, vbInformation, "Exámenes"
-            With rsEgresados
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM egresados", Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .AddNew
-                !CodAlumno = Int(txtCodigo.Text)
-                !fecha = DTPFecha.Value
-                .Update
-            End With
-            With rsVerificaciones
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM verificaciones WHERE codalumno=" & Int(txtCodigo.Text), Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .MoveFirst
-                !estado = "Egresado"
-                .UpdateBatch
-            End With
-            cmdAgregar.Enabled = False
-            
-        '''Paneles Solares (3 Examenes)
-        ElseIf txtCurso.Text = "Paneles Solares" And rsExamenes.RecordCount = 3 Then
-            MsgBox "El alumno " & txtAlumno.Text & " ha egresado del curso de " & txtCurso.Text, vbInformation, "Exámenes"
-            With rsEgresados
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM egresados", Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .AddNew
-                !CodAlumno = Int(txtCodigo.Text)
-                !fecha = DTPFecha.Value
-                .Update
-            End With
-            With rsVerificaciones
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM verificaciones WHERE codalumno=" & Int(txtCodigo.Text), Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .MoveFirst
-                !estado = "Egresado"
-                .UpdateBatch
-            End With
-            cmdAgregar.Enabled = False
-            
-            ElseIf ((txtCurso.Text = "Asistente en Salud" Or txtCurso.Text = "Asistente Terapeutico") And rsExamenes.RecordCount = 3) Or (txtCurso.Text = "Auxiliar de Farmacia" And rsExamenes.RecordCount = 2) Then
-                        MsgBox "El alumno " & txtAlumno.Text & " ha egresado del curso de " & txtCurso.Text, vbInformation, "Exámenes"
-            With rsEgresados
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM egresados", Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .AddNew
-                !CodAlumno = Int(txtCodigo.Text)
-                !fecha = DTPFecha.Value
-                .Update
-            End With
-            With rsVerificaciones
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM verificaciones WHERE codalumno=" & Int(txtCodigo.Text), Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .MoveFirst
-                !estado = "Egresado"
-                .UpdateBatch
-            End With
-            cmdAgregar.Enabled = False
-            
-            ElseIf txtCurso.Text = "Técnico en aire acondicionado" And rsExamenes.RecordCount = 2 Or txtCurso.Text = "Electricidad domiciliaria" And rsExamenes.RecordCount = 2 Then
-            MsgBox "El alumno " & txtAlumno.Text & " ha egresado del curso de " & txtCurso.Text, vbInformation, "Exámenes"
-            With rsEgresados
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM egresados", Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .AddNew
-                !CodAlumno = Int(txtCodigo.Text)
-                !fecha = DTPFecha.Value
-                .Update
-            End With
-            With rsVerificaciones
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM verificaciones WHERE codalumno=" & Int(txtCodigo.Text), Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .MoveFirst
-                !estado = "Egresado"
-                .UpdateBatch
-            End With
-            cmdAgregar.Enabled = False
-            
-        ElseIf txtCurso.Text = "Extracc. Adm. Y Asist. Tec. Laborat." And rsExamenes.RecordCount = 3 Then
-            MsgBox "El alumno " & txtAlumno.Text & " ha egresado del curso de " & txtCurso.Text, vbInformation, "Exámenes"
-            With rsEgresados
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM egresados", Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .AddNew
-                !CodAlumno = Int(txtCodigo.Text)
-                !fecha = DTPFecha.Value
-                .Update
-            End With
-            With rsVerificaciones
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM verificaciones WHERE codalumno=" & Int(txtCodigo.Text), Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .MoveFirst
-                !estado = "Egresado"
-                .UpdateBatch
-            End With
-            cmdAgregar.Enabled = False
-            With rsVerificaciones
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM verificaciones WHERE codalumno=" & Int(txtCodigo.Text), Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .MoveFirst
-                !estado = "Egresado"
-                .UpdateBatch
-            End With
-            cmdAgregar.Enabled = False
         End If
     End With
-  
     
-    '''limpiar todo
-        txtPractico.Text = ""
-        txtTeorico.Text = ""
-        txtPromedio.Text = ""
-   
+''' Limpiar todo
+    txtPractico.Text = ""
+    txtTeorico.Text = ""
+    txtPromedio.Text = ""
+    Egresado = False
 End Sub
 
 Private Sub Form_Load()

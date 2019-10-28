@@ -176,7 +176,7 @@ Begin VB.Form frmDerechosExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   89456641
+         Format          =   85458945
          CurrentDate     =   41978
       End
       Begin isButtonTest.isButton cmdAgregar 
