@@ -53,7 +53,7 @@ Begin VB.Form frmExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   85458945
+         Format          =   85524481
          CurrentDate     =   41978
       End
       Begin VB.TextBox txtPromedio 
@@ -442,10 +442,11 @@ End Sub
 
 Private Sub cmdAgregar_Click()
     If cmbModulo.Text = "" Then MsgBox "Elija el módulo", vbOKOnly + vbCritical, "GIA - Exámenes": cmbModulo.SetFocus: Exit Sub
-    If txtTeorico.Text = "" Then MsgBox "Ingrese nota del examen teórico", vbOKOnly + vbCritical, "GIA - Exámenes": txtTeorico.SetFocus: Exit Sub
-    If txtPractico.Text = "" Then MsgBox "Ingrese nota del examen práctico", vbOKOnly + vbCritical, "GIA - Exámenes": txtPractico.SetFocus: Exit Sub
+    If txtTeorico.Text = "" Then MsgBox "Ingrese nota del Examen Teórico", vbOKOnly + vbCritical, "GIA - Exámenes": txtTeorico.SetFocus: Exit Sub
+    If txtPractico.Text = "" Then MsgBox "Ingrese nota del Examen Práctico", vbOKOnly + vbCritical, "GIA - Exámenes": txtPractico.SetFocus: Exit Sub
     If txtPromedio.Text = "" Then MsgBox "Ingrese nota promedio", vbOKOnly + vbCritical, "GIA - Exámenes": txtPromedio.SetFocus: Exit Sub
-    
+        
+    ''' AGREGA EL EXAMEN A LA TABLA EXAMENES
     With rsExamenes
         .Find "Modulo='" & cmbModulo.Text & "'"
         If .BOF Or .EOF Then
@@ -454,7 +455,7 @@ Private Sub cmdAgregar_Click()
             .Requery
             .AddNew
             !CodAlumno = Int(txtCodigo.Text)
-            !fecha = DTPFecha.Value
+            !fecha = dtpFecha.Value
             !T = txtTeorico.Text
             !P = txtPractico.Text
             !F = txtPromedio.Text
@@ -472,7 +473,6 @@ Private Sub cmdAgregar_Click()
             cmbModulo.SetFocus
             Exit Sub
         End If
-        
         .Open "SELECT Fecha, Modulo, Teorico as [T], Practico as [P], Promedio as [F] FROM examenes WHERE codalumno=" & Int(txtCodigo.Text) & " ORDER BY fecha,id", Cn, adOpenDynamic, adLockPessimistic
         Set grilla.DataSource = rsExamenes
         formatoGrilla
@@ -508,20 +508,22 @@ Private Sub cmdAgregar_Click()
         ''' Armado y Reparacion PC
         ''' Diseño Grafico
         ''' Diseño Web
-        ''' Electronica
-        ElseIf rsExamenes.RecordCount = 4 And (txtCurso.Text = "Armado y Reparación de PC" Or txtCurso.Text = "Diseño Gráfico" Or txtCurso.Text = "Diseño Web" Or txtCurso.Text = "Electronica") Then
+        ElseIf rsExamenes.RecordCount = 4 And (txtCurso.Text = "Armado y Reparación de PC" Or txtCurso.Text = "Diseño Gráfico" Or txtCurso.Text = "Diseño Web") Then
             Egresado = True
         
     ''' 5 Examenes
         ''' Operador de PC
         ''' Tecnico PC Nivel II
-        ElseIf rsExamenes.RecordCount = 5 And (txtCurso.Text = "Operador de Pc" Or txtCurso.Text = "Técnico en Pc nivel II") Then Egresado = True
+        ElseIf rsExamenes.RecordCount = 5 And (txtCurso.Text = "Operador de Pc" Or txtCurso.Text = "Técnico en Pc nivel II") Then
+            Egresado = True
     
     ''' 7 Examenes
         ''' Reparacion de PC y Redes
         ElseIf rsExamenes.RecordCount = 7 And (txtCurso.Text = "Armado y Reparación de PC y Redes") Then
+            Egresado = True
         End If
-  
+      
+    ''' ALUMNO EGRESADO
         If Egresado = True Then
             MsgBox "El alumno " & txtAlumno.Text & " ha egresado del curso de " & txtCurso.Text, vbInformation, "Exámenes"
             With rsEgresados
@@ -530,7 +532,7 @@ Private Sub cmdAgregar_Click()
                 .Requery
                 .AddNew
                 !CodAlumno = Int(txtCodigo.Text)
-                !fecha = DTPFecha.Value
+                !fecha = dtpFecha.Value
                 .Update
             End With
             cmdAgregar.Enabled = False
@@ -545,7 +547,7 @@ Private Sub cmdAgregar_Click()
         End If
     End With
     
-''' Limpiar todo
+''' REESTABLECE EL FORMULARIO
     txtPractico.Text = ""
     txtTeorico.Text = ""
     txtPromedio.Text = ""
@@ -554,7 +556,7 @@ End Sub
 
 Private Sub Form_Load()
     Centrar Me
-    DTPFecha.Value = Date
+    dtpFecha.Value = Date
 End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
@@ -564,7 +566,6 @@ End Sub
 Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
     If KeyAscii = 13 Then
         If txtCodigo.Text = "" Then MsgBox "Ingrese el código del alumno", vbOKOnly, "GIA - Exámenes": txtCodigo.SetFocus: Exit Sub
-      
         With rsVerificaciones
             If .State = 1 Then .Close
             .Open "SELECT nya,capac FROM verificaciones WHERE codalumno=" & Int(txtCodigo.Text), Cn, adOpenDynamic, adLockPessimistic
@@ -575,53 +576,64 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
                     txtCurso.Text = !capac
                 End If
         End With
-    
         With rsExamenes
             If .State = 1 Then .Close
             .Open "SELECT Fecha, Modulo, Teorico as [T], Practico as [P], Promedio as [F] FROM examenes WHERE codalumno=" & Int(txtCodigo.Text) & " ORDER BY fecha,id", Cn, adOpenDynamic, adLockPessimistic
         End With
         
-        If txtCurso.Text = "Operador de Pc" And rsExamenes.RecordCount = 5 Then
+    '''EGRESADOS
+    ''' 1 Examen
+        ''' Telefonia Celular
+        If rsExamenes.RecordCount = 1 And (txtCurso.Text = "Telefonía Celular") Then
             cmdAgregar.Enabled = False
-        ElseIf txtCurso.Text = "Diseño Gráfico" And rsExamenes.RecordCount = 4 Then
+            
+    ''' 2 Examenes
+        ''' Aire Acondicionado
+        ''' Aux.Farmacia
+        ''' Electricidad Domiciliaria
+        ''' Programacion
+        ElseIf rsExamenes.RecordCount = 2 And (txtCurso.Text = "Auxiliar de Farmacia" Or txtCurso.Text = "Programación" Or txtCurso.Text = "Técnico en aire acondicionado" Or txtCurso.Text = "Electricidad domiciliaria") Then
             cmdAgregar.Enabled = False
-        ElseIf txtCurso.Text = "Diseño Web" And rsExamenes.RecordCount = 4 Then
+    
+    ''' 3 Examenes
+        ''' Asistente Salud
+        ''' Asistente Terapeutico
+        ''' Extraccionista
+        ''' Ingles I
+        ''' Ingles II
+        ''' Paneles Solares
+        ''' Programacion & Access
+        ''' Redes Informaticas
+        ''' Tecnico PC Nivel I
+        ElseIf rsExamenes.RecordCount = 3 And (txtCurso.Text = "Asistente en Salud" Or txtCurso.Text = "Asistente Terapeutico" Or txtCurso.Text = "Extracc. Adm. Y Asist. Tec. Laborat." Or txtCurso.Text = "Inglés" Or txtCurso.Text = "Inglés II" Or txtCurso.Text = "Paneles Solares" Or txtCurso.Text = "Programación + Access" Or txtCurso.Text = "Técnico en Pc nivel I" Or txtCurso.Text = "Redes") Then
             cmdAgregar.Enabled = False
-        ElseIf txtCurso.Text = "Programación + Access" And rsExamenes.RecordCount = 3 Then
+    
+    ''' 4 Examenes
+        ''' Armado y Reparacion PC
+        ''' Diseño Grafico
+        ''' Diseño Web
+        ElseIf rsExamenes.RecordCount = 4 And (txtCurso.Text = "Armado y Reparación de PC" Or txtCurso.Text = "Diseño Gráfico" Or txtCurso.Text = "Diseño Web") Then
             cmdAgregar.Enabled = False
-        ElseIf txtCurso.Text = "Programación" And rsExamenes.RecordCount = 2 Then
-            cmdAgregar.Enabled = False
-        ElseIf (txtCurso.Text = "Técnico en aire acondicionado" And rsExamenes.RecordCount = 2) Or (txtCurso.Text = "Electricidad domiciliaria" And rsExamenes.RecordCount = 2) Then
-            cmdAgregar.Enabled = False
-        ElseIf txtCurso.Text = "Telefonía Celular" And rsExamenes.RecordCount = 1 Then
-            cmdAgregar.Enabled = False
-        ElseIf txtCurso.Text = "Armado y Reparación de PC y Redes" And rsExamenes.RecordCount = 7 Then
-            cmdAgregar.Enabled = False
-        ElseIf txtCurso.Text = "Armado y Reparación de PC" And rsExamenes.RecordCount = 4 Then
-            cmdAgregar.Enabled = False
-        ElseIf txtCurso.Text = "Redes" And rsExamenes.RecordCount = 3 Then
-            cmdAgregar.Enabled = False
-        ElseIf txtCurso.Text = "Técnico en Pc nivel I" And rsExamenes.RecordCount = 3 Then
-            cmbagregar.Enabled = False
-        ElseIf txtCurso.Text = "Técnico en Pc nivel II" And rsExamenes.RecordCount = 5 Then
-            cmbagregar.Enabled = False
-        ElseIf (txtCurso.Text = "Inglés" And rsExamenes.RecordCount = 3) Or (txtCurso.Text = "Inglés II" And rsExamenes.RecordCount = 3) Then
-            cmdAgregar.Enabled = False
-        ElseIf (txtCurso.Text = "Extracc. Adm. Y Asist. Tec. Laborat." And rsExamenes.RecordCount = 3) Or (((txtCurso.Text = "Asistente en Salud" Or txtCurso.Text = "Asistente Terapeutico") Or txtCurso.Text = "Asistente Terapeutico") And rsExamenes.RecordCount = 3) Then
-            cmdAgregar.Enabled = False
-        ElseIf (txtCurso.Text = "Paneles Solares" And rsExamenes.RecordCount = 3) Or (txtCurso.Text = "Auxiliar de Farmacia" Or rsExamenes.RecordCount = 2) Then
-            cmdAgregar.Enabled = False
-        ElseIf txtCurso.Text = "" Then
         
-        ElseIf txtCurso.Text = "" Then
-        
-        Else
-            cmdAgregar.Enabled = True
+    ''' 5 Examenes
+        ''' Operador de PC
+        ''' Tecnico PC Nivel II
+        ElseIf rsExamenes.RecordCount = 5 And (txtCurso.Text = "Operador de Pc" Or txtCurso.Text = "Técnico en Pc nivel II") Then
+            cmdAgregar.Enabled = False
+    
+    ''' 7 Examenes
+        ''' Reparacion de PC y Redes
+        ElseIf rsExamenes.RecordCount = 7 And (txtCurso.Text = "Armado y Reparación de PC y Redes") Then
+            cmdAgregar.Enabled = False
+        Else: cmdAgregar.Enabled = True
         End If
-        
         Set grilla.DataSource = rsExamenes
         formatoGrilla
-    
+        CargarModulos
+    End If
+End Sub
+
+Private Sub CargarModulos()
     If txtCurso.Text = "Operador de Pc" Then
         With cmbModulo
             .Clear
@@ -631,6 +643,7 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
             .AddItem ("Access")
             .AddItem ("Power Point")
         End With
+        
     ElseIf txtCurso.Text = "Diseño Gráfico" Then
         With cmbModulo
             .Clear
@@ -639,12 +652,14 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
             .AddItem ("Photoshop")
             .AddItem ("Page Maker")
         End With
+    
     ElseIf txtCurso.Text = "Programación" Then
         With cmbModulo
             .Clear
             .AddItem ("Módulo I")
             .AddItem ("Módulo II")
         End With
+    
     ElseIf txtCurso.Text = "Programación + Access" Then
         With cmbModulo
             .Clear
@@ -652,11 +667,13 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
             .AddItem ("Módulo I")
             .AddItem ("Módulo II")
         End With
+    
     ElseIf txtCurso.Text = "Telefonía Celular" Then
         With cmbModulo
             .Clear
             .AddItem ("Módulo I")
         End With
+    
     ElseIf txtCurso.Text = "Armado y Reparación de PC y Redes" Then
         With cmbModulo
             .Clear
@@ -668,6 +685,7 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
             .AddItem ("Redes II")
             .AddItem ("Redes III")
         End With
+    
     ElseIf txtCurso.Text = "Armado y Reparación de PC" Then
         With cmbModulo
             .Clear
@@ -676,6 +694,7 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
             .AddItem ("Armado III")
             .AddItem ("Armado IV")
         End With
+    
     ElseIf txtCurso.Text = "Redes" Then
         With cmbModulo
             .Clear
@@ -683,6 +702,7 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
             .AddItem ("Redes II")
             .AddItem ("Redes III")
         End With
+    
     ElseIf txtCurso.Text = "Técnico en Pc nivel I" Then
         With cmbModulo
             .Clear
@@ -690,6 +710,7 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
             .AddItem ("Modulo II")
             .AddItem ("Examen Final")
         End With
+    
     ElseIf txtCurso.Text = "Técnico en Pc nivel II" Then
         With cmbModulo
             .Clear
@@ -699,7 +720,6 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
             .AddItem ("Modulo IV")
             .AddItem ("Examen Final")
         End With
-        
     
     ElseIf txtCurso.Text = "Técnico en aire acondicionado" Or txtCurso.Text = "Electricidad domiciliaria" Then
         With cmbModulo
@@ -707,7 +727,7 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
             .AddItem ("Modulo I")
             .AddItem ("Modulo II")
         End With
-        
+    
     ElseIf txtCurso.Text = "Inglés" Or txtCurso.Text = "Inglés II" Then
         With cmbModulo
             .Clear
@@ -739,7 +759,7 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
             .AddItem ("Auxiliar I")
             .AddItem ("Auxiliar II")
         End With
-    '''Paneles Solares
+
     ElseIf txtCurso.Text = "Paneles Solares" Then
         With cmbModulo
             .Clear
@@ -747,7 +767,7 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
             .AddItem ("Paneles II")
             .AddItem ("Paneles III")
         End With
-    '''Asistente en Salud & Asistente Terapeutico
+
     ElseIf (txtCurso.Text = "Asistente en Salud" Or txtCurso.Text = "Asistente Terapeutico") Then
         With cmbModulo
             .Clear
@@ -757,24 +777,20 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
         End With
     End If
     cmbModulo.SetFocus
-    End If
-    '''carga de modulos
+End Sub
 
-    
+Private Sub txtTeorico_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then SendKeys "{TAB}"
 End Sub
 
 Private Sub txtPractico_KeyPress(KeyAscii As Integer)
     If KeyAscii = 13 Then
-        txtPromedio.Text = Int((txtTeorico.Text) + Int(txtPractico.Text)) / 2
+        txtPromedio.Text = (Int(txtTeorico.Text) + Int(txtPractico.Text)) / 2
         SendKeys "{TAB}"
     End If
 End Sub
 
 Private Sub txtPromedio_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
-End Sub
-
-Private Sub txtTeorico_KeyPress(KeyAscii As Integer)
     If KeyAscii = 13 Then SendKeys "{TAB}"
 End Sub
 

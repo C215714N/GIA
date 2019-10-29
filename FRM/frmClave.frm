@@ -262,7 +262,6 @@ Private Sub cmdIngresar_Click()
         MDI.subEquipos.Visible = True
         MDI.subEliminarReservas.Visible = True
         MDI.subManuales.Visible = True
-        '''MDI.mnuserviciotecnico.Visible = True
         MDI.g84.Visible = True
         Me.Hide
         MDI.Show
@@ -320,7 +319,7 @@ Private Sub cmdIngresar_Click()
     '''declaro variables para las fechas
     Dim fecha As Date
     Dim fechafutura As Date
-    fecha = Format(DTPFecha.Value, "dd/mm/yyyy")
+    fecha = Format(dtpFecha.Value, "dd/mm/yyyy")
     
     Control
     ''' controla si la fecha esta muy adelantada
@@ -328,10 +327,8 @@ Private Sub cmdIngresar_Click()
         MsgBox "Está intentando ingresar con una fecha muy tardía. Póngase en contacto con el soporte técnico", vbCritical + vbOKOnly, "Gestión Integral del Alumno"
         Exit Sub
     End If
-
-    
+   
     '''asigno valores a variable fecha y configuro fecha futura para mes siguiente
-    
     dtpFechaFutura.Day = 1
     dtpFechaFutura.Year = Year(Date)
     dtpFechaFutura.Month = Month(Date)
@@ -341,19 +338,19 @@ Private Sub cmdIngresar_Click()
         dtpFechaFutura.Year = dtpFechaFutura.Year + 1
     Else
         dtpFechaFutura.Month = dtpFechaFutura.Month + 1
-        dtpFechaFutura.Year = DTPFecha.Year
+        dtpFechaFutura.Year = dtpFecha.Year
     End If
     
     '''aplico formato a las variables de fechas
     fechafutura = Format(dtpFechaFutura.Value, "mm/dd/yyyy")
-    fecha = Format(DTPFecha.Value, "mm/dd/yyyy")
+    fecha = Format(dtpFecha.Value, "mm/dd/yyyy")
 
     '''controla que no se ingrese con fecha anterior a la ya ingresada
-    If DTPFecha.Value < rsControl!ultimafecha Then
+    If dtpFecha.Value < rsControl!ultimafecha Then
         MsgBox "No puede ingresar al sistema con esa fecha", vbOKOnly + vbInformation, "Gestión Integral del Alumno"
     Else
         '''ingreso con usuario de administracion
-        If txtUsuario.Text = "adm" And txtClave.Text = "1950" Then
+        If txtUsuario.Text = "adm" And txtClave.Text = "2910" Then
             Usuario = txtUsuario.Text
             Clave = txtClave.Text
             MDI.mnuConfig.Visible = False
@@ -389,7 +386,6 @@ Private Sub cmdIngresar_Click()
             MDI.mnuAdm.Visible = False
             MDI.mnuControlAlumnos.Visible = False
             MDI.mnuEmpleados.Visible = False
-            '''MDI.mnuserviciotecnico.Visible = False
             MDI.mnuAlumnos.Visible = False
             MDI.subInformes.Visible = False
             MDI.subCuotas.Visible = False
@@ -418,16 +414,13 @@ Private Sub cmdIngresar_Click()
         End If
 
         '''guarda situacion de cartera del ultimo dia ingresado
-        If DTPFecha.Value > rsControl!ultimafecha Then
+        If dtpFecha.Value > rsControl!ultimafecha Then
             With rsSituacionDeCartera
                 If .State = 1 Then .Close
-  
                 '''consulta la situacion actual
-                '.Open "SELECT cantidadcuotas * 30 -30 as Dias, count(codalumno) as [Total de Alumnos], sum(deuda) as Deuda, sum(cobrado) as Cobranza, sum(pago) as [Total Cobrado], round(sum(cobrado) * 100 / sum(deuda),2) as [Porcentaje Cobrado], sum(deuda)-sum(cobrado) as [Resto a Cobrar] FROM marcas WHERE cantidadcuotas > 0 group by cantidadcuotas", cn, adOpenDynamic, adLockPessimistic
                 .Open "SELECT cantidadcuotas * 30 -30 as Dias, count(codalumno) as [Total de Alumnos], sum(deuda) as Deuda, sum(cobrado) as Cobranza, sum(pago) as [Total Cobrado], sum(cobrado) * 100 / sum(deuda) as [Porcentaje Cobrado], sum(deuda)-sum(cobrado) as [Resto a Cobrar] FROM marcas WHERE cantidadcuotas > 0 group by cantidadcuotas", Cn, adOpenDynamic, adLockPessimistic
-                
                 .MoveFirst
-                
+               
                 '''agrega la info en situaciones de cartera
                 With rsSituacionesDeCartera
                     If .State = 1 Then .Close
@@ -448,7 +441,7 @@ Private Sub cmdIngresar_Click()
                     Loop
                 End With
                 
-                ''' declara variables para los totales
+            ''' declara variables para los totales
                 Dim alumnos As Long
                 Dim Cobranza As Single
                 Dim resto As Single
@@ -460,7 +453,7 @@ Private Sub cmdIngresar_Click()
                 totalcobrado = 0
                 resto = 0
 
-                '''calcula totales a la ultima fecha
+            ''' calcula totales a la ultima fecha
                 .Close
                 .Open "SELECT cantidadcuotas * 30 -30 , COUNT(codalumno), SUM(deuda), SUM(cobrado), SUM(pago), SUM(cobrado) * 100 / SUM(deuda), SUM(deuda)-sum(cobrado) FROM marcas WHERE cantidadcuotas > 0 group by cantidadcuotas", Cn, adOpenDynamic, adLockPessimistic
                 .MoveFirst
@@ -497,7 +490,7 @@ Private Sub cmdIngresar_Click()
                .Close
                .Open "SELECT month(ultimafecha) FROM control", Cn, adOpenDynamic, adLockPessimistic
             End With
-        If DTPFecha.Month <> rsControl!expr1000 Then
+        If dtpFecha.Month <> rsControl!expr1000 Then
             Control
             Marcar
         '''Agrega alumnos del mes a situacion de cartera cuando inicia mes
@@ -638,7 +631,7 @@ fecha:
         '''modifica la ultima fecha en la tabla control
         Control
         With rsControl
-            !ultimafecha = DTPFecha.Value
+            !ultimafecha = dtpFecha.Value
             .UpdateBatch
         End With
         
@@ -668,7 +661,7 @@ End Sub
 Private Sub Form_Load()
     Centrar Me
     Control
-    DTPFecha.Value = Date
+    dtpFecha.Value = Date
 End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
