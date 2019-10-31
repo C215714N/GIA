@@ -253,13 +253,13 @@ C:\Windows\System32\COMCT332.OCX=
 C:\Windows\System32\MSSTDFMT.DLL=
 C:\Windows\System32\comdlg32.ocx=
 C:\Windows\System32\MSRDO20.DLL=
+C:\Windows\System32\MSCOMCTL.OCX=
 
 [Package|CR Software|Files Added]
 
 [Package|CR Software|Files Removed]
 
 [Package|CR Software|Files In Project]
-C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\GIA.exe=Yes
 C:\Windows\System32\msvbvm60.dll=Yes
 C:\Windows\System32\oleaut32.dll=Yes
 C:\Windows\System32\olepro32.dll=Yes
@@ -309,7 +309,6 @@ C:\Windows\System32\MSCC2ES.DLL=Yes
 C:\Windows\System32\MSADODC.OCX=Yes
 C:\Windows\System32\ADODCES.DLL=Yes
 C:\Windows\System32\HookMenu.ocx=Yes
-C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA\MSCOMCTL.OCX=Yes
 C:\Windows\System32\COMCTL32.OCX=Yes
 C:\Windows\System32\CMCTLES.DLL=Yes
 C:\Windows\System32\MSCHRT20.OCX=Yes
@@ -324,6 +323,9 @@ C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
 C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
 C:\Windows\System32\VB6STKIT.DLL=Yes
 C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+T:\adm pat.exe=Yes
+C:\Windows\System32\MSCOMCTL.OCX=Yes
+C:\Windows\System32\MSCMCES.DLL=Yes
 
 [Package|CR Software|Configure Registry Files]
 Applicable=No
@@ -397,11 +399,15 @@ C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPa
 C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
 C:\Windows\System32\VB6STKIT.DLL=$(WinSysPathSysFile)
 C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+T:\adm pat.exe=$(AppPath)
+C:\Windows\System32\MSCOMCTL.OCX=$(WinSysPath)
+C:\Windows\System32\MSCMCES.DLL=$(WinSysPath)
 
 [Package|CR Software|Configure Shared Files]
 Applicable=Yes
 C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\GIA.exe=Yes
-C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+T:\adm pat.exe=Yes
 
 [Package|CR Software|Distribution]
 Type=single
@@ -425,6 +431,6 @@ ProjectFolder=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX
 ServerSideCab=
 File1=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\Install\setup.exe
 File2=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\Install\Setup.Lst
-File3=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\Install\GIA.CAB
+File3=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\Install\adm pat.CAB
 Handler1=PDWizard.FolderDplySubWiz
 Handler2=PDWizard.WebPostDplySubWiz

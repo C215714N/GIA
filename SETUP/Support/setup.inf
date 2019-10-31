@@ -1,0 +1,77 @@
+;*** BEGIN **********************************************************
+;**                                                                **
+;** Automatically generated on: Fri Aug 30 15:46:43 2019           **
+;**                                                                **
+;** MakeCAB Version: (32) 1.00.0600 (11/22/96)                     **
+;**                                                                **
+;*** BEGIN **********************************************************
+[disk list]
+1,Disk 1
+[cabinet list]
+1,1,GIA 2018.CAB
+[file list]
+1,0,Setup.Lst,5708
+1,0,setup.exe,142848
+1,1,GIA 2018.exe,27766784
+1,1,msvbvm60.dll,1384479
+1,1,oleaut32.dll,552448
+1,1,olepro32.dll,84992
+1,1,asycfilt.dll,65536
+1,1,stdole2.tlb,16896
+1,1,COMCAT.DLL,22288
+1,1,VB6ES.DLL,119568
+1,1,MSRDC20.OCX,176440
+1,1,MSRDO20.DLL,397312
+1,1,RDOCURS.DLL,151552
+1,1,RDO20ES.DLL,66048
+1,1,RDC20ES.DLL,16384
+1,1,MSFLXGRD.OCX,244024
+1,1,FLXGDES.DLL,40448
+1,1,comdlg32.ocx,152848
+1,1,CMDLGES.DLL,33280
+1,1,HookMenu.ocx,143360
+1,1,MSDBRPTR.DLL,299008
+1,1,MSSTDFMT.DLL,125744
+1,1,STDFTES.DLL,6656
+1,1,DBRPRES.DLL,33280
+1,1,MSWINSCK.OCX,108336
+1,1,WINSKES.DLL,15360
+1,1,DTCSERV.DLL,179160
+1,1,mscomctl.ocx,1071088
+1,1,MSCMCES.DLL,140800
+1,1,COMCT232.OCX,164144
+1,1,CMCT2ES.DLL,23552
+1,1,COMCT332.OCX,369696
+1,1,CMCT3ES.DLL,28672
+1,1,FLEXWIZ.OCX,226328
+1,1,DBGRID32.OCX,520192
+1,1,DBGRDES.DLL,34304
+1,1,DBLIST32.OCX,204048
+1,1,DBLSTES.DLL,30720
+1,1,MSDATREP.OCX,187712
+1,1,MSBIND.DLL,77824
+1,1,DATRPES.DLL,21504
+1,1,DTCRT.DLL,371648
+1,1,MSDATGRD.OCX,260920
+1,1,DATGDES.DLL,30208
+1,1,MSDATLST.OCX,232248
+1,1,DATLSES.DLL,30208
+1,1,msscript.ocx,110592
+1,1,GRID32.OCX,89600
+1,1,RICHTX32.OCX,212240
+1,1,RICHED32.DLL,174352
+1,1,RCHTXES.DLL,34816
+1,1,MSCOMCT2.OCX,644400
+1,1,MSCC2ES.DLL,60928
+1,1,MSADODC.OCX,118064
+1,1,ADODCES.DLL,15872
+1,1,MDAC_TYP.EXE,6477888
+1,1,isButton.OCX,200704
+1,1,SETUP1.EXE,290816
+1,1,VB6STKIT.DLL,102912
+1,1,ST6UNST.EXE,74240
+;*** END ************************************************************
+;**                                                                **
+;** Automatically generated on: Fri Aug 30 15:46:43 2019           **
+;**                                                                **
+;*** END ************************************************************
