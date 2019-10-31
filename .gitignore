@@ -1,6 +1,4 @@
 *.temp
-
-
 *.tmp
-
 Thumbs.db
+*.mdb

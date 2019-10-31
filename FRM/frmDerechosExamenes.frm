@@ -539,30 +539,42 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
-
-If KeyAscii = 13 Then
-    If txtCodigo.Text = "" Then MsgBox "Ingrese el código del alumno", vbOKOnly, "GIA - Exámenes": txtCodigo.SetFocus: Exit Sub
-      
-        With rsVerificaciones
-            If .State = 1 Then .Close
-            .Open "SELECT nya,capac FROM verificaciones WHERE codalumno=" & Int(txtCodigo.Text), Cn, adOpenDynamic, adLockPessimistic
+    If KeyAscii = 13 Then
+        If txtCodigo.Text = "" Then MsgBox "Ingrese el código del alumno", vbOKOnly, "GIA - Exámenes": txtCodigo.SetFocus: Exit Sub
+            With rsVerificaciones
+                If .State = 1 Then .Close
+                .Open "SELECT nya,capac FROM verificaciones WHERE codalumno=" & Int(txtCodigo.Text), Cn, adOpenDynamic, adLockPessimistic
+                
                 If .BOF = True And .EOF = True Then
                     MsgBox "No se encuentra el Código de Alumno" & vbNewLine & "Controle que el codigo ingresado sea correcto", vbExclamation, "Gestion Integral del Alumno - Gestion Integral del Alumno"
                 ElseIf .BOF = False Or .EOF = False Then
                     txtAlumno.Text = !NyA
                     txtCurso.Text = !capac
                 End If
-        End With
-    
-        With rsDerechosExamenes
-            If .State = 1 Then .Close
-            .Open "SELECT Fecha, Modulo as Módulo FROM derechoexamen WHERE codalumno=" & Int(txtCodigo.Text) & " ORDER BY fecha", Cn, adOpenDynamic, adLockPessimistic
-        End With
-        
-        Set grilla.DataSource = rsDerechosExamenes
-        formatoGrilla
-   
-'''EXAMENES Y MODULOS
+            End With
+            
+            With rsDerechosExamenes
+                If .State = 1 Then .Close
+                .Open "SELECT Fecha, Modulo FROM derechoexamen WHERE codalumno=" & Int(txtCodigo.Text) & " ORDER BY fecha", Cn, adOpenDynamic, adLockPessimistic
+            End With
+            
+            Set grilla.DataSource = rsDerechosExamenes
+            formatoGrilla
+            CargarModulos
+            txtPrecio.Text = Format(rsControl!derechoExamen, "currency")
+            cmbModulo.Enabled = True
+            DTPFecha.Enabled = True
+            cmdAgregar.Enabled = True
+            cmbModulo.SetFocus
+            
+            If rsDerechosExamenes.RecordCount >= 1 Then
+                cmdExamenes.Enabled = True
+            Else: cmdExamenes.Enabled = False
+            End If
+        End If
+End Sub
+
+Private Sub CargarModulos()
     If txtCurso.Text = "Operador de Pc" Then
         With cmbModulo
             .Clear
@@ -698,21 +710,6 @@ If KeyAscii = 13 Then
             .AddItem ("Auxiliar I")
             .AddItem ("Auxiliar II")
         End With
-    End If
-    
-    txtPrecio.Text = Format(rsControl!derechoExamen, "currency")
-    cmbModulo.Enabled = True
-    DTPFecha.Enabled = True
-    cmdAgregar.Enabled = True
-    cmbModulo.SetFocus
-    
-    End If
-    
-    If KeyAscii = 13 Then
-        If rsDerechosExamenes.RecordCount >= 1 Then
-            cmdExamenes.Enabled = True
-            Else: cmdExamenes.Enabled = False
-        End If
     End If
 End Sub
 
