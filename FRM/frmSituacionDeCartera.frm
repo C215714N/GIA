@@ -35,7 +35,7 @@ Begin VB.Form frmSituacionDeCartera
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   89260033
+      Format          =   42663937
       CurrentDate     =   41624
    End
    Begin VB.Frame Frame1 
@@ -503,71 +503,67 @@ End Sub
 
 
 Private Sub cmdBuscar_Click()
-    
 ''' analiza la situacion de cartera al dia de hoy
-If DTPFecha.Value = Date Then
-    
-    alumnos = 0
-    deuda = 0
-    Cobranza = 0
-    totalcobrado = 0
-    resto = 0
-    
-    With rsSituacionDeCartera
-        If .State = 1 Then .Close
-        .Open "SELECT cantidadcuotas * 30 -30 , count(codalumno), sum(deuda), sum(cobrado), sum(pago), Round(sum(cobrado) * 100 / sum(deuda)), sum(deuda)-sum(cobrado) FROM marcas WHERE cantidadcuotas > 0 group by cantidadcuotas", Cn, adOpenDynamic, adLockPessimistic
-        .MoveFirst
+    If DTPFecha.Value = Date Then
+        alumnos = 0
+        deuda = 0
+        Cobranza = 0
+        totalcobrado = 0
+        resto = 0
         
-        Do Until .EOF
-            alumnos = alumnos + !expr1001
-            deuda = deuda + !expr1002
-            Cobranza = Cobranza + !expr1003
-            totalcobrado = totalcobrado + !expr1004
-            resto = resto + !expr1006
-            .MoveNext
-        Loop
-        txtAlumnos.Text = alumnos
-        txtDeuda.Text = FormatCurrency(deuda)
-        txtCobranza.Text = FormatCurrency(Cobranza)
-        txtCobrado.Text = totalcobrado
-        txtResto.Text = FormatCurrency(resto)
-        txtPorcentaje.Text = FormatCurrency(txtCobranza.Text) * 100 / FormatCurrency(txtDeuda.Text) & "%"
+        With rsSituacionDeCartera
+            If .State = 1 Then .Close
+            .Open "SELECT cantidadcuotas * 30 -30 , count(codalumno), sum(deuda), sum(cobrado), sum(pago), Round(sum(cobrado) * 100 / sum(deuda),2), sum(deuda)-sum(cobrado) FROM marcas WHERE cantidadcuotas > 0 group by cantidadcuotas", Cn, adOpenDynamic, adLockPessimistic
+            .MoveFirst
+            Do Until .EOF
+                alumnos = alumnos + !expr1001
+                deuda = deuda + !expr1002
+                Cobranza = Cobranza + !expr1003
+                totalcobrado = totalcobrado + !expr1004
+                resto = resto + !expr1006
+                .MoveNext
+            Loop
+            txtAlumnos.Text = alumnos
+            txtDeuda.Text = FormatCurrency(deuda)
+            txtCobranza.Text = FormatCurrency(Cobranza)
+            txtCobrado.Text = totalcobrado
+            txtResto.Text = FormatCurrency(resto)
+            txtPorcentaje.Text = FormatCurrency(txtCobranza.Text) * 100 / FormatCurrency(txtDeuda.Text) & "%"
+            
+            If txtPorcentaje.Text = "100%" Then
+                txtPorcentaje.Text = "100%"
+            Else
+                txtPorcentaje.Text = Format(txtPorcentaje.Text, "##.##%")
+            End If
+        End With
+        With rsSituacionDeCartera
+            If .State = 1 Then .Close
+            .Open "SELECT cantidadcuotas * 30 -30 as Dias, count(codalumno) as [Alumnos], sum(deuda) as Deuda, sum(cobrado) as [Cobranza], sum(pago) as [Cant], Round(sum(cobrado) * 100 / sum(deuda)) as [%], sum(deuda)-sum(cobrado) as [Resta] FROM marcas WHERE cantidadcuotas > 0 group by cantidadcuotas", Cn, adOpenDynamic, adLockPessimistic
+        End With
+        cmdAnalizar.Enabled = True
         
-        If txtPorcentaje.Text = "100%" Then
-            txtPorcentaje.Text = "100%"
-        Else
-            txtPorcentaje.Text = Format(txtPorcentaje.Text, "##.##%")
-        End If
-    End With
-    
-    With rsSituacionDeCartera
-        If .State = 1 Then .Close
-        .Open "SELECT cantidadcuotas * 30 -30 as Dias, count(codalumno) as [Alumnos], sum(deuda) as Deuda, sum(cobrado) as [Cobranza], sum(pago) as [Cant], Round(sum(cobrado) * 100 / sum(deuda)) as [%], sum(deuda)-sum(cobrado) as [Resta] FROM marcas WHERE cantidadcuotas > 0 group by cantidadcuotas", Cn, adOpenDynamic, adLockPessimistic
-    End With
-    
-    cmdAnalizar.Enabled = True
 '''busca la situacion de cartera anterior
-ElseIf DTPFecha.Value < Date Then
-    With rsSituacionDeCartera
-        If .State = 1 Then .Close
-        .Open "SELECT Dias,Alumnos as [Alumnos],Deuda,Cobranza,Cobrado as [Cobrado],Porcentaje as [%],Resto as [Resta] FROM SituacionesDeCartera WHERE fecha=#" & Format(DTPFecha.Value, "mm/dd/yyyy") & "#", Cn, adOpenDynamic, adLockPessimistic
-        If .BOF Or .EOF Then MsgBox "Ese día no se inició sesión", vbOKOnly, "Situación de Cartera - GIA": Exit Sub
-    End With
+    ElseIf DTPFecha.Value < Date Then
+        With rsSituacionDeCartera
+            If .State = 1 Then .Close
+            .Open "SELECT Dias,Alumnos as [Alumnos],Deuda,Cobranza,Cobrado as [Cobrado],Porcentaje as [%],Resto as [Resta] FROM SituacionesDeCartera WHERE fecha=#" & Format(DTPFecha.Value, "mm/dd/yyyy") & "#", Cn, adOpenDynamic, adLockPessimistic
+            If .BOF Or .EOF Then MsgBox "Ese día no se inició sesión", vbOKOnly, "Situación de Cartera - GIA": Exit Sub
+        End With
     '''carga los totales
-    With rsTotalesSituaciones
-        If .State = 1 Then .Close
-        .Open "SELECT * FROM totalessituaciones WHERE fecha=#" & Format(DTPFecha.Value, "mm/dd/yyyy") & "#", Cn, adOpenDynamic, adLockPessimistic
-        txtAlumnos.Text = !alumnos
-        txtDeuda.Text = !deuda
-        txtCobranza.Text = !Cobranza
-        txtCobrado.Text = !cobrado
-        txtPorcentaje.Text = !porcentaje
-        txtResto.Text = !resto
-    End With
-    cmdAnalizar.Enabled = False
-End If
-    
-    '''muestra la situacion de cartera en la grilla
+        With rsTotalesSituaciones
+            If .State = 1 Then .Close
+            .Open "SELECT * FROM totalessituaciones WHERE fecha=#" & Format(DTPFecha.Value, "mm/dd/yyyy") & "#", Cn, adOpenDynamic, adLockPessimistic
+            txtAlumnos.Text = !alumnos
+            txtDeuda.Text = !deuda
+            txtCobranza.Text = !Cobranza
+            txtCobrado.Text = !cobrado
+            txtPorcentaje.Text = !porcentaje
+            txtResto.Text = !resto
+        End With
+        cmdAnalizar.Enabled = False
+    End If
+        
+'''muestra la situacion de cartera en la grilla
     Set grilla.DataSource = rsSituacionDeCartera
     formatoGrilla
 End Sub

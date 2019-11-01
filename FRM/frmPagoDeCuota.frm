@@ -417,7 +417,7 @@ Private Sub cmbTipoPago_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub cmdCobrar_Click()
-    Cobranza
+        Cobranza
     With rsCobranza
         .Find "nrocuota=" & Int(frmCobranza.txtNroCuota.Text)
         !DeudaTotal = Val(txtResta.Text)
@@ -432,9 +432,7 @@ Private Sub cmdCobrar_Click()
         End If
         .UpdateBatch
     End With
-    
     Contabilidad
-    
     With rsContabilidadTemp
         .MoveFirst
         Do Until .EOF
@@ -463,9 +461,7 @@ Private Sub cmdCobrar_Click()
     
     ''' si paga cuota 2 en adelante lo baja a marcas
     If Int(frmCobranza.txtNroCuota.Text) > 1 Then
-    
         Marcar
-    
         With rsMarcar
             .Find "Codalumno=" & Int(frmCobranza.lblCodAlumno.Caption)
             !cobrado = !cobrado + CSng(txtTotalPago.Text)
@@ -476,9 +472,7 @@ Private Sub cmdCobrar_Click()
         End With
     
     ElseIf Int(frmCobranza.txtNroCuota.Text) = 1 And DateDiff("m", Date, frmCobranza.txtFechaVto.Text) < 0 Then
-        
         Marcar
-        
         With rsMarcar
             .Find "Codalumno=" & Int(frmCobranza.lblCodAlumno.Caption)
             !cobrado = !cobrado + CSng(txtTotalPago.Text)
@@ -487,9 +481,7 @@ Private Sub cmdCobrar_Click()
             End If
         .UpdateBatch
         End With
-    
     End If
-    
 
 continuar:
     frmCobranza.Enabled = True
@@ -499,7 +491,6 @@ continuar:
     frmCobranza.cmdPagar.Enabled = False
     cmdCobrar.Enabled = False
     Unload Me
-
 End Sub
 
 Private Sub cmdSalir_Click()
