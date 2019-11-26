@@ -4,13 +4,13 @@ Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmClave 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Gestión Integral del Alumno"
-   ClientHeight    =   2610
+   ClientHeight    =   2604
    ClientLeft      =   840
-   ClientTop       =   3330
-   ClientWidth     =   5310
+   ClientTop       =   3336
+   ClientWidth     =   5316
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   9.75
+      Size            =   9.6
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -32,10 +32,10 @@ Begin VB.Form frmClave
       Top             =   0
       Visible         =   0   'False
       Width           =   1575
-      _ExtentX        =   2778
-      _ExtentY        =   661
+      _ExtentX        =   2773
+      _ExtentY        =   656
       _Version        =   393216
-      Format          =   85524481
+      Format          =   34209793
       CurrentDate     =   42125
    End
    Begin MSComCtl2.DTPicker DTPFecha 
@@ -44,19 +44,19 @@ Begin VB.Form frmClave
       TabIndex        =   4
       Top             =   120
       Width           =   1335
-      _ExtentX        =   2355
-      _ExtentY        =   661
+      _ExtentX        =   2350
+      _ExtentY        =   656
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   85524481
+      Format          =   34209793
       CurrentDate     =   41327
    End
    Begin VB.TextBox txtClave 
@@ -99,7 +99,7 @@ Begin VB.Form frmClave
       TabIndex        =   2
       Top             =   2040
       Width           =   1335
-      _ExtentX        =   2355
+      _ExtentX        =   2350
       _ExtentY        =   741
       Icon            =   "frmClave.frx":182AA
       Style           =   8
@@ -117,7 +117,7 @@ Begin VB.Form frmClave
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -131,7 +131,7 @@ Begin VB.Form frmClave
       TabIndex        =   3
       Top             =   2040
       Width           =   1335
-      _ExtentX        =   2355
+      _ExtentX        =   2350
       _ExtentY        =   741
       Icon            =   "frmClave.frx":18B84
       Style           =   8
@@ -148,7 +148,7 @@ Begin VB.Form frmClave
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -162,7 +162,7 @@ Begin VB.Form frmClave
       Caption         =   "CONTRASEÑA"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -182,7 +182,7 @@ Begin VB.Form frmClave
       Caption         =   "USUARIO"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -202,7 +202,7 @@ Begin VB.Form frmClave
       Caption         =   "USUARIO"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -222,7 +222,7 @@ Begin VB.Form frmClave
       Caption         =   "CONTRASEÑA"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -237,12 +237,12 @@ Begin VB.Form frmClave
       Width           =   1335
    End
    Begin VB.Image Image1 
-      Height          =   3000
-      Left            =   -240
+      Height          =   2616
+      Left            =   -120
       Picture         =   "frmClave.frx":1945E
       Stretch         =   -1  'True
-      Top             =   -360
-      Width           =   3000
+      Top             =   0
+      Width           =   2508
    End
 End
 Attribute VB_Name = "frmClave"
@@ -319,7 +319,7 @@ Private Sub cmdIngresar_Click()
     '''declaro variables para las fechas
     Dim fecha As Date
     Dim fechafutura As Date
-    fecha = Format(dtpFecha.Value, "dd/mm/yyyy")
+    fecha = Format(DTPFecha.Value, "dd/mm/yyyy")
     
     Control
     ''' controla si la fecha esta muy adelantada
@@ -338,15 +338,15 @@ Private Sub cmdIngresar_Click()
         dtpFechaFutura.Year = dtpFechaFutura.Year + 1
     Else
         dtpFechaFutura.Month = dtpFechaFutura.Month + 1
-        dtpFechaFutura.Year = dtpFecha.Year
+        dtpFechaFutura.Year = DTPFecha.Year
     End If
     
     '''aplico formato a las variables de fechas
     fechafutura = Format(dtpFechaFutura.Value, "mm/dd/yyyy")
-    fecha = Format(dtpFecha.Value, "mm/dd/yyyy")
+    fecha = Format(DTPFecha.Value, "mm/dd/yyyy")
 
     '''controla que no se ingrese con fecha anterior a la ya ingresada
-    If dtpFecha.Value < rsControl!ultimafecha Then
+    If DTPFecha.Value < rsControl!ultimafecha Then
         MsgBox "No puede ingresar al sistema con esa fecha", vbOKOnly + vbInformation, "Gestión Integral del Alumno"
     Else
         '''ingreso con usuario de administracion
@@ -366,6 +366,7 @@ Private Sub cmdIngresar_Click()
             MDI.g4.Visible = False
             MDI.subPP.Visible = False
             MDI.SubPresupuesto.Visible = False
+            MDI.StatusBar1.Panels(5).Text = "Usuario: " & "Administracion"
             
         '''ingreso con usuario general
         ElseIf txtUsuario.Text = "adm" And txtClave.Text = "SuperV" Then
@@ -378,6 +379,7 @@ Private Sub cmdIngresar_Click()
             MDI.mnuLibro.Visible = True
             MDI.subGrupoArmado.Visible = True
             MDI.g56.Visible = True
+            MDI.StatusBar1.Panels(5).Text = "Usuario: " & "Supervisor"
             
         '''Usuario Cobranzas
         ElseIf txtUsuario.Text = "cobranza" And txtClave.Text = "llamados" Then
@@ -414,7 +416,7 @@ Private Sub cmdIngresar_Click()
         End If
 
         '''guarda situacion de cartera del ultimo dia ingresado
-        If dtpFecha.Value > rsControl!ultimafecha Then
+        If DTPFecha.Value > rsControl!ultimafecha Then
             With rsSituacionDeCartera
                 If .State = 1 Then .Close
                 '''consulta la situacion actual
@@ -490,7 +492,7 @@ Private Sub cmdIngresar_Click()
                .Close
                .Open "SELECT month(ultimafecha) FROM control", Cn, adOpenDynamic, adLockPessimistic
             End With
-        If dtpFecha.Month <> rsControl!expr1000 Then
+        If DTPFecha.Month <> rsControl!expr1000 Then
             Control
             Marcar
         '''Agrega alumnos del mes a situacion de cartera cuando inicia mes
@@ -631,7 +633,7 @@ fecha:
         '''modifica la ultima fecha en la tabla control
         Control
         With rsControl
-            !ultimafecha = dtpFecha.Value
+            !ultimafecha = DTPFecha.Value
             .UpdateBatch
         End With
         
@@ -661,7 +663,7 @@ End Sub
 Private Sub Form_Load()
     Centrar Me
     Control
-    dtpFecha.Value = Date
+    DTPFecha.Value = Date
 End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)

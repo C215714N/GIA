@@ -5,18 +5,18 @@ Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmConsultarCheques 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Consultar Cheques"
-   ClientHeight    =   4575
+   ClientHeight    =   4572
    ClientLeft      =   3360
    ClientTop       =   1620
-   ClientWidth     =   8910
+   ClientWidth     =   8916
    Icon            =   "frmConsultarCheques.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    Picture         =   "frmConsultarCheques.frx":324A
-   ScaleHeight     =   4575
-   ScaleWidth      =   8910
+   ScaleHeight     =   4572
+   ScaleWidth      =   8916
    Begin MSFlexGridLib.MSFlexGrid grilla 
       Height          =   2800
       Left            =   120
@@ -24,7 +24,7 @@ Begin VB.Form frmConsultarCheques
       Top             =   1560
       Width           =   7200
       _ExtentX        =   12700
-      _ExtentY        =   4948
+      _ExtentY        =   4932
       _Version        =   393216
       Cols            =   6
       FixedCols       =   0
@@ -43,7 +43,7 @@ Begin VB.Form frmConsultarCheques
       Caption         =   "Consultar Cheques"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -61,7 +61,7 @@ Begin VB.Form frmConsultarCheques
          Caption         =   "Filtrar por"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -79,7 +79,7 @@ Begin VB.Form frmConsultarCheques
             Caption         =   "Firma"
             BeginProperty Font 
                Name            =   "Century Gothic"
-               Size            =   8.25
+               Size            =   8.4
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -99,7 +99,7 @@ Begin VB.Form frmConsultarCheques
             Caption         =   "Fecha"
             BeginProperty Font 
                Name            =   "Century Gothic"
-               Size            =   8.25
+               Size            =   8.4
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -119,7 +119,7 @@ Begin VB.Form frmConsultarCheques
             Caption         =   "Ambos"
             BeginProperty Font 
                Name            =   "Century Gothic"
-               Size            =   8.25
+               Size            =   8.4
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -139,7 +139,7 @@ Begin VB.Form frmConsultarCheques
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -147,9 +147,9 @@ Begin VB.Form frmConsultarCheques
             Strikethrough   =   0   'False
          EndProperty
          Height          =   360
-         ItemData        =   "frmConsultarCheques.frx":AC67
+         ItemData        =   "frmConsultarCheques.frx":11DFF
          Left            =   1320
-         List            =   "frmConsultarCheques.frx":AC6E
+         List            =   "frmConsultarCheques.frx":11E06
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   2
@@ -162,20 +162,20 @@ Begin VB.Form frmConsultarCheques
          TabIndex        =   1
          Top             =   480
          Width           =   1335
-         _ExtentX        =   2355
-         _ExtentY        =   661
+         _ExtentX        =   2350
+         _ExtentY        =   656
          _Version        =   393216
          Enabled         =   0   'False
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   89325569
+         Format          =   342097921
          CurrentDate     =   41782
       End
       Begin MSComCtl2.DTPicker dtpDesde 
@@ -184,20 +184,20 @@ Begin VB.Form frmConsultarCheques
          TabIndex        =   0
          Top             =   480
          Width           =   1335
-         _ExtentX        =   2355
-         _ExtentY        =   661
+         _ExtentX        =   2350
+         _ExtentY        =   656
          _Version        =   393216
          Enabled         =   0   'False
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   89325569
+         Format          =   342097921
          CurrentDate     =   41782
       End
       Begin isButtonTest.isButton cmdBuscar 
@@ -206,9 +206,9 @@ Begin VB.Form frmConsultarCheques
          TabIndex        =   17
          Top             =   400
          Width           =   1335
-         _ExtentX        =   2355
+         _ExtentX        =   2350
          _ExtentY        =   741
-         Icon            =   "frmConsultarCheques.frx":AC7A
+         Icon            =   "frmConsultarCheques.frx":11E12
          Style           =   8
          Caption         =   "       Buscar"
          IconSize        =   18
@@ -221,7 +221,7 @@ Begin VB.Form frmConsultarCheques
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -234,7 +234,7 @@ Begin VB.Form frmConsultarCheques
          Caption         =   "Hasta"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -253,7 +253,7 @@ Begin VB.Form frmConsultarCheques
          Caption         =   "Desde"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -274,9 +274,9 @@ Begin VB.Form frmConsultarCheques
       TabIndex        =   18
       Top             =   3480
       Width           =   1335
-      _ExtentX        =   2355
+      _ExtentX        =   2350
       _ExtentY        =   741
-      Icon            =   "frmConsultarCheques.frx":B554
+      Icon            =   "frmConsultarCheques.frx":126EC
       Style           =   8
       Caption         =   "       Eliminar"
       IconSize        =   18
@@ -291,7 +291,7 @@ Begin VB.Form frmConsultarCheques
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -305,9 +305,9 @@ Begin VB.Form frmConsultarCheques
       TabIndex        =   19
       Top             =   3960
       Width           =   1335
-      _ExtentX        =   2355
+      _ExtentX        =   2350
       _ExtentY        =   741
-      Icon            =   "frmConsultarCheques.frx":BE2E
+      Icon            =   "frmConsultarCheques.frx":12FC6
       Style           =   8
       Caption         =   "       Depositar"
       IconSize        =   18
@@ -322,7 +322,7 @@ Begin VB.Form frmConsultarCheques
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -335,7 +335,7 @@ Begin VB.Form frmConsultarCheques
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -354,7 +354,7 @@ Begin VB.Form frmConsultarCheques
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -373,7 +373,7 @@ Begin VB.Form frmConsultarCheques
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -392,7 +392,7 @@ Begin VB.Form frmConsultarCheques
       Caption         =   "A Depositar"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -411,7 +411,7 @@ Begin VB.Form frmConsultarCheques
       Caption         =   "Total $"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -430,7 +430,7 @@ Begin VB.Form frmConsultarCheques
       Caption         =   "Cheques"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

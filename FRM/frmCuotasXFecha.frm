@@ -6,13 +6,13 @@ Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmCuotasXFecha 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Cuotas Por Fecha"
-   ClientHeight    =   5085
-   ClientLeft      =   3615
+   ClientHeight    =   5088
+   ClientLeft      =   3612
    ClientTop       =   2100
-   ClientWidth     =   6765
+   ClientWidth     =   6768
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   8.25
+      Size            =   8.4
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -24,16 +24,16 @@ Begin VB.Form frmCuotasXFecha
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    Picture         =   "frmCuotasXFecha.frx":0000
-   ScaleHeight     =   5085
-   ScaleWidth      =   6765
+   ScaleHeight     =   5088
+   ScaleWidth      =   6768
    Begin MSAdodcLib.Adodc Adodc 
       Height          =   330
       Left            =   5160
       Top             =   120
       Visible         =   0   'False
       Width           =   1455
-      _ExtentX        =   2566
-      _ExtentY        =   582
+      _ExtentX        =   2561
+      _ExtentY        =   593
       ConnectMode     =   0
       CursorLocation  =   3
       IsolationLevel  =   -1
@@ -64,7 +64,7 @@ Begin VB.Form frmCuotasXFecha
       Caption         =   "Adodc1"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.8
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -79,8 +79,8 @@ Begin VB.Form frmCuotasXFecha
       TabIndex        =   4
       Top             =   840
       Width           =   5055
-      _ExtentX        =   8916
-      _ExtentY        =   7223
+      _ExtentX        =   8911
+      _ExtentY        =   7218
       _Version        =   393216
       AllowUpdate     =   0   'False
       ColumnHeaders   =   -1  'True
@@ -89,7 +89,7 @@ Begin VB.Form frmCuotasXFecha
       RowDividerStyle =   0
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -146,19 +146,19 @@ Begin VB.Form frmCuotasXFecha
       TabIndex        =   0
       Top             =   360
       Width           =   1335
-      _ExtentX        =   2355
-      _ExtentY        =   661
+      _ExtentX        =   2350
+      _ExtentY        =   656
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   89456641
+      Format          =   342097921
       CurrentDate     =   41345
    End
    Begin MSComCtl2.DTPicker dtpHasta 
@@ -167,19 +167,19 @@ Begin VB.Form frmCuotasXFecha
       TabIndex        =   1
       Top             =   360
       Width           =   1335
-      _ExtentX        =   2355
-      _ExtentY        =   661
+      _ExtentX        =   2350
+      _ExtentY        =   656
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   89456641
+      Format          =   342097921
       CurrentDate     =   41345
    End
    Begin isButtonTest.isButton cmdBuscar 
@@ -188,9 +188,9 @@ Begin VB.Form frmCuotasXFecha
       TabIndex        =   11
       Top             =   300
       Width           =   1335
-      _ExtentX        =   2355
+      _ExtentX        =   2350
       _ExtentY        =   741
-      Icon            =   "frmCuotasXFecha.frx":7A1D
+      Icon            =   "frmCuotasXFecha.frx":EBB5
       Style           =   8
       Caption         =   "       Buscar"
       IconSize        =   18
@@ -203,7 +203,7 @@ Begin VB.Form frmCuotasXFecha
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -217,9 +217,9 @@ Begin VB.Form frmCuotasXFecha
       TabIndex        =   12
       Top             =   850
       Width           =   1335
-      _ExtentX        =   2355
+      _ExtentX        =   2350
       _ExtentY        =   741
-      Icon            =   "frmCuotasXFecha.frx":82F7
+      Icon            =   "frmCuotasXFecha.frx":F48F
       Style           =   8
       Caption         =   "       Marcar"
       IconSize        =   18
@@ -234,7 +234,7 @@ Begin VB.Form frmCuotasXFecha
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -248,9 +248,9 @@ Begin VB.Form frmCuotasXFecha
       TabIndex        =   13
       Top             =   1350
       Width           =   1335
-      _ExtentX        =   2355
+      _ExtentX        =   2350
       _ExtentY        =   741
-      Icon            =   "frmCuotasXFecha.frx":8BD1
+      Icon            =   "frmCuotasXFecha.frx":FD69
       Style           =   8
       Caption         =   "       Datos"
       IconSize        =   18
@@ -265,7 +265,7 @@ Begin VB.Form frmCuotasXFecha
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -279,9 +279,9 @@ Begin VB.Form frmCuotasXFecha
       TabIndex        =   14
       Top             =   1850
       Width           =   1335
-      _ExtentX        =   2355
+      _ExtentX        =   2350
       _ExtentY        =   741
-      Icon            =   "frmCuotasXFecha.frx":94AB
+      Icon            =   "frmCuotasXFecha.frx":10643
       Style           =   8
       Caption         =   "       Cuotas"
       IconSize        =   18
@@ -296,7 +296,7 @@ Begin VB.Form frmCuotasXFecha
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -310,9 +310,9 @@ Begin VB.Form frmCuotasXFecha
       TabIndex        =   15
       Top             =   2350
       Width           =   1335
-      _ExtentX        =   2355
+      _ExtentX        =   2350
       _ExtentY        =   741
-      Icon            =   "frmCuotasXFecha.frx":9D85
+      Icon            =   "frmCuotasXFecha.frx":10F1D
       Style           =   8
       Caption         =   "       Volver"
       IconSize        =   18
@@ -327,7 +327,7 @@ Begin VB.Form frmCuotasXFecha
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -349,7 +349,7 @@ Begin VB.Form frmCuotasXFecha
       Caption         =   "Alumnos"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -369,7 +369,7 @@ Begin VB.Form frmCuotasXFecha
       Caption         =   "Resta"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -398,7 +398,7 @@ Begin VB.Form frmCuotasXFecha
       Caption         =   "Deuda Total"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -427,7 +427,7 @@ Begin VB.Form frmCuotasXFecha
       Caption         =   "Hasta"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -447,7 +447,7 @@ Begin VB.Form frmCuotasXFecha
       Caption         =   "Desde"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

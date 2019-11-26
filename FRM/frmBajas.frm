@@ -3,22 +3,22 @@ Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmBajas 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Informe de Bajas"
-   ClientHeight    =   1935
-   ClientLeft      =   5475
-   ClientTop       =   3645
-   ClientWidth     =   3525
+   ClientHeight    =   1932
+   ClientLeft      =   5472
+   ClientTop       =   3648
+   ClientWidth     =   3528
    Icon            =   "frmBajas.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    Picture         =   "frmBajas.frx":324A
-   ScaleHeight     =   1935
-   ScaleWidth      =   3525
+   ScaleHeight     =   1932
+   ScaleWidth      =   3528
    Begin VB.ComboBox cmbPagoBaja 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -26,9 +26,9 @@ Begin VB.Form frmBajas
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      ItemData        =   "frmBajas.frx":AC67
+      ItemData        =   "frmBajas.frx":11DFF
       Left            =   120
-      List            =   "frmBajas.frx":AC71
+      List            =   "frmBajas.frx":11E09
       Style           =   2  'Dropdown List
       TabIndex        =   1
       Top             =   1440
@@ -37,7 +37,7 @@ Begin VB.Form frmBajas
    Begin VB.TextBox txtmotivo 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -57,9 +57,9 @@ Begin VB.Form frmBajas
       TabIndex        =   3
       Top             =   1400
       Width           =   1335
-      _ExtentX        =   2355
+      _ExtentX        =   2350
       _ExtentY        =   741
-      Icon            =   "frmBajas.frx":AC7D
+      Icon            =   "frmBajas.frx":11E15
       Style           =   8
       Caption         =   "       Dar Baja"
       IconAlign       =   1
@@ -73,7 +73,7 @@ Begin VB.Form frmBajas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -86,7 +86,7 @@ Begin VB.Form frmBajas
       Caption         =   "Pago de Baja"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

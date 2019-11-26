@@ -3,14 +3,14 @@ Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form FrmBackup 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Copia de Seguridad"
-   ClientHeight    =   3630
-   ClientLeft      =   45
-   ClientTop       =   435
-   ClientWidth     =   5430
+   ClientHeight    =   3636
+   ClientLeft      =   48
+   ClientTop       =   432
+   ClientWidth     =   5424
    FillColor       =   &H80000005&
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   8.25
+      Size            =   8.4
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -23,8 +23,8 @@ Begin VB.Form FrmBackup
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    Picture         =   "FrmBackup.frx":9ED32
-   ScaleHeight     =   3630
-   ScaleWidth      =   5430
+   ScaleHeight     =   3636
+   ScaleWidth      =   5424
    Begin VB.CommandButton cmdSalir 
       Caption         =   "Salir"
       Height          =   420
@@ -60,7 +60,7 @@ Begin VB.Form FrmBackup
    Begin VB.DirListBox Dir1 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -70,7 +70,7 @@ Begin VB.Form FrmBackup
       ForeColor       =   &H80000007&
       Height          =   2520
       Left            =   120
-      MouseIcon       =   "FrmBackup.frx":A674F
+      MouseIcon       =   "FrmBackup.frx":AD8E7
       MousePointer    =   99  'Custom
       TabIndex        =   1
       ToolTipText     =   "Seleccionar Directorio de Destino"
@@ -90,8 +90,8 @@ Begin VB.Form FrmBackup
    Begin MSComctlLib.ImageList ImageList1 
       Left            =   5520
       Top             =   2880
-      _ExtentX        =   1005
-      _ExtentY        =   1005
+      _ExtentX        =   995
+      _ExtentY        =   995
       BackColor       =   -2147483643
       ImageWidth      =   16
       ImageHeight     =   16
@@ -100,62 +100,62 @@ Begin VB.Form FrmBackup
       BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
          NumListImages   =   11
          BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "FrmBackup.frx":A6A59
+            Picture         =   "FrmBackup.frx":ADBF1
             Key             =   ""
          EndProperty
          BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "FrmBackup.frx":A6E16
+            Picture         =   "FrmBackup.frx":ADFAE
             Key             =   ""
          EndProperty
          BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "FrmBackup.frx":A6F70
+            Picture         =   "FrmBackup.frx":AE108
             Key             =   ""
          EndProperty
          BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "FrmBackup.frx":A70CA
+            Picture         =   "FrmBackup.frx":AE262
             Key             =   ""
          EndProperty
          BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "FrmBackup.frx":A781B
+            Picture         =   "FrmBackup.frx":AE9B3
             Key             =   ""
          EndProperty
          BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "FrmBackup.frx":A7975
+            Picture         =   "FrmBackup.frx":AEB0D
             Key             =   ""
          EndProperty
          BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "FrmBackup.frx":A7F0F
+            Picture         =   "FrmBackup.frx":AF0A7
             Key             =   ""
          EndProperty
          BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "FrmBackup.frx":A8069
+            Picture         =   "FrmBackup.frx":AF201
             Key             =   ""
          EndProperty
          BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "FrmBackup.frx":A81C3
+            Picture         =   "FrmBackup.frx":AF35B
             Key             =   ""
          EndProperty
          BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "FrmBackup.frx":A82D8
+            Picture         =   "FrmBackup.frx":AF470
             Key             =   ""
          EndProperty
          BeginProperty ListImage11 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "FrmBackup.frx":A872A
+            Picture         =   "FrmBackup.frx":AF8C2
             Key             =   ""
          EndProperty
       EndProperty
    End
    Begin MSComctlLib.Toolbar tblBotones 
       Align           =   4  'Align Right
-      Height          =   3630
-      Left            =   5040
+      Height          =   3636
+      Left            =   5028
       TabIndex        =   5
       Top             =   0
-      Width           =   390
-      _ExtentX        =   688
-      _ExtentY        =   6403
-      ButtonWidth     =   609
-      ButtonHeight    =   582
+      Width           =   396
+      _ExtentX        =   699
+      _ExtentY        =   6414
+      ButtonWidth     =   487
+      ButtonHeight    =   466
       AllowCustomize  =   0   'False
       Appearance      =   1
       Style           =   1
@@ -206,7 +206,7 @@ Begin VB.Form FrmBackup
       Caption         =   "Carpeta"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -227,7 +227,7 @@ Begin VB.Form FrmBackup
       Caption         =   "Unidad"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -247,7 +247,7 @@ Begin VB.Form FrmBackup
       Caption         =   "Seleccionar Disco de Destino"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -267,7 +267,7 @@ Begin VB.Form FrmBackup
       Caption         =   "Seleccionar Directorio"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

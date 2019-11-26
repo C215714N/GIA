@@ -4,27 +4,27 @@ Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmAnalisisDeCuotas 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Análisis de Cuotas"
-   ClientHeight    =   5130
-   ClientLeft      =   3885
-   ClientTop       =   1845
-   ClientWidth     =   8955
+   ClientHeight    =   5124
+   ClientLeft      =   3888
+   ClientTop       =   1848
+   ClientWidth     =   8952
    Icon            =   "frmAnalisisDeCuotas.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    Picture         =   "frmAnalisisDeCuotas.frx":324A
-   ScaleHeight     =   5130
-   ScaleWidth      =   8955
+   ScaleHeight     =   5124
+   ScaleWidth      =   8952
    Begin isButtonTest.isButton cmdDatos 
       Height          =   420
       Left            =   7500
       TabIndex        =   11
       Top             =   2700
       Width           =   1335
-      _ExtentX        =   2355
+      _ExtentX        =   2350
       _ExtentY        =   741
-      Icon            =   "frmAnalisisDeCuotas.frx":AC67
+      Icon            =   "frmAnalisisDeCuotas.frx":11DFF
       Style           =   8
       Caption         =   "       Datos"
       IconSize        =   18
@@ -37,7 +37,7 @@ Begin VB.Form frmAnalisisDeCuotas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -51,9 +51,9 @@ Begin VB.Form frmAnalisisDeCuotas
       TabIndex        =   12
       Top             =   3900
       Width           =   1335
-      _ExtentX        =   2355
+      _ExtentX        =   2350
       _ExtentY        =   741
-      Icon            =   "frmAnalisisDeCuotas.frx":B541
+      Icon            =   "frmAnalisisDeCuotas.frx":126D9
       Style           =   8
       Caption         =   "       Reingresar"
       IconSize        =   18
@@ -66,7 +66,7 @@ Begin VB.Form frmAnalisisDeCuotas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -80,9 +80,9 @@ Begin VB.Form frmAnalisisDeCuotas
       TabIndex        =   13
       Top             =   300
       Width           =   1335
-      _ExtentX        =   2355
+      _ExtentX        =   2350
       _ExtentY        =   741
-      Icon            =   "frmAnalisisDeCuotas.frx":BE1B
+      Icon            =   "frmAnalisisDeCuotas.frx":12FB3
       Style           =   8
       Caption         =   "       Egresado"
       IconSize        =   18
@@ -97,7 +97,7 @@ Begin VB.Form frmAnalisisDeCuotas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -111,9 +111,9 @@ Begin VB.Form frmAnalisisDeCuotas
       TabIndex        =   14
       Top             =   3300
       Width           =   1335
-      _ExtentX        =   2355
+      _ExtentX        =   2350
       _ExtentY        =   741
-      Icon            =   "frmAnalisisDeCuotas.frx":C6F5
+      Icon            =   "frmAnalisisDeCuotas.frx":1388D
       Style           =   8
       Caption         =   "       Editar"
       IconSize        =   18
@@ -128,7 +128,7 @@ Begin VB.Form frmAnalisisDeCuotas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -142,9 +142,9 @@ Begin VB.Form frmAnalisisDeCuotas
       TabIndex        =   15
       Top             =   4500
       Width           =   1335
-      _ExtentX        =   2355
+      _ExtentX        =   2350
       _ExtentY        =   741
-      Icon            =   "frmAnalisisDeCuotas.frx":CFCF
+      Icon            =   "frmAnalisisDeCuotas.frx":14167
       Style           =   8
       Caption         =   "       Baja"
       IconSize        =   18
@@ -159,7 +159,7 @@ Begin VB.Form frmAnalisisDeCuotas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -170,7 +170,7 @@ Begin VB.Form frmAnalisisDeCuotas
    Begin VB.TextBox txtObservaciones 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -191,7 +191,7 @@ Begin VB.Form frmAnalisisDeCuotas
       Top             =   840
       Width           =   3600
       _ExtentX        =   6350
-      _ExtentY        =   5106
+      _ExtentY        =   5101
       _Version        =   393216
       AllowUpdate     =   0   'False
       ColumnHeaders   =   -1  'True
@@ -259,7 +259,7 @@ Begin VB.Form frmAnalisisDeCuotas
       Top             =   825
       Width           =   3600
       _ExtentX        =   6350
-      _ExtentY        =   5106
+      _ExtentY        =   5101
       _Version        =   393216
       AllowUpdate     =   0   'False
       ColumnHeaders   =   -1  'True
@@ -326,9 +326,9 @@ Begin VB.Form frmAnalisisDeCuotas
       TabIndex        =   8
       Top             =   900
       Width           =   1335
-      _ExtentX        =   2355
+      _ExtentX        =   2350
       _ExtentY        =   741
-      Icon            =   "frmAnalisisDeCuotas.frx":D8A9
+      Icon            =   "frmAnalisisDeCuotas.frx":14A41
       Style           =   8
       Caption         =   "       Buscar"
       IconSize        =   18
@@ -341,7 +341,7 @@ Begin VB.Form frmAnalisisDeCuotas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -355,9 +355,9 @@ Begin VB.Form frmAnalisisDeCuotas
       TabIndex        =   9
       Top             =   1500
       Width           =   1335
-      _ExtentX        =   2355
+      _ExtentX        =   2350
       _ExtentY        =   741
-      Icon            =   "frmAnalisisDeCuotas.frx":E183
+      Icon            =   "frmAnalisisDeCuotas.frx":1531B
       Style           =   8
       Caption         =   "       Aceptar"
       IconSize        =   18
@@ -370,7 +370,7 @@ Begin VB.Form frmAnalisisDeCuotas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -384,9 +384,9 @@ Begin VB.Form frmAnalisisDeCuotas
       TabIndex        =   10
       Top             =   2100
       Width           =   1335
-      _ExtentX        =   2355
+      _ExtentX        =   2350
       _ExtentY        =   741
-      Icon            =   "frmAnalisisDeCuotas.frx":EA5D
+      Icon            =   "frmAnalisisDeCuotas.frx":15BF5
       Style           =   8
       Caption         =   "       Marcar"
       IconSize        =   18
@@ -399,7 +399,7 @@ Begin VB.Form frmAnalisisDeCuotas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -413,7 +413,7 @@ Begin VB.Form frmAnalisisDeCuotas
       Caption         =   "Alumno"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -433,7 +433,7 @@ Begin VB.Form frmAnalisisDeCuotas
       Caption         =   "Codigo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -451,25 +451,25 @@ Begin VB.Form frmAnalisisDeCuotas
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   420
-      Left            =   7500
+      Height          =   300
+      Left            =   6400
       TabIndex        =   5
-      Top             =   240
+      Top             =   0
       Visible         =   0   'False
-      Width           =   255
+      Width           =   972
    End
    Begin VB.Label lblNya 
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -487,7 +487,7 @@ Begin VB.Form frmAnalisisDeCuotas
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

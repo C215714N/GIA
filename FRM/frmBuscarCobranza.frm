@@ -6,12 +6,12 @@ Begin VB.Form frmBuscarCobranza
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Buscar Alumno"
    ClientHeight    =   4080
-   ClientLeft      =   4545
-   ClientTop       =   3405
-   ClientWidth     =   9405
+   ClientLeft      =   4548
+   ClientTop       =   3408
+   ClientWidth     =   9408
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   8.25
+      Size            =   8.4
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -25,7 +25,7 @@ Begin VB.Form frmBuscarCobranza
    MinButton       =   0   'False
    Picture         =   "frmBuscarCobranza.frx":324A
    ScaleHeight     =   4080
-   ScaleWidth      =   9405
+   ScaleWidth      =   9408
    Begin VB.TextBox txtBuscar 
       Height          =   360
       Left            =   120
@@ -39,7 +39,7 @@ Begin VB.Form frmBuscarCobranza
       Top             =   5400
       Width           =   1200
       _ExtentX        =   2117
-      _ExtentY        =   873
+      _ExtentY        =   868
       ConnectMode     =   0
       CursorLocation  =   3
       IsolationLevel  =   -1
@@ -70,7 +70,7 @@ Begin VB.Form frmBuscarCobranza
       Caption         =   ""
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.8
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -112,7 +112,7 @@ Begin VB.Form frmBuscarCobranza
       Top             =   840
       Width           =   9120
       _ExtentX        =   16087
-      _ExtentY        =   5318
+      _ExtentY        =   5313
       _Version        =   393216
       AllowUpdate     =   0   'False
       ColumnHeaders   =   -1  'True
@@ -121,7 +121,7 @@ Begin VB.Form frmBuscarCobranza
       RowDividerStyle =   0
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -178,7 +178,7 @@ Begin VB.Form frmBuscarCobranza
       TabIndex        =   4
       Top             =   300
       Width           =   1335
-      _ExtentX        =   2355
+      _ExtentX        =   2350
       _ExtentY        =   741
       Icon            =   "frmBuscarCobranza.frx":AC67
       Style           =   8
@@ -196,7 +196,7 @@ Begin VB.Form frmBuscarCobranza
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -210,7 +210,7 @@ Begin VB.Form frmBuscarCobranza
       TabIndex        =   5
       Top             =   300
       Width           =   1335
-      _ExtentX        =   2355
+      _ExtentX        =   2350
       _ExtentY        =   741
       Icon            =   "frmBuscarCobranza.frx":B541
       Style           =   8
@@ -228,7 +228,7 @@ Begin VB.Form frmBuscarCobranza
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False

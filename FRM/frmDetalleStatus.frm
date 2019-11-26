@@ -5,19 +5,19 @@ Begin VB.Form frmDetalleStatus
    Caption         =   "Detalle del Status de la Base"
    ClientHeight    =   5460
    ClientLeft      =   8940
-   ClientTop       =   1995
-   ClientWidth     =   9555
+   ClientTop       =   1992
+   ClientWidth     =   9552
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    Picture         =   "frmDetalleStatus.frx":0000
    ScaleHeight     =   5460
-   ScaleWidth      =   9555
+   ScaleWidth      =   9552
    Begin VB.TextBox txtFiltroPDP 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -36,15 +36,15 @@ Begin VB.Form frmDetalleStatus
       TabIndex        =   1
       Top             =   480
       Width           =   4575
-      _ExtentX        =   8070
-      _ExtentY        =   7223
+      _ExtentX        =   8065
+      _ExtentY        =   7218
       _Version        =   393216
       AllowUpdate     =   0   'False
       HeadLines       =   1
       RowHeight       =   21
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -101,15 +101,15 @@ Begin VB.Form frmDetalleStatus
       TabIndex        =   0
       Top             =   480
       Width           =   4575
-      _ExtentX        =   8070
-      _ExtentY        =   7223
+      _ExtentX        =   8065
+      _ExtentY        =   7218
       _Version        =   393216
       AllowUpdate     =   0   'False
       HeadLines       =   1
       RowHeight       =   21
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -164,7 +164,7 @@ Begin VB.Form frmDetalleStatus
       Alignment       =   2  'Center
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -181,7 +181,7 @@ Begin VB.Form frmDetalleStatus
       Alignment       =   2  'Center
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -199,7 +199,7 @@ Begin VB.Form frmDetalleStatus
       Caption         =   "Total Deuda:"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -217,7 +217,7 @@ Begin VB.Form frmDetalleStatus
       Caption         =   "Total Deuda:"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -234,7 +234,7 @@ Begin VB.Form frmDetalleStatus
       Alignment       =   2  'Center
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -251,7 +251,7 @@ Begin VB.Form frmDetalleStatus
       Alignment       =   2  'Center
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -269,7 +269,7 @@ Begin VB.Form frmDetalleStatus
       Caption         =   "Total de Alumnos:"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -287,7 +287,7 @@ Begin VB.Form frmDetalleStatus
       Caption         =   "Total de Alumnos:"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -304,7 +304,7 @@ Begin VB.Form frmDetalleStatus
       Caption         =   "Tabla: Marcas"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -321,7 +321,7 @@ Begin VB.Form frmDetalleStatus
       Caption         =   "Tabla: Plan de Pago"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False

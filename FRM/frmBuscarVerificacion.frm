@@ -6,9 +6,9 @@ Begin VB.Form frmBuscarVerificacion
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Buscar Alumno"
    ClientHeight    =   4080
-   ClientLeft      =   4965
-   ClientTop       =   2490
-   ClientWidth     =   9405
+   ClientLeft      =   4968
+   ClientTop       =   2496
+   ClientWidth     =   9408
    Icon            =   "frmBuscarVerificacion.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
@@ -16,15 +16,15 @@ Begin VB.Form frmBuscarVerificacion
    MinButton       =   0   'False
    Picture         =   "frmBuscarVerificacion.frx":324A
    ScaleHeight     =   4080
-   ScaleWidth      =   9405
+   ScaleWidth      =   9408
    Begin MSDataGridLib.DataGrid grilla 
       Height          =   3015
       Left            =   120
       TabIndex        =   3
       Top             =   840
       Width           =   9135
-      _ExtentX        =   16113
-      _ExtentY        =   5318
+      _ExtentX        =   16108
+      _ExtentY        =   5313
       _Version        =   393216
       AllowUpdate     =   0   'False
       ColumnHeaders   =   -1  'True
@@ -33,7 +33,7 @@ Begin VB.Form frmBuscarVerificacion
       RowDividerStyle =   0
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -87,7 +87,7 @@ Begin VB.Form frmBuscarVerificacion
    Begin VB.TextBox txtBuscar 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -105,7 +105,7 @@ Begin VB.Form frmBuscarVerificacion
       Caption         =   "Buscar Por Nombre"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -125,7 +125,7 @@ Begin VB.Form frmBuscarVerificacion
       Caption         =   "Buscar Por Código"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -148,7 +148,7 @@ Begin VB.Form frmBuscarVerificacion
       Visible         =   0   'False
       Width           =   1200
       _ExtentX        =   2117
-      _ExtentY        =   582
+      _ExtentY        =   593
       ConnectMode     =   0
       CursorLocation  =   3
       IsolationLevel  =   -1
@@ -179,7 +179,7 @@ Begin VB.Form frmBuscarVerificacion
       Caption         =   "Adodc1"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.8
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -194,7 +194,7 @@ Begin VB.Form frmBuscarVerificacion
       TabIndex        =   4
       Top             =   300
       Width           =   1335
-      _ExtentX        =   2355
+      _ExtentX        =   2350
       _ExtentY        =   741
       Icon            =   "frmBuscarVerificacion.frx":AC67
       Style           =   8
@@ -212,7 +212,7 @@ Begin VB.Form frmBuscarVerificacion
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -226,7 +226,7 @@ Begin VB.Form frmBuscarVerificacion
       TabIndex        =   5
       Top             =   300
       Width           =   1335
-      _ExtentX        =   2355
+      _ExtentX        =   2350
       _ExtentY        =   741
       Icon            =   "frmBuscarVerificacion.frx":B541
       Style           =   8
@@ -244,7 +244,7 @@ Begin VB.Form frmBuscarVerificacion
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -330,7 +330,7 @@ Else
     If Trim(Len(frmAnalisisDeCuotas.lblCodAlumno.Caption)) = 3 Then frmAnalisisDeCuotas.lblCodAlumno.Caption = Format(frmAnalisisDeCuotas.lblCodAlumno.Caption, "00###")
     If Trim(Len(frmAnalisisDeCuotas.lblCodAlumno.Caption)) = 4 Then frmAnalisisDeCuotas.lblCodAlumno.Caption = Format(frmAnalisisDeCuotas.lblCodAlumno.Caption, "0####")
 
-    If Usuario = "adm" And Clave = "1950" Then
+    If Usuario = "adm" And Clave = "2910" Then
         frmAnalisisDeCuotas.cmdBaja.Visible = False
         frmAnalisisDeCuotas.cmdEditar.Visible = False
         frmAnalisisDeCuotas.cmdEgresado.Visible = False

@@ -5,22 +5,22 @@ Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmDerechosExamenes 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Derechos de Exámenes"
-   ClientHeight    =   4725
-   ClientLeft      =   7245
+   ClientHeight    =   4728
+   ClientLeft      =   7248
    ClientTop       =   2280
-   ClientWidth     =   5730
+   ClientWidth     =   5724
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    Picture         =   "frmDerechosExamenes.frx":0000
-   ScaleHeight     =   4725
-   ScaleWidth      =   5730
+   ScaleHeight     =   4728
+   ScaleWidth      =   5724
    Begin VB.TextBox txtCodigo 
       Alignment       =   1  'Right Justify
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -37,7 +37,7 @@ Begin VB.Form frmDerechosExamenes
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -54,7 +54,7 @@ Begin VB.Form frmDerechosExamenes
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -72,7 +72,7 @@ Begin VB.Form frmDerechosExamenes
       Caption         =   "Derecho Examen"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -90,7 +90,7 @@ Begin VB.Form frmDerechosExamenes
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -106,7 +106,7 @@ Begin VB.Form frmDerechosExamenes
       Begin VB.ComboBox cmbPago 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -114,9 +114,9 @@ Begin VB.Form frmDerechosExamenes
             Strikethrough   =   0   'False
          EndProperty
          Height          =   345
-         ItemData        =   "frmDerechosExamenes.frx":7A1D
+         ItemData        =   "frmDerechosExamenes.frx":EBB5
          Left            =   120
-         List            =   "frmDerechosExamenes.frx":7A2A
+         List            =   "frmDerechosExamenes.frx":EBC2
          Style           =   2  'Dropdown List
          TabIndex        =   2
          Top             =   1680
@@ -125,7 +125,7 @@ Begin VB.Form frmDerechosExamenes
       Begin VB.TextBox txtRecibo 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -142,7 +142,7 @@ Begin VB.Form frmDerechosExamenes
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -150,9 +150,9 @@ Begin VB.Form frmDerechosExamenes
             Strikethrough   =   0   'False
          EndProperty
          Height          =   345
-         ItemData        =   "frmDerechosExamenes.frx":7A4C
+         ItemData        =   "frmDerechosExamenes.frx":EBE4
          Left            =   120
-         List            =   "frmDerechosExamenes.frx":7A4E
+         List            =   "frmDerechosExamenes.frx":EBE6
          TabIndex        =   1
          Top             =   1080
          Width           =   1335
@@ -163,20 +163,20 @@ Begin VB.Form frmDerechosExamenes
          TabIndex        =   5
          Top             =   480
          Width           =   1335
-         _ExtentX        =   2355
-         _ExtentY        =   661
+         _ExtentX        =   2350
+         _ExtentY        =   656
          _Version        =   393216
          Enabled         =   0   'False
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   85458945
+         Format          =   342097921
          CurrentDate     =   41978
       End
       Begin isButtonTest.isButton cmdAgregar 
@@ -185,9 +185,9 @@ Begin VB.Form frmDerechosExamenes
          TabIndex        =   18
          Top             =   3300
          Width           =   1335
-         _ExtentX        =   2355
+         _ExtentX        =   2350
          _ExtentY        =   741
-         Icon            =   "frmDerechosExamenes.frx":7A50
+         Icon            =   "frmDerechosExamenes.frx":EBE8
          Style           =   8
          Caption         =   "       Aceptar"
          IconSize        =   18
@@ -200,7 +200,7 @@ Begin VB.Form frmDerechosExamenes
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -214,9 +214,9 @@ Begin VB.Form frmDerechosExamenes
          TabIndex        =   19
          Top             =   3800
          Width           =   1335
-         _ExtentX        =   2355
+         _ExtentX        =   2350
          _ExtentY        =   741
-         Icon            =   "frmDerechosExamenes.frx":832A
+         Icon            =   "frmDerechosExamenes.frx":F4C2
          Style           =   8
          Caption         =   "       Examenes"
          IconSize        =   18
@@ -229,7 +229,7 @@ Begin VB.Form frmDerechosExamenes
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -242,7 +242,7 @@ Begin VB.Form frmDerechosExamenes
          Caption         =   "Recibo"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -261,7 +261,7 @@ Begin VB.Form frmDerechosExamenes
          Caption         =   "Precio"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -280,7 +280,7 @@ Begin VB.Form frmDerechosExamenes
          Caption         =   "Forma de Pago"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -299,7 +299,7 @@ Begin VB.Form frmDerechosExamenes
          Caption         =   "Módulo"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -318,7 +318,7 @@ Begin VB.Form frmDerechosExamenes
          Caption         =   "Fecha"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -339,15 +339,15 @@ Begin VB.Form frmDerechosExamenes
       TabIndex        =   9
       Top             =   1560
       Width           =   3735
-      _ExtentX        =   6588
-      _ExtentY        =   5318
+      _ExtentX        =   6583
+      _ExtentY        =   5313
       _Version        =   393216
       AllowUpdate     =   0   'False
       HeadLines       =   1
       RowHeight       =   20
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -356,7 +356,7 @@ Begin VB.Form frmDerechosExamenes
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -403,7 +403,7 @@ Begin VB.Form frmDerechosExamenes
       Caption         =   "Código"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -422,7 +422,7 @@ Begin VB.Form frmDerechosExamenes
       Caption         =   "Alumno"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -441,7 +441,7 @@ Begin VB.Form frmDerechosExamenes
       Caption         =   "Capacitación"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

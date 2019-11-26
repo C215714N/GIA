@@ -5,12 +5,12 @@ Begin VB.Form frmVentaManuales
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Venta de Manuales"
    ClientHeight    =   4380
-   ClientLeft      =   5385
-   ClientTop       =   450
-   ClientWidth     =   5715
+   ClientLeft      =   5388
+   ClientTop       =   456
+   ClientWidth     =   5712
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   8.25
+      Size            =   8.4
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -24,13 +24,13 @@ Begin VB.Form frmVentaManuales
    MinButton       =   0   'False
    Picture         =   "frmVentaManuales.frx":324A
    ScaleHeight     =   4380
-   ScaleWidth      =   5715
+   ScaleWidth      =   5712
    Begin VB.Frame Frame1 
       BackColor       =   &H00662200&
       Caption         =   "Venta Manual"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -72,7 +72,7 @@ Begin VB.Form frmVentaManuales
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -90,7 +90,7 @@ Begin VB.Form frmVentaManuales
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -109,7 +109,7 @@ Begin VB.Form frmVentaManuales
          TabIndex        =   6
          Top             =   3360
          Width           =   1335
-         _ExtentX        =   2355
+         _ExtentX        =   2350
          _ExtentY        =   741
          Icon            =   "frmVentaManuales.frx":AC96
          Style           =   8
@@ -125,7 +125,7 @@ Begin VB.Form frmVentaManuales
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -189,7 +189,7 @@ Begin VB.Form frmVentaManuales
       Alignment       =   1  'Right Justify
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -206,7 +206,7 @@ Begin VB.Form frmVentaManuales
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -223,7 +223,7 @@ Begin VB.Form frmVentaManuales
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -242,15 +242,15 @@ Begin VB.Form frmVentaManuales
       TabIndex        =   7
       Top             =   1560
       Width           =   3735
-      _ExtentX        =   6588
-      _ExtentY        =   4683
+      _ExtentX        =   6583
+      _ExtentY        =   4678
       _Version        =   393216
       AllowUpdate     =   0   'False
       HeadLines       =   1
       RowHeight       =   20
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -259,7 +259,7 @@ Begin VB.Form frmVentaManuales
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -306,7 +306,7 @@ Begin VB.Form frmVentaManuales
       Caption         =   "Código"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -325,7 +325,7 @@ Begin VB.Form frmVentaManuales
       Caption         =   "Alumno"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -344,7 +344,7 @@ Begin VB.Form frmVentaManuales
       Caption         =   "Capacitación"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -580,6 +580,18 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
             .AddItem ("Redes I")
             .AddItem ("Redes II")
             .AddItem ("Redes III")
+        End With
+    '''MANUALES AIRE ACONDICIONADO
+    ElseIf txtCurso.Text = "Técnico en aire acondicionado" Then
+        With cmbManual
+            .Clear
+            .AddItem ("Aire Acondicionado")
+        End With
+    '''MANUALES EXTRACCIONISTA
+    ElseIf txtCurso.Text = "Extracc. Adm. Y Asist. Tec. Laborat." Then
+        With cmbManual
+            .Clear
+            .AddItem ("Extraccionista")
         End With
     End If
     cmbManual.SetFocus

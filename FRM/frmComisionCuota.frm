@@ -4,12 +4,12 @@ Begin VB.Form frmComisionCuota
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Comisión de Primera Cuota"
    ClientHeight    =   3060
-   ClientLeft      =   45
-   ClientTop       =   435
-   ClientWidth     =   5475
+   ClientLeft      =   48
+   ClientTop       =   432
+   ClientWidth     =   5472
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   8.25
+      Size            =   8.4
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -23,13 +23,13 @@ Begin VB.Form frmComisionCuota
    MinButton       =   0   'False
    Picture         =   "frmComisionCuota.frx":324A
    ScaleHeight     =   3060
-   ScaleWidth      =   5475
+   ScaleWidth      =   5472
    Begin VB.Frame Frame6 
       BackColor       =   &H00662200&
       Caption         =   "Totales"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -48,9 +48,9 @@ Begin VB.Form frmComisionCuota
          TabIndex        =   4
          Top             =   2280
          Width           =   1335
-         _ExtentX        =   2355
+         _ExtentX        =   2350
          _ExtentY        =   741
-         Icon            =   "frmComisionCuota.frx":AC67
+         Icon            =   "frmComisionCuota.frx":11DFF
          Style           =   8
          Caption         =   "       Aceptar"
          IconSize        =   18
@@ -65,7 +65,7 @@ Begin VB.Form frmComisionCuota
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -136,7 +136,7 @@ Begin VB.Form frmComisionCuota
       Caption         =   "Comisiones"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -154,7 +154,7 @@ Begin VB.Form frmComisionCuota
          Caption         =   "N° Factura"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -180,7 +180,7 @@ Begin VB.Form frmComisionCuota
          Caption         =   "Pago 1° Cuota"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -237,7 +237,7 @@ Begin VB.Form frmComisionCuota
          Caption         =   "Coordinador"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -264,7 +264,7 @@ Begin VB.Form frmComisionCuota
          Caption         =   "Asesor"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -310,7 +310,7 @@ Begin VB.Form frmComisionCuota
             Caption         =   "%"
             BeginProperty Font 
                Name            =   "Century Gothic"
-               Size            =   9.75
+               Size            =   9.6
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False

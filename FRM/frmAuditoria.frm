@@ -4,13 +4,13 @@ Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmAuditoria 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Auditoría"
-   ClientHeight    =   5265
-   ClientLeft      =   45
-   ClientTop       =   435
-   ClientWidth     =   3225
+   ClientHeight    =   5268
+   ClientLeft      =   48
+   ClientTop       =   432
+   ClientWidth     =   3228
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   8.25
+      Size            =   8.4
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -23,14 +23,14 @@ Begin VB.Form frmAuditoria
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    Picture         =   "frmAuditoria.frx":324A
-   ScaleHeight     =   5265
-   ScaleWidth      =   3225
+   ScaleHeight     =   5268
+   ScaleWidth      =   3228
    Begin VB.Frame Frame2 
       BackColor       =   &H00884400&
       Caption         =   "Restantes"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -44,14 +44,14 @@ Begin VB.Form frmAuditoria
       Top             =   960
       Width           =   3015
       Begin VB.ListBox List1 
-         Height          =   2460
+         Height          =   2328
          Left            =   120
          TabIndex        =   12
          Top             =   960
          Width           =   1335
       End
       Begin VB.ListBox List2 
-         Height          =   2460
+         Height          =   2328
          Left            =   1560
          TabIndex        =   11
          Top             =   960
@@ -62,7 +62,7 @@ Begin VB.Form frmAuditoria
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -81,7 +81,7 @@ Begin VB.Form frmAuditoria
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -122,9 +122,9 @@ Begin VB.Form frmAuditoria
       TabIndex        =   3
       Top             =   4680
       Width           =   1335
-      _ExtentX        =   2355
+      _ExtentX        =   2350
       _ExtentY        =   741
-      Icon            =   "frmAuditoria.frx":AC67
+      Icon            =   "frmAuditoria.frx":11DFF
       Style           =   8
       Caption         =   "       Agregar"
       IconSize        =   18
@@ -137,7 +137,7 @@ Begin VB.Form frmAuditoria
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -150,7 +150,7 @@ Begin VB.Form frmAuditoria
       Caption         =   "Actualzar"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -176,9 +176,9 @@ Begin VB.Form frmAuditoria
          TabIndex        =   5
          Top             =   400
          Width           =   1335
-         _ExtentX        =   2355
+         _ExtentX        =   2350
          _ExtentY        =   741
-         Icon            =   "frmAuditoria.frx":B541
+         Icon            =   "frmAuditoria.frx":126D9
          Style           =   8
          Caption         =   "       Actualizar"
          IconSize        =   18
@@ -191,7 +191,7 @@ Begin VB.Form frmAuditoria
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -225,19 +225,19 @@ Begin VB.Form frmAuditoria
       TabIndex        =   10
       Top             =   4680
       Width           =   1335
-      _ExtentX        =   2355
-      _ExtentY        =   661
+      _ExtentX        =   2350
+      _ExtentY        =   656
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   89456641
+      Format          =   342097921
       CurrentDate     =   42492
    End
 End
