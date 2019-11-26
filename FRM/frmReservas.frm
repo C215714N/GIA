@@ -299,7 +299,7 @@ Begin VB.Form frmReservas
          Strikethrough   =   0   'False
       EndProperty
       MonthBackColor  =   16777215
-      StartOfWeek     =   342097922
+      StartOfWeek     =   91029506
       TitleBackColor  =   8930304
       TitleForeColor  =   16777215
       TrailingForeColor=   14737632
@@ -518,7 +518,7 @@ Begin VB.Form frmReservas
       Left            =   2280
       TabIndex        =   16
       Top             =   120
-      Width           =   495
+      Width           =   372
    End
    Begin VB.Label lblNyA 
       BackStyle       =   0  'Transparent

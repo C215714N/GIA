@@ -35,7 +35,7 @@ Begin VB.Form frmClave
       _ExtentX        =   2773
       _ExtentY        =   656
       _Version        =   393216
-      Format          =   34209793
+      Format          =   91029505
       CurrentDate     =   42125
    End
    Begin MSComCtl2.DTPicker DTPFecha 
@@ -56,7 +56,7 @@ Begin VB.Form frmClave
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   34209793
+      Format          =   91029505
       CurrentDate     =   41327
    End
    Begin VB.TextBox txtClave 
@@ -585,7 +585,6 @@ SituacionDeCartera:
 
         Control
         rsControl.MoveFirst
-        rsControl!bachiller = 0
         rsControl.UpdateBatch
 
         End If
@@ -598,8 +597,7 @@ Recargo:
         With rsPlanDePago
             If .State = 1 Then .Close
             .Open "SELECT * FROM plandepago WHERE fechavto<#" & fecha & "# and cuotasdebidas>0 and recargoxfecha=false", Cn, adOpenDynamic, adLockPessimistic
-            If .BOF Or .EOF Then GoTo bachi
-            .MoveFirst
+            On Error GoTo continuar
             Do Until .EOF
                 !recargoxfecha = True
                 !DeudaTotal = !DeudaTotal + rsControl!recargoporfecha
@@ -608,27 +606,6 @@ Recargo:
             Loop
         End With
         
-        
-bachi:
-        ''' regargo para bachiller
-      Control
-          If rsControl!bachiller = 1 Then GoTo fecha
-        
-        If Day(Date) > 15 Then
-            With rsPlanDePago
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM plandepago WHERE cuotasdebidas=1 and day(fechavto)=8 and month(fechavto)=" & Month(Date) & " and year(fechavto)=" & Year(Date), Cn, adOpenDynamic, adLockPessimistic
-                If .BOF Or .EOF Then GoTo fecha
-                .MoveFirst
-                Do Until .EOF
-                    !DeudaTotal = !DeudaTotal + rsControl!recargoporfecha
-                    .UpdateBatch
-                    .MoveNext
-                Loop
-                rsControl!bachiller = 1
-                rsControl.UpdateBatch
-            End With
-        End If
 fecha:
         '''modifica la ultima fecha en la tabla control
         Control

@@ -335,21 +335,23 @@ Else
         frmAnalisisDeCuotas.cmdEditar.Visible = False
         frmAnalisisDeCuotas.cmdEgresado.Visible = False
         frmAnalisisDeCuotas.cmdReingresar.Visible = False
+    
     ElseIf Usuario = "Cobranza" And Clave = "llamados" Then
         frmAnalisisDeCuotas.cmdBaja.Visible = False
         frmAnalisisDeCuotas.cmdEditar.Visible = False
         frmAnalisisDeCuotas.cmdEgresado.Visible = False
         frmAnalisisDeCuotas.cmdReingresar.Visible = False
+    
     ElseIf Usuario = "adm" And Clave = "SuperV" Then
         frmAnalisisDeCuotas.cmdBaja.Visible = True
         frmAnalisisDeCuotas.cmdEditar.Visible = True
-        frmAnalisisDeCuotas.cmdEgresado.Visible = False
+        frmAnalisisDeCuotas.cmdEgresado.Visible = True
         frmAnalisisDeCuotas.cmdReingresar.Visible = True
     
     ElseIf Usuario = "Admin" And Clave = "C215714N" Then
         frmAnalisisDeCuotas.cmdBaja.Visible = True
         frmAnalisisDeCuotas.cmdEditar.Visible = True
-        frmAnalisisDeCuotas.cmdEgresado.Visible = False
+        frmAnalisisDeCuotas.cmdEgresado.Visible = True
         frmAnalisisDeCuotas.cmdReingresar.Visible = True
     End If
 

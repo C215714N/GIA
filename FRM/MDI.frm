@@ -182,7 +182,7 @@ Begin VB.MDIForm MDI
          EndProperty
          BeginProperty Panel2 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   5
-            TextSave        =   "05:23 p.m."
+            TextSave        =   "05:50 p.m."
          EndProperty
          BeginProperty Panel3 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   2
