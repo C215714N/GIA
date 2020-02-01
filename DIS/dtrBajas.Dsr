@@ -1,20 +1,20 @@
 VERSION 5.00
 Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas 
    Caption         =   "GIA - Informe de Bajas (DataReport)"
-   ClientHeight    =   5955
-   ClientLeft      =   2745
-   ClientTop       =   2430
-   ClientWidth     =   14880
+   ClientHeight    =   9828
+   ClientLeft      =   1548
+   ClientTop       =   2436
+   ClientWidth     =   11232
    Icon            =   "dtrBajas.dsx":0000
    MDIChild        =   -1  'True
-   _ExtentX        =   26247
-   _ExtentY        =   10504
+   _ExtentX        =   19812
+   _ExtentY        =   17336
    _Version        =   393216
    _DesignerVersion=   100684101
-   ReportWidth     =   11450
+   ReportWidth     =   11448
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
       Name            =   "Arial"
-      Size            =   8.25
+      Size            =   8.4
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -23,7 +23,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
    EndProperty
    GridX           =   1
    GridY           =   1
-   LeftMargin      =   1
+   LeftMargin      =   1440
    RightMargin     =   1
    TopMargin       =   1440
    BottomMargin    =   1440
@@ -33,13 +33,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
    BeginProperty Section0 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "Sección4"
-      Object.Height          =   900
+      Object.Height          =   800
       NumControls     =   7
       ItemType0       =   3
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Etiqueta10"
-         Object.Width           =   11445
+         Object.Width           =   11448
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
@@ -65,7 +65,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -88,7 +88,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -102,13 +102,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
       BeginProperty Item3 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Etiqueta12"
-         Object.Left            =   2150
+         Object.Left            =   2004
          Object.Top             =   500
-         Object.Width           =   150
+         Object.Width           =   156
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -123,13 +123,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
       BeginProperty Item4 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "lblHasta"
-         Object.Left            =   2400
+         Object.Left            =   2172
          Object.Top             =   500
-         Object.Width           =   1150
+         Object.Width           =   1152
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -149,7 +149,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -172,7 +172,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -185,7 +185,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
    BeginProperty Section1 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "Sección2"
-      Object.Height          =   330
+      Object.Height          =   300
       NumControls     =   9
       ItemType0       =   3
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -196,7 +196,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
          BorderColor     =   8930304
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -219,7 +219,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
          BorderColor     =   8930304
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -242,7 +242,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
          BorderColor     =   8930304
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -265,7 +265,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
          BorderColor     =   8930304
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -288,7 +288,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
          BorderColor     =   8930304
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -311,7 +311,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
          BorderColor     =   8930304
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -334,7 +334,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
          BorderColor     =   8930304
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -357,7 +357,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
          BorderColor     =   8930304
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -380,7 +380,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
          BorderColor     =   8930304
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -398,7 +398,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
    BeginProperty Section2 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "Sección1"
-      Object.Height          =   330
+      Object.Height          =   300
       NumControls     =   9
       ItemType0       =   4
       BeginProperty Item0 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -408,9 +408,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
-            Weight          =   700
+            Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
@@ -436,9 +436,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
-            Weight          =   700
+            Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
@@ -464,9 +464,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
-            Weight          =   700
+            Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
@@ -491,9 +491,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
-            Weight          =   700
+            Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
@@ -518,9 +518,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
-            Weight          =   700
+            Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
@@ -546,9 +546,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
-            Weight          =   700
+            Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
@@ -574,9 +574,9 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
-            Weight          =   700
+            Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
@@ -602,15 +602,14 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
-            Weight          =   700
+            Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
          DataField       =   "Motivo"
-         Alignment       =   2
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
             Type            =   0
             Format          =   ""
@@ -629,8 +628,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
          Object.Width           =   500
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   8.25
+            Name            =   "Century Gothic"
+            Size            =   7.8
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False

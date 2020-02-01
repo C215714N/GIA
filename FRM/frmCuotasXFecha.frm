@@ -158,7 +158,7 @@ Begin VB.Form frmCuotasXFecha
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   342097921
+      Format          =   89456641
       CurrentDate     =   41345
    End
    Begin MSComCtl2.DTPicker dtpHasta 
@@ -179,7 +179,7 @@ Begin VB.Form frmCuotasXFecha
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   342097921
+      Format          =   89456641
       CurrentDate     =   41345
    End
    Begin isButtonTest.isButton cmdBuscar 
@@ -485,7 +485,7 @@ If DateDiff("m", Date, dtpDesde.Value) = 1 And DateDiff("m", Date, dtpHasta.Valu
     Dim total As Currency
     With rsCuotasXFecha
         If .State = 1 Then .Close
-        .Open "SELECT sum(p.deudatotal) FROM plandepago as p inner join marcas as m on p.codalumno=m.codalumno WHERE fechavto>=#" & fecha1 & "# and fechavto<=#" & fecha2 & "# and cantidadcuotas=1 and pago=1 union SELECT sum(p.deudatotal) FROM plandepago as p inner join alumnosdelmes as a on p.codalumno=a.codalumno WHERE fechavto>=#" & fecha1 & "# and fechavto<=#" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT sum(p.deudatotal) FROM plandepago as p inner join marcas as m on p.codalumno=m.codalumno WHERE fechavto>=#" & fecha1 & "# and fechavto<=#" & fecha2 & "#and cantidadcuotas=1 and pago=1 union SELECT sum(p.deudatotal)                FROM plandepago as p inner join alumnosdelmes as a on p.codalumno=a.codalumno WHERE fechavto>=#" & fecha1 & "# and fechavto<=#" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
         total = 0
         .MoveFirst
         Do Until .EOF

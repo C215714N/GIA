@@ -1,22 +1,20 @@
 VERSION 5.00
 Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrLibro 
-   BorderStyle     =   1  'Fixed Single
    Caption         =   "GIA - Libro de Aula"
-   ClientHeight    =   8580
-   ClientLeft      =   0
-   ClientTop       =   390
-   ClientWidth     =   15270
+   ClientHeight    =   9828
+   ClientLeft      =   3000
+   ClientTop       =   468
+   ClientWidth     =   13608
    Icon            =   "dtrLibro.dsx":0000
    MDIChild        =   -1  'True
-   MinButton       =   0   'False
-   _ExtentX        =   26935
-   _ExtentY        =   15134
+   _ExtentX        =   24003
+   _ExtentY        =   17336
    _Version        =   393216
    _DesignerVersion=   100684101
    ReportWidth     =   6705
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
       Name            =   "Century Gothic"
-      Size            =   8.25
+      Size            =   8.4
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -47,7 +45,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrLibro
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -65,7 +63,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrLibro
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -87,7 +85,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrLibro
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -110,7 +108,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrLibro
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -133,7 +131,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrLibro
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -156,7 +154,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrLibro
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -175,7 +173,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrLibro
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -198,7 +196,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrLibro
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -216,7 +214,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrLibro
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -241,7 +239,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrLibro
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -262,7 +260,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrLibro
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -284,7 +282,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrLibro
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -321,7 +319,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrLibro
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -348,7 +346,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrLibro
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -375,7 +373,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrLibro
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False

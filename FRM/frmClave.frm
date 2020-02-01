@@ -35,7 +35,7 @@ Begin VB.Form frmClave
       _ExtentX        =   2773
       _ExtentY        =   656
       _Version        =   393216
-      Format          =   91029505
+      Format          =   40894465
       CurrentDate     =   42125
    End
    Begin MSComCtl2.DTPicker DTPFecha 
@@ -56,7 +56,7 @@ Begin VB.Form frmClave
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   91029505
+      Format          =   40894465
       CurrentDate     =   41327
    End
    Begin VB.TextBox txtClave 

@@ -1,20 +1,20 @@
 VERSION 5.00
 Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion 
    Caption         =   "GIA - Informe Situacion de Cartera"
-   ClientHeight    =   8430
-   ClientLeft      =   -5535
-   ClientTop       =   330
-   ClientWidth     =   15120
+   ClientHeight    =   9828
+   ClientLeft      =   3000
+   ClientTop       =   336
+   ClientWidth     =   13608
    Icon            =   "dtrSituacion.dsx":0000
    MDIChild        =   -1  'True
-   _ExtentX        =   26670
-   _ExtentY        =   14870
+   _ExtentX        =   24003
+   _ExtentY        =   17336
    _Version        =   393216
    _DesignerVersion=   100684101
    ReportWidth     =   7200
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-      Name            =   "Arial"
-      Size            =   8.25
+      Name            =   "Century Gothic"
+      Size            =   7.8
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -43,7 +43,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -88,7 +88,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          BorderColor     =   8930304
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -112,7 +112,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          BorderColor     =   8930304
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -136,7 +136,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          BorderColor     =   8930304
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -160,7 +160,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -182,7 +182,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -204,7 +204,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -226,7 +226,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -248,7 +248,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -270,7 +270,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -292,7 +292,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -329,7 +329,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -357,7 +357,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -385,7 +385,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -413,7 +413,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -441,7 +441,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -469,7 +469,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -497,7 +497,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -539,7 +539,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          BorderColor     =   8930304
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -563,7 +563,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          BorderColor     =   8930304
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -584,7 +584,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          BorderColor     =   8930304
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -605,7 +605,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          BorderColor     =   8930304
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -626,7 +626,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          BorderColor     =   8930304
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -647,7 +647,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          BorderColor     =   8930304
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -667,7 +667,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          BorderColor     =   8930304
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -690,7 +690,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          BorderColor     =   8930304
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -713,7 +713,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          BorderColor     =   8930304
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -736,7 +736,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          BorderColor     =   8930304
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -759,7 +759,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          BorderColor     =   8930304
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -783,7 +783,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          BorderColor     =   8930304
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   8.4
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -812,7 +812,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   9.75
+            Size            =   9.6
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
