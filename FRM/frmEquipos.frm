@@ -1,12 +1,14 @@
 VERSION 5.00
 Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmEquipos 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Equipos"
    ClientHeight    =   1185
    ClientLeft      =   3960
    ClientTop       =   4620
    ClientWidth     =   2550
+   ForeColor       =   &H00E0E0E0&
    Icon            =   "frmEquipos.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
@@ -28,7 +30,7 @@ Begin VB.Form frmEquipos
       Height          =   360
       Left            =   120
       TabIndex        =   0
-      Top             =   360
+      Top             =   600
       Width           =   855
    End
    Begin isButtonTest.isButton cmdAceptar 
@@ -105,7 +107,7 @@ Begin VB.Form frmEquipos
       Height          =   300
       Left            =   120
       TabIndex        =   3
-      Top             =   120
+      Top             =   360
       Width           =   1125
    End
 End

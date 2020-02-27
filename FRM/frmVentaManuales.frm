@@ -2,21 +2,23 @@ VERSION 5.00
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmVentaManuales 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Venta de Manuales"
    ClientHeight    =   4380
-   ClientLeft      =   5388
-   ClientTop       =   456
-   ClientWidth     =   5712
+   ClientLeft      =   5385
+   ClientTop       =   450
+   ClientWidth     =   5715
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   8.4
+      Size            =   8.25
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
       Italic          =   0   'False
       Strikethrough   =   0   'False
    EndProperty
+   ForeColor       =   &H00E0E0E0&
    Icon            =   "frmVentaManuales.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
@@ -24,13 +26,13 @@ Begin VB.Form frmVentaManuales
    MinButton       =   0   'False
    Picture         =   "frmVentaManuales.frx":324A
    ScaleHeight     =   4380
-   ScaleWidth      =   5712
+   ScaleWidth      =   5715
    Begin VB.Frame Frame1 
       BackColor       =   &H00662200&
       Caption         =   "Venta Manual"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -72,7 +74,7 @@ Begin VB.Form frmVentaManuales
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -90,7 +92,7 @@ Begin VB.Form frmVentaManuales
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.6
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -109,7 +111,7 @@ Begin VB.Form frmVentaManuales
          TabIndex        =   6
          Top             =   3360
          Width           =   1335
-         _ExtentX        =   2350
+         _ExtentX        =   2355
          _ExtentY        =   741
          Icon            =   "frmVentaManuales.frx":AC96
          Style           =   8
@@ -119,13 +121,14 @@ Begin VB.Form frmVentaManuales
          CaptionAlign    =   1
          iNonThemeStyle  =   0
          ShowFocus       =   -1  'True
+         BackColor       =   6693376
          Tooltiptitle    =   ""
          ToolTipIcon     =   0
          ToolTipType     =   0
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -189,7 +192,7 @@ Begin VB.Form frmVentaManuales
       Alignment       =   1  'Right Justify
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -206,7 +209,7 @@ Begin VB.Form frmVentaManuales
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -223,7 +226,7 @@ Begin VB.Form frmVentaManuales
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -242,15 +245,15 @@ Begin VB.Form frmVentaManuales
       TabIndex        =   7
       Top             =   1560
       Width           =   3735
-      _ExtentX        =   6583
-      _ExtentY        =   4678
+      _ExtentX        =   6588
+      _ExtentY        =   4683
       _Version        =   393216
       AllowUpdate     =   0   'False
       HeadLines       =   1
       RowHeight       =   20
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -259,7 +262,7 @@ Begin VB.Form frmVentaManuales
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -306,7 +309,7 @@ Begin VB.Form frmVentaManuales
       Caption         =   "Código"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -325,7 +328,7 @@ Begin VB.Form frmVentaManuales
       Caption         =   "Alumno"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -344,7 +347,7 @@ Begin VB.Form frmVentaManuales
       Caption         =   "Capacitación"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -378,6 +381,10 @@ If KeyAscii = 13 Then
 End If
 End Sub
 
+Private Sub cmbPago_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then SendKeys "{TAB}"
+End Sub
+
 Private Sub cmdVender_Click()
     If cmbManual.Text = "" Then MsgBox "Elija manual", vbCritical, "Venta de Manuales": cmbManual.SetFocus: Exit Sub
     If txtStock.Text = "" Then MsgBox "Controle el stock del manual", vbCritical, "Venta de Manuales": cmbManual.SetFocus: Exit Sub
@@ -385,7 +392,7 @@ Private Sub cmdVender_Click()
     If cmbPago.Text = "" Then MsgBox "Elija forma de pago", vbCritical, "Venta de Manuales": cmbPago.SetFocus: Exit Sub
     If Int(txtStock.Text) < 1 Then MsgBox "No hay manuales disponibles para vender", vbCritical, "Venta de Manuales": cmbManual.SetFocus: Exit Sub
     
-    '''descuenta el manual del stock
+'''CONTROL DE STOCK
     With rsManuales
         If .State = 1 Then .Close
         .Open "SELECT * FROM manuales", Cn, adOpenDynamic, adLockPessimistic
@@ -394,7 +401,7 @@ Private Sub cmdVender_Click()
         .UpdateBatch
     End With
     
-    'asigna el manual al alumno
+''' CARGA MANUAL - TABLA VENTA DE MANUALES
     With rsVentaManuales
         .Close
         .Open "SELECT * FROM ventamanuales", Cn, adOpenDynamic, adLockPessimistic
@@ -409,8 +416,7 @@ Private Sub cmdVender_Click()
         Set grilla.DataSource = rsVentaManuales
     End With
     
-    
-    'hace o no asiento contable dependiento si pago total o no
+''' GESTION CONTABLE - ASIENTO
     If MsgBox("¿Abona el total del precio?", vbYesNo + vbQuestion, "Venta de Manuales") = vbYes Then
         With rsContabilidad
             If .State = 1 Then .Close
@@ -452,12 +458,11 @@ Private Sub cmdVender_Click()
         MsgBox "Recuerde realizar el asiento contable correspondiente a esta operación", vbExclamation, "Venta de Manuales"
     End If
     
-    'limpia cuadros
+'''REESTABLECE LOS VALORES
     txtStock.Text = ""
     txtPrecio.Text = ""
     txtRecibo.Text = ""
     txtCodigo.SetFocus
-    
     formatoGrilla
 End Sub
 
@@ -476,14 +481,19 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
             txtAlumno.Text = !NyA
             txtCurso.Text = !capac
         End With
-    
         With rsVentaManuales
             If .State = 1 Then .Close
             .Open "SELECT Fecha, Manual FROM ventamanuales WHERE codalumno=" & Int(txtCodigo.Text) & " ORDER BY fecha", Cn, adOpenDynamic, adLockPessimistic
         End With
         Set grilla.DataSource = rsVentaManuales
-    
-    '''MANUALES OPERADOR DE PC
+        cargarManuales
+        cmbManual.SetFocus
+    End If
+    formatoGrilla
+End Sub
+
+Sub cargarManuales()
+
     If txtCurso.Text = "Operador de Pc" Then
         With cmbManual
             .Clear
@@ -493,13 +503,13 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
             .AddItem ("Access")
             .AddItem ("Power Point")
         End With
-    '''MANUALES REDES SOCIALES
+    
     ElseIf txtCurso.Text = "Redes Sociales" Then
         With cmbManual
             .Clear
             .AddItem ("Windows")
         End With
-    '''MANUALES DISEÑO GRAFICO
+    
     ElseIf txtCurso.Text = "Diseño Gráfico" Then
         With cmbManual
             .Clear
@@ -508,7 +518,7 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
             .AddItem ("Photoshop")
             .AddItem ("Page Maker")
         End With
-    '''MANUALES DISEÑO WEB
+    
     ElseIf txtCurso.Text = "Diseño Web" Then
         With cmbManual
             .Clear
@@ -516,26 +526,26 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
             .AddItem ("Flash")
             .AddItem ("Dreamweaver")
         End With
-    '''MANUALES PROGRAMACION
+    
     ElseIf txtCurso.Text = "Programación" Then
         With cmbManual
             .Clear
             .AddItem ("Programación")
         End With
-    '''MANUALES PROGRAMACION + ACCESS
+    
     ElseIf txtCurso.Text = "Programación + Access" Then
         With cmbManual
             .Clear
             .AddItem ("Access")
             .AddItem ("Programación")
         End With
-    '''MANUALES TELEFONIA CELULAR
+    
     ElseIf txtCurso.Text = "Telefonía Celular" Then
         With cmbManual
             .Clear
             .AddItem ("Telefonía Celular")
         End With
-    '''MANUALES CURSO COMPLETO ARMADO
+    
     ElseIf txtCurso.Text = "Armado y Reparación de PC y Redes" Then
         With cmbManual
             .Clear
@@ -547,7 +557,7 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
             .AddItem ("Redes II")
             .AddItem ("Redes III")
         End With
-    '''MANUALES ARMADO Y REPARACION DE PC
+    
     ElseIf txtCurso.Text = "Armado y Reparación de PC" Then
         With cmbManual
             .Clear
@@ -556,7 +566,7 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
             .AddItem ("Armado III")
             .AddItem ("Armado IV")
         End With
-    '''MANUALES REDES
+    
     ElseIf txtCurso.Text = "Redes" Then
         With cmbManual
             .Clear
@@ -564,39 +574,47 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
             .AddItem ("Redes II")
             .AddItem ("Redes III")
         End With
-    '''MANUALES TECNICO PC I
+    
     ElseIf txtCurso.Text = "Técnico en Pc nivel I" Then
         With cmbManual
             .Clear
-            .AddItem ("Armado I")
-            .AddItem ("Armado II")
+            .AddItem ("TPC 1 Hardware")
+            .AddItem ("TPC 1 Software")
         End With
-    '''MANUALES TECNICO PC II
+    
     ElseIf txtCurso.Text = "Técnico en Pc nivel II" Then
         With cmbManual
             .Clear
-            .AddItem ("Armado III")
-            .AddItem ("Armado IV")
-            .AddItem ("Redes I")
-            .AddItem ("Redes II")
-            .AddItem ("Redes III")
+            .AddItem ("TPC 2 Malware(Diagnostico)")
+            .AddItem ("TPC 2 Rep.Avanz.")
+            .AddItem ("TPC 2 Redes Informaticas")
+            .AddItem ("TPC 2 Redes (Servidores)")
         End With
-    '''MANUALES AIRE ACONDICIONADO
+    
     ElseIf txtCurso.Text = "Técnico en aire acondicionado" Then
         With cmbManual
             .Clear
             .AddItem ("Aire Acondicionado")
         End With
-    '''MANUALES EXTRACCIONISTA
+    
+    ElseIf txtCurso.Text = "Electricidad domiciliaria" Then
+        With cmbManual
+            .Clear
+            .AddItem ("Electricidad")
+        End With
+    
     ElseIf txtCurso.Text = "Extracc. Adm. Y Asist. Tec. Laborat." Then
         With cmbManual
             .Clear
             .AddItem ("Extraccionista")
         End With
+        
+    ElseIf txtCurso.Text = "Asistente Terapeutico" Or txtCurso.Text = "Cuidador Domiciliario" Then
+        With cmbManual
+            .Clear
+            .AddItem ("Cuid. Dom.")
+        End With
     End If
-    cmbManual.SetFocus
-    End If
-    formatoGrilla
 End Sub
 
 Sub formatoGrilla()

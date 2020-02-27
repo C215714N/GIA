@@ -2,19 +2,21 @@ VERSION 5.00
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmDetalle 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Detalle de Cuenta"
    ClientHeight    =   4980
-   ClientLeft      =   48
-   ClientTop       =   432
-   ClientWidth     =   10368
+   ClientLeft      =   45
+   ClientTop       =   435
+   ClientWidth     =   10365
+   ForeColor       =   &H00E0E0E0&
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    Picture         =   "frmDetalle.frx":0000
    ScaleHeight     =   4980
-   ScaleWidth      =   10368
+   ScaleWidth      =   10365
    Begin MSDataGridLib.DataGrid grilla 
       Height          =   4400
       Left            =   120
@@ -22,14 +24,14 @@ Begin VB.Form frmDetalle
       Top             =   360
       Width           =   8400
       _ExtentX        =   14817
-      _ExtentY        =   7768
+      _ExtentY        =   7752
       _Version        =   393216
       AllowUpdate     =   0   'False
       HeadLines       =   1
       RowHeight       =   21
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -85,7 +87,7 @@ Begin VB.Form frmDetalle
       Caption         =   "Saldo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -104,7 +106,7 @@ Begin VB.Form frmDetalle
          TabIndex        =   7
          Top             =   1680
          Width           =   1335
-         _ExtentX        =   2350
+         _ExtentX        =   2355
          _ExtentY        =   741
          Icon            =   "frmDetalle.frx":EBB5
          Style           =   8
@@ -121,7 +123,7 @@ Begin VB.Form frmDetalle
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -135,7 +137,7 @@ Begin VB.Form frmDetalle
          TabIndex        =   8
          Top             =   2160
          Width           =   1335
-         _ExtentX        =   2350
+         _ExtentX        =   2355
          _ExtentY        =   741
          Icon            =   "frmDetalle.frx":F48F
          Style           =   8
@@ -152,7 +154,7 @@ Begin VB.Form frmDetalle
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -166,7 +168,7 @@ Begin VB.Form frmDetalle
          Caption         =   "0.00"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -184,7 +186,7 @@ Begin VB.Form frmDetalle
          Caption         =   "Actual"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -204,7 +206,7 @@ Begin VB.Form frmDetalle
          Caption         =   "0.00"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -222,7 +224,7 @@ Begin VB.Form frmDetalle
          Caption         =   "Anterior"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -242,7 +244,7 @@ Begin VB.Form frmDetalle
       Caption         =   "Detalle de la Cuenta"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

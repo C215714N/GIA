@@ -2,12 +2,14 @@ VERSION 5.00
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmUltimasCuotas 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Últimas Cuotas"
    ClientHeight    =   4215
    ClientLeft      =   45
    ClientTop       =   435
    ClientWidth     =   5790
+   ForeColor       =   &H00E0E0E0&
    Icon            =   "frmUltimasCuotas.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False

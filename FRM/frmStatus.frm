@@ -1,12 +1,14 @@
 VERSION 5.00
 Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmStatus 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Status de Inicio de Mes"
    ClientHeight    =   3405
    ClientLeft      =   4905
    ClientTop       =   2070
    ClientWidth     =   3360
+   ForeColor       =   &H00E0E0E0&
    Icon            =   "frmStatus.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False

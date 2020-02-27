@@ -10,6 +10,7 @@ Begin VB.Form frmVerificaciones
    ClientLeft      =   3945
    ClientTop       =   1605
    ClientWidth     =   11415
+   ForeColor       =   &H00E0E0E0&
    Icon            =   "frmVerificaciones.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
@@ -386,7 +387,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   89194497
+         Format          =   142409729
          CurrentDate     =   41308
       End
       Begin MSDataListLib.DataCombo dtcAsistente 
@@ -774,7 +775,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   89194497
+         Format          =   142409729
          CurrentDate     =   41308
       End
       Begin MSComCtl2.DTPicker DTPFechaVerificacion 
@@ -795,7 +796,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   89194497
+         Format          =   142409729
          CurrentDate     =   41308
       End
       Begin VB.Label Label17 

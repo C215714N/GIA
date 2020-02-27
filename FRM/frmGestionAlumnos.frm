@@ -2,12 +2,14 @@ VERSION 5.00
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmGestionAlumnos 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Gestión de Alumnos"
    ClientHeight    =   3075
    ClientLeft      =   5370
    ClientTop       =   2265
    ClientWidth     =   5310
+   ForeColor       =   &H00E0E0E0&
    HasDC           =   0   'False
    Icon            =   "frmGestionAlumnos.frx":0000
    LinkTopic       =   "Form1"

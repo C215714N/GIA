@@ -1,12 +1,14 @@
 VERSION 5.00
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Begin VB.Form frmDiplomasEntregados 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Diplomas Entregados"
    ClientHeight    =   4275
    ClientLeft      =   3780
    ClientTop       =   1935
    ClientWidth     =   4005
+   ForeColor       =   &H00E0E0E0&
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True

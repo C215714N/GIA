@@ -3,21 +3,23 @@ Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmBuscarCobranza 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Buscar Alumno"
    ClientHeight    =   4080
-   ClientLeft      =   4548
-   ClientTop       =   3408
-   ClientWidth     =   9408
+   ClientLeft      =   4545
+   ClientTop       =   3405
+   ClientWidth     =   9405
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   8.4
+      Size            =   8.25
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
       Italic          =   0   'False
       Strikethrough   =   0   'False
    EndProperty
+   ForeColor       =   &H00E0E0E0&
    Icon            =   "frmBuscarCobranza.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
@@ -25,7 +27,7 @@ Begin VB.Form frmBuscarCobranza
    MinButton       =   0   'False
    Picture         =   "frmBuscarCobranza.frx":324A
    ScaleHeight     =   4080
-   ScaleWidth      =   9408
+   ScaleWidth      =   9405
    Begin VB.TextBox txtBuscar 
       Height          =   360
       Left            =   120
@@ -39,7 +41,7 @@ Begin VB.Form frmBuscarCobranza
       Top             =   5400
       Width           =   1200
       _ExtentX        =   2117
-      _ExtentY        =   868
+      _ExtentY        =   873
       ConnectMode     =   0
       CursorLocation  =   3
       IsolationLevel  =   -1
@@ -70,7 +72,7 @@ Begin VB.Form frmBuscarCobranza
       Caption         =   ""
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   7.8
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -112,7 +114,7 @@ Begin VB.Form frmBuscarCobranza
       Top             =   840
       Width           =   9120
       _ExtentX        =   16087
-      _ExtentY        =   5313
+      _ExtentY        =   5318
       _Version        =   393216
       AllowUpdate     =   0   'False
       ColumnHeaders   =   -1  'True
@@ -121,7 +123,7 @@ Begin VB.Form frmBuscarCobranza
       RowDividerStyle =   0
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -178,7 +180,7 @@ Begin VB.Form frmBuscarCobranza
       TabIndex        =   4
       Top             =   300
       Width           =   1335
-      _ExtentX        =   2350
+      _ExtentX        =   2355
       _ExtentY        =   741
       Icon            =   "frmBuscarCobranza.frx":AC67
       Style           =   8
@@ -196,7 +198,7 @@ Begin VB.Form frmBuscarCobranza
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -210,7 +212,7 @@ Begin VB.Form frmBuscarCobranza
       TabIndex        =   5
       Top             =   300
       Width           =   1335
-      _ExtentX        =   2350
+      _ExtentX        =   2355
       _ExtentY        =   741
       Icon            =   "frmBuscarCobranza.frx":B541
       Style           =   8
@@ -228,7 +230,7 @@ Begin VB.Form frmBuscarCobranza
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False

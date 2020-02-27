@@ -3,26 +3,28 @@ Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDATLST.OCX"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmSuscripciones 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Gestión Integral del Alumno - Suscripciones"
-   ClientHeight    =   5088
-   ClientLeft      =   72
-   ClientTop       =   468
-   ClientWidth     =   11424
+   ClientHeight    =   5085
+   ClientLeft      =   75
+   ClientTop       =   465
+   ClientWidth     =   11415
+   ForeColor       =   &H00E0E0E0&
    Icon            =   "frmSuscripciones.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    Picture         =   "frmSuscripciones.frx":324A
-   ScaleHeight     =   5088
-   ScaleWidth      =   11424
+   ScaleHeight     =   5085
+   ScaleWidth      =   11415
    Begin VB.Frame Frame5 
       BackColor       =   &H00662200&
       Caption         =   "Observaciones"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -38,7 +40,7 @@ Begin VB.Form frmSuscripciones
       Begin VB.TextBox txtObservaciones 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -58,7 +60,7 @@ Begin VB.Form frmSuscripciones
       Caption         =   "Suscripciones"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -77,7 +79,7 @@ Begin VB.Form frmSuscripciones
          TabIndex        =   55
          Top             =   600
          Width           =   1350
-         _ExtentX        =   2371
+         _ExtentX        =   2381
          _ExtentY        =   741
          Icon            =   "frmSuscripciones.frx":11DFF
          Style           =   8
@@ -92,7 +94,7 @@ Begin VB.Form frmSuscripciones
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -106,7 +108,7 @@ Begin VB.Form frmSuscripciones
          TabIndex        =   56
          Top             =   1200
          Width           =   1350
-         _ExtentX        =   2371
+         _ExtentX        =   2381
          _ExtentY        =   741
          Icon            =   "frmSuscripciones.frx":126D9
          Style           =   8
@@ -121,7 +123,7 @@ Begin VB.Form frmSuscripciones
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -135,7 +137,7 @@ Begin VB.Form frmSuscripciones
          TabIndex        =   57
          Top             =   1800
          Width           =   1335
-         _ExtentX        =   2350
+         _ExtentX        =   2355
          _ExtentY        =   741
          Icon            =   "frmSuscripciones.frx":12FB3
          Style           =   8
@@ -150,7 +152,7 @@ Begin VB.Form frmSuscripciones
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -164,7 +166,7 @@ Begin VB.Form frmSuscripciones
          TabIndex        =   27
          Top             =   2400
          Width           =   1335
-         _ExtentX        =   2350
+         _ExtentX        =   2355
          _ExtentY        =   741
          Icon            =   "frmSuscripciones.frx":1388D
          Style           =   8
@@ -179,7 +181,7 @@ Begin VB.Form frmSuscripciones
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -193,7 +195,7 @@ Begin VB.Form frmSuscripciones
          TabIndex        =   28
          Top             =   3000
          Width           =   1335
-         _ExtentX        =   2350
+         _ExtentX        =   2355
          _ExtentY        =   741
          Icon            =   "frmSuscripciones.frx":14167
          Style           =   8
@@ -208,7 +210,7 @@ Begin VB.Form frmSuscripciones
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -222,7 +224,7 @@ Begin VB.Form frmSuscripciones
          TabIndex        =   58
          Top             =   3600
          Width           =   1335
-         _ExtentX        =   2350
+         _ExtentX        =   2355
          _ExtentY        =   741
          Icon            =   "frmSuscripciones.frx":14A41
          Style           =   8
@@ -237,7 +239,7 @@ Begin VB.Form frmSuscripciones
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -251,7 +253,7 @@ Begin VB.Form frmSuscripciones
       Caption         =   "Curso"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -268,7 +270,7 @@ Begin VB.Form frmSuscripciones
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -286,7 +288,7 @@ Begin VB.Form frmSuscripciones
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -302,7 +304,7 @@ Begin VB.Form frmSuscripciones
       Begin VB.ComboBox cmbTipoPago 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -323,7 +325,7 @@ Begin VB.Form frmSuscripciones
          Caption         =   "Manuales"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -342,7 +344,7 @@ Begin VB.Form frmSuscripciones
          Caption         =   "Exámenes"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -360,7 +362,7 @@ Begin VB.Form frmSuscripciones
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -378,7 +380,7 @@ Begin VB.Form frmSuscripciones
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -396,7 +398,7 @@ Begin VB.Form frmSuscripciones
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -416,19 +418,19 @@ Begin VB.Form frmSuscripciones
          TabIndex        =   22
          Top             =   1800
          Width           =   1335
-         _ExtentX        =   2350
-         _ExtentY        =   656
+         _ExtentX        =   2355
+         _ExtentY        =   661
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   342097921
+         Format          =   142409729
          CurrentDate     =   41308
       End
       Begin VB.Label Label20 
@@ -437,7 +439,7 @@ Begin VB.Form frmSuscripciones
          Caption         =   "Nro. Factura"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -456,7 +458,7 @@ Begin VB.Form frmSuscripciones
          Caption         =   "Forma Pago"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -475,7 +477,7 @@ Begin VB.Form frmSuscripciones
          Caption         =   "Matrícula"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -495,7 +497,7 @@ Begin VB.Form frmSuscripciones
          Caption         =   "Fecha Susc."
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -514,7 +516,7 @@ Begin VB.Form frmSuscripciones
          Caption         =   "Gasto Adm."
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -534,7 +536,7 @@ Begin VB.Form frmSuscripciones
          Caption         =   "Cuotas"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -554,7 +556,7 @@ Begin VB.Form frmSuscripciones
          Caption         =   "Total Curso"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -574,7 +576,7 @@ Begin VB.Form frmSuscripciones
       Caption         =   "Teléfonos"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -590,7 +592,7 @@ Begin VB.Form frmSuscripciones
       Begin VB.TextBox txtPT4 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -607,7 +609,7 @@ Begin VB.Form frmSuscripciones
       Begin VB.TextBox txtPT3 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -624,7 +626,7 @@ Begin VB.Form frmSuscripciones
       Begin VB.TextBox txtPT2 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -641,7 +643,7 @@ Begin VB.Form frmSuscripciones
       Begin VB.TextBox txtPT1 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -658,7 +660,7 @@ Begin VB.Form frmSuscripciones
       Begin VB.TextBox txtTel4 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -675,7 +677,7 @@ Begin VB.Form frmSuscripciones
       Begin VB.TextBox txtTel3 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -692,7 +694,7 @@ Begin VB.Form frmSuscripciones
       Begin VB.TextBox txtTel2 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -709,7 +711,7 @@ Begin VB.Form frmSuscripciones
       Begin VB.TextBox txtTel1 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -729,7 +731,7 @@ Begin VB.Form frmSuscripciones
       Caption         =   "Datos Personales"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -745,7 +747,7 @@ Begin VB.Form frmSuscripciones
       Begin VB.TextBox txtDocumento 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -761,7 +763,7 @@ Begin VB.Form frmSuscripciones
       Begin VB.TextBox txtEdad 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -778,7 +780,7 @@ Begin VB.Form frmSuscripciones
       Begin VB.TextBox txtNacionalidad 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -795,7 +797,7 @@ Begin VB.Form frmSuscripciones
       Begin VB.TextBox txtCP 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -812,7 +814,7 @@ Begin VB.Form frmSuscripciones
       Begin VB.ComboBox cmbTipoDoc 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -831,7 +833,7 @@ Begin VB.Form frmSuscripciones
       Begin VB.TextBox txtDireccion 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -848,7 +850,7 @@ Begin VB.Form frmSuscripciones
       Begin VB.TextBox txtNya 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -868,13 +870,13 @@ Begin VB.Form frmSuscripciones
          TabIndex        =   4
          Top             =   1200
          Width           =   2655
-         _ExtentX        =   4678
-         _ExtentY        =   572
+         _ExtentX        =   4683
+         _ExtentY        =   635
          _Version        =   393216
          Text            =   ""
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -888,19 +890,19 @@ Begin VB.Form frmSuscripciones
          TabIndex        =   6
          Top             =   1800
          Width           =   1575
-         _ExtentX        =   2773
-         _ExtentY        =   656
+         _ExtentX        =   2778
+         _ExtentY        =   661
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   342097921
+         Format          =   142409729
          CurrentDate     =   41308
       End
       Begin MSDataListLib.DataCombo dtcAsistente 
@@ -909,14 +911,14 @@ Begin VB.Form frmSuscripciones
          TabIndex        =   8
          Top             =   2400
          Width           =   2655
-         _ExtentX        =   4678
-         _ExtentY        =   572
+         _ExtentX        =   4683
+         _ExtentY        =   635
          _Version        =   393216
          Style           =   2
          Text            =   ""
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -930,14 +932,14 @@ Begin VB.Form frmSuscripciones
          TabIndex        =   7
          Top             =   2400
          Width           =   3495
-         _ExtentX        =   6160
-         _ExtentY        =   572
+         _ExtentX        =   6165
+         _ExtentY        =   635
          _Version        =   393216
          Style           =   2
          Text            =   ""
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -950,7 +952,7 @@ Begin VB.Form frmSuscripciones
          Caption         =   "Asistente"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -970,7 +972,7 @@ Begin VB.Form frmSuscripciones
          Caption         =   "Capacitación"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -990,7 +992,7 @@ Begin VB.Form frmSuscripciones
          Caption         =   "Edad"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1010,7 +1012,7 @@ Begin VB.Form frmSuscripciones
          Caption         =   "Nacionalidad"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1029,7 +1031,7 @@ Begin VB.Form frmSuscripciones
          Caption         =   "Tipo Doc"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1048,7 +1050,7 @@ Begin VB.Form frmSuscripciones
          Caption         =   "Nº Documento"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1068,7 +1070,7 @@ Begin VB.Form frmSuscripciones
          Caption         =   "Localidad"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1088,7 +1090,7 @@ Begin VB.Form frmSuscripciones
          Caption         =   "Dirección"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1107,7 +1109,7 @@ Begin VB.Form frmSuscripciones
          Caption         =   "Fecha Nacimiento"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1128,7 +1130,7 @@ Begin VB.Form frmSuscripciones
          Caption         =   "Apellido y Nombres"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1148,7 +1150,7 @@ Begin VB.Form frmSuscripciones
          Caption         =   "C.P."
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False

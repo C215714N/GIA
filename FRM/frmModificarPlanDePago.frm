@@ -2,12 +2,14 @@ VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmModificarPlanDePago 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Modificar Plan de Pago"
    ClientHeight    =   2055
    ClientLeft      =   1905
    ClientTop       =   645
    ClientWidth     =   3000
+   ForeColor       =   &H00E0E0E0&
    Icon            =   "frmModificarPlanDePago.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
@@ -34,7 +36,7 @@ Begin VB.Form frmModificarPlanDePago
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   89260033
+      Format          =   142409729
       CurrentDate     =   41353
    End
    Begin VB.TextBox txtMonto 
@@ -207,18 +209,18 @@ Private Sub cmdAplicar_Click()
         If .State = 1 Then .Close
         .Open "SELECT * FROM plandepago WHERE codalumno=" & Int(frmAnalisisDeCuotas.lblCodAlumno.Caption) & "and nrocuota>=" & Int(txtNroCuota.Text), Cn, adOpenDynamic, adLockPessimistic
         Do Until .EOF
-            !fechavto = DTPFecha.Value
+            !fechavto = dtpFecha.Value
             !deuda = txtMonto.Text
             If !recargoxfecha = True Then !recargoxfecha = False
             If !recargoxmes = True Then !recargoxmes = False
             !DeudaTotal = txtMonto.Text
             .UpdateBatch
             .MoveNext
-            If DTPFecha.Month = 12 Then
-                DTPFecha.Month = 1
-                DTPFecha.Year = DTPFecha.Year + 1
+            If dtpFecha.Month = 12 Then
+                dtpFecha.Month = 1
+                dtpFecha.Year = dtpFecha.Year + 1
             Else
-                DTPFecha.Month = DTPFecha.Month + 1
+                dtpFecha.Month = dtpFecha.Month + 1
             End If
         Loop
     End With
@@ -238,7 +240,7 @@ End Sub
 
 Private Sub Form_Load()
     Centrar Me
-    DTPFecha.Value = Date
+    dtpFecha.Value = Date
 End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)

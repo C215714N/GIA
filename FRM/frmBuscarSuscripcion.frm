@@ -3,12 +3,14 @@ Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmBuscarSuscripcion 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Buscar Suscripción"
    ClientHeight    =   4080
    ClientLeft      =   5475
    ClientTop       =   3150
    ClientWidth     =   9405
+   ForeColor       =   &H00E0E0E0&
    Icon            =   "frmBuscarSuscripcion.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False

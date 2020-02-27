@@ -1,24 +1,26 @@
 VERSION 5.00
 Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmBajas 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Informe de Bajas"
-   ClientHeight    =   1932
-   ClientLeft      =   5472
-   ClientTop       =   3648
-   ClientWidth     =   3528
+   ClientHeight    =   1935
+   ClientLeft      =   5475
+   ClientTop       =   3645
+   ClientWidth     =   3525
+   ForeColor       =   &H00E0E0E0&
    Icon            =   "frmBajas.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    Picture         =   "frmBajas.frx":324A
-   ScaleHeight     =   1932
-   ScaleWidth      =   3528
+   ScaleHeight     =   1935
+   ScaleWidth      =   3525
    Begin VB.ComboBox cmbPagoBaja 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -37,7 +39,7 @@ Begin VB.Form frmBajas
    Begin VB.TextBox txtmotivo 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -57,7 +59,7 @@ Begin VB.Form frmBajas
       TabIndex        =   3
       Top             =   1400
       Width           =   1335
-      _ExtentX        =   2350
+      _ExtentX        =   2355
       _ExtentY        =   741
       Icon            =   "frmBajas.frx":11E15
       Style           =   8
@@ -73,7 +75,7 @@ Begin VB.Form frmBajas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -86,7 +88,7 @@ Begin VB.Form frmBajas
       Caption         =   "Pago de Baja"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

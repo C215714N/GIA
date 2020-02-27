@@ -2,19 +2,21 @@ VERSION 5.00
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmLibro 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Libro de Aula"
-   ClientHeight    =   3375
+   ClientHeight    =   3405
    ClientLeft      =   345
    ClientTop       =   1920
    ClientWidth     =   9615
+   ForeColor       =   &H00E0E0E0&
    Icon            =   "frmLibro.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    Picture         =   "frmLibro.frx":324A
-   ScaleHeight     =   3403.361
+   ScaleHeight     =   3433.613
    ScaleMode       =   0  'User
    ScaleWidth      =   9615
    Begin isButtonTest.isButton cmdNuevo 

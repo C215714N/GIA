@@ -3,26 +3,28 @@ Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmLibroOperador 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Libros de Aula de las Reservas"
-   ClientHeight    =   5256
-   ClientLeft      =   7368
-   ClientTop       =   2172
-   ClientWidth     =   6888
+   ClientHeight    =   5250
+   ClientLeft      =   7365
+   ClientTop       =   2175
+   ClientWidth     =   6885
+   ForeColor       =   &H00E0E0E0&
    Icon            =   "frmLibroOperador.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    Picture         =   "frmLibroOperador.frx":324A
-   ScaleHeight     =   5256
-   ScaleWidth      =   6888
+   ScaleHeight     =   5250
+   ScaleWidth      =   6885
    Begin VB.Frame lblasistencia 
       BackColor       =   &H00662200&
       Caption         =   "Presentismo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -41,7 +43,7 @@ Begin VB.Form frmLibroOperador
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -60,7 +62,7 @@ Begin VB.Form frmLibroOperador
          TabIndex        =   9
          Top             =   360
          Width           =   1335
-         _ExtentX        =   2350
+         _ExtentX        =   2355
          _ExtentY        =   741
          Icon            =   "frmLibroOperador.frx":11DFF
          Style           =   8
@@ -77,7 +79,7 @@ Begin VB.Form frmLibroOperador
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -92,15 +94,15 @@ Begin VB.Form frmLibroOperador
       TabIndex        =   2
       Top             =   1080
       Width           =   6615
-      _ExtentX        =   11663
-      _ExtentY        =   7006
+      _ExtentX        =   11668
+      _ExtentY        =   7011
       _Version        =   393216
       AllowUpdate     =   0   'False
       HeadLines       =   1
       RowHeight       =   20
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -109,7 +111,7 @@ Begin VB.Form frmLibroOperador
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -156,7 +158,7 @@ Begin VB.Form frmLibroOperador
       Caption         =   "Elija Turno"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -172,7 +174,7 @@ Begin VB.Form frmLibroOperador
       Begin VB.ComboBox cmbHora 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -194,19 +196,19 @@ Begin VB.Form frmLibroOperador
          TabIndex        =   0
          Top             =   480
          Width           =   1335
-         _ExtentX        =   2350
+         _ExtentX        =   2355
          _ExtentY        =   635
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   342097921
+         Format          =   142409729
          CurrentDate     =   41580
       End
       Begin isButtonTest.isButton cmdBuscar 
@@ -215,7 +217,7 @@ Begin VB.Form frmLibroOperador
          TabIndex        =   8
          Top             =   400
          Width           =   1335
-         _ExtentX        =   2350
+         _ExtentX        =   2355
          _ExtentY        =   741
          Icon            =   "frmLibroOperador.frx":12749
          Style           =   8
@@ -230,7 +232,7 @@ Begin VB.Form frmLibroOperador
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -244,7 +246,7 @@ Begin VB.Form frmLibroOperador
          Caption         =   "Hora"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -264,7 +266,7 @@ Begin VB.Form frmLibroOperador
          Caption         =   "Fecha"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.4
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -307,7 +309,7 @@ Private Sub cmdBuscar_Click()
     If cmbHora.Text = "" Then MsgBox "Primero debe elegir un horario de turno", vbOKOnly + vbCritical, "Libro de Aula de las Reservas": cmbHora.SetFocus: Exit Sub
     
     ''' asigna formato fecha a la variable para la busqueda
-    fecha = Format(DTPFecha.Value, "mm/dd/yyyy")
+    fecha = Format(dtpFecha.Value, "mm/dd/yyyy")
     
     '''consulta de reservas
     With rsReservas
@@ -323,7 +325,7 @@ End Sub
 
 Private Sub Form_Load()
     Centrar Me
-    DTPFecha.Value = Date
+    dtpFecha.Value = Date
 End Sub
 
 Private Sub grilla_Click()

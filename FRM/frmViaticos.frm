@@ -4,6 +4,7 @@ Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDATLST.OCX"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmViaticos 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Viáticos"
    ClientHeight    =   4155
@@ -19,6 +20,7 @@ Begin VB.Form frmViaticos
       Italic          =   0   'False
       Strikethrough   =   0   'False
    EndProperty
+   ForeColor       =   &H00E0E0E0&
    Icon            =   "frmViaticos.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
@@ -215,7 +217,7 @@ Begin VB.Form frmViaticos
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   89456641
+         Format          =   41943041
          CurrentDate     =   42277
       End
       Begin VB.Label Label4 

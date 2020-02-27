@@ -2,12 +2,14 @@ VERSION 5.00
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmCapacitaciones 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Capacitaciones"
-   ClientHeight    =   4368
-   ClientLeft      =   48
-   ClientTop       =   432
-   ClientWidth     =   5064
+   ClientHeight    =   4365
+   ClientLeft      =   45
+   ClientTop       =   435
+   ClientWidth     =   5070
+   ForeColor       =   &H00E0E0E0&
    Icon            =   "frmCapacitaciones.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
@@ -20,7 +22,7 @@ Begin VB.Form frmCapacitaciones
    Begin VB.TextBox txtCurso 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -39,8 +41,8 @@ Begin VB.Form frmCapacitaciones
       TabIndex        =   0
       Top             =   840
       Width           =   3375
-      _ExtentX        =   5948
-      _ExtentY        =   5948
+      _ExtentX        =   5953
+      _ExtentY        =   5953
       _Version        =   393216
       AllowUpdate     =   0   'False
       ColumnHeaders   =   0   'False
@@ -49,7 +51,7 @@ Begin VB.Form frmCapacitaciones
       RowDividerStyle =   0
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -107,7 +109,7 @@ Begin VB.Form frmCapacitaciones
       TabIndex        =   4
       Top             =   2160
       Width           =   1335
-      _ExtentX        =   2350
+      _ExtentX        =   2355
       _ExtentY        =   741
       Icon            =   "frmCapacitaciones.frx":11DFF
       Style           =   8
@@ -124,7 +126,7 @@ Begin VB.Form frmCapacitaciones
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -138,7 +140,7 @@ Begin VB.Form frmCapacitaciones
       TabIndex        =   5
       Top             =   2760
       Width           =   1335
-      _ExtentX        =   2350
+      _ExtentX        =   2355
       _ExtentY        =   741
       Icon            =   "frmCapacitaciones.frx":126D9
       Style           =   8
@@ -155,7 +157,7 @@ Begin VB.Form frmCapacitaciones
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -169,7 +171,7 @@ Begin VB.Form frmCapacitaciones
       TabIndex        =   8
       Top             =   360
       Width           =   1335
-      _ExtentX        =   2350
+      _ExtentX        =   2355
       _ExtentY        =   741
       Icon            =   "frmCapacitaciones.frx":12FB3
       Style           =   8
@@ -186,7 +188,7 @@ Begin VB.Form frmCapacitaciones
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -200,7 +202,7 @@ Begin VB.Form frmCapacitaciones
       TabIndex        =   6
       Top             =   960
       Width           =   1335
-      _ExtentX        =   2350
+      _ExtentX        =   2355
       _ExtentY        =   741
       Icon            =   "frmCapacitaciones.frx":1388D
       Style           =   8
@@ -217,7 +219,7 @@ Begin VB.Form frmCapacitaciones
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -231,7 +233,7 @@ Begin VB.Form frmCapacitaciones
       TabIndex        =   7
       Top             =   3360
       Width           =   1335
-      _ExtentX        =   2350
+      _ExtentX        =   2355
       _ExtentY        =   741
       Icon            =   "frmCapacitaciones.frx":14167
       Style           =   8
@@ -248,7 +250,7 @@ Begin VB.Form frmCapacitaciones
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -262,7 +264,7 @@ Begin VB.Form frmCapacitaciones
       TabIndex        =   9
       Top             =   1560
       Width           =   1335
-      _ExtentX        =   2350
+      _ExtentX        =   2355
       _ExtentY        =   741
       Icon            =   "frmCapacitaciones.frx":14A41
       Style           =   8
@@ -279,7 +281,7 @@ Begin VB.Form frmCapacitaciones
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -292,7 +294,7 @@ Begin VB.Form frmCapacitaciones
       Caption         =   "Nombre del Curso:"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -310,7 +312,7 @@ Begin VB.Form frmCapacitaciones
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False

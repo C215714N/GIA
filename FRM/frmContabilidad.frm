@@ -3,12 +3,14 @@ Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDATLST.OCX"
 Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmContabilidad 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Contabilidad"
    ClientHeight    =   4380
    ClientLeft      =   3330
    ClientTop       =   1605
    ClientWidth     =   7110
+   ForeColor       =   &H00E0E0E0&
    Icon            =   "frmContabilidad.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False

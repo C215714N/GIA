@@ -1,12 +1,14 @@
 VERSION 5.00
 Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmCrearCuenta 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Crear Cuenta de Presupuesto"
    ClientHeight    =   885
    ClientLeft      =   8835
    ClientTop       =   2670
    ClientWidth     =   4305
+   ForeColor       =   &H00E0E0E0&
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
@@ -34,7 +36,7 @@ Begin VB.Form frmCrearCuenta
       Height          =   420
       Left            =   2880
       TabIndex        =   2
-      Top             =   300
+      Top             =   350
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741

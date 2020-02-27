@@ -2,12 +2,12 @@ VERSION 5.00
 Object = "{F5E116E1-0563-11D8-AA80-000B6A0D10CB}#1.0#0"; "HookMenu.ocx"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.MDIForm MDI 
-   BackColor       =   &H8000000C&
+   BackColor       =   &H00662200&
    Caption         =   "PROARTEC - Gestión Integral del Alumno"
-   ClientHeight    =   8136
-   ClientLeft      =   96
-   ClientTop       =   492
-   ClientWidth     =   12576
+   ClientHeight    =   8130
+   ClientLeft      =   90
+   ClientTop       =   495
+   ClientWidth     =   12585
    Icon            =   "MDI.frx":0000
    LinkTopic       =   "MDIForm1"
    Picture         =   "MDI.frx":324A
@@ -15,8 +15,8 @@ Begin VB.MDIForm MDI
    Begin HookMenu.XpMenu XpMenu2 
       Left            =   960
       Top             =   5160
-      _ExtentX        =   720
-      _ExtentY        =   720
+      _ExtentX        =   900
+      _ExtentY        =   900
       BitmapSize      =   28
       BmpCount        =   52
       CheckBorderColor=   7021576
@@ -166,23 +166,23 @@ Begin VB.MDIForm MDI
    End
    Begin MSComctlLib.StatusBar StatusBar1 
       Align           =   2  'Align Bottom
-      Height          =   372
+      Height          =   375
       Left            =   0
       TabIndex        =   0
-      Top             =   7764
-      Width           =   12576
-      _ExtentX        =   22183
-      _ExtentY        =   656
+      Top             =   7755
+      Width           =   12585
+      _ExtentX        =   22199
+      _ExtentY        =   661
       _Version        =   393216
       BeginProperty Panels {8E3867A5-8586-11D1-B16A-00C0F0283628} 
          NumPanels       =   5
          BeginProperty Panel1 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   6
-            TextSave        =   "26/11/2019"
+            TextSave        =   "27/02/2020"
          EndProperty
          BeginProperty Panel2 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   5
-            TextSave        =   "05:50 p.m."
+            TextSave        =   "04:29 a.m."
          EndProperty
          BeginProperty Panel3 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   2
@@ -201,7 +201,7 @@ Begin VB.MDIForm MDI
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False

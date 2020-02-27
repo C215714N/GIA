@@ -1,12 +1,14 @@
 VERSION 5.00
 Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmControl 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Control"
    ClientHeight    =   3165
    ClientLeft      =   5160
    ClientTop       =   3645
    ClientWidth     =   5565
+   ForeColor       =   &H00E0E0E0&
    Icon            =   "frmControl.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False

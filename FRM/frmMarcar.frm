@@ -2,12 +2,14 @@ VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmMarcar 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Marcar"
    ClientHeight    =   1200
    ClientLeft      =   4380
    ClientTop       =   3630
    ClientWidth     =   2535
+   ForeColor       =   &H00E0E0E0&
    Icon            =   "frmMarcar.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
@@ -128,7 +130,7 @@ Begin VB.Form frmMarcar
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   10158081
+      Format          =   142409729
       CurrentDate     =   41341
    End
    Begin VB.Label Label1 
@@ -151,7 +153,7 @@ Private Sub cmdGrabar_Click()
         .Requery
         .Find "Codalumno=" & CodAlumno
         If .BOF Or .EOF Then MsgBox "El alumno no se puede gestionar", vbCritical, "Marcar": Exit Sub
-            !fechacompromiso = DTPFecha.Value
+            !fechacompromiso = dtpFecha.Value
             !fechagestion = Date
             If chkLlamar.Value = 1 Then
                 !LPA = "L"
@@ -172,7 +174,7 @@ End Sub
 
 Private Sub Form_Load()
     Centrar Me
-    DTPFecha.Value = Date
+    dtpFecha.Value = Date
 End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)

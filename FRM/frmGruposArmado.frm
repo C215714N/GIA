@@ -1,12 +1,14 @@
 VERSION 5.00
 Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmGruposArmado 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Grupos de Armado"
    ClientHeight    =   1980
    ClientLeft      =   45
    ClientTop       =   435
    ClientWidth     =   3315
+   ForeColor       =   &H00E0E0E0&
    Icon            =   "frmGruposArmado.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False

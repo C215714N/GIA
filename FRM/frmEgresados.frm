@@ -3,12 +3,14 @@ Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmEgresados 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Egresados"
    ClientHeight    =   4485
    ClientLeft      =   45
    ClientTop       =   435
    ClientWidth     =   4710
+   ForeColor       =   &H00E0E0E0&
    Icon            =   "frmEgresados.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
@@ -94,7 +96,7 @@ Begin VB.Form frmEgresados
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   89456641
+         Format          =   142409729
          CurrentDate     =   41978
       End
       Begin MSComCtl2.DTPicker dtpDesde 
@@ -115,7 +117,7 @@ Begin VB.Form frmEgresados
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   89456641
+         Format          =   142409729
          CurrentDate     =   41978
       End
       Begin isButtonTest.isButton cmdConsultar 

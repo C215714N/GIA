@@ -4,12 +4,14 @@ Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmConsultarCuentas 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Consultar Cuenta"
    ClientHeight    =   4080
    ClientLeft      =   3720
    ClientTop       =   2040
    ClientWidth     =   10215
+   ForeColor       =   &H00E0E0E0&
    Icon            =   "frmConsultarCuentas.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
@@ -316,7 +318,7 @@ Begin VB.Form frmConsultarCuentas
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   85458945
+      Format          =   142409729
       CurrentDate     =   41334
    End
    Begin MSComCtl2.DTPicker dtpHasta 
@@ -337,7 +339,7 @@ Begin VB.Form frmConsultarCuentas
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   85458945
+      Format          =   142409729
       CurrentDate     =   41332
    End
    Begin isButtonTest.isButton cmdBuscar 

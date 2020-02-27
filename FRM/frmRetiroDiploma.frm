@@ -2,12 +2,14 @@ VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmRetiroDiploma 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Retiro de Diplomas"
    ClientHeight    =   2580
    ClientLeft      =   4185
    ClientTop       =   3345
    ClientWidth     =   3870
+   ForeColor       =   &H00E0E0E0&
    Icon            =   "frmRetiroDiploma.frx":0000
    LinkTopic       =   "Form1"
    MDIChild        =   -1  'True
@@ -49,7 +51,7 @@ Begin VB.Form frmRetiroDiploma
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   89260033
+      Format          =   142409729
       CurrentDate     =   42181
    End
    Begin isButtonTest.isButton cmdGrabar 

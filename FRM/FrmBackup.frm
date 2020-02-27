@@ -1,30 +1,32 @@
 VERSION 5.00
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form FrmBackup 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Copia de Seguridad"
-   ClientHeight    =   3636
-   ClientLeft      =   48
-   ClientTop       =   432
-   ClientWidth     =   5424
+   ClientHeight    =   3630
+   ClientLeft      =   45
+   ClientTop       =   435
+   ClientWidth     =   5430
    FillColor       =   &H80000005&
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   8.4
+      Size            =   8.25
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
       Italic          =   0   'False
       Strikethrough   =   0   'False
    EndProperty
+   ForeColor       =   &H00E0E0E0&
    Icon            =   "FrmBackup.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    Picture         =   "FrmBackup.frx":9ED32
-   ScaleHeight     =   3636
-   ScaleWidth      =   5424
+   ScaleHeight     =   3630
+   ScaleWidth      =   5430
    Begin VB.CommandButton cmdSalir 
       Caption         =   "Salir"
       Height          =   420
@@ -60,7 +62,7 @@ Begin VB.Form FrmBackup
    Begin VB.DirListBox Dir1 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.6
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -90,8 +92,8 @@ Begin VB.Form FrmBackup
    Begin MSComctlLib.ImageList ImageList1 
       Left            =   5520
       Top             =   2880
-      _ExtentX        =   995
-      _ExtentY        =   995
+      _ExtentX        =   1005
+      _ExtentY        =   1005
       BackColor       =   -2147483643
       ImageWidth      =   16
       ImageHeight     =   16
@@ -147,15 +149,15 @@ Begin VB.Form FrmBackup
    End
    Begin MSComctlLib.Toolbar tblBotones 
       Align           =   4  'Align Right
-      Height          =   3636
-      Left            =   5028
+      Height          =   3630
+      Left            =   5040
       TabIndex        =   5
       Top             =   0
-      Width           =   396
-      _ExtentX        =   699
-      _ExtentY        =   6414
-      ButtonWidth     =   487
-      ButtonHeight    =   466
+      Width           =   390
+      _ExtentX        =   688
+      _ExtentY        =   6403
+      ButtonWidth     =   609
+      ButtonHeight    =   582
       AllowCustomize  =   0   'False
       Appearance      =   1
       Style           =   1
@@ -206,7 +208,7 @@ Begin VB.Form FrmBackup
       Caption         =   "Carpeta"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -227,7 +229,7 @@ Begin VB.Form FrmBackup
       Caption         =   "Unidad"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -247,7 +249,7 @@ Begin VB.Form FrmBackup
       Caption         =   "Seleccionar Disco de Destino"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.6
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -267,7 +269,7 @@ Begin VB.Form FrmBackup
       Caption         =   "Seleccionar Directorio"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.6
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

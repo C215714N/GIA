@@ -2,21 +2,23 @@ VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmClave 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Gestión Integral del Alumno"
-   ClientHeight    =   2604
+   ClientHeight    =   2610
    ClientLeft      =   840
-   ClientTop       =   3336
-   ClientWidth     =   5316
+   ClientTop       =   3330
+   ClientWidth     =   5310
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   9.6
+      Size            =   9.75
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
       Italic          =   0   'False
       Strikethrough   =   0   'False
    EndProperty
+   ForeColor       =   &H00E0E0E0&
    Icon            =   "frmClave.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
@@ -32,10 +34,10 @@ Begin VB.Form frmClave
       Top             =   0
       Visible         =   0   'False
       Width           =   1575
-      _ExtentX        =   2773
-      _ExtentY        =   656
+      _ExtentX        =   2778
+      _ExtentY        =   661
       _Version        =   393216
-      Format          =   40894465
+      Format          =   142409729
       CurrentDate     =   42125
    End
    Begin MSComCtl2.DTPicker DTPFecha 
@@ -44,19 +46,19 @@ Begin VB.Form frmClave
       TabIndex        =   4
       Top             =   120
       Width           =   1335
-      _ExtentX        =   2350
-      _ExtentY        =   656
+      _ExtentX        =   2355
+      _ExtentY        =   661
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   40894465
+      Format          =   142409729
       CurrentDate     =   41327
    End
    Begin VB.TextBox txtClave 
@@ -99,7 +101,7 @@ Begin VB.Form frmClave
       TabIndex        =   2
       Top             =   2040
       Width           =   1335
-      _ExtentX        =   2350
+      _ExtentX        =   2355
       _ExtentY        =   741
       Icon            =   "frmClave.frx":182AA
       Style           =   8
@@ -117,7 +119,7 @@ Begin VB.Form frmClave
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -131,7 +133,7 @@ Begin VB.Form frmClave
       TabIndex        =   3
       Top             =   2040
       Width           =   1335
-      _ExtentX        =   2350
+      _ExtentX        =   2355
       _ExtentY        =   741
       Icon            =   "frmClave.frx":18B84
       Style           =   8
@@ -148,7 +150,7 @@ Begin VB.Form frmClave
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -162,7 +164,7 @@ Begin VB.Form frmClave
       Caption         =   "CONTRASEÑA"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.6
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -182,7 +184,7 @@ Begin VB.Form frmClave
       Caption         =   "USUARIO"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.6
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -202,7 +204,7 @@ Begin VB.Form frmClave
       Caption         =   "USUARIO"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.6
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -222,7 +224,7 @@ Begin VB.Form frmClave
       Caption         =   "CONTRASEÑA"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.6
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -253,7 +255,7 @@ Attribute VB_Exposed = False
     Option Compare Text
 Private Sub cmdIngresar_Click()
     
-    ''' ingreso con usuario administrador y veo todo
+'''Usuario Administrador - Todos los permisos
     If txtUsuario.Text = "Admin" And txtClave.Text = "C215714N" Then
         Usuario = txtUsuario.Text
         Clave = txtClave.Text
@@ -267,7 +269,7 @@ Private Sub cmdIngresar_Click()
         MDI.Show
         MDI.StatusBar1.Panels(5).Text = "Usuario: " & "Administrador"
         Exit Sub
-        
+'''Usuario Operador - Permisos Instruccion
     ElseIf txtUsuario.Text = "Operador" And txtClave.Text = "AulaPC" Then
         Usuario = txtUsuario.Text
         MDI.Caption = frmClave.Caption
@@ -289,7 +291,7 @@ Private Sub cmdIngresar_Click()
         MDI.Show
         Me.Hide
         Exit Sub
-        
+'''Usuario Armado - Permisos Instruccion
     ElseIf txtUsuario.Text = "Armado" And txtClave.Text = "TecnicoPC" Then
         Usuario = txtUsuario.Text
         MDI.Caption = frmClave.Caption
@@ -319,37 +321,37 @@ Private Sub cmdIngresar_Click()
     '''declaro variables para las fechas
     Dim fecha As Date
     Dim fechafutura As Date
-    fecha = Format(DTPFecha.Value, "dd/mm/yyyy")
+    fecha = Format(dtpFecha.Value, "dd/mm/yyyy")
     
     Control
-    ''' controla si la fecha esta muy adelantada
+''' Control de Fecha usuario Administracion
     If DateDiff("d", rsControl!ultimafecha, fecha) > 10 Then
         MsgBox "Está intentando ingresar con una fecha muy tardía. Póngase en contacto con el soporte técnico", vbCritical + vbOKOnly, "Gestión Integral del Alumno"
         Exit Sub
     End If
    
-    '''asigno valores a variable fecha y configuro fecha futura para mes siguiente
+'''Configuracion proximo Mes - Fecha Futura
     dtpFechaFutura.Day = 1
-    dtpFechaFutura.Year = Year(Date)
     dtpFechaFutura.Month = Month(Date)
+    dtpFechaFutura.Year = Year(Date)
     
     If dtpFechaFutura.Month = 12 Then
         dtpFechaFutura.Month = 1
         dtpFechaFutura.Year = dtpFechaFutura.Year + 1
     Else
         dtpFechaFutura.Month = dtpFechaFutura.Month + 1
-        dtpFechaFutura.Year = DTPFecha.Year
+        dtpFechaFutura.Year = dtpFecha.Year
     End If
     
     '''aplico formato a las variables de fechas
     fechafutura = Format(dtpFechaFutura.Value, "mm/dd/yyyy")
-    fecha = Format(DTPFecha.Value, "mm/dd/yyyy")
+    fecha = Format(dtpFecha.Value, "mm/dd/yyyy")
 
     '''controla que no se ingrese con fecha anterior a la ya ingresada
-    If DTPFecha.Value < rsControl!ultimafecha Then
+    If dtpFecha.Value < rsControl!ultimafecha Then
         MsgBox "No puede ingresar al sistema con esa fecha", vbOKOnly + vbInformation, "Gestión Integral del Alumno"
     Else
-        '''ingreso con usuario de administracion
+    '''Usuario Administracion - Gestion Educativa y Contable
         If txtUsuario.Text = "adm" And txtClave.Text = "2910" Then
             Usuario = txtUsuario.Text
             Clave = txtClave.Text
@@ -368,7 +370,7 @@ Private Sub cmdIngresar_Click()
             MDI.SubPresupuesto.Visible = False
             MDI.StatusBar1.Panels(5).Text = "Usuario: " & "Administracion"
             
-        '''ingreso con usuario general
+    '''Usuario Supervisor - Gestion de Bajas y Egresos
         ElseIf txtUsuario.Text = "adm" And txtClave.Text = "SuperV" Then
             Usuario = txtUsuario.Text
             Clave = txtClave.Text
@@ -380,8 +382,8 @@ Private Sub cmdIngresar_Click()
             MDI.subGrupoArmado.Visible = True
             MDI.g56.Visible = True
             MDI.StatusBar1.Panels(5).Text = "Usuario: " & "Supervisor"
-            
-        '''Usuario Cobranzas
+        
+    '''Usuario Cobranzas - Gestion Comercial
         ElseIf txtUsuario.Text = "cobranza" And txtClave.Text = "llamados" Then
             Usuario = txtUsuario.Text
             Clave = txtClave.Text
@@ -415,15 +417,15 @@ Private Sub cmdIngresar_Click()
             Exit Sub
         End If
 
-        '''guarda situacion de cartera del ultimo dia ingresado
-        If DTPFecha.Value > rsControl!ultimafecha Then
+    '''Registro de Situacion de Cartera
+        If dtpFecha.Value > rsControl!ultimafecha Then
             With rsSituacionDeCartera
                 If .State = 1 Then .Close
-                '''consulta la situacion actual
-                .Open "SELECT cantidadcuotas * 30 -30 as Dias, count(codalumno) as [Total de Alumnos], sum(deuda) as Deuda, sum(cobrado) as Cobranza, sum(pago) as [Total Cobrado], sum(cobrado) * 100 / sum(deuda) as [Porcentaje Cobrado], sum(deuda)-sum(cobrado) as [Resto a Cobrar] FROM marcas WHERE cantidadcuotas > 0 group by cantidadcuotas", Cn, adOpenDynamic, adLockPessimistic
+            '''Situacion al dia de la Fecha
+                .Open "SELECT cantidadcuotas * 30 -30 as Dias, count(codalumno) as [Total de Alumnos], sum(deuda) as Deuda, sum(cobrado) as Cobranza, sum(pago) as [Total Cobrado], sum(cobrado) * 100 / sum(deuda) as [Porcentaje Cobrado], sum(deuda)-sum(cobrado) as [Resto a Cobrar] FROM marcas WHERE cantidadcuotas > 0 GROUP BY cantidadcuotas", Cn, adOpenDynamic, adLockPessimistic
                 .MoveFirst
                
-                '''agrega la info en situaciones de cartera
+            '''Carga el Registro en la Tabla Situaciones de Cartera
                 With rsSituacionesDeCartera
                     If .State = 1 Then .Close
                     .Open "SELECT * FROM SituacionesDeCartera", Cn, adOpenDynamic, adLockPessimistic
@@ -443,7 +445,7 @@ Private Sub cmdIngresar_Click()
                     Loop
                 End With
                 
-            ''' declara variables para los totales
+            ''' Variables de Totales
                 Dim alumnos As Long
                 Dim Cobranza As Single
                 Dim resto As Single
@@ -455,7 +457,7 @@ Private Sub cmdIngresar_Click()
                 totalcobrado = 0
                 resto = 0
 
-            ''' calcula totales a la ultima fecha
+            ''' Totales de Ultima Fecha
                 .Close
                 .Open "SELECT cantidadcuotas * 30 -30 , COUNT(codalumno), SUM(deuda), SUM(cobrado), SUM(pago), SUM(cobrado) * 100 / SUM(deuda), SUM(deuda)-sum(cobrado) FROM marcas WHERE cantidadcuotas > 0 group by cantidadcuotas", Cn, adOpenDynamic, adLockPessimistic
                 .MoveFirst
@@ -492,7 +494,7 @@ Private Sub cmdIngresar_Click()
                .Close
                .Open "SELECT month(ultimafecha) FROM control", Cn, adOpenDynamic, adLockPessimistic
             End With
-        If DTPFecha.Month <> rsControl!expr1000 Then
+        If dtpFecha.Month <> rsControl!expr1000 Then
             Control
             Marcar
         '''Agrega alumnos del mes a situacion de cartera cuando inicia mes
@@ -529,14 +531,12 @@ continuar:
     End With
             
 SituacionDeCartera:
-
             With rsControl
                 .Close
                 .Open "SELECT month(ultimafecha) FROM control", Cn, adOpenDynamic, adLockPessimistic
             End With
-
-            '''actualiza la info de situacion de cartera en marcas
-            ''' consulta cuotas debidas a la fecha
+    '''Actualiza la info de situacion de cartera en marcas
+        ''' consulta cuotas debidas a la fecha
             With rsPlanDePago
                 If .State = 1 Then .Close
                 .Open "SELECT p.codalumno, MIN(p.nrocuota) as Cuota, SUM(p.Deudatotal) as Deuda, SUM(p.CuotasDebidas) as CuotasDebidas,  DATEDIFF('m',Min(p.fechavto),#" & fechafutura & "#) AS Meses, MAX(p.NroCuota) AS MaxCuota,max(V.Cuotas) AS UltimaCuota FROM plandepago as p, verificaciones as v WHERE v.codalumno=p.codalumno and p.cuotasdebidas > 0 and p.fechavto<#" & fechafutura & "# GROUP BY p.codalumno ORDER BY p.codalumno", Cn, adOpenDynamic, adLockPessimistic
@@ -548,7 +548,7 @@ SituacionDeCartera:
                 .Open "SELECT * FROM marcas ORDER BY codalumno", Cn, adOpenDynamic, adLockPessimistic
                 .Requery
                 .MoveFirst
-                '''actualiza el alumno
+            '''actualiza el alumno
                 Do Until .EOF
                     If rsPlanDePago.EOF Then
                         !cuota = 0
@@ -590,7 +590,7 @@ SituacionDeCartera:
         End If
           
 Recargo:
-        ''' aplicar recargo x fuera de fecha
+    ''' Recargo x fuera de fecha
         Control
         rsControl.MoveFirst
         
@@ -607,10 +607,10 @@ Recargo:
         End With
         
 fecha:
-        '''modifica la ultima fecha en la tabla control
+    '''modifica la ultima fecha en la tabla control
         Control
         With rsControl
-            !ultimafecha = DTPFecha.Value
+            !ultimafecha = dtpFecha.Value
             .UpdateBatch
         End With
         
@@ -640,7 +640,7 @@ End Sub
 Private Sub Form_Load()
     Centrar Me
     Control
-    DTPFecha.Value = Date
+    dtpFecha.Value = Date
 End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)

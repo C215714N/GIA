@@ -2,12 +2,14 @@ VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmPlanDePagoReingreso 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Generar Plan de Pagos de Reingreso de Alumno"
    ClientHeight    =   1485
    ClientLeft      =   3075
    ClientTop       =   2325
    ClientWidth     =   4515
+   ForeColor       =   &H00E0E0E0&
    Icon            =   "frmPlanDePagoReingreso.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
@@ -82,7 +84,7 @@ Begin VB.Form frmPlanDePagoReingreso
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   89260033
+      Format          =   142409729
       CurrentDate     =   41353
    End
    Begin isButtonTest.isButton cmdAplicar 
@@ -245,14 +247,14 @@ Private Sub cmdAplicar_Click()
             !totalcobrado = 0
             !DeudaTotal = txtMonto.Text
             !CuotasDebidas = 1
-            !fechavto = DTPFecha.Value
+            !fechavto = dtpFecha.Value
             .Update
             txtNroCuota.Text = Int(txtNroCuota.Text) + 1
-            If DTPFecha.Month = 12 Then
-                DTPFecha.Month = 1
-                DTPFecha.Year = DTPFecha.Year + 1
+            If dtpFecha.Month = 12 Then
+                dtpFecha.Month = 1
+                dtpFecha.Year = dtpFecha.Year + 1
             Else
-                DTPFecha.Month = DTPFecha.Month + 1
+                dtpFecha.Month = dtpFecha.Month + 1
             End If
             
         Loop

@@ -2,27 +2,29 @@ VERSION 5.00
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmAnalisisDeCuotas 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Análisis de Cuotas"
-   ClientHeight    =   5124
-   ClientLeft      =   3888
-   ClientTop       =   1848
-   ClientWidth     =   8952
+   ClientHeight    =   5130
+   ClientLeft      =   3885
+   ClientTop       =   1845
+   ClientWidth     =   8955
+   ForeColor       =   &H00E0E0E0&
    Icon            =   "frmAnalisisDeCuotas.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    Picture         =   "frmAnalisisDeCuotas.frx":324A
-   ScaleHeight     =   5124
-   ScaleWidth      =   8952
+   ScaleHeight     =   5130
+   ScaleWidth      =   8955
    Begin isButtonTest.isButton cmdDatos 
       Height          =   420
       Left            =   7500
       TabIndex        =   11
       Top             =   2700
       Width           =   1335
-      _ExtentX        =   2350
+      _ExtentX        =   2355
       _ExtentY        =   741
       Icon            =   "frmAnalisisDeCuotas.frx":11DFF
       Style           =   8
@@ -37,7 +39,7 @@ Begin VB.Form frmAnalisisDeCuotas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -51,7 +53,7 @@ Begin VB.Form frmAnalisisDeCuotas
       TabIndex        =   12
       Top             =   3900
       Width           =   1335
-      _ExtentX        =   2350
+      _ExtentX        =   2355
       _ExtentY        =   741
       Icon            =   "frmAnalisisDeCuotas.frx":126D9
       Style           =   8
@@ -66,7 +68,7 @@ Begin VB.Form frmAnalisisDeCuotas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -80,7 +82,7 @@ Begin VB.Form frmAnalisisDeCuotas
       TabIndex        =   13
       Top             =   300
       Width           =   1335
-      _ExtentX        =   2350
+      _ExtentX        =   2355
       _ExtentY        =   741
       Icon            =   "frmAnalisisDeCuotas.frx":12FB3
       Style           =   8
@@ -97,7 +99,7 @@ Begin VB.Form frmAnalisisDeCuotas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -111,7 +113,7 @@ Begin VB.Form frmAnalisisDeCuotas
       TabIndex        =   14
       Top             =   3300
       Width           =   1335
-      _ExtentX        =   2350
+      _ExtentX        =   2355
       _ExtentY        =   741
       Icon            =   "frmAnalisisDeCuotas.frx":1388D
       Style           =   8
@@ -128,7 +130,7 @@ Begin VB.Form frmAnalisisDeCuotas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -142,7 +144,7 @@ Begin VB.Form frmAnalisisDeCuotas
       TabIndex        =   15
       Top             =   4500
       Width           =   1335
-      _ExtentX        =   2350
+      _ExtentX        =   2355
       _ExtentY        =   741
       Icon            =   "frmAnalisisDeCuotas.frx":14167
       Style           =   8
@@ -159,7 +161,7 @@ Begin VB.Form frmAnalisisDeCuotas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -170,7 +172,7 @@ Begin VB.Form frmAnalisisDeCuotas
    Begin VB.TextBox txtObservaciones 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -191,7 +193,7 @@ Begin VB.Form frmAnalisisDeCuotas
       Top             =   840
       Width           =   3600
       _ExtentX        =   6350
-      _ExtentY        =   5101
+      _ExtentY        =   5106
       _Version        =   393216
       AllowUpdate     =   0   'False
       ColumnHeaders   =   -1  'True
@@ -259,7 +261,7 @@ Begin VB.Form frmAnalisisDeCuotas
       Top             =   825
       Width           =   3600
       _ExtentX        =   6350
-      _ExtentY        =   5101
+      _ExtentY        =   5106
       _Version        =   393216
       AllowUpdate     =   0   'False
       ColumnHeaders   =   -1  'True
@@ -326,7 +328,7 @@ Begin VB.Form frmAnalisisDeCuotas
       TabIndex        =   8
       Top             =   900
       Width           =   1335
-      _ExtentX        =   2350
+      _ExtentX        =   2355
       _ExtentY        =   741
       Icon            =   "frmAnalisisDeCuotas.frx":14A41
       Style           =   8
@@ -341,7 +343,7 @@ Begin VB.Form frmAnalisisDeCuotas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -355,7 +357,7 @@ Begin VB.Form frmAnalisisDeCuotas
       TabIndex        =   9
       Top             =   1500
       Width           =   1335
-      _ExtentX        =   2350
+      _ExtentX        =   2355
       _ExtentY        =   741
       Icon            =   "frmAnalisisDeCuotas.frx":1531B
       Style           =   8
@@ -370,7 +372,7 @@ Begin VB.Form frmAnalisisDeCuotas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -384,7 +386,7 @@ Begin VB.Form frmAnalisisDeCuotas
       TabIndex        =   10
       Top             =   2100
       Width           =   1335
-      _ExtentX        =   2350
+      _ExtentX        =   2355
       _ExtentY        =   741
       Icon            =   "frmAnalisisDeCuotas.frx":15BF5
       Style           =   8
@@ -399,7 +401,7 @@ Begin VB.Form frmAnalisisDeCuotas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -413,7 +415,7 @@ Begin VB.Form frmAnalisisDeCuotas
       Caption         =   "Alumno"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -433,7 +435,7 @@ Begin VB.Form frmAnalisisDeCuotas
       Caption         =   "Codigo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -451,7 +453,7 @@ Begin VB.Form frmAnalisisDeCuotas
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -469,7 +471,7 @@ Begin VB.Form frmAnalisisDeCuotas
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -487,7 +489,7 @@ Begin VB.Form frmAnalisisDeCuotas
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -670,14 +672,14 @@ Private Sub cmdReingresar_Click()
     grilla1.Row = rsAnalisisDeCuenta.RecordCount - 1
     frmPlanDePagoReingreso.txtNroCuota = Int(grilla1.Columns(0).Text) + 1
     frmPlanDePagoReingreso.txtCantidadCuotas = 1
-    frmPlanDePagoReingreso.DTPFecha.Value = grilla1.Columns(1).Text
+    frmPlanDePagoReingreso.dtpFecha.Value = grilla1.Columns(1).Text
     frmPlanDePagoReingreso.txtMonto.Text = grilla1.Columns(3).Text
     
-    If frmPlanDePagoReingreso.DTPFecha.Month = 12 Then
-            frmPlanDePagoReingreso.DTPFecha.Month = 1
-            frmPlanDePagoReingreso.DTPFecha.Year = frmPlanDePagoReingreso.DTPFecha.Year + 1
+    If frmPlanDePagoReingreso.dtpFecha.Month = 12 Then
+            frmPlanDePagoReingreso.dtpFecha.Month = 1
+            frmPlanDePagoReingreso.dtpFecha.Year = frmPlanDePagoReingreso.dtpFecha.Year + 1
     Else
-        frmPlanDePagoReingreso.DTPFecha.Month = frmPlanDePagoReingreso.DTPFecha.Month + 1
+        frmPlanDePagoReingreso.dtpFecha.Month = frmPlanDePagoReingreso.dtpFecha.Month + 1
     End If
     
     frmPlanDePagoReingreso.Show

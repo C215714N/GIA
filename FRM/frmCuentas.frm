@@ -1,19 +1,21 @@
 VERSION 5.00
 Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmCuentas 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Cuentas"
-   ClientHeight    =   2670
+   ClientHeight    =   2745
    ClientLeft      =   45
    ClientTop       =   435
-   ClientWidth     =   5205
+   ClientWidth     =   5190
+   ForeColor       =   &H00E0E0E0&
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    Picture         =   "frmCuentas.frx":0000
-   ScaleHeight     =   2670
-   ScaleWidth      =   5205
+   ScaleHeight     =   2745
+   ScaleWidth      =   5190
    Begin VB.Frame Frame1 
       BackColor       =   &H00884400&
       Caption         =   "Buscar"
@@ -124,7 +126,7 @@ Begin VB.Form frmCuentas
       Height          =   420
       Left            =   3720
       TabIndex        =   11
-      Top             =   1100
+      Top             =   1185
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
@@ -153,7 +155,7 @@ Begin VB.Form frmCuentas
       Height          =   420
       Left            =   3720
       TabIndex        =   12
-      Top             =   1600
+      Top             =   1680
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
@@ -182,7 +184,7 @@ Begin VB.Form frmCuentas
       Height          =   420
       Left            =   3720
       TabIndex        =   13
-      Top             =   100
+      Top             =   180
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
@@ -213,7 +215,7 @@ Begin VB.Form frmCuentas
       Height          =   420
       Left            =   3720
       TabIndex        =   14
-      Top             =   600
+      Top             =   675
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
@@ -244,7 +246,7 @@ Begin VB.Form frmCuentas
       Height          =   420
       Left            =   3720
       TabIndex        =   15
-      Top             =   2100
+      Top             =   2175
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741

@@ -2,12 +2,14 @@ VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmNuevoCheque 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Nuevo Cheque"
    ClientHeight    =   1485
    ClientLeft      =   5085
    ClientTop       =   2640
    ClientWidth     =   5910
+   ForeColor       =   &H00E0E0E0&
    Icon            =   "frmNuevoCheque.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
@@ -102,7 +104,7 @@ Begin VB.Form frmNuevoCheque
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   89260033
+      Format          =   142409729
       CurrentDate     =   41782
    End
    Begin isButtonTest.isButton cmdAgregar 
@@ -275,7 +277,7 @@ Private Sub cmdAgregar_Click()
         .Open "SELECT * FROM cheques", Cn, adOpenDynamic, adLockPessimistic
         .Requery
         .AddNew
-        !fecha = DTPFecha.Value
+        !fecha = dtpFecha.Value
         !destinatario = txtDestinatario.Text
         !numerocheque = txtNroCheque.Text
         !monto = txtMonto.Text
@@ -303,7 +305,7 @@ End Sub
 
 Private Sub Form_Load()
     Centrar Me
-    DTPFecha.Value = Date
+    dtpFecha.Value = Date
 End Sub
 
 Private Sub txtDestinatario_KeyPress(KeyAscii As Integer)

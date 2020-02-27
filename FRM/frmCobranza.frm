@@ -4,20 +4,22 @@ Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmCobranza 
+   BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Cobranza"
-   ClientHeight    =   5388
-   ClientLeft      =   4068
-   ClientTop       =   1452
-   ClientWidth     =   5712
+   ClientHeight    =   5385
+   ClientLeft      =   4065
+   ClientTop       =   1455
+   ClientWidth     =   5715
+   ForeColor       =   &H00E0E0E0&
    Icon            =   "frmCobranza.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    Picture         =   "frmCobranza.frx":324A
-   ScaleHeight     =   5388
-   ScaleWidth      =   5712
+   ScaleHeight     =   5385
+   ScaleWidth      =   5715
    Begin MSAdodcLib.Adodc Adodc 
       Height          =   330
       Left            =   1800
@@ -25,7 +27,7 @@ Begin VB.Form frmCobranza
       Visible         =   0   'False
       Width           =   1200
       _ExtentX        =   2117
-      _ExtentY        =   593
+      _ExtentY        =   582
       ConnectMode     =   0
       CursorLocation  =   3
       IsolationLevel  =   -1
@@ -56,7 +58,7 @@ Begin VB.Form frmCobranza
       Caption         =   "Adodc1"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -69,7 +71,7 @@ Begin VB.Form frmCobranza
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -89,8 +91,8 @@ Begin VB.Form frmCobranza
       TabIndex        =   10
       Top             =   840
       Width           =   4000
-      _ExtentX        =   7049
-      _ExtentY        =   5525
+      _ExtentX        =   7064
+      _ExtentY        =   5530
       _Version        =   393216
       AllowUpdate     =   0   'False
       HeadLines       =   1
@@ -98,7 +100,7 @@ Begin VB.Form frmCobranza
       RowDividerStyle =   0
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -154,7 +156,7 @@ Begin VB.Form frmCobranza
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -173,19 +175,19 @@ Begin VB.Form frmCobranza
       TabIndex        =   4
       Top             =   1800
       Width           =   1335
-      _ExtentX        =   2371
+      _ExtentX        =   2355
       _ExtentY        =   635
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   342097921
+      Format          =   142409729
       CurrentDate     =   41326
    End
    Begin VB.TextBox txtFechaVto 
@@ -193,7 +195,7 @@ Begin VB.Form frmCobranza
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -211,7 +213,7 @@ Begin VB.Form frmCobranza
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -230,7 +232,7 @@ Begin VB.Form frmCobranza
       TabIndex        =   15
       Top             =   4200
       Width           =   1335
-      _ExtentX        =   2350
+      _ExtentX        =   2355
       _ExtentY        =   741
       Icon            =   "frmCobranza.frx":11DFF
       Style           =   8
@@ -245,7 +247,7 @@ Begin VB.Form frmCobranza
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -259,7 +261,7 @@ Begin VB.Form frmCobranza
       TabIndex        =   16
       Top             =   3600
       Width           =   1335
-      _ExtentX        =   2350
+      _ExtentX        =   2355
       _ExtentY        =   741
       Icon            =   "frmCobranza.frx":126D9
       Style           =   8
@@ -274,7 +276,7 @@ Begin VB.Form frmCobranza
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -288,7 +290,7 @@ Begin VB.Form frmCobranza
       TabIndex        =   17
       Top             =   4800
       Width           =   1335
-      _ExtentX        =   2350
+      _ExtentX        =   2355
       _ExtentY        =   741
       Icon            =   "frmCobranza.frx":12FB3
       Style           =   8
@@ -303,7 +305,7 @@ Begin VB.Form frmCobranza
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -317,7 +319,7 @@ Begin VB.Form frmCobranza
       TabIndex        =   18
       Top             =   3000
       Width           =   1335
-      _ExtentX        =   2350
+      _ExtentX        =   2355
       _ExtentY        =   741
       Icon            =   "frmCobranza.frx":1388D
       Style           =   8
@@ -332,7 +334,7 @@ Begin VB.Form frmCobranza
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -345,7 +347,7 @@ Begin VB.Form frmCobranza
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -362,7 +364,7 @@ Begin VB.Form frmCobranza
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -380,7 +382,7 @@ Begin VB.Form frmCobranza
       Caption         =   "Alumno"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -399,7 +401,7 @@ Begin VB.Form frmCobranza
       Caption         =   "Codigo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -418,7 +420,7 @@ Begin VB.Form frmCobranza
       Caption         =   "Observaciones"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -437,7 +439,7 @@ Begin VB.Form frmCobranza
       Caption         =   "Adeuda $"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -456,7 +458,7 @@ Begin VB.Form frmCobranza
       Caption         =   "Fecha de Pago"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -475,7 +477,7 @@ Begin VB.Form frmCobranza
       Caption         =   "Vencimiento"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -494,7 +496,7 @@ Begin VB.Form frmCobranza
       Caption         =   "Cuota"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.4
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
