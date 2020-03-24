@@ -4,7 +4,7 @@ Begin VB.Form frmReingresos
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Control de Reingresos"
-   ClientHeight    =   1755
+   ClientHeight    =   1665
    ClientLeft      =   5160
    ClientTop       =   2400
    ClientWidth     =   4020
@@ -24,7 +24,7 @@ Begin VB.Form frmReingresos
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    Picture         =   "frmReingresos.frx":324A
-   ScaleHeight     =   1755
+   ScaleHeight     =   1665
    ScaleWidth      =   4020
    Begin VB.Frame Frame1 
       BackColor       =   &H00884400&
@@ -94,10 +94,10 @@ Begin VB.Form frmReingresos
          BackStyle       =   0  'Transparent
          Caption         =   "--->"
          ForeColor       =   &H8000000F&
-         Height          =   375
+         Height          =   255
          Left            =   960
          TabIndex        =   5
-         Top             =   480
+         Top             =   550
          Width           =   375
       End
       Begin VB.Label Label2 
@@ -121,9 +121,29 @@ Begin VB.Form frmReingresos
          Width           =   855
       End
    End
+   Begin VB.Label Label5 
+      Alignment       =   2  'Center
+      BackStyle       =   0  'Transparent
+      Caption         =   "ATENCIÓN: RECUERDE QUE EL REINGRESO  APLICA SOLAMENTE A LOS LIBROS DE AULA."
+      BeginProperty Font 
+         Name            =   "Century Gothic"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00C0C0FF&
+      Height          =   450
+      Left            =   105
+      TabIndex        =   8
+      Top             =   1065
+      Width           =   3735
+   End
    Begin VB.Label Label4 
       Alignment       =   2  'Center
-      BorderStyle     =   1  'Fixed Single
+      BackStyle       =   0  'Transparent
       Caption         =   "ATENCIÓN: RECUERDE QUE EL REINGRESO  APLICA SOLAMENTE A LOS LIBROS DE AULA."
       BeginProperty Font 
          Name            =   "Century Gothic"
@@ -135,7 +155,7 @@ Begin VB.Form frmReingresos
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H00000080&
-      Height          =   495
+      Height          =   450
       Left            =   120
       TabIndex        =   6
       Top             =   1080

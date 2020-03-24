@@ -37,7 +37,7 @@ Begin VB.Form frmSituacionDeCartera
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   142409729
+      Format          =   7798785
       CurrentDate     =   41624
    End
    Begin VB.Frame Frame1 
@@ -53,10 +53,10 @@ Begin VB.Form frmSituacionDeCartera
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H8000000F&
-      Height          =   4935
+      Height          =   5055
       Left            =   6600
       TabIndex        =   7
-      Top             =   360
+      Top             =   240
       Width           =   1575
       Begin VB.TextBox txtAlumnos 
          BeginProperty Font 
@@ -164,7 +164,7 @@ Begin VB.Form frmSituacionDeCartera
          Height          =   420
          Left            =   120
          TabIndex        =   3
-         Top             =   3900
+         Top             =   3960
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
@@ -195,7 +195,7 @@ Begin VB.Form frmSituacionDeCartera
          Height          =   420
          Left            =   120
          TabIndex        =   4
-         Top             =   4400
+         Top             =   4440
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
@@ -494,25 +494,28 @@ Attribute VB_Exposed = False
     Dim totalcobrado As Single
     Dim deuda As Single
 
-
-Private Sub cmdAnalizar_Click()
-    Situacion = grilla.Columns(0).Text
-    Me.Enabled = False
-    frmAnalisisSituacion.Show
-    frmAnalisisSituacion.txtResta.Text = grilla.Columns(6).Text
-    frmAnalisisSituacion.txtResta.Text = Format(frmAnalisisSituacion.txtResta.Text, "currency")
+Private Sub Form_Load()
+    Centrar Me
+    alumnos = 0
+    deuda = 0
+    Cobranza = 0
+    totalcobrado = 0
+    resto = 0
+    DTPFecha.Value = Date
 End Sub
 
+Private Sub DTPFecha_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then SendKeys "{TAB}"
+End Sub
 
 Private Sub cmdBuscar_Click()
-''' analiza la situacion de cartera al dia de hoy
-    If dtpFecha.Value = Date Then
+    If DTPFecha.Value = Date Then
         alumnos = 0
         deuda = 0
         Cobranza = 0
         totalcobrado = 0
         resto = 0
-        
+    '''Situacion de Cartera - CARGA
         With rsSituacionDeCartera
             If .State = 1 Then .Close
             .Open "SELECT cantidadcuotas * 30 -30 , count(codalumno), sum(deuda), sum(cobrado), sum(pago), Round(sum(cobrado) * 100 / sum(deuda),2), sum(deuda)-sum(cobrado) FROM marcas WHERE cantidadcuotas > 0 group by cantidadcuotas", Cn, adOpenDynamic, adLockPessimistic
@@ -544,17 +547,17 @@ Private Sub cmdBuscar_Click()
         End With
         cmdAnalizar.Enabled = True
         
-'''busca la situacion de cartera anterior
-    ElseIf dtpFecha.Value < Date Then
-        With rsSituacionDeCartera
-            If .State = 1 Then .Close
-            .Open "SELECT Dias,Alumnos as [Alumnos],Deuda,Cobranza,Cobrado as [Cobrado],Porcentaje as [%],Resto as [Resta] FROM SituacionesDeCartera WHERE fecha=#" & Format(dtpFecha.Value, "mm/dd/yyyy") & "#", Cn, adOpenDynamic, adLockPessimistic
-            If .BOF Or .EOF Then MsgBox "Ese día no se inició sesión", vbOKOnly, "Situación de Cartera - GIA": Exit Sub
-        End With
-    '''carga los totales
+    ''' Situacion de Carteria - ANTERIOR
+        ElseIf DTPFecha.Value < Date Then
+            With rsSituacionDeCartera
+                If .State = 1 Then .Close
+                .Open "SELECT Dias,Alumnos as [Alumnos],Deuda,Cobranza,Cobrado as [Cobrado],Porcentaje as [%],Resto as [Resta] FROM SituacionesDeCartera WHERE fecha=#" & Format(DTPFecha.Value, "mm/dd/yyyy") & "#", Cn, adOpenDynamic, adLockPessimistic
+                If .BOF Or .EOF Then MsgBox "Ese día no se inició sesión", vbOKOnly, "Situación de Cartera - GIA": Exit Sub
+            End With
+    '''Situacion de Cartera - TOTALES
         With rsTotalesSituaciones
             If .State = 1 Then .Close
-            .Open "SELECT * FROM totalessituaciones WHERE fecha=#" & Format(dtpFecha.Value, "mm/dd/yyyy") & "#", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT * FROM totalessituaciones WHERE fecha=#" & Format(DTPFecha.Value, "mm/dd/yyyy") & "#", Cn, adOpenDynamic, adLockPessimistic
             txtAlumnos.Text = !alumnos
             txtDeuda.Text = !deuda
             txtCobranza.Text = !Cobranza
@@ -564,10 +567,34 @@ Private Sub cmdBuscar_Click()
         End With
         cmdAnalizar.Enabled = False
     End If
-        
-'''muestra la situacion de cartera en la grilla
+    
     Set grilla.DataSource = rsSituacionDeCartera
     formatoGrilla
+End Sub
+
+Private Sub cmdAnalizar_Click()
+    Situacion = grilla.Columns(0).Text
+    Me.Enabled = False
+    frmAnalisisSituacion.Show
+    frmAnalisisSituacion.txtResta.Text = grilla.Columns(6).Text
+    frmAnalisisSituacion.txtResta.Text = Format(frmAnalisisSituacion.txtResta.Text, "currency")
+End Sub
+
+Private Sub cmdInforme_Click()
+    Set dtrSituacion.DataSource = rsSituacionDeCartera
+    dtrSituacion.Show
+    dtrSituacion.Caption = "Situación de Cartera"
+    dtrSituacion.Sections("Sección5").Controls("etiqueta21").Caption = txtAlumnos.Text
+    dtrSituacion.Sections("Sección5").Controls("etiqueta11").Caption = txtDeuda.Text
+    dtrSituacion.Sections("Sección5").Controls("etiqueta12").Caption = txtCobranza.Text
+    dtrSituacion.Sections("Sección5").Controls("etiqueta13").Caption = txtCobrado.Text
+    dtrSituacion.Sections("Sección5").Controls("etiqueta14").Caption = txtPorcentaje.Text
+    dtrSituacion.Sections("Sección5").Controls("etiqueta15").Caption = txtResto.Text
+    dtrSituacion.Sections("Sección4").Controls("etiqueta25").Caption = DTPFecha.Value
+End Sub
+
+Private Sub cmdCerrar_Click()
+    Unload Me
 End Sub
 
 Private Sub formatoGrilla()
@@ -584,37 +611,3 @@ Private Sub formatoGrilla()
         End If
     Next
 End Sub
-
-Private Sub cmdCerrar_Click()
-    Unload Me
-End Sub
-
-Private Sub cmdInforme_Click()
-    Set dtrSituacion.DataSource = rsSituacionDeCartera
-    dtrSituacion.Show
-    dtrSituacion.Caption = "Situación de Cartera"
-    dtrSituacion.Sections("Sección5").Controls("etiqueta21").Caption = txtAlumnos.Text
-    dtrSituacion.Sections("Sección5").Controls("etiqueta11").Caption = txtDeuda.Text
-    dtrSituacion.Sections("Sección5").Controls("etiqueta12").Caption = txtCobranza.Text
-    dtrSituacion.Sections("Sección5").Controls("etiqueta13").Caption = txtCobrado.Text
-    dtrSituacion.Sections("Sección5").Controls("etiqueta14").Caption = txtPorcentaje.Text
-    dtrSituacion.Sections("Sección5").Controls("etiqueta15").Caption = txtResto.Text
-    dtrSituacion.Sections("Sección4").Controls("etiqueta25").Caption = dtpFecha.Value
-
-End Sub
-
-Private Sub DTPFecha_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
-End Sub
-
-Private Sub Form_Load()
-    Centrar Me
-    '''asigna valores 0 a las variables de los totales
-    alumnos = 0
-    deuda = 0
-    Cobranza = 0
-    totalcobrado = 0
-    resto = 0
-    dtpFecha.Value = Date
-End Sub
-

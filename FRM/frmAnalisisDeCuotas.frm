@@ -508,51 +508,69 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-    Option Compare Text
+Option Compare Text
+    
+Private Sub Form_Load()
+    Centrar Me
+    AnalisisDeCuota
+    If rsAnalisisDeCuenta.BOF Or rsAnalisisDeCuenta.EOF Then MsgBox "El alumno seleccionado no tiene creado un Plan de Pago", vbCritical, "Análisis de Cuotas": Exit Sub
+    Historico
+    Marcar
+    Set grilla1.DataSource = rsAnalisisDeCuenta
+    Set grilla2.DataSource = rsHistorico
+    formatoGrilla
+    lblCodAlumno.Caption = rsAnalisisDeCuenta!codigo
+    lblNyA.Caption = rsAnalisisDeCuenta!Alumno
+    If Trim(Len(lblCodAlumno.Caption)) = 1 Then lblCodAlumno.Caption = Format(lblCodAlumno.Caption, "0000#")
+    If Trim(Len(lblCodAlumno.Caption)) = 2 Then lblCodAlumno.Caption = Format(lblCodAlumno.Caption, "000##")
+    If Trim(Len(lblCodAlumno.Caption)) = 3 Then lblCodAlumno.Caption = Format(lblCodAlumno.Caption, "00###")
+    If Trim(Len(lblCodAlumno.Caption)) = 4 Then lblCodAlumno.Caption = Format(lblCodAlumno.Caption, "0####")
+End Sub
 
-
-Private Sub cmdBaja_Click()
-    a = MsgBox("¿Está seguro que desea dar la baja de este alumno?", vbYesNo + vbQuestion, "Análisis de Cuotas")
-    If a = vbYes Then
-        frmBajas.Show
-        frmAnalisisDeCuotas.Enabled = False
-        frmBajas.txtmotivo.Text = ""
-        frmBajas.SetFocus
-        
-        '''Baja en plan de pago
-        With rsPlanDePago
+Private Sub cmdEgresado_Click()
+    If MsgBox("Confirma que el alumno ha egresado?", vbQuestion + vbYesNo, "Análisis de Cuotas") = vbYes Then
+        With rsVerificaciones
             If .State = 1 Then .Close
-            .Open "SELECT * FROM plandepago WHERE codalumno=" & CodAlumno, Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT codalumno as [Codigo], estado FROM verificaciones WHERE codalumno=" & frmAnalisisDeCuotas.lblCodAlumno.Caption, Cn, adOpenDynamic, adLockPessimistic
+            .Requery
             .MoveFirst
-            Do Until .EOF
-                If !tipodepago = "PAG" Then
-                    .MoveNext
-                ElseIf !tipodepago = "Par" Then
-                    .MoveNext
-                Else
-                    !tipodepago = "BAJA"
-                    !fechapago = Date
-                    !DeudaTotal = 0
-                    !CuotasDebidas = 0
-                    .UpdateBatch
-                    .MoveNext
-                End If
-            Loop
+            !estado = "Egresado"
+            .UpdateBatch
         End With
-
-        ''' actualiza la grilla
-        AnalisisDeCuota
-        Set grilla1.DataSource = rsAnalisisDeCuenta
-        formatoGrilla
     End If
-    
-    
 End Sub
 
 Private Sub cmdBuscar_Click()
     Unload Me
     Analisis = True
     frmBuscarVerificacion.Show
+End Sub
+
+Private Sub cmdGrabar_Click()
+    On Error GoTo LineaError
+    With rsAnalisisDeCuenta
+        !observaciones = txtObservaciones.Text
+        .UpdateBatch
+    End With
+    With rsMarcar
+        .Requery
+        .Find "Codalumno=" & CodAlumno
+            !fechagestion = Date
+            .UpdateBatch
+    End With
+    cmdGrabar.Enabled = False
+
+LineaError:
+    Select Case Err.Number
+        Case 3021
+            Resume Next
+        End Select
+End Sub
+
+Private Sub cmdMarcar_Click()
+    frmMarcar.Label1.Caption = Me.Name
+    frmMarcar.Show
+    Me.Enabled = False
 End Sub
 
 Private Sub cmdDatos_Click()
@@ -625,82 +643,87 @@ Private Sub cmdEditar_Click()
     Me.Enabled = False
 End Sub
 
-Private Sub cmdEgresado_Click()
-    If MsgBox("Confirma que el alumno ha egresado?", vbQuestion + vbYesNo, "Análisis de Cuotas") = vbYes Then
-        With rsVerificaciones
-            If .State = 1 Then .Close
-            .Open "SELECT codalumno as [Codigo], estado FROM verificaciones WHERE codalumno=" & frmAnalisisDeCuotas.lblCodAlumno.Caption, Cn, adOpenDynamic, adLockPessimistic
-            .Requery
-            .MoveFirst
-            !estado = "Egresado"
-            .UpdateBatch
-        End With
-    End If
-End Sub
-
-Private Sub cmdGrabar_Click()
-    On Error GoTo LineaError
-    With rsAnalisisDeCuenta
-        !observaciones = txtObservaciones.Text
-        .UpdateBatch
-    End With
-
-    With rsMarcar
-        .Requery
-        .Find "Codalumno=" & CodAlumno
-            !fechagestion = Date
-            .UpdateBatch
-    End With
-
-    cmdGrabar.Enabled = False
-
-LineaError:
-    Select Case Err.Number
-        Case 3021
-            Resume Next
-        End Select
-End Sub
-
-Private Sub cmdMarcar_Click()
-    frmMarcar.Label1.Caption = Me.Name
-    frmMarcar.Show
-    Me.Enabled = False
-End Sub
-
-
 Private Sub cmdReingresar_Click()
     grilla1.Row = rsAnalisisDeCuenta.RecordCount - 1
     frmPlanDePagoReingreso.txtNroCuota = Int(grilla1.Columns(0).Text) + 1
     frmPlanDePagoReingreso.txtCantidadCuotas = 1
-    frmPlanDePagoReingreso.dtpFecha.Value = grilla1.Columns(1).Text
+    frmPlanDePagoReingreso.DTPFecha.Value = grilla1.Columns(1).Text
     frmPlanDePagoReingreso.txtMonto.Text = grilla1.Columns(3).Text
     
-    If frmPlanDePagoReingreso.dtpFecha.Month = 12 Then
-            frmPlanDePagoReingreso.dtpFecha.Month = 1
-            frmPlanDePagoReingreso.dtpFecha.Year = frmPlanDePagoReingreso.dtpFecha.Year + 1
+    If frmPlanDePagoReingreso.DTPFecha.Month = 12 Then
+        frmPlanDePagoReingreso.DTPFecha.Month = 1
+        frmPlanDePagoReingreso.DTPFecha.Year = frmPlanDePagoReingreso.DTPFecha.Year + 1
     Else
-        frmPlanDePagoReingreso.dtpFecha.Month = frmPlanDePagoReingreso.dtpFecha.Month + 1
+        If frmPlanDePagoReingreso.DTPFecha.Day > 28 Then
+            frmPlanDePagoReingreso.DTPFecha.Day = 28
+            frmPlanDePagoReingreso.DTPFecha.Month = frmPlanDePagoReingreso.DTPFecha.Month + 1
+        Else: frmPlanDePagoReingreso.DTPFecha.Month = frmPlanDePagoReingreso.DTPFecha.Month + 1
+        End If
     End If
     
     frmPlanDePagoReingreso.Show
     Me.Enabled = False
 End Sub
 
-Private Sub Form_Load()
-    Centrar Me
-    AnalisisDeCuota
-    If rsAnalisisDeCuenta.BOF Or rsAnalisisDeCuenta.EOF Then MsgBox "El alumno seleccionado no tiene creado un Plan de Pago", vbCritical, "Análisis de Cuotas": Exit Sub
-    Historico
-    Marcar
-    Set grilla1.DataSource = rsAnalisisDeCuenta
-    Set grilla2.DataSource = rsHistorico
-    formatoGrilla
-    lblCodAlumno.Caption = rsAnalisisDeCuenta!codigo
-    lblNyA.Caption = rsAnalisisDeCuenta!Alumno
-    If Trim(Len(lblCodAlumno.Caption)) = 1 Then lblCodAlumno.Caption = Format(lblCodAlumno.Caption, "0000#")
-    If Trim(Len(lblCodAlumno.Caption)) = 2 Then lblCodAlumno.Caption = Format(lblCodAlumno.Caption, "000##")
-    If Trim(Len(lblCodAlumno.Caption)) = 3 Then lblCodAlumno.Caption = Format(lblCodAlumno.Caption, "00###")
-    If Trim(Len(lblCodAlumno.Caption)) = 4 Then lblCodAlumno.Caption = Format(lblCodAlumno.Caption, "0####")
+Private Sub cmdBaja_Click()
+    a = MsgBox("¿Está seguro que desea dar la baja de este alumno?", vbYesNo + vbQuestion, "Análisis de Cuotas")
+    If a = vbYes Then
+        frmBajas.Show
+        frmAnalisisDeCuotas.Enabled = False
+        frmBajas.txtmotivo.Text = ""
+        frmBajas.SetFocus
+        
+    '''BAJA - Tabla Plan de Pago
+        With rsPlanDePago
+            If .State = 1 Then .Close
+            .Open "SELECT * FROM plandepago WHERE codalumno=" & CodAlumno, Cn, adOpenDynamic, adLockPessimistic
+            .MoveFirst
+            Do Until .EOF
+                If !tipodepago = "PAG" Then
+                    .MoveNext
+                ElseIf !tipodepago = "Par" Then
+                    .MoveNext
+                Else
+                    !tipodepago = "BAJA"
+                    !fechapago = Date
+                    !DeudaTotal = 0
+                    !CuotasDebidas = 0
+                    .UpdateBatch
+                    .MoveNext
+                End If
+            Loop
+        End With
+        AnalisisDeCuota
+        Set grilla1.DataSource = rsAnalisisDeCuenta
+        formatoGrilla
+    End If
+End Sub
+
+Private Sub grilla1_Click()
+    txtObservaciones.Text = grilla1.Columns(4).Text
+End Sub
+
+Private Sub txtObservaciones_Change()
+    If cmdGrabar.Visible = True Then
+        cmdGrabar.Enabled = True
+    End If
+End Sub
+
+Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
+    If Label11.Caption = "frmCuotasXFecha" Then
+        frmCuotasXFecha.Enabled = True
+        rsCuotasXFecha.Requery
+        frmCuotasXFecha.formatoGrilla
+    ElseIf Label11.Caption = "frmAnalisisSituacion" Then
+        frmAnalisisSituacion.Enabled = True
+        rsAnalisisSituacionDeDeuda.Requery
+        frmAnalisisSituacion.grilla.Columns(2).Width = 800
+    ElseIf Label11.Caption = "frmMarcas" Then
+        frmMarcas.Enabled = True
+        rsMarcas.Requery
+        frmMarcas.grilla.Columns(2).Width = 400
+    End If
+
 End Sub
 
 Sub formatoGrilla()
@@ -726,31 +749,4 @@ Sub formatoGrilla()
             grilla2.Columns(N).Width = w
         End If
     Next
-End Sub
-
-Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
-    If Label11.Caption = "frmCuotasXFecha" Then
-        frmCuotasXFecha.Enabled = True
-        rsCuotasXFecha.Requery
-        frmCuotasXFecha.formatoGrilla
-    ElseIf Label11.Caption = "frmAnalisisSituacion" Then
-        frmAnalisisSituacion.Enabled = True
-        rsAnalisisSituacionDeDeuda.Requery
-        frmAnalisisSituacion.grilla.Columns(2).Width = 800
-    ElseIf Label11.Caption = "frmMarcas" Then
-        frmMarcas.Enabled = True
-        rsMarcas.Requery
-        frmMarcas.grilla.Columns(2).Width = 400
-    End If
-
-End Sub
-
-Private Sub grilla1_Click()
-    txtObservaciones.Text = grilla1.Columns(4).Text
-End Sub
-
-Private Sub txtObservaciones_Change()
-    If cmdGrabar.Visible = True Then
-        cmdGrabar.Enabled = True
-    End If
 End Sub

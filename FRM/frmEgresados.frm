@@ -6,7 +6,7 @@ Begin VB.Form frmEgresados
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Egresados"
-   ClientHeight    =   4485
+   ClientHeight    =   4275
    ClientLeft      =   45
    ClientTop       =   435
    ClientWidth     =   4710
@@ -17,7 +17,7 @@ Begin VB.Form frmEgresados
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    Picture         =   "frmEgresados.frx":324A
-   ScaleHeight     =   4485
+   ScaleHeight     =   4275
    ScaleWidth      =   4710
    Begin VB.Frame Frame1 
       BackColor       =   &H00662200&
@@ -32,7 +32,7 @@ Begin VB.Form frmEgresados
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H8000000F&
-      Height          =   1575
+      Height          =   1335
       Left            =   120
       TabIndex        =   5
       Top             =   0
@@ -54,7 +54,7 @@ Begin VB.Form frmEgresados
          Index           =   0
          Left            =   120
          TabIndex        =   2
-         Top             =   840
+         Top             =   960
          Value           =   -1  'True
          Width           =   1335
       End
@@ -75,7 +75,7 @@ Begin VB.Form frmEgresados
          Index           =   1
          Left            =   1560
          TabIndex        =   3
-         Top             =   840
+         Top             =   960
          Width           =   1215
       End
       Begin MSComCtl2.DTPicker dtpHasta 
@@ -96,7 +96,7 @@ Begin VB.Form frmEgresados
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   142409729
+         Format          =   84279297
          CurrentDate     =   41978
       End
       Begin MSComCtl2.DTPicker dtpDesde 
@@ -117,7 +117,7 @@ Begin VB.Form frmEgresados
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   142409729
+         Format          =   84279297
          CurrentDate     =   41978
       End
       Begin isButtonTest.isButton cmdConsultar 
@@ -152,24 +152,23 @@ Begin VB.Form frmEgresados
          EndProperty
       End
       Begin VB.Label Label3 
-         Alignment       =   2  'Center
-         BorderStyle     =   1  'Fixed Single
+         BackStyle       =   0  'Transparent
          Caption         =   "0 Alumnos"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.75
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         ForeColor       =   &H00000080&
-         Height          =   360
-         Left            =   120
+         ForeColor       =   &H8000000F&
+         Height          =   300
+         Left            =   3000
          TabIndex        =   8
-         Top             =   1080
-         Width           =   2775
+         Top             =   960
+         Width           =   1335
       End
       Begin VB.Label Label1 
          Alignment       =   1  'Right Justify
@@ -216,7 +215,7 @@ Begin VB.Form frmEgresados
       Height          =   2655
       Left            =   120
       TabIndex        =   4
-      Top             =   1680
+      Top             =   1440
       Width           =   4455
       _ExtentX        =   7858
       _ExtentY        =   4683

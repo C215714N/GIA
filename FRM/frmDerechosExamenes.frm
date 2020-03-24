@@ -100,7 +100,7 @@ Begin VB.Form frmDerechosExamenes
             Strikethrough   =   0   'False
          EndProperty
          Height          =   360
-         Left            =   120
+         Left            =   150
          TabIndex        =   4
          Top             =   2880
          Width           =   1335
@@ -117,7 +117,7 @@ Begin VB.Form frmDerechosExamenes
          EndProperty
          Height          =   345
          ItemData        =   "frmDerechosExamenes.frx":EBB5
-         Left            =   120
+         Left            =   150
          List            =   "frmDerechosExamenes.frx":EBC2
          Style           =   2  'Dropdown List
          TabIndex        =   2
@@ -135,7 +135,7 @@ Begin VB.Form frmDerechosExamenes
             Strikethrough   =   0   'False
          EndProperty
          Height          =   360
-         Left            =   120
+         Left            =   150
          TabIndex        =   3
          Top             =   2280
          Width           =   1335
@@ -153,7 +153,7 @@ Begin VB.Form frmDerechosExamenes
          EndProperty
          Height          =   345
          ItemData        =   "frmDerechosExamenes.frx":EBE4
-         Left            =   120
+         Left            =   150
          List            =   "frmDerechosExamenes.frx":EBE6
          TabIndex        =   1
          Top             =   1080
@@ -161,7 +161,7 @@ Begin VB.Form frmDerechosExamenes
       End
       Begin MSComCtl2.DTPicker dtpFecha 
          Height          =   375
-         Left            =   120
+         Left            =   150
          TabIndex        =   5
          Top             =   480
          Width           =   1335
@@ -178,12 +178,12 @@ Begin VB.Form frmDerechosExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   142409729
+         Format          =   84148225
          CurrentDate     =   41978
       End
       Begin isButtonTest.isButton cmdAgregar 
          Height          =   420
-         Left            =   120
+         Left            =   150
          TabIndex        =   18
          Top             =   3300
          Width           =   1335
@@ -212,7 +212,7 @@ Begin VB.Form frmDerechosExamenes
       End
       Begin isButtonTest.isButton cmdExamenes 
          Height          =   420
-         Left            =   120
+         Left            =   150
          TabIndex        =   19
          Top             =   3800
          Width           =   1335
@@ -253,7 +253,7 @@ Begin VB.Form frmDerechosExamenes
          EndProperty
          ForeColor       =   &H8000000F&
          Height          =   255
-         Left            =   120
+         Left            =   150
          TabIndex        =   17
          Top             =   2040
          Width           =   1335
@@ -272,7 +272,7 @@ Begin VB.Form frmDerechosExamenes
          EndProperty
          ForeColor       =   &H8000000F&
          Height          =   255
-         Left            =   120
+         Left            =   150
          TabIndex        =   16
          Top             =   2640
          Width           =   1335
@@ -291,7 +291,7 @@ Begin VB.Form frmDerechosExamenes
          EndProperty
          ForeColor       =   &H8000000F&
          Height          =   255
-         Left            =   120
+         Left            =   150
          TabIndex        =   15
          Top             =   1440
          Width           =   1335
@@ -310,7 +310,7 @@ Begin VB.Form frmDerechosExamenes
          EndProperty
          ForeColor       =   &H8000000F&
          Height          =   255
-         Left            =   120
+         Left            =   150
          TabIndex        =   8
          Top             =   840
          Width           =   1335
@@ -329,7 +329,7 @@ Begin VB.Form frmDerechosExamenes
          EndProperty
          ForeColor       =   &H8000000F&
          Height          =   255
-         Left            =   120
+         Left            =   150
          TabIndex        =   7
          Top             =   240
          Width           =   1335
@@ -467,7 +467,7 @@ Private Sub Form_Load()
     Centrar Me
     Control
     txtPrecio.Text = Format(rsControl!derechoExamen, "currency")
-    dtpFecha.Value = Date
+    DTPFecha.Value = Date
 End Sub
 
 Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
@@ -488,12 +488,12 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
                 .Open "SELECT Fecha, Modulo FROM derechoexamen WHERE codalumno=" & Int(txtCodigo.Text) & " ORDER BY fecha", Cn, adOpenDynamic, adLockPessimistic
             End With
             
-            Set grilla.DataSource = rsDerechosExamenes
+            Set Grilla.DataSource = rsDerechosExamenes
             formatoGrilla
             CargarModulos
             txtPrecio.Text = Format(rsControl!derechoExamen, "currency")
             cmbModulo.Enabled = True
-            dtpFecha.Enabled = True
+            DTPFecha.Enabled = True
             cmdAgregar.Enabled = True
             cmbModulo.SetFocus
             
@@ -515,12 +515,12 @@ Private Sub cmdAgregar_Click()
         .Requery
         .AddNew
         !CodAlumno = Int(txtCodigo.Text)
-        !fecha = dtpFecha.Value
+        !fecha = DTPFecha.Value
         !modulo = cmbModulo.Text
         .Update
         .Close
         .Open "SELECT Fecha, Modulo as Módulo FROM derechoexamen WHERE codalumno=" & Int(txtCodigo.Text) & " ORDER BY fecha", Cn, adOpenDynamic, adLockPessimistic
-        Set grilla.DataSource = rsDerechosExamenes
+        Set Grilla.DataSource = rsDerechosExamenes
         formatoGrilla
     End With
 '''GESTION CONTABLE - ASIENTO
@@ -724,6 +724,6 @@ End Sub
 
 Sub formatoGrilla()
     For N = 0 To 1
-        grilla.Columns(N).Width = 1150 + (N * 800)
+        Grilla.Columns(N).Width = 1150 + (N * 800)
     Next
 End Sub

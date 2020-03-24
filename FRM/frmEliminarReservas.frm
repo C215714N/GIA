@@ -22,7 +22,7 @@ Begin VB.Form frmEliminarReservas
       Height          =   375
       Left            =   120
       TabIndex        =   0
-      Top             =   360
+      Top             =   600
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   661
@@ -36,7 +36,7 @@ Begin VB.Form frmEliminarReservas
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   142409729
+      Format          =   84148225
       CurrentDate     =   41037
    End
    Begin isButtonTest.isButton cmdEliminar 
@@ -117,7 +117,7 @@ Begin VB.Form frmEliminarReservas
       Height          =   300
       Left            =   120
       TabIndex        =   1
-      Top             =   120
+      Top             =   360
       Width           =   1125
    End
 End

@@ -5,10 +5,10 @@ Begin VB.Form frmCapacitaciones
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Capacitaciones"
-   ClientHeight    =   4365
+   ClientHeight    =   3975
    ClientLeft      =   45
    ClientTop       =   435
-   ClientWidth     =   5070
+   ClientWidth     =   5115
    ForeColor       =   &H00E0E0E0&
    Icon            =   "frmCapacitaciones.frx":0000
    LinkTopic       =   "Form1"
@@ -16,9 +16,9 @@ Begin VB.Form frmCapacitaciones
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    Picture         =   "frmCapacitaciones.frx":324A
-   ScaleHeight     =   4365
+   ScaleHeight     =   3975
    ScaleMode       =   0  'User
-   ScaleWidth      =   5100.001
+   ScaleWidth      =   5145.268
    Begin VB.TextBox txtCurso 
       BeginProperty Font 
          Name            =   "Century Gothic"
@@ -30,19 +30,19 @@ Begin VB.Form frmCapacitaciones
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   120
+      Left            =   99
       TabIndex        =   1
       Top             =   360
-      Width           =   3375
+      Width           =   3479
    End
    Begin MSDataGridLib.DataGrid grilla 
-      Height          =   3375
-      Left            =   120
+      Height          =   2950
+      Left            =   99
       TabIndex        =   0
       Top             =   840
-      Width           =   3375
-      _ExtentX        =   5953
-      _ExtentY        =   5953
+      Width           =   3479
+      _ExtentX        =   6138
+      _ExtentY        =   5212
       _Version        =   393216
       AllowUpdate     =   0   'False
       ColumnHeaders   =   0   'False
@@ -105,7 +105,7 @@ Begin VB.Form frmCapacitaciones
    End
    Begin isButtonTest.isButton cmdGrabar 
       Height          =   420
-      Left            =   3579
+      Left            =   3678
       TabIndex        =   4
       Top             =   2160
       Width           =   1335
@@ -136,7 +136,7 @@ Begin VB.Form frmCapacitaciones
    End
    Begin isButtonTest.isButton cmdCancelar 
       Height          =   420
-      Left            =   3579
+      Left            =   3678
       TabIndex        =   5
       Top             =   2760
       Width           =   1335
@@ -167,7 +167,7 @@ Begin VB.Form frmCapacitaciones
    End
    Begin isButtonTest.isButton cmdNuevo 
       Height          =   420
-      Left            =   3579
+      Left            =   3678
       TabIndex        =   8
       Top             =   360
       Width           =   1335
@@ -198,7 +198,7 @@ Begin VB.Form frmCapacitaciones
    End
    Begin isButtonTest.isButton cmdModificar 
       Height          =   420
-      Left            =   3579
+      Left            =   3678
       TabIndex        =   6
       Top             =   960
       Width           =   1335
@@ -229,7 +229,7 @@ Begin VB.Form frmCapacitaciones
    End
    Begin isButtonTest.isButton cmdSalir 
       Height          =   420
-      Left            =   3579
+      Left            =   3678
       TabIndex        =   7
       Top             =   3360
       Width           =   1335
@@ -260,7 +260,7 @@ Begin VB.Form frmCapacitaciones
    End
    Begin isButtonTest.isButton cmdEliminar 
       Height          =   420
-      Left            =   3579
+      Left            =   3678
       TabIndex        =   9
       Top             =   1560
       Width           =   1335
@@ -335,7 +335,7 @@ Attribute VB_Exposed = False
 Private Sub cmdCancelar_Click()
     HabilitarBotones True, False
     txtCurso.Locked = True
-    grilla.Enabled = True
+    Grilla.Enabled = True
 End Sub
 
 Private Sub cmdEliminar_Click()
@@ -350,7 +350,7 @@ Private Sub cmdEliminar_Click()
                 .Delete
                 .Update
             End With
-            grilla.Refresh
+            Grilla.Refresh
             txtCurso.Text = ""
         End If
     End If
@@ -368,7 +368,7 @@ If Modi = True Then
         .UpdateBatch
     End With
     HabilitarBotones True, False
-    grilla.Enabled = True
+    Grilla.Enabled = True
     txtCurso.Locked = True
     txtCurso.Text = ""
 Else
@@ -379,7 +379,7 @@ Else
         .Update
     End With
     HabilitarBotones True, False
-    grilla.Enabled = True
+    Grilla.Enabled = True
     txtCurso.Locked = True
     txtCurso.Text = ""
 End If
@@ -398,7 +398,7 @@ Private Sub cmdModificar_Click()
         txtCurso.Locked = False
         txtCurso.SetFocus
         HabilitarBotones False, True
-        grilla.Enabled = False
+        Grilla.Enabled = False
         Modi = True
     End If
 End Sub
@@ -407,7 +407,7 @@ Private Sub cmdNuevo_Click()
     txtCurso.Locked = False
     HabilitarBotones False, True
     txtCurso.SetFocus
-    grilla.Enabled = False
+    Grilla.Enabled = False
     txtCurso.Text = ""
     Modi = False
 End Sub
@@ -419,16 +419,16 @@ End Sub
 Private Sub Form_Load()
     Centrar Me
     Capacitaciones
-    Set grilla.DataSource = rsCapacitaciones
-    grilla.Columns(0).Width = 3200
+    Set Grilla.DataSource = rsCapacitaciones
+    Grilla.Columns(0).Width = 3200
     txtCurso.Locked = True
     txtCurso.Text = ""
     HabilitarBotones True, False
 End Sub
 
 Private Sub grilla_Click()
-    lblID.Caption = grilla.Text
-    txtCurso.Text = grilla.Text
+    lblID.Caption = Grilla.Text
+    txtCurso.Text = Grilla.Text
 End Sub
 
 Sub HabilitarBotones(estado1 As Boolean, estado2 As Boolean)

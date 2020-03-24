@@ -51,7 +51,7 @@ Begin VB.Form frmGruposArmado
          List            =   "frmGruposArmado.frx":AC7D
          Style           =   2  'Dropdown List
          TabIndex        =   0
-         Top             =   480
+         Top             =   600
          Width           =   1335
       End
       Begin VB.ComboBox cmbHorario 
@@ -70,7 +70,7 @@ Begin VB.Form frmGruposArmado
          List            =   "frmGruposArmado.frx":ACD6
          Style           =   2  'Dropdown List
          TabIndex        =   1
-         Top             =   1080
+         Top             =   1200
          Width           =   1335
       End
       Begin isButtonTest.isButton cmdAlumnos 
@@ -182,7 +182,7 @@ Begin VB.Form frmGruposArmado
          Height          =   255
          Left            =   120
          TabIndex        =   4
-         Top             =   840
+         Top             =   960
          Width           =   615
       End
       Begin VB.Label Label1 
@@ -201,7 +201,7 @@ Begin VB.Form frmGruposArmado
          Height          =   255
          Left            =   120
          TabIndex        =   3
-         Top             =   240
+         Top             =   360
          Width           =   495
       End
    End

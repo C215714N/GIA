@@ -4,18 +4,18 @@ Begin VB.Form frmDetalleStatus
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Detalle del Status de la Base"
-   ClientHeight    =   5460
+   ClientHeight    =   5445
    ClientLeft      =   8940
    ClientTop       =   1995
-   ClientWidth     =   7590
+   ClientWidth     =   6030
    ForeColor       =   &H00E0E0E0&
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    Picture         =   "frmDetalleStatus.frx":0000
-   ScaleHeight     =   5460
-   ScaleWidth      =   7590
+   ScaleHeight     =   5445
+   ScaleWidth      =   6030
    Begin VB.TextBox txtFiltroMarcas 
       BeginProperty Font 
          Name            =   "Century Gothic"
@@ -27,7 +27,7 @@ Begin VB.Form frmDetalleStatus
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Left            =   3840
+      Left            =   3120
       TabIndex        =   13
       Top             =   360
       Width           =   1335
@@ -53,8 +53,8 @@ Begin VB.Form frmDetalleStatus
       Left            =   120
       TabIndex        =   1
       Top             =   840
-      Width           =   3615
-      _ExtentX        =   6376
+      Width           =   2775
+      _ExtentX        =   4895
       _ExtentY        =   6588
       _Version        =   393216
       AllowUpdate     =   0   'False
@@ -115,11 +115,11 @@ Begin VB.Form frmDetalleStatus
    End
    Begin MSDataGridLib.DataGrid GrillaMarcas 
       Height          =   3735
-      Left            =   3840
+      Left            =   3120
       TabIndex        =   0
       Top             =   840
-      Width           =   3615
-      _ExtentX        =   6376
+      Width           =   2775
+      _ExtentX        =   4895
       _ExtentY        =   6588
       _Version        =   393216
       AllowUpdate     =   0   'False
@@ -178,6 +178,13 @@ Begin VB.Form frmDetalleStatus
          EndProperty
       EndProperty
    End
+   Begin VB.Line Line1 
+      BorderColor     =   &H80000000&
+      X1              =   3000
+      X2              =   3000
+      Y1              =   0
+      Y2              =   5600
+   End
    Begin VB.Label lblDeudaMarcas 
       Alignment       =   2  'Center
       BeginProperty Font 
@@ -190,7 +197,7 @@ Begin VB.Form frmDetalleStatus
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Left            =   5280
+      Left            =   4560
       TabIndex        =   11
       Top             =   4920
       Width           =   1335
@@ -228,7 +235,7 @@ Begin VB.Form frmDetalleStatus
       EndProperty
       ForeColor       =   &H00E0E0E0&
       Height          =   240
-      Left            =   5280
+      Left            =   4560
       TabIndex        =   9
       Top             =   4680
       Width           =   1050
@@ -283,7 +290,7 @@ Begin VB.Form frmDetalleStatus
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Left            =   3840
+      Left            =   3120
       TabIndex        =   6
       Top             =   4920
       Width           =   1335
@@ -304,7 +311,7 @@ Begin VB.Form frmDetalleStatus
       EndProperty
       ForeColor       =   &H00E0E0E0&
       Height          =   240
-      Left            =   3840
+      Left            =   3120
       TabIndex        =   5
       Top             =   4680
       Width           =   1140
@@ -345,7 +352,7 @@ Begin VB.Form frmDetalleStatus
       EndProperty
       ForeColor       =   &H00E0E0E0&
       Height          =   255
-      Left            =   3840
+      Left            =   3120
       TabIndex        =   3
       Top             =   120
       Width           =   1575

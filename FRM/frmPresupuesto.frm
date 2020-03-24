@@ -270,7 +270,7 @@ Begin VB.Form frmPresupuesto
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "yyyy"
-         Format          =   142409731
+         Format          =   84148227
          CurrentDate     =   36526
          MaxDate         =   401876
          MinDate         =   36526
@@ -352,78 +352,6 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Dim ActualizarPresupuesto As Boolean
-Private Sub cmbMes_Click()
-    With rsPresupuesto
-        If ActualizarPresupuesto = True Then
-            If .State = 1 Then .UpdateBatch: .Close: ActualizarPresupuesto = False
-        Else
-            If .State = 1 Then .Close: ActualizarPresupuesto = False
-        End If
-        .Open "SELECT sum(deuda) FROM presupuesto WHERE mes='" & cmbMes.Text & "' and año=" & Year(dtpAño.Value), Cn, adOpenDynamic, adLockPessimistic
-        lblDeuda.Caption = Format(!expr1000, "currency")
-        .Close
-        .Open "SELECT sum(pagado) FROM presupuesto WHERE mes='" & cmbMes.Text & "' and año=" & Year(dtpAño.Value), Cn, adOpenDynamic, adLockPessimistic
-        lblPagado.Caption = Format(!expr1000, "currency")
-        .Close
-        .Open "SELECT sum(saldo) FROM presupuesto WHERE mes='" & cmbMes.Text & "' and año=" & Year(dtpAño.Value), Cn, adOpenDynamic, adLockPessimistic
-        lblSaldo.Caption = Format(!expr1000, "currency")
-        .Close
-        .Open "SELECT Cuenta,Deuda,Pagado,Saldo,Observaciones,id FROM presupuesto WHERE mes='" & cmbMes.Text & "' and año=" & Year(dtpAño.Value) & " ORDER BY cuenta", Cn, adOpenDynamic, adLockPessimistic
-        Set grilla.DataSource = rsPresupuesto
-    End With
-    formatoGrilla
-    cmdInforme.Enabled = True
-End Sub
-
-Private Sub cmdInforme_Click()
-    Set dtrPresupuesto.DataSource = rsPresupuesto
-    dtrPresupuesto.Caption = "Presupuesto"
-    dtrPresupuesto.Sections("Sección4").Controls("lblmes").Caption = frmPresupuesto.cmbMes.Text
-    dtrPresupuesto.Sections("Sección4").Controls("lblaño").Caption = frmPresupuesto.dtpAño.Value
-    dtrPresupuesto.Sections("Sección5").Controls("lblDeudaTotal").Caption = lblDeuda.Caption
-    dtrPresupuesto.Sections("Sección5").Controls("lblPagadoTotal").Caption = lblPagado.Caption
-    dtrPresupuesto.Sections("Sección5").Controls("lblSaldoTotal").Caption = lblSaldo.Caption
-    
-    dtrPresupuesto.Show
-    Me.Enabled = False
-End Sub
-
-Private Sub dtpAño_Change()
-    With rsPresupuesto
-        If ActualizarPresupuesto = True Then
-            If .State = 1 Then .UpdateBatch: .Close: ActualizarPresupuesto = False
-        Else
-            If .State = 1 Then .Close: ActualizarPresupuesto = False
-        End If
-        .Open "SELECT sum(deuda) FROM presupuesto WHERE mes='" & cmbMes.Text & "' and año=" & Year(dtpAño.Value), Cn, adOpenDynamic, adLockPessimistic
-        lblDeuda.Caption = Format(!expr1000, "currency")
-        .Close
-        .Open "SELECT sum(pagado) FROM presupuesto WHERE mes='" & cmbMes.Text & "' and año=" & Year(dtpAño.Value), Cn, adOpenDynamic, adLockPessimistic
-        lblPagado.Caption = Format(!expr1000, "currency")
-        .Close
-        .Open "SELECT sum(saldo) FROM presupuesto WHERE mes='" & cmbMes.Text & "' and año=" & Year(dtpAño.Value), Cn, adOpenDynamic, adLockPessimistic
-        lblSaldo.Caption = Format(!expr1000, "currency")
-        .Close
-        .Open "SELECT Cuenta,Deuda,Pagado,Saldo,Observaciones,id FROM presupuesto WHERE mes='" & cmbMes.Text & "' and año=" & Year(dtpAño.Value) & " ORDER BY cuenta", Cn, adOpenDynamic, adLockPessimistic
-        Set grilla.DataSource = rsPresupuesto
-    End With
-    formatoGrilla
-    cmdInforme.Enabled = True
-End Sub
-
-Private Sub formatoGrilla()
-    Dim w As Integer
-    For N = 0 To 5 Step 1
-        If N > 0 And N < 4 Then
-            w = 800
-        ElseIf N = 5 Then
-            w = 0
-        Else:
-            w = 2400
-        End If
-        grilla.Columns(N).Width = w
-    Next
-End Sub
 
 Private Sub Form_Load()
     Centrar Me
@@ -454,17 +382,86 @@ Private Sub Form_Load()
     End If
     
     dtpAño.Value = Date
-    
     ActualizarPresupuesto = False
 End Sub
 
+Private Sub cmbMes_Click()
+    With rsPresupuesto
+        If ActualizarPresupuesto = True Then
+            If .State = 1 Then .UpdateBatch: .Close: ActualizarPresupuesto = False
+        Else
+            If .State = 1 Then .Close: ActualizarPresupuesto = False
+        End If
+        .Open "SELECT sum(deuda) FROM presupuesto WHERE mes='" & cmbMes.Text & "' and año=" & Year(dtpAño.Value), Cn, adOpenDynamic, adLockPessimistic
+        lblDeuda.Caption = Format(!expr1000, "currency")
+        .Close
+        .Open "SELECT sum(pagado) FROM presupuesto WHERE mes='" & cmbMes.Text & "' and año=" & Year(dtpAño.Value), Cn, adOpenDynamic, adLockPessimistic
+        lblPagado.Caption = Format(!expr1000, "currency")
+        .Close
+        .Open "SELECT sum(saldo) FROM presupuesto WHERE mes='" & cmbMes.Text & "' and año=" & Year(dtpAño.Value), Cn, adOpenDynamic, adLockPessimistic
+        lblSaldo.Caption = Format(!expr1000, "currency")
+        .Close
+        .Open "SELECT Cuenta,Deuda,Pagado,Saldo,Observaciones,id FROM presupuesto WHERE mes='" & cmbMes.Text & "' and año=" & Year(dtpAño.Value) & " ORDER BY cuenta", Cn, adOpenDynamic, adLockPessimistic
+        Set Grilla.DataSource = rsPresupuesto
+    End With
+    formatoGrilla
+    cmdInforme.Enabled = True
+End Sub
+
+Private Sub cmdInforme_Click()
+    Set dtrPresupuesto.DataSource = rsPresupuesto
+    dtrPresupuesto.Caption = "Presupuesto"
+    dtrPresupuesto.Sections("Sección4").Controls("lblmes").Caption = frmPresupuesto.cmbMes.Text
+    dtrPresupuesto.Sections("Sección4").Controls("lblaño").Caption = frmPresupuesto.dtpAño.Value
+    dtrPresupuesto.Sections("Sección5").Controls("lblDeudaTotal").Caption = lblDeuda.Caption
+    dtrPresupuesto.Sections("Sección5").Controls("lblPagadoTotal").Caption = lblPagado.Caption
+    dtrPresupuesto.Sections("Sección5").Controls("lblSaldoTotal").Caption = lblSaldo.Caption
+    dtrPresupuesto.Show
+    Me.Enabled = False
+End Sub
+
+Private Sub dtpAño_Change()
+    With rsPresupuesto
+        If ActualizarPresupuesto = True Then
+            If .State = 1 Then .UpdateBatch: .Close: ActualizarPresupuesto = False
+        Else
+            If .State = 1 Then .Close: ActualizarPresupuesto = False
+        End If
+        .Open "SELECT sum(deuda) FROM presupuesto WHERE mes='" & cmbMes.Text & "' and año=" & Year(dtpAño.Value), Cn, adOpenDynamic, adLockPessimistic
+        lblDeuda.Caption = Format(!expr1000, "currency")
+        .Close
+        .Open "SELECT sum(pagado) FROM presupuesto WHERE mes='" & cmbMes.Text & "' and año=" & Year(dtpAño.Value), Cn, adOpenDynamic, adLockPessimistic
+        lblPagado.Caption = Format(!expr1000, "currency")
+        .Close
+        .Open "SELECT sum(saldo) FROM presupuesto WHERE mes='" & cmbMes.Text & "' and año=" & Year(dtpAño.Value), Cn, adOpenDynamic, adLockPessimistic
+        lblSaldo.Caption = Format(!expr1000, "currency")
+        .Close
+        .Open "SELECT Cuenta,Deuda,Pagado,Saldo,Observaciones,id FROM presupuesto WHERE mes='" & cmbMes.Text & "' and año=" & Year(dtpAño.Value) & " ORDER BY cuenta", Cn, adOpenDynamic, adLockPessimistic
+        Set Grilla.DataSource = rsPresupuesto
+    End With
+    formatoGrilla
+    cmdInforme.Enabled = True
+End Sub
 
 Private Sub grilla_KeyPress(KeyAscii As Integer)
     ActualizarPresupuesto = True
-    If KeyAscii = 13 And grilla.Col = 2 Then
-        grilla.Columns(3).Text = grilla.Columns(1).Text - grilla.Columns(2).Text
-    ElseIf KeyAscii = 13 And grilla.Col = 1 Then
-        grilla.Columns(3).Text = grilla.Columns(1).Text - grilla.Columns(2).Text
-    
+    If KeyAscii = 13 And Grilla.Col = 2 Then
+        Grilla.Columns(3).Text = Grilla.Columns(1).Text - Grilla.Columns(2).Text
+    ElseIf KeyAscii = 13 And Grilla.Col = 1 Then
+        Grilla.Columns(3).Text = Grilla.Columns(1).Text - Grilla.Columns(2).Text
     End If
+End Sub
+
+Private Sub formatoGrilla()
+    Dim w As Integer
+    For N = 0 To 5 Step 1
+        If N > 0 And N < 4 Then
+            w = 800
+        ElseIf N = 5 Then
+            w = 0
+        Else:
+            w = 2400
+        End If
+        Grilla.Columns(N).Width = w
+    Next
 End Sub

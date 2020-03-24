@@ -178,11 +178,11 @@ Begin VB.MDIForm MDI
          NumPanels       =   5
          BeginProperty Panel1 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   6
-            TextSave        =   "27/02/2020"
+            TextSave        =   "24/03/2020"
          EndProperty
          BeginProperty Panel2 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   5
-            TextSave        =   "04:29 a.m."
+            TextSave        =   "03:09 a.m."
          EndProperty
          BeginProperty Panel3 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   2
@@ -450,7 +450,7 @@ Private Sub MDIForm_QueryUnload(Cancel As Integer, UnloadMode As Integer)
 End Sub
 
 Private Sub mnuLibro_Click()
-frmLibroOperador.Show
+    frmLibroOperador.Show
 End Sub
 
 Private Sub mnuSalir_Click()

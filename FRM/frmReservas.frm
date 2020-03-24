@@ -7,10 +7,10 @@ Begin VB.Form frmReservas
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Reservas"
-   ClientHeight    =   4575
+   ClientHeight    =   4380
    ClientLeft      =   3180
    ClientTop       =   2100
-   ClientWidth     =   12645
+   ClientWidth     =   12615
    ForeColor       =   &H00E0E0E0&
    Icon            =   "frmReservas.frx":0000
    LinkTopic       =   "Form1"
@@ -18,8 +18,8 @@ Begin VB.Form frmReservas
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    Picture         =   "frmReservas.frx":324A
-   ScaleHeight     =   4575
-   ScaleWidth      =   12645
+   ScaleHeight     =   4380
+   ScaleWidth      =   12615
    Begin VB.TextBox txtAsistencia 
       DataField       =   "PA"
       DataSource      =   "Data1"
@@ -35,7 +35,7 @@ Begin VB.Form frmReservas
       Height          =   360
       Left            =   7080
       TabIndex        =   12
-      Top             =   4080
+      Top             =   3840
       Width           =   3975
    End
    Begin VB.Frame frameHorarios 
@@ -55,7 +55,7 @@ Begin VB.Form frmReservas
       Left            =   100
       TabIndex        =   3
       ToolTipText     =   "Seleccione el Horario"
-      Top             =   3000
+      Top             =   2760
       Width           =   2790
       Begin VB.OptionButton rbt4 
          BackColor       =   &H00884400&
@@ -211,14 +211,14 @@ Begin VB.Form frmReservas
       End
    End
    Begin MSDataGridLib.DataGrid grilla 
-      Height          =   3420
+      Height          =   3180
       Left            =   3000
       Negotiate       =   -1  'True
       TabIndex        =   0
       Top             =   360
       Width           =   8055
       _ExtentX        =   14208
-      _ExtentY        =   6033
+      _ExtentY        =   5609
       _Version        =   393216
       AllowUpdate     =   0   'False
       ForeColor       =   0
@@ -278,21 +278,21 @@ Begin VB.Form frmReservas
       EndProperty
    End
    Begin MSComCtl2.MonthView MonthView1 
-      Height          =   2655
-      Left            =   105
+      Height          =   2370
+      Left            =   110
       TabIndex        =   1
       ToolTipText     =   "Seleccione la Fecha"
       Top             =   360
-      Width           =   2805
-      _ExtentX        =   4948
-      _ExtentY        =   4683
+      Width           =   2385
+      _ExtentX        =   4207
+      _ExtentY        =   4180
       _Version        =   393216
       ForeColor       =   8930304
       BackColor       =   8930304
       Appearance      =   1
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   7.5
+         Size            =   6.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -300,7 +300,7 @@ Begin VB.Form frmReservas
          Strikethrough   =   0   'False
       EndProperty
       MonthBackColor  =   16777215
-      StartOfWeek     =   88604674
+      StartOfWeek     =   38862850
       TitleBackColor  =   8930304
       TitleForeColor  =   16777215
       TrailingForeColor=   14737632
@@ -311,7 +311,7 @@ Begin VB.Form frmReservas
       Height          =   360
       Left            =   3000
       TabIndex        =   13
-      Top             =   4080
+      Top             =   3840
       Width           =   3975
       _ExtentX        =   7011
       _ExtentY        =   635
@@ -537,7 +537,7 @@ Begin VB.Form frmReservas
       Height          =   255
       Left            =   3000
       TabIndex        =   15
-      Top             =   3840
+      Top             =   3600
       Width           =   1815
    End
    Begin VB.Label lblAsistencia 
@@ -557,7 +557,7 @@ Begin VB.Form frmReservas
       Height          =   225
       Left            =   7080
       TabIndex        =   14
-      Top             =   3840
+      Top             =   3600
       Width           =   825
    End
    Begin VB.Label lblCodalumno 
@@ -634,7 +634,7 @@ Private Sub btnAsistencia_Click()
 End Sub
 
 Private Sub btnEliminar_Click()
-        a = MsgBox("¿Esta seguro que desea eliminar al alumno " & grilla.Columns(0).Text & "?", vbYesNo, "Eliminar Selección")
+        a = MsgBox("¿Esta seguro que desea eliminar al alumno " & Grilla.Columns(0).Text & "?", vbYesNo, "Eliminar Selección")
         If a = vbYes Then
             With rsReservas
                 Dim fecha As Date
@@ -687,7 +687,7 @@ fecha = Format(MonthView1.Value, "mm/dd/yyyy")
         If .BOF Or .EOF Then lblreservas.Caption = 0: lblAsistencia.Visible = False: txtAsistencia.Text = "": txtAsistencia.Visible = False: btnAgregar.Enabled = True: btnEliminar.Enabled = False: btnAsistencia.Enabled = False:  Exit Sub
     End With
     
-    Set grilla.DataSource = rsReservas
+    Set Grilla.DataSource = rsReservas
     formatoGrilla
     lblreservas.Caption = rsReservas.RecordCount
     Equipos
@@ -764,7 +764,7 @@ End Sub
 
 Private Sub grilla_Click()
     lblNyA.Visible = True
-    dtcAlumno.Text = grilla.Columns(0).Text
+    dtcAlumno.Text = Grilla.Columns(0).Text
     dtcAlumno.Visible = True
     btnEliminar.Enabled = True
     btnAsistencia.Enabled = True
@@ -889,7 +889,7 @@ Else
     With rsReservas
         If .State = 1 Then .Close
             .Open "SELECT nya as [Apellido y Nombre], pa as [P/A],Fecha, hora as Horario FROM Reservas WHERE codalumno=" & Int(lblCodAlumno.Caption) & " ORDER BY  fecha desc,hora", Cn, adOpenDynamic, adLockPessimistic
-            Set grilla.DataSource = rsReservas
+            Set Grilla.DataSource = rsReservas
             lblreservas.Caption = rsReservas.RecordCount
     End With
    
@@ -931,11 +931,11 @@ Sub formatoGrilla()
         Else:
             w = 4800 - (N * 1825)
         End If
-        grilla.Columns(N).Width = w
+        Grilla.Columns(N).Width = w
     Next
-    grilla.Columns(0).Width = 4800
-    grilla.Columns(1).Width = 800
-    grilla.Columns(2).Width = 1200
-    grilla.Columns(3).Width = 800
+    Grilla.Columns(0).Width = 4800
+    Grilla.Columns(1).Width = 800
+    Grilla.Columns(2).Width = 1200
+    Grilla.Columns(3).Width = 800
 End Sub
 
