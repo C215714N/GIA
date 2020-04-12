@@ -221,7 +221,7 @@ Handler3=PDWizard.WebPostDplySubWiz
 
 [Package|CR Software|Root]
 SubWizProgID=PDWizard.SetupPkgSubWiz
-BuildFolder=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\Install
+BuildFolder=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\Setup
 
 [Package|CR Software|Configure DAO ISAMs]
 Applicable=No
@@ -235,8 +235,8 @@ ODBCDirect=
 [Package|CR Software|Files Released]
 
 [Package|CR Software|Missing Dependency Information]
-C:\Windows\System32\isButton.ocx=
-C:\Windows\System32\ieinfo5.OCX=
+C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\MOD\isButton.ocx=
+C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\MOD\ieinfo5.ocx=
 C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA\MSCOMCTL.OCX=
 C:\Windows\System32\HookMenu.ocx=
 C:\Windows\System32\msscript.ocx=
@@ -253,13 +253,13 @@ C:\Windows\System32\COMCT332.OCX=
 C:\Windows\System32\MSSTDFMT.DLL=
 C:\Windows\System32\comdlg32.ocx=
 C:\Windows\System32\MSRDO20.DLL=
-C:\Windows\System32\MSCOMCTL.OCX=
 
 [Package|CR Software|Files Added]
 
 [Package|CR Software|Files Removed]
 
 [Package|CR Software|Files In Project]
+C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\GIA.exe=Yes
 C:\Windows\System32\msvbvm60.dll=Yes
 C:\Windows\System32\oleaut32.dll=Yes
 C:\Windows\System32\olepro32.dll=Yes
@@ -309,6 +309,7 @@ C:\Windows\System32\MSCC2ES.DLL=Yes
 C:\Windows\System32\MSADODC.OCX=Yes
 C:\Windows\System32\ADODCES.DLL=Yes
 C:\Windows\System32\HookMenu.ocx=Yes
+C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA\MSCOMCTL.OCX=Yes
 C:\Windows\System32\COMCTL32.OCX=Yes
 C:\Windows\System32\CMCTLES.DLL=Yes
 C:\Windows\System32\MSCHRT20.OCX=Yes
@@ -316,15 +317,13 @@ C:\Windows\System32\MSCH2ES.DLL=Yes
 C:\Windows\System32\MSCOMM32.OCX=Yes
 C:\Windows\System32\MSCOMES.DLL=Yes
 C:\Windows\System32\MSCAL.OCX=Yes
-C:\Windows\System32\ieinfo5.OCX=Yes
-C:\Windows\System32\isButton.ocx=Yes
+C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\MOD\ieinfo5.ocx=Yes
+C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\MOD\isButton.ocx=Yes
 C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
 C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
 C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
 C:\Windows\System32\VB6STKIT.DLL=Yes
 C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
-C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\GIA.exe=Yes
-C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA\MSCOMCTL.OCX=Yes
 
 [Package|CR Software|Configure Registry Files]
 Applicable=No
@@ -391,22 +390,18 @@ C:\Windows\System32\MSCH2ES.DLL=$(WinSysPath)
 C:\Windows\System32\MSCOMM32.OCX=$(WinSysPath)
 C:\Windows\System32\MSCOMES.DLL=$(WinSysPath)
 C:\Windows\System32\MSCAL.OCX=$(WinSysPath)
-C:\Windows\System32\ieinfo5.OCX=$(WinSysPath)
-C:\Windows\System32\isButton.ocx=$(WinSysPath)
+C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\MOD\ieinfo5.ocx=$(WinSysPath)
+C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\MOD\isButton.ocx=$(WinSysPath)
 C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
 C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
 C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
 C:\Windows\System32\VB6STKIT.DLL=$(WinSysPathSysFile)
 C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
-T:\adm pat.exe=$(AppPath)
-C:\Windows\System32\MSCOMCTL.OCX=$(WinSysPath)
-C:\Windows\System32\MSCMCES.DLL=$(WinSysPath)
 
 [Package|CR Software|Configure Shared Files]
 Applicable=Yes
 C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\GIA.exe=Yes
 C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
-T:\adm pat.exe=Yes
 
 [Package|CR Software|Distribution]
 Type=single
@@ -425,11 +420,11 @@ StartIn1=$(AppPath)
 Key1=Icon1
 
 [Package|CR Software|Package]
-PackageFolder=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\Install
+PackageFolder=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\Setup
 ProjectFolder=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX
 ServerSideCab=
-File1=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\Install\setup.exe
-File2=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\Install\Setup.Lst
-File3=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\Install\GIA.CAB
+File1=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\Setup\setup.exe
+File2=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\Setup\Setup.Lst
+File3=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\Setup\GIA.CAB
 Handler1=PDWizard.FolderDplySubWiz
 Handler2=PDWizard.WebPostDplySubWiz
