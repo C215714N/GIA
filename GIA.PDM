@@ -323,9 +323,8 @@ C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
 C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
 C:\Windows\System32\VB6STKIT.DLL=Yes
 C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
-T:\adm pat.exe=Yes
-C:\Windows\System32\MSCOMCTL.OCX=Yes
-C:\Windows\System32\MSCMCES.DLL=Yes
+C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\GIA.exe=Yes
+C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA\MSCOMCTL.OCX=Yes
 
 [Package|CR Software|Configure Registry Files]
 Applicable=No
@@ -431,6 +430,6 @@ ProjectFolder=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX
 ServerSideCab=
 File1=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\Install\setup.exe
 File2=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\Install\Setup.Lst
-File3=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\Install\adm pat.CAB
+File3=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\Install\GIA.CAB
 Handler1=PDWizard.FolderDplySubWiz
 Handler2=PDWizard.WebPostDplySubWiz
