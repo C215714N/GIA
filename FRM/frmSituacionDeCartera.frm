@@ -37,7 +37,7 @@ Begin VB.Form frmSituacionDeCartera
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   7798785
+      Format          =   43515905
       CurrentDate     =   41624
    End
    Begin VB.Frame Frame1 
@@ -489,10 +489,10 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
     Dim alumnos As Long
-    Dim Cobranza As Single
-    Dim resto As Single
-    Dim totalcobrado As Single
-    Dim deuda As Single
+    Dim Cobranza As Currency
+    Dim resto As Currency
+    Dim totalcobrado As Currency
+    Dim deuda As Currency
 
 Private Sub Form_Load()
     Centrar Me

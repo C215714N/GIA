@@ -239,7 +239,7 @@ Begin VB.Form frmAuditoria
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   142409729
+      Format          =   43515905
       CurrentDate     =   42492
    End
 End
@@ -376,4 +376,3 @@ Private Sub Form_Load()
     End If
     
 End Sub
-

@@ -37,7 +37,7 @@ Begin VB.Form frmClave
       _ExtentX        =   2778
       _ExtentY        =   661
       _Version        =   393216
-      Format          =   142409729
+      Format          =   43515905
       CurrentDate     =   42125
    End
    Begin MSComCtl2.DTPicker DTPFecha 
@@ -58,7 +58,7 @@ Begin VB.Form frmClave
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   142409729
+      Format          =   43515905
       CurrentDate     =   41327
    End
    Begin VB.TextBox txtClave 
@@ -321,7 +321,7 @@ Private Sub cmdIngresar_Click()
     '''declaro variables para las fechas
     Dim fecha As Date
     Dim fechafutura As Date
-    fecha = Format(dtpFecha.Value, "dd/mm/yyyy")
+    fecha = Format(DTPFecha.Value, "dd/mm/yyyy")
     
     Control
 ''' Control de Fecha usuario Administracion
@@ -340,15 +340,15 @@ Private Sub cmdIngresar_Click()
         dtpFechaFutura.Year = dtpFechaFutura.Year + 1
     Else
         dtpFechaFutura.Month = dtpFechaFutura.Month + 1
-        dtpFechaFutura.Year = dtpFecha.Year
+        dtpFechaFutura.Year = DTPFecha.Year
     End If
     
     '''aplico formato a las variables de fechas
     fechafutura = Format(dtpFechaFutura.Value, "mm/dd/yyyy")
-    fecha = Format(dtpFecha.Value, "mm/dd/yyyy")
+    fecha = Format(DTPFecha.Value, "mm/dd/yyyy")
 
     '''controla que no se ingrese con fecha anterior a la ya ingresada
-    If dtpFecha.Value < rsControl!ultimafecha Then
+    If DTPFecha.Value < rsControl!ultimafecha Then
         MsgBox "No puede ingresar al sistema con esa fecha", vbOKOnly + vbInformation, "Gestión Integral del Alumno"
     Else
     '''Usuario Administracion - Gestion Educativa y Contable
@@ -418,7 +418,7 @@ Private Sub cmdIngresar_Click()
         End If
 
     '''Registro de Situacion de Cartera
-        If dtpFecha.Value > rsControl!ultimafecha Then
+        If DTPFecha.Value > rsControl!ultimafecha Then
             With rsSituacionDeCartera
                 If .State = 1 Then .Close
             '''Situacion al dia de la Fecha
@@ -447,10 +447,10 @@ Private Sub cmdIngresar_Click()
                 
             ''' Variables de Totales
                 Dim alumnos As Long
-                Dim Cobranza As Single
-                Dim resto As Single
-                Dim totalcobrado As Single
-                Dim deuda As Single
+                Dim Cobranza As Long
+                Dim resto As Currency
+                Dim totalcobrado As Currency
+                Dim deuda As Currency
                 alumnos = 0
                 deuda = 0
                 Cobranza = 0
@@ -494,7 +494,7 @@ Private Sub cmdIngresar_Click()
                .Close
                .Open "SELECT month(ultimafecha) FROM control", Cn, adOpenDynamic, adLockPessimistic
             End With
-        If dtpFecha.Month <> rsControl!expr1000 Then
+        If DTPFecha.Month <> rsControl!expr1000 Then
             Control
             Marcar
         '''Agrega alumnos del mes a situacion de cartera cuando inicia mes
@@ -610,7 +610,7 @@ fecha:
     '''modifica la ultima fecha en la tabla control
         Control
         With rsControl
-            !ultimafecha = dtpFecha.Value
+            !ultimafecha = DTPFecha.Value
             .UpdateBatch
         End With
         
@@ -640,7 +640,7 @@ End Sub
 Private Sub Form_Load()
     Centrar Me
     Control
-    dtpFecha.Value = Date
+    DTPFecha.Value = Date
 End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
