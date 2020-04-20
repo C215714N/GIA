@@ -118,7 +118,7 @@ Begin VB.Form frmConsultaExamenes
          Index           =   1
          Left            =   1560
          TabIndex        =   4
-         Top             =   840
+         Top             =   960
          Width           =   1335
       End
       Begin VB.OptionButton optBuscar 
@@ -129,7 +129,7 @@ Begin VB.Form frmConsultaExamenes
          Index           =   0
          Left            =   120
          TabIndex        =   3
-         Top             =   840
+         Top             =   960
          Value           =   -1  'True
          Width           =   1335
       End
@@ -151,7 +151,7 @@ Begin VB.Form frmConsultaExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   142409729
+         Format          =   3735553
          CurrentDate     =   41978
       End
       Begin MSComCtl2.DTPicker dtpDesde 
@@ -172,7 +172,7 @@ Begin VB.Form frmConsultaExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   142409729
+         Format          =   3735553
          CurrentDate     =   41978
       End
       Begin isButtonTest.isButton cmdConsultar 
@@ -300,24 +300,23 @@ Begin VB.Form frmConsultaExamenes
          EndProperty
       End
       Begin VB.Label Label3 
-         Alignment       =   2  'Center
-         BorderStyle     =   1  'Fixed Single
+         BackStyle       =   0  'Transparent
          Caption         =   "0 Alumnos"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.75
+            Size            =   9
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         ForeColor       =   &H00000080&
+         ForeColor       =   &H00FFFFFF&
          Height          =   375
          Left            =   120
          TabIndex        =   8
-         Top             =   1080
-         Width           =   2775
+         Top             =   1250
+         Width           =   2655
       End
       Begin VB.Label Label2 
          Alignment       =   1  'Right Justify
@@ -377,26 +376,16 @@ Private Sub cmdConsultar_Click()
     
     With rsExamenes
         If .State = 1 Then .Close
-        
         If optBuscar(0).Value = True Then
-            .Open "SELECT V.Codalumno as Código,nya as Alumno,TipoDoc, DNI as [Nº Documento],Fechanac as [Fecha Nacimiento],Nacionalidad, capac as Curso, Fecha, Modulo, Promedio FROM Verificaciones as V,Examenes as E WHERE v.codalumno=e.codalumno and fecha>=#" & desde & "# and fecha <=#" & hasta & "# ORDER BY nya,fecha", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT V.Codalumno as [Código],nya as [Alumno],TipoDoc, DNI as [Documento],Fechanac as [Nacimiento],Nacionalidad, capac as [Curso], Fecha, Modulo, Promedio FROM Verificaciones as V,Examenes as E WHERE v.codalumno=e.codalumno and fecha>=#" & desde & "# and fecha <=#" & hasta & "# ORDER BY nya,fecha", Cn, adOpenDynamic, adLockPessimistic
         Else
-            .Open "SELECT V.Codalumno as Código,nya as Alumno,TipoDoc, DNI as [Nº Documento],Fechanac as [Fecha Nacimiento],Nacionalidad, capac as Curso, Fecha, Modulo, Promedio FROM Verificaciones as V,Examenes as E WHERE v.codalumno=e.codalumno and fecha>=#" & desde & "# and fecha <=#" & hasta & "# ORDER BY modulo,fecha", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT V.Codalumno as [Código],nya as [Alumno],TipoDoc, DNI as [Documento],Fechanac as [Nacimiento],Nacionalidad, capac as [Curso], Fecha, Modulo, Promedio FROM Verificaciones as V,Examenes as E WHERE v.codalumno=e.codalumno and fecha>=#" & desde & "# and fecha <=#" & hasta & "# ORDER BY modulo,fecha", Cn, adOpenDynamic, adLockPessimistic
         End If
-        
         Set grilla.DataSource = rsExamenes
-        grilla.Columns(1).Width = 3500
-        grilla.Columns(2).Width = 800
-        grilla.Columns(3).Width = 1200
-        grilla.Columns(4).Width = 1400
-        grilla.Columns(5).Width = 1200
-        grilla.Columns(7).Width = 1000
-        grilla.Columns(8).Width = 1500
-        grilla.Columns(9).Width = 800
-        
+        formatoGrilla
     End With
-    
-    Label3.Caption = rsExamenes.RecordCount & " Alumnos"
+    formatoGrilla
+    Label3.Caption = "Alumnos: " & rsExamenes.RecordCount & " Exámenes"
     cmdExportar.Enabled = True
     cmdDiploma.Enabled = False
 End Sub
@@ -432,7 +421,7 @@ Private Sub cmdImprimir_Click()
     Set dtrNotas.DataSource = rsExamenes
     dtrNotas.LeftMargin = 1
     dtrNotas.Sections("Sección5").Controls("lblalumnos").Caption = rsExamenes.RecordCount
-    '''dtrNotas.Orientation = rptOrientLandscape
+    '''dtrNotas.Orientation = dtrorientation.landscape
     dtrNotas.Show
     dtrNotas.Caption = "Exámenes"
     Me.Enabled = False
@@ -448,37 +437,30 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub Exportar_Datagrid(TotalFilas As Long)
-        
-        Me.MousePointer = vbHourglass
-        
-        Set obj_Excel = CreateObject("Excel.Application")
-        Set obj_Libro = obj_Excel.WorkBooks.Open("T:\Examenes.xls")
-        Set obj_Hoja = obj_Excel.ActiveSheet
-        
-        columna = 0
-        
-        For X = 0 To grilla.Columns.Count - 1
-            If grilla.Columns(X).Visible Then
-                columna = columna + 1
-                obj_Hoja.Cells(1, columna) = grilla.Columns(X).Caption
-                
-                For Y = 0 To TotalFilas - 1
-                    obj_Hoja.Cells(Y + 2, columna) = grilla.Columns(X).CellValue(grilla.GetBookmark(Y))
-                Next
-            End If
-        Next
-    
-    obj_Excel.Visible = True
-    
+    Me.MousePointer = vbHourglass
+    Set obj_excel = CreateObject("Excel.Application")
+    Set obj_Libro = obj_excel.workbooks.Open("T:\Examenes.xls")
+    Set obj_Hoja = obj_excel.ActiveSheet
+       
+    Columna = 0
+    For X = 0 To grilla.Columns.Count - 1
+        If grilla.Columns(X).Visible Then
+            Columna = Columna + 1
+            obj_Hoja.Cells(1, Columna) = grilla.Columns(X).Caption
+            For Y = 0 To TotalFilas - 1
+                obj_Hoja.Cells(Y + 2, Columna) = grilla.Columns(X).CellValue(grilla.GetBookmark(Y))
+            Next
+        End If
+    Next
+    obj_excel.Visible = True
     With obj_Hoja
         .Columns("A:Z").autofit
     End With
     
     Me.MousePointer = vbDefault
-    
     Set obj_Hoja = Nothing
     Set obj_Libro = Nothing
-    Set obj_Excel = Nothing
+    Set obj_excel = Nothing
 End Sub
 
 Private Sub grilla_Click()
@@ -488,3 +470,10 @@ Private Sub grilla_Click()
         cmdDiploma.Enabled = True
     End If
 End Sub
+
+Sub formatoGrilla()
+    For N = 1 To N = 12
+        grilla.Columns(N) = 300
+    Next
+End Sub
+

@@ -37,7 +37,7 @@ Begin VB.Form frmSituacionDeCartera
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   43515905
+      Format          =   84213761
       CurrentDate     =   41624
    End
    Begin VB.Frame Frame1 

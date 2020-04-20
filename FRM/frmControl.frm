@@ -4,7 +4,7 @@ Begin VB.Form frmControl
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Control"
-   ClientHeight    =   3165
+   ClientHeight    =   3555
    ClientLeft      =   5160
    ClientTop       =   3645
    ClientWidth     =   5565
@@ -15,7 +15,7 @@ Begin VB.Form frmControl
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    Picture         =   "frmControl.frx":324A
-   ScaleHeight     =   3165
+   ScaleHeight     =   3555
    ScaleWidth      =   5565
    Begin VB.Frame Frame1 
       BackColor       =   &H00884400&
@@ -30,7 +30,7 @@ Begin VB.Form frmControl
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H8000000F&
-      Height          =   3015
+      Height          =   3375
       Left            =   120
       TabIndex        =   6
       Top             =   0
@@ -180,7 +180,7 @@ Begin VB.Form frmControl
          Left            =   120
          Locked          =   -1  'True
          TabIndex        =   4
-         Top             =   2520
+         Top             =   2760
          Width           =   2295
       End
       Begin VB.TextBox txtEmpresa 
@@ -197,7 +197,7 @@ Begin VB.Form frmControl
          Left            =   120
          Locked          =   -1  'True
          TabIndex        =   3
-         Top             =   1920
+         Top             =   2040
          Width           =   3615
       End
       Begin VB.TextBox txtUltimaFecha 
@@ -233,7 +233,7 @@ Begin VB.Form frmControl
          Left            =   2640
          Locked          =   -1  'True
          TabIndex        =   2
-         Top             =   2520
+         Top             =   2760
          Width           =   1095
       End
       Begin VB.TextBox txtCodAlumno 
@@ -309,7 +309,7 @@ Begin VB.Form frmControl
          Height          =   195
          Left            =   120
          TabIndex        =   11
-         Top             =   2280
+         Top             =   2520
          Width           =   960
       End
       Begin VB.Label Label6 
@@ -328,7 +328,7 @@ Begin VB.Form frmControl
          Height          =   195
          Left            =   120
          TabIndex        =   10
-         Top             =   1680
+         Top             =   1800
          Width           =   720
       End
       Begin VB.Label Label5 
@@ -347,7 +347,7 @@ Begin VB.Form frmControl
          Height          =   195
          Left            =   2640
          TabIndex        =   9
-         Top             =   2280
+         Top             =   2520
          Width           =   1080
       End
       Begin VB.Label Label4 

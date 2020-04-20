@@ -187,7 +187,7 @@ Begin VB.Form frmCobranza
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   142409729
+      Format          =   3670017
       CurrentDate     =   41326
    End
    Begin VB.TextBox txtFechaVto 

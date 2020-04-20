@@ -170,7 +170,7 @@ Begin VB.Form frmMarcas
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   7798785
+         Format          =   84869121
          CurrentDate     =   41345
       End
       Begin MSComCtl2.DTPicker dtpDesde 
@@ -191,7 +191,7 @@ Begin VB.Form frmMarcas
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   7798785
+         Format          =   84869121
          CurrentDate     =   41345
       End
       Begin VB.CheckBox chkAbona 

@@ -177,7 +177,7 @@ Begin VB.Form frmConsultarCheques
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   142409729
+         Format          =   3670017
          CurrentDate     =   41782
       End
       Begin MSComCtl2.DTPicker dtpDesde 
@@ -199,7 +199,7 @@ Begin VB.Form frmConsultarCheques
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   142409729
+         Format          =   3670017
          CurrentDate     =   41782
       End
       Begin isButtonTest.isButton cmdBuscar 
@@ -343,7 +343,7 @@ Begin VB.Form frmConsultarCheques
       Height          =   420
       Left            =   7320
       TabIndex        =   17
-      Top             =   1020
+      Top             =   1080
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
@@ -596,7 +596,6 @@ Private Sub Busqueda()
     Else
         MsgBox "Elija parámetros de búsqueda", vbCritical, "Consultar cheques"
     End If
-    
     
     grilla.Clear
     If rsCheques.BOF Or rsCheques.EOF Then Exit Sub

@@ -5,7 +5,7 @@ Begin VB.Form frmControlLibros
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Control de Manuales"
-   ClientHeight    =   3075
+   ClientHeight    =   3315
    ClientLeft      =   6030
    ClientTop       =   2235
    ClientWidth     =   6405
@@ -15,7 +15,7 @@ Begin VB.Form frmControlLibros
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    Picture         =   "frmControlLibros.frx":0000
-   ScaleHeight     =   3075
+   ScaleHeight     =   3315
    ScaleWidth      =   6405
    Begin VB.Frame Frame1 
       BackColor       =   &H00662200&
@@ -30,7 +30,7 @@ Begin VB.Form frmControlLibros
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H8000000F&
-      Height          =   2775
+      Height          =   3015
       Left            =   4680
       TabIndex        =   1
       Top             =   120
@@ -48,7 +48,7 @@ Begin VB.Form frmControlLibros
          Height          =   360
          Left            =   120
          TabIndex        =   4
-         Top             =   1680
+         Top             =   1920
          Width           =   1355
       End
       Begin VB.TextBox txtStock 
@@ -64,7 +64,7 @@ Begin VB.Form frmControlLibros
          Height          =   360
          Left            =   120
          TabIndex        =   3
-         Top             =   1080
+         Top             =   1200
          Width           =   1355
       End
       Begin VB.TextBox txtManual 
@@ -87,7 +87,7 @@ Begin VB.Form frmControlLibros
          Height          =   420
          Left            =   120
          TabIndex        =   8
-         Top             =   2160
+         Top             =   2400
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
@@ -130,7 +130,7 @@ Begin VB.Form frmControlLibros
          Height          =   255
          Left            =   120
          TabIndex        =   7
-         Top             =   1440
+         Top             =   1680
          Width           =   1350
       End
       Begin VB.Label Label2 
@@ -149,8 +149,8 @@ Begin VB.Form frmControlLibros
          Height          =   255
          Left            =   120
          TabIndex        =   6
-         Top             =   840
-         Width           =   1355
+         Top             =   960
+         Width           =   1350
       End
       Begin VB.Label Label1 
          BackStyle       =   0  'Transparent
@@ -173,13 +173,13 @@ Begin VB.Form frmControlLibros
       End
    End
    Begin MSDataGridLib.DataGrid grilla 
-      Height          =   2655
+      Height          =   2895
       Left            =   120
       TabIndex        =   0
       Top             =   240
       Width           =   4455
       _ExtentX        =   7858
-      _ExtentY        =   4683
+      _ExtentY        =   5106
       _Version        =   393216
       AllowUpdate     =   0   'False
       HeadLines       =   1

@@ -279,7 +279,7 @@ Begin VB.Form frmReservas
    End
    Begin MSComCtl2.MonthView MonthView1 
       Height          =   2370
-      Left            =   110
+      Left            =   105
       TabIndex        =   1
       ToolTipText     =   "Seleccione la Fecha"
       Top             =   360
@@ -300,7 +300,7 @@ Begin VB.Form frmReservas
          Strikethrough   =   0   'False
       EndProperty
       MonthBackColor  =   16777215
-      StartOfWeek     =   38862850
+      StartOfWeek     =   3670018
       TitleBackColor  =   8930304
       TitleForeColor  =   16777215
       TrailingForeColor=   14737632
@@ -634,7 +634,7 @@ Private Sub btnAsistencia_Click()
 End Sub
 
 Private Sub btnEliminar_Click()
-        a = MsgBox("¿Esta seguro que desea eliminar al alumno " & Grilla.Columns(0).Text & "?", vbYesNo, "Eliminar Selección")
+        a = MsgBox("¿Esta seguro que desea eliminar al alumno " & grilla.Columns(0).Text & "?", vbYesNo, "Eliminar Selección")
         If a = vbYes Then
             With rsReservas
                 Dim fecha As Date
@@ -687,7 +687,7 @@ fecha = Format(MonthView1.Value, "mm/dd/yyyy")
         If .BOF Or .EOF Then lblreservas.Caption = 0: lblAsistencia.Visible = False: txtAsistencia.Text = "": txtAsistencia.Visible = False: btnAgregar.Enabled = True: btnEliminar.Enabled = False: btnAsistencia.Enabled = False:  Exit Sub
     End With
     
-    Set Grilla.DataSource = rsReservas
+    Set grilla.DataSource = rsReservas
     formatoGrilla
     lblreservas.Caption = rsReservas.RecordCount
     Equipos
@@ -764,7 +764,7 @@ End Sub
 
 Private Sub grilla_Click()
     lblNyA.Visible = True
-    dtcAlumno.Text = Grilla.Columns(0).Text
+    dtcAlumno.Text = grilla.Columns(0).Text
     dtcAlumno.Visible = True
     btnEliminar.Enabled = True
     btnAsistencia.Enabled = True
@@ -889,7 +889,7 @@ Else
     With rsReservas
         If .State = 1 Then .Close
             .Open "SELECT nya as [Apellido y Nombre], pa as [P/A],Fecha, hora as Horario FROM Reservas WHERE codalumno=" & Int(lblCodAlumno.Caption) & " ORDER BY  fecha desc,hora", Cn, adOpenDynamic, adLockPessimistic
-            Set Grilla.DataSource = rsReservas
+            Set grilla.DataSource = rsReservas
             lblreservas.Caption = rsReservas.RecordCount
     End With
    
@@ -931,11 +931,11 @@ Sub formatoGrilla()
         Else:
             w = 4800 - (N * 1825)
         End If
-        Grilla.Columns(N).Width = w
+        grilla.Columns(N).Width = w
     Next
-    Grilla.Columns(0).Width = 4800
-    Grilla.Columns(1).Width = 800
-    Grilla.Columns(2).Width = 1200
-    Grilla.Columns(3).Width = 800
+    grilla.Columns(0).Width = 4800
+    grilla.Columns(1).Width = 800
+    grilla.Columns(2).Width = 1200
+    grilla.Columns(3).Width = 800
 End Sub
 

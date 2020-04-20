@@ -178,7 +178,7 @@ Begin VB.Form frmDerechosExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   84148225
+         Format          =   37748737
          CurrentDate     =   41978
       End
       Begin isButtonTest.isButton cmdAgregar 
@@ -488,8 +488,8 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
                 .Open "SELECT Fecha, Modulo FROM derechoexamen WHERE codalumno=" & Int(txtCodigo.Text) & " ORDER BY fecha", Cn, adOpenDynamic, adLockPessimistic
             End With
             
-            Set Grilla.DataSource = rsDerechosExamenes
-            formatoGrilla
+            Set grilla.DataSource = rsDerechosExamenes
+            FormatoGrilla
             CargarModulos
             txtPrecio.Text = Format(rsControl!derechoExamen, "currency")
             cmbModulo.Enabled = True
@@ -520,8 +520,8 @@ Private Sub cmdAgregar_Click()
         .Update
         .Close
         .Open "SELECT Fecha, Modulo as Módulo FROM derechoexamen WHERE codalumno=" & Int(txtCodigo.Text) & " ORDER BY fecha", Cn, adOpenDynamic, adLockPessimistic
-        Set Grilla.DataSource = rsDerechosExamenes
-        formatoGrilla
+        Set grilla.DataSource = rsDerechosExamenes
+        FormatoGrilla
     End With
 '''GESTION CONTABLE - ASIENTO
     If MsgBox("¿Abona el total del Derecho de Examen?", vbYesNo + vbQuestion, "Derechos de Exámenes") = vbYes Then
@@ -722,8 +722,8 @@ Private Sub CargarModulos()
     End If
 End Sub
 
-Sub formatoGrilla()
-    For N = 0 To 1
-        Grilla.Columns(N).Width = 1150 + (N * 800)
+Sub FormatoGrilla()
+    For n = 0 To 1
+        grilla.Columns(n).Width = 1150 + (n * 800)
     Next
 End Sub

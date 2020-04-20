@@ -4,10 +4,10 @@ Begin VB.Form frmBajas
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Informe de Bajas"
-   ClientHeight    =   1935
+   ClientHeight    =   1440
    ClientLeft      =   5475
    ClientTop       =   3645
-   ClientWidth     =   3525
+   ClientWidth     =   3990
    ForeColor       =   &H00E0E0E0&
    Icon            =   "frmBajas.frx":0000
    LinkTopic       =   "Form1"
@@ -15,8 +15,8 @@ Begin VB.Form frmBajas
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    Picture         =   "frmBajas.frx":324A
-   ScaleHeight     =   1935
-   ScaleWidth      =   3525
+   ScaleHeight     =   1440
+   ScaleWidth      =   3990
    Begin VB.ComboBox cmbPagoBaja 
       BeginProperty Font 
          Name            =   "Century Gothic"
@@ -29,12 +29,12 @@ Begin VB.Form frmBajas
       EndProperty
       Height          =   360
       ItemData        =   "frmBajas.frx":11DFF
-      Left            =   120
+      Left            =   2500
       List            =   "frmBajas.frx":11E09
       Style           =   2  'Dropdown List
       TabIndex        =   1
-      Top             =   1440
-      Width           =   1815
+      Top             =   360
+      Width           =   1335
    End
    Begin VB.TextBox txtmotivo 
       BeginProperty Font 
@@ -46,18 +46,18 @@ Begin VB.Form frmBajas
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   1095
+      Height          =   975
       Left            =   120
       MultiLine       =   -1  'True
       TabIndex        =   0
-      Top             =   120
-      Width           =   3255
+      Top             =   240
+      Width           =   2295
    End
    Begin isButtonTest.isButton cmdConfirmar 
       Height          =   420
-      Left            =   2040
+      Left            =   2500
       TabIndex        =   3
-      Top             =   1400
+      Top             =   840
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
@@ -97,9 +97,9 @@ Begin VB.Form frmBajas
       EndProperty
       ForeColor       =   &H8000000F&
       Height          =   255
-      Left            =   120
+      Left            =   2500
       TabIndex        =   2
-      Top             =   1200
+      Top             =   120
       Width           =   1335
    End
 End

@@ -122,7 +122,6 @@ Begin VB.Form frmReingresos
       End
    End
    Begin VB.Label Label5 
-      Alignment       =   2  'Center
       BackStyle       =   0  'Transparent
       Caption         =   "ATENCIÓN: RECUERDE QUE EL REINGRESO  APLICA SOLAMENTE A LOS LIBROS DE AULA."
       BeginProperty Font 
@@ -136,13 +135,12 @@ Begin VB.Form frmReingresos
       EndProperty
       ForeColor       =   &H00C0C0FF&
       Height          =   450
-      Left            =   105
+      Left            =   225
       TabIndex        =   8
       Top             =   1065
       Width           =   3735
    End
    Begin VB.Label Label4 
-      Alignment       =   2  'Center
       BackStyle       =   0  'Transparent
       Caption         =   "ATENCIÓN: RECUERDE QUE EL REINGRESO  APLICA SOLAMENTE A LOS LIBROS DE AULA."
       BeginProperty Font 
@@ -156,7 +154,7 @@ Begin VB.Form frmReingresos
       EndProperty
       ForeColor       =   &H00000080&
       Height          =   450
-      Left            =   120
+      Left            =   240
       TabIndex        =   6
       Top             =   1080
       Width           =   3735

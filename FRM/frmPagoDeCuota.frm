@@ -419,6 +419,7 @@ Private Sub cmbTipoPago_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub cmdCobrar_Click()
+    On Error GoTo continuar
         Cobranza
     With rsCobranza
         .Find "nrocuota=" & Int(frmCobranza.txtNroCuota.Text)

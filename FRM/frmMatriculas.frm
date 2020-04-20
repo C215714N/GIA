@@ -91,7 +91,7 @@ Begin VB.Form frmMatriculas
          Height          =   375
          Left            =   120
          TabIndex        =   8
-         Top             =   2000
+         Top             =   1920
          Width           =   1335
       End
       Begin VB.Label Label3 
@@ -148,7 +148,7 @@ Begin VB.Form frmMatriculas
          Height          =   360
          Left            =   120
          TabIndex        =   11
-         Top             =   1750
+         Top             =   1680
          Width           =   1350
       End
    End
@@ -188,7 +188,7 @@ Begin VB.Form frmMatriculas
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   142409729
+         Format          =   84213761
          CurrentDate     =   42089
       End
       Begin MSComCtl2.DTPicker dtpHasta 
@@ -209,7 +209,7 @@ Begin VB.Form frmMatriculas
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   142409729
+         Format          =   84213761
          CurrentDate     =   42089
       End
       Begin isButtonTest.isButton cmdBuscar 

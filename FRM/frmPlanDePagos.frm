@@ -112,7 +112,7 @@ Begin VB.Form frmPlanDePagos
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   38862849
+      Format          =   84869121
       CurrentDate     =   41323
    End
    Begin VB.TextBox txtNroCuota 
@@ -151,7 +151,7 @@ Begin VB.Form frmPlanDePagos
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   38862849
+      Format          =   84869121
       CurrentDate     =   41323
    End
    Begin isButtonTest.isButton cmdCrearPlan 
@@ -339,17 +339,17 @@ Attribute VB_Exposed = False
 Private Sub cmdCrearPlan_Click()
     Dim NroCuota As Integer
     NroCuota = 1
-    Grilla.Rows = 2
-    Grilla.Col = 0
-    Grilla.Row = 0
-    Grilla.Text = "Nº de Cuota"
-    Grilla.Col = 1
-    Grilla.Text = "Fecha de Vencimiento"
-    Grilla.Col = 2
-    Grilla.Text = "Deuda"
-    Grilla.Col = 0
-    Grilla.Row = 1
-    Grilla.ColWidth(1) = 2000
+    grilla.Rows = 2
+    grilla.Col = 0
+    grilla.Row = 0
+    grilla.Text = "Nº de Cuota"
+    grilla.Col = 1
+    grilla.Text = "Fecha de Vencimiento"
+    grilla.Col = 2
+    grilla.Text = "Deuda"
+    grilla.Col = 0
+    grilla.Row = 1
+    grilla.ColWidth(1) = 2000
     
     With rsPlanDePago
         Do Until NroCuota > Val(txtTotalCuotas.Text)
@@ -374,18 +374,18 @@ Private Sub cmdCrearPlan_Click()
             End If
             
             .Update
-            Grilla.Text = NroCuota
-            Grilla.Col = 1
+            grilla.Text = NroCuota
+            grilla.Col = 1
             If NroCuota = 1 Then
-                Grilla.Text = DTPFechaVto.Value
+                grilla.Text = DTPFechaVto.Value
             Else
-                Grilla.Text = dtpVtoDos.Value
+                grilla.Text = dtpVtoDos.Value
             End If
-            Grilla.Col = 2
-            Grilla.Text = txtDeuda.Text
-            Grilla.Rows = Grilla.Rows + 1
-            Grilla.Col = 0
-            Grilla.Row = Grilla.Row + 1
+            grilla.Col = 2
+            grilla.Text = txtDeuda.Text
+            grilla.Rows = grilla.Rows + 1
+            grilla.Col = 0
+            grilla.Row = grilla.Row + 1
             NroCuota = NroCuota + 1
             If NroCuota > 2 Then
                 If dtpVtoDos.Month = 12 Then

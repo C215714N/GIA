@@ -41,7 +41,7 @@ Begin VB.Form frmContabilidad
          Height          =   420
          Left            =   120
          TabIndex        =   5
-         Top             =   800
+         Top             =   750
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
@@ -72,7 +72,7 @@ Begin VB.Form frmContabilidad
          Height          =   420
          Left            =   120
          TabIndex        =   6
-         Top             =   300
+         Top             =   250
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
@@ -103,7 +103,7 @@ Begin VB.Form frmContabilidad
          Height          =   420
          Left            =   120
          TabIndex        =   7
-         Top             =   1300
+         Top             =   1250
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741

@@ -8,7 +8,7 @@ Begin VB.Form frmPlanDePagoReingreso
    ClientHeight    =   1485
    ClientLeft      =   3075
    ClientTop       =   2325
-   ClientWidth     =   4515
+   ClientWidth     =   4470
    ForeColor       =   &H00E0E0E0&
    Icon            =   "frmPlanDePagoReingreso.frx":0000
    LinkTopic       =   "Form1"
@@ -17,7 +17,7 @@ Begin VB.Form frmPlanDePagoReingreso
    MinButton       =   0   'False
    Picture         =   "frmPlanDePagoReingreso.frx":324A
    ScaleHeight     =   1485
-   ScaleWidth      =   4515
+   ScaleWidth      =   4470
    Begin VB.TextBox txtCantidadCuotas 
       BeginProperty Font 
          Name            =   "Century Gothic"
@@ -84,14 +84,14 @@ Begin VB.Form frmPlanDePagoReingreso
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   142409729
+      Format          =   3670017
       CurrentDate     =   41353
    End
    Begin isButtonTest.isButton cmdAplicar 
       Height          =   420
       Left            =   3000
       TabIndex        =   8
-      Top             =   300
+      Top             =   360
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
@@ -247,14 +247,14 @@ Private Sub cmdAplicar_Click()
             !totalcobrado = 0
             !DeudaTotal = txtMonto.Text
             !CuotasDebidas = 1
-            !fechavto = dtpFecha.Value
+            !fechavto = DTPFecha.Value
             .Update
             txtNroCuota.Text = Int(txtNroCuota.Text) + 1
-            If dtpFecha.Month = 12 Then
-                dtpFecha.Month = 1
-                dtpFecha.Year = dtpFecha.Year + 1
+            If DTPFecha.Month = 12 Then
+                DTPFecha.Month = 1
+                DTPFecha.Year = DTPFecha.Year + 1
             Else
-                dtpFecha.Month = dtpFecha.Month + 1
+                DTPFecha.Month = DTPFecha.Month + 1
             End If
             
         Loop

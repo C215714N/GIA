@@ -430,7 +430,7 @@ Begin VB.Form frmSuscripciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   142409729
+         Format          =   40828929
          CurrentDate     =   41308
       End
       Begin VB.Label Label20 
@@ -902,7 +902,7 @@ Begin VB.Form frmSuscripciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   142409729
+         Format          =   40828929
          CurrentDate     =   41308
       End
       Begin MSDataListLib.DataCombo dtcAsistente 

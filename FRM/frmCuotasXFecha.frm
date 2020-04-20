@@ -7,7 +7,7 @@ Begin VB.Form frmCuotasXFecha
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Cuotas Por Fecha"
-   ClientHeight    =   5085
+   ClientHeight    =   6165
    ClientLeft      =   3615
    ClientTop       =   2100
    ClientWidth     =   6765
@@ -26,7 +26,7 @@ Begin VB.Form frmCuotasXFecha
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    Picture         =   "frmCuotasXFecha.frx":0000
-   ScaleHeight     =   5085
+   ScaleHeight     =   6165
    ScaleWidth      =   6765
    Begin MSAdodcLib.Adodc Adodc 
       Height          =   330
@@ -76,13 +76,13 @@ Begin VB.Form frmCuotasXFecha
       _Version        =   393216
    End
    Begin MSDataGridLib.DataGrid grilla 
-      Height          =   4095
+      Height          =   5055
       Left            =   120
       TabIndex        =   4
-      Top             =   840
+      Top             =   900
       Width           =   5055
       _ExtentX        =   8916
-      _ExtentY        =   7223
+      _ExtentY        =   8916
       _Version        =   393216
       AllowUpdate     =   0   'False
       ColumnHeaders   =   -1  'True
@@ -160,7 +160,7 @@ Begin VB.Form frmCuotasXFecha
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   142409729
+      Format          =   3670017
       CurrentDate     =   41345
    End
    Begin MSComCtl2.DTPicker dtpHasta 
@@ -181,7 +181,7 @@ Begin VB.Form frmCuotasXFecha
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   142409729
+      Format          =   3670017
       CurrentDate     =   41345
    End
    Begin isButtonTest.isButton cmdBuscar 
@@ -248,7 +248,7 @@ Begin VB.Form frmCuotasXFecha
       Height          =   420
       Left            =   5280
       TabIndex        =   13
-      Top             =   1350
+      Top             =   1440
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
@@ -279,7 +279,7 @@ Begin VB.Form frmCuotasXFecha
       Height          =   420
       Left            =   5280
       TabIndex        =   14
-      Top             =   1850
+      Top             =   2040
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
@@ -310,7 +310,7 @@ Begin VB.Form frmCuotasXFecha
       Height          =   420
       Left            =   5280
       TabIndex        =   15
-      Top             =   2350
+      Top             =   5520
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
@@ -337,13 +337,44 @@ Begin VB.Form frmCuotasXFecha
          Strikethrough   =   0   'False
       EndProperty
    End
+   Begin isButtonTest.isButton cmdExportar 
+      Height          =   420
+      Left            =   5280
+      TabIndex        =   16
+      Top             =   4920
+      Width           =   1335
+      _ExtentX        =   2355
+      _ExtentY        =   741
+      Icon            =   "frmCuotasXFecha.frx":117F7
+      Style           =   8
+      Caption         =   "       Exportar"
+      IconSize        =   18
+      IconAlign       =   1
+      CaptionAlign    =   1
+      iNonThemeStyle  =   7
+      HighlightColor  =   4194304
+      FontHighlightColor=   14737632
+      Tooltiptitle    =   ""
+      ToolTipIcon     =   0
+      ToolTipType     =   0
+      ttForeColor     =   0
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Century Gothic"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
    Begin VB.Label lblTotalAlumnos 
       Alignment       =   1  'Right Justify
       BorderStyle     =   1  'Fixed Single
       Height          =   360
       Left            =   5280
       TabIndex        =   9
-      Top             =   4560
+      Top             =   4320
       Width           =   1350
    End
    Begin VB.Label Label10 
@@ -362,7 +393,7 @@ Begin VB.Form frmCuotasXFecha
       Height          =   255
       Left            =   5280
       TabIndex        =   10
-      Top             =   4320
+      Top             =   4080
       Width           =   735
    End
    Begin VB.Label Label9 
@@ -382,7 +413,7 @@ Begin VB.Form frmCuotasXFecha
       Height          =   225
       Left            =   5280
       TabIndex        =   8
-      Top             =   3600
+      Top             =   3360
       Width           =   435
    End
    Begin VB.Label lblResta 
@@ -391,7 +422,7 @@ Begin VB.Form frmCuotasXFecha
       Height          =   360
       Left            =   5280
       TabIndex        =   7
-      Top             =   3840
+      Top             =   3600
       Width           =   1350
    End
    Begin VB.Label Label8 
@@ -411,7 +442,7 @@ Begin VB.Form frmCuotasXFecha
       Height          =   225
       Left            =   5280
       TabIndex        =   6
-      Top             =   2880
+      Top             =   2640
       Width           =   960
    End
    Begin VB.Label lblDeudaTotal 
@@ -420,7 +451,7 @@ Begin VB.Form frmCuotasXFecha
       Height          =   360
       Left            =   5280
       TabIndex        =   5
-      Top             =   3120
+      Top             =   2880
       Width           =   1350
    End
    Begin VB.Label Label2 
@@ -469,6 +500,12 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Private Sub Form_Load()
+    Centrar Me
+    dtpDesde.Value = Date
+    dtpHasta.Value = Date
+End Sub
+
 Private Sub cmdBuscar_Click()
 If dtpHasta.Value < dtpDesde.Value Then MsgBox "Ingrese fechas válidas", vbCritical, "Gestión Integral del Alumno": dtpDesde.SetFocus: Exit Sub
 If DateDiff("m", Date, dtpDesde.Value) > 1 Then MsgBox "No se puede realizar esta consulta", vbCritical, "Gestión Integral del Alumno": dtpDesde.SetFocus: Exit Sub
@@ -624,17 +661,42 @@ Private Sub cmdDatos_Click()
 
 End Sub
 
+Private Sub cmdExportar_Click()
+    Call Exportar_Datagrid(grilla.ApproxCount)
+End Sub
+
+Private Sub Exportar_Datagrid(TotalFilas As Long)
+    Me.MousePointer = vbHourglass
+    Set obj_excel = CreateObject("Excel.Application")
+    Set obj_Libro = obj_excel.workbooks.Open("T:\AlumnosDelMes.xls")
+    Set obj_Hoja = obj_excel.ActiveSheet
+       
+    Columna = 0
+    For X = 0 To grilla.Columns.Count - 1
+        If grilla.Columns(X).Visible Then
+            Columna = Columna + 1
+            obj_Hoja.Cells(1, Columna) = grilla.Columns(X).Caption
+            For Y = 0 To TotalFilas - 1
+                obj_Hoja.Cells(Y + 2, Columna) = grilla.Columns(X).CellValue(grilla.GetBookmark(Y))
+            Next
+        End If
+    Next
+    obj_excel.Visible = True
+    With obj_Hoja
+        .Columns("A:Z").autofit
+    End With
+    
+    Me.MousePointer = vbDefault
+    Set obj_Hoja = Nothing
+    Set obj_Libro = Nothing
+    Set obj_excel = Nothing
+End Sub
+
 Private Sub cmdMarcar_Click()
     CodAlumno = grilla.Columns(0).Text
     frmMarcar.Label1.Caption = Me.Name
     frmMarcar.Show
     Me.Enabled = False
-End Sub
-
-Private Sub Form_Load()
-    Centrar Me
-    dtpDesde.Value = Date
-    dtpHasta.Value = Date
 End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)

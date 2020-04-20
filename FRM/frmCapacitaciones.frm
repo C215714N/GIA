@@ -335,7 +335,7 @@ Attribute VB_Exposed = False
 Private Sub cmdCancelar_Click()
     HabilitarBotones True, False
     txtCurso.Locked = True
-    Grilla.Enabled = True
+    grilla.Enabled = True
 End Sub
 
 Private Sub cmdEliminar_Click()
@@ -350,7 +350,7 @@ Private Sub cmdEliminar_Click()
                 .Delete
                 .Update
             End With
-            Grilla.Refresh
+            grilla.Refresh
             txtCurso.Text = ""
         End If
     End If
@@ -368,7 +368,7 @@ If Modi = True Then
         .UpdateBatch
     End With
     HabilitarBotones True, False
-    Grilla.Enabled = True
+    grilla.Enabled = True
     txtCurso.Locked = True
     txtCurso.Text = ""
 Else
@@ -379,7 +379,7 @@ Else
         .Update
     End With
     HabilitarBotones True, False
-    Grilla.Enabled = True
+    grilla.Enabled = True
     txtCurso.Locked = True
     txtCurso.Text = ""
 End If
@@ -398,7 +398,7 @@ Private Sub cmdModificar_Click()
         txtCurso.Locked = False
         txtCurso.SetFocus
         HabilitarBotones False, True
-        Grilla.Enabled = False
+        grilla.Enabled = False
         Modi = True
     End If
 End Sub
@@ -407,7 +407,7 @@ Private Sub cmdNuevo_Click()
     txtCurso.Locked = False
     HabilitarBotones False, True
     txtCurso.SetFocus
-    Grilla.Enabled = False
+    grilla.Enabled = False
     txtCurso.Text = ""
     Modi = False
 End Sub
@@ -419,16 +419,16 @@ End Sub
 Private Sub Form_Load()
     Centrar Me
     Capacitaciones
-    Set Grilla.DataSource = rsCapacitaciones
-    Grilla.Columns(0).Width = 3200
+    Set grilla.DataSource = rsCapacitaciones
+    grilla.Columns(0).Width = 3200
     txtCurso.Locked = True
     txtCurso.Text = ""
     HabilitarBotones True, False
 End Sub
 
 Private Sub grilla_Click()
-    lblID.Caption = Grilla.Text
-    txtCurso.Text = Grilla.Text
+    lblID.Caption = grilla.Text
+    txtCurso.Text = grilla.Text
 End Sub
 
 Sub HabilitarBotones(estado1 As Boolean, estado2 As Boolean)

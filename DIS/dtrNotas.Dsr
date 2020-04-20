@@ -287,7 +287,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrNotas
          _Version        =   393216
          Name            =   "Etiqueta6"
          Object.Left            =   5250
-         Object.Width           =   2200
+         Object.Width           =   2205
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
@@ -475,7 +475,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrNotas
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         DataField       =   "Nº Documento"
+         DataField       =   "Documento"
          Alignment       =   2
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
             Type            =   0
