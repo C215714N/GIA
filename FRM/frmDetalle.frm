@@ -31,7 +31,7 @@ Begin VB.Form frmDetalle
       RowHeight       =   21
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -87,7 +87,7 @@ Begin VB.Form frmDetalle
       Caption         =   "Saldo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -110,7 +110,7 @@ Begin VB.Form frmDetalle
          _ExtentY        =   741
          Icon            =   "frmDetalle.frx":EBB5
          Style           =   8
-         Caption         =   "       Imprimir"
+         Caption         =   "     Imprimir"
          IconSize        =   18
          IconAlign       =   1
          CaptionAlign    =   1
@@ -123,7 +123,7 @@ Begin VB.Form frmDetalle
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -141,7 +141,7 @@ Begin VB.Form frmDetalle
          _ExtentY        =   741
          Icon            =   "frmDetalle.frx":F48F
          Style           =   8
-         Caption         =   "       Volver"
+         Caption         =   "     Volver"
          IconSize        =   18
          IconAlign       =   1
          CaptionAlign    =   1
@@ -154,7 +154,7 @@ Begin VB.Form frmDetalle
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -168,7 +168,7 @@ Begin VB.Form frmDetalle
          Caption         =   "0.00"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -186,7 +186,7 @@ Begin VB.Form frmDetalle
          Caption         =   "Actual"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -206,7 +206,7 @@ Begin VB.Form frmDetalle
          Caption         =   "0.00"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -224,7 +224,7 @@ Begin VB.Form frmDetalle
          Caption         =   "Anterior"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -244,7 +244,7 @@ Begin VB.Form frmDetalle
       Caption         =   "Detalle de la Cuenta"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -268,11 +268,11 @@ Option Compare Text
 
 Private Sub cmdImprimir_Click()
     Set dtrCuenta.DataSource = rsContabilidad
-    dtrCuenta.Sections("Sección4").Controls("lbldesde").Caption = frmConsultarCuentas.dtpDesde.Value
-    dtrCuenta.Sections("Sección4").Controls("lblhasta").Caption = frmConsultarCuentas.dtpHasta.Value
-    dtrCuenta.Sections("Sección4").Controls("etiqueta13").Caption = lblSaldoAnterior.Caption
-    dtrCuenta.Sections("Sección5").Controls("etiqueta15").Caption = lblSaldoActual.Caption
-    dtrCuenta.Sections("Sección4").Controls("lblinforme").Caption = lblCuenta.Caption
+    dtrCuenta.Sections("Seccion4").Controls("lbldesde").Caption = frmConsultarCuentas.dtpDesde.Value
+    dtrCuenta.Sections("Seccion4").Controls("lblhasta").Caption = frmConsultarCuentas.dtpHasta.Value
+    dtrCuenta.Sections("Seccion4").Controls("etiqueta13").Caption = lblSaldoAnterior.Caption
+    dtrCuenta.Sections("Seccion5").Controls("etiqueta15").Caption = lblSaldoActual.Caption
+    dtrCuenta.Sections("Seccion4").Controls("lblinforme").Caption = lblCuenta.Caption
     dtrCuenta.Show
     dtrCuenta.Caption = lblCuenta.Caption
     Me.Enabled = False

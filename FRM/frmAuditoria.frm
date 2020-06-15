@@ -4,14 +4,14 @@ Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmAuditoria 
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "Auditoría"
+   Caption         =   "Auditoria"
    ClientHeight    =   5265
    ClientLeft      =   45
    ClientTop       =   435
    ClientWidth     =   3225
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   8.25
+      Size            =   10
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -32,7 +32,7 @@ Begin VB.Form frmAuditoria
       Caption         =   "Restantes"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -46,14 +46,14 @@ Begin VB.Form frmAuditoria
       Top             =   960
       Width           =   3015
       Begin VB.ListBox List1 
-         Height          =   2460
+         Height          =   2355
          Left            =   120
          TabIndex        =   12
          Top             =   960
          Width           =   1335
       End
       Begin VB.ListBox List2 
-         Height          =   2460
+         Height          =   2355
          Left            =   1560
          TabIndex        =   11
          Top             =   960
@@ -62,15 +62,6 @@ Begin VB.Form frmAuditoria
       Begin VB.Label lblMarcas 
          Alignment       =   1  'Right Justify
          BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "Century Gothic"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          ForeColor       =   &H00000000&
          Height          =   375
          Left            =   120
@@ -81,15 +72,6 @@ Begin VB.Form frmAuditoria
       Begin VB.Label lblPlanDePago 
          Alignment       =   1  'Right Justify
          BorderStyle     =   1  'Fixed Single
-         BeginProperty Font 
-            Name            =   "Century Gothic"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          ForeColor       =   &H00000000&
          Height          =   375
          Left            =   1560
@@ -128,7 +110,7 @@ Begin VB.Form frmAuditoria
       _ExtentY        =   741
       Icon            =   "frmAuditoria.frx":11DFF
       Style           =   8
-      Caption         =   "       Agregar"
+      Caption         =   "     Agregar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -139,7 +121,7 @@ Begin VB.Form frmAuditoria
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -152,7 +134,7 @@ Begin VB.Form frmAuditoria
       Caption         =   "Actualzar"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -182,7 +164,7 @@ Begin VB.Form frmAuditoria
          _ExtentY        =   741
          Icon            =   "frmAuditoria.frx":126D9
          Style           =   8
-         Caption         =   "       Actualizar"
+         Caption         =   "     Cargar"
          IconSize        =   18
          IconAlign       =   1
          CaptionAlign    =   1
@@ -193,7 +175,7 @@ Begin VB.Form frmAuditoria
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -203,7 +185,7 @@ Begin VB.Form frmAuditoria
       End
       Begin VB.Label Label1 
          BackStyle       =   0  'Transparent
-         Caption         =   "Desde Código"
+         Caption         =   "Desde Codigo"
          ForeColor       =   &H8000000F&
          Height          =   255
          Left            =   120
@@ -232,14 +214,14 @@ Begin VB.Form frmAuditoria
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   87687169
+      Format          =   198443009
       CurrentDate     =   42492
    End
 End
@@ -299,14 +281,14 @@ Private Sub cmdActualizar_Click()
                     End If
                 Loop
                 
-                MsgBox "La Base de Datos fue actualizada exitosamente", , "Auditoría"
+                MsgBox "La Base de Datos fue actualizada exitosamente", , "Auditoria"
             End With
 
 
 End Sub
 
 Private Sub cmdAgregar_Click()
-    If MsgBox("¿Está seguro que desea agregar estos códigos a la tabla MARCAS?", vbQuestion + vbYesNo, "GIA") = vbYes Then
+    If MsgBox("ï¿½Esta seguro que desea agregar estos codigos a la tabla MARCAS?", vbQuestion + vbYesNo, "GIA") = vbYes Then
             With rsActualizarMarcas
                 If .State = 1 Then .Close
                 .Open "SELECT * FROM marcas", Cn, adOpenDynamic, adLockPessimistic

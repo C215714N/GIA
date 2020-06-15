@@ -7,7 +7,7 @@ Begin VB.Form frmStatus
    ClientHeight    =   3405
    ClientLeft      =   4905
    ClientTop       =   2070
-   ClientWidth     =   3360
+   ClientWidth     =   3615
    ForeColor       =   &H00E0E0E0&
    Icon            =   "frmStatus.frx":0000
    LinkTopic       =   "Form1"
@@ -16,13 +16,13 @@ Begin VB.Form frmStatus
    MinButton       =   0   'False
    Picture         =   "frmStatus.frx":324A
    ScaleHeight     =   3405
-   ScaleWidth      =   3360
+   ScaleWidth      =   3615
    Begin VB.Frame Frame1 
       BackColor       =   &H00884400&
       Caption         =   "Status"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -34,10 +34,10 @@ Begin VB.Form frmStatus
       Left            =   120
       TabIndex        =   0
       Top             =   0
-      Width           =   3135
+      Width           =   3375
       Begin isButtonTest.isButton cmdDetalles 
          Height          =   420
-         Left            =   1680
+         Left            =   1920
          TabIndex        =   9
          Top             =   2640
          Width           =   1335
@@ -45,7 +45,7 @@ Begin VB.Form frmStatus
          _ExtentY        =   741
          Icon            =   "frmStatus.frx":AC67
          Style           =   8
-         Caption         =   "       Detalles"
+         Caption         =   "     Detalles"
          IconSize        =   18
          IconAlign       =   1
          CaptionAlign    =   1
@@ -58,7 +58,7 @@ Begin VB.Form frmStatus
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -71,7 +71,7 @@ Begin VB.Form frmStatus
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.75
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -79,7 +79,7 @@ Begin VB.Form frmStatus
             Strikethrough   =   0   'False
          EndProperty
          Height          =   375
-         Left            =   1680
+         Left            =   1920
          TabIndex        =   8
          Top             =   2160
          Width           =   1335
@@ -89,7 +89,7 @@ Begin VB.Form frmStatus
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.75
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -97,7 +97,7 @@ Begin VB.Form frmStatus
             Strikethrough   =   0   'False
          EndProperty
          Height          =   375
-         Left            =   1680
+         Left            =   1920
          TabIndex        =   7
          Top             =   1560
          Width           =   1335
@@ -107,7 +107,7 @@ Begin VB.Form frmStatus
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.75
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -115,7 +115,7 @@ Begin VB.Form frmStatus
             Strikethrough   =   0   'False
          EndProperty
          Height          =   375
-         Left            =   1680
+         Left            =   1920
          TabIndex        =   6
          Top             =   960
          Width           =   1335
@@ -125,7 +125,7 @@ Begin VB.Form frmStatus
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.75
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -133,7 +133,7 @@ Begin VB.Form frmStatus
             Strikethrough   =   0   'False
          EndProperty
          Height          =   375
-         Left            =   1680
+         Left            =   1920
          TabIndex        =   5
          Top             =   360
          Width           =   1335
@@ -141,10 +141,10 @@ Begin VB.Form frmStatus
       Begin VB.Label Label4 
          Alignment       =   1  'Right Justify
          BackStyle       =   0  'Transparent
-         Caption         =   "Último Alumno en Cartera: "
+         Caption         =   "Ultimo Alumno en Cartera: "
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -153,7 +153,7 @@ Begin VB.Form frmStatus
          EndProperty
          ForeColor       =   &H8000000F&
          Height          =   525
-         Left            =   120
+         Left            =   240
          TabIndex        =   4
          Top             =   2100
          Width           =   1560
@@ -161,30 +161,10 @@ Begin VB.Form frmStatus
       Begin VB.Label Label3 
          Alignment       =   1  'Right Justify
          BackStyle       =   0  'Transparent
-         Caption         =   "Último Alumno con Plan de Pago: "
+         Caption         =   "Ultimo Alumno con P.Pago: "
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H8000000F&
-         Height          =   420
-         Left            =   120
-         TabIndex        =   3
-         Top             =   1500
-         Width           =   1560
-      End
-      Begin VB.Label Label2 
-         Alignment       =   1  'Right Justify
-         BackStyle       =   0  'Transparent
-         Caption         =   "Último Alumno en Cartera: "
-         BeginProperty Font 
-            Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -192,8 +172,28 @@ Begin VB.Form frmStatus
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H8000000F&
-         Height          =   420
-         Left            =   120
+         Height          =   540
+         Left            =   0
+         TabIndex        =   3
+         Top             =   1500
+         Width           =   1800
+      End
+      Begin VB.Label Label2 
+         Alignment       =   1  'Right Justify
+         BackStyle       =   0  'Transparent
+         Caption         =   "Ultimo Alumno en Cartera: "
+         BeginProperty Font 
+            Name            =   "Century Gothic"
+            Size            =   10
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H8000000F&
+         Height          =   540
+         Left            =   240
          TabIndex        =   2
          Top             =   900
          Width           =   1560
@@ -204,19 +204,19 @@ Begin VB.Form frmStatus
          Caption         =   "Nuevos Alumnos en Cartera: "
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H8000000F&
-         Height          =   420
+         Height          =   540
          Left            =   120
          TabIndex        =   1
          Top             =   300
-         Width           =   1560
+         Width           =   1680
       End
    End
 End

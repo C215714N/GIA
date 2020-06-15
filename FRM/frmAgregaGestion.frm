@@ -2,7 +2,7 @@ VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Begin VB.Form frmAgregaGestion 
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "Agregar Gestión a la Orden de Trabajo"
+   Caption         =   "Agregar Gestion a la Orden de Trabajo"
    ClientHeight    =   2625
    ClientLeft      =   45
    ClientTop       =   435
@@ -18,7 +18,7 @@ Begin VB.Form frmAgregaGestion
       Caption         =   "Cancelar"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -35,7 +35,7 @@ Begin VB.Form frmAgregaGestion
       Caption         =   "Grabar"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -51,7 +51,7 @@ Begin VB.Form frmAgregaGestion
    Begin VB.TextBox txtGestion 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -76,7 +76,7 @@ Begin VB.Form frmAgregaGestion
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -90,7 +90,7 @@ Begin VB.Form frmAgregaGestion
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -104,10 +104,10 @@ Begin VB.Form frmAgregaGestion
       Width           =   1335
    End
    Begin VB.Label Label3 
-      Caption         =   "Gestión"
+      Caption         =   "Gestion"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -124,7 +124,7 @@ Begin VB.Form frmAgregaGestion
       Caption         =   "Fecha"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -138,10 +138,10 @@ Begin VB.Form frmAgregaGestion
       Width           =   855
    End
    Begin VB.Label Label1 
-      Caption         =   "Nº Orden"
+      Caption         =   "No Orden"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -166,7 +166,7 @@ Private Sub cmdCancelar_Click()
 End Sub
 
 Private Sub cmdGrabar_Click()
-    If txtGestion.Text = "" Then MsgBox "Ingrese la gestión", vbCritical, "Cóndor"
+    If txtGestion.Text = "" Then MsgBox "Ingrese la gestion", vbCritical, "Condor"
     
     With rsGestionDeOrdenes
         If .State = 1 Then .Close

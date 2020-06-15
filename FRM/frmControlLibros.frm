@@ -22,7 +22,7 @@ Begin VB.Form frmControlLibros
       Caption         =   "Agregar"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -38,7 +38,7 @@ Begin VB.Form frmControlLibros
       Begin VB.TextBox txtPrecio 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -54,7 +54,7 @@ Begin VB.Form frmControlLibros
       Begin VB.TextBox txtStock 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -70,7 +70,7 @@ Begin VB.Form frmControlLibros
       Begin VB.TextBox txtManual 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -93,7 +93,7 @@ Begin VB.Form frmControlLibros
          _ExtentY        =   741
          Icon            =   "frmControlLibros.frx":7A1D
          Style           =   8
-         Caption         =   "       Aceptar"
+         Caption         =   "     Aceptar"
          IconSize        =   18
          IconAlign       =   1
          CaptionAlign    =   1
@@ -106,7 +106,7 @@ Begin VB.Form frmControlLibros
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -119,7 +119,7 @@ Begin VB.Form frmControlLibros
          Caption         =   "Precio"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -138,7 +138,7 @@ Begin VB.Form frmControlLibros
          Caption         =   "Stock"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -157,7 +157,7 @@ Begin VB.Form frmControlLibros
          Caption         =   "Manual"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -186,7 +186,7 @@ Begin VB.Form frmControlLibros
       RowHeight       =   21
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

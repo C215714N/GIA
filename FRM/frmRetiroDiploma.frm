@@ -20,7 +20,7 @@ Begin VB.Form frmRetiroDiploma
    Begin VB.TextBox txtRetira 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -44,14 +44,14 @@ Begin VB.Form frmRetiroDiploma
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   142409729
+      Format          =   67043329
       CurrentDate     =   42181
    End
    Begin isButtonTest.isButton cmdGrabar 
@@ -64,7 +64,7 @@ Begin VB.Form frmRetiroDiploma
       _ExtentY        =   741
       Icon            =   "frmRetiroDiploma.frx":AC67
       Style           =   8
-      Caption         =   "       Aceptar"
+      Caption         =   "     Aceptar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -75,7 +75,7 @@ Begin VB.Form frmRetiroDiploma
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -87,7 +87,7 @@ Begin VB.Form frmRetiroDiploma
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -104,7 +104,7 @@ Begin VB.Form frmRetiroDiploma
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -121,7 +121,7 @@ Begin VB.Form frmRetiroDiploma
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -138,7 +138,7 @@ Begin VB.Form frmRetiroDiploma
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -156,7 +156,7 @@ Begin VB.Form frmRetiroDiploma
       Caption         =   "Fecha Entrega"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -172,10 +172,10 @@ Begin VB.Form frmRetiroDiploma
    End
    Begin VB.Label Label4 
       BackStyle       =   0  'Transparent
-      Caption         =   "Módulo"
+      Caption         =   "Modulo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -194,7 +194,7 @@ Begin VB.Form frmRetiroDiploma
       Caption         =   "Curso"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -213,7 +213,7 @@ Begin VB.Form frmRetiroDiploma
       Caption         =   "Alumno"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -229,10 +229,10 @@ Begin VB.Form frmRetiroDiploma
    End
    Begin VB.Label Label1 
       BackStyle       =   0  'Transparent
-      Caption         =   "Código"
+      Caption         =   "Codigo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False

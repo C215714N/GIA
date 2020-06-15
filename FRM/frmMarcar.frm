@@ -8,7 +8,7 @@ Begin VB.Form frmMarcar
    ClientHeight    =   1200
    ClientLeft      =   4380
    ClientTop       =   3630
-   ClientWidth     =   2535
+   ClientWidth     =   2640
    ForeColor       =   &H00E0E0E0&
    Icon            =   "frmMarcar.frx":0000
    LinkTopic       =   "Form1"
@@ -17,10 +17,10 @@ Begin VB.Form frmMarcar
    MinButton       =   0   'False
    Picture         =   "frmMarcar.frx":324A
    ScaleHeight     =   1200
-   ScaleWidth      =   2535
+   ScaleWidth      =   2640
    Begin isButtonTest.isButton cmdGrabar 
       Height          =   420
-      Left            =   1080
+      Left            =   1200
       TabIndex        =   5
       Top             =   600
       Width           =   1335
@@ -28,7 +28,7 @@ Begin VB.Form frmMarcar
       _ExtentY        =   741
       Icon            =   "frmMarcar.frx":AC67
       Style           =   8
-      Caption         =   "       Aceptar"
+      Caption         =   "     Aceptar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -41,7 +41,7 @@ Begin VB.Form frmMarcar
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -54,7 +54,7 @@ Begin VB.Form frmMarcar
       Caption         =   "Abona"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -68,14 +68,14 @@ Begin VB.Form frmMarcar
       TabIndex        =   2
       Top             =   720
       UseMaskColor    =   -1  'True
-      Width           =   855
+      Width           =   975
    End
    Begin VB.CheckBox chkPasa 
       BackColor       =   &H00884400&
       Caption         =   "Pasa"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -89,14 +89,14 @@ Begin VB.Form frmMarcar
       TabIndex        =   1
       Top             =   420
       UseMaskColor    =   -1  'True
-      Width           =   855
+      Width           =   975
    End
    Begin VB.CheckBox chkLlamar 
       BackColor       =   &H00884400&
       Caption         =   "Llamar"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -110,11 +110,11 @@ Begin VB.Form frmMarcar
       TabIndex        =   0
       Top             =   120
       UseMaskColor    =   -1  'True
-      Width           =   855
+      Width           =   975
    End
    Begin MSComCtl2.DTPicker dtpFecha 
       Height          =   375
-      Left            =   1080
+      Left            =   1200
       TabIndex        =   3
       Top             =   120
       Width           =   1335
@@ -123,14 +123,14 @@ Begin VB.Form frmMarcar
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   142409729
+      Format          =   130154497
       CurrentDate     =   41341
    End
    Begin VB.Label Label1 
@@ -153,7 +153,7 @@ Private Sub cmdGrabar_Click()
         .Requery
         .Find "Codalumno=" & CodAlumno
         If .BOF Or .EOF Then MsgBox "El alumno no se puede gestionar", vbCritical, "Marcar": Exit Sub
-            !fechacompromiso = dtpFecha.Value
+            !fechacompromiso = DTPFecha.Value
             !fechagestion = Date
             If chkLlamar.Value = 1 Then
                 !LPA = "L"
@@ -174,7 +174,7 @@ End Sub
 
 Private Sub Form_Load()
     Centrar Me
-    dtpFecha.Value = Date
+    DTPFecha.Value = Date
 End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)

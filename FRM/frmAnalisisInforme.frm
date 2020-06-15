@@ -3,8 +3,8 @@ Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Begin VB.Form frmAnalisisInforme 
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "Análisis de Informe"
-   ClientHeight    =   3435
+   Caption         =   "Analisis de Informe"
+   ClientHeight    =   3390
    ClientLeft      =   2970
    ClientTop       =   2205
    ClientWidth     =   9645
@@ -15,23 +15,23 @@ Begin VB.Form frmAnalisisInforme
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    Picture         =   "frmAnalisisInforme.frx":324A
-   ScaleHeight     =   3435
+   ScaleHeight     =   3390
    ScaleWidth      =   9645
    Begin MSDataGridLib.DataGrid grilla 
-      Height          =   3135
+      Height          =   3015
       Left            =   120
       TabIndex        =   0
-      Top             =   120
+      Top             =   200
       Width           =   9375
       _ExtentX        =   16536
-      _ExtentY        =   5530
+      _ExtentY        =   5318
       _Version        =   393216
       AllowUpdate     =   0   'False
       HeadLines       =   1
       RowHeight       =   21
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

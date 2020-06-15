@@ -11,7 +11,7 @@ Begin VB.Form frmCargos
    FillColor       =   &H00800000&
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   8.25
+      Size            =   10
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -44,7 +44,7 @@ Begin VB.Form frmCargos
       _ExtentY        =   741
       Icon            =   "frmCargos.frx":AC67
       Style           =   8
-      Caption         =   "       Aceptar"
+      Caption         =   "     Aceptar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -57,7 +57,7 @@ Begin VB.Form frmCargos
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -75,7 +75,7 @@ Begin VB.Form frmCargos
       _ExtentY        =   741
       Icon            =   "frmCargos.frx":B541
       Style           =   8
-      Caption         =   "       Cancelar"
+      Caption         =   "     Cancelar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -88,7 +88,7 @@ Begin VB.Form frmCargos
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -102,7 +102,7 @@ Begin VB.Form frmCargos
       Caption         =   "Nuevo Cargo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

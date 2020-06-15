@@ -12,7 +12,7 @@ Begin VB.Form frmPP
    ClientWidth     =   9975
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   8.25
+      Size            =   10
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -34,7 +34,7 @@ Begin VB.Form frmPP
       Caption         =   "Cuentas Actuales"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -54,11 +54,11 @@ Begin VB.Form frmPP
          Top             =   300
          Width           =   3855
          _ExtentX        =   6800
-         _ExtentY        =   4339
+         _ExtentY        =   4154
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -72,7 +72,7 @@ Begin VB.Form frmPP
       Caption         =   "Presupuesto Nuevo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -92,12 +92,12 @@ Begin VB.Form frmPP
          Top             =   300
          Width           =   3855
          _ExtentX        =   6800
-         _ExtentY        =   4339
+         _ExtentY        =   4154
          _Version        =   393216
          ListField       =   ""
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -116,10 +116,10 @@ Begin VB.Form frmPP
    End
    Begin VB.Frame Frame1 
       BackColor       =   &H00884400&
-      Caption         =   "Período"
+      Caption         =   "Periodo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -142,7 +142,7 @@ Begin VB.Form frmPP
          Top             =   480
          Width           =   1335
       End
-      Begin MSComCtl2.DTPicker dtpAño 
+      Begin MSComCtl2.DTPicker dtpAÃ±o 
          Height          =   375
          Left            =   1560
          TabIndex        =   1
@@ -153,7 +153,7 @@ Begin VB.Form frmPP
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -161,13 +161,13 @@ Begin VB.Form frmPP
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "yyyy"
-         Format          =   142409731
+         Format          =   198443011
          CurrentDate     =   43573
       End
       Begin VB.Label Label2 
          BackColor       =   &H00662200&
          BackStyle       =   0  'Transparent
-         Caption         =   "AÑO"
+         Caption         =   "Aï¿½O"
          ForeColor       =   &H8000000F&
          Height          =   255
          Left            =   1560
@@ -197,7 +197,7 @@ Begin VB.Form frmPP
       _ExtentY        =   741
       Icon            =   "frmPP.frx":ACF8
       Style           =   8
-      Caption         =   "       Eliminar"
+      Caption         =   "     Eliminar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -210,7 +210,7 @@ Begin VB.Form frmPP
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -228,7 +228,7 @@ Begin VB.Form frmPP
       _ExtentY        =   741
       Icon            =   "frmPP.frx":B5D2
       Style           =   8
-      Caption         =   "       Agregar"
+      Caption         =   "     Agregar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -241,7 +241,7 @@ Begin VB.Form frmPP
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -259,7 +259,7 @@ Begin VB.Form frmPP
       _ExtentY        =   741
       Icon            =   "frmPP.frx":BEAC
       Style           =   8
-      Caption         =   "       Nueva"
+      Caption         =   "     Nueva"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -272,7 +272,7 @@ Begin VB.Form frmPP
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -300,7 +300,7 @@ Attribute VB_Exposed = False
 Private Sub cmbMes_Click()
     With rsPresupuesto
         If .State = 1 Then .Close
-        .Open "SELECT cuenta,deuda,saldo,mes,año FROM presupuesto WHERE mes='" & cmbMes.Text & "' and año=" & Year(dtpAño.Value) & " ORDER BY cuenta", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT cuenta,deuda,saldo,mes,AÃ±o FROM presupuesto WHERE mes='" & cmbMes.Text & "' and AÃ±o=" & Year(dtpAÃ±o.Value) & " ORDER BY cuenta", Cn, adOpenDynamic, adLockPessimistic
         dtlPresupuesto.ListField = "Cuenta"
         Set dtlPresupuesto.RowSource = rsPresupuesto
     End With
@@ -318,10 +318,10 @@ Private Sub cmdAgregar_Click()
         !deuda = CSng(txtMonto.Text)
         !mes = cmbMes.Text
         !saldo = CSng(txtMonto.Text)
-        !año = Year(dtpAño.Value)
+        !AÃ±o = Year(dtpAÃ±o.Value)
         .Update
         .Close
-        .Open "SELECT cuenta,deuda,saldo,mes,año FROM presupuesto WHERE mes='" & cmbMes.Text & "' and año=" & Year(dtpAño.Value) & " ORDER BY cuenta", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT cuenta,deuda,saldo,mes,AÃ±o FROM presupuesto WHERE mes='" & cmbMes.Text & "' and AÃ±o=" & Year(dtpAÃ±o.Value) & " ORDER BY cuenta", Cn, adOpenDynamic, adLockPessimistic
         dtlPresupuesto.ListField = "Cuenta"
         Set dtlPresupuesto.RowSource = rsPresupuesto
     End With
@@ -341,7 +341,7 @@ Private Sub cmdQuitar_Click()
         .Delete
         .Update
         .Close
-        .Open "SELECT cuenta,deuda,saldo,mes,año FROM presupuesto WHERE mes='" & cmbMes.Text & "' and año=" & Year(dtpAño.Value) & " ORDER BY cuenta", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT cuenta,deuda,saldo,mes,AÃ±o FROM presupuesto WHERE mes='" & cmbMes.Text & "' and AÃ±o=" & Year(dtpAÃ±o.Value) & " ORDER BY cuenta", Cn, adOpenDynamic, adLockPessimistic
         dtlPresupuesto.ListField = "Cuenta"
         Set dtlPresupuesto.RowSource = rsPresupuesto
 
@@ -356,10 +356,10 @@ Private Sub dtlPresupuesto_Click()
     cmdQuitar.Enabled = True
 End Sub
 
-Private Sub dtpAño_Change()
+Private Sub dtpAÃ±o_Change()
     With rsPresupuesto
         If .State = 1 Then .Close
-        .Open "SELECT cuenta,deuda,saldo,mes,año FROM presupuesto WHERE mes='" & cmbMes.Text & "' and año=" & Year(dtpAño.Value) & " ORDER BY cuenta", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT cuenta,deuda,saldo,mes,AÃ±o FROM presupuesto WHERE mes='" & cmbMes.Text & "' and AÃ±o=" & Year(dtpAÃ±o.Value) & " ORDER BY cuenta", Cn, adOpenDynamic, adLockPessimistic
         dtlPresupuesto.ListField = "Cuenta"
         Set dtlPresupuesto.RowSource = rsPresupuesto
     End With

@@ -21,7 +21,7 @@ Begin VB.Form frmCuentas
       Caption         =   "Buscar"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -38,7 +38,7 @@ Begin VB.Form frmCuentas
          Caption         =   "Cuenta"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -55,7 +55,7 @@ Begin VB.Form frmCuentas
          Caption         =   "Codigo"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -72,7 +72,7 @@ Begin VB.Form frmCuentas
    Begin VB.ComboBox cmbTipoCta 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -91,7 +91,7 @@ Begin VB.Form frmCuentas
    Begin VB.TextBox txtDetalle 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -108,7 +108,7 @@ Begin VB.Form frmCuentas
    Begin VB.TextBox txtNombreCuenta 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -132,7 +132,7 @@ Begin VB.Form frmCuentas
       _ExtentY        =   741
       Icon            =   "frmCuentas.frx":7A38
       Style           =   8
-      Caption         =   "       Guardar"
+      Caption         =   "     Guardar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -143,7 +143,7 @@ Begin VB.Form frmCuentas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -161,7 +161,7 @@ Begin VB.Form frmCuentas
       _ExtentY        =   741
       Icon            =   "frmCuentas.frx":8312
       Style           =   8
-      Caption         =   "       Cancelar"
+      Caption         =   "     Cancelar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -172,7 +172,7 @@ Begin VB.Form frmCuentas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -190,7 +190,7 @@ Begin VB.Form frmCuentas
       _ExtentY        =   741
       Icon            =   "frmCuentas.frx":8BEC
       Style           =   8
-      Caption         =   "       Nuevo"
+      Caption         =   "     Nuevo"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -203,7 +203,7 @@ Begin VB.Form frmCuentas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -221,7 +221,7 @@ Begin VB.Form frmCuentas
       _ExtentY        =   741
       Icon            =   "frmCuentas.frx":94C6
       Style           =   8
-      Caption         =   "       Editar"
+      Caption         =   "     Editar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -234,7 +234,7 @@ Begin VB.Form frmCuentas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -252,7 +252,7 @@ Begin VB.Form frmCuentas
       _ExtentY        =   741
       Icon            =   "frmCuentas.frx":9DA0
       Style           =   8
-      Caption         =   "       Volver"
+      Caption         =   "     Volver"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -265,7 +265,7 @@ Begin VB.Form frmCuentas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -278,7 +278,7 @@ Begin VB.Form frmCuentas
       Caption         =   "Tipo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -296,7 +296,7 @@ Begin VB.Form frmCuentas
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -314,7 +314,7 @@ Begin VB.Form frmCuentas
       Caption         =   "Detalle"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -326,14 +326,14 @@ Begin VB.Form frmCuentas
       Left            =   120
       TabIndex        =   5
       Top             =   1320
-      Width           =   615
+      Width           =   1215
    End
    Begin VB.Label Label2 
       BackStyle       =   0  'Transparent
       Caption         =   "Cuenta"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -345,14 +345,14 @@ Begin VB.Form frmCuentas
       Left            =   120
       TabIndex        =   4
       Top             =   720
-      Width           =   615
+      Width           =   735
    End
    Begin VB.Label Label1 
       BackStyle       =   0  'Transparent
-      Caption         =   "Código Cta."
+      Caption         =   "Codigo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -364,7 +364,7 @@ Begin VB.Form frmCuentas
       Left            =   120
       TabIndex        =   3
       Top             =   120
-      Width           =   615
+      Width           =   855
    End
 End
 Attribute VB_Name = "frmCuentas"
@@ -383,7 +383,7 @@ Private Sub cmdBuscar1_Click()
         .Requery
         .MoveFirst
         .Find "Cuenta='" & X & "'"
-        If .EOF Or .BOF Then MsgBox "La Cuenta no es válida", vbOKOnly + vbInformation, "Cuentas": .MoveFirst:  Exit Sub
+        If .EOF Or .BOF Then MsgBox "La Cuenta no es valida", vbOKOnly + vbInformation, "Cuentas": .MoveFirst:  Exit Sub
         lblCodCuenta.Caption = !codcuenta
         txtNombreCuenta.Text = !cuenta
         txtDetalle.Text = !Detalle
@@ -392,13 +392,13 @@ Private Sub cmdBuscar1_Click()
 End Sub
 
 Private Sub cmdBuscar2_Click()
-    X = InputBox("Ingrese el Código de Cuenta a Buscar", "Buscar Cuenta")
+    X = InputBox("Ingrese el Codigo de Cuenta a Buscar", "Buscar Cuenta")
     With rsCuentas
         If .BOF Or .EOF Then Exit Sub
         .Requery
         .MoveFirst
         .Find "CodCuenta=" & X
-        If .EOF Or .BOF Then MsgBox "El Código de Cuenta no es válido", vbOKOnly + vbInformation, "Cuentas": .MoveFirst: Exit Sub
+        If .EOF Or .BOF Then MsgBox "El Codigo de Cuenta no es valido", vbOKOnly + vbInformation, "Cuentas": .MoveFirst: Exit Sub
         lblCodCuenta.Caption = !codcuenta
         txtNombreCuenta.Text = !cuenta
         txtDetalle.Text = !Detalle

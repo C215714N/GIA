@@ -7,7 +7,7 @@ Begin VB.Form frmControl
    ClientHeight    =   3555
    ClientLeft      =   5160
    ClientTop       =   3645
-   ClientWidth     =   5565
+   ClientWidth     =   5550
    ForeColor       =   &H00E0E0E0&
    Icon            =   "frmControl.frx":0000
    LinkTopic       =   "Form1"
@@ -16,13 +16,13 @@ Begin VB.Form frmControl
    MinButton       =   0   'False
    Picture         =   "frmControl.frx":324A
    ScaleHeight     =   3555
-   ScaleWidth      =   5565
+   ScaleWidth      =   5550
    Begin VB.Frame Frame1 
       BackColor       =   &H00884400&
       Caption         =   "Control"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -39,7 +39,7 @@ Begin VB.Form frmControl
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -58,7 +58,7 @@ Begin VB.Form frmControl
          Caption         =   "Recargos"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -75,7 +75,7 @@ Begin VB.Form frmControl
             Alignment       =   1  'Right Justify
             BeginProperty Font 
                Name            =   "Century Gothic"
-               Size            =   8.25
+               Size            =   10
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -93,7 +93,7 @@ Begin VB.Form frmControl
             Alignment       =   1  'Right Justify
             BeginProperty Font 
                Name            =   "Century Gothic"
-               Size            =   8.25
+               Size            =   10
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -110,10 +110,10 @@ Begin VB.Form frmControl
          Begin VB.Label Label3 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
-            Caption         =   "Fuera de Mes"
+            Caption         =   "Mes"
             BeginProperty Font 
                Name            =   "Century Gothic"
-               Size            =   8.25
+               Size            =   10
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -121,19 +121,19 @@ Begin VB.Form frmControl
                Strikethrough   =   0   'False
             EndProperty
             ForeColor       =   &H8000000F&
-            Height          =   225
+            Height          =   240
             Left            =   120
             TabIndex        =   17
             Top             =   1080
-            Width           =   1095
+            Width           =   390
          End
          Begin VB.Label Label2 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
-            Caption         =   "Fuera Fecha"
+            Caption         =   "Fecha"
             BeginProperty Font 
                Name            =   "Century Gothic"
-               Size            =   8.25
+               Size            =   10
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -141,18 +141,18 @@ Begin VB.Form frmControl
                Strikethrough   =   0   'False
             EndProperty
             ForeColor       =   &H8000000F&
-            Height          =   225
+            Height          =   240
             Left            =   120
             TabIndex        =   15
             Top             =   360
-            Width           =   1020
+            Width           =   585
          End
       End
       Begin VB.TextBox txtMatricula 
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -169,7 +169,7 @@ Begin VB.Form frmControl
       Begin VB.TextBox txtSucursal 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -186,7 +186,7 @@ Begin VB.Form frmControl
       Begin VB.TextBox txtEmpresa 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -204,7 +204,7 @@ Begin VB.Form frmControl
          Alignment       =   2  'Center
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -222,7 +222,7 @@ Begin VB.Form frmControl
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -240,7 +240,7 @@ Begin VB.Form frmControl
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -260,7 +260,7 @@ Begin VB.Form frmControl
          Caption         =   "Der.Examen"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -276,10 +276,10 @@ Begin VB.Form frmControl
       End
       Begin VB.Label Label8 
          BackStyle       =   0  'Transparent
-         Caption         =   "Matrícula"
+         Caption         =   "Matricula"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -291,14 +291,14 @@ Begin VB.Form frmControl
          Left            =   120
          TabIndex        =   12
          Top             =   1080
-         Width           =   960
+         Width           =   1200
       End
       Begin VB.Label Label7 
          BackStyle       =   0  'Transparent
          Caption         =   "Sucursal"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -317,7 +317,7 @@ Begin VB.Form frmControl
          Caption         =   "Empresa"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -336,7 +336,7 @@ Begin VB.Form frmControl
          Caption         =   "Nro Asiento"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -353,10 +353,10 @@ Begin VB.Form frmControl
       Begin VB.Label Label4 
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
-         Caption         =   "Última Fecha"
+         Caption         =   "Ultima Dia"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -364,18 +364,18 @@ Begin VB.Form frmControl
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H8000000F&
-         Height          =   225
+         Height          =   240
          Left            =   1320
          TabIndex        =   8
          Top             =   360
-         Width           =   1035
+         Width           =   1005
       End
       Begin VB.Label Label1 
          BackStyle       =   0  'Transparent
          Caption         =   "Cod. Alumno"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -394,13 +394,13 @@ Begin VB.Form frmControl
       Height          =   420
       Left            =   4080
       TabIndex        =   20
-      Top             =   720
+      Top             =   1200
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
       Icon            =   "frmControl.frx":AC67
       Style           =   8
-      Caption         =   "       Aceptar"
+      Caption         =   "     Aceptar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -411,7 +411,7 @@ Begin VB.Form frmControl
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -423,13 +423,13 @@ Begin VB.Form frmControl
       Height          =   420
       Left            =   4080
       TabIndex        =   21
-      Top             =   1320
+      Top             =   1800
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
       Icon            =   "frmControl.frx":B541
       Style           =   8
-      Caption         =   "       Cancelar"
+      Caption         =   "     Cancelar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -440,7 +440,7 @@ Begin VB.Form frmControl
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -452,13 +452,13 @@ Begin VB.Form frmControl
       Height          =   420
       Left            =   4080
       TabIndex        =   22
-      Top             =   120
+      Top             =   600
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
       Icon            =   "frmControl.frx":BE1B
       Style           =   8
-      Caption         =   "       Editar"
+      Caption         =   "     Editar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -471,7 +471,7 @@ Begin VB.Form frmControl
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -483,13 +483,13 @@ Begin VB.Form frmControl
       Height          =   420
       Left            =   4080
       TabIndex        =   23
-      Top             =   1920
+      Top             =   2400
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
       Icon            =   "frmControl.frx":C6F5
       Style           =   8
-      Caption         =   "       Volver"
+      Caption         =   "     Volver"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -502,7 +502,7 @@ Begin VB.Form frmControl
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -545,8 +545,8 @@ Private Sub cmdGrabar_Click()
         !derechoExamen = txtDerechoExamen.Text
         .UpdateBatch
         
-        ''' actualiza barra de tìtulo del mdi
-        MDI.Caption = "Gestión Integral del Alumno - " & !empresa & " - " & !sucursal
+        ''' actualiza barra de titulo del mdi
+        MDI.Caption = "Gestion Integral del Alumno - " & !empresa & " - " & !sucursal
         
     End With
     HabilitarCuadros True

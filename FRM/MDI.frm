@@ -3,7 +3,7 @@ Object = "{F5E116E1-0563-11D8-AA80-000B6A0D10CB}#1.0#0"; "HookMenu.ocx"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.MDIForm MDI 
    BackColor       =   &H00662200&
-   Caption         =   "PROARTEC - Gestión Integral del Alumno"
+   Caption         =   "Gestion Integral del Alumno"
    ClientHeight    =   8130
    ClientLeft      =   90
    ClientTop       =   495
@@ -156,7 +156,7 @@ Begin VB.MDIForm MDI
       UseSystemFont   =   0   'False
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   9
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -178,21 +178,21 @@ Begin VB.MDIForm MDI
          NumPanels       =   5
          BeginProperty Panel1 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   6
-            TextSave        =   "24/03/2020"
+            TextSave        =   "14/06/2020"
          EndProperty
          BeginProperty Panel2 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   5
-            TextSave        =   "03:09 a.m."
+            TextSave        =   "11:14 p.m."
          EndProperty
          BeginProperty Panel3 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   2
             Enabled         =   0   'False
-            TextSave        =   "NÚM"
+            TextSave        =   "Nï¿½M"
          EndProperty
          BeginProperty Panel4 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   1
             Enabled         =   0   'False
-            TextSave        =   "MAYÚS"
+            TextSave        =   "MAYï¿½S"
          EndProperty
          BeginProperty Panel5 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Object.Width           =   4410
@@ -221,7 +221,7 @@ Begin VB.MDIForm MDI
       End
    End
    Begin VB.Menu mnuGestion 
-      Caption         =   "Gestión Educativa"
+      Caption         =   "Gestion Educativa"
       Begin VB.Menu subCobranza 
          Caption         =   "Co&branza"
          Shortcut        =   ^B
@@ -230,9 +230,9 @@ Begin VB.MDIForm MDI
          Caption         =   "-"
       End
       Begin VB.Menu subGestion 
-         Caption         =   "Gestión"
+         Caption         =   "Gestion"
          Begin VB.Menu SubSituacion 
-            Caption         =   "&Situación de Cartera"
+            Caption         =   "&Situacion de Cartera"
             Shortcut        =   ^S
          End
          Begin VB.Menu subCuotasXFecha 
@@ -247,7 +247,7 @@ Begin VB.MDIForm MDI
             Shortcut        =   ^C
          End
          Begin VB.Menu subUltimasCuotas 
-            Caption         =   "&Últimas Cuotas"
+            Caption         =   "Ultimas Cuotas"
             Shortcut        =   ^U
          End
       End
@@ -267,7 +267,7 @@ Begin VB.MDIForm MDI
             Caption         =   "Alumnos 100%"
          End
          Begin VB.Menu subMatriculas 
-            Caption         =   "Matrículas"
+            Caption         =   "Matriculas"
          End
          Begin VB.Menu subEgresados 
             Caption         =   "Egresados"
@@ -303,24 +303,24 @@ Begin VB.MDIForm MDI
          Shortcut        =   ^N
       End
       Begin VB.Menu subDerechosExamenes 
-         Caption         =   "&Derechos de Exámenes"
+         Caption         =   "&Derechos de Examen"
          Shortcut        =   ^D
       End
       Begin VB.Menu subExamenes 
-         Caption         =   "&Exámenes"
+         Caption         =   "&Examenes"
          Shortcut        =   ^E
       End
       Begin VB.Menu subBuscarExamenes 
-         Caption         =   "Buscar Exámenes"
+         Caption         =   "Buscar Examenes"
       End
       Begin VB.Menu subDiplomas 
          Caption         =   "Diplomas Entregados"
       End
    End
    Begin VB.Menu mnuAdm 
-      Caption         =   "Gestión Comercial"
+      Caption         =   "Gestion Comercial"
       Begin VB.Menu subViaticos 
-         Caption         =   "Viáticos"
+         Caption         =   "Viaticos"
          Shortcut        =   {F8}
       End
       Begin VB.Menu subContabilidad 
@@ -408,7 +408,7 @@ Begin VB.MDIForm MDI
          Caption         =   "Status de la Base"
       End
       Begin VB.Menu subAuditoria 
-         Caption         =   "Auditoría"
+         Caption         =   "Auditoria"
       End
       Begin VB.Menu g8 
          Caption         =   "-"
@@ -426,7 +426,7 @@ Begin VB.MDIForm MDI
       End
    End
    Begin VB.Menu mnuSesion 
-      Caption         =   "Cerrar Sesión"
+      Caption         =   "Cerrar Sesion"
    End
    Begin VB.Menu mnuSalir 
       Caption         =   "Salir"
@@ -454,7 +454,7 @@ Private Sub mnuLibro_Click()
 End Sub
 
 Private Sub mnuSalir_Click()
-    a = MsgBox("¿Está seguro que desea Salir?", vbYesNo + vbQuestion, "Gestion Integral del Alumno")
+    a = MsgBox("ï¿½Esta seguro que desea Salir?", vbYesNo + vbQuestion, "Gestion Integral del Alumno")
     If a = vbYes Then
         End
     End If
@@ -478,10 +478,10 @@ Private Sub subBackUp_Click()
     Dim Destino As String
     Origen = "T:\base.mdb"
     Destino = "T:\CopiaBase.mdb"
-    If MsgBox("¿Realizar Copia de Seguridad?", vbQuestion + vbYesNo, "Gestión Integral del Alumno") = vbYes Then
+    If MsgBox("ï¿½Realizar Copia de Seguridad?", vbQuestion + vbYesNo, "Gestion Integral del Alumno") = vbYes Then
             Set Fs = CreateObject("Scripting.FileSystemObject")
             Fs.CopyFile Origen, Destino
-            MsgBox "La Copia de Respaldo se Realizó Correctamente", vbInformation + vbOKOnly, "Gestión Integral del Alumno"
+            MsgBox "La Copia de Respaldo se Realizo Correctamente", vbInformation + vbOKOnly, "Gestion Integral del Alumno"
     End If
 End Sub
 
@@ -530,17 +530,17 @@ Private Sub subControl_Click()
 End Sub
 
 Private Sub subCopiarPresupuesto_Click()
-    If MsgBox("¿Copiar el presupuesto actual para el mes próximo?", vbQuestion + vbYesNo, "Copiar Presupuesto") = vbYes Then
+    If MsgBox("ï¿½Copiar el presupuesto actual para el mes Praximo?", vbQuestion + vbYesNo, "Copiar Presupuesto") = vbYes Then
           
     '''Carga el presupuesto del mes en curso
         With rsCuentasPresupuesto
             If .State = 1 Then .Close
-            .Open "SELECT * FROM presupuesto WHERE año=" & Year(Date) & "and mes='" & MonthName(Month(Date)) & "'", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT * FROM presupuesto WHERE aï¿½o=" & Year(Date) & "and mes='" & MonthName(Month(Date)) & "'", Cn, adOpenDynamic, adLockPessimistic
             .Requery
             .MoveFirst
         End With
         
-    '''Abre la tabla presupuesto para agregar las cuentas del mes pròximo
+    '''Abre la tabla presupuesto para agregar las cuentas del mes Praximo
         With rsPresupuesto
             If .State = 1 Then .Close
             .Open "SELECT * FROM presupuesto", Cn, adOpenDynamic, adLockPessimistic
@@ -555,9 +555,9 @@ Private Sub subCopiarPresupuesto_Click()
                 
                 If Month(Date) = 12 Then
                     !mes = "Enero"
-                    !año = Year(Date) + 1
+                    !aï¿½o = Year(Date) + 1
                 Else
-                    !año = Year(Date)
+                    !aï¿½o = Year(Date)
                     !mes = MonthName(Month(Date) + 1)
                 End If
                 .UpdateBatch
@@ -671,10 +671,10 @@ Private Sub subRestaurar_Click()
     Dim Destino As String
     Origen = "T:\base.mdb"
     Destino = "T:\CopiaBase.mdb"
-    If MsgBox("¿Restaurar Copia de Seguridad?", vbQuestion + vbYesNo, "Gestión Integral del Alumno") = vbYes Then
+    If MsgBox("ï¿½Restaurar Copia de Seguridad?", vbQuestion + vbYesNo, "Gestion Integral del Alumno") = vbYes Then
             Set Fs = CreateObject("Scripting.FileSystemObject")
             Fs.CopyFile Destino, Origen
-            MsgBox "La Restauración se Realizó Correctamente", vbInformation + vbOKOnly, "Gestión Integral del Alumno"
+            MsgBox "La Restauracion se Realizo Correctamente", vbInformation + vbOKOnly, "Gestion Integral del Alumno"
     End If
 
 End Sub

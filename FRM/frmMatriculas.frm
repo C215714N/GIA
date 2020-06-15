@@ -5,7 +5,7 @@ Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmMatriculas 
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "Matrículas"
+   Caption         =   "Matriculas"
    ClientHeight    =   3720
    ClientLeft      =   45
    ClientTop       =   435
@@ -24,7 +24,7 @@ Begin VB.Form frmMatriculas
       Caption         =   "Totales"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -42,7 +42,7 @@ Begin VB.Form frmMatriculas
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -61,7 +61,7 @@ Begin VB.Form frmMatriculas
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -80,7 +80,7 @@ Begin VB.Form frmMatriculas
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -96,10 +96,10 @@ Begin VB.Form frmMatriculas
       End
       Begin VB.Label Label3 
          BackStyle       =   0  'Transparent
-         Caption         =   "Matrículas"
+         Caption         =   "Matriculas"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -118,7 +118,7 @@ Begin VB.Form frmMatriculas
          Caption         =   "Abonado"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -137,7 +137,7 @@ Begin VB.Form frmMatriculas
          Caption         =   "Debido"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -154,10 +154,10 @@ Begin VB.Form frmMatriculas
    End
    Begin VB.Frame Frame1 
       BackColor       =   &H00884400&
-      Caption         =   "Búsqueda"
+      Caption         =   "Busqueda"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -181,14 +181,14 @@ Begin VB.Form frmMatriculas
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   84213761
+         Format          =   130154497
          CurrentDate     =   42089
       End
       Begin MSComCtl2.DTPicker dtpHasta 
@@ -202,14 +202,14 @@ Begin VB.Form frmMatriculas
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   84213761
+         Format          =   130154497
          CurrentDate     =   42089
       End
       Begin isButtonTest.isButton cmdBuscar 
@@ -222,7 +222,7 @@ Begin VB.Form frmMatriculas
          _ExtentY        =   741
          Icon            =   "frmMatriculas.frx":AC67
          Style           =   8
-         Caption         =   "       Buscar"
+         Caption         =   "     Buscar"
          IconSize        =   18
          IconAlign       =   1
          CaptionAlign    =   1
@@ -233,7 +233,7 @@ Begin VB.Form frmMatriculas
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -247,7 +247,7 @@ Begin VB.Form frmMatriculas
          Caption         =   "Desde"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -267,7 +267,7 @@ Begin VB.Form frmMatriculas
          Caption         =   "Hasta"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -296,7 +296,7 @@ Begin VB.Form frmMatriculas
       RowHeight       =   21
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

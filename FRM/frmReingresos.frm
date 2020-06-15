@@ -10,7 +10,7 @@ Begin VB.Form frmReingresos
    ClientWidth     =   4020
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   8.25
+      Size            =   10
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -31,7 +31,7 @@ Begin VB.Form frmReingresos
       Caption         =   "Codigo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -68,7 +68,7 @@ Begin VB.Form frmReingresos
          _ExtentY        =   741
          Icon            =   "frmReingresos.frx":AC67
          Style           =   8
-         Caption         =   "       Reingresar"
+         Caption         =   "     Reingreso"
          IconSize        =   18
          IconAlign       =   1
          CaptionAlign    =   1
@@ -81,7 +81,7 @@ Begin VB.Form frmReingresos
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -123,10 +123,10 @@ Begin VB.Form frmReingresos
    End
    Begin VB.Label Label5 
       BackStyle       =   0  'Transparent
-      Caption         =   "ATENCIÓN: RECUERDE QUE EL REINGRESO  APLICA SOLAMENTE A LOS LIBROS DE AULA."
+      Caption         =   "ATENCION: RECUERDE QUE EL REINGRESO  APLICA SOLAMENTE A LOS LIBROS DE AULA."
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -142,10 +142,10 @@ Begin VB.Form frmReingresos
    End
    Begin VB.Label Label4 
       BackStyle       =   0  'Transparent
-      Caption         =   "ATENCIÓN: RECUERDE QUE EL REINGRESO  APLICA SOLAMENTE A LOS LIBROS DE AULA."
+      Caption         =   "ATENCION: RECUERDE QUE EL REINGRESO  APLICA SOLAMENTE A LOS LIBROS DE AULA."
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -166,8 +166,8 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cmdReingresar_Click()
-    If txtCodViejo.Text = "" Then MsgBox "Ingrese el código actual del alumno", vbCritical, "Control de Reingresos de Alumnos": txtCodViejo.SetFocus: Exit Sub
-    If txtCodNuevo.Text = "" Then MsgBox "Ingrese el nuevo código del alumno", vbCritical, "Control de Reingresos de Alumnos": txtCodNuevo.SetFocus: Exit Sub
+    If txtCodViejo.Text = "" Then MsgBox "Ingrese el codigo actual del alumno", vbCritical, "Control de Reingresos de Alumnos": txtCodViejo.SetFocus: Exit Sub
+    If txtCodNuevo.Text = "" Then MsgBox "Ingrese el nuevo codigo del alumno", vbCritical, "Control de Reingresos de Alumnos": txtCodNuevo.SetFocus: Exit Sub
     
     With rsLibro
         If .State = 1 Then .Close

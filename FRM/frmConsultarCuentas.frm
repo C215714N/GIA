@@ -25,7 +25,7 @@ Begin VB.Form frmConsultarCuentas
       Caption         =   "Saldo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -48,7 +48,7 @@ Begin VB.Form frmConsultarCuentas
          _ExtentY        =   741
          Icon            =   "frmConsultarCuentas.frx":AC67
          Style           =   8
-         Caption         =   "       Detalle"
+         Caption         =   "     Detalle"
          IconSize        =   18
          IconAlign       =   1
          CaptionAlign    =   1
@@ -61,7 +61,7 @@ Begin VB.Form frmConsultarCuentas
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -79,7 +79,7 @@ Begin VB.Form frmConsultarCuentas
          _ExtentY        =   741
          Icon            =   "frmConsultarCuentas.frx":B541
          Style           =   8
-         Caption         =   "       Volver"
+         Caption         =   "     Volver"
          IconSize        =   18
          IconAlign       =   1
          CaptionAlign    =   1
@@ -93,7 +93,7 @@ Begin VB.Form frmConsultarCuentas
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -107,7 +107,7 @@ Begin VB.Form frmConsultarCuentas
          Caption         =   "0.00"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -126,7 +126,7 @@ Begin VB.Form frmConsultarCuentas
          Caption         =   "0.00"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -144,7 +144,7 @@ Begin VB.Form frmConsultarCuentas
          Caption         =   "Actual"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -163,7 +163,7 @@ Begin VB.Form frmConsultarCuentas
          Caption         =   "Anterior"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -216,7 +216,7 @@ Begin VB.Form frmConsultarCuentas
       Caption         =   "Adodc1"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -240,7 +240,7 @@ Begin VB.Form frmConsultarCuentas
       RowDividerStyle =   0
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -311,14 +311,14 @@ Begin VB.Form frmConsultarCuentas
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   3735553
+      Format          =   130154497
       CurrentDate     =   41334
    End
    Begin MSComCtl2.DTPicker dtpHasta 
@@ -332,14 +332,14 @@ Begin VB.Form frmConsultarCuentas
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   3735553
+      Format          =   130154497
       CurrentDate     =   41332
    End
    Begin isButtonTest.isButton cmdBuscar 
@@ -352,7 +352,7 @@ Begin VB.Form frmConsultarCuentas
       _ExtentY        =   741
       Icon            =   "frmConsultarCuentas.frx":BE1B
       Style           =   8
-      Caption         =   "       Buscar"
+      Caption         =   "     Buscar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -363,7 +363,7 @@ Begin VB.Form frmConsultarCuentas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -375,7 +375,7 @@ Begin VB.Form frmConsultarCuentas
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -394,7 +394,7 @@ Begin VB.Form frmConsultarCuentas
       Caption         =   "Hasta"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -413,7 +413,7 @@ Begin VB.Form frmConsultarCuentas
       Caption         =   "Desde"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

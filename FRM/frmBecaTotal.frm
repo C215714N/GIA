@@ -34,7 +34,7 @@ Begin VB.Form frmBecaTotal
       RowHeight       =   21
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -90,7 +90,7 @@ Begin VB.Form frmBecaTotal
       Caption         =   "Totales"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -108,7 +108,7 @@ Begin VB.Form frmBecaTotal
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -126,7 +126,7 @@ Begin VB.Form frmBecaTotal
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -145,7 +145,7 @@ Begin VB.Form frmBecaTotal
          Caption         =   "Gasto Adm."
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -165,7 +165,7 @@ Begin VB.Form frmBecaTotal
          Caption         =   "Debido"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -184,7 +184,7 @@ Begin VB.Form frmBecaTotal
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -203,7 +203,7 @@ Begin VB.Form frmBecaTotal
          Caption         =   "Alumnos"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -222,7 +222,7 @@ Begin VB.Form frmBecaTotal
       BackColor       =   &H00552233&
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -238,7 +238,7 @@ Begin VB.Form frmBecaTotal
       Begin VB.TextBox txtDebe 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -254,7 +254,7 @@ Begin VB.Form frmBecaTotal
       Begin VB.TextBox txtMatricula 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -270,7 +270,7 @@ Begin VB.Form frmBecaTotal
       Begin VB.TextBox txtComision 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -294,14 +294,14 @@ Begin VB.Form frmBecaTotal
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   142409729
+         Format          =   92405761
          CurrentDate     =   42093
       End
       Begin isButtonTest.isButton cmdGrabar 
@@ -314,8 +314,9 @@ Begin VB.Form frmBecaTotal
          _ExtentY        =   741
          Icon            =   "frmBecaTotal.frx":11DFF
          Style           =   8
-         Caption         =   "   Aceptar"
+         Caption         =   "     Aceptar"
          IconAlign       =   1
+         CaptionAlign    =   1
          iNonThemeStyle  =   0
          HighlightColor  =   16744576
          FontHighlightColor=   12632256
@@ -325,7 +326,7 @@ Begin VB.Form frmBecaTotal
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -335,10 +336,10 @@ Begin VB.Form frmBecaTotal
       End
       Begin VB.Label Label3 
          BackStyle       =   0  'Transparent
-         Caption         =   "Cancelación"
+         Caption         =   "Cancelacion"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -354,10 +355,10 @@ Begin VB.Form frmBecaTotal
       End
       Begin VB.Label Label5 
          BackStyle       =   0  'Transparent
-         Caption         =   "Comisión"
+         Caption         =   "Comision"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -376,7 +377,7 @@ Begin VB.Form frmBecaTotal
          Caption         =   "Matricula"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -395,7 +396,7 @@ Begin VB.Form frmBecaTotal
          Caption         =   "Debe"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -413,7 +414,7 @@ Begin VB.Form frmBecaTotal
    Begin VB.TextBox txtObservaciones 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -437,14 +438,14 @@ Begin VB.Form frmBecaTotal
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   142409729
+      Format          =   92405761
       CurrentDate     =   42089
    End
    Begin MSComCtl2.DTPicker dtpDesde 
@@ -458,22 +459,22 @@ Begin VB.Form frmBecaTotal
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   142409729
+      Format          =   92405761
       CurrentDate     =   42089
    End
    Begin VB.Frame Frame1 
       BackColor       =   &H00884400&
-      Caption         =   "Búsqueda"
+      Caption         =   "Busqueda"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -496,7 +497,7 @@ Begin VB.Form frmBecaTotal
          _ExtentY        =   741
          Icon            =   "frmBecaTotal.frx":126D9
          Style           =   8
-         Caption         =   "       Buscar"
+         Caption         =   "     Buscar"
          IconSize        =   18
          IconAlign       =   1
          CaptionAlign    =   1
@@ -507,7 +508,7 @@ Begin VB.Form frmBecaTotal
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -520,7 +521,7 @@ Begin VB.Form frmBecaTotal
          Caption         =   "Hasta"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -539,7 +540,7 @@ Begin VB.Form frmBecaTotal
          Caption         =   "Desde"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -559,7 +560,7 @@ Begin VB.Form frmBecaTotal
       Caption         =   "Observaciones"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

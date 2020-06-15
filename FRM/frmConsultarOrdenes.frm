@@ -4,7 +4,7 @@ Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDATLST.OCX"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Begin VB.Form frmConsultarOrdenes 
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "Consultar Órdenes de Trabajo"
+   Caption         =   "Consultar ordenes de Trabajo"
    ClientHeight    =   5895
    ClientLeft      =   3120
    ClientTop       =   1695
@@ -19,7 +19,7 @@ Begin VB.Form frmConsultarOrdenes
       Caption         =   "Cambiar Estado"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -33,10 +33,10 @@ Begin VB.Form frmConsultarOrdenes
       Width           =   1095
    End
    Begin VB.CommandButton cmdAgregarGestion 
-      Caption         =   "Agregar Gestión"
+      Caption         =   "Agregar Gestion"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -63,7 +63,7 @@ Begin VB.Form frmConsultarOrdenes
       RowHeight       =   20
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -72,7 +72,7 @@ Begin VB.Form frmConsultarOrdenes
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -118,7 +118,7 @@ Begin VB.Form frmConsultarOrdenes
       Caption         =   "Ingreso"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -134,7 +134,7 @@ Begin VB.Form frmConsultarOrdenes
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -151,7 +151,7 @@ Begin VB.Form frmConsultarOrdenes
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -168,7 +168,7 @@ Begin VB.Form frmConsultarOrdenes
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -210,7 +210,7 @@ Begin VB.Form frmConsultarOrdenes
          Caption         =   "Estado"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -227,7 +227,7 @@ Begin VB.Form frmConsultarOrdenes
          Caption         =   "Personal"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -244,7 +244,7 @@ Begin VB.Form frmConsultarOrdenes
          Caption         =   "Fecha"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -258,10 +258,10 @@ Begin VB.Form frmConsultarOrdenes
          Width           =   615
       End
       Begin VB.Label Label3 
-         Caption         =   "Falla / Diagnóstico"
+         Caption         =   "Falla / Diagnostico"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -289,7 +289,7 @@ Begin VB.Form frmConsultarOrdenes
       RowHeight       =   20
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -298,7 +298,7 @@ Begin VB.Form frmConsultarOrdenes
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -341,10 +341,10 @@ Begin VB.Form frmConsultarOrdenes
       EndProperty
    End
    Begin VB.Frame Frame1 
-      Caption         =   "Consulta de Órdenes de Trabajo"
+      Caption         =   "Consulta de ordenes de Trabajo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -360,7 +360,7 @@ Begin VB.Form frmConsultarOrdenes
          Caption         =   "Todos"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -378,7 +378,7 @@ Begin VB.Form frmConsultarOrdenes
          Caption         =   "Entregados"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -395,7 +395,7 @@ Begin VB.Form frmConsultarOrdenes
          Caption         =   "Pendientes"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -412,7 +412,7 @@ Begin VB.Form frmConsultarOrdenes
          Caption         =   "Buscar"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -439,7 +439,7 @@ Begin VB.Form frmConsultarOrdenes
          Text            =   "DataCombo1"
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -452,7 +452,7 @@ Begin VB.Form frmConsultarOrdenes
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -476,7 +476,7 @@ Begin VB.Form frmConsultarOrdenes
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -490,7 +490,7 @@ Begin VB.Form frmConsultarOrdenes
          Caption         =   "Por Cliente"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -505,10 +505,10 @@ Begin VB.Form frmConsultarOrdenes
          Width           =   1455
       End
       Begin VB.OptionButton optBuscar 
-         Caption         =   "Por Nº Orden"
+         Caption         =   "Por No Orden"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -526,7 +526,7 @@ Begin VB.Form frmConsultarOrdenes
          Caption         =   "Por Fecha"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -551,7 +551,7 @@ Begin VB.Form frmConsultarOrdenes
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -566,7 +566,7 @@ Begin VB.Form frmConsultarOrdenes
          Caption         =   "A"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -584,7 +584,7 @@ Begin VB.Form frmConsultarOrdenes
          Caption         =   "De"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -599,10 +599,10 @@ Begin VB.Form frmConsultarOrdenes
       End
    End
    Begin VB.Label Label7 
-      Caption         =   "Gestión de Ordenes"
+      Caption         =   "Gestion de Ordenes"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -616,10 +616,10 @@ Begin VB.Form frmConsultarOrdenes
       Width           =   4095
    End
    Begin VB.Label Label6 
-      Caption         =   "Órdenes de Trabajo"
+      Caption         =   "ordenes de Trabajo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -673,7 +673,7 @@ End Sub
 
 Private Sub cmdBuscar_Click()
     
-    If chkTodos.Value = 0 And chkPendientes.Value = 0 And chkEntregados.Value = 0 Then MsgBox "Elija el tipo de resultado", vbCritical, "Cóndor": chkTodos.SetFocus: Exit Sub
+    If chkTodos.Value = 0 And chkPendientes.Value = 0 And chkEntregados.Value = 0 Then MsgBox "Elija el tipo de resultado", vbCritical, "Condor": chkTodos.SetFocus: Exit Sub
         
     If optBuscar(0).Value = True Then
         Dim fecha1 As Date
@@ -684,24 +684,24 @@ Private Sub cmdBuscar_Click()
         If chkTodos.Value = 1 Then
             With rsconsultarordenes
                 If .State = 1 Then .Close
-                .Open "select NroOrden, Cliente,Equipo,Problema,FechaRecibido as Recepción,Estado,FechaEntregado as Entrega from ordenesdetrabajo as o,clientes as c where c.codcliente=o.codcliente and fecharecibido>=#" & fecha1 & "# and fecharecibido <=#" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
+                .Open "select NroOrden, Cliente,Equipo,Problema,FechaRecibido as Recepcion,Estado,FechaEntregado as Entrega from ordenesdetrabajo as o,clientes as c where c.codcliente=o.codcliente and fecharecibido>=#" & fecha1 & "# and fecharecibido <=#" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
             End With
         ElseIf chkPendientes.Value = 1 Then
             With rsconsultarordenes
                 If .State = 1 Then .Close
-                .Open "select NroOrden, Cliente,Equipo,Problema,FechaRecibido as Recepción,Estado,FechaEntregado as Entrega from ordenesdetrabajo as o,clientes as c where c.codcliente=o.codcliente and fecharecibido>=#" & fecha1 & "# and fecharecibido <=#" & fecha2 & "# and estado<>'ENTREGADO'", Cn, adOpenDynamic, adLockPessimistic
+                .Open "select NroOrden, Cliente,Equipo,Problema,FechaRecibido as Recepcion,Estado,FechaEntregado as Entrega from ordenesdetrabajo as o,clientes as c where c.codcliente=o.codcliente and fecharecibido>=#" & fecha1 & "# and fecharecibido <=#" & fecha2 & "# and estado<>'ENTREGADO'", Cn, adOpenDynamic, adLockPessimistic
             End With
         ElseIf chkEntregados.Value = 1 Then
             With rsconsultarordenes
                 If .State = 1 Then .Close
-                .Open "select NroOrden, Cliente,Equipo,Problema,FechaRecibido as Recepción,Estado,FechaEntregado as Entrega from ordenesdetrabajo as o,clientes as c where c.codcliente=o.codcliente and fecharecibido>=#" & fecha1 & "# and fecharecibido <=#" & fecha2 & "# and estado='ENTREGADO'", Cn, adOpenDynamic, adLockPessimistic
+                .Open "select NroOrden, Cliente,Equipo,Problema,FechaRecibido as Recepcion,Estado,FechaEntregado as Entrega from ordenesdetrabajo as o,clientes as c where c.codcliente=o.codcliente and fecharecibido>=#" & fecha1 & "# and fecharecibido <=#" & fecha2 & "# and estado='ENTREGADO'", Cn, adOpenDynamic, adLockPessimistic
             End With
         End If
         
     ElseIf optBuscar(1).Value = True Then
             With rsconsultarordenes
                 If .State = 1 Then .Close
-                .Open "select NroOrden, Cliente,Equipo,Problema,FechaRecibido as Recepción,Estado,FechaEntregado as Entrega from ordenesdetrabajo as o,clientes as c where c.codcliente=o.codcliente and nroorden=" & txtNroOrden.Text, Cn, adOpenDynamic, adLockPessimistic
+                .Open "select NroOrden, Cliente,Equipo,Problema,FechaRecibido as Recepcion,Estado,FechaEntregado as Entrega from ordenesdetrabajo as o,clientes as c where c.codcliente=o.codcliente and nroorden=" & txtNroOrden.Text, Cn, adOpenDynamic, adLockPessimistic
             End With
     Else
         With rsBuscarClientes
@@ -712,17 +712,17 @@ Private Sub cmdBuscar_Click()
         If chkTodos.Value = 1 Then
             With rsconsultarordenes
                 If .State = 1 Then .Close
-                .Open "select NroOrden, Cliente,Equipo,Problema,FechaRecibido as Recepción,Estado,FechaEntregado as Entrega from ordenesdetrabajo as o,clientes as c where c.codcliente=o.codcliente and o.codcliente=" & rsBuscarClientes!codcliente, Cn, adOpenDynamic, adLockPessimistic
+                .Open "select NroOrden, Cliente,Equipo,Problema,FechaRecibido as Recepcion,Estado,FechaEntregado as Entrega from ordenesdetrabajo as o,clientes as c where c.codcliente=o.codcliente and o.codcliente=" & rsBuscarClientes!codcliente, Cn, adOpenDynamic, adLockPessimistic
             End With
         ElseIf chkEntregados.Value = 1 Then
             With rsconsultarordenes
                 If .State = 1 Then .Close
-                .Open "select NroOrden, Cliente,Equipo,Problema,FechaRecibido as Recepción,Estado,FechaEntregado as Entrega from ordenesdetrabajo as o,clientes as c where estado='ENTREGADO' and c.codcliente=o.codcliente and o.codcliente=" & rsBuscarClientes!codcliente, Cn, adOpenDynamic, adLockPessimistic
+                .Open "select NroOrden, Cliente,Equipo,Problema,FechaRecibido as Recepcion,Estado,FechaEntregado as Entrega from ordenesdetrabajo as o,clientes as c where estado='ENTREGADO' and c.codcliente=o.codcliente and o.codcliente=" & rsBuscarClientes!codcliente, Cn, adOpenDynamic, adLockPessimistic
             End With
         ElseIf chkPendientes.Value = 1 Then
             With rsconsultarordenes
                 If .State = 1 Then .Close
-                .Open "select NroOrden, Cliente,Equipo,Problema,FechaRecibido as Recepción,Estado,FechaEntregado as Entrega from ordenesdetrabajo as o,clientes as c where estado<>'ENTREGADO' and c.codcliente=o.codcliente and o.codcliente=" & rsBuscarClientes!codcliente, Cn, adOpenDynamic, adLockPessimistic
+                .Open "select NroOrden, Cliente,Equipo,Problema,FechaRecibido as Recepcion,Estado,FechaEntregado as Entrega from ordenesdetrabajo as o,clientes as c where estado<>'ENTREGADO' and c.codcliente=o.codcliente and o.codcliente=" & rsBuscarClientes!codcliente, Cn, adOpenDynamic, adLockPessimistic
             End With
         End If
         

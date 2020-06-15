@@ -5,7 +5,7 @@ Begin VB.Form frmEliminarReservas
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Eliminar Reservas"
-   ClientHeight    =   1155
+   ClientHeight    =   915
    ClientLeft      =   5685
    ClientTop       =   4275
    ClientWidth     =   3015
@@ -16,40 +16,40 @@ Begin VB.Form frmEliminarReservas
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    Picture         =   "frmEliminarReservas.frx":324A
-   ScaleHeight     =   1155
+   ScaleHeight     =   915
    ScaleWidth      =   3015
    Begin MSComCtl2.DTPicker DTP 
       Height          =   375
       Left            =   120
       TabIndex        =   0
-      Top             =   600
+      Top             =   350
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   661
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   84148225
+      Format          =   198443009
       CurrentDate     =   41037
    End
    Begin isButtonTest.isButton cmdEliminar 
       Height          =   420
       Left            =   1560
       TabIndex        =   2
-      Top             =   100
+      Top             =   350
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
       Icon            =   "frmEliminarReservas.frx":AC67
       Style           =   8
-      Caption         =   "       Eliminar"
+      Caption         =   "     Eliminar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -62,38 +62,7 @@ Begin VB.Form frmEliminarReservas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-   End
-   Begin isButtonTest.isButton cmdSalir 
-      Height          =   420
-      Left            =   1560
-      TabIndex        =   3
-      Top             =   600
-      Width           =   1335
-      _ExtentX        =   2355
-      _ExtentY        =   741
-      Icon            =   "frmEliminarReservas.frx":B541
-      Style           =   8
-      Caption         =   "       Volver"
-      IconSize        =   18
-      IconAlign       =   1
-      CaptionAlign    =   1
-      iNonThemeStyle  =   7
-      HighlightColor  =   4194304
-      FontHighlightColor=   14737632
-      Tooltiptitle    =   ""
-      ToolTipIcon     =   0
-      ToolTipType     =   0
-      ttForeColor     =   0
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -106,7 +75,7 @@ Begin VB.Form frmEliminarReservas
       Caption         =   "Anteriores a:"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -117,7 +86,7 @@ Begin VB.Form frmEliminarReservas
       Height          =   300
       Left            =   120
       TabIndex        =   1
-      Top             =   360
+      Top             =   100
       Width           =   1125
    End
 End
@@ -126,16 +95,13 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Private Sub cmdSalir_Click()
-    Unload Me
-End Sub
 Private Sub cmdEliminar_Click()
     'Elimina los datos anteriores
 
     Dim feha As Date
     fecha = Format(DTP.Value, "mm/dd/yyyy")
 
-    If MsgBox("¿Desea eliminar la base de datos anterior al " & DTP.Value & "?", vbYesNo, "Reservas") = vbYes Then
+    If MsgBox("ï¿½Desea eliminar la base de datos anterior al " & DTP.Value & "?", vbYesNo, "Reservas") = vbYes Then
         With rsEliminar
             If .State = 1 Then .Close
             .Open "SELECT * FROM reservas WHERE Fecha <#" & fecha & "#", Cn, adOpenDynamic, adLockPessimistic

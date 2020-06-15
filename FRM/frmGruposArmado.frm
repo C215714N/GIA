@@ -20,7 +20,7 @@ Begin VB.Form frmGruposArmado
    Begin VB.ComboBox cmbHorario 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -39,7 +39,7 @@ Begin VB.Form frmGruposArmado
    Begin VB.ComboBox cmbDia 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -65,7 +65,7 @@ Begin VB.Form frmGruposArmado
       _ExtentY        =   741
       Icon            =   "frmGruposArmado.frx":AD3E
       Style           =   8
-      Caption         =   "       Alumnos"
+      Caption         =   "     Alumnos"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -78,7 +78,7 @@ Begin VB.Form frmGruposArmado
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -96,7 +96,7 @@ Begin VB.Form frmGruposArmado
       _ExtentY        =   741
       Icon            =   "frmGruposArmado.frx":B618
       Style           =   8
-      Caption         =   "       Nuevo"
+      Caption         =   "     Nuevo"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -109,7 +109,7 @@ Begin VB.Form frmGruposArmado
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -127,7 +127,7 @@ Begin VB.Form frmGruposArmado
       _ExtentY        =   741
       Icon            =   "frmGruposArmado.frx":BEF2
       Style           =   8
-      Caption         =   "       Eliminar"
+      Caption         =   "     Eliminar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -140,7 +140,7 @@ Begin VB.Form frmGruposArmado
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -150,10 +150,10 @@ Begin VB.Form frmGruposArmado
    End
    Begin VB.Label Label1 
       BackStyle       =   0  'Transparent
-      Caption         =   "Día"
+      Caption         =   "Dia"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -172,7 +172,7 @@ Begin VB.Form frmGruposArmado
       Caption         =   "Horario"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -184,7 +184,7 @@ Begin VB.Form frmGruposArmado
       Left            =   120
       TabIndex        =   5
       Top             =   840
-      Width           =   615
+      Width           =   855
    End
 End
 Attribute VB_Name = "frmGruposArmado"
@@ -194,14 +194,14 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cmdAlumnos_Click()
     ''' control de curso
-    If cmbDia.Text = "" Then MsgBox "Primero elija un día de cursada", vbCritical + vbOKOnly, "Administración de Grupos de Armado": cmbDia.SetFocus: Exit Sub
-    If cmbHorario.Text = "" Then MsgBox "Debe elegir un horario de cursada", vbOKOnly + vbCritical, "Administración de Grupos de Armado": cmbHorario.SetFocus: Exit Sub
+    If cmbDia.Text = "" Then MsgBox "Primero elija un dia de cursada", vbCritical + vbOKOnly, "Administracion de Grupos de Armado": cmbDia.SetFocus: Exit Sub
+    If cmbHorario.Text = "" Then MsgBox "Debe elegir un horario de cursada", vbOKOnly + vbCritical, "Administracion de Grupos de Armado": cmbHorario.SetFocus: Exit Sub
     
     ''' busca el curso
     With rsGruposDeArmado
         If .State = 1 Then .Close
         .Open "SELECT * FROM gruposdearmado WHERE dia='" & cmbDia.Text & "' and horario='" & cmbHorario.Text & "'", Cn, adOpenDynamic, adLockPessimistic
-        If .BOF Or .EOF Then MsgBox "No hay curso abierto el día " & cmbDia.Text & " a las " & cmbHorario.Text, vbCritical + vbOKOnly, "Administración de Grupos de Armado": cmbDia.SetFocus: Exit Sub
+        If .BOF Or .EOF Then MsgBox "No hay curso abierto el dia " & cmbDia.Text & " a las " & cmbHorario.Text, vbCritical + vbOKOnly, "Administracion de Grupos de Armado": cmbDia.SetFocus: Exit Sub
         .MoveFirst
         CodCurso = !ID
     End With
@@ -215,11 +215,11 @@ End Sub
 
 Private Sub cmdEliminar_Click()
 ''' comprobacion de informacion
-    If cmbDia.Text = "" Then MsgBox "Debe elegir un día", vbOKOnly + vbCritical, "Grupos de Armado": cmbDia.SetFocus: Exit Sub
+    If cmbDia.Text = "" Then MsgBox "Debe elegir un dia", vbOKOnly + vbCritical, "Grupos de Armado": cmbDia.SetFocus: Exit Sub
     If cmbHorario.Text = "" Then MsgBox "Debe elegir un horario", vbOKOnly + vbCritical, "Grupos de Armado": cmbHorario.SetFocus: Exit Sub
     
     '''agrega grupo
-    If MsgBox("Elminar el grupo del día " & cmbDia.Text & " a las " & cmbHorario.Text & "?", vbYesNo + vbQuestion, "Grupos de Armado") = vbYes Then
+    If MsgBox("Elminar el grupo del dia " & cmbDia.Text & " a las " & cmbHorario.Text & "?", vbYesNo + vbQuestion, "Grupos de Armado") = vbYes Then
         With rsGruposDeArmado
             If .State = 1 Then .Close
             .Open "SELECT * FROM Gruposdearmado WHERE dia='" & cmbDia.Text & "' and horario='" & cmbHorario.Text & "'", Cn, adOpenDynamic, adLockPessimistic
@@ -235,11 +235,11 @@ End Sub
 
 Private Sub cmdNuevo_Click()
 ''' comprobacion de informacion
-    If cmbDia.Text = "" Then MsgBox "Debe elegir un día", vbOKOnly + vbCritical, "Grupos de Armado": cmbDia.SetFocus: Exit Sub
+    If cmbDia.Text = "" Then MsgBox "Debe elegir un dia", vbOKOnly + vbCritical, "Grupos de Armado": cmbDia.SetFocus: Exit Sub
     If cmbHorario.Text = "" Then MsgBox "Debe elegir un horario", vbOKOnly + vbCritical, "Grupos de Armado": cmbHorario.SetFocus: Exit Sub
     
     '''agrega grupo
-    If MsgBox("¿Crear un grupo el día " & cmbDia.Text & " a las " & cmbHorario.Text & "?", vbYesNo + vbQuestion, "Grupos de Armado") = vbYes Then
+    If MsgBox("ï¿½Crear un grupo el dia " & cmbDia.Text & " a las " & cmbHorario.Text & "?", vbYesNo + vbQuestion, "Grupos de Armado") = vbYes Then
         With rsGruposDeArmado
             If .State = 1 Then .Close
             .Open "SELECT * FROM Gruposdearmado WHERE dia='" & cmbDia.Text & "' and horario='" & cmbHorario.Text & "'", Cn, adOpenDynamic, adLockPessimistic

@@ -5,7 +5,7 @@ Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmSituacionDeCartera 
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "Situación de Cartera"
+   Caption         =   "Situacion de Cartera"
    ClientHeight    =   5445
    ClientLeft      =   345
    ClientTop       =   2505
@@ -30,14 +30,14 @@ Begin VB.Form frmSituacionDeCartera
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   84213761
+      Format          =   67043329
       CurrentDate     =   41624
    End
    Begin VB.Frame Frame1 
@@ -45,7 +45,7 @@ Begin VB.Form frmSituacionDeCartera
       Caption         =   "Totales"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -61,7 +61,7 @@ Begin VB.Form frmSituacionDeCartera
       Begin VB.TextBox txtAlumnos 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -78,7 +78,7 @@ Begin VB.Form frmSituacionDeCartera
       Begin VB.TextBox txtDeuda 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -95,7 +95,7 @@ Begin VB.Form frmSituacionDeCartera
       Begin VB.TextBox txtCobranza 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -112,7 +112,7 @@ Begin VB.Form frmSituacionDeCartera
       Begin VB.TextBox txtResto 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -129,7 +129,7 @@ Begin VB.Form frmSituacionDeCartera
       Begin VB.TextBox txtPorcentaje 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -146,7 +146,7 @@ Begin VB.Form frmSituacionDeCartera
       Begin VB.TextBox txtCobrado 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -170,7 +170,7 @@ Begin VB.Form frmSituacionDeCartera
          _ExtentY        =   741
          Icon            =   "frmSituacionDeCartera.frx":11DFF
          Style           =   8
-         Caption         =   "       Analisis"
+         Caption         =   "     Analisis"
          IconSize        =   18
          IconAlign       =   1
          CaptionAlign    =   1
@@ -183,7 +183,7 @@ Begin VB.Form frmSituacionDeCartera
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -201,7 +201,7 @@ Begin VB.Form frmSituacionDeCartera
          _ExtentY        =   741
          Icon            =   "frmSituacionDeCartera.frx":126D9
          Style           =   8
-         Caption         =   "       Informe"
+         Caption         =   "     Informe"
          IconSize        =   18
          IconAlign       =   1
          CaptionAlign    =   1
@@ -214,7 +214,7 @@ Begin VB.Form frmSituacionDeCartera
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -227,7 +227,7 @@ Begin VB.Form frmSituacionDeCartera
          Caption         =   "Resto"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -246,7 +246,7 @@ Begin VB.Form frmSituacionDeCartera
          Caption         =   "Porcentaje"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -265,7 +265,7 @@ Begin VB.Form frmSituacionDeCartera
          Caption         =   "Cobrado"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -284,7 +284,7 @@ Begin VB.Form frmSituacionDeCartera
          Caption         =   "Cobranza"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -303,7 +303,7 @@ Begin VB.Form frmSituacionDeCartera
          Caption         =   "Deuda"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -322,7 +322,7 @@ Begin VB.Form frmSituacionDeCartera
          Caption         =   "Alumnos"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -352,7 +352,7 @@ Begin VB.Form frmSituacionDeCartera
       RowDividerStyle =   0
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -413,7 +413,7 @@ Begin VB.Form frmSituacionDeCartera
       _ExtentY        =   741
       Icon            =   "frmSituacionDeCartera.frx":12FB3
       Style           =   8
-      Caption         =   "       Buscar"
+      Caption         =   "     Buscar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -424,7 +424,7 @@ Begin VB.Form frmSituacionDeCartera
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -442,7 +442,7 @@ Begin VB.Form frmSituacionDeCartera
       _ExtentY        =   741
       Icon            =   "frmSituacionDeCartera.frx":1388D
       Style           =   8
-      Caption         =   "       Cancelar"
+      Caption         =   "     Cancelar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -453,7 +453,7 @@ Begin VB.Form frmSituacionDeCartera
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -467,7 +467,7 @@ Begin VB.Form frmSituacionDeCartera
       Caption         =   "Situacion al Dia"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -552,7 +552,7 @@ Private Sub cmdBuscar_Click()
             With rsSituacionDeCartera
                 If .State = 1 Then .Close
                 .Open "SELECT Dias,Alumnos as [Alumnos],Deuda,Cobranza,Cobrado as [Cobrado],Porcentaje as [%],Resto as [Resta] FROM SituacionesDeCartera WHERE fecha=#" & Format(DTPFecha.Value, "mm/dd/yyyy") & "#", Cn, adOpenDynamic, adLockPessimistic
-                If .BOF Or .EOF Then MsgBox "Ese día no se inició sesión", vbOKOnly, "Situación de Cartera - GIA": Exit Sub
+                If .BOF Or .EOF Then MsgBox "Ese dia no se inicio sesion", vbOKOnly, "Situacion de Cartera - GIA": Exit Sub
             End With
     '''Situacion de Cartera - TOTALES
         With rsTotalesSituaciones
@@ -583,14 +583,14 @@ End Sub
 Private Sub cmdInforme_Click()
     Set dtrSituacion.DataSource = rsSituacionDeCartera
     dtrSituacion.Show
-    dtrSituacion.Caption = "Situación de Cartera"
-    dtrSituacion.Sections("Sección5").Controls("etiqueta21").Caption = txtAlumnos.Text
-    dtrSituacion.Sections("Sección5").Controls("etiqueta11").Caption = txtDeuda.Text
-    dtrSituacion.Sections("Sección5").Controls("etiqueta12").Caption = txtCobranza.Text
-    dtrSituacion.Sections("Sección5").Controls("etiqueta13").Caption = txtCobrado.Text
-    dtrSituacion.Sections("Sección5").Controls("etiqueta14").Caption = txtPorcentaje.Text
-    dtrSituacion.Sections("Sección5").Controls("etiqueta15").Caption = txtResto.Text
-    dtrSituacion.Sections("Sección4").Controls("etiqueta25").Caption = DTPFecha.Value
+    dtrSituacion.Caption = "Situacion de Cartera"
+    dtrSituacion.Sections("Seccion5").Controls("etiqueta21").Caption = txtAlumnos.Text
+    dtrSituacion.Sections("Seccion5").Controls("etiqueta11").Caption = txtDeuda.Text
+    dtrSituacion.Sections("Seccion5").Controls("etiqueta12").Caption = txtCobranza.Text
+    dtrSituacion.Sections("Seccion5").Controls("etiqueta13").Caption = txtCobrado.Text
+    dtrSituacion.Sections("Seccion5").Controls("etiqueta14").Caption = txtPorcentaje.Text
+    dtrSituacion.Sections("Seccion5").Controls("etiqueta15").Caption = txtResto.Text
+    dtrSituacion.Sections("Seccion4").Controls("etiqueta25").Caption = DTPFecha.Value
 End Sub
 
 Private Sub cmdCerrar_Click()

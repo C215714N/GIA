@@ -11,7 +11,7 @@ Begin VB.Form FrmBackup
    FillColor       =   &H80000005&
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   8.25
+      Size            =   10
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -62,7 +62,7 @@ Begin VB.Form FrmBackup
    Begin VB.DirListBox Dir1 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -208,7 +208,7 @@ Begin VB.Form FrmBackup
       Caption         =   "Carpeta"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -229,7 +229,7 @@ Begin VB.Form FrmBackup
       Caption         =   "Unidad"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -249,7 +249,7 @@ Begin VB.Form FrmBackup
       Caption         =   "Seleccionar Disco de Destino"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -269,7 +269,7 @@ Begin VB.Form FrmBackup
       Caption         =   "Seleccionar Directorio"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -318,7 +318,7 @@ On Local Error GoTo LineaError
     Screen.MousePointer = vbDefault
     
     If a <> 0 Then
-        MsgBox "La Copia de Seguridad Se Realizó Correctamente!" + Chr(13) + NuevaRuta, 64
+        MsgBox "La Copia de Seguridad Se Realizo Correctamente!" + Chr(13) + NuevaRuta, 64
     End If
   Exit Sub
   

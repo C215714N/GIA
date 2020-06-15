@@ -5,14 +5,14 @@ Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmConsultaExamenes 
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "Consultar Exámenes"
+   Caption         =   "Consultar Examenes"
    ClientHeight    =   4380
    ClientLeft      =   2640
    ClientTop       =   1995
    ClientWidth     =   6135
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   8.25
+      Size            =   10
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -41,7 +41,7 @@ Begin VB.Form frmConsultaExamenes
       RowHeight       =   21
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -94,10 +94,10 @@ Begin VB.Form frmConsultaExamenes
    End
    Begin VB.Frame Frame1 
       BackColor       =   &H00662200&
-      Caption         =   "Búsqueda"
+      Caption         =   "Busqueda"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -112,7 +112,7 @@ Begin VB.Form frmConsultaExamenes
       Width           =   5895
       Begin VB.OptionButton optBuscar 
          BackColor       =   &H00662200&
-         Caption         =   "Por Módulo"
+         Caption         =   "Modulo"
          ForeColor       =   &H8000000F&
          Height          =   255
          Index           =   1
@@ -123,7 +123,7 @@ Begin VB.Form frmConsultaExamenes
       End
       Begin VB.OptionButton optBuscar 
          BackColor       =   &H00662200&
-         Caption         =   "Por Nombre"
+         Caption         =   "Nombre"
          ForeColor       =   &H8000000F&
          Height          =   255
          Index           =   0
@@ -144,14 +144,14 @@ Begin VB.Form frmConsultaExamenes
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   3735553
+         Format          =   92143617
          CurrentDate     =   41978
       End
       Begin MSComCtl2.DTPicker dtpDesde 
@@ -165,14 +165,14 @@ Begin VB.Form frmConsultaExamenes
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   3735553
+         Format          =   92143617
          CurrentDate     =   41978
       End
       Begin isButtonTest.isButton cmdConsultar 
@@ -185,7 +185,7 @@ Begin VB.Form frmConsultaExamenes
          _ExtentY        =   741
          Icon            =   "frmConsultaExamenes.frx":7A1D
          Style           =   8
-         Caption         =   "       Consultar"
+         Caption         =   "     Consultar"
          IconSize        =   18
          IconAlign       =   1
          CaptionAlign    =   1
@@ -198,7 +198,7 @@ Begin VB.Form frmConsultaExamenes
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -216,7 +216,7 @@ Begin VB.Form frmConsultaExamenes
          _ExtentY        =   741
          Icon            =   "frmConsultaExamenes.frx":82F7
          Style           =   8
-         Caption         =   "       Imprimir"
+         Caption         =   "     Imprimir"
          IconSize        =   18
          IconAlign       =   1
          CaptionAlign    =   1
@@ -229,7 +229,7 @@ Begin VB.Form frmConsultaExamenes
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -247,7 +247,7 @@ Begin VB.Form frmConsultaExamenes
          _ExtentY        =   741
          Icon            =   "frmConsultaExamenes.frx":8BD1
          Style           =   8
-         Caption         =   "       Diploma"
+         Caption         =   "     Diploma"
          IconSize        =   18
          IconAlign       =   1
          CaptionAlign    =   1
@@ -260,7 +260,7 @@ Begin VB.Form frmConsultaExamenes
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -278,7 +278,7 @@ Begin VB.Form frmConsultaExamenes
          _ExtentY        =   741
          Icon            =   "frmConsultaExamenes.frx":90CB
          Style           =   8
-         Caption         =   "       Exportar"
+         Caption         =   "     Exportar"
          IconSize        =   18
          IconAlign       =   1
          CaptionAlign    =   1
@@ -291,7 +291,7 @@ Begin VB.Form frmConsultaExamenes
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -304,7 +304,7 @@ Begin VB.Form frmConsultaExamenes
          Caption         =   "0 Alumnos"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -319,13 +319,12 @@ Begin VB.Form frmConsultaExamenes
          Width           =   2655
       End
       Begin VB.Label Label2 
-         Alignment       =   1  'Right Justify
          BackColor       =   &H00800000&
          BackStyle       =   0  'Transparent
          Caption         =   "Hasta"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -337,16 +336,15 @@ Begin VB.Form frmConsultaExamenes
          Left            =   1560
          TabIndex        =   6
          Top             =   240
-         Width           =   495
+         Width           =   855
       End
       Begin VB.Label Label1 
-         Alignment       =   1  'Right Justify
          BackColor       =   &H00800000&
          BackStyle       =   0  'Transparent
          Caption         =   "Desde"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -358,7 +356,7 @@ Begin VB.Form frmConsultaExamenes
          Left            =   120
          TabIndex        =   5
          Top             =   240
-         Width           =   495
+         Width           =   735
       End
    End
 End
@@ -377,15 +375,15 @@ Private Sub cmdConsultar_Click()
     With rsExamenes
         If .State = 1 Then .Close
         If optBuscar(0).Value = True Then
-            .Open "SELECT V.Codalumno as [Código],nya as [Alumno],TipoDoc, DNI as [Documento],Fechanac as [Nacimiento],Nacionalidad, capac as [Curso], Fecha, Modulo, Promedio FROM Verificaciones as V,Examenes as E WHERE v.codalumno=e.codalumno and fecha>=#" & desde & "# and fecha <=#" & hasta & "# ORDER BY nya,fecha", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT V.Codalumno as [Codigo],nya as [Alumno],TipoDoc, DNI as [Documento],Fechanac as [Nacimiento],Nacionalidad, capac as [Curso], Fecha, Modulo, Promedio FROM Verificaciones as V,Examenes as E WHERE v.codalumno=e.codalumno and fecha>=#" & desde & "# and fecha <=#" & hasta & "# ORDER BY nya,fecha", Cn, adOpenDynamic, adLockPessimistic
         Else
-            .Open "SELECT V.Codalumno as [Código],nya as [Alumno],TipoDoc, DNI as [Documento],Fechanac as [Nacimiento],Nacionalidad, capac as [Curso], Fecha, Modulo, Promedio FROM Verificaciones as V,Examenes as E WHERE v.codalumno=e.codalumno and fecha>=#" & desde & "# and fecha <=#" & hasta & "# ORDER BY modulo,fecha", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT V.Codalumno as [Codigo],nya as [Alumno],TipoDoc, DNI as [Documento],Fechanac as [Nacimiento],Nacionalidad, capac as [Curso], Fecha, Modulo, Promedio FROM Verificaciones as V,Examenes as E WHERE v.codalumno=e.codalumno and fecha>=#" & desde & "# and fecha <=#" & hasta & "# ORDER BY modulo,fecha", Cn, adOpenDynamic, adLockPessimistic
         End If
         Set grilla.DataSource = rsExamenes
         formatoGrilla
     End With
     formatoGrilla
-    Label3.Caption = "Alumnos: " & rsExamenes.RecordCount & " Exámenes"
+    Label3.Caption = "Alumnos: " & rsExamenes.RecordCount & " Examenes"
     cmdExportar.Enabled = True
     cmdDiploma.Enabled = False
 End Sub
@@ -404,7 +402,7 @@ Private Sub cmdDiploma_Click()
             frmRetiroDiploma.lblModulo.Caption = grilla.Columns(8).Text
             Me.Enabled = False
         Else
-            MsgBox "Este diploma ya ha sido retirado el día " & !fecharetiro, vbCritical, "Diplomas"
+            MsgBox "Este diploma ya ha sido retirado el dia " & !fecharetiro, vbCritical, "Diplomas"
         End If
     End With
     
@@ -416,14 +414,14 @@ Private Sub cmdExportar_Click()
 End Sub
 
 Private Sub cmdImprimir_Click()
-    If Label3.Caption = "0 Alumnos" Then MsgBox "Primero realice la búsqueda", vbCritical, "Exámenes": Exit Sub
+    If Label3.Caption = "0 Alumnos" Then MsgBox "Primero realice la busqueda", vbCritical, "Examenes": Exit Sub
     
     Set dtrNotas.DataSource = rsExamenes
     dtrNotas.LeftMargin = 1
-    dtrNotas.Sections("Sección5").Controls("lblalumnos").Caption = rsExamenes.RecordCount
+    dtrNotas.Sections("Seccion5").Controls("lblalumnos").Caption = rsExamenes.RecordCount
     '''dtrNotas.Orientation = dtrorientation.landscape
     dtrNotas.Show
-    dtrNotas.Caption = "Exámenes"
+    dtrNotas.Caption = "Examenes"
     Me.Enabled = False
 End Sub
 

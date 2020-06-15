@@ -20,7 +20,7 @@ Begin VB.Form frmDiplomasEntregados
       Alignment       =   1  'Right Justify
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -37,7 +37,7 @@ Begin VB.Form frmDiplomasEntregados
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -54,7 +54,7 @@ Begin VB.Form frmDiplomasEntregados
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -81,7 +81,7 @@ Begin VB.Form frmDiplomasEntregados
       RowHeight       =   21
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -134,10 +134,10 @@ Begin VB.Form frmDiplomasEntregados
    End
    Begin VB.Label Label1 
       BackStyle       =   0  'Transparent
-      Caption         =   "Código"
+      Caption         =   "Codigo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -156,7 +156,7 @@ Begin VB.Form frmDiplomasEntregados
       Caption         =   "Alumno"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -172,10 +172,10 @@ Begin VB.Form frmDiplomasEntregados
    End
    Begin VB.Label Label3 
       BackStyle       =   0  'Transparent
-      Caption         =   "Capacitación"
+      Caption         =   "Capacitacion"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -202,7 +202,7 @@ End Sub
 
 Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
     If KeyAscii = 13 Then
-        If txtCodigo.Text = "" Then MsgBox "Ingrese el código del alumno", vbOKOnly, "GIA - Exámenes": txtCodigo.SetFocus: Exit Sub
+        If txtCodigo.Text = "" Then MsgBox "Ingrese el codigo del alumno", vbOKOnly, "GIA - Examenes": txtCodigo.SetFocus: Exit Sub
       
         With rsVerificaciones
             If .State = 1 Then .Close
@@ -214,7 +214,7 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
       
         With rsExamenes
             If .State = 1 Then .Close
-            .Open "SELECT FechaRetiro, Modulo as Módulo, Retiro as Retiró FROM examenes WHERE codalumno=" & Int(txtCodigo.Text) & " and retiro<> ''", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT FechaRetiro, Modulo, Retiro FROM examenes WHERE codalumno=" & Int(txtCodigo.Text) & " and retiro<> ''", Cn, adOpenDynamic, adLockPessimistic
         End With
 
       Set grilla.DataSource = rsExamenes

@@ -33,7 +33,7 @@ Begin VB.Form frmLibroArmado
       RowHeight       =   21
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -91,13 +91,13 @@ Begin VB.Form frmLibroArmado
       Top             =   360
       Width           =   2775
       _ExtentX        =   4895
-      _ExtentY        =   635
+      _ExtentY        =   661
       _Version        =   393216
       Style           =   2
       Text            =   "DataCombo1"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -115,7 +115,7 @@ Begin VB.Form frmLibroArmado
       _ExtentY        =   741
       Icon            =   "frmLibroArmado.frx":AC67
       Style           =   8
-      Caption         =   "       Buscar"
+      Caption         =   "     Buscar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -126,7 +126,7 @@ Begin VB.Form frmLibroArmado
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -146,7 +146,7 @@ Begin VB.Form frmLibroArmado
       Caption         =   "Dia y Horario"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -181,7 +181,7 @@ Private Sub cmdBuscar_Click()
     '''busca los alumnos del curso
     With rsAlumnosArmado
         If .State = 1 Then .Close
-        .Open "SELECT v.codalumno as [Código],v.nya as [Alumnos] FROM verificaciones as v,alumnosdearmado as a WHERE v.codalumno=a.codalumno and grupo=" & rsGruposDeArmado!ID & " ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT v.codalumno as [Codigo],v.nya as [Alumnos] FROM verificaciones as v,alumnosdearmado as a WHERE v.codalumno=a.codalumno and grupo=" & rsGruposDeArmado!ID & " ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
         If .BOF = True And .EOF = True Then
             MsgBox "No se encontraron alumnos en este grupo", vbExclamation, "Gestion Integral del Alumno"
         End If
@@ -231,7 +231,7 @@ Private Sub grilla_DblClick()
 
     With rsLibro
         If .State = 1 Then .Close
-        .Open "SELECT numClase as [N°],Fecha,Tema FROM librodeaula WHERE codalumno=" & CodAlumno & " ORDER BY NumClase", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT numClase as [NÂ°],Fecha,Tema FROM librodeaula WHERE codalumno=" & CodAlumno & " ORDER BY NumClase", Cn, adOpenDynamic, adLockPessimistic
     End With
     
     Set frmLibro.grilla.DataSource = rsLibro

@@ -12,7 +12,7 @@ Begin VB.Form frmComisiones
    ClientWidth     =   6405
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   8.25
+      Size            =   10
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -42,7 +42,7 @@ Begin VB.Form frmComisiones
       RowHeight       =   20
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -51,7 +51,7 @@ Begin VB.Form frmComisiones
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -96,7 +96,7 @@ Begin VB.Form frmComisiones
    Begin VB.TextBox txtComision 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -112,7 +112,7 @@ Begin VB.Form frmComisiones
    Begin VB.TextBox txtCuota 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -136,14 +136,14 @@ Begin VB.Form frmComisiones
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   142409729
+      Format          =   92405761
       CurrentDate     =   41355
    End
    Begin MSComCtl2.DTPicker dtpDesde 
@@ -157,14 +157,14 @@ Begin VB.Form frmComisiones
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   142409729
+      Format          =   92405761
       CurrentDate     =   41355
    End
    Begin isButtonTest.isButton cmdConsultar 
@@ -177,7 +177,7 @@ Begin VB.Form frmComisiones
       _ExtentY        =   741
       Icon            =   "frmComisiones.frx":AC67
       Style           =   8
-      Caption         =   "       Consultar"
+      Caption         =   "     Consulta"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -190,7 +190,7 @@ Begin VB.Form frmComisiones
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -199,13 +199,12 @@ Begin VB.Form frmComisiones
       EndProperty
    End
    Begin VB.Label Label13 
-      Alignment       =   1  'Right Justify
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
       Caption         =   "Comisiones"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -216,15 +215,15 @@ Begin VB.Form frmComisiones
       Height          =   225
       Left            =   4920
       TabIndex        =   13
-      Top             =   2200
-      Width           =   915
+      Top             =   2205
+      Width           =   1275
    End
    Begin VB.Label lblTotalComisiones 
       Alignment       =   1  'Right Justify
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -242,7 +241,7 @@ Begin VB.Form frmComisiones
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -260,7 +259,7 @@ Begin VB.Form frmComisiones
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -274,13 +273,12 @@ Begin VB.Form frmComisiones
       Width           =   1335
    End
    Begin VB.Label Label6 
-      Alignment       =   1  'Right Justify
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
       Caption         =   "Alumnos"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -291,17 +289,16 @@ Begin VB.Form frmComisiones
       Height          =   225
       Left            =   4920
       TabIndex        =   9
-      Top             =   800
-      Width           =   690
+      Top             =   795
+      Width           =   1050
    End
    Begin VB.Label Label5 
-      Alignment       =   1  'Right Justify
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
       Caption         =   "Cobrados"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -313,14 +310,14 @@ Begin VB.Form frmComisiones
       Left            =   4920
       TabIndex        =   8
       Top             =   1500
-      Width           =   780
+      Width           =   900
    End
    Begin VB.Label Label1 
       BackStyle       =   0  'Transparent
       Caption         =   "Desde"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -339,7 +336,7 @@ Begin VB.Form frmComisiones
       Caption         =   "Comision"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -351,14 +348,14 @@ Begin VB.Form frmComisiones
       Left            =   3960
       TabIndex        =   6
       Top             =   120
-      Width           =   855
+      Width           =   975
    End
    Begin VB.Label Label3 
       BackStyle       =   0  'Transparent
       Caption         =   "Cuota"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -377,7 +374,7 @@ Begin VB.Form frmComisiones
       Caption         =   "Hasta"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -409,7 +406,7 @@ End Sub
 Private Sub cmdConsultar_Click()
     On Error GoTo Error
     If txtCuota.Text = "" Then MsgBox "Debe elegir una cuota a consultar", vbOKOnly + vbInformation, "Comisiones": txtCuota.SetFocus: Exit Sub
-    If txtComision.Text = "" Then MsgBox "Debe ingresar una comisión", vbOKOnly + vbInformation, "Comisiones": txtComision.SetFocus: Exit Sub
+    If txtComision.Text = "" Then MsgBox "Debe ingresar una comision", vbOKOnly + vbInformation, "Comisiones": txtComision.SetFocus: Exit Sub
     Dim fecha1 As Date
     Dim fecha2 As Date
     
@@ -430,7 +427,7 @@ Private Sub cmdConsultar_Click()
 
     With rsPlanDePago
         If .State = 1 Then .Close
-        .Open "SELECT codalumno as [Codigo],nrocuota as [N°],fechapago as [Fecha],totalcobrado as [Monto], ((totalcobrado)*" & Int(txtComision.Text) & "/100) as [Comision] FROM plandepago WHERE fechapago>=#" & fecha1 & "# and fechapago<=#" & fecha2 & "# and nrocuota=" & Int(txtCuota.Text), Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT codalumno as [Codigo],nrocuota as [NÂ°],fechapago as [Fecha],totalcobrado as [Monto], ((totalcobrado)*" & Int(txtComision.Text) & "/100) as [Comision] FROM plandepago WHERE fechapago>=#" & fecha1 & "# and fechapago<=#" & fecha2 & "# and nrocuota=" & Int(txtCuota.Text), Cn, adOpenDynamic, adLockPessimistic
     End With
 
     Set grilla.DataSource = rsPlanDePago

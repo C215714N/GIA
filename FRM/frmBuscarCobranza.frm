@@ -12,7 +12,7 @@ Begin VB.Form frmBuscarCobranza
    ClientWidth     =   9405
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   8.25
+      Size            =   10
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -72,7 +72,7 @@ Begin VB.Form frmBuscarCobranza
       Caption         =   ""
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -83,7 +83,7 @@ Begin VB.Form frmBuscarCobranza
    End
    Begin VB.OptionButton optBuscar 
       BackColor       =   &H00884400&
-      Caption         =   "Buscar Por Código"
+      Caption         =   "Codigo"
       ForeColor       =   &H8000000F&
       Height          =   255
       Index           =   0
@@ -92,20 +92,20 @@ Begin VB.Form frmBuscarCobranza
       TabIndex        =   1
       Top             =   120
       UseMaskColor    =   -1  'True
-      Width           =   1815
+      Width           =   1335
    End
    Begin VB.OptionButton optBuscar 
       BackColor       =   &H00884400&
-      Caption         =   "Buscar Por Nombre"
-      ForeColor       =   &H8000000F&
+      Caption         =   "Nombre"
+      ForeColor       =   &H8000000B&
       Height          =   255
       Index           =   1
-      Left            =   2160
+      Left            =   1440
       MaskColor       =   &H00800000&
       TabIndex        =   2
       Top             =   120
       UseMaskColor    =   -1  'True
-      Width           =   1935
+      Width           =   1335
    End
    Begin MSDataGridLib.DataGrid grilla 
       Height          =   3015
@@ -123,7 +123,7 @@ Begin VB.Form frmBuscarCobranza
       RowDividerStyle =   0
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -184,7 +184,7 @@ Begin VB.Form frmBuscarCobranza
       _ExtentY        =   741
       Icon            =   "frmBuscarCobranza.frx":AC67
       Style           =   8
-      Caption         =   "       Aceptar"
+      Caption         =   "     Aceptar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -198,7 +198,7 @@ Begin VB.Form frmBuscarCobranza
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -216,7 +216,7 @@ Begin VB.Form frmBuscarCobranza
       _ExtentY        =   741
       Icon            =   "frmBuscarCobranza.frx":B541
       Style           =   8
-      Caption         =   "       Cancelar"
+      Caption         =   "     Cancelar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -230,7 +230,7 @@ Begin VB.Form frmBuscarCobranza
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -258,7 +258,7 @@ Private Sub cmdAceptar_Click()
     Exit Sub
     
 LineaError:
-    MsgBox "Debe realizar una búsqueda", vbOKOnly + vbCritical, "Gestión Integral del Alumno"
+    MsgBox "Debe realizar una busqueda", vbOKOnly + vbCritical, "Gestion Integral del Alumno"
     Exit Sub
 
 End Sub
@@ -291,7 +291,7 @@ End Sub
 
 Sub BuscarCodigo()
     busca = UCase(Trim(txtBuscar.Text)) & "%"
-    Adodc.RecordSource = "SELECT codalumno as [Codigo], nya as [Nombre y Apellido], tipodoc as [Tipo],DNI as [N°], capac as [Capacitación] FROM verificaciones WHERE [codalumno] like '" & busca & "' ORDER BY codalumno"
+    Adodc.RecordSource = "SELECT codalumno as [Codigo], nya as [Nombre y Apellido], tipodoc as [Tipo],DNI as [NÂ°], capac as [Capacitacion] FROM verificaciones WHERE [codalumno] like '" & busca & "' ORDER BY codalumno"
     Adodc.Refresh
     Set grilla.DataSource = Adodc
     formatoGrilla
@@ -299,7 +299,7 @@ End Sub
 
 Sub BuscarAlumno()
     busca = UCase(Trim(txtBuscar.Text)) & "%"
-    Adodc.RecordSource = "SELECT  codalumno as [Codigo], nya as [Nombre y Apellido], tipodoc as [Tipo],DNI as [N°], capac as [Capacitación] FROM verificaciones WHERE [nya] like '" & busca & "' ORDER BY nya"
+    Adodc.RecordSource = "SELECT  codalumno as [Codigo], nya as [Nombre y Apellido], tipodoc as [Tipo],DNI as [NÂ°], capac as [Capacitacion] FROM verificaciones WHERE [nya] like '" & busca & "' ORDER BY nya"
     Adodc.Refresh
     Set grilla.DataSource = Adodc
     formatoGrilla

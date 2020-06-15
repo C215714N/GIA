@@ -6,14 +6,14 @@ Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmViaticos 
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "Viáticos"
+   Caption         =   "Viaticos"
    ClientHeight    =   4155
    ClientLeft      =   45
    ClientTop       =   435
    ClientWidth     =   4695
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   8.25
+      Size            =   10
       Charset         =   0
       Weight          =   700
       Underline       =   0   'False
@@ -40,8 +40,9 @@ Begin VB.Form frmViaticos
       _ExtentY        =   741
       Icon            =   "frmViaticos.frx":B201
       Style           =   8
-      Caption         =   "   Aceptar"
+      Caption         =   "     Aceptar"
       IconAlign       =   1
+      CaptionAlign    =   1
       iNonThemeStyle  =   0
       HighlightColor  =   16744576
       FontHighlightColor=   12632256
@@ -51,7 +52,7 @@ Begin VB.Form frmViaticos
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -72,7 +73,7 @@ Begin VB.Form frmViaticos
       RowHeight       =   20
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -81,7 +82,7 @@ Begin VB.Form frmViaticos
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -137,7 +138,7 @@ Begin VB.Form frmViaticos
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -153,7 +154,7 @@ Begin VB.Form frmViaticos
    End
    Begin VB.Frame Frame1 
       BackColor       =   &H00884400&
-      Caption         =   "Agregar Viático"
+      Caption         =   "Agregar"
       ForeColor       =   &H8000000F&
       Height          =   3135
       Left            =   3000
@@ -186,7 +187,7 @@ Begin VB.Form frmViaticos
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -210,14 +211,14 @@ Begin VB.Form frmViaticos
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   41943041
+         Format          =   66715649
          CurrentDate     =   42277
       End
       Begin VB.Label Label4 
@@ -252,13 +253,13 @@ Begin VB.Form frmViaticos
       Top             =   360
       Width           =   2775
       _ExtentX        =   4895
-      _ExtentY        =   635
+      _ExtentY        =   661
       _Version        =   393216
       Style           =   2
       Text            =   ""
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -283,9 +284,9 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cmdAgregar_Click()
-    If dtcAsistente.Text = "" Then MsgBox "Elija el Asesor Educativo", vbCritical, "Viáticos": dtcAsistente.SetFocus: Exit Sub
-    If txtMonto.Text = "" Then MsgBox "Agregue el monto del viático", vbCritical, "Viáticos": txtMonto.SetFocus: Exit Sub
-    If optMonto(0).Value = False And optMonto(1).Value = False Then MsgBox "Elija si el Asesor Educativo lleva o rinde el dinero", vbCritical, "Viáticos": optMonto(0).SetFocus: Exit Sub
+    If dtcAsistente.Text = "" Then MsgBox "Elija el Asesor Educativo", vbCritical, "Viaticos": dtcAsistente.SetFocus: Exit Sub
+    If txtMonto.Text = "" Then MsgBox "Agregue el monto del Viatico", vbCritical, "Viaticos": txtMonto.SetFocus: Exit Sub
+    If optMonto(0).Value = False And optMonto(1).Value = False Then MsgBox "Elija si el Asesor Educativo lleva o rinde el dinero", vbCritical, "Viaticos": optMonto(0).SetFocus: Exit Sub
     
     With rsViaticos
         If .State = 1 Then .Close

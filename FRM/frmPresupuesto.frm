@@ -24,7 +24,7 @@ Begin VB.Form frmPresupuesto
       Caption         =   "Totales"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -42,7 +42,7 @@ Begin VB.Form frmPresupuesto
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -60,7 +60,7 @@ Begin VB.Form frmPresupuesto
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -78,7 +78,7 @@ Begin VB.Form frmPresupuesto
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -96,7 +96,7 @@ Begin VB.Form frmPresupuesto
          Caption         =   "Saldo"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -115,7 +115,7 @@ Begin VB.Form frmPresupuesto
          Caption         =   "Pagado"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -134,7 +134,7 @@ Begin VB.Form frmPresupuesto
          Caption         =   "Deuda"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -163,7 +163,7 @@ Begin VB.Form frmPresupuesto
       RowHeight       =   21
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -216,10 +216,10 @@ Begin VB.Form frmPresupuesto
    End
    Begin VB.Frame Frame1 
       BackColor       =   &H00884400&
-      Caption         =   "Período"
+      Caption         =   "Periodo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -235,7 +235,7 @@ Begin VB.Form frmPresupuesto
       Begin VB.ComboBox cmbMes 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -248,21 +248,21 @@ Begin VB.Form frmPresupuesto
          List            =   "frmPresupuesto.frx":11E27
          Style           =   2  'Dropdown List
          TabIndex        =   13
-         Top             =   480
+         Top             =   420
          Width           =   1335
       End
-      Begin MSComCtl2.DTPicker dtpAño 
+      Begin MSComCtl2.DTPicker dtpAÃ±o 
          Height          =   375
          Left            =   1560
          TabIndex        =   0
-         Top             =   480
+         Top             =   420
          Width           =   855
          _ExtentX        =   1508
          _ExtentY        =   661
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -270,7 +270,7 @@ Begin VB.Form frmPresupuesto
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "yyyy"
-         Format          =   84148227
+         Format          =   198443011
          CurrentDate     =   36526
          MaxDate         =   401876
          MinDate         =   36526
@@ -279,13 +279,13 @@ Begin VB.Form frmPresupuesto
          Height          =   420
          Left            =   2520
          TabIndex        =   12
-         Top             =   400
+         Top             =   420
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
          Icon            =   "frmPresupuesto.frx":11E90
          Style           =   8
-         Caption         =   "       Informe"
+         Caption         =   "     Informe"
          IconSize        =   18
          IconAlign       =   1
          CaptionAlign    =   1
@@ -298,7 +298,7 @@ Begin VB.Form frmPresupuesto
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -308,10 +308,10 @@ Begin VB.Form frmPresupuesto
       End
       Begin VB.Label Label2 
          BackStyle       =   0  'Transparent
-         Caption         =   "AÑO"
+         Caption         =   "Aï¿½O"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -322,7 +322,7 @@ Begin VB.Form frmPresupuesto
          Height          =   255
          Left            =   1560
          TabIndex        =   2
-         Top             =   240
+         Top             =   200
          Width           =   975
       End
       Begin VB.Label Label1 
@@ -330,7 +330,7 @@ Begin VB.Form frmPresupuesto
          Caption         =   "MES"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -341,7 +341,7 @@ Begin VB.Form frmPresupuesto
          Height          =   255
          Left            =   120
          TabIndex        =   3
-         Top             =   240
+         Top             =   200
          Width           =   735
       End
    End
@@ -381,7 +381,7 @@ Private Sub Form_Load()
         cmbMes.Text = "Diciembre"
     End If
     
-    dtpAño.Value = Date
+    dtpAÃ±o.Value = Date
     ActualizarPresupuesto = False
 End Sub
 
@@ -392,17 +392,17 @@ Private Sub cmbMes_Click()
         Else
             If .State = 1 Then .Close: ActualizarPresupuesto = False
         End If
-        .Open "SELECT sum(deuda) FROM presupuesto WHERE mes='" & cmbMes.Text & "' and año=" & Year(dtpAño.Value), Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT sum(deuda) FROM presupuesto WHERE mes='" & cmbMes.Text & "' and AÃ±o=" & Year(dtpAÃ±o.Value), Cn, adOpenDynamic, adLockPessimistic
         lblDeuda.Caption = Format(!expr1000, "currency")
         .Close
-        .Open "SELECT sum(pagado) FROM presupuesto WHERE mes='" & cmbMes.Text & "' and año=" & Year(dtpAño.Value), Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT sum(pagado) FROM presupuesto WHERE mes='" & cmbMes.Text & "' and AÃ±o=" & Year(dtpAÃ±o.Value), Cn, adOpenDynamic, adLockPessimistic
         lblPagado.Caption = Format(!expr1000, "currency")
         .Close
-        .Open "SELECT sum(saldo) FROM presupuesto WHERE mes='" & cmbMes.Text & "' and año=" & Year(dtpAño.Value), Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT sum(saldo) FROM presupuesto WHERE mes='" & cmbMes.Text & "' and AÃ±o=" & Year(dtpAÃ±o.Value), Cn, adOpenDynamic, adLockPessimistic
         lblSaldo.Caption = Format(!expr1000, "currency")
         .Close
-        .Open "SELECT Cuenta,Deuda,Pagado,Saldo,Observaciones,id FROM presupuesto WHERE mes='" & cmbMes.Text & "' and año=" & Year(dtpAño.Value) & " ORDER BY cuenta", Cn, adOpenDynamic, adLockPessimistic
-        Set Grilla.DataSource = rsPresupuesto
+        .Open "SELECT Cuenta,Deuda,Pagado,Saldo,Observaciones,id FROM presupuesto WHERE mes='" & cmbMes.Text & "' and AÃ±o=" & Year(dtpAÃ±o.Value) & " ORDER BY cuenta", Cn, adOpenDynamic, adLockPessimistic
+        Set grilla.DataSource = rsPresupuesto
     End With
     formatoGrilla
     cmdInforme.Enabled = True
@@ -411,33 +411,33 @@ End Sub
 Private Sub cmdInforme_Click()
     Set dtrPresupuesto.DataSource = rsPresupuesto
     dtrPresupuesto.Caption = "Presupuesto"
-    dtrPresupuesto.Sections("Sección4").Controls("lblmes").Caption = frmPresupuesto.cmbMes.Text
-    dtrPresupuesto.Sections("Sección4").Controls("lblaño").Caption = frmPresupuesto.dtpAño.Value
-    dtrPresupuesto.Sections("Sección5").Controls("lblDeudaTotal").Caption = lblDeuda.Caption
-    dtrPresupuesto.Sections("Sección5").Controls("lblPagadoTotal").Caption = lblPagado.Caption
-    dtrPresupuesto.Sections("Sección5").Controls("lblSaldoTotal").Caption = lblSaldo.Caption
+    dtrPresupuesto.Sections("Seccion4").Controls("lblmes").Caption = frmPresupuesto.cmbMes.Text
+    dtrPresupuesto.Sections("Seccion4").Controls("lblAÃ±o").Caption = frmPresupuesto.dtpAÃ±o.Value
+    dtrPresupuesto.Sections("Seccion5").Controls("lblDeudaTotal").Caption = lblDeuda.Caption
+    dtrPresupuesto.Sections("Seccion5").Controls("lblPagadoTotal").Caption = lblPagado.Caption
+    dtrPresupuesto.Sections("Seccion5").Controls("lblSaldoTotal").Caption = lblSaldo.Caption
     dtrPresupuesto.Show
     Me.Enabled = False
 End Sub
 
-Private Sub dtpAño_Change()
+Private Sub dtpAÃ±o_Change()
     With rsPresupuesto
         If ActualizarPresupuesto = True Then
             If .State = 1 Then .UpdateBatch: .Close: ActualizarPresupuesto = False
         Else
             If .State = 1 Then .Close: ActualizarPresupuesto = False
         End If
-        .Open "SELECT sum(deuda) FROM presupuesto WHERE mes='" & cmbMes.Text & "' and año=" & Year(dtpAño.Value), Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT sum(deuda) FROM presupuesto WHERE mes='" & cmbMes.Text & "' and AÃ±o=" & Year(dtpAÃ±o.Value), Cn, adOpenDynamic, adLockPessimistic
         lblDeuda.Caption = Format(!expr1000, "currency")
         .Close
-        .Open "SELECT sum(pagado) FROM presupuesto WHERE mes='" & cmbMes.Text & "' and año=" & Year(dtpAño.Value), Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT sum(pagado) FROM presupuesto WHERE mes='" & cmbMes.Text & "' and AÃ±o=" & Year(dtpAÃ±o.Value), Cn, adOpenDynamic, adLockPessimistic
         lblPagado.Caption = Format(!expr1000, "currency")
         .Close
-        .Open "SELECT sum(saldo) FROM presupuesto WHERE mes='" & cmbMes.Text & "' and año=" & Year(dtpAño.Value), Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT sum(saldo) FROM presupuesto WHERE mes='" & cmbMes.Text & "' and AÃ±o=" & Year(dtpAÃ±o.Value), Cn, adOpenDynamic, adLockPessimistic
         lblSaldo.Caption = Format(!expr1000, "currency")
         .Close
-        .Open "SELECT Cuenta,Deuda,Pagado,Saldo,Observaciones,id FROM presupuesto WHERE mes='" & cmbMes.Text & "' and año=" & Year(dtpAño.Value) & " ORDER BY cuenta", Cn, adOpenDynamic, adLockPessimistic
-        Set Grilla.DataSource = rsPresupuesto
+        .Open "SELECT Cuenta,Deuda,Pagado,Saldo,Observaciones,id FROM presupuesto WHERE mes='" & cmbMes.Text & "' and AÃ±o=" & Year(dtpAÃ±o.Value) & " ORDER BY cuenta", Cn, adOpenDynamic, adLockPessimistic
+        Set grilla.DataSource = rsPresupuesto
     End With
     formatoGrilla
     cmdInforme.Enabled = True
@@ -445,10 +445,10 @@ End Sub
 
 Private Sub grilla_KeyPress(KeyAscii As Integer)
     ActualizarPresupuesto = True
-    If KeyAscii = 13 And Grilla.Col = 2 Then
-        Grilla.Columns(3).Text = Grilla.Columns(1).Text - Grilla.Columns(2).Text
-    ElseIf KeyAscii = 13 And Grilla.Col = 1 Then
-        Grilla.Columns(3).Text = Grilla.Columns(1).Text - Grilla.Columns(2).Text
+    If KeyAscii = 13 And grilla.Col = 2 Then
+        grilla.Columns(3).Text = grilla.Columns(1).Text - grilla.Columns(2).Text
+    ElseIf KeyAscii = 13 And grilla.Col = 1 Then
+        grilla.Columns(3).Text = grilla.Columns(1).Text - grilla.Columns(2).Text
     End If
 End Sub
 
@@ -462,6 +462,6 @@ Private Sub formatoGrilla()
         Else:
             w = 2400
         End If
-        Grilla.Columns(N).Width = w
+        grilla.Columns(N).Width = w
     Next
 End Sub

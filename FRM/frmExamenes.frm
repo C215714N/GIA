@@ -5,7 +5,7 @@ Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmExamenes 
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "Exámenes"
+   Caption         =   "Examenes"
    ClientHeight    =   4380
    ClientLeft      =   11445
    ClientTop       =   1770
@@ -24,7 +24,7 @@ Begin VB.Form frmExamenes
       Caption         =   "Examen"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -48,20 +48,20 @@ Begin VB.Form frmExamenes
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   142409729
+         Format          =   198443009
          CurrentDate     =   41978
       End
       Begin VB.TextBox txtPromedio 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -77,7 +77,7 @@ Begin VB.Form frmExamenes
       Begin VB.TextBox txtPractico 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -93,7 +93,7 @@ Begin VB.Form frmExamenes
       Begin VB.TextBox txtTeorico 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -109,7 +109,7 @@ Begin VB.Form frmExamenes
       Begin VB.ComboBox cmbModulo 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -132,7 +132,7 @@ Begin VB.Form frmExamenes
          _ExtentY        =   741
          Icon            =   "frmExamenes.frx":AC67
          Style           =   8
-         Caption         =   "       Aceptar"
+         Caption         =   "     Aceptar"
          IconSize        =   18
          IconAlign       =   1
          CaptionAlign    =   1
@@ -143,7 +143,7 @@ Begin VB.Form frmExamenes
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -156,7 +156,7 @@ Begin VB.Form frmExamenes
          Caption         =   "Fecha"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -175,7 +175,7 @@ Begin VB.Form frmExamenes
          Caption         =   "Promedio"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -191,10 +191,10 @@ Begin VB.Form frmExamenes
       End
       Begin VB.Label Label6 
          BackStyle       =   0  'Transparent
-         Caption         =   "Práctico"
+         Caption         =   "Practico"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -210,10 +210,10 @@ Begin VB.Form frmExamenes
       End
       Begin VB.Label Label5 
          BackStyle       =   0  'Transparent
-         Caption         =   "Teórico"
+         Caption         =   "Teorico"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -229,10 +229,10 @@ Begin VB.Form frmExamenes
       End
       Begin VB.Label Label4 
          BackStyle       =   0  'Transparent
-         Caption         =   "Módulo"
+         Caption         =   "Modulo"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -261,7 +261,7 @@ Begin VB.Form frmExamenes
       RowHeight       =   21
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -316,7 +316,7 @@ Begin VB.Form frmExamenes
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -333,7 +333,7 @@ Begin VB.Form frmExamenes
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -350,7 +350,7 @@ Begin VB.Form frmExamenes
       Alignment       =   1  'Right Justify
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -374,10 +374,10 @@ Begin VB.Form frmExamenes
    Begin VB.Label Label3 
       BackColor       =   &H00662200&
       BackStyle       =   0  'Transparent
-      Caption         =   "Capacitación"
+      Caption         =   "Capacitacion"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -389,7 +389,7 @@ Begin VB.Form frmExamenes
       Left            =   120
       TabIndex        =   11
       Top             =   720
-      Width           =   1215
+      Width           =   1575
    End
    Begin VB.Label Label2 
       BackColor       =   &H00662200&
@@ -397,7 +397,7 @@ Begin VB.Form frmExamenes
       Caption         =   "Alumno"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -414,10 +414,10 @@ Begin VB.Form frmExamenes
    Begin VB.Label Label1 
       BackColor       =   &H00662200&
       BackStyle       =   0  'Transparent
-      Caption         =   "Código"
+      Caption         =   "Codigo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -439,17 +439,17 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub Form_Load()
     Centrar Me
-    dtpFecha.Value = Date
+    DTPFecha.Value = Date
 End Sub
 
 Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
     If KeyAscii = 13 Then
-        If txtCodigo.Text = "" Then MsgBox "Ingrese el código del alumno", vbOKOnly, "GIA - Exámenes": txtCodigo.SetFocus: Exit Sub
+        If txtCodigo.Text = "" Then MsgBox "Ingrese el Codigo del alumno", vbOKOnly, "GIA - Examenes": txtCodigo.SetFocus: Exit Sub
         With rsVerificaciones
             If .State = 1 Then .Close
             .Open "SELECT nya,capac FROM verificaciones WHERE codalumno=" & Int(txtCodigo.Text), Cn, adOpenDynamic, adLockPessimistic
                 If .BOF = True And .EOF = True Then
-                    MsgBox "No se encuentra el Código de Alumno" & vbNewLine & "Controle que el codigo ingresado sea correcto", vbExclamation, "Gestion Integral del Alumno - Gestion Integral del Alumno"
+                    MsgBox "No se encuentra el Codigo de Alumno" & vbNewLine & "Controle que el codigo ingresado sea correcto", vbExclamation, "Gestion Integral del Alumno - Gestion Integral del Alumno"
                 ElseIf .BOF = False Or .EOF = False Then
                     txtAlumno.Text = !NyA
                     txtCurso.Text = !capac
@@ -474,10 +474,10 @@ Private Sub cmbModulo_Change()
 End Sub
 
 Private Sub cmdAgregar_Click()
-    If cmbModulo.Text = "" Then MsgBox "Elija el módulo", vbOKOnly + vbCritical, "GIA - Exámenes": cmbModulo.SetFocus: Exit Sub
-    If txtTeorico.Text = "" Then MsgBox "Ingrese nota del Examen Teórico", vbOKOnly + vbCritical, "GIA - Exámenes": txtTeorico.SetFocus: Exit Sub
-    If txtPractico.Text = "" Then MsgBox "Ingrese nota del Examen Práctico", vbOKOnly + vbCritical, "GIA - Exámenes": txtPractico.SetFocus: Exit Sub
-    If txtPromedio.Text = "" Then MsgBox "Ingrese nota promedio", vbOKOnly + vbCritical, "GIA - Exámenes": txtPromedio.SetFocus: Exit Sub
+    If cmbModulo.Text = "" Then MsgBox "Elija el modulo", vbOKOnly + vbCritical, "GIA - Examenes": cmbModulo.SetFocus: Exit Sub
+    If txtTeorico.Text = "" Then MsgBox "Ingrese nota del Examen teorico", vbOKOnly + vbCritical, "GIA - Examenes": txtTeorico.SetFocus: Exit Sub
+    If txtPractico.Text = "" Then MsgBox "Ingrese nota del Examen Practico", vbOKOnly + vbCritical, "GIA - Examenes": txtPractico.SetFocus: Exit Sub
+    If txtPromedio.Text = "" Then MsgBox "Ingrese nota promedio", vbOKOnly + vbCritical, "GIA - Examenes": txtPromedio.SetFocus: Exit Sub
         
 ''' CARGAR EXAMEN - TABLA EXAMENES
     With rsExamenes
@@ -488,7 +488,7 @@ Private Sub cmdAgregar_Click()
             .Requery
             .AddNew
             !CodAlumno = Int(txtCodigo.Text)
-            !fecha = dtpFecha.Value
+            !fecha = DTPFecha.Value
             !T = txtTeorico.Text
             !P = txtPractico.Text
             !F = txtPromedio.Text
@@ -497,7 +497,7 @@ Private Sub cmdAgregar_Click()
             .Close
     '''CONTROL EXAMEN (MODULOS CARGADOS)
         Else:
-            MsgBox "El alumno ya ha rendido este módulo", vbCritical, "Exámenes"
+            MsgBox "El alumno ya ha rendido este modulo", vbCritical, "Examenes"
             txtPromedio.Text = ""
             txtTeorico.Text = ""
             txtPractico.Text = ""
@@ -518,14 +518,14 @@ Private Sub cmdAgregar_Click()
         End If
     '''CARGAR ALUMNO - TABLA EGRESADOS
         If Egresado = True Then
-            MsgBox "El alumno " & txtAlumno.Text & " ha egresado del curso de " & txtCurso.Text, vbInformation, "Exámenes"
+            MsgBox "El alumno " & txtAlumno.Text & " ha egresado del curso de " & txtCurso.Text, vbInformation, "Examenes"
             With rsEgresados
                 If .State = 1 Then .Close
                 .Open "SELECT * FROM egresados", Cn, adOpenDynamic, adLockPessimistic
                 .Requery
                 .AddNew
                 !CodAlumno = Int(txtCodigo.Text)
-                !fecha = dtpFecha.Value
+                !fecha = DTPFecha.Value
                 .Update
             End With
             With rsVerificaciones
@@ -576,7 +576,7 @@ Private Sub CargarModulos()
             .AddItem ("Power Point")
         End With
         
-    ElseIf txtCurso.Text = "Diseño Gráfico" Then
+    ElseIf txtCurso.Text = "DiseÃ±o Grafico" Then
         With cmbModulo
             .Clear
             .AddItem ("Windows")
@@ -585,28 +585,28 @@ Private Sub CargarModulos()
             .AddItem ("Page Maker")
         End With
     
-    ElseIf txtCurso.Text = "Programación" Then
+    ElseIf txtCurso.Text = "Programacion" Then
         With cmbModulo
             .Clear
-            .AddItem ("Módulo I")
-            .AddItem ("Módulo II")
+            .AddItem ("modulo I")
+            .AddItem ("modulo II")
         End With
     
-    ElseIf txtCurso.Text = "Programación + Access" Then
+    ElseIf txtCurso.Text = "Programacion + Access" Then
         With cmbModulo
             .Clear
             .AddItem ("Access")
-            .AddItem ("Módulo I")
-            .AddItem ("Módulo II")
+            .AddItem ("modulo I")
+            .AddItem ("modulo II")
         End With
     
-    ElseIf txtCurso.Text = "Telefonía Celular" Then
+    ElseIf txtCurso.Text = "Telefonia Celular" Then
         With cmbModulo
             .Clear
-            .AddItem ("Módulo I")
+            .AddItem ("modulo I")
         End With
     
-    ElseIf txtCurso.Text = "Armado y Reparación de PC y Redes" Then
+    ElseIf txtCurso.Text = "Armado y Reparacion de PC y Redes" Then
         With cmbModulo
             .Clear
             .AddItem ("Armado I")
@@ -618,7 +618,7 @@ Private Sub CargarModulos()
             .AddItem ("Redes III")
         End With
     
-    ElseIf txtCurso.Text = "Armado y Reparación de PC" Then
+    ElseIf txtCurso.Text = "Armado y Reparacion de PC" Then
         With cmbModulo
             .Clear
             .AddItem ("Armado I")
@@ -635,7 +635,7 @@ Private Sub CargarModulos()
             .AddItem ("Redes III")
         End With
     
-    ElseIf txtCurso.Text = "Técnico en Pc nivel I" Then
+    ElseIf txtCurso.Text = "Tecnico en Pc nivel I" Then
         With cmbModulo
             .Clear
             .AddItem ("Modulo I")
@@ -643,7 +643,7 @@ Private Sub CargarModulos()
             .AddItem ("Examen Final")
         End With
     
-    ElseIf txtCurso.Text = "Técnico en Pc nivel II" Then
+    ElseIf txtCurso.Text = "Tecnico en Pc nivel II" Then
         With cmbModulo
             .Clear
             .AddItem ("Modulo I")
@@ -653,22 +653,22 @@ Private Sub CargarModulos()
             .AddItem ("Examen Final")
         End With
     
-    ElseIf txtCurso.Text = "Técnico en aire acondicionado" Or txtCurso.Text = "Electricidad domiciliaria" Then
+    ElseIf txtCurso.Text = "Tecnico en aire acondicionado" Or txtCurso.Text = "Electricidad domiciliaria" Then
         With cmbModulo
             .Clear
             .AddItem ("Modulo I")
             .AddItem ("Modulo II")
         End With
     
-    ElseIf txtCurso.Text = "Inglés" Or txtCurso.Text = "Inglés II" Then
+    ElseIf txtCurso.Text = "Ingles" Or txtCurso.Text = "Ingles II" Then
         With cmbModulo
             .Clear
-            .AddItem ("Inglés I")
-            .AddItem ("Inglés II")
-            .AddItem ("Inglés III")
+            .AddItem ("Ingles I")
+            .AddItem ("Ingles II")
+            .AddItem ("Ingles III")
         End With
         
-    ElseIf txtCurso.Text = "Diseño Web" Then
+    ElseIf txtCurso.Text = "DiseÃ±o Web" Then
         With cmbModulo
             .Clear
             .AddItem ("Front Page")

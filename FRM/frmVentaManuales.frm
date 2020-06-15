@@ -11,7 +11,7 @@ Begin VB.Form frmVentaManuales
    ClientWidth     =   5715
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   8.25
+      Size            =   10
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -32,7 +32,7 @@ Begin VB.Form frmVentaManuales
       Caption         =   "Venta Manual"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -72,15 +72,6 @@ Begin VB.Form frmVentaManuales
       Begin VB.TextBox txtStock 
          Alignment       =   2  'Center
          Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "Century Gothic"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          Height          =   375
          Left            =   120
          TabIndex        =   2
@@ -90,15 +81,6 @@ Begin VB.Form frmVentaManuales
       Begin VB.TextBox txtPrecio 
          Alignment       =   2  'Center
          Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "Century Gothic"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          Height          =   375
          Left            =   120
          TabIndex        =   3
@@ -115,7 +97,7 @@ Begin VB.Form frmVentaManuales
          _ExtentY        =   741
          Icon            =   "frmVentaManuales.frx":AC96
          Style           =   8
-         Caption         =   "       Aceptar"
+         Caption         =   "     Aceptar"
          IconSize        =   18
          IconAlign       =   1
          CaptionAlign    =   1
@@ -128,7 +110,7 @@ Begin VB.Form frmVentaManuales
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -139,7 +121,7 @@ Begin VB.Form frmVentaManuales
       End
       Begin VB.Label Label7 
          BackStyle       =   0  'Transparent
-         Caption         =   "Forma de Pago"
+         Caption         =   "Tipo Pago"
          ForeColor       =   &H8000000F&
          Height          =   255
          Left            =   120
@@ -192,7 +174,7 @@ Begin VB.Form frmVentaManuales
       Alignment       =   1  'Right Justify
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -209,7 +191,7 @@ Begin VB.Form frmVentaManuales
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -226,7 +208,7 @@ Begin VB.Form frmVentaManuales
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -253,7 +235,7 @@ Begin VB.Form frmVentaManuales
       RowHeight       =   20
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -262,7 +244,7 @@ Begin VB.Form frmVentaManuales
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -306,10 +288,10 @@ Begin VB.Form frmVentaManuales
    End
    Begin VB.Label Label1 
       BackStyle       =   0  'Transparent
-      Caption         =   "Código"
+      Caption         =   "Codigo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -328,7 +310,7 @@ Begin VB.Form frmVentaManuales
       Caption         =   "Alumno"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -344,10 +326,10 @@ Begin VB.Form frmVentaManuales
    End
    Begin VB.Label Label3 
       BackStyle       =   0  'Transparent
-      Caption         =   "Capacitación"
+      Caption         =   "Capacitacion"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -417,7 +399,7 @@ Private Sub cmdVender_Click()
     End With
     
 ''' GESTION CONTABLE - ASIENTO
-    If MsgBox("¿Abona el total del precio?", vbYesNo + vbQuestion, "Venta de Manuales") = vbYes Then
+    If MsgBox("ï¿½Abona el total del precio?", vbYesNo + vbQuestion, "Venta de Manuales") = vbYes Then
         With rsContabilidad
             If .State = 1 Then .Close
             .Open "SELECT * FROM contabilidad", Cn, adOpenDynamic, adLockPessimistic
@@ -455,7 +437,7 @@ Private Sub cmdVender_Click()
             .Update
         End With
     Else
-        MsgBox "Recuerde realizar el asiento contable correspondiente a esta operación", vbExclamation, "Venta de Manuales"
+        MsgBox "Recuerde realizar el asiento contable correspondiente a esta operacion", vbExclamation, "Venta de Manuales"
     End If
     
 '''REESTABLECE LOS VALORES
@@ -471,9 +453,10 @@ Private Sub Form_Load()
     formatoGrilla
 End Sub
 
+
 Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
     If KeyAscii = 13 Then
-        If txtCodigo.Text = "" Then MsgBox "Ingrese el código del alumno", vbOKOnly, "GIA - Exámenes": txtCodigo.SetFocus: Exit Sub
+        If txtCodigo.Text = "" Then MsgBox "Ingrese el codigo del alumno", vbOKOnly, "GIA - Examenes": txtCodigo.SetFocus: Exit Sub
       
         With rsVerificaciones
             If .State = 1 Then .Close
@@ -510,7 +493,7 @@ Sub cargarManuales()
             .AddItem ("Windows")
         End With
     
-    ElseIf txtCurso.Text = "Diseño Gráfico" Then
+    ElseIf txtCurso.Text = "Diseï¿½o Grafico" Then
         With cmbManual
             .Clear
             .AddItem ("Windows")
@@ -519,7 +502,7 @@ Sub cargarManuales()
             .AddItem ("Page Maker")
         End With
     
-    ElseIf txtCurso.Text = "Diseño Web" Then
+    ElseIf txtCurso.Text = "Diseï¿½o Web" Then
         With cmbManual
             .Clear
             .AddItem ("FrontPage - Fireworks")
@@ -527,26 +510,26 @@ Sub cargarManuales()
             .AddItem ("Dreamweaver")
         End With
     
-    ElseIf txtCurso.Text = "Programación" Then
+    ElseIf txtCurso.Text = "Programacion" Then
         With cmbManual
             .Clear
-            .AddItem ("Programación")
+            .AddItem ("Programacion")
         End With
     
-    ElseIf txtCurso.Text = "Programación + Access" Then
+    ElseIf txtCurso.Text = "Programacion + Access" Then
         With cmbManual
             .Clear
             .AddItem ("Access")
-            .AddItem ("Programación")
+            .AddItem ("Programacion")
         End With
     
-    ElseIf txtCurso.Text = "Telefonía Celular" Then
+    ElseIf txtCurso.Text = "Telefonia Celular" Then
         With cmbManual
             .Clear
-            .AddItem ("Telefonía Celular")
+            .AddItem ("Telefonia Celular")
         End With
     
-    ElseIf txtCurso.Text = "Armado y Reparación de PC y Redes" Then
+    ElseIf txtCurso.Text = "Armado y Reparacion de PC y Redes" Then
         With cmbManual
             .Clear
             .AddItem ("Armado I")
@@ -558,7 +541,7 @@ Sub cargarManuales()
             .AddItem ("Redes III")
         End With
     
-    ElseIf txtCurso.Text = "Armado y Reparación de PC" Then
+    ElseIf txtCurso.Text = "Armado y Reparacion de PC" Then
         With cmbManual
             .Clear
             .AddItem ("Armado I")
@@ -575,14 +558,14 @@ Sub cargarManuales()
             .AddItem ("Redes III")
         End With
     
-    ElseIf txtCurso.Text = "Técnico en Pc nivel I" Then
+    ElseIf txtCurso.Text = "Tecnico en Pc nivel I" Then
         With cmbManual
             .Clear
             .AddItem ("TPC 1 Hardware")
             .AddItem ("TPC 1 Software")
         End With
     
-    ElseIf txtCurso.Text = "Técnico en Pc nivel II" Then
+    ElseIf txtCurso.Text = "Tecnico en Pc nivel II" Then
         With cmbManual
             .Clear
             .AddItem ("TPC 2 Malware(Diagnostico)")
@@ -591,7 +574,7 @@ Sub cargarManuales()
             .AddItem ("TPC 2 Redes (Servidores)")
         End With
     
-    ElseIf txtCurso.Text = "Técnico en aire acondicionado" Then
+    ElseIf txtCurso.Text = "Tecnico en aire acondicionado" Then
         With cmbManual
             .Clear
             .AddItem ("Aire Acondicionado")

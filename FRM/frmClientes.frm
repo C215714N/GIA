@@ -34,7 +34,7 @@ Begin VB.Form frmClientes
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -52,7 +52,7 @@ Begin VB.Form frmClientes
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -70,7 +70,7 @@ Begin VB.Form frmClientes
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -88,7 +88,7 @@ Begin VB.Form frmClientes
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -106,7 +106,7 @@ Begin VB.Form frmClientes
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -123,7 +123,7 @@ Begin VB.Form frmClientes
          Caption         =   "Cant. Equipos"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -140,7 +140,7 @@ Begin VB.Form frmClientes
          Caption         =   "Precio"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -167,8 +167,8 @@ Begin VB.Form frmClientes
       HeadLines       =   1
       RowHeight       =   20
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Name            =   "Century Gothic"
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -177,7 +177,7 @@ Begin VB.Form frmClientes
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -282,8 +282,8 @@ Begin VB.Form frmClientes
          BackStyle       =   0  'Transparent
          Caption         =   "Localidad"
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Name            =   "Century Gothic"
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -298,10 +298,10 @@ Begin VB.Form frmClientes
       End
       Begin VB.Label Label3 
          BackStyle       =   0  'Transparent
-         Caption         =   "Dirección"
+         Caption         =   "Direccion"
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Name            =   "Century Gothic"
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -316,10 +316,10 @@ Begin VB.Form frmClientes
       End
       Begin VB.Label Label12 
          BackStyle       =   0  'Transparent
-         Caption         =   "Teléfono 1"
+         Caption         =   "Telefono 1"
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Name            =   "Century Gothic"
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -334,10 +334,10 @@ Begin VB.Form frmClientes
       End
       Begin VB.Label Label1 
          BackStyle       =   0  'Transparent
-         Caption         =   "Teléfono 2"
+         Caption         =   "Telefono 2"
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Name            =   "Century Gothic"
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -354,8 +354,8 @@ Begin VB.Form frmClientes
          BackStyle       =   0  'Transparent
          Caption         =   "CUIT"
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Name            =   "Century Gothic"
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -370,10 +370,10 @@ Begin VB.Form frmClientes
       End
       Begin VB.Label Label5 
          BackStyle       =   0  'Transparent
-         Caption         =   "Código"
+         Caption         =   "Codigo"
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Name            =   "Century Gothic"
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -390,8 +390,8 @@ Begin VB.Form frmClientes
          BackStyle       =   0  'Transparent
          Caption         =   "Cliente"
          BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Name            =   "Century Gothic"
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -409,7 +409,7 @@ Begin VB.Form frmClientes
       Caption         =   "Editar"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -426,7 +426,7 @@ Begin VB.Form frmClientes
       Caption         =   "Salir"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -444,7 +444,7 @@ Begin VB.Form frmClientes
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -462,7 +462,7 @@ Begin VB.Form frmClientes
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -479,7 +479,7 @@ Begin VB.Form frmClientes
       Caption         =   "Buscar"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -496,7 +496,7 @@ Begin VB.Form frmClientes
       Caption         =   "Nuevo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -563,7 +563,7 @@ End Sub
 
 Private Sub cmdEditar_Click()
     If lblCodCliente.Caption = "" Then
-        MsgBox "Primero debe buscar al cliente", vbCritical, "Cóndor - Clientes"
+        MsgBox "Primero debe buscar al cliente", vbCritical, "Condor - Clientes"
     Else
         HabilitarBotones False, True
         HabilitarCuadros True
@@ -581,16 +581,16 @@ End Sub
 
 Private Sub cmdGrabar_Click()
     
-    If txtCliente.Text = "" Then MsgBox "Agregue el nombre del cliente", vbCritical, "Cóndor - Clientes": txtCliente.SetFocus: Exit Sub
-    If txtDireccion.Text = "" Then MsgBox "Agregue la direccion del cliente", vbCritical, "Cóndor - Clientes": txtDireccion.SetFocus: Exit Sub
-    If txtLocalidad.Text = "" Then MsgBox "Agregue la localidad del cliente", vbCritical, "Cóndor - Clientes": txtLocalidad.SetFocus: Exit Sub
-    If txtTel1.Text = "" Then MsgBox "Agregue el teléfono del cliente", vbCritical, "Cóndor - Clientes": txtTel1.SetFocus: Exit Sub
+    If txtCliente.Text = "" Then MsgBox "Agregue el nombre del cliente", vbCritical, "Condor - Clientes": txtCliente.SetFocus: Exit Sub
+    If txtDireccion.Text = "" Then MsgBox "Agregue la direccion del cliente", vbCritical, "Condor - Clientes": txtDireccion.SetFocus: Exit Sub
+    If txtLocalidad.Text = "" Then MsgBox "Agregue la localidad del cliente", vbCritical, "Condor - Clientes": txtLocalidad.SetFocus: Exit Sub
+    If txtTel1.Text = "" Then MsgBox "Agregue el telefono del cliente", vbCritical, "Condor - Clientes": txtTel1.SetFocus: Exit Sub
     
     If chkSoporte.Value = 1 Then
-        If txtPrecio.Text = "" Then MsgBox "Ingrese el precio del soporte", vbCritical, "Cóndor - Clientes": txtPrecio.SetFocus: Exit Sub
-        If Not IsNumeric(txtPrecio.Text) Then MsgBox "Ingrese el precio del soporte", vbCritical, "Cóndor - Clientes": txtPrecio.SetFocus: Exit Sub
-        If txtCantidadEquipos.Text = "" Then MsgBox "Ingrese cantidad de equipos", vbCritical, "Cóndor - Clientes": txtCantidadEquipos.SetFocus: Exit Sub
-        If Not IsNumeric(txtCantidadEquipos.Text) Then MsgBox "Ingrese cantidad de equipos", vbCritical, "Cóndor - Clientes": txtCantidadEquipos.SetFocus: Exit Sub
+        If txtPrecio.Text = "" Then MsgBox "Ingrese el precio del soporte", vbCritical, "Condor - Clientes": txtPrecio.SetFocus: Exit Sub
+        If Not IsNumeric(txtPrecio.Text) Then MsgBox "Ingrese el precio del soporte", vbCritical, "Condor - Clientes": txtPrecio.SetFocus: Exit Sub
+        If txtCantidadEquipos.Text = "" Then MsgBox "Ingrese cantidad de equipos", vbCritical, "Condor - Clientes": txtCantidadEquipos.SetFocus: Exit Sub
+        If Not IsNumeric(txtCantidadEquipos.Text) Then MsgBox "Ingrese cantidad de equipos", vbCritical, "Condor - Clientes": txtCantidadEquipos.SetFocus: Exit Sub
     End If
     
     'Clientes

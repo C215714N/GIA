@@ -20,7 +20,7 @@ Begin VB.Form frmBajas
    Begin VB.ComboBox cmbPagoBaja 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -39,18 +39,18 @@ Begin VB.Form frmBajas
    Begin VB.TextBox txtmotivo 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   975
+      Height          =   855
       Left            =   120
       MultiLine       =   -1  'True
       TabIndex        =   0
-      Top             =   240
+      Top             =   360
       Width           =   2295
    End
    Begin isButtonTest.isButton cmdConfirmar 
@@ -63,7 +63,7 @@ Begin VB.Form frmBajas
       _ExtentY        =   741
       Icon            =   "frmBajas.frx":11E15
       Style           =   8
-      Caption         =   "       Dar Baja"
+      Caption         =   "     Dar Baja"
       IconAlign       =   1
       CaptionAlign    =   1
       iNonThemeStyle  =   0
@@ -75,7 +75,7 @@ Begin VB.Form frmBajas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -88,7 +88,7 @@ Begin VB.Form frmBajas
       Caption         =   "Pago de Baja"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -110,7 +110,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cmdConfirmar_Click()
 If txtmotivo.Text = "" Then MsgBox "Debera escribir el motivo de la baja": txtmotivo.SetFocus: Exit Sub
-If cmbPagoBaja.Text = "" Then MsgBox "Defina si el alumno pagó la baja": cmbPagoBaja.SetFocus: Exit Sub
+If cmbPagoBaja.Text = "" Then MsgBox "Defina si el alumno pago la baja": cmbPagoBaja.SetFocus: Exit Sub
 
 With rsMarcar
     If .State = 1 Then .Close

@@ -7,7 +7,7 @@ Begin VB.Form frmReservas
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Reservas"
-   ClientHeight    =   4380
+   ClientHeight    =   4575
    ClientLeft      =   3180
    ClientTop       =   2100
    ClientWidth     =   12615
@@ -18,14 +18,14 @@ Begin VB.Form frmReservas
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    Picture         =   "frmReservas.frx":324A
-   ScaleHeight     =   4380
+   ScaleHeight     =   4575
    ScaleWidth      =   12615
    Begin VB.TextBox txtAsistencia 
       DataField       =   "PA"
       DataSource      =   "Data1"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -33,17 +33,17 @@ Begin VB.Form frmReservas
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Left            =   7080
+      Left            =   7200
       TabIndex        =   12
-      Top             =   3840
-      Width           =   3975
+      Top             =   4080
+      Width           =   3855
    End
    Begin VB.Frame frameHorarios 
       BackColor       =   &H00884400&
       Caption         =   "Horarios"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -51,18 +51,18 @@ Begin VB.Form frmReservas
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H8000000F&
-      Height          =   1440
+      Height          =   1320
       Left            =   100
       TabIndex        =   3
       ToolTipText     =   "Seleccione el Horario"
-      Top             =   2760
-      Width           =   2790
+      Top             =   3120
+      Width           =   2910
       Begin VB.OptionButton rbt4 
          BackColor       =   &H00884400&
          Caption         =   "12:30 Hs"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -71,17 +71,17 @@ Begin VB.Form frmReservas
          EndProperty
          ForeColor       =   &H8000000F&
          Height          =   255
-         Left            =   240
+         Left            =   120
          TabIndex        =   11
-         Top             =   1000
-         Width           =   975
+         Top             =   1005
+         Width           =   1255
       End
       Begin VB.OptionButton rbt1 
          BackColor       =   &H00884400&
          Caption         =   "08:00 Hs"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -90,17 +90,17 @@ Begin VB.Form frmReservas
          EndProperty
          ForeColor       =   &H8000000F&
          Height          =   255
-         Left            =   240
+         Left            =   120
          TabIndex        =   10
-         Top             =   250
-         Width           =   975
+         Top             =   255
+         Width           =   1255
       End
       Begin VB.OptionButton rbt2 
          BackColor       =   &H00884400&
          Caption         =   "09:30 Hs"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -109,17 +109,17 @@ Begin VB.Form frmReservas
          EndProperty
          ForeColor       =   &H8000000F&
          Height          =   255
-         Left            =   240
+         Left            =   120
          TabIndex        =   9
-         Top             =   500
-         Width           =   975
+         Top             =   495
+         Width           =   1255
       End
       Begin VB.OptionButton rbt3 
          BackColor       =   &H00884400&
          Caption         =   "11:00 Hs"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -128,17 +128,17 @@ Begin VB.Form frmReservas
          EndProperty
          ForeColor       =   &H8000000F&
          Height          =   255
-         Left            =   240
+         Left            =   120
          TabIndex        =   8
          Top             =   750
-         Width           =   975
+         Width           =   1255
       End
       Begin VB.OptionButton rbt5 
          BackColor       =   &H00884400&
          Caption         =   "14:00 Hs"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -150,14 +150,14 @@ Begin VB.Form frmReservas
          Left            =   1560
          TabIndex        =   7
          Top             =   250
-         Width           =   975
+         Width           =   1255
       End
       Begin VB.OptionButton rbt6 
          BackColor       =   &H00884400&
          Caption         =   "15:30 Hs"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -169,14 +169,14 @@ Begin VB.Form frmReservas
          Left            =   1560
          TabIndex        =   6
          Top             =   500
-         Width           =   975
+         Width           =   1255
       End
       Begin VB.OptionButton rbt7 
          BackColor       =   &H00884400&
          Caption         =   "17:00 Hs"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -188,14 +188,14 @@ Begin VB.Form frmReservas
          Left            =   1560
          TabIndex        =   5
          Top             =   750
-         Width           =   975
+         Width           =   1255
       End
       Begin VB.OptionButton rbt8 
          BackColor       =   &H00884400&
          Caption         =   "18:30 Hs"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -207,18 +207,18 @@ Begin VB.Form frmReservas
          Left            =   1560
          TabIndex        =   4
          Top             =   1000
-         Width           =   975
+         Width           =   1255
       End
    End
    Begin MSDataGridLib.DataGrid grilla 
-      Height          =   3180
-      Left            =   3000
+      Height          =   3420
+      Left            =   3120
       Negotiate       =   -1  'True
       TabIndex        =   0
       Top             =   360
-      Width           =   8055
-      _ExtentX        =   14208
-      _ExtentY        =   5609
+      Width           =   7935
+      _ExtentX        =   13996
+      _ExtentY        =   6033
       _Version        =   393216
       AllowUpdate     =   0   'False
       ForeColor       =   0
@@ -226,7 +226,7 @@ Begin VB.Form frmReservas
       RowHeight       =   21
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -278,21 +278,21 @@ Begin VB.Form frmReservas
       EndProperty
    End
    Begin MSComCtl2.MonthView MonthView1 
-      Height          =   2370
+      Height          =   2805
       Left            =   105
       TabIndex        =   1
       ToolTipText     =   "Seleccione la Fecha"
       Top             =   360
-      Width           =   2385
-      _ExtentX        =   4207
-      _ExtentY        =   4180
+      Width           =   2910
+      _ExtentX        =   5133
+      _ExtentY        =   4948
       _Version        =   393216
       ForeColor       =   8930304
       BackColor       =   8930304
       Appearance      =   1
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   6.75
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -300,7 +300,7 @@ Begin VB.Form frmReservas
          Strikethrough   =   0   'False
       EndProperty
       MonthBackColor  =   16777215
-      StartOfWeek     =   3670018
+      StartOfWeek     =   6488066
       TitleBackColor  =   8930304
       TitleForeColor  =   16777215
       TrailingForeColor=   14737632
@@ -309,18 +309,18 @@ Begin VB.Form frmReservas
    End
    Begin MSDataListLib.DataCombo dtcAlumno 
       Height          =   360
-      Left            =   3000
+      Left            =   3120
       TabIndex        =   13
-      Top             =   3840
+      Top             =   4080
       Width           =   3975
       _ExtentX        =   7011
-      _ExtentY        =   635
+      _ExtentY        =   661
       _Version        =   393216
       Style           =   2
       Text            =   "DataCombo1"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -338,7 +338,7 @@ Begin VB.Form frmReservas
       _ExtentY        =   741
       Icon            =   "frmReservas.frx":11DFF
       Style           =   8
-      Caption         =   "       Buscar"
+      Caption         =   "     Buscar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -349,7 +349,7 @@ Begin VB.Form frmReservas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -367,7 +367,7 @@ Begin VB.Form frmReservas
       _ExtentY        =   741
       Icon            =   "frmReservas.frx":126D9
       Style           =   8
-      Caption         =   "       Aceptar"
+      Caption         =   "     Aceptar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -378,7 +378,7 @@ Begin VB.Form frmReservas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -396,7 +396,7 @@ Begin VB.Form frmReservas
       _ExtentY        =   741
       Icon            =   "frmReservas.frx":12FB3
       Style           =   8
-      Caption         =   "       Cancelar"
+      Caption         =   "     Cancelar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -407,7 +407,7 @@ Begin VB.Form frmReservas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -425,7 +425,7 @@ Begin VB.Form frmReservas
       _ExtentY        =   741
       Icon            =   "frmReservas.frx":1388D
       Style           =   8
-      Caption         =   "       Agregar"
+      Caption         =   "     Agregar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -436,7 +436,7 @@ Begin VB.Form frmReservas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -454,7 +454,7 @@ Begin VB.Form frmReservas
       _ExtentY        =   741
       Icon            =   "frmReservas.frx":14167
       Style           =   8
-      Caption         =   "       Eliminar"
+      Caption         =   "     Eliminar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -465,7 +465,7 @@ Begin VB.Form frmReservas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -483,7 +483,7 @@ Begin VB.Form frmReservas
       _ExtentY        =   741
       Icon            =   "frmReservas.frx":14A41
       Style           =   8
-      Caption         =   "       Asistencia"
+      Caption         =   "     Asist."
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -494,7 +494,7 @@ Begin VB.Form frmReservas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -507,7 +507,7 @@ Begin VB.Form frmReservas
       BackStyle       =   0  'Transparent
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -516,17 +516,17 @@ Begin VB.Form frmReservas
       EndProperty
       ForeColor       =   &H8000000F&
       Height          =   240
-      Left            =   2280
+      Left            =   2640
       TabIndex        =   16
       Top             =   120
-      Width           =   372
+      Width           =   375
    End
    Begin VB.Label lblNyA 
       BackStyle       =   0  'Transparent
       Caption         =   "Alumno"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -535,9 +535,9 @@ Begin VB.Form frmReservas
       EndProperty
       ForeColor       =   &H8000000F&
       Height          =   255
-      Left            =   3000
+      Left            =   3120
       TabIndex        =   15
-      Top             =   3600
+      Top             =   3840
       Width           =   1815
    End
    Begin VB.Label lblAsistencia 
@@ -546,7 +546,7 @@ Begin VB.Form frmReservas
       Caption         =   "Asistencia"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -555,15 +555,15 @@ Begin VB.Form frmReservas
       EndProperty
       ForeColor       =   &H8000000F&
       Height          =   225
-      Left            =   7080
+      Left            =   7200
       TabIndex        =   14
-      Top             =   3600
-      Width           =   825
+      Top             =   3840
+      Width           =   1305
    End
    Begin VB.Label lblCodalumno 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -571,7 +571,7 @@ Begin VB.Form frmReservas
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   3000
+      Left            =   3120
       TabIndex        =   2
       Top             =   0
       Visible         =   0   'False
@@ -583,7 +583,7 @@ Begin VB.Form frmReservas
       Caption         =   "Reservas para este Turno :"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -595,7 +595,7 @@ Begin VB.Form frmReservas
       Left            =   120
       TabIndex        =   17
       Top             =   120
-      Width           =   2100
+      Width           =   2580
    End
 End
 Attribute VB_Name = "frmReservas"
@@ -634,7 +634,7 @@ Private Sub btnAsistencia_Click()
 End Sub
 
 Private Sub btnEliminar_Click()
-        a = MsgBox("¿Esta seguro que desea eliminar al alumno " & grilla.Columns(0).Text & "?", vbYesNo, "Eliminar Selección")
+        a = MsgBox("ï¿½Esta seguro que desea eliminar al alumno " & grilla.Columns(0).Text & "?", vbYesNo, "Eliminar Seleccion")
         If a = vbYes Then
             With rsReservas
                 Dim fecha As Date
@@ -650,11 +650,11 @@ Private Sub btnEliminar_Click()
 End Sub
 
 
-Private Sub btnMañana_Click()
-    'Activa las opciones de horario del turno mañana
+Private Sub btnmaÃ±ana_Click()
+    'Activa las opciones de horario del turno maÃ±ana
     'rbtNadaTarde.Value = True
-    'rbtNadaMañana.Value = True
-    frameMañana.Visible = True
+    'rbtNadamaÃ±ana.Value = True
+    framemaÃ±ana.Visible = True
     frameTarde.Visible = False
     'Desactivar los botones de modificar y eliminar
     btnEliminar.Enabled = False
@@ -672,7 +672,7 @@ fecha = Format(MonthView1.Value, "mm/dd/yyyy")
 
     With rsVerificaciones
         If .State = 1 Then .Close
-        .Open "SELECT codalumno,(nya + ' - ' + capac) as alumno FROM verificaciones WHERE capac='Operador de PC' or capac='Programación' or capac='Diseño Web' or capac='Diseño Gráfico' or capac='Programación + Access' or capac = 'Redes Sociales' ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT codalumno,(nya + ' - ' + capac) as alumno FROM verificaciones WHERE capac='Operador de PC' or capac='Programacion' or capac='DiseÃ±o Web' or capac='DiseÃ±o Grafico' or capac='Programacion + Access' or capac = 'Redes Sociales' ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
     End With
     
         ''' carga alumnos en DataCombo
@@ -704,7 +704,7 @@ End Sub
 
 Private Sub btnTarde_Click()
     'Activa las opciones de horario del turno tarde
-    frameMañana.Visible = False
+    framemaÃ±ana.Visible = False
     frameTarde.Visible = True
 
      'Desactivar los botones de modificar y eliminar
@@ -752,7 +752,7 @@ Private Sub Form_Load()
     ''' consulta alumnos
     With rsVerificaciones
         If .State = 1 Then .Close
-        .Open "SELECT max(codalumno),nya,(nya + ' - ' + capac) as Alumno,capac FROM verificaciones WHERE capac='Operador de PC' or capac='Programación' or capac='Diseño Web' or capac='Diseño Gráfico' or capac='Programación + Access' or capac='Redes Sociales' group by nya,capac ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT max(codalumno),nya,(nya + ' - ' + capac) as Alumno,capac FROM verificaciones WHERE capac='Operador de PC' or capac='Programacion' or capac='DiseÃ±o Web' or capac='DiseÃ±o Grafico' or capac='Programacion + Access' or capac='Redes Sociales' group by nya,capac ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
     End With
 
         ''' carga alumnos en DataCombo
@@ -828,7 +828,7 @@ On Error GoTo Error
 If BuscarAlumno = False Then
     With rsVerificaciones
         If .State = 1 Then .Close
-        .Open "SELECT codalumno,(nya + ' - ' + capac) as alumno FROM verificaciones WHERE capac='Operador de PC' or capac='Programación' or capac='Diseño Web' or capac='Diseño Gráfico' or capac='Programación + Access' or capac='Redes Sociales' ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT codalumno,(nya + ' - ' + capac) as alumno FROM verificaciones WHERE capac='Operador de PC' or capac='Programacion' or capac='DiseÃ±o Web' or capac='DiseÃ±o Grafico' or capac='Programacion + Access' or capac='Redes Sociales' ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
         .Find "alumno='" & dtcAlumno.Text & "'"
         lblCodAlumno.Caption = !CodAlumno
     End With
@@ -880,7 +880,7 @@ Error:
 Else
     With rsVerificaciones
         If .State = 1 Then .Close
-        .Open "SELECT codalumno,(nya + ' - ' + capac) as alumno FROM verificaciones WHERE capac='Operador de PC' or capac='Programación' or capac='Diseño Web' or capac='Diseño Gráfico' or capac='Programación + Access' or capac='Redes Sociales' ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT codalumno,(nya + ' - ' + capac) as alumno FROM verificaciones WHERE capac='Operador de PC' or capac='Programacion' or capac='DiseÃ±o Web' or capac='DiseÃ±o Grafico' or capac='Programacion + Access' or capac='Redes Sociales' ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
         .Find "alumno='" & dtcAlumno.Text & "'"
         lblCodAlumno.Caption = !CodAlumno
     End With
@@ -897,7 +897,7 @@ Else
 
     With rsVerificaciones
         If .State = 1 Then .Close
-        .Open "SELECT codalumno,(nya + ' - ' + capac) as alumno FROM verificaciones WHERE capac='Operador de PC' or capac='Programación' or capac='Diseño Web' or capac='Diseño Gráfico' or capac='Programación + Access' ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT codalumno,(nya + ' - ' + capac) as alumno FROM verificaciones WHERE capac='Operador de PC' or capac='Programacion' or capac='DiseÃ±o Web' or capac='DiseÃ±o Grafico' or capac='Programacion + Access' ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
     End With
     
         ''' carga alumnos en DataCombo

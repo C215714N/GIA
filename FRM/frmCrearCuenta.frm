@@ -19,7 +19,7 @@ Begin VB.Form frmCrearCuenta
    Begin VB.TextBox txtCuenta 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -42,7 +42,7 @@ Begin VB.Form frmCrearCuenta
       _ExtentY        =   741
       Icon            =   "frmCrearCuenta.frx":7A1D
       Style           =   8
-      Caption         =   "       Aceptar"
+      Caption         =   "     Aceptar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -55,7 +55,7 @@ Begin VB.Form frmCrearCuenta
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -68,7 +68,7 @@ Begin VB.Form frmCrearCuenta
       Caption         =   "Nueva Cuenta"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

@@ -21,10 +21,10 @@ Begin VB.Form frmEgresados
    ScaleWidth      =   4710
    Begin VB.Frame Frame1 
       BackColor       =   &H00662200&
-      Caption         =   "Búsqueda"
+      Caption         =   "Busqueda"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -39,10 +39,10 @@ Begin VB.Form frmEgresados
       Width           =   4455
       Begin VB.OptionButton optBuscar 
          BackColor       =   &H00662200&
-         Caption         =   "Por Nombre"
+         Caption         =   "Nombre"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -60,10 +60,10 @@ Begin VB.Form frmEgresados
       End
       Begin VB.OptionButton optBuscar 
          BackColor       =   &H00662200&
-         Caption         =   "Por Curso"
+         Caption         =   "Curso"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -89,14 +89,14 @@ Begin VB.Form frmEgresados
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   84279297
+         Format          =   198443009
          CurrentDate     =   41978
       End
       Begin MSComCtl2.DTPicker dtpDesde 
@@ -110,14 +110,14 @@ Begin VB.Form frmEgresados
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   84279297
+         Format          =   198443009
          CurrentDate     =   41978
       End
       Begin isButtonTest.isButton cmdConsultar 
@@ -130,7 +130,7 @@ Begin VB.Form frmEgresados
          _ExtentY        =   741
          Icon            =   "frmEgresados.frx":AC67
          Style           =   8
-         Caption         =   "       Consultar"
+         Caption         =   "     Consulta"
          IconSize        =   18
          IconAlign       =   1
          CaptionAlign    =   1
@@ -143,7 +143,7 @@ Begin VB.Form frmEgresados
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -156,7 +156,7 @@ Begin VB.Form frmEgresados
          Caption         =   "0 Alumnos"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -171,12 +171,11 @@ Begin VB.Form frmEgresados
          Width           =   1335
       End
       Begin VB.Label Label1 
-         Alignment       =   1  'Right Justify
          BackStyle       =   0  'Transparent
          Caption         =   "Desde"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -188,15 +187,14 @@ Begin VB.Form frmEgresados
          Left            =   120
          TabIndex        =   7
          Top             =   240
-         Width           =   495
+         Width           =   615
       End
       Begin VB.Label Label2 
-         Alignment       =   1  'Right Justify
          BackStyle       =   0  'Transparent
          Caption         =   "Hasta"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -208,7 +206,7 @@ Begin VB.Form frmEgresados
          Left            =   1560
          TabIndex        =   6
          Top             =   240
-         Width           =   495
+         Width           =   615
       End
    End
    Begin MSDataGridLib.DataGrid grilla 
@@ -225,7 +223,7 @@ Begin VB.Form frmEgresados
       RowHeight       =   21
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -332,7 +330,7 @@ Private Sub grilla_DblClick()
     
         With rsExamenes
             If .State = 1 Then .Close
-            .Open "SELECT Fecha, Modulo as Módulo, teorico as [Examen Teórico], practico as [Examen Práctico], Promedio FROM examenes WHERE codalumno=" & CodAlumno & " ORDER BY fecha,id", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT Fecha, Modulo as Modulo, teorico as [Examen Teorico], practico as [Examen Practico], Promedio FROM examenes WHERE codalumno=" & CodAlumno & " ORDER BY fecha,id", Cn, adOpenDynamic, adLockPessimistic
         End With
         
         Set frmExamenes.grilla.DataSource = rsExamenes

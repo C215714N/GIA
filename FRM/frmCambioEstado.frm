@@ -17,7 +17,7 @@ Begin VB.Form frmCambioEstado
    Begin VB.ComboBox cmbEstado 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -35,7 +35,7 @@ Begin VB.Form frmCambioEstado
       Caption         =   "Grabar"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -52,7 +52,7 @@ Begin VB.Form frmCambioEstado
       Caption         =   "Cancelar"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -76,7 +76,7 @@ Begin VB.Form frmCambioEstado
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -104,10 +104,10 @@ Begin VB.Form frmCambioEstado
       Width           =   1095
    End
    Begin VB.Label Label1 
-      Caption         =   "Nº Orden"
+      Caption         =   "NÂ° Orden"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -124,7 +124,7 @@ Begin VB.Form frmCambioEstado
       Caption         =   "Fecha"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -141,7 +141,7 @@ Begin VB.Form frmCambioEstado
       Caption         =   "Estado"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -167,7 +167,7 @@ Private Sub cmdCancelar_Click()
 End Sub
 
 Private Sub cmdGrabar_Click()
-    If cmbEstado.Text = "" Then MsgBox "Ingrese el nuevo estado", vbCritical, "Cóndor"
+    If cmbEstado.Text = "" Then MsgBox "Ingrese el nuevo estado", vbCritical, "Condor"
     
     With rsGestionDeOrdenes
         If .State = 1 Then .Close
@@ -195,7 +195,7 @@ Private Sub cmdGrabar_Click()
         !estado = cmbEstado.Text
         .UpdateBatch
         .Close
-        .Open "select NroOrden, Cliente,Equipo,Problema,FechaRecibido as Recepción,Estado,FechaEntregado as Entrega from ordenesdetrabajo as o,clientes as c where c.codcliente=o.codcliente and nroorden=" & lblNroOrden.Caption, Cn, adOpenDynamic, adLockPessimistic
+        .Open "select NroOrden, Cliente,Equipo,Problema,FechaRecibido as Recepcion,Estado,FechaEntregado as Entrega from ordenesdetrabajo as o,clientes as c where c.codcliente=o.codcliente and nroorden=" & lblNroOrden.Caption, Cn, adOpenDynamic, adLockPessimistic
     End With
     
     

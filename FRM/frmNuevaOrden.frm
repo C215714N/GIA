@@ -19,7 +19,7 @@ Begin VB.Form frmNuevaOrden
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -37,7 +37,7 @@ Begin VB.Form frmNuevaOrden
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -54,7 +54,7 @@ Begin VB.Form frmNuevaOrden
       Caption         =   "Salir"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -71,7 +71,7 @@ Begin VB.Form frmNuevaOrden
       Caption         =   "Grabar"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -87,7 +87,7 @@ Begin VB.Form frmNuevaOrden
    Begin VB.TextBox txtFalla 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -104,7 +104,7 @@ Begin VB.Form frmNuevaOrden
    Begin VB.TextBox txtEquipo 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -131,7 +131,7 @@ Begin VB.Form frmNuevaOrden
       Text            =   "DataCombo1"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -143,7 +143,7 @@ Begin VB.Form frmNuevaOrden
       Caption         =   "Falla presentada"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -161,7 +161,7 @@ Begin VB.Form frmNuevaOrden
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -179,7 +179,7 @@ Begin VB.Form frmNuevaOrden
       Caption         =   "Equipo a revisar"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -197,7 +197,7 @@ Begin VB.Form frmNuevaOrden
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -214,7 +214,7 @@ Begin VB.Form frmNuevaOrden
       Caption         =   "Fecha"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -231,7 +231,7 @@ Begin VB.Form frmNuevaOrden
       Caption         =   "Cliente"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -245,10 +245,10 @@ Begin VB.Form frmNuevaOrden
       Width           =   1215
    End
    Begin VB.Label Label1 
-      Caption         =   "Nº de Orden"
+      Caption         =   "NÂ° de Orden"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -320,15 +320,15 @@ Private Sub cmdImprimir_Click()
     End With
 
     Set dtrOrdenDeTrabajo.DataSource = rsBuscarClientes
-    dtrOrdenDeTrabajo.Sections("Sección2").Controls("lblcliente").Caption = rsBuscarClientes!cliente
-    dtrOrdenDeTrabajo.Sections("Sección2").Controls("lbldireccion").Caption = rsBuscarClientes!direccion
-    dtrOrdenDeTrabajo.Sections("Sección2").Controls("lbllocalidad").Caption = rsBuscarClientes!localidad
-    dtrOrdenDeTrabajo.Sections("Sección2").Controls("lbltelefono").Caption = rsBuscarClientes!tel1
-    dtrOrdenDeTrabajo.Sections("Sección2").Controls("lblcelular").Caption = rsBuscarClientes!tel2
-    dtrOrdenDeTrabajo.Sections("Sección2").Controls("lblnroorden").Caption = lblNroOrden.Caption
-    dtrOrdenDeTrabajo.Sections("Sección2").Controls("lblfecha").Caption = lblFecha.Caption
-    dtrOrdenDeTrabajo.Sections("Sección1").Controls("lblEquipo").Caption = txtEquipo.Text
-    dtrOrdenDeTrabajo.Sections("Sección1").Controls("lblFalla").Caption = txtFalla.Text
+    dtrOrdenDeTrabajo.Sections("Seccion2").Controls("lblcliente").Caption = rsBuscarClientes!cliente
+    dtrOrdenDeTrabajo.Sections("Seccion2").Controls("lbldireccion").Caption = rsBuscarClientes!direccion
+    dtrOrdenDeTrabajo.Sections("Seccion2").Controls("lbllocalidad").Caption = rsBuscarClientes!localidad
+    dtrOrdenDeTrabajo.Sections("Seccion2").Controls("lbltelefono").Caption = rsBuscarClientes!tel1
+    dtrOrdenDeTrabajo.Sections("Seccion2").Controls("lblcelular").Caption = rsBuscarClientes!tel2
+    dtrOrdenDeTrabajo.Sections("Seccion2").Controls("lblnroorden").Caption = lblNroOrden.Caption
+    dtrOrdenDeTrabajo.Sections("Seccion2").Controls("lblfecha").Caption = lblFecha.Caption
+    dtrOrdenDeTrabajo.Sections("Seccion1").Controls("lblEquipo").Caption = txtEquipo.Text
+    dtrOrdenDeTrabajo.Sections("Seccion1").Controls("lblFalla").Caption = txtFalla.Text
 
                         
     dtrOrdenDeTrabajo.Show

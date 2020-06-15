@@ -4,7 +4,7 @@ Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmAnalisisSituacion 
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "Análisis Situación de Deuda"
+   Caption         =   "Analisis Situacion de Deuda"
    ClientHeight    =   4095
    ClientLeft      =   6795
    ClientTop       =   2775
@@ -33,7 +33,7 @@ Begin VB.Form frmAnalisisSituacion
       RowDividerStyle =   0
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -89,7 +89,7 @@ Begin VB.Form frmAnalisisSituacion
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -113,7 +113,7 @@ Begin VB.Form frmAnalisisSituacion
       _ExtentY        =   741
       Icon            =   "frmAnalisisSituacion.frx":11DFF
       Style           =   8
-      Caption         =   "       Marcar"
+      Caption         =   "     Marcar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -126,7 +126,7 @@ Begin VB.Form frmAnalisisSituacion
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -144,7 +144,7 @@ Begin VB.Form frmAnalisisSituacion
       _ExtentY        =   741
       Icon            =   "frmAnalisisSituacion.frx":126D9
       Style           =   8
-      Caption         =   "       Datos"
+      Caption         =   "     Datos"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -157,7 +157,7 @@ Begin VB.Form frmAnalisisSituacion
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -175,7 +175,7 @@ Begin VB.Form frmAnalisisSituacion
       _ExtentY        =   741
       Icon            =   "frmAnalisisSituacion.frx":12FB3
       Style           =   8
-      Caption         =   "       Cuotas"
+      Caption         =   "     Cuotas"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -188,7 +188,7 @@ Begin VB.Form frmAnalisisSituacion
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -206,7 +206,7 @@ Begin VB.Form frmAnalisisSituacion
       _ExtentY        =   741
       Icon            =   "frmAnalisisSituacion.frx":1388D
       Style           =   8
-      Caption         =   "       Volver"
+      Caption         =   "     Volver"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -219,7 +219,7 @@ Begin VB.Form frmAnalisisSituacion
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -231,7 +231,7 @@ Begin VB.Form frmAnalisisSituacion
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -251,7 +251,7 @@ Begin VB.Form frmAnalisisSituacion
       Caption         =   "Resta"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -271,7 +271,7 @@ Begin VB.Form frmAnalisisSituacion
       Caption         =   "Analizado"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

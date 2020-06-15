@@ -21,7 +21,7 @@ Begin VB.Form frmNuevoCheque
    Begin VB.ComboBox cmbFirma 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -41,7 +41,7 @@ Begin VB.Form frmNuevoCheque
    Begin VB.TextBox txtMonto 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -57,7 +57,7 @@ Begin VB.Form frmNuevoCheque
    Begin VB.TextBox txtNroCheque 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -73,7 +73,7 @@ Begin VB.Form frmNuevoCheque
    Begin VB.TextBox txtDestinatario 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -97,14 +97,14 @@ Begin VB.Form frmNuevoCheque
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   142409729
+      Format          =   198443009
       CurrentDate     =   41782
    End
    Begin isButtonTest.isButton cmdAgregar 
@@ -117,7 +117,7 @@ Begin VB.Form frmNuevoCheque
       _ExtentY        =   741
       Icon            =   "frmNuevoCheque.frx":AC7A
       Style           =   8
-      Caption         =   "       Aceptar"
+      Caption         =   "     Aceptar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -128,7 +128,7 @@ Begin VB.Form frmNuevoCheque
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -146,7 +146,7 @@ Begin VB.Form frmNuevoCheque
       _ExtentY        =   741
       Icon            =   "frmNuevoCheque.frx":B554
       Style           =   8
-      Caption         =   "       Cancelar"
+      Caption         =   "     Cancelar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -157,7 +157,7 @@ Begin VB.Form frmNuevoCheque
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -170,7 +170,7 @@ Begin VB.Form frmNuevoCheque
       Caption         =   "Firma"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -189,7 +189,7 @@ Begin VB.Form frmNuevoCheque
       Caption         =   "Monto"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -205,10 +205,10 @@ Begin VB.Form frmNuevoCheque
    End
    Begin VB.Label Label3 
       BackStyle       =   0  'Transparent
-      Caption         =   "Nº de Cheque"
+      Caption         =   "NÂ° Cheque"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -227,7 +227,7 @@ Begin VB.Form frmNuevoCheque
       Caption         =   "Destinatario"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -243,10 +243,10 @@ Begin VB.Form frmNuevoCheque
    End
    Begin VB.Label Label1 
       BackStyle       =   0  'Transparent
-      Caption         =   "Fecha de Pago"
+      Caption         =   "Fecha Pago"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -268,7 +268,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cmdAgregar_Click()
     If txtDestinatario.Text = "" Then MsgBox "Debe agregar el destinatario del cheque", vbCritical, "Cheques": txtDestinatario.SetFocus: Exit Sub
-    If txtNroCheque.Text = "" Then MsgBox "Debe agregar el número del cheque", vbCritical, "Cheques": txtNroCheque.SetFocus: Exit Sub
+    If txtNroCheque.Text = "" Then MsgBox "Debe agregar el numero del cheque", vbCritical, "Cheques": txtNroCheque.SetFocus: Exit Sub
     If txtMonto.Text = "" Then MsgBox "Debe agregar el monto", vbCritical, "Cheques": txtMonto.SetFocus: Exit Sub
     If cmbFirma.Text = "" Then MsgBox "Debe agregar el firmante", vbCritical, "Cheques": cmbFirma.SetFocus: Exit Sub
 
@@ -286,7 +286,7 @@ Private Sub cmdAgregar_Click()
         .Update
     End With
     
-    If MsgBox("¿Desea ingresar otro cheque?", vbQuestion + vbYesNo, "Cheques") = vbYes Then
+    If MsgBox("ï¿½Desea ingresar otro cheque?", vbQuestion + vbYesNo, "Cheques") = vbYes Then
         txtDestinatario.Text = ""
         txtMonto.Text = ""
         txtNroCheque.Text = ""

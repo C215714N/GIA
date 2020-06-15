@@ -5,7 +5,7 @@ Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmBuscarSuscripcion 
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "Buscar Suscripción"
+   Caption         =   "Buscar Suscripcion"
    ClientHeight    =   4080
    ClientLeft      =   5475
    ClientTop       =   3150
@@ -158,7 +158,7 @@ Begin VB.Form frmBuscarSuscripcion
       _ExtentY        =   741
       Icon            =   "frmBuscarSuscripcion.frx":AC67
       Style           =   8
-      Caption         =   "       Aceptar"
+      Caption         =   "     Aceptar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -172,7 +172,7 @@ Begin VB.Form frmBuscarSuscripcion
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -190,7 +190,7 @@ Begin VB.Form frmBuscarSuscripcion
       _ExtentY        =   741
       Icon            =   "frmBuscarSuscripcion.frx":B541
       Style           =   8
-      Caption         =   "       Cancelar"
+      Caption         =   "     Cancelar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -204,7 +204,7 @@ Begin VB.Form frmBuscarSuscripcion
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -218,7 +218,7 @@ Begin VB.Form frmBuscarSuscripcion
       Caption         =   "Apellido y Nombre:"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -226,11 +226,11 @@ Begin VB.Form frmBuscarSuscripcion
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H8000000F&
-      Height          =   225
+      Height          =   240
       Left            =   120
       TabIndex        =   2
       Top             =   120
-      Width           =   1545
+      Width           =   1920
    End
 End
 Attribute VB_Name = "frmBuscarSuscripcion"
@@ -240,7 +240,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 
 Private Sub cmdAceptar_Click()
-If Adodc.Recordset.RecordCount = 0 Then MsgBox "Debe realizar una búsqueda", vbOKOnly + vbCritical, "Gestión Integral del Alumno": Exit Sub
+If Adodc.Recordset.RecordCount = 0 Then MsgBox "Debe realizar una busqueda", vbOKOnly + vbCritical, "Gestion Integral del Alumno": Exit Sub
 
 If Verificar = False Then
     frmSuscripciones.lblID.Caption = grilla.Columns(0).Text
@@ -363,7 +363,7 @@ Private Sub Form_Load()
     Dim busca As String
     Adodc.CursorLocation = adUseClient
     Adodc.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=T:\base.mdb;Persist Security Info=False;Jet OLEDB:Database Password=ascir"
-    Adodc.RecordSource = "SELECT id, Nya as [Apellido y Nombres], tipoDoc as [Tipo], DNI as [N°], Direccion, CP, Localidad, Nacionalidad, Edad, FechaNac, Capac as [Capacitacion], Asistente, Tel1, Tel2, Tel3, Tel4, PTel1, PTel2, PTel3, PTel4, TotalCurso, Cuotas, GastoAdm, Fechasus, Observaciones, Manuales, DchoExamen, TotalMatricula, NroFactura FROM suscripciones WHERE [Nya] like '" & busca & "'"
+    Adodc.RecordSource = "SELECT id, Nya as [Apellido y Nombres], tipoDoc as [Tipo], DNI as [NÂ°], Direccion, CP, Localidad, Nacionalidad, Edad, FechaNac, Capac as [Capacitacion], Asistente, Tel1, Tel2, Tel3, Tel4, PTel1, PTel2, PTel3, PTel4, TotalCurso, Cuotas, GastoAdm, Fechasus, Observaciones, Manuales, DchoExamen, TotalMatricula, NroFactura FROM suscripciones WHERE [Nya] like '" & busca & "'"
     Set grilla.DataSource = Adodc
     formatoGrilla
 End Sub
@@ -384,7 +384,7 @@ Private Sub txtBuscar_Change()
         cmdAceptar.Enabled = True
     End If
     busca = UCase(Trim(txtBuscar.Text)) & "%"
-    Adodc.RecordSource = "SELECT id, Nya as [Apellido y Nombres], tipoDoc as [Tipo], DNI as [N°], Direccion, CP, Localidad, Nacionalidad, Edad, FechaNac, Capac as [Capacitacion], Asistente, Tel1, Tel2, Tel3, Tel4, PTel1, PTel2, PTel3, PTel4, TotalCurso, Cuotas, GastoAdm, Fechasus, Observaciones, Manuales, DchoExamen, TotalMatricula, NroFactura FROM suscripciones WHERE [nya] like '" & busca & "'"
+    Adodc.RecordSource = "SELECT id, Nya as [Apellido y Nombres], tipoDoc as [Tipo], DNI as [NÂ°], Direccion, CP, Localidad, Nacionalidad, Edad, FechaNac, Capac as [Capacitacion], Asistente, Tel1, Tel2, Tel3, Tel4, PTel1, PTel2, PTel3, PTel4, TotalCurso, Cuotas, GastoAdm, Fechasus, Observaciones, Manuales, DchoExamen, TotalMatricula, NroFactura FROM suscripciones WHERE [nya] like '" & busca & "'"
     Adodc.Refresh
     
     Adodc.Refresh

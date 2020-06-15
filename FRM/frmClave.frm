@@ -4,14 +4,14 @@ Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmClave 
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "Gestión Integral del Alumno"
+   Caption         =   "Gestion Integral del Alumno"
    ClientHeight    =   2610
    ClientLeft      =   840
    ClientTop       =   3330
    ClientWidth     =   5310
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   9.75
+      Size            =   10
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -37,7 +37,7 @@ Begin VB.Form frmClave
       _ExtentX        =   2778
       _ExtentY        =   661
       _Version        =   393216
-      Format          =   43515905
+      Format          =   92405761
       CurrentDate     =   42125
    End
    Begin MSComCtl2.DTPicker DTPFecha 
@@ -51,14 +51,14 @@ Begin VB.Form frmClave
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   43515905
+      Format          =   92405761
       CurrentDate     =   41327
    End
    Begin VB.TextBox txtClave 
@@ -105,7 +105,7 @@ Begin VB.Form frmClave
       _ExtentY        =   741
       Icon            =   "frmClave.frx":182AA
       Style           =   8
-      Caption         =   "       Aceptar"
+      Caption         =   "     Aceptar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -119,7 +119,7 @@ Begin VB.Form frmClave
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -137,7 +137,7 @@ Begin VB.Form frmClave
       _ExtentY        =   741
       Icon            =   "frmClave.frx":18B84
       Style           =   8
-      Caption         =   "       Cancelar"
+      Caption         =   "     Cancelar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -150,7 +150,7 @@ Begin VB.Form frmClave
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -161,10 +161,10 @@ Begin VB.Form frmClave
    Begin VB.Label Label2 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
-      Caption         =   "CONTRASEÑA"
+      Caption         =   "CONTRASEï¿½A"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -173,7 +173,7 @@ Begin VB.Form frmClave
       EndProperty
       ForeColor       =   &H00FFFFFF&
       Height          =   240
-      Left            =   2475
+      Left            =   2400
       TabIndex        =   6
       Top             =   1320
       Width           =   1335
@@ -184,7 +184,7 @@ Begin VB.Form frmClave
       Caption         =   "USUARIO"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -193,7 +193,7 @@ Begin VB.Form frmClave
       EndProperty
       ForeColor       =   &H00FFFFFF&
       Height          =   240
-      Left            =   2475
+      Left            =   2400
       TabIndex        =   5
       Top             =   600
       Width           =   840
@@ -204,7 +204,7 @@ Begin VB.Form frmClave
       Caption         =   "USUARIO"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -221,10 +221,10 @@ Begin VB.Form frmClave
    Begin VB.Label Label5 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
-      Caption         =   "CONTRASEÑA"
+      Caption         =   "CONTRASEï¿½A"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -326,7 +326,7 @@ Private Sub cmdIngresar_Click()
     Control
 ''' Control de Fecha usuario Administracion
     If DateDiff("d", rsControl!ultimafecha, fecha) > 10 Then
-        MsgBox "Está intentando ingresar con una fecha muy tardía. Póngase en contacto con el soporte técnico", vbCritical + vbOKOnly, "Gestión Integral del Alumno"
+        MsgBox "Esta intentando ingresar con una fecha muy tardia. Pongase en contacto con el soporte tecnico", vbCritical + vbOKOnly, "Gestion Integral del Alumno"
         Exit Sub
     End If
    
@@ -349,7 +349,7 @@ Private Sub cmdIngresar_Click()
 
     '''controla que no se ingrese con fecha anterior a la ya ingresada
     If DTPFecha.Value < rsControl!ultimafecha Then
-        MsgBox "No puede ingresar al sistema con esa fecha", vbOKOnly + vbInformation, "Gestión Integral del Alumno"
+        MsgBox "No puede ingresar al sistema con esa fecha", vbOKOnly + vbInformation, "Gestion Integral del Alumno"
     Else
     '''Usuario Administracion - Gestion Educativa y Contable
         If txtUsuario.Text = "adm" And txtClave.Text = "2910" Then
@@ -413,7 +413,7 @@ Private Sub cmdIngresar_Click()
        
        '''error de ingreso
         Else
-            MsgBox "Usuario o clave incorrecta." & vbNewLine & "Ingrese un usuario y contraseña válidos", vbOKOnly + vbInformation, "Gestión Integral del Alumno": txtUsuario.SetFocus: Exit Sub
+            MsgBox "Usuario o clave incorrecta." & vbNewLine & "Ingrese un usuario y contraseï¿½a validos", vbOKOnly + vbInformation, "Gestion Integral del Alumno": txtUsuario.SetFocus: Exit Sub
             Exit Sub
         End If
 
@@ -484,7 +484,6 @@ Private Sub cmdIngresar_Click()
                     !resto = resto
                     !cobrado = totalcobrado
                     !porcentaje = Cobranza * 100 / deuda
-                    .Update
                 End With
             End With
         End If
@@ -507,7 +506,6 @@ Private Sub cmdIngresar_Click()
                     rsMarcar.Requery
                     rsMarcar.AddNew
                     rsMarcar!CodAlumno = !CodAlumno
-                    rsMarcar.Update
                     .Delete
                     .Requery
                 Loop
@@ -627,7 +625,7 @@ Private Sub cmdIngresar_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub cmdSalir_Click()
-    a = MsgBox("¿Está seguro que desea Salir?", vbYesNo + vbQuestion, "Gestion Integral del Alumno")
+    a = MsgBox("ï¿½Esta seguro que desea Salir?", vbYesNo + vbQuestion, "Gestion Integral del Alumno")
     If a = vbYes Then
         End
     End If
@@ -644,7 +642,7 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
-    a = MsgBox("¿Está seguro que desea Salir?", vbYesNo + vbQuestion, "Gestion Integral del Alumno")
+    a = MsgBox("ï¿½Esta seguro que desea Salir?", vbYesNo + vbQuestion, "Gestion Integral del Alumno")
     If a = vbNo Then
         Cancel = True
     End If

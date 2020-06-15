@@ -21,7 +21,7 @@ Begin VB.Form frmPlanDePagoReingreso
    Begin VB.TextBox txtCantidadCuotas 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -37,7 +37,7 @@ Begin VB.Form frmPlanDePagoReingreso
    Begin VB.TextBox txtNroCuota 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -53,7 +53,7 @@ Begin VB.Form frmPlanDePagoReingreso
    Begin VB.TextBox txtMonto 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -77,14 +77,14 @@ Begin VB.Form frmPlanDePagoReingreso
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   3670017
+      Format          =   130154497
       CurrentDate     =   41353
    End
    Begin isButtonTest.isButton cmdAplicar 
@@ -97,7 +97,7 @@ Begin VB.Form frmPlanDePagoReingreso
       _ExtentY        =   741
       Icon            =   "frmPlanDePagoReingreso.frx":AC67
       Style           =   8
-      Caption         =   "       Aceptar"
+      Caption         =   "     Aceptar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -108,7 +108,7 @@ Begin VB.Form frmPlanDePagoReingreso
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -126,7 +126,7 @@ Begin VB.Form frmPlanDePagoReingreso
       _ExtentY        =   741
       Icon            =   "frmPlanDePagoReingreso.frx":B541
       Style           =   8
-      Caption         =   "       Cancelar"
+      Caption         =   "     Cancelar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -137,7 +137,7 @@ Begin VB.Form frmPlanDePagoReingreso
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -150,7 +150,7 @@ Begin VB.Form frmPlanDePagoReingreso
       Caption         =   "Cant. Cuotas"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -170,7 +170,7 @@ Begin VB.Form frmPlanDePagoReingreso
       Caption         =   "Desde Cuota"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -190,7 +190,7 @@ Begin VB.Form frmPlanDePagoReingreso
       Caption         =   "Vencimiento"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -210,7 +210,7 @@ Begin VB.Form frmPlanDePagoReingreso
       Caption         =   "Monto $"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False

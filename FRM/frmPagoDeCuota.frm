@@ -57,7 +57,7 @@ Begin VB.Form frmPagoDeCuota
       Caption         =   "Adodc1"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -81,7 +81,7 @@ Begin VB.Form frmPagoDeCuota
       RowDividerStyle =   0
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -137,7 +137,7 @@ Begin VB.Form frmPagoDeCuota
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -155,7 +155,7 @@ Begin VB.Form frmPagoDeCuota
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -173,7 +173,7 @@ Begin VB.Form frmPagoDeCuota
       Alignment       =   1  'Right Justify
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -190,7 +190,7 @@ Begin VB.Form frmPagoDeCuota
       Alignment       =   1  'Right Justify
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -206,7 +206,7 @@ Begin VB.Form frmPagoDeCuota
    Begin VB.ComboBox cmbTipoPago 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -232,7 +232,7 @@ Begin VB.Form frmPagoDeCuota
       _ExtentY        =   741
       Icon            =   "frmPagoDeCuota.frx":AC96
       Style           =   8
-      Caption         =   "       Cobrar"
+      Caption         =   "     Cobrar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -245,7 +245,7 @@ Begin VB.Form frmPagoDeCuota
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -263,7 +263,7 @@ Begin VB.Form frmPagoDeCuota
       _ExtentY        =   741
       Icon            =   "frmPagoDeCuota.frx":B570
       Style           =   8
-      Caption         =   "       Volver"
+      Caption         =   "     Volver"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -276,7 +276,7 @@ Begin VB.Form frmPagoDeCuota
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -290,7 +290,7 @@ Begin VB.Form frmPagoDeCuota
       Caption         =   "Plan de Pago"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -310,7 +310,7 @@ Begin VB.Form frmPagoDeCuota
       Caption         =   "Total $"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -330,7 +330,7 @@ Begin VB.Form frmPagoDeCuota
       Caption         =   "Resta $"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -350,7 +350,7 @@ Begin VB.Form frmPagoDeCuota
       Caption         =   "Nro Factura"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -370,7 +370,7 @@ Begin VB.Form frmPagoDeCuota
       Caption         =   "Monto $"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -390,7 +390,7 @@ Begin VB.Form frmPagoDeCuota
       Caption         =   "Tipo de Pago"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -551,7 +551,7 @@ End Sub
 Private Sub txtMonto_KeyPress(KeyAscii As Integer)
 If KeyAscii = 13 Then
     If cmbTipoPago.Text = "" Then MsgBox "Debe elegir un Tipo de Pago", vbOKOnly + vbInformation, "Pago de Cuota": cmbTipoPago.SetFocus: Exit Sub
-    If txtNroFactura.Text = "" Then MsgBox "Debe agregar un número de factura", vbOKOnly + vbInformation, "Pago de Cuota": txtNroFactura.SetFocus: Exit Sub
+    If txtNroFactura.Text = "" Then MsgBox "Debe agregar un numero de factura", vbOKOnly + vbInformation, "Pago de Cuota": txtNroFactura.SetFocus: Exit Sub
     If txtMonto.Text = "" Then MsgBox "Debe agregar un monto a pagar", vbOKOnly + vbInformation, "Pago de Cuota": txtMonto.SetFocus: Exit Sub
     cmdCobrar.Enabled = True
     txtTotalPago.Text = CCur(txtTotalPago.Text) + CCur(txtMonto.Text)

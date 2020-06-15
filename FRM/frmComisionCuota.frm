@@ -3,14 +3,14 @@ Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmComisionCuota 
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "Comisión de Primera Cuota"
+   Caption         =   "Comision de Primera Cuota"
    ClientHeight    =   3060
    ClientLeft      =   45
    ClientTop       =   435
    ClientWidth     =   5475
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   8.25
+      Size            =   10
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -31,7 +31,7 @@ Begin VB.Form frmComisionCuota
       Caption         =   "Totales"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -54,7 +54,7 @@ Begin VB.Form frmComisionCuota
          _ExtentY        =   741
          Icon            =   "frmComisionCuota.frx":11DFF
          Style           =   8
-         Caption         =   "       Aceptar"
+         Caption         =   "     Aceptar"
          IconSize        =   18
          IconAlign       =   1
          CaptionAlign    =   1
@@ -67,7 +67,7 @@ Begin VB.Form frmComisionCuota
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -138,7 +138,7 @@ Begin VB.Form frmComisionCuota
       Caption         =   "Comisiones"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   8.25
+         Size            =   10
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -153,10 +153,10 @@ Begin VB.Form frmComisionCuota
       Width           =   3555
       Begin VB.Frame Frame4 
          BackColor       =   &H00884400&
-         Caption         =   "N° Factura"
+         Caption         =   "Nï¿½ Factura"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -179,10 +179,10 @@ Begin VB.Form frmComisionCuota
       End
       Begin VB.Frame Frame3 
          BackColor       =   &H00884400&
-         Caption         =   "Pago 1° Cuota"
+         Caption         =   "Pago 1ï¿½ Cuota"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -239,7 +239,7 @@ Begin VB.Form frmComisionCuota
          Caption         =   "Coordinador"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -266,7 +266,7 @@ Begin VB.Form frmComisionCuota
          Caption         =   "Asesor"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   10
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -294,7 +294,7 @@ Begin VB.Form frmComisionCuota
             Left            =   120
             TabIndex        =   22
             Top             =   240
-            Width           =   855
+            Width           =   1335
          End
          Begin VB.Label Label13 
             BackStyle       =   0  'Transparent
@@ -304,7 +304,7 @@ Begin VB.Form frmComisionCuota
             Left            =   120
             TabIndex        =   9
             Top             =   960
-            Width           =   855
+            Width           =   1335
          End
          Begin VB.Label Label14 
             Alignment       =   2  'Center
@@ -312,7 +312,7 @@ Begin VB.Form frmComisionCuota
             Caption         =   "%"
             BeginProperty Font 
                Name            =   "Century Gothic"
-               Size            =   9.75
+               Size            =   10
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -354,75 +354,75 @@ End Sub
 
 Private Sub cmdAceptar_Click()
     If txtCoordinador.Text = "" Then MsgBox "ingrese el valor de la comision del Coordinador", vbCritical, "Comision de Primera Cuota": txtCoordinador.SetFocus: Exit Sub
-    If txtPorcentajeAsesor.Text = "" Then MsgBox "Ingrese el porcentaje de comisión del Asesor", vbCritical, "Comisión de Primera Cuota": txtPorcentajeAsesor.SetFocus: Exit Sub
-    If txtPagoParcial.Text = "" Then MsgBox "Ingrese el pago parcial de la primera cuota", vbCritical, "Comisión de Primera Cuota": txtPagoParcial.SetFocus: Exit Sub
-    If txtNroFactura.Text = "" Then MsgBox "Ingrese el número de factura", vbCritical, "Comisión de Primera Cuota": txtNroFactura.SetFocus: Exit Sub
+    If txtPorcentajeAsesor.Text = "" Then MsgBox "Ingrese el porcentaje de comision del Asesor", vbCritical, "Comision de Primera Cuota": txtPorcentajeAsesor.SetFocus: Exit Sub
+    If txtPagoParcial.Text = "" Then MsgBox "Ingrese el pago parcial de la primera cuota", vbCritical, "Comision de Primera Cuota": txtPagoParcial.SetFocus: Exit Sub
+    If txtNroFactura.Text = "" Then MsgBox "Ingrese el numero de factura", vbCritical, "Comision de Primera Cuota": txtNroFactura.SetFocus: Exit Sub
 
     With rsContabilidad
         If .State = 1 Then .Close
         .Open "SELECT * FROM contabilidad", Cn, adOpenDynamic, adLockPessimistic
     ''' Movimientos de Caja
-        '''CAJA ADMINISTRACION (Parcial 1° Cuota - DEBE)
+        '''CAJA ADMINISTRACION (Parcial 1Â° Cuota - DEBE)
             .AddNew
             !fecha = Date
             !cuenta = "CAJA ADMINISTRACION"
-            !Detalle = "Parcial de 1ª Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
+            !Detalle = "Parcial de 1Â° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
             !Debe = Int(lblTotalCuota1.Caption) - Int(txtPagoParcial.Text)
             !Haber = Null
             !nrofactura = txtNroFactura.Text
             !CodAlumno = Int(frmPlanDePagos.lblCodAlumno.Caption)
             !NroCuota = 1
             .Update
-        '''DESCUENTO (Parcial 1° Cuota - HABER)
+        '''DESCUENTO (Parcial 1Â° Cuota - HABER)
             .Requery
             .AddNew
             !fecha = Date
             !cuenta = "Descuento"
-            !Detalle = "Parcial de 1ª Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
+            !Detalle = "Parcial de 1Â° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
             !Debe = Int(txtPagoParcial.Text)
             !nrofactura = txtNroFactura.Text
             !Haber = Null
             !CodAlumno = Int(frmPlanDePagos.lblCodAlumno.Caption)
             !NroCuota = 1
             .Update
-        '''COMISION COORDINADOR (Comision 1° Cuota - DEBE)
+        '''COMISION COORDINADOR (Comision 1Â° Cuota - DEBE)
             .AddNew
             !fecha = Date
             !cuenta = "COMISIONES VARIAS"
-            !Detalle = "Comisión Coord. 1ª Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
+            !Detalle = "Comision Coord. 1Â° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
             !Debe = Int(txtCoordinador.Text)
             !Haber = Null
             !CodAlumno = Null
             !NroCuota = Null
             .Update
-        '''CAJA ADMINISTRACION (Comision 1° Cuota - HABER)
+        '''CAJA ADMINISTRACION (Comision 1Â° Cuota - HABER)
             .Requery
             .AddNew
             !fecha = Date
             !cuenta = "CAJA ADMINISTRACION"
-            !Detalle = "Comisión Coord. 1ª Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
+            !Detalle = "Comision Coord. 1Â° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
             !Debe = Null
             !Haber = Int(txtCoordinador.Text)
             !CodAlumno = Null
             !NroCuota = Null
             .Update
-        '''COMISION ASESOR (Comision 1° Cuota - DEBE)
+        '''COMISION ASESOR (Comision 1Â° Cuota - DEBE)
             .Requery
             .AddNew
             !fecha = Date
             !cuenta = "HONORARIOS ASESORES"
-            !Detalle = "Comisión de 1ª Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
+            !Detalle = "Comision de 1Â° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
             !Debe = Int(lblComisionAsesor.Caption)
             !Haber = Null
             !CodAlumno = Null
             !NroCuota = Null
             .Update
-        '''CAJA ADMINISTRACION (Comision 1° Cuota - HABER)
+        '''CAJA ADMINISTRACION (Comision 1Â° Cuota - HABER)
             .Requery
             .AddNew
             !fecha = Date
             !cuenta = "CAJA ADMINISTRACION"
-            !Detalle = "Comisión de 1ª Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
+            !Detalle = "Comision de 1Â° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
             !Debe = Null
             !Haber = Int(lblComisionAsesor.Caption)
             !CodAlumno = Null
@@ -451,7 +451,7 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
     If aceptar = True Then
         frmPlanDePagos.Enabled = True
     Else
-        MsgBox "No se han cargado las comisiones en el sistema", vbCritical, "Comisión de Primera Cuota"
+        MsgBox "No se han cargado las comisiones en el sistema", vbCritical, "Comision de Primera Cuota"
         Cancel = True
     End If
 End Sub
@@ -485,15 +485,11 @@ Private Sub txtPagoParcial_KeyPress(KeyAscii As Integer)
 End Sub
 
 Sub FormatoNumeros()
-    If txtCoordinador.Text = "" Then
-            txtCoordinador.Text = "0"
-        ElseIf txtPorcentajeAsesor.Text = "" Then
-            txtPorcentajeAsesor.Text = "0"
-        ElseIf lblComisionAsesor.Caption = "" Then
-            lblComisionAsesor.Caption = "0"
-        ElseIf txtPagoParcial.Text = "" Then
-            txtPagoParcial.Text = "0"
-    End If
+    If txtCoordinador.Text = "" Then txtCoordinador.Text = 0
+    If txtPorcentajeAsesor.Text = "" Then txtPorcentajeAsesor.Text = 0
+    If lblComisionAsesor.Caption = "" Then lblComisionAsesor.Caption = 0
+    If txtPagoParcial.Text = "" Then txtPagoParcial.Text = 0
+    
 End Sub
 
 Sub CalcularComision()

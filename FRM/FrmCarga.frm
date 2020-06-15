@@ -40,7 +40,7 @@ Begin VB.Form FrmCarga
       AutoSize        =   -1  'True
       BackColor       =   &H00FF0000&
       BackStyle       =   0  'Transparent
-      Caption         =   "Gestión Integral de Alumnos"
+      Caption         =   "Gestion Integral de Alumnos"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   24
