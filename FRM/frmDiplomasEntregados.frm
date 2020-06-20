@@ -13,14 +13,13 @@ Begin VB.Form frmDiplomasEntregados
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmDiplomasEntregados.frx":0000
    ScaleHeight     =   4275
    ScaleWidth      =   4005
    Begin VB.TextBox txtCodigo 
       Alignment       =   1  'Right Justify
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -37,7 +36,7 @@ Begin VB.Form frmDiplomasEntregados
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -54,7 +53,7 @@ Begin VB.Form frmDiplomasEntregados
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -64,24 +63,24 @@ Begin VB.Form frmDiplomasEntregados
       Height          =   360
       Left            =   120
       TabIndex        =   2
-      Top             =   1080
+      Top             =   960
       Width           =   3735
    End
    Begin MSDataGridLib.DataGrid grilla 
-      Height          =   2535
+      Height          =   2655
       Left            =   120
       TabIndex        =   1
-      Top             =   1560
+      Top             =   1440
       Width           =   3735
       _ExtentX        =   6588
-      _ExtentY        =   4471
+      _ExtentY        =   4683
       _Version        =   393216
       AllowUpdate     =   0   'False
       HeadLines       =   1
       RowHeight       =   21
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -137,7 +136,7 @@ Begin VB.Form frmDiplomasEntregados
       Caption         =   "Codigo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -156,7 +155,7 @@ Begin VB.Form frmDiplomasEntregados
       Caption         =   "Alumno"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -175,7 +174,7 @@ Begin VB.Form frmDiplomasEntregados
       Caption         =   "Capacitacion"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -186,7 +185,7 @@ Begin VB.Form frmDiplomasEntregados
       Height          =   255
       Left            =   120
       TabIndex        =   4
-      Top             =   840
+      Top             =   720
       Width           =   4215
    End
 End

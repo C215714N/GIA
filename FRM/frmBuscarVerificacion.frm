@@ -16,7 +16,6 @@ Begin VB.Form frmBuscarVerificacion
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmBuscarVerificacion.frx":324A
    ScaleHeight     =   4080
    ScaleWidth      =   9405
    Begin MSDataGridLib.DataGrid grilla 
@@ -35,7 +34,7 @@ Begin VB.Form frmBuscarVerificacion
       RowDividerStyle =   0
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -89,7 +88,7 @@ Begin VB.Form frmBuscarVerificacion
    Begin VB.TextBox txtBuscar 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -103,11 +102,11 @@ Begin VB.Form frmBuscarVerificacion
       Width           =   4000
    End
    Begin VB.OptionButton optBuscar 
-      BackColor       =   &H00884400&
+      BackColor       =   &H00662200&
       Caption         =   "Nombre"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -123,11 +122,11 @@ Begin VB.Form frmBuscarVerificacion
       Width           =   1935
    End
    Begin VB.OptionButton optBuscar 
-      BackColor       =   &H00884400&
+      BackColor       =   &H00662200&
       Caption         =   "Codigo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -181,7 +180,7 @@ Begin VB.Form frmBuscarVerificacion
       Caption         =   "Adodc1"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -198,7 +197,7 @@ Begin VB.Form frmBuscarVerificacion
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmBuscarVerificacion.frx":AC67
+      Icon            =   "frmBuscarVerificacion.frx":324A
       Style           =   8
       Caption         =   "     Aceptar"
       IconSize        =   18
@@ -214,7 +213,7 @@ Begin VB.Form frmBuscarVerificacion
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -230,7 +229,7 @@ Begin VB.Form frmBuscarVerificacion
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmBuscarVerificacion.frx":B541
+      Icon            =   "frmBuscarVerificacion.frx":3B24
       Style           =   8
       Caption         =   "     Cancelar"
       IconSize        =   18
@@ -246,7 +245,7 @@ Begin VB.Form frmBuscarVerificacion
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -325,7 +324,7 @@ Else
     BotonMarcar = 0
     
     frmAnalisisDeCuotas.lblCodAlumno.Caption = grilla.Columns(0).Text
-    frmAnalisisDeCuotas.lblNyA.Caption = grilla.Columns(1).Text
+    frmAnalisisDeCuotas.lblNya.Caption = grilla.Columns(1).Text
 
     If Trim(Len(frmAnalisisDeCuotas.lblCodAlumno.Caption)) = 1 Then frmAnalisisDeCuotas.lblCodAlumno.Caption = Format(frmAnalisisDeCuotas.lblCodAlumno.Caption, "0000#")
     If Trim(Len(frmAnalisisDeCuotas.lblCodAlumno.Caption)) = 2 Then frmAnalisisDeCuotas.lblCodAlumno.Caption = Format(frmAnalisisDeCuotas.lblCodAlumno.Caption, "000##")
@@ -372,7 +371,7 @@ Private Sub Form_Load()
     Dim busca As String
     Adodc.CursorLocation = adUseClient
     Adodc.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=T:\base.mdb;Persist Security Info=False;Jet OLEDB:Database Password=ascir"
-    Adodc.RecordSource = "SELECT codalumno as [Codigo], Nya as [Alumno], tipoDoc as[Tipo], DNI as [NÂ°], Direccion, CP, Localidad, Nacionalidad, Edad, FechaNac, capac as [Capacitacion], Asistente, Tel1, Tel2, Tel3, Tel4, PTel1, PTel2, PTel3, PTel4, TotalCurso, Cuotas, GastoAdm, FechaSus, FechaVerif, Observaciones, Manuales, DchoExamen, Estado FROM verificaciones WHERE [Nya] like '" & busca & "'"
+    Adodc.RecordSource = "SELECT codalumno as [Codigo], Nya as [Alumno], tipoDoc as[Tipo], DNI as [N°], Direccion, CP, Localidad, Nacionalidad, Edad, FechaNac, capac as [Capacitacion], Asistente, Tel1, Tel2, Tel3, Tel4, PTel1, PTel2, PTel3, PTel4, TotalCurso, Cuotas, GastoAdm, FechaSus, FechaVerif, Observaciones, Manuales, DchoExamen, Estado FROM verificaciones WHERE [Nya] like '" & busca & "'"
     Set grilla.DataSource = Adodc
 End Sub
 
@@ -396,14 +395,14 @@ End Sub
 
 Sub BuscarCodigo()
     busca = UCase(Trim(txtBuscar.Text)) & "%"
-    Adodc.RecordSource = "SELECT codalumno as [Codigo], Nya as [Alumno], tipoDoc as[Tipo], DNI as [NÂ°], Direccion, CP, Localidad, Nacionalidad, Edad, FechaNac, capac as [Capacitacion], Asistente, Tel1, Tel2, Tel3, Tel4, PTel1, PTel2, PTel3, PTel4, TotalCurso, Cuotas, GastoAdm, FechaSus, FechaVerif, Observaciones, Manuales, DchoExamen, Estado FROM verificaciones WHERE [codalumno] like '" & busca & "' ORDER BY codalumno"
+    Adodc.RecordSource = "SELECT codalumno as [Codigo], Nya as [Alumno], tipoDoc as[Tipo], DNI as [N°], Direccion, CP, Localidad, Nacionalidad, Edad, FechaNac, capac as [Capacitacion], Asistente, Tel1, Tel2, Tel3, Tel4, PTel1, PTel2, PTel3, PTel4, TotalCurso, Cuotas, GastoAdm, FechaSus, FechaVerif, Observaciones, Manuales, DchoExamen, Estado FROM verificaciones WHERE [codalumno] like '" & busca & "' ORDER BY codalumno"
     Adodc.Refresh
     formatoGrilla
 End Sub
 
 Sub BuscarAlumno()
     busca = UCase(Trim(txtBuscar.Text)) & "%"
-    Adodc.RecordSource = "SELECT codalumno as [Codigo], Nya as [Alumno], tipoDoc as[Tipo], DNI as [NÂ°], Direccion, CP, Localidad, Nacionalidad, Edad, FechaNac, capac as [Capacitacion], Asistente, Tel1, Tel2, Tel3, Tel4, PTel1, PTel2, PTel3, PTel4, TotalCurso, Cuotas, GastoAdm, FechaSus, FechaVerif, Observaciones, Manuales, DchoExamen, Estado FROM verificaciones WHERE [nya] like '" & busca & "' ORDER BY nya"
+    Adodc.RecordSource = "SELECT codalumno as [Codigo], Nya as [Alumno], tipoDoc as[Tipo], DNI as [N°], Direccion, CP, Localidad, Nacionalidad, Edad, FechaNac, capac as [Capacitacion], Asistente, Tel1, Tel2, Tel3, Tel4, PTel1, PTel2, PTel3, PTel4, TotalCurso, Cuotas, GastoAdm, FechaSus, FechaVerif, Observaciones, Manuales, DchoExamen, Estado FROM verificaciones WHERE [nya] like '" & busca & "' ORDER BY nya"
     Adodc.Refresh
     formatoGrilla
 End Sub

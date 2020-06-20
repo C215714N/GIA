@@ -156,7 +156,7 @@ Begin VB.MDIForm MDI
       UseSystemFont   =   0   'False
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -178,21 +178,21 @@ Begin VB.MDIForm MDI
          NumPanels       =   5
          BeginProperty Panel1 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   6
-            TextSave        =   "14/06/2020"
+            TextSave        =   "22/06/2020"
          EndProperty
          BeginProperty Panel2 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   5
-            TextSave        =   "11:14 p.m."
+            TextSave        =   "01:17 p.m."
          EndProperty
          BeginProperty Panel3 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   2
             Enabled         =   0   'False
-            TextSave        =   "Nï¿½M"
+            TextSave        =   "NÚM"
          EndProperty
          BeginProperty Panel4 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   1
             Enabled         =   0   'False
-            TextSave        =   "MAYï¿½S"
+            TextSave        =   "MAYÚS"
          EndProperty
          BeginProperty Panel5 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Object.Width           =   4410
@@ -203,7 +203,7 @@ Begin VB.MDIForm MDI
          Name            =   "Century Gothic"
          Size            =   8.25
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
@@ -454,7 +454,7 @@ Private Sub mnuLibro_Click()
 End Sub
 
 Private Sub mnuSalir_Click()
-    a = MsgBox("ï¿½Esta seguro que desea Salir?", vbYesNo + vbQuestion, "Gestion Integral del Alumno")
+    a = MsgBox("¿Esta seguro que desea Salir?", vbYesNo + vbQuestion, "Gestion Integral del Alumno")
     If a = vbYes Then
         End
     End If

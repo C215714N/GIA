@@ -16,15 +16,14 @@ Begin VB.Form frmPresupuesto
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmPresupuesto.frx":324A
    ScaleHeight     =   5745
    ScaleWidth      =   9285
    Begin VB.Frame Frame2 
-      BackColor       =   &H00552233&
+      BackColor       =   &H00662200&
       Caption         =   "Totales"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -42,7 +41,7 @@ Begin VB.Form frmPresupuesto
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -60,7 +59,7 @@ Begin VB.Form frmPresupuesto
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -78,7 +77,7 @@ Begin VB.Form frmPresupuesto
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -96,7 +95,7 @@ Begin VB.Form frmPresupuesto
          Caption         =   "Saldo"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -115,7 +114,7 @@ Begin VB.Form frmPresupuesto
          Caption         =   "Pagado"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -134,7 +133,7 @@ Begin VB.Form frmPresupuesto
          Caption         =   "Deuda"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -163,7 +162,7 @@ Begin VB.Form frmPresupuesto
       RowHeight       =   21
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -215,11 +214,11 @@ Begin VB.Form frmPresupuesto
       EndProperty
    End
    Begin VB.Frame Frame1 
-      BackColor       =   &H00884400&
+      BackColor       =   &H00662200&
       Caption         =   "Periodo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -235,17 +234,17 @@ Begin VB.Form frmPresupuesto
       Begin VB.ComboBox cmbMes 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   360
-         ItemData        =   "frmPresupuesto.frx":11DFF
+         Height          =   375
+         ItemData        =   "frmPresupuesto.frx":324A
          Left            =   120
-         List            =   "frmPresupuesto.frx":11E27
+         List            =   "frmPresupuesto.frx":3272
          Style           =   2  'Dropdown List
          TabIndex        =   13
          Top             =   420
@@ -262,7 +261,7 @@ Begin VB.Form frmPresupuesto
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -270,7 +269,7 @@ Begin VB.Form frmPresupuesto
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "yyyy"
-         Format          =   198443011
+         Format          =   92078083
          CurrentDate     =   36526
          MaxDate         =   401876
          MinDate         =   36526
@@ -283,7 +282,7 @@ Begin VB.Form frmPresupuesto
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmPresupuesto.frx":11E90
+         Icon            =   "frmPresupuesto.frx":32DB
          Style           =   8
          Caption         =   "     Informe"
          IconSize        =   18
@@ -298,7 +297,7 @@ Begin VB.Form frmPresupuesto
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -308,10 +307,10 @@ Begin VB.Form frmPresupuesto
       End
       Begin VB.Label Label2 
          BackStyle       =   0  'Transparent
-         Caption         =   "Aï¿½O"
+         Caption         =   "AÑO"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -330,7 +329,7 @@ Begin VB.Form frmPresupuesto
          Caption         =   "MES"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False

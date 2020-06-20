@@ -15,7 +15,6 @@ Begin VB.Form frmEliminarReservas
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmEliminarReservas.frx":324A
    ScaleHeight     =   915
    ScaleWidth      =   3015
    Begin MSComCtl2.DTPicker DTP 
@@ -29,14 +28,14 @@ Begin VB.Form frmEliminarReservas
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   198443009
+      Format          =   92078081
       CurrentDate     =   41037
    End
    Begin isButtonTest.isButton cmdEliminar 
@@ -47,7 +46,7 @@ Begin VB.Form frmEliminarReservas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmEliminarReservas.frx":AC67
+      Icon            =   "frmEliminarReservas.frx":324A
       Style           =   8
       Caption         =   "     Eliminar"
       IconSize        =   18
@@ -62,7 +61,7 @@ Begin VB.Form frmEliminarReservas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -75,7 +74,7 @@ Begin VB.Form frmEliminarReservas
       Caption         =   "Anteriores a:"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

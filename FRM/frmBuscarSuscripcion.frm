@@ -16,7 +16,6 @@ Begin VB.Form frmBuscarSuscripcion
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmBuscarSuscripcion.frx":324A
    ScaleHeight     =   4080
    ScaleWidth      =   9405
    Begin MSAdodcLib.Adodc Adodc 
@@ -156,7 +155,7 @@ Begin VB.Form frmBuscarSuscripcion
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmBuscarSuscripcion.frx":AC67
+      Icon            =   "frmBuscarSuscripcion.frx":324A
       Style           =   8
       Caption         =   "     Aceptar"
       IconSize        =   18
@@ -172,7 +171,7 @@ Begin VB.Form frmBuscarSuscripcion
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -188,7 +187,7 @@ Begin VB.Form frmBuscarSuscripcion
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmBuscarSuscripcion.frx":B541
+      Icon            =   "frmBuscarSuscripcion.frx":3B24
       Style           =   8
       Caption         =   "     Cancelar"
       IconSize        =   18
@@ -204,7 +203,7 @@ Begin VB.Form frmBuscarSuscripcion
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -218,7 +217,7 @@ Begin VB.Form frmBuscarSuscripcion
       Caption         =   "Apellido y Nombre:"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -363,7 +362,7 @@ Private Sub Form_Load()
     Dim busca As String
     Adodc.CursorLocation = adUseClient
     Adodc.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=T:\base.mdb;Persist Security Info=False;Jet OLEDB:Database Password=ascir"
-    Adodc.RecordSource = "SELECT id, Nya as [Apellido y Nombres], tipoDoc as [Tipo], DNI as [NÂ°], Direccion, CP, Localidad, Nacionalidad, Edad, FechaNac, Capac as [Capacitacion], Asistente, Tel1, Tel2, Tel3, Tel4, PTel1, PTel2, PTel3, PTel4, TotalCurso, Cuotas, GastoAdm, Fechasus, Observaciones, Manuales, DchoExamen, TotalMatricula, NroFactura FROM suscripciones WHERE [Nya] like '" & busca & "'"
+    Adodc.RecordSource = "SELECT id, Nya as [Apellido y Nombres], tipoDoc as [Tipo], DNI as [N°], Direccion, CP, Localidad, Nacionalidad, Edad, FechaNac, Capac as [Capacitacion], Asistente, Tel1, Tel2, Tel3, Tel4, PTel1, PTel2, PTel3, PTel4, TotalCurso, Cuotas, GastoAdm, Fechasus, Observaciones, Manuales, DchoExamen, TotalMatricula, NroFactura FROM suscripciones WHERE [Nya] like '" & busca & "'"
     Set grilla.DataSource = Adodc
     formatoGrilla
 End Sub
@@ -384,7 +383,7 @@ Private Sub txtBuscar_Change()
         cmdAceptar.Enabled = True
     End If
     busca = UCase(Trim(txtBuscar.Text)) & "%"
-    Adodc.RecordSource = "SELECT id, Nya as [Apellido y Nombres], tipoDoc as [Tipo], DNI as [NÂ°], Direccion, CP, Localidad, Nacionalidad, Edad, FechaNac, Capac as [Capacitacion], Asistente, Tel1, Tel2, Tel3, Tel4, PTel1, PTel2, PTel3, PTel4, TotalCurso, Cuotas, GastoAdm, Fechasus, Observaciones, Manuales, DchoExamen, TotalMatricula, NroFactura FROM suscripciones WHERE [nya] like '" & busca & "'"
+    Adodc.RecordSource = "SELECT id, Nya as [Apellido y Nombres], tipoDoc as [Tipo], DNI as [N°], Direccion, CP, Localidad, Nacionalidad, Edad, FechaNac, Capac as [Capacitacion], Asistente, Tel1, Tel2, Tel3, Tel4, PTel1, PTel2, PTel3, PTel4, TotalCurso, Cuotas, GastoAdm, Fechasus, Observaciones, Manuales, DchoExamen, TotalMatricula, NroFactura FROM suscripciones WHERE [nya] like '" & busca & "'"
     Adodc.Refresh
     
     Adodc.Refresh

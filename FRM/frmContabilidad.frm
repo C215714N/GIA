@@ -16,7 +16,6 @@ Begin VB.Form frmContabilidad
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmContabilidad.frx":324A
    ScaleHeight     =   4380
    ScaleWidth      =   7110
    Begin VB.Frame Frame1 
@@ -24,7 +23,7 @@ Begin VB.Form frmContabilidad
       Caption         =   "Bajar"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -45,7 +44,7 @@ Begin VB.Form frmContabilidad
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmContabilidad.frx":AC67
+         Icon            =   "frmContabilidad.frx":324A
          Style           =   8
          Caption         =   "     Cuenta"
          IconSize        =   18
@@ -60,7 +59,7 @@ Begin VB.Form frmContabilidad
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -76,7 +75,7 @@ Begin VB.Form frmContabilidad
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmContabilidad.frx":B541
+         Icon            =   "frmContabilidad.frx":3B24
          Style           =   8
          Caption         =   "     Asiento"
          IconSize        =   18
@@ -91,7 +90,7 @@ Begin VB.Form frmContabilidad
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -107,7 +106,7 @@ Begin VB.Form frmContabilidad
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmContabilidad.frx":BE1B
+         Icon            =   "frmContabilidad.frx":43FE
          Style           =   8
          Caption         =   "     Cancelar"
          IconSize        =   18
@@ -122,7 +121,7 @@ Begin VB.Form frmContabilidad
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -146,7 +145,7 @@ Begin VB.Form frmContabilidad
       RowDividerStyle =   0
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -200,7 +199,7 @@ Begin VB.Form frmContabilidad
    Begin VB.TextBox txtNroFactura 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -217,7 +216,7 @@ Begin VB.Form frmContabilidad
       Alignment       =   1  'Right Justify
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -234,7 +233,7 @@ Begin VB.Form frmContabilidad
       Alignment       =   1  'Right Justify
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -250,7 +249,7 @@ Begin VB.Form frmContabilidad
    Begin VB.TextBox txtDetalle 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -281,7 +280,7 @@ Begin VB.Form frmContabilidad
       Caption         =   "Nro Factura"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -300,7 +299,7 @@ Begin VB.Form frmContabilidad
       Caption         =   "Haber"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -319,7 +318,7 @@ Begin VB.Form frmContabilidad
       Caption         =   "Debe"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -339,7 +338,7 @@ Begin VB.Form frmContabilidad
       Caption         =   "Detalle"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -359,7 +358,7 @@ Begin VB.Form frmContabilidad
       Caption         =   "Cuenta"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -378,7 +377,7 @@ Begin VB.Form frmContabilidad
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -397,7 +396,7 @@ Begin VB.Form frmContabilidad
       Caption         =   "Fecha"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -416,7 +415,7 @@ Begin VB.Form frmContabilidad
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -435,7 +434,7 @@ Begin VB.Form frmContabilidad
       Caption         =   "Asiento"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

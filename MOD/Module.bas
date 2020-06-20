@@ -64,12 +64,12 @@ Attribute VB_Name = "Declaraciones"
     Global rsEgresados                  As New ADODB.Recordset
     Global rsDiplomas                   As New ADODB.Recordset
     
-''' Gestion Servicio Tecnico
+''' Gestion Servicio Técnico
     Global rsclientes                   As New ADODB.Recordset
     Global rsAnalisisInforme            As New ADODB.Recordset
     Global rsconsultarordenes           As New ADODB.Recordset
 
-'''DECLARACION DE VARIABLES
+'''DECLARAcion DE VARIABLES
     ''' Variables Control de Acceso
         Global Usuario          As String
         Global Clave            As String

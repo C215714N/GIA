@@ -13,7 +13,7 @@ Begin VB.Form frmViaticos
    ClientWidth     =   4695
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   10
+      Size            =   9.75
       Charset         =   0
       Weight          =   700
       Underline       =   0   'False
@@ -27,7 +27,6 @@ Begin VB.Form frmViaticos
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    Palette         =   "frmViaticos.frx":324A
-   Picture         =   "frmViaticos.frx":37E4
    ScaleHeight     =   4155
    ScaleWidth      =   4695
    Begin isButtonTest.isButton cmdAgregar 
@@ -38,7 +37,7 @@ Begin VB.Form frmViaticos
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmViaticos.frx":B201
+      Icon            =   "frmViaticos.frx":37E4
       Style           =   8
       Caption         =   "     Aceptar"
       IconAlign       =   1
@@ -52,7 +51,7 @@ Begin VB.Form frmViaticos
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -73,7 +72,7 @@ Begin VB.Form frmViaticos
       RowHeight       =   20
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -82,7 +81,7 @@ Begin VB.Form frmViaticos
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -125,7 +124,7 @@ Begin VB.Form frmViaticos
       EndProperty
    End
    Begin VB.Frame Frame2 
-      BackColor       =   &H00884400&
+      BackColor       =   &H00662200&
       Caption         =   "Saldo Actual"
       ForeColor       =   &H8000000F&
       Height          =   735
@@ -138,7 +137,7 @@ Begin VB.Form frmViaticos
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -153,7 +152,7 @@ Begin VB.Form frmViaticos
       End
    End
    Begin VB.Frame Frame1 
-      BackColor       =   &H00884400&
+      BackColor       =   &H00662200&
       Caption         =   "Agregar"
       ForeColor       =   &H8000000F&
       Height          =   3135
@@ -162,7 +161,7 @@ Begin VB.Form frmViaticos
       Top             =   840
       Width           =   1575
       Begin VB.OptionButton optMonto 
-         BackColor       =   &H00884400&
+         BackColor       =   &H00662200&
          Caption         =   "Rinde"
          ForeColor       =   &H00C0FFC0&
          Height          =   255
@@ -173,7 +172,7 @@ Begin VB.Form frmViaticos
          Width           =   855
       End
       Begin VB.OptionButton optMonto 
-         BackColor       =   &H00884400&
+         BackColor       =   &H00662200&
          Caption         =   "Lleva"
          ForeColor       =   &H00C0C0FF&
          Height          =   255
@@ -187,7 +186,7 @@ Begin VB.Form frmViaticos
          Alignment       =   1  'Right Justify
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -211,14 +210,14 @@ Begin VB.Form frmViaticos
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   66715649
+         Format          =   91947009
          CurrentDate     =   42277
       End
       Begin VB.Label Label4 
@@ -259,7 +258,7 @@ Begin VB.Form frmViaticos
       Text            =   ""
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False

@@ -9,17 +9,17 @@ Begin VB.Form frmCrearCuenta
    ClientTop       =   2670
    ClientWidth     =   4305
    ForeColor       =   &H00E0E0E0&
+   Icon            =   "frmCrearCuenta.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmCrearCuenta.frx":0000
    ScaleHeight     =   885
    ScaleWidth      =   4305
    Begin VB.TextBox txtCuenta 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -40,7 +40,7 @@ Begin VB.Form frmCrearCuenta
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCrearCuenta.frx":7A1D
+      Icon            =   "frmCrearCuenta.frx":324A
       Style           =   8
       Caption         =   "     Aceptar"
       IconSize        =   18
@@ -55,7 +55,7 @@ Begin VB.Form frmCrearCuenta
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -68,7 +68,7 @@ Begin VB.Form frmCrearCuenta
       Caption         =   "Nueva Cuenta"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

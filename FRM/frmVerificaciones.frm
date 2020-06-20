@@ -17,7 +17,6 @@ Begin VB.Form frmVerificaciones
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmVerificaciones.frx":324A
    ScaleHeight     =   5085
    ScaleWidth      =   11415
    Begin VB.Frame Frame6 
@@ -25,7 +24,7 @@ Begin VB.Form frmVerificaciones
       Caption         =   "Observaciones"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -47,12 +46,13 @@ Begin VB.Form frmVerificaciones
          _ExtentX        =   8281
          _ExtentY        =   2778
          _Version        =   393217
-         BorderStyle     =   0
-         Enabled         =   -1  'True
-         TextRTF         =   $"frmVerificaciones.frx":AC67
+         MaxLength       =   300
+         Appearance      =   0
+         AutoVerbMenu    =   -1  'True
+         TextRTF         =   $"frmVerificaciones.frx":324A
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -62,11 +62,11 @@ Begin VB.Form frmVerificaciones
       End
    End
    Begin VB.Frame Frame2 
-      BackColor       =   &H00884400&
+      BackColor       =   &H00662200&
       Caption         =   "Telefonos"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -82,7 +82,7 @@ Begin VB.Form frmVerificaciones
       Begin VB.TextBox txtPT1 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -99,7 +99,7 @@ Begin VB.Form frmVerificaciones
       Begin VB.TextBox txtPT2 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -116,7 +116,7 @@ Begin VB.Form frmVerificaciones
       Begin VB.TextBox txtPT3 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -133,7 +133,7 @@ Begin VB.Form frmVerificaciones
       Begin VB.TextBox txtPT4 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -150,9 +150,9 @@ Begin VB.Form frmVerificaciones
       Begin VB.TextBox txtTel1 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
@@ -167,9 +167,9 @@ Begin VB.Form frmVerificaciones
       Begin VB.TextBox txtTel2 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
@@ -184,9 +184,9 @@ Begin VB.Form frmVerificaciones
       Begin VB.TextBox txtTel3 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
@@ -201,9 +201,9 @@ Begin VB.Form frmVerificaciones
       Begin VB.TextBox txtTel4 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
@@ -217,11 +217,11 @@ Begin VB.Form frmVerificaciones
       End
    End
    Begin VB.Frame Frame1 
-      BackColor       =   &H00884400&
+      BackColor       =   &H00662200&
       Caption         =   "Datos Personales"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -241,14 +241,14 @@ Begin VB.Form frmVerificaciones
          Top             =   1200
          Width           =   2655
          _ExtentX        =   4683
-         _ExtentY        =   661
+         _ExtentY        =   635
          _Version        =   393216
          Text            =   ""
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
@@ -257,7 +257,7 @@ Begin VB.Form frmVerificaciones
       Begin VB.TextBox txtNya 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -274,7 +274,7 @@ Begin VB.Form frmVerificaciones
       Begin VB.TextBox txtDireccion 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -291,17 +291,17 @@ Begin VB.Form frmVerificaciones
       Begin VB.ComboBox cmbTipoDoc 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
          Height          =   360
-         ItemData        =   "frmVerificaciones.frx":ACED
+         ItemData        =   "frmVerificaciones.frx":32D0
          Left            =   3720
-         List            =   "frmVerificaciones.frx":ACFA
+         List            =   "frmVerificaciones.frx":32DD
          Locked          =   -1  'True
          TabIndex        =   1
          Top             =   600
@@ -310,7 +310,7 @@ Begin VB.Form frmVerificaciones
       Begin VB.TextBox txtCP 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -327,7 +327,7 @@ Begin VB.Form frmVerificaciones
       Begin VB.TextBox txtNacionalidad 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -344,7 +344,7 @@ Begin VB.Form frmVerificaciones
       Begin VB.TextBox txtEdad 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -361,7 +361,7 @@ Begin VB.Form frmVerificaciones
       Begin VB.TextBox txtDocumento 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -385,14 +385,14 @@ Begin VB.Form frmVerificaciones
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   92405761
+         Format          =   91750401
          CurrentDate     =   41308
       End
       Begin MSDataListLib.DataCombo dtcAsistente 
@@ -402,15 +402,15 @@ Begin VB.Form frmVerificaciones
          Top             =   2400
          Width           =   2655
          _ExtentX        =   4683
-         _ExtentY        =   661
+         _ExtentY        =   635
          _Version        =   393216
          Style           =   2
          Text            =   ""
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
@@ -423,15 +423,15 @@ Begin VB.Form frmVerificaciones
          Top             =   2400
          Width           =   3495
          _ExtentX        =   6165
-         _ExtentY        =   661
+         _ExtentY        =   635
          _Version        =   393216
          Style           =   2
          Text            =   ""
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
@@ -443,7 +443,7 @@ Begin VB.Form frmVerificaciones
          Caption         =   "C.P."
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -463,7 +463,7 @@ Begin VB.Form frmVerificaciones
          Caption         =   "Apellido y Nombres"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -482,7 +482,7 @@ Begin VB.Form frmVerificaciones
          Caption         =   "Fecha Nacimiento"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -502,7 +502,7 @@ Begin VB.Form frmVerificaciones
          Caption         =   "Direccion"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -522,7 +522,7 @@ Begin VB.Form frmVerificaciones
          Caption         =   "Localidad"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -538,10 +538,10 @@ Begin VB.Form frmVerificaciones
       End
       Begin VB.Label Label5 
          BackStyle       =   0  'Transparent
-         Caption         =   "Nï¿½ Documento"
+         Caption         =   "N° Documento"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -560,7 +560,7 @@ Begin VB.Form frmVerificaciones
          Caption         =   "Tipo Doc"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -580,7 +580,7 @@ Begin VB.Form frmVerificaciones
          Caption         =   "Nacionalidad"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -600,7 +600,7 @@ Begin VB.Form frmVerificaciones
          Caption         =   "Edad"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -620,7 +620,7 @@ Begin VB.Form frmVerificaciones
          Caption         =   "Capacitacion"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -639,7 +639,7 @@ Begin VB.Form frmVerificaciones
          Caption         =   "Asistente"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -659,7 +659,7 @@ Begin VB.Form frmVerificaciones
       Caption         =   "Curso"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -677,7 +677,7 @@ Begin VB.Form frmVerificaciones
          Caption         =   "Manuales"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -689,14 +689,14 @@ Begin VB.Form frmVerificaciones
          Left            =   1440
          TabIndex        =   23
          Top             =   1800
-         Width           =   1215
+         Width           =   1500
       End
       Begin VB.CheckBox chkExamenes 
          BackColor       =   &H00662200&
          Caption         =   "Examenes"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -708,12 +708,12 @@ Begin VB.Form frmVerificaciones
          Left            =   1440
          TabIndex        =   22
          Top             =   1560
-         Width           =   1335
+         Width           =   1500
       End
       Begin VB.TextBox txtTotalCurso 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -730,7 +730,7 @@ Begin VB.Form frmVerificaciones
       Begin VB.TextBox txtTotalCuotas 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -747,7 +747,7 @@ Begin VB.Form frmVerificaciones
       Begin VB.TextBox txtGastoAdm 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -772,14 +772,14 @@ Begin VB.Form frmVerificaciones
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   92405761
+         Format          =   91750401
          CurrentDate     =   41308
       End
       Begin MSComCtl2.DTPicker DTPFechaVerificacion 
@@ -793,14 +793,14 @@ Begin VB.Form frmVerificaciones
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   92405761
+         Format          =   91750401
          CurrentDate     =   41308
       End
       Begin VB.Label Label17 
@@ -809,7 +809,7 @@ Begin VB.Form frmVerificaciones
          Caption         =   "Fecha Verif."
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -829,7 +829,7 @@ Begin VB.Form frmVerificaciones
          Caption         =   "Total Curso"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -849,7 +849,7 @@ Begin VB.Form frmVerificaciones
          Caption         =   "Cuotas"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -868,7 +868,7 @@ Begin VB.Form frmVerificaciones
          Caption         =   "Gasto Adm."
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -888,7 +888,7 @@ Begin VB.Form frmVerificaciones
          Caption         =   "Fecha Susc."
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -908,7 +908,7 @@ Begin VB.Form frmVerificaciones
       Caption         =   "Codigo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -925,7 +925,7 @@ Begin VB.Form frmVerificaciones
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -940,11 +940,11 @@ Begin VB.Form frmVerificaciones
       End
    End
    Begin VB.Frame Frame4 
-      BackColor       =   &H00552233&
+      BackColor       =   &H00662200&
       Caption         =   "Verificaciones"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -965,7 +965,7 @@ Begin VB.Form frmVerificaciones
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmVerificaciones.frx":AD0B
+         Icon            =   "frmVerificaciones.frx":32EE
          Style           =   8
          Caption         =   "     Verificar"
          IconSize        =   18
@@ -981,7 +981,7 @@ Begin VB.Form frmVerificaciones
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -997,7 +997,7 @@ Begin VB.Form frmVerificaciones
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmVerificaciones.frx":B5E5
+         Icon            =   "frmVerificaciones.frx":3BC8
          Style           =   8
          Caption         =   "     Editar"
          IconSize        =   18
@@ -1013,7 +1013,7 @@ Begin VB.Form frmVerificaciones
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1029,7 +1029,7 @@ Begin VB.Form frmVerificaciones
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmVerificaciones.frx":BEBF
+         Icon            =   "frmVerificaciones.frx":44A2
          Style           =   8
          Caption         =   "     Buscar"
          IconSize        =   18
@@ -1045,7 +1045,7 @@ Begin VB.Form frmVerificaciones
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1061,7 +1061,7 @@ Begin VB.Form frmVerificaciones
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmVerificaciones.frx":C799
+         Icon            =   "frmVerificaciones.frx":4D7C
          Style           =   8
          Caption         =   "     P.Pago"
          IconSize        =   18
@@ -1077,7 +1077,7 @@ Begin VB.Form frmVerificaciones
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1093,7 +1093,7 @@ Begin VB.Form frmVerificaciones
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmVerificaciones.frx":D073
+         Icon            =   "frmVerificaciones.frx":5656
          Style           =   8
          Caption         =   "     Aceptar"
          IconSize        =   18
@@ -1109,7 +1109,7 @@ Begin VB.Form frmVerificaciones
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1125,7 +1125,7 @@ Begin VB.Form frmVerificaciones
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmVerificaciones.frx":D94D
+         Icon            =   "frmVerificaciones.frx":5F30
          Style           =   8
          Caption         =   "     Cancelar"
          IconSize        =   18
@@ -1141,7 +1141,7 @@ Begin VB.Form frmVerificaciones
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1157,7 +1157,7 @@ Begin VB.Form frmVerificaciones
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmVerificaciones.frx":E227
+         Icon            =   "frmVerificaciones.frx":680A
          Style           =   8
          Caption         =   "     Volver"
          IconSize        =   18
@@ -1173,7 +1173,7 @@ Begin VB.Form frmVerificaciones
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1186,7 +1186,7 @@ Begin VB.Form frmVerificaciones
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -1470,7 +1470,7 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
     ElseIf Label20.Caption = "frmAnalisisDeCuotas" Then
         frmAnalisisDeCuotas.Enabled = True
         
-        '''refresca datos en analisis de cuotas
+        '''refresca datos en Analisis de cuotas
         AnalisisDeCuota
         Set frmAnalisisDeCuotas.grilla1.DataSource = rsAnalisisDeCuenta
         frmAnalisisDeCuotas.formatoGrilla
@@ -1575,8 +1575,6 @@ End Sub
 Private Sub txtNya_KeyPress(KeyAscii As Integer)
         If KeyAscii = 13 Then SendKeys "{TAB}"
 End Sub
-
-
 Private Sub txtPT1_KeyPress(KeyAscii As Integer)
         If KeyAscii = 13 Then SendKeys "{TAB}"
 End Sub
@@ -1616,7 +1614,6 @@ End Sub
 Private Sub cmbTipoDoc_KeyPress(KeyAscii As Integer)
         If KeyAscii = 13 Then SendKeys "{TAB}"
 End Sub
-
 Public Sub Nex()
     If KeyAscii = 13 Then SendKeys "{TAB}"
 End Sub

@@ -15,7 +15,6 @@ Begin VB.Form frmMarcar
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmMarcar.frx":324A
    ScaleHeight     =   1200
    ScaleWidth      =   2640
    Begin isButtonTest.isButton cmdGrabar 
@@ -26,7 +25,7 @@ Begin VB.Form frmMarcar
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmMarcar.frx":AC67
+      Icon            =   "frmMarcar.frx":324A
       Style           =   8
       Caption         =   "     Aceptar"
       IconSize        =   18
@@ -41,7 +40,7 @@ Begin VB.Form frmMarcar
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -49,54 +48,33 @@ Begin VB.Form frmMarcar
          Strikethrough   =   0   'False
       EndProperty
    End
-   Begin VB.CheckBox chkAbona 
-      BackColor       =   &H00884400&
-      Caption         =   "Abona"
-      BeginProperty Font 
+   Begin MSComCtl2.DTPicker dtpFecha 
+      Height          =   375
+      Left            =   1200
+      TabIndex        =   3
+      Top             =   120
+      Width           =   1335
+      _ExtentX        =   2355
+      _ExtentY        =   661
+      _Version        =   393216
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
-         Weight          =   700
+         Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H8000000F&
-      Height          =   255
-      Left            =   120
-      MaskColor       =   &H00662200&
-      TabIndex        =   2
-      Top             =   720
-      UseMaskColor    =   -1  'True
-      Width           =   975
-   End
-   Begin VB.CheckBox chkPasa 
-      BackColor       =   &H00884400&
-      Caption         =   "Pasa"
-      BeginProperty Font 
-         Name            =   "Century Gothic"
-         Size            =   10
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H8000000F&
-      Height          =   255
-      Left            =   120
-      MaskColor       =   &H00662200&
-      TabIndex        =   1
-      Top             =   420
-      UseMaskColor    =   -1  'True
-      Width           =   975
+      Format          =   91750401
+      CurrentDate     =   41341
    End
    Begin VB.CheckBox chkLlamar 
-      BackColor       =   &H00884400&
+      BackColor       =   &H00662200&
       Caption         =   "Llamar"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -110,28 +88,49 @@ Begin VB.Form frmMarcar
       TabIndex        =   0
       Top             =   120
       UseMaskColor    =   -1  'True
-      Width           =   975
+      Width           =   1200
    End
-   Begin MSComCtl2.DTPicker dtpFecha 
-      Height          =   375
-      Left            =   1200
-      TabIndex        =   3
-      Top             =   120
-      Width           =   1335
-      _ExtentX        =   2355
-      _ExtentY        =   661
-      _Version        =   393216
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+   Begin VB.CheckBox chkPasa 
+      BackColor       =   &H00662200&
+      Caption         =   "Pasa"
+      BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   130154497
-      CurrentDate     =   41341
+      ForeColor       =   &H8000000F&
+      Height          =   255
+      Left            =   120
+      MaskColor       =   &H00662200&
+      TabIndex        =   1
+      Top             =   420
+      UseMaskColor    =   -1  'True
+      Width           =   1200
+   End
+   Begin VB.CheckBox chkAbona 
+      BackColor       =   &H00662200&
+      Caption         =   "Abona"
+      BeginProperty Font 
+         Name            =   "Century Gothic"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H8000000F&
+      Height          =   255
+      Left            =   120
+      MaskColor       =   &H00662200&
+      TabIndex        =   2
+      Top             =   720
+      UseMaskColor    =   -1  'True
+      Width           =   1200
    End
    Begin VB.Label Label1 
       BorderStyle     =   1  'Fixed Single

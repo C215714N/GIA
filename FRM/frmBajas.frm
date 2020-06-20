@@ -14,13 +14,12 @@ Begin VB.Form frmBajas
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmBajas.frx":324A
    ScaleHeight     =   1440
    ScaleWidth      =   3990
    Begin VB.ComboBox cmbPagoBaja 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -28,9 +27,9 @@ Begin VB.Form frmBajas
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      ItemData        =   "frmBajas.frx":11DFF
+      ItemData        =   "frmBajas.frx":324A
       Left            =   2500
-      List            =   "frmBajas.frx":11E09
+      List            =   "frmBajas.frx":3254
       Style           =   2  'Dropdown List
       TabIndex        =   1
       Top             =   360
@@ -39,7 +38,7 @@ Begin VB.Form frmBajas
    Begin VB.TextBox txtmotivo 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -61,7 +60,7 @@ Begin VB.Form frmBajas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmBajas.frx":11E15
+      Icon            =   "frmBajas.frx":3260
       Style           =   8
       Caption         =   "     Dar Baja"
       IconAlign       =   1
@@ -75,7 +74,7 @@ Begin VB.Form frmBajas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -83,12 +82,31 @@ Begin VB.Form frmBajas
          Strikethrough   =   0   'False
       EndProperty
    End
-   Begin VB.Label Label1 
+   Begin VB.Label Label2 
       BackStyle       =   0  'Transparent
-      Caption         =   "Pago de Baja"
+      Caption         =   "Detalle"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H8000000F&
+      Height          =   255
+      Left            =   120
+      TabIndex        =   4
+      Top             =   120
+      Width           =   1335
+   End
+   Begin VB.Label Label1 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Abono"
+      BeginProperty Font 
+         Name            =   "Century Gothic"
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

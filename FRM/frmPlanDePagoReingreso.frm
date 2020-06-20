@@ -4,7 +4,7 @@ Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmPlanDePagoReingreso 
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "Generar Plan de Pagos de Reingreso de Alumno"
+   Caption         =   "Plan de Pago - Reingreso"
    ClientHeight    =   1485
    ClientLeft      =   3075
    ClientTop       =   2325
@@ -15,13 +15,12 @@ Begin VB.Form frmPlanDePagoReingreso
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmPlanDePagoReingreso.frx":324A
    ScaleHeight     =   1485
    ScaleWidth      =   4470
    Begin VB.TextBox txtCantidadCuotas 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -37,7 +36,7 @@ Begin VB.Form frmPlanDePagoReingreso
    Begin VB.TextBox txtNroCuota 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -53,7 +52,7 @@ Begin VB.Form frmPlanDePagoReingreso
    Begin VB.TextBox txtMonto 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -77,14 +76,14 @@ Begin VB.Form frmPlanDePagoReingreso
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   130154497
+      Format          =   92798977
       CurrentDate     =   41353
    End
    Begin isButtonTest.isButton cmdAplicar 
@@ -95,7 +94,7 @@ Begin VB.Form frmPlanDePagoReingreso
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmPlanDePagoReingreso.frx":AC67
+      Icon            =   "frmPlanDePagoReingreso.frx":324A
       Style           =   8
       Caption         =   "     Aceptar"
       IconSize        =   18
@@ -108,7 +107,7 @@ Begin VB.Form frmPlanDePagoReingreso
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -124,7 +123,7 @@ Begin VB.Form frmPlanDePagoReingreso
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmPlanDePagoReingreso.frx":B541
+      Icon            =   "frmPlanDePagoReingreso.frx":3B24
       Style           =   8
       Caption         =   "     Cancelar"
       IconSize        =   18
@@ -137,7 +136,7 @@ Begin VB.Form frmPlanDePagoReingreso
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -150,7 +149,7 @@ Begin VB.Form frmPlanDePagoReingreso
       Caption         =   "Cant. Cuotas"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -170,7 +169,7 @@ Begin VB.Form frmPlanDePagoReingreso
       Caption         =   "Desde Cuota"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -190,7 +189,7 @@ Begin VB.Form frmPlanDePagoReingreso
       Caption         =   "Vencimiento"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -210,7 +209,7 @@ Begin VB.Form frmPlanDePagoReingreso
       Caption         =   "Monto $"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -241,20 +240,20 @@ Private Sub cmdAplicar_Click()
         Do Until Int(txtNroCuota.Text) > CuotaMax
             .AddNew
             !CodAlumno = frmAnalisisDeCuotas.lblCodAlumno.Caption
-            !NyA = frmAnalisisDeCuotas.lblNyA.Caption
+            !NyA = frmAnalisisDeCuotas.lblNya.Caption
             !NroCuota = Int(txtNroCuota.Text)
             !deuda = txtMonto.Text
             !totalcobrado = 0
             !DeudaTotal = txtMonto.Text
             !CuotasDebidas = 1
-            !fechavto = DTPFecha.Value
+            !fechavto = dtpFecha.Value
             .Update
             txtNroCuota.Text = Int(txtNroCuota.Text) + 1
-            If DTPFecha.Month = 12 Then
-                DTPFecha.Month = 1
-                DTPFecha.Year = DTPFecha.Year + 1
+            If dtpFecha.Month = 12 Then
+                dtpFecha.Month = 1
+                dtpFecha.Year = dtpFecha.Year + 1
             Else
-                DTPFecha.Month = DTPFecha.Month + 1
+                dtpFecha.Month = dtpFecha.Month + 1
             End If
             
         Loop

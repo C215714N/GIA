@@ -14,13 +14,12 @@ Begin VB.Form frmGruposArmado
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmGruposArmado.frx":324A
    ScaleHeight     =   1695
    ScaleWidth      =   3045
    Begin VB.ComboBox cmbHorario 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -28,9 +27,9 @@ Begin VB.Form frmGruposArmado
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      ItemData        =   "frmGruposArmado.frx":AC67
+      ItemData        =   "frmGruposArmado.frx":324A
       Left            =   120
-      List            =   "frmGruposArmado.frx":AC89
+      List            =   "frmGruposArmado.frx":326C
       Style           =   2  'Dropdown List
       TabIndex        =   1
       Top             =   1080
@@ -39,7 +38,7 @@ Begin VB.Form frmGruposArmado
    Begin VB.ComboBox cmbDia 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -47,9 +46,9 @@ Begin VB.Form frmGruposArmado
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      ItemData        =   "frmGruposArmado.frx":ACF1
+      ItemData        =   "frmGruposArmado.frx":32D4
       Left            =   120
-      List            =   "frmGruposArmado.frx":AD07
+      List            =   "frmGruposArmado.frx":32EA
       Style           =   2  'Dropdown List
       TabIndex        =   0
       Top             =   480
@@ -63,7 +62,7 @@ Begin VB.Form frmGruposArmado
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmGruposArmado.frx":AD3E
+      Icon            =   "frmGruposArmado.frx":3321
       Style           =   8
       Caption         =   "     Alumnos"
       IconSize        =   18
@@ -78,7 +77,7 @@ Begin VB.Form frmGruposArmado
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -94,7 +93,7 @@ Begin VB.Form frmGruposArmado
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmGruposArmado.frx":B618
+      Icon            =   "frmGruposArmado.frx":3BFB
       Style           =   8
       Caption         =   "     Nuevo"
       IconSize        =   18
@@ -109,7 +108,7 @@ Begin VB.Form frmGruposArmado
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -125,7 +124,7 @@ Begin VB.Form frmGruposArmado
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmGruposArmado.frx":BEF2
+      Icon            =   "frmGruposArmado.frx":44D5
       Style           =   8
       Caption         =   "     Eliminar"
       IconSize        =   18
@@ -140,7 +139,7 @@ Begin VB.Form frmGruposArmado
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -153,7 +152,7 @@ Begin VB.Form frmGruposArmado
       Caption         =   "Dia"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -172,7 +171,7 @@ Begin VB.Form frmGruposArmado
       Caption         =   "Horario"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

@@ -15,14 +15,13 @@ Begin VB.Form frmCapacitaciones
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmCapacitaciones.frx":324A
    ScaleHeight     =   3975
    ScaleMode       =   0  'User
    ScaleWidth      =   5145.268
    Begin VB.TextBox txtCurso 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -51,7 +50,7 @@ Begin VB.Form frmCapacitaciones
       RowDividerStyle =   0
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -111,7 +110,7 @@ Begin VB.Form frmCapacitaciones
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCapacitaciones.frx":11DFF
+      Icon            =   "frmCapacitaciones.frx":324A
       Style           =   8
       Caption         =   "     Aceptar"
       IconSize        =   18
@@ -126,7 +125,7 @@ Begin VB.Form frmCapacitaciones
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -142,7 +141,7 @@ Begin VB.Form frmCapacitaciones
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCapacitaciones.frx":126D9
+      Icon            =   "frmCapacitaciones.frx":3B24
       Style           =   8
       Caption         =   "     Cancelar"
       IconSize        =   18
@@ -157,7 +156,7 @@ Begin VB.Form frmCapacitaciones
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -173,7 +172,7 @@ Begin VB.Form frmCapacitaciones
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCapacitaciones.frx":12FB3
+      Icon            =   "frmCapacitaciones.frx":43FE
       Style           =   8
       Caption         =   "     Nuevo"
       IconSize        =   18
@@ -188,7 +187,7 @@ Begin VB.Form frmCapacitaciones
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -204,7 +203,7 @@ Begin VB.Form frmCapacitaciones
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCapacitaciones.frx":1388D
+      Icon            =   "frmCapacitaciones.frx":4CD8
       Style           =   8
       Caption         =   "     Editar"
       IconSize        =   18
@@ -219,7 +218,7 @@ Begin VB.Form frmCapacitaciones
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -235,7 +234,7 @@ Begin VB.Form frmCapacitaciones
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCapacitaciones.frx":14167
+      Icon            =   "frmCapacitaciones.frx":55B2
       Style           =   8
       Caption         =   "     Volver"
       IconSize        =   18
@@ -250,7 +249,7 @@ Begin VB.Form frmCapacitaciones
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -266,7 +265,7 @@ Begin VB.Form frmCapacitaciones
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCapacitaciones.frx":14A41
+      Icon            =   "frmCapacitaciones.frx":5E8C
       Style           =   8
       Caption         =   "     Eliminar"
       IconSize        =   18
@@ -281,7 +280,7 @@ Begin VB.Form frmCapacitaciones
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -294,7 +293,7 @@ Begin VB.Form frmCapacitaciones
       Caption         =   "Nombre del Curso:"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -312,7 +311,7 @@ Begin VB.Form frmCapacitaciones
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -340,9 +339,9 @@ End Sub
 
 Private Sub cmdEliminar_Click()
     If txtCurso.Text = "" Then
-        MsgBox "Primero debe elejir una capacitacion", vbOKOnly + vbInformation, "Capacitacion"
+        MsgBox "Primero debe elegir una capacitacion", vbOKOnly + vbInformation, "Capacitacion"
     Else
-        a = MsgBox("ï¿½Esta seguro que desea eliminar esa capacitacion?", vbYesNo + vbQuestion, "Capacitaciones")
+        a = MsgBox("¿Esta seguro que desea eliminar esa capacitacion?", vbYesNo + vbQuestion, "Capacitaciones")
         If a = vbYes Then
             With rsCapacitaciones
                 .Requery
@@ -393,7 +392,7 @@ End Sub
 
 Private Sub cmdModificar_Click()
     If txtCurso.Text = "" Then
-        MsgBox "Primero debe elejir una capacitacion", vbOKOnly + vbInformation, "Capacitacion"
+        MsgBox "Primero debe elegir una capacitacion", vbOKOnly + vbInformation, "Capacitacion"
     Else
         txtCurso.Locked = False
         txtCurso.SetFocus

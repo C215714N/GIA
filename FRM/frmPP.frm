@@ -12,7 +12,7 @@ Begin VB.Form frmPP
    ClientWidth     =   9975
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   10
+      Size            =   9.75
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -25,16 +25,15 @@ Begin VB.Form frmPP
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmPP.frx":324A
    ScaleHeight     =   3697.885
    ScaleMode       =   0  'User
    ScaleWidth      =   9975
    Begin VB.Frame Frame2 
-      BackColor       =   &H00884400&
+      BackColor       =   &H00662200&
       Caption         =   "Cuentas Actuales"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -58,7 +57,7 @@ Begin VB.Form frmPP
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -72,7 +71,7 @@ Begin VB.Form frmPP
       Caption         =   "Presupuesto Nuevo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -97,7 +96,7 @@ Begin VB.Form frmPP
          ListField       =   ""
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -115,11 +114,11 @@ Begin VB.Form frmPP
       Width           =   1335
    End
    Begin VB.Frame Frame1 
-      BackColor       =   &H00884400&
+      BackColor       =   &H00662200&
       Caption         =   "Periodo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -133,10 +132,10 @@ Begin VB.Form frmPP
       Top             =   0
       Width           =   2535
       Begin VB.ComboBox cmbMes 
-         Height          =   360
-         ItemData        =   "frmPP.frx":AC67
+         Height          =   375
+         ItemData        =   "frmPP.frx":324A
          Left            =   120
-         List            =   "frmPP.frx":AC8F
+         List            =   "frmPP.frx":3272
          Style           =   2  'Dropdown List
          TabIndex        =   2
          Top             =   480
@@ -153,7 +152,7 @@ Begin VB.Form frmPP
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -161,13 +160,13 @@ Begin VB.Form frmPP
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "yyyy"
-         Format          =   198443011
+         Format          =   92078083
          CurrentDate     =   43573
       End
       Begin VB.Label Label2 
          BackColor       =   &H00662200&
          BackStyle       =   0  'Transparent
-         Caption         =   "Aï¿½O"
+         Caption         =   "AÑO"
          ForeColor       =   &H8000000F&
          Height          =   255
          Left            =   1560
@@ -195,7 +194,7 @@ Begin VB.Form frmPP
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmPP.frx":ACF8
+      Icon            =   "frmPP.frx":32DB
       Style           =   8
       Caption         =   "     Eliminar"
       IconSize        =   18
@@ -210,7 +209,7 @@ Begin VB.Form frmPP
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -226,7 +225,7 @@ Begin VB.Form frmPP
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmPP.frx":B5D2
+      Icon            =   "frmPP.frx":3BB5
       Style           =   8
       Caption         =   "     Agregar"
       IconSize        =   18
@@ -241,7 +240,7 @@ Begin VB.Form frmPP
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -257,7 +256,7 @@ Begin VB.Form frmPP
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmPP.frx":BEAC
+      Icon            =   "frmPP.frx":448F
       Style           =   8
       Caption         =   "     Nueva"
       IconSize        =   18
@@ -272,7 +271,7 @@ Begin VB.Form frmPP
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False

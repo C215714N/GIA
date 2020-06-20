@@ -16,7 +16,6 @@ Begin VB.Form frmGestionAlumnos
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmGestionAlumnos.frx":324A
    ScaleHeight     =   3075
    ScaleWidth      =   5310
    Begin MSDataGridLib.DataGrid Grilla 
@@ -33,7 +32,7 @@ Begin VB.Form frmGestionAlumnos
       RowHeight       =   21
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -87,7 +86,7 @@ Begin VB.Form frmGestionAlumnos
    Begin VB.TextBox txtCodAlumno 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -108,7 +107,7 @@ Begin VB.Form frmGestionAlumnos
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmGestionAlumnos.frx":AC67
+      Icon            =   "frmGestionAlumnos.frx":324A
       Style           =   8
       Caption         =   "     Agregar"
       IconSize        =   18
@@ -121,7 +120,7 @@ Begin VB.Form frmGestionAlumnos
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -137,7 +136,7 @@ Begin VB.Form frmGestionAlumnos
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmGestionAlumnos.frx":B541
+      Icon            =   "frmGestionAlumnos.frx":3B24
       Style           =   8
       Caption         =   "     Eliminar"
       IconSize        =   18
@@ -150,7 +149,7 @@ Begin VB.Form frmGestionAlumnos
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -172,7 +171,7 @@ Begin VB.Form frmGestionAlumnos
       Caption         =   "Alumno"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -190,7 +189,7 @@ Begin VB.Form frmGestionAlumnos
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -207,7 +206,7 @@ Begin VB.Form frmGestionAlumnos
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -225,7 +224,7 @@ Begin VB.Form frmGestionAlumnos
       Caption         =   "Fecha"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -244,7 +243,7 @@ Begin VB.Form frmGestionAlumnos
       Caption         =   "Horario"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -296,7 +295,7 @@ Private Sub cmdAgregar_Click()
 End Sub
 
 Private Sub cmdQuitar_Click()
-    If MsgBox("ï¿½Esta seguro que desea quitar al alumno " & grilla.Columns(0).Text & " del grupo?", vbYesNo + vbQuestion, "Gestion de Alumnos") = vbYes Then
+    If MsgBox("¿Esta seguro que desea quitar al alumno " & grilla.Columns(0).Text & " del grupo?", vbYesNo + vbQuestion, "Gestion de Alumnos") = vbYes Then
         Label4.Caption = grilla.Columns(1).Text
         
         '''carga a los alumnos del curso y los muestra en la grilla

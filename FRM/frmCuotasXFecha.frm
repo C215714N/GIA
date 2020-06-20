@@ -13,7 +13,7 @@ Begin VB.Form frmCuotasXFecha
    ClientWidth     =   6765
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   10
+      Size            =   9.75
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -21,11 +21,11 @@ Begin VB.Form frmCuotasXFecha
       Strikethrough   =   0   'False
    EndProperty
    ForeColor       =   &H00E0E0E0&
+   Icon            =   "frmCuotasXFecha.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmCuotasXFecha.frx":0000
    ScaleHeight     =   6165
    ScaleWidth      =   6765
    Begin MSAdodcLib.Adodc Adodc 
@@ -66,7 +66,7 @@ Begin VB.Form frmCuotasXFecha
       Caption         =   "Adodc1"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -91,7 +91,7 @@ Begin VB.Form frmCuotasXFecha
       RowDividerStyle =   0
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -153,14 +153,14 @@ Begin VB.Form frmCuotasXFecha
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   130154497
+      Format          =   91815937
       CurrentDate     =   41345
    End
    Begin MSComCtl2.DTPicker dtpHasta 
@@ -174,14 +174,14 @@ Begin VB.Form frmCuotasXFecha
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   130154497
+      Format          =   91815937
       CurrentDate     =   41345
    End
    Begin isButtonTest.isButton cmdBuscar 
@@ -192,7 +192,7 @@ Begin VB.Form frmCuotasXFecha
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCuotasXFecha.frx":EBB5
+      Icon            =   "frmCuotasXFecha.frx":324A
       Style           =   8
       Caption         =   "     Buscar"
       IconSize        =   18
@@ -205,7 +205,7 @@ Begin VB.Form frmCuotasXFecha
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -221,7 +221,7 @@ Begin VB.Form frmCuotasXFecha
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCuotasXFecha.frx":F48F
+      Icon            =   "frmCuotasXFecha.frx":3B24
       Style           =   8
       Caption         =   "     Marcar"
       IconSize        =   18
@@ -236,7 +236,7 @@ Begin VB.Form frmCuotasXFecha
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -252,7 +252,7 @@ Begin VB.Form frmCuotasXFecha
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCuotasXFecha.frx":FD69
+      Icon            =   "frmCuotasXFecha.frx":43FE
       Style           =   8
       Caption         =   "     Datos"
       IconSize        =   18
@@ -267,7 +267,7 @@ Begin VB.Form frmCuotasXFecha
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -283,7 +283,7 @@ Begin VB.Form frmCuotasXFecha
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCuotasXFecha.frx":10643
+      Icon            =   "frmCuotasXFecha.frx":4CD8
       Style           =   8
       Caption         =   "     Cuotas"
       IconSize        =   18
@@ -298,7 +298,7 @@ Begin VB.Form frmCuotasXFecha
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -314,7 +314,7 @@ Begin VB.Form frmCuotasXFecha
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCuotasXFecha.frx":10F1D
+      Icon            =   "frmCuotasXFecha.frx":55B2
       Style           =   8
       Caption         =   "     Volver"
       IconSize        =   18
@@ -329,7 +329,7 @@ Begin VB.Form frmCuotasXFecha
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -345,7 +345,7 @@ Begin VB.Form frmCuotasXFecha
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCuotasXFecha.frx":117F7
+      Icon            =   "frmCuotasXFecha.frx":5E8C
       Style           =   8
       Caption         =   "     Exportar"
       IconSize        =   18
@@ -360,7 +360,7 @@ Begin VB.Form frmCuotasXFecha
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -382,7 +382,7 @@ Begin VB.Form frmCuotasXFecha
       Caption         =   "Alumnos"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -402,7 +402,7 @@ Begin VB.Form frmCuotasXFecha
       Caption         =   "Resta"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -431,7 +431,7 @@ Begin VB.Form frmCuotasXFecha
       Caption         =   "Deuda Total"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -460,7 +460,7 @@ Begin VB.Form frmCuotasXFecha
       Caption         =   "Hasta"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -480,7 +480,7 @@ Begin VB.Form frmCuotasXFecha
       Caption         =   "Desde"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -534,11 +534,9 @@ If DateDiff("m", Date, dtpDesde.Value) = 1 And DateDiff("m", Date, dtpHasta.Valu
         lblDeudaTotal.Caption = Format(total, "currency")
         lblResta.Caption = lblDeudaTotal.Caption
     End With
-
-    
     With rsCuotasXFecha
         If .State = 1 Then .Close
-        .Open "SELECT p.codalumno as Alumno,p.nrocuota as NÂ°, p.fechavto as Vencimiento, p.deudatotal as Deuda FROM plandepago as p INNER JOIN marcas as m on p.codalumno=m.codalumno WHERE fechavto>=#" & fecha1 & "# and fechavto<=#" & fecha2 & "# and cantidadcuotas=1 and pago=1 ORDER BY p.codalumno union SELECT p.codalumno as Alumno,p.nrocuota as NÂ°, p.fechavto as Vencimiento, p.deudatotal as Deuda FROM plandepago as p INNER JOIN alumnosdelmes as a on p.codalumno=a.codalumno WHERE fechavto>=#" & fecha1 & "# and fechavto<=#" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT p.codalumno as Alumno,p.nrocuota as N°, p.fechavto as Vencimiento, p.deudatotal as Deuda FROM plandepago as p INNER JOIN marcas as m on p.codalumno=m.codalumno WHERE fechavto>=#" & fecha1 & "# and fechavto<=#" & fecha2 & "# and cantidadcuotas=1 and pago=1 ORDER BY p.codalumno union SELECT p.codalumno as Alumno,p.nrocuota as N°, p.fechavto as Vencimiento, p.deudatotal as Deuda FROM plandepago as p INNER JOIN alumnosdelmes as a on p.codalumno=a.codalumno WHERE fechavto>=#" & fecha1 & "# and fechavto<=#" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
     End With
     
     lblTotalAlumnos.Caption = rsCuotasXFecha.RecordCount
@@ -556,11 +554,9 @@ Else
         .Open "SELECT sum(deudatotal) FROM plandepago as p,marcas as m WHERE fechavto>=#" & fecha1 & "# and fechavto<=#" & fecha2 & "# and nrocuota>1 and p.codalumno=m.codalumno and cuotasdebidas=1 and cantidadcuotas=1", Cn, adOpenDynamic, adLockPessimistic
         lblResta.Caption = Format(!expr1000, "currency")
     End With
-    
-    
     With rsCuotasXFecha
         If .State = 1 Then .Close
-        .Open "SELECT p.codalumno as Alumno,p.nrocuota as NÂ°, p.fechavto as Vencimiento, p.deudatotal as Deuda,M.fechacompromiso as Compromiso,M.LPA FROM plandepago as p, marcas as m WHERE fechavto>=#" & fecha1 & "# and fechavto<=#" & fecha2 & "# and deudatotal >0 and cantidadcuotas=1 and p.codalumno=m.codalumno ORDER BY p.codalumno", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT p.codalumno as Alumno,p.nrocuota as N°, p.fechavto as Vencimiento, p.deudatotal as Deuda,M.fechacompromiso as Compromiso,M.LPA FROM plandepago as p, marcas as m WHERE fechavto>=#" & fecha1 & "# and fechavto<=#" & fecha2 & "# and deudatotal >0 and cantidadcuotas=1 and p.codalumno=m.codalumno ORDER BY p.codalumno", Cn, adOpenDynamic, adLockPessimistic
     End With
 
     Set grilla.DataSource = rsCuotasXFecha

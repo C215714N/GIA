@@ -11,7 +11,7 @@ Begin VB.Form FrmBackup
    FillColor       =   &H80000005&
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   10
+      Size            =   9.75
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -24,7 +24,6 @@ Begin VB.Form FrmBackup
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
-   Picture         =   "FrmBackup.frx":9ED32
    ScaleHeight     =   3630
    ScaleWidth      =   5430
    Begin VB.CommandButton cmdSalir 
@@ -62,7 +61,7 @@ Begin VB.Form FrmBackup
    Begin VB.DirListBox Dir1 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -72,7 +71,7 @@ Begin VB.Form FrmBackup
       ForeColor       =   &H80000007&
       Height          =   2520
       Left            =   120
-      MouseIcon       =   "FrmBackup.frx":AD8E7
+      MouseIcon       =   "FrmBackup.frx":9ED32
       MousePointer    =   99  'Custom
       TabIndex        =   1
       ToolTipText     =   "Seleccionar Directorio de Destino"
@@ -102,47 +101,47 @@ Begin VB.Form FrmBackup
       BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
          NumListImages   =   11
          BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "FrmBackup.frx":ADBF1
+            Picture         =   "FrmBackup.frx":9F03C
             Key             =   ""
          EndProperty
          BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "FrmBackup.frx":ADFAE
+            Picture         =   "FrmBackup.frx":9F3F9
             Key             =   ""
          EndProperty
          BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "FrmBackup.frx":AE108
+            Picture         =   "FrmBackup.frx":9F553
             Key             =   ""
          EndProperty
          BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "FrmBackup.frx":AE262
+            Picture         =   "FrmBackup.frx":9F6AD
             Key             =   ""
          EndProperty
          BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "FrmBackup.frx":AE9B3
+            Picture         =   "FrmBackup.frx":9FDFE
             Key             =   ""
          EndProperty
          BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "FrmBackup.frx":AEB0D
+            Picture         =   "FrmBackup.frx":9FF58
             Key             =   ""
          EndProperty
          BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "FrmBackup.frx":AF0A7
+            Picture         =   "FrmBackup.frx":A04F2
             Key             =   ""
          EndProperty
          BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "FrmBackup.frx":AF201
+            Picture         =   "FrmBackup.frx":A064C
             Key             =   ""
          EndProperty
          BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "FrmBackup.frx":AF35B
+            Picture         =   "FrmBackup.frx":A07A6
             Key             =   ""
          EndProperty
          BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "FrmBackup.frx":AF470
+            Picture         =   "FrmBackup.frx":A08BB
             Key             =   ""
          EndProperty
          BeginProperty ListImage11 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "FrmBackup.frx":AF8C2
+            Picture         =   "FrmBackup.frx":A0D0D
             Key             =   ""
          EndProperty
       EndProperty
@@ -208,7 +207,7 @@ Begin VB.Form FrmBackup
       Caption         =   "Carpeta"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -229,7 +228,7 @@ Begin VB.Form FrmBackup
       Caption         =   "Unidad"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -249,7 +248,7 @@ Begin VB.Form FrmBackup
       Caption         =   "Seleccionar Disco de Destino"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -269,7 +268,7 @@ Begin VB.Form FrmBackup
       Caption         =   "Seleccionar Directorio"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

@@ -9,19 +9,19 @@ Begin VB.Form frmCuentas
    ClientTop       =   435
    ClientWidth     =   5190
    ForeColor       =   &H00E0E0E0&
+   Icon            =   "frmCuentas.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmCuentas.frx":0000
    ScaleHeight     =   2745
    ScaleWidth      =   5190
    Begin VB.Frame Frame1 
-      BackColor       =   &H00884400&
+      BackColor       =   &H00662200&
       Caption         =   "Buscar"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -38,7 +38,7 @@ Begin VB.Form frmCuentas
          Caption         =   "Cuenta"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -55,7 +55,7 @@ Begin VB.Form frmCuentas
          Caption         =   "Codigo"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -72,7 +72,7 @@ Begin VB.Form frmCuentas
    Begin VB.ComboBox cmbTipoCta 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -80,9 +80,9 @@ Begin VB.Form frmCuentas
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      ItemData        =   "frmCuentas.frx":7A1D
+      ItemData        =   "frmCuentas.frx":324A
       Left            =   120
-      List            =   "frmCuentas.frx":7A27
+      List            =   "frmCuentas.frx":3254
       Style           =   2  'Dropdown List
       TabIndex        =   2
       Top             =   2160
@@ -91,7 +91,7 @@ Begin VB.Form frmCuentas
    Begin VB.TextBox txtDetalle 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -108,7 +108,7 @@ Begin VB.Form frmCuentas
    Begin VB.TextBox txtNombreCuenta 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -130,7 +130,7 @@ Begin VB.Form frmCuentas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCuentas.frx":7A38
+      Icon            =   "frmCuentas.frx":3265
       Style           =   8
       Caption         =   "     Guardar"
       IconSize        =   18
@@ -143,7 +143,7 @@ Begin VB.Form frmCuentas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -159,7 +159,7 @@ Begin VB.Form frmCuentas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCuentas.frx":8312
+      Icon            =   "frmCuentas.frx":3B3F
       Style           =   8
       Caption         =   "     Cancelar"
       IconSize        =   18
@@ -172,7 +172,7 @@ Begin VB.Form frmCuentas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -188,7 +188,7 @@ Begin VB.Form frmCuentas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCuentas.frx":8BEC
+      Icon            =   "frmCuentas.frx":4419
       Style           =   8
       Caption         =   "     Nuevo"
       IconSize        =   18
@@ -203,7 +203,7 @@ Begin VB.Form frmCuentas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -219,7 +219,7 @@ Begin VB.Form frmCuentas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCuentas.frx":94C6
+      Icon            =   "frmCuentas.frx":4CF3
       Style           =   8
       Caption         =   "     Editar"
       IconSize        =   18
@@ -234,7 +234,7 @@ Begin VB.Form frmCuentas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -250,7 +250,7 @@ Begin VB.Form frmCuentas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCuentas.frx":9DA0
+      Icon            =   "frmCuentas.frx":55CD
       Style           =   8
       Caption         =   "     Volver"
       IconSize        =   18
@@ -265,7 +265,7 @@ Begin VB.Form frmCuentas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -278,7 +278,7 @@ Begin VB.Form frmCuentas
       Caption         =   "Tipo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -296,7 +296,7 @@ Begin VB.Form frmCuentas
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -314,7 +314,7 @@ Begin VB.Form frmCuentas
       Caption         =   "Detalle"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -333,7 +333,7 @@ Begin VB.Form frmCuentas
       Caption         =   "Cuenta"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -352,7 +352,7 @@ Begin VB.Form frmCuentas
       Caption         =   "Codigo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False

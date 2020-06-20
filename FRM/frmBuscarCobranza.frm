@@ -6,13 +6,13 @@ Begin VB.Form frmBuscarCobranza
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Buscar Alumno"
-   ClientHeight    =   4080
+   ClientHeight    =   4020
    ClientLeft      =   4545
    ClientTop       =   3405
-   ClientWidth     =   9405
+   ClientWidth     =   9360
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   10
+      Size            =   9.75
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -25,9 +25,8 @@ Begin VB.Form frmBuscarCobranza
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmBuscarCobranza.frx":324A
-   ScaleHeight     =   4080
-   ScaleWidth      =   9405
+   ScaleHeight     =   4020
+   ScaleWidth      =   9360
    Begin VB.TextBox txtBuscar 
       Height          =   360
       Left            =   120
@@ -72,7 +71,7 @@ Begin VB.Form frmBuscarCobranza
       Caption         =   ""
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -82,7 +81,7 @@ Begin VB.Form frmBuscarCobranza
       _Version        =   393216
    End
    Begin VB.OptionButton optBuscar 
-      BackColor       =   &H00884400&
+      BackColor       =   &H00662200&
       Caption         =   "Codigo"
       ForeColor       =   &H8000000F&
       Height          =   255
@@ -95,7 +94,7 @@ Begin VB.Form frmBuscarCobranza
       Width           =   1335
    End
    Begin VB.OptionButton optBuscar 
-      BackColor       =   &H00884400&
+      BackColor       =   &H00662200&
       Caption         =   "Nombre"
       ForeColor       =   &H8000000B&
       Height          =   255
@@ -123,7 +122,7 @@ Begin VB.Form frmBuscarCobranza
       RowDividerStyle =   0
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -182,7 +181,7 @@ Begin VB.Form frmBuscarCobranza
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmBuscarCobranza.frx":AC67
+      Icon            =   "frmBuscarCobranza.frx":324A
       Style           =   8
       Caption         =   "     Aceptar"
       IconSize        =   18
@@ -198,7 +197,7 @@ Begin VB.Form frmBuscarCobranza
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -214,7 +213,7 @@ Begin VB.Form frmBuscarCobranza
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmBuscarCobranza.frx":B541
+      Icon            =   "frmBuscarCobranza.frx":3B24
       Style           =   8
       Caption         =   "     Cancelar"
       IconSize        =   18
@@ -230,7 +229,7 @@ Begin VB.Form frmBuscarCobranza
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -260,7 +259,6 @@ Private Sub cmdAceptar_Click()
 LineaError:
     MsgBox "Debe realizar una busqueda", vbOKOnly + vbCritical, "Gestion Integral del Alumno"
     Exit Sub
-
 End Sub
 
 Private Sub cmdCancelar_Click()
@@ -275,6 +273,7 @@ Private Sub Form_Load()
     Adodc.CursorLocation = adUseClient
     Adodc.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=T:\base.mdb;Persist Security Info=False;Jet OLEDB:Database Password=ascir"
 End Sub
+
 
 Private Sub txtBuscar_Change()
     If txtBuscar.Text = "" Then
@@ -291,7 +290,7 @@ End Sub
 
 Sub BuscarCodigo()
     busca = UCase(Trim(txtBuscar.Text)) & "%"
-    Adodc.RecordSource = "SELECT codalumno as [Codigo], nya as [Nombre y Apellido], tipodoc as [Tipo],DNI as [NÂ°], capac as [Capacitacion] FROM verificaciones WHERE [codalumno] like '" & busca & "' ORDER BY codalumno"
+    Adodc.RecordSource = "SELECT codalumno as [Codigo], nya as [Nombre y Apellido], tipodoc as [Tipo],DNI as [N°], capac as [Capacitacion] FROM verificaciones WHERE [codalumno] like '" & busca & "' ORDER BY codalumno"
     Adodc.Refresh
     Set grilla.DataSource = Adodc
     formatoGrilla
@@ -299,7 +298,7 @@ End Sub
 
 Sub BuscarAlumno()
     busca = UCase(Trim(txtBuscar.Text)) & "%"
-    Adodc.RecordSource = "SELECT  codalumno as [Codigo], nya as [Nombre y Apellido], tipodoc as [Tipo],DNI as [NÂ°], capac as [Capacitacion] FROM verificaciones WHERE [nya] like '" & busca & "' ORDER BY nya"
+    Adodc.RecordSource = "SELECT  codalumno as [Codigo], nya as [Nombre y Apellido], tipodoc as [Tipo],DNI as [N°], capac as [Capacitacion] FROM verificaciones WHERE [nya] like '" & busca & "' ORDER BY nya"
     Adodc.Refresh
     Set grilla.DataSource = Adodc
     formatoGrilla

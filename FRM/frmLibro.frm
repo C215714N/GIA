@@ -15,7 +15,6 @@ Begin VB.Form frmLibro
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmLibro.frx":324A
    ScaleHeight     =   3433.613
    ScaleMode       =   0  'User
    ScaleWidth      =   9615
@@ -27,7 +26,7 @@ Begin VB.Form frmLibro
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmLibro.frx":AC67
+      Icon            =   "frmLibro.frx":324A
       Style           =   8
       Caption         =   "     Nuevo"
       IconSize        =   18
@@ -42,7 +41,7 @@ Begin VB.Form frmLibro
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -58,7 +57,7 @@ Begin VB.Form frmLibro
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmLibro.frx":B541
+      Icon            =   "frmLibro.frx":3B24
       Style           =   8
       Caption         =   "     Editar"
       IconSize        =   18
@@ -73,7 +72,7 @@ Begin VB.Form frmLibro
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -82,11 +81,11 @@ Begin VB.Form frmLibro
       EndProperty
    End
    Begin VB.Frame Frame2 
-      BackColor       =   &H00884400&
+      BackColor       =   &H00662200&
       Caption         =   "Temario"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -103,7 +102,7 @@ Begin VB.Form frmLibro
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -120,7 +119,7 @@ Begin VB.Form frmLibro
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -138,7 +137,7 @@ Begin VB.Form frmLibro
          Caption         =   "Tema de Clase"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -154,10 +153,10 @@ Begin VB.Form frmLibro
       End
       Begin VB.Label Label4 
          BackStyle       =   0  'Transparent
-         Caption         =   "Nï¿½ Clase"
+         Caption         =   "N° Clase"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -188,7 +187,7 @@ Begin VB.Form frmLibro
       AllowAddNew     =   -1  'True
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -240,11 +239,11 @@ Begin VB.Form frmLibro
       EndProperty
    End
    Begin VB.Frame Frame1 
-      BackColor       =   &H00884400&
+      BackColor       =   &H00662200&
       Caption         =   "Datos del Alumno"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -271,7 +270,7 @@ Begin VB.Form frmLibro
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -289,7 +288,7 @@ Begin VB.Form frmLibro
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -307,7 +306,7 @@ Begin VB.Form frmLibro
          Caption         =   "Capacitacion"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -326,7 +325,7 @@ Begin VB.Form frmLibro
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -344,7 +343,7 @@ Begin VB.Form frmLibro
          Caption         =   "Apellido y Nombre"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -363,7 +362,7 @@ Begin VB.Form frmLibro
          Caption         =   "Codigo"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -382,7 +381,7 @@ Begin VB.Form frmLibro
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -400,7 +399,7 @@ Begin VB.Form frmLibro
          Caption         =   "Fecha Inicio"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -419,7 +418,7 @@ Begin VB.Form frmLibro
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -437,7 +436,7 @@ Begin VB.Form frmLibro
          Caption         =   "Duracion:"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -460,7 +459,7 @@ Begin VB.Form frmLibro
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmLibro.frx":BE1B
+      Icon            =   "frmLibro.frx":43FE
       Style           =   8
       Caption         =   "     Aceptar"
       IconSize        =   18
@@ -475,7 +474,7 @@ Begin VB.Form frmLibro
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -491,7 +490,7 @@ Begin VB.Form frmLibro
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmLibro.frx":C6F5
+      Icon            =   "frmLibro.frx":4CD8
       Style           =   8
       Caption         =   "     Eliminar"
       IconSize        =   18
@@ -506,7 +505,7 @@ Begin VB.Form frmLibro
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -522,7 +521,7 @@ Begin VB.Form frmLibro
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmLibro.frx":CFCF
+      Icon            =   "frmLibro.frx":55B2
       Style           =   8
       Caption         =   "     Imprimir"
       IconSize        =   18
@@ -537,7 +536,7 @@ Begin VB.Form frmLibro
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -548,7 +547,7 @@ Begin VB.Form frmLibro
    Begin VB.Label lblFormulario 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -578,25 +577,25 @@ If ModiLibro = False Then
         If .State = 1 Then .Close
             .Open "SELECT * FROM LibroDeAula", Cn, adOpenDynamic, adLockPessimistic
             .AddNew
-            !CodAlumno = Int(lblCodalumno.Caption)
+            !CodAlumno = Int(lblCodAlumno.Caption)
             !numclase = Int(txtNumClase.Text)
             !Tema = txtTema.Text
             !fecha = Date
             .Update
             .Close
-            .Open "SELECT numClase as [NÂ°],Fecha,Tema FROM librodeaula WHERE codalumno=" & CodAlumno & " ORDER BY NumClase", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT numClase as [N°],Fecha,Tema FROM librodeaula WHERE codalumno=" & CodAlumno & " ORDER BY NumClase", Cn, adOpenDynamic, adLockPessimistic
     End With
 Else
     With rsLibro
         fecha = Format(Label10.Caption, "mm/dd/yyyy")
         .Close
-        .Open "SELECT numClase as [NÂ°],Fecha,Tema FROM librodeaula WHERE codalumno=" & CodAlumno & " and fecha=#" & fecha & "#", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT numClase as [N°],Fecha,Tema FROM librodeaula WHERE codalumno=" & CodAlumno & " and fecha=#" & fecha & "#", Cn, adOpenDynamic, adLockPessimistic
         .MoveFirst
-            !NÂ° = Int(txtNumClase.Text)
+            !N° = Int(txtNumClase.Text)
             !Tema = txtTema.Text
             .UpdateBatch
             .Close
-            .Open "SELECT numClase as [NÂ°],Fecha,Tema FROM librodeaula WHERE codalumno=" & CodAlumno & " ORDER BY NumClase", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT numClase as [N°],Fecha,Tema FROM librodeaula WHERE codalumno=" & CodAlumno & " ORDER BY NumClase", Cn, adOpenDynamic, adLockPessimistic
     End With
 End If
 
@@ -619,12 +618,12 @@ Private Sub cmdEliminar_Click()
     fecha = Format(Label10.Caption, "mm/dd/yyyy")
     With rsLibro
         .Close
-        .Open "SELECT numClase as [NÂ°],Fecha,Tema FROM librodeaula WHERE codalumno=" & CodAlumno & " and numclase=" & Int(txtNumClase.Text) & " and fecha=#" & fecha & "#", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT numClase as [N°],Fecha,Tema FROM librodeaula WHERE codalumno=" & CodAlumno & " and numclase=" & Int(txtNumClase.Text) & " and fecha=#" & fecha & "#", Cn, adOpenDynamic, adLockPessimistic
         .MoveFirst
         .Delete
         .Requery
         .Close
-        .Open "SELECT numClase as [NÂ°],Fecha,Tema FROM librodeaula WHERE codalumno=" & CodAlumno & " ORDER BY NumClase", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT numClase as [N°],Fecha,Tema FROM librodeaula WHERE codalumno=" & CodAlumno & " ORDER BY NumClase", Cn, adOpenDynamic, adLockPessimistic
     End With
     
     Set grilla.DataSource = rsLibro

@@ -15,13 +15,12 @@ Begin VB.Form frmNuevoCheque
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmNuevoCheque.frx":324A
    ScaleHeight     =   1485
    ScaleWidth      =   5910
    Begin VB.ComboBox cmbFirma 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -29,9 +28,9 @@ Begin VB.Form frmNuevoCheque
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      ItemData        =   "frmNuevoCheque.frx":AC67
+      ItemData        =   "frmNuevoCheque.frx":324A
       Left            =   3000
-      List            =   "frmNuevoCheque.frx":AC6E
+      List            =   "frmNuevoCheque.frx":3251
       Sorted          =   -1  'True
       Style           =   2  'Dropdown List
       TabIndex        =   4
@@ -41,7 +40,7 @@ Begin VB.Form frmNuevoCheque
    Begin VB.TextBox txtMonto 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -57,7 +56,7 @@ Begin VB.Form frmNuevoCheque
    Begin VB.TextBox txtNroCheque 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -73,7 +72,7 @@ Begin VB.Form frmNuevoCheque
    Begin VB.TextBox txtDestinatario 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -97,14 +96,14 @@ Begin VB.Form frmNuevoCheque
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   198443009
+      Format          =   92078081
       CurrentDate     =   41782
    End
    Begin isButtonTest.isButton cmdAgregar 
@@ -115,7 +114,7 @@ Begin VB.Form frmNuevoCheque
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmNuevoCheque.frx":AC7A
+      Icon            =   "frmNuevoCheque.frx":325D
       Style           =   8
       Caption         =   "     Aceptar"
       IconSize        =   18
@@ -128,7 +127,7 @@ Begin VB.Form frmNuevoCheque
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -144,7 +143,7 @@ Begin VB.Form frmNuevoCheque
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmNuevoCheque.frx":B554
+      Icon            =   "frmNuevoCheque.frx":3B37
       Style           =   8
       Caption         =   "     Cancelar"
       IconSize        =   18
@@ -157,7 +156,7 @@ Begin VB.Form frmNuevoCheque
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -170,7 +169,7 @@ Begin VB.Form frmNuevoCheque
       Caption         =   "Firma"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -189,7 +188,7 @@ Begin VB.Form frmNuevoCheque
       Caption         =   "Monto"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -205,10 +204,10 @@ Begin VB.Form frmNuevoCheque
    End
    Begin VB.Label Label3 
       BackStyle       =   0  'Transparent
-      Caption         =   "NÂ° Cheque"
+      Caption         =   "N° Cheque"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -227,7 +226,7 @@ Begin VB.Form frmNuevoCheque
       Caption         =   "Destinatario"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -246,7 +245,7 @@ Begin VB.Form frmNuevoCheque
       Caption         =   "Fecha Pago"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -277,7 +276,7 @@ Private Sub cmdAgregar_Click()
         .Open "SELECT * FROM cheques", Cn, adOpenDynamic, adLockPessimistic
         .Requery
         .AddNew
-        !fecha = dtpFecha.Value
+        !fecha = DTPFecha.Value
         !destinatario = txtDestinatario.Text
         !numerocheque = txtNroCheque.Text
         !monto = txtMonto.Text
@@ -305,7 +304,7 @@ End Sub
 
 Private Sub Form_Load()
     Centrar Me
-    dtpFecha.Value = Date
+    DTPFecha.Value = Date
 End Sub
 
 Private Sub txtDestinatario_KeyPress(KeyAscii As Integer)

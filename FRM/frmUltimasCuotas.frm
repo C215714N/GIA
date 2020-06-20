@@ -15,7 +15,6 @@ Begin VB.Form frmUltimasCuotas
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmUltimasCuotas.frx":324A
    ScaleHeight     =   4215
    ScaleWidth      =   5790
    Begin isButtonTest.isButton cmdBuscar 
@@ -26,7 +25,7 @@ Begin VB.Form frmUltimasCuotas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmUltimasCuotas.frx":AC67
+      Icon            =   "frmUltimasCuotas.frx":324A
       Style           =   8
       Caption         =   "     Buscar"
       IconSize        =   18
@@ -39,7 +38,7 @@ Begin VB.Form frmUltimasCuotas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -61,7 +60,7 @@ Begin VB.Form frmUltimasCuotas
       RowHeight       =   20
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -70,7 +69,7 @@ Begin VB.Form frmUltimasCuotas
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -117,7 +116,7 @@ Begin VB.Form frmUltimasCuotas
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -137,7 +136,7 @@ Begin VB.Form frmUltimasCuotas
       Caption         =   "Deuda Total"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

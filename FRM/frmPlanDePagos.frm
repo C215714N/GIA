@@ -5,7 +5,7 @@ Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
 Begin VB.Form frmPlanDePagos 
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "Plan de Pagos"
+   Caption         =   "Plan de Pago"
    ClientHeight    =   5175
    ClientLeft      =   6855
    ClientTop       =   2160
@@ -16,7 +16,6 @@ Begin VB.Form frmPlanDePagos
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmPlanDePagos.frx":324A
    ScaleHeight     =   5129.738
    ScaleMode       =   0  'User
    ScaleWidth      =   4485
@@ -25,7 +24,7 @@ Begin VB.Form frmPlanDePagos
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -64,7 +63,7 @@ Begin VB.Form frmPlanDePagos
       Alignment       =   1  'Right Justify
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -81,7 +80,7 @@ Begin VB.Form frmPlanDePagos
       Alignment       =   1  'Right Justify
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -105,21 +104,21 @@ Begin VB.Form frmPlanDePagos
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   130154497
+      Format          =   92733441
       CurrentDate     =   41323
    End
    Begin VB.TextBox txtNroCuota 
       Alignment       =   1  'Right Justify
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -144,14 +143,14 @@ Begin VB.Form frmPlanDePagos
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   130154497
+      Format          =   92733441
       CurrentDate     =   41323
    End
    Begin isButtonTest.isButton cmdCrearPlan 
@@ -162,7 +161,7 @@ Begin VB.Form frmPlanDePagos
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmPlanDePagos.frx":11DFF
+      Icon            =   "frmPlanDePagos.frx":324A
       Style           =   8
       Caption         =   "     Asignar"
       IconSize        =   18
@@ -177,7 +176,7 @@ Begin VB.Form frmPlanDePagos
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -193,7 +192,7 @@ Begin VB.Form frmPlanDePagos
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmPlanDePagos.frx":126D9
+      Icon            =   "frmPlanDePagos.frx":3B24
       Style           =   8
       Caption         =   "     Volver"
       IconSize        =   18
@@ -208,7 +207,7 @@ Begin VB.Form frmPlanDePagos
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -222,7 +221,7 @@ Begin VB.Form frmPlanDePagos
       Caption         =   "Cuotas"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -240,7 +239,7 @@ Begin VB.Form frmPlanDePagos
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -258,7 +257,7 @@ Begin VB.Form frmPlanDePagos
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -277,7 +276,7 @@ Begin VB.Form frmPlanDePagos
       Caption         =   "Deuda $"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -293,10 +292,10 @@ Begin VB.Form frmPlanDePagos
    End
    Begin VB.Label Label2 
       BackStyle       =   0  'Transparent
-      Caption         =   "Fecha Vto"
+      Caption         =   "Vencimiento"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -316,7 +315,7 @@ Begin VB.Form frmPlanDePagos
       Caption         =   "Cuota"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -342,7 +341,7 @@ Private Sub cmdCrearPlan_Click()
     grilla.Rows = 2
     grilla.Col = 0
     grilla.Row = 0
-    grilla.Text = "NÂ° de Cuota"
+    grilla.Text = "N° de Cuota"
     grilla.Col = 1
     grilla.Text = "Fecha de Vencimiento"
     grilla.Col = 2
@@ -356,7 +355,7 @@ Private Sub cmdCrearPlan_Click()
             .Requery
             .AddNew
             !CodAlumno = lblCodAlumno.Caption
-            !NyA = lblNyA.Caption
+            !NyA = lblNya.Caption
             !NroCuota = NroCuota
             If NroCuota = 1 Then
                 !fechavto = DTPFechaVto.Value
@@ -430,7 +429,7 @@ Private Sub Form_Load()
     Centrar Me
     PlanDePago
     lblCodAlumno.Caption = frmVerificaciones.lblCodAlumno.Caption
-    lblNyA.Caption = frmVerificaciones.txtNya.Text
+    lblNya.Caption = frmVerificaciones.txtNya.Text
     txtTotalCuotas.Text = frmVerificaciones.txtTotalCuotas.Text
     txtNroCuota.Locked = True
     txtDeuda.Text = Val(frmVerificaciones.txtTotalCurso.Text) / Val(txtTotalCuotas.Text)

@@ -7,10 +7,10 @@ Begin VB.Form frmComisionCuota
    ClientHeight    =   3060
    ClientLeft      =   45
    ClientTop       =   435
-   ClientWidth     =   5475
+   ClientWidth     =   5430
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   10
+      Size            =   9.75
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -23,15 +23,14 @@ Begin VB.Form frmComisionCuota
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmComisionCuota.frx":324A
    ScaleHeight     =   3060
-   ScaleWidth      =   5475
+   ScaleWidth      =   5430
    Begin VB.Frame Frame6 
       BackColor       =   &H00662200&
       Caption         =   "Totales"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -52,7 +51,7 @@ Begin VB.Form frmComisionCuota
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmComisionCuota.frx":11DFF
+         Icon            =   "frmComisionCuota.frx":324A
          Style           =   8
          Caption         =   "     Aceptar"
          IconSize        =   18
@@ -67,7 +66,7 @@ Begin VB.Form frmComisionCuota
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -134,11 +133,11 @@ Begin VB.Form frmComisionCuota
       End
    End
    Begin VB.Frame Frame2 
-      BackColor       =   &H00884400&
+      BackColor       =   &H00662200&
       Caption         =   "Comisiones"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -152,11 +151,11 @@ Begin VB.Form frmComisionCuota
       Top             =   0
       Width           =   3555
       Begin VB.Frame Frame4 
-         BackColor       =   &H00884400&
-         Caption         =   "N� Factura"
+         BackColor       =   &H00662200&
+         Caption         =   "N� Factura"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -178,11 +177,11 @@ Begin VB.Form frmComisionCuota
          End
       End
       Begin VB.Frame Frame3 
-         BackColor       =   &H00884400&
-         Caption         =   "Pago 1� Cuota"
+         BackColor       =   &H00662200&
+         Caption         =   "Pago 1� Cuota"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -235,11 +234,11 @@ Begin VB.Form frmComisionCuota
          End
       End
       Begin VB.Frame Frame1 
-         BackColor       =   &H00884400&
+         BackColor       =   &H00662200&
          Caption         =   "Coordinador"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -262,11 +261,11 @@ Begin VB.Form frmComisionCuota
          End
       End
       Begin VB.Frame Frame5 
-         BackColor       =   &H00884400&
+         BackColor       =   &H00662200&
          Caption         =   "Asesor"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -312,7 +311,7 @@ Begin VB.Form frmComisionCuota
             Caption         =   "%"
             BeginProperty Font 
                Name            =   "Century Gothic"
-               Size            =   10
+               Size            =   9.75
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -362,10 +361,10 @@ Private Sub cmdAceptar_Click()
         If .State = 1 Then .Close
         .Open "SELECT * FROM contabilidad", Cn, adOpenDynamic, adLockPessimistic
     ''' Movimientos de Caja
-        '''CAJA ADMINISTRACION (Parcial 1° Cuota - DEBE)
+        '''CAJA ADMINISTRAcion (Parcial 1° Cuota - DEBE)
             .AddNew
             !fecha = Date
-            !cuenta = "CAJA ADMINISTRACION"
+            !cuenta = "CAJA ADMINISTRAcion"
             !Detalle = "Parcial de 1° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
             !Debe = Int(lblTotalCuota1.Caption) - Int(txtPagoParcial.Text)
             !Haber = Null
@@ -395,11 +394,11 @@ Private Sub cmdAceptar_Click()
             !CodAlumno = Null
             !NroCuota = Null
             .Update
-        '''CAJA ADMINISTRACION (Comision 1° Cuota - HABER)
+        '''CAJA ADMINISTRAcion (Comision 1° Cuota - HABER)
             .Requery
             .AddNew
             !fecha = Date
-            !cuenta = "CAJA ADMINISTRACION"
+            !cuenta = "CAJA ADMINISTRAcion"
             !Detalle = "Comision Coord. 1° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
             !Debe = Null
             !Haber = Int(txtCoordinador.Text)
@@ -417,11 +416,11 @@ Private Sub cmdAceptar_Click()
             !CodAlumno = Null
             !NroCuota = Null
             .Update
-        '''CAJA ADMINISTRACION (Comision 1° Cuota - HABER)
+        '''CAJA ADMINISTRAcion (Comision 1° Cuota - HABER)
             .Requery
             .AddNew
             !fecha = Date
-            !cuenta = "CAJA ADMINISTRACION"
+            !cuenta = "CAJA ADMINISTRAcion"
             !Detalle = "Comision de 1° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
             !Debe = Null
             !Haber = Int(lblComisionAsesor.Caption)

@@ -14,13 +14,12 @@ Begin VB.Form frmEquipos
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmEquipos.frx":324A
    ScaleHeight     =   1185
    ScaleWidth      =   2550
    Begin VB.TextBox txtPCs 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -41,7 +40,7 @@ Begin VB.Form frmEquipos
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmEquipos.frx":AC67
+      Icon            =   "frmEquipos.frx":324A
       Style           =   8
       Caption         =   "     Aceptar"
       IconSize        =   18
@@ -54,7 +53,7 @@ Begin VB.Form frmEquipos
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -70,7 +69,7 @@ Begin VB.Form frmEquipos
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmEquipos.frx":B541
+      Icon            =   "frmEquipos.frx":3B24
       Style           =   8
       Caption         =   "     Cancelar"
       IconSize        =   18
@@ -83,7 +82,7 @@ Begin VB.Form frmEquipos
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -96,7 +95,7 @@ Begin VB.Form frmEquipos
       Caption         =   "Cant."
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

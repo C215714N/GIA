@@ -5,13 +5,14 @@ Begin VB.Form frmAuditoria
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Auditoria"
-   ClientHeight    =   5265
+   ClientHeight    =   5130
    ClientLeft      =   45
    ClientTop       =   435
    ClientWidth     =   3225
+   FillStyle       =   7  'Diagonal Cross
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   10
+      Size            =   9.75
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -24,15 +25,14 @@ Begin VB.Form frmAuditoria
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmAuditoria.frx":324A
-   ScaleHeight     =   5265
+   ScaleHeight     =   5130
    ScaleWidth      =   3225
    Begin VB.Frame Frame2 
-      BackColor       =   &H00884400&
+      BackColor       =   &H00662200&
       Caption         =   "Restantes"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -40,7 +40,7 @@ Begin VB.Form frmAuditoria
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H8000000F&
-      Height          =   3615
+      Height          =   3495
       Left            =   120
       TabIndex        =   4
       Top             =   960
@@ -104,11 +104,11 @@ Begin VB.Form frmAuditoria
       Height          =   420
       Left            =   1680
       TabIndex        =   3
-      Top             =   4680
+      Top             =   4560
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmAuditoria.frx":11DFF
+      Icon            =   "frmAuditoria.frx":324A
       Style           =   8
       Caption         =   "     Agregar"
       IconSize        =   18
@@ -121,7 +121,7 @@ Begin VB.Form frmAuditoria
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -130,11 +130,11 @@ Begin VB.Form frmAuditoria
       EndProperty
    End
    Begin VB.Frame Frame1 
-      BackColor       =   &H00884400&
+      BackColor       =   &H00662200&
       Caption         =   "Actualzar"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -162,7 +162,7 @@ Begin VB.Form frmAuditoria
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmAuditoria.frx":126D9
+         Icon            =   "frmAuditoria.frx":3B24
          Style           =   8
          Caption         =   "     Cargar"
          IconSize        =   18
@@ -175,7 +175,7 @@ Begin VB.Form frmAuditoria
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -207,21 +207,21 @@ Begin VB.Form frmAuditoria
       Height          =   375
       Left            =   240
       TabIndex        =   10
-      Top             =   4680
+      Top             =   4560
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   661
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   198443009
+      Format          =   91947009
       CurrentDate     =   42492
    End
 End
@@ -288,7 +288,7 @@ Private Sub cmdActualizar_Click()
 End Sub
 
 Private Sub cmdAgregar_Click()
-    If MsgBox("ï¿½Esta seguro que desea agregar estos codigos a la tabla MARCAS?", vbQuestion + vbYesNo, "GIA") = vbYes Then
+    If MsgBox("¿Esta seguro que desea agregar estos codigos a la tabla MARCAS?", vbQuestion + vbYesNo, "GIA") = vbYes Then
             With rsActualizarMarcas
                 If .State = 1 Then .Close
                 .Open "SELECT * FROM marcas", Cn, adOpenDynamic, adLockPessimistic

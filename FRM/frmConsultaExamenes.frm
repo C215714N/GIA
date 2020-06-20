@@ -12,7 +12,7 @@ Begin VB.Form frmConsultaExamenes
    ClientWidth     =   6135
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   10
+      Size            =   9.75
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -20,11 +20,11 @@ Begin VB.Form frmConsultaExamenes
       Strikethrough   =   0   'False
    EndProperty
    ForeColor       =   &H00E0E0E0&
+   Icon            =   "frmConsultaExamenes.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmConsultaExamenes.frx":0000
    ScaleHeight     =   4380
    ScaleWidth      =   6135
    Begin MSDataGridLib.DataGrid grilla 
@@ -41,7 +41,7 @@ Begin VB.Form frmConsultaExamenes
       RowHeight       =   21
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -97,7 +97,7 @@ Begin VB.Form frmConsultaExamenes
       Caption         =   "Busqueda"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -144,14 +144,14 @@ Begin VB.Form frmConsultaExamenes
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   92143617
+         Format          =   92078081
          CurrentDate     =   41978
       End
       Begin MSComCtl2.DTPicker dtpDesde 
@@ -165,14 +165,14 @@ Begin VB.Form frmConsultaExamenes
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   92143617
+         Format          =   92078081
          CurrentDate     =   41978
       End
       Begin isButtonTest.isButton cmdConsultar 
@@ -183,7 +183,7 @@ Begin VB.Form frmConsultaExamenes
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmConsultaExamenes.frx":7A1D
+         Icon            =   "frmConsultaExamenes.frx":324A
          Style           =   8
          Caption         =   "     Consultar"
          IconSize        =   18
@@ -198,7 +198,7 @@ Begin VB.Form frmConsultaExamenes
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -214,7 +214,7 @@ Begin VB.Form frmConsultaExamenes
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmConsultaExamenes.frx":82F7
+         Icon            =   "frmConsultaExamenes.frx":3B24
          Style           =   8
          Caption         =   "     Imprimir"
          IconSize        =   18
@@ -229,7 +229,7 @@ Begin VB.Form frmConsultaExamenes
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -245,7 +245,7 @@ Begin VB.Form frmConsultaExamenes
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmConsultaExamenes.frx":8BD1
+         Icon            =   "frmConsultaExamenes.frx":43FE
          Style           =   8
          Caption         =   "     Diploma"
          IconSize        =   18
@@ -260,7 +260,7 @@ Begin VB.Form frmConsultaExamenes
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -276,7 +276,7 @@ Begin VB.Form frmConsultaExamenes
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmConsultaExamenes.frx":90CB
+         Icon            =   "frmConsultaExamenes.frx":48F8
          Style           =   8
          Caption         =   "     Exportar"
          IconSize        =   18
@@ -291,7 +291,7 @@ Begin VB.Form frmConsultaExamenes
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -304,7 +304,7 @@ Begin VB.Form frmConsultaExamenes
          Caption         =   "0 Alumnos"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -324,7 +324,7 @@ Begin VB.Form frmConsultaExamenes
          Caption         =   "Hasta"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -344,7 +344,7 @@ Begin VB.Form frmConsultaExamenes
          Caption         =   "Desde"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False

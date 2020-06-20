@@ -14,15 +14,14 @@ Begin VB.Form frmStatus
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmStatus.frx":324A
    ScaleHeight     =   3405
    ScaleWidth      =   3615
    Begin VB.Frame Frame1 
-      BackColor       =   &H00884400&
+      BackColor       =   &H00662200&
       Caption         =   "Status"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -43,7 +42,7 @@ Begin VB.Form frmStatus
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmStatus.frx":AC67
+         Icon            =   "frmStatus.frx":324A
          Style           =   8
          Caption         =   "     Detalles"
          IconSize        =   18
@@ -58,7 +57,7 @@ Begin VB.Form frmStatus
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -71,7 +70,7 @@ Begin VB.Form frmStatus
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -89,7 +88,7 @@ Begin VB.Form frmStatus
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -107,7 +106,7 @@ Begin VB.Form frmStatus
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -125,7 +124,7 @@ Begin VB.Form frmStatus
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -144,7 +143,7 @@ Begin VB.Form frmStatus
          Caption         =   "Ultimo Alumno en Cartera: "
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -164,7 +163,7 @@ Begin VB.Form frmStatus
          Caption         =   "Ultimo Alumno con P.Pago: "
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -184,7 +183,7 @@ Begin VB.Form frmStatus
          Caption         =   "Ultimo Alumno en Cartera: "
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -204,7 +203,7 @@ Begin VB.Form frmStatus
          Caption         =   "Nuevos Alumnos en Cartera: "
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False

@@ -16,14 +16,13 @@ Begin VB.Form frmBuscarPersonal
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmBuscarPersonal.frx":324A
    ScaleHeight     =   3029.557
    ScaleMode       =   0  'User
    ScaleWidth      =   7110
    Begin VB.TextBox txtBuscar 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -73,7 +72,7 @@ Begin VB.Form frmBuscarPersonal
       Caption         =   "Adodc1"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -98,7 +97,7 @@ Begin VB.Form frmBuscarPersonal
       RowDividerStyle =   0
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -157,7 +156,7 @@ Begin VB.Form frmBuscarPersonal
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmBuscarPersonal.frx":AC67
+      Icon            =   "frmBuscarPersonal.frx":324A
       Style           =   8
       Caption         =   "     Aceptar"
       IconSize        =   18
@@ -173,7 +172,7 @@ Begin VB.Form frmBuscarPersonal
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -189,7 +188,7 @@ Begin VB.Form frmBuscarPersonal
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmBuscarPersonal.frx":B541
+      Icon            =   "frmBuscarPersonal.frx":3B24
       Style           =   8
       Caption         =   "     Cancelar"
       IconSize        =   18
@@ -205,7 +204,7 @@ Begin VB.Form frmBuscarPersonal
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -219,7 +218,7 @@ Begin VB.Form frmBuscarPersonal
       Caption         =   "Buscar Empleado"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

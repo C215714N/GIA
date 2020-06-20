@@ -12,32 +12,32 @@ Begin VB.Form frmCobranza
    ClientLeft      =   4065
    ClientTop       =   1455
    ClientWidth     =   5715
+   FillStyle       =   7  'Diagonal Cross
    ForeColor       =   &H00E0E0E0&
    Icon            =   "frmCobranza.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmCobranza.frx":324A
    ScaleHeight     =   5385
    ScaleWidth      =   5715
    Begin RichTextLib.RichTextBox txtObservaciones 
-      Height          =   855
+      Height          =   975
       Left            =   120
       TabIndex        =   18
-      Top             =   4320
+      Top             =   4200
       Width           =   3975
       _ExtentX        =   7011
-      _ExtentY        =   1508
+      _ExtentY        =   1720
       _Version        =   393217
-      BorderStyle     =   0
-      Enabled         =   -1  'True
-      TextRTF         =   $"frmCobranza.frx":11DFF
+      Appearance      =   0
+      AutoVerbMenu    =   -1  'True
+      TextRTF         =   $"frmCobranza.frx":324A
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
@@ -81,7 +81,7 @@ Begin VB.Form frmCobranza
       Caption         =   "Adodc1"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -105,7 +105,7 @@ Begin VB.Form frmCobranza
       RowDividerStyle =   0
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -161,7 +161,7 @@ Begin VB.Form frmCobranza
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -185,14 +185,14 @@ Begin VB.Form frmCobranza
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   92405761
+      Format          =   91750401
       CurrentDate     =   41326
    End
    Begin VB.TextBox txtFechaVto 
@@ -200,7 +200,7 @@ Begin VB.Form frmCobranza
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -218,7 +218,7 @@ Begin VB.Form frmCobranza
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -239,7 +239,7 @@ Begin VB.Form frmCobranza
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCobranza.frx":11E83
+      Icon            =   "frmCobranza.frx":32D0
       Style           =   8
       Caption         =   "     Derechos"
       IconSize        =   18
@@ -252,7 +252,7 @@ Begin VB.Form frmCobranza
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -268,7 +268,7 @@ Begin VB.Form frmCobranza
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCobranza.frx":1275D
+      Icon            =   "frmCobranza.frx":3BAA
       Style           =   8
       Caption         =   "     Manuales"
       IconSize        =   18
@@ -281,7 +281,7 @@ Begin VB.Form frmCobranza
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -297,7 +297,7 @@ Begin VB.Form frmCobranza
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCobranza.frx":13037
+      Icon            =   "frmCobranza.frx":4484
       Style           =   8
       Caption         =   "     Volver"
       IconSize        =   18
@@ -310,7 +310,7 @@ Begin VB.Form frmCobranza
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -326,7 +326,7 @@ Begin VB.Form frmCobranza
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCobranza.frx":13911
+      Icon            =   "frmCobranza.frx":4D5E
       Style           =   8
       Caption         =   "     Abonar"
       IconSize        =   18
@@ -339,7 +339,7 @@ Begin VB.Form frmCobranza
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -352,7 +352,7 @@ Begin VB.Form frmCobranza
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -369,7 +369,7 @@ Begin VB.Form frmCobranza
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -387,7 +387,7 @@ Begin VB.Form frmCobranza
       Caption         =   "Alumno"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -406,7 +406,7 @@ Begin VB.Form frmCobranza
       Caption         =   "Codigo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -425,7 +425,7 @@ Begin VB.Form frmCobranza
       Caption         =   "Observaciones"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -436,7 +436,7 @@ Begin VB.Form frmCobranza
       Height          =   255
       Left            =   120
       TabIndex        =   11
-      Top             =   4080
+      Top             =   3960
       Width           =   1455
    End
    Begin VB.Label Label4 
@@ -444,7 +444,7 @@ Begin VB.Form frmCobranza
       Caption         =   "Adeuda $"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -463,7 +463,7 @@ Begin VB.Form frmCobranza
       Caption         =   "Fecha de Pago"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -482,7 +482,7 @@ Begin VB.Form frmCobranza
       Caption         =   "Vencimiento"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -501,7 +501,7 @@ Begin VB.Form frmCobranza
       Caption         =   "Cuota"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -546,7 +546,7 @@ Private Sub Form_Load()
     PlanDePago
     Adodc.CursorLocation = adUseClient
     Adodc.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=T:\base.mdb;Persist Security Info=False;Jet OLEDB:Database Password=ascir"
-    Adodc.RecordSource = "SELECT id, codalumno, nya, nrocuota as [NÂ°], fechavto as [Vencimiento], fechapago As [Fecha Pago], tipodepago, recibo, deuda As Monto, recargoxfecha, recargoxmes, deudatotal, totalcobrado, cuotasdebidas, observaciones, campo1, campo2 FROM plandepago WHERE codalumno =" & frmBuscarCobranza.grilla.Columns(0).Text & " ORDER BY nrocuota"
+    Adodc.RecordSource = "SELECT id, codalumno, nya, nrocuota as [N°], fechavto as [Vencimiento], fechapago As [Fecha Pago], tipodepago, recibo, deuda As Monto, recargoxfecha, recargoxmes, deudatotal, totalcobrado, cuotasdebidas, observaciones, campo1, campo2 FROM plandepago WHERE codalumno =" & frmBuscarCobranza.grilla.Columns(0).Text & " ORDER BY nrocuota"
     Adodc.Refresh
     Set grilla.DataSource = Adodc
     formatoGrilla

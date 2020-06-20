@@ -16,7 +16,6 @@ Begin VB.Form frmLibroArmado
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmLibroArmado.frx":324A
    ScaleHeight     =   4080
    ScaleWidth      =   4515
    Begin MSDataGridLib.DataGrid Grilla 
@@ -33,7 +32,7 @@ Begin VB.Form frmLibroArmado
       RowHeight       =   21
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -97,7 +96,7 @@ Begin VB.Form frmLibroArmado
       Text            =   "DataCombo1"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -113,7 +112,7 @@ Begin VB.Form frmLibroArmado
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmLibroArmado.frx":AC67
+      Icon            =   "frmLibroArmado.frx":324A
       Style           =   8
       Caption         =   "     Buscar"
       IconSize        =   18
@@ -126,7 +125,7 @@ Begin VB.Form frmLibroArmado
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -146,7 +145,7 @@ Begin VB.Form frmLibroArmado
       Caption         =   "Dia y Horario"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -231,7 +230,7 @@ Private Sub grilla_DblClick()
 
     With rsLibro
         If .State = 1 Then .Close
-        .Open "SELECT numClase as [NÂ°],Fecha,Tema FROM librodeaula WHERE codalumno=" & CodAlumno & " ORDER BY NumClase", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT numClase as [N°],Fecha,Tema FROM librodeaula WHERE codalumno=" & CodAlumno & " ORDER BY NumClase", Cn, adOpenDynamic, adLockPessimistic
     End With
     
     Set frmLibro.grilla.DataSource = rsLibro

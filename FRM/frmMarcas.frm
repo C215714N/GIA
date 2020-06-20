@@ -17,7 +17,6 @@ Begin VB.Form frmMarcas
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmMarcas.frx":324A
    ScaleHeight     =   5670
    ScaleWidth      =   5745
    Begin MSAdodcLib.Adodc Adodc 
@@ -58,7 +57,7 @@ Begin VB.Form frmMarcas
       Caption         =   "Adodc1"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -83,7 +82,7 @@ Begin VB.Form frmMarcas
       RowDividerStyle =   0
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -135,11 +134,11 @@ Begin VB.Form frmMarcas
       EndProperty
    End
    Begin VB.Frame Frame1 
-      BackColor       =   &H00884400&
+      BackColor       =   &H00662200&
       Caption         =   "Busqueda"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -152,6 +151,35 @@ Begin VB.Form frmMarcas
       TabIndex        =   5
       Top             =   0
       Width           =   5535
+      Begin isButtonTest.isButton cmdBuscar 
+         Height          =   420
+         Left            =   4080
+         TabIndex        =   14
+         Top             =   450
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   741
+         Icon            =   "frmMarcas.frx":324A
+         Style           =   8
+         Caption         =   "     Buscar"
+         IconSize        =   18
+         IconAlign       =   1
+         CaptionAlign    =   1
+         iNonThemeStyle  =   0
+         Tooltiptitle    =   ""
+         ToolTipIcon     =   0
+         ToolTipType     =   0
+         ttForeColor     =   0
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Century Gothic"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+      End
       Begin MSComCtl2.DTPicker dtpHasta 
          Height          =   360
          Left            =   1560
@@ -163,14 +191,14 @@ Begin VB.Form frmMarcas
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   130154497
+         Format          =   91750401
          CurrentDate     =   41345
       End
       Begin MSComCtl2.DTPicker dtpDesde 
@@ -184,22 +212,22 @@ Begin VB.Form frmMarcas
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   130154497
+         Format          =   91750401
          CurrentDate     =   41345
       End
       Begin VB.CheckBox chkAbona 
-         BackColor       =   &H00884400&
+         BackColor       =   &H00662200&
          Caption         =   "Abona"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -211,14 +239,14 @@ Begin VB.Form frmMarcas
          Left            =   3000
          TabIndex        =   4
          Top             =   600
-         Width           =   1095
+         Width           =   1200
       End
       Begin VB.CheckBox chkPasa 
-         BackColor       =   &H00884400&
+         BackColor       =   &H00662200&
          Caption         =   "Pasa"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -230,14 +258,14 @@ Begin VB.Form frmMarcas
          Left            =   3000
          TabIndex        =   3
          Top             =   400
-         Width           =   1095
+         Width           =   1200
       End
       Begin VB.CheckBox chkLlama 
-         BackColor       =   &H00884400&
+         BackColor       =   &H00662200&
          Caption         =   "Llama"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -249,36 +277,7 @@ Begin VB.Form frmMarcas
          Left            =   3000
          TabIndex        =   2
          Top             =   200
-         Width           =   1095
-      End
-      Begin isButtonTest.isButton cmdBuscar 
-         Height          =   420
-         Left            =   4080
-         TabIndex        =   14
-         Top             =   450
-         Width           =   1335
-         _ExtentX        =   2355
-         _ExtentY        =   741
-         Icon            =   "frmMarcas.frx":11DFF
-         Style           =   8
-         Caption         =   "     Buscar"
-         IconSize        =   18
-         IconAlign       =   1
-         CaptionAlign    =   1
-         iNonThemeStyle  =   0
-         Tooltiptitle    =   ""
-         ToolTipIcon     =   0
-         ToolTipType     =   0
-         ttForeColor     =   0
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Century Gothic"
-            Size            =   10
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         Width           =   1200
       End
       Begin VB.Label Label5 
          BackColor       =   &H00662200&
@@ -286,7 +285,7 @@ Begin VB.Form frmMarcas
          Caption         =   "Hasta"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -306,7 +305,7 @@ Begin VB.Form frmMarcas
          Caption         =   "Desde"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -329,7 +328,7 @@ Begin VB.Form frmMarcas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmMarcas.frx":126D9
+      Icon            =   "frmMarcas.frx":3B24
       Style           =   8
       Caption         =   "     Marcar"
       IconSize        =   18
@@ -344,7 +343,7 @@ Begin VB.Form frmMarcas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -360,7 +359,7 @@ Begin VB.Form frmMarcas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmMarcas.frx":12FB3
+      Icon            =   "frmMarcas.frx":43FE
       Style           =   8
       Caption         =   "     Datos"
       IconSize        =   18
@@ -375,7 +374,7 @@ Begin VB.Form frmMarcas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -391,7 +390,7 @@ Begin VB.Form frmMarcas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmMarcas.frx":1388D
+      Icon            =   "frmMarcas.frx":4CD8
       Style           =   8
       Caption         =   "     Cuotas"
       IconSize        =   18
@@ -406,7 +405,7 @@ Begin VB.Form frmMarcas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -422,7 +421,7 @@ Begin VB.Form frmMarcas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmMarcas.frx":14167
+      Icon            =   "frmMarcas.frx":55B2
       Style           =   8
       Caption         =   "     Volver"
       IconSize        =   18
@@ -437,7 +436,7 @@ Begin VB.Form frmMarcas
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -449,7 +448,7 @@ Begin VB.Form frmMarcas
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

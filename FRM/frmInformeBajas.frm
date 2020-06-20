@@ -16,7 +16,6 @@ Begin VB.Form frmInformeBajas
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmInformeBajas.frx":324A
    ScaleHeight     =   4170
    ScaleWidth      =   7575
    Begin VB.Frame Frame2 
@@ -24,7 +23,7 @@ Begin VB.Form frmInformeBajas
       Caption         =   "Cant.Bajas"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -42,7 +41,7 @@ Begin VB.Form frmInformeBajas
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -71,7 +70,7 @@ Begin VB.Form frmInformeBajas
       RowHeight       =   21
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -123,11 +122,11 @@ Begin VB.Form frmInformeBajas
       EndProperty
    End
    Begin VB.Frame Frame1 
-      BackColor       =   &H00884400&
+      BackColor       =   &H00662200&
       Caption         =   "Buscar Bajas"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -151,14 +150,14 @@ Begin VB.Form frmInformeBajas
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   130154497
+         Format          =   92733441
          CurrentDate     =   42108
       End
       Begin MSComCtl2.DTPicker dtpDesde 
@@ -172,14 +171,14 @@ Begin VB.Form frmInformeBajas
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   130154497
+         Format          =   92733441
          CurrentDate     =   42108
       End
       Begin isButtonTest.isButton cmdBuscar 
@@ -190,7 +189,7 @@ Begin VB.Form frmInformeBajas
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmInformeBajas.frx":11DFF
+         Icon            =   "frmInformeBajas.frx":324A
          Style           =   8
          Caption         =   "     Buscar"
          IconSize        =   18
@@ -203,7 +202,7 @@ Begin VB.Form frmInformeBajas
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -219,7 +218,7 @@ Begin VB.Form frmInformeBajas
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmInformeBajas.frx":126D9
+         Icon            =   "frmInformeBajas.frx":3B24
          Style           =   8
          Caption         =   "     Imprimir"
          IconSize        =   18
@@ -234,7 +233,7 @@ Begin VB.Form frmInformeBajas
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -247,7 +246,7 @@ Begin VB.Form frmInformeBajas
          Caption         =   "Hasta"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -266,7 +265,7 @@ Begin VB.Form frmInformeBajas
          Caption         =   "Desde"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -298,7 +297,7 @@ Private Sub cmdBuscar_Click()
 
     With rsBajas
         If .State = 1 Then .Close
-        '.Open "SELECT distinct p.CodAlumno,p.Nya as Alumno,capac as Curso,Deuda as [Valor de Cuota],datediff('m',fechapago,now)*-30 as [Sit Cartera],(SELECT min(nrocuota) FROM plandepago as p, bajas as b,verificaciones as v WHERE tipodepago='BAJA' and p.codalumno=b.codalumno and p.codalumno=v.codalumno) as [NÂ° Cuota],Fecha,Motivo,PagoBaja FROM plandepago as p,verificaciones as v,bajas as b WHERE v.codalumno=p.codalumno and v.codalumno=b.codalumno and fechapago>=#" & fecha1 & "# and fechapago<=#" & fecha2 & "# and tipodepago='BAJA' ORDER BY fecha,p.codalumno", cn, adOpenDynamic, adLockPessimistic
+        '.Open "SELECT distinct p.CodAlumno,p.Nya as Alumno,capac as Curso,Deuda as [Valor de Cuota],datediff('m',fechapago,now)*-30 as [Sit Cartera],(SELECT min(nrocuota) FROM plandepago as p, bajas as b,verificaciones as v WHERE tipodepago='BAJA' and p.codalumno=b.codalumno and p.codalumno=v.codalumno) as [N° Cuota],Fecha,Motivo,PagoBaja FROM plandepago as p,verificaciones as v,bajas as b WHERE v.codalumno=p.codalumno and v.codalumno=b.codalumno and fechapago>=#" & fecha1 & "# and fechapago<=#" & fecha2 & "# and tipodepago='BAJA' ORDER BY fecha,p.codalumno", cn, adOpenDynamic, adLockPessimistic
         .Open "SELECT distinct v.CodAlumno,v.nya as Alumno, capac as Curso,Deuda as [Valor de Cuota],sitcartera *-1 as [Sit Cartera], b.NroCuota,Fecha,Motivo, PagoBaja FROM verificaciones as v,bajas as b,plandepago WHERE v.codalumno=b.codalumno and v.codalumno=plandepago.codalumno and fechapago>=#" & fecha1 & "# and fechapago<=#" & fecha2 & "# and tipodepago='BAJA' ORDER BY fecha,v.codalumno", Cn, adOpenDynamic, adLockPessimistic
         Set grilla.DataSource = rsBajas
         If .EOF Or .BOF Then lblCantidadBajas.Caption = "0 Alumnos": cmdImprimir.Enabled = False: Exit Sub

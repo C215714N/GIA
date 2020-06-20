@@ -16,7 +16,6 @@ Begin VB.Form frmEgresados
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmEgresados.frx":324A
    ScaleHeight     =   4275
    ScaleWidth      =   4710
    Begin VB.Frame Frame1 
@@ -24,7 +23,7 @@ Begin VB.Form frmEgresados
       Caption         =   "Busqueda"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -42,7 +41,7 @@ Begin VB.Form frmEgresados
          Caption         =   "Nombre"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -63,7 +62,7 @@ Begin VB.Form frmEgresados
          Caption         =   "Curso"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -89,14 +88,14 @@ Begin VB.Form frmEgresados
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   198443009
+         Format          =   92078081
          CurrentDate     =   41978
       End
       Begin MSComCtl2.DTPicker dtpDesde 
@@ -110,14 +109,14 @@ Begin VB.Form frmEgresados
          _Version        =   393216
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   198443009
+         Format          =   92078081
          CurrentDate     =   41978
       End
       Begin isButtonTest.isButton cmdConsultar 
@@ -128,7 +127,7 @@ Begin VB.Form frmEgresados
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmEgresados.frx":AC67
+         Icon            =   "frmEgresados.frx":324A
          Style           =   8
          Caption         =   "     Consulta"
          IconSize        =   18
@@ -143,7 +142,7 @@ Begin VB.Form frmEgresados
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -156,7 +155,7 @@ Begin VB.Form frmEgresados
          Caption         =   "0 Alumnos"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -175,7 +174,7 @@ Begin VB.Form frmEgresados
          Caption         =   "Desde"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -194,7 +193,7 @@ Begin VB.Form frmEgresados
          Caption         =   "Hasta"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -223,7 +222,7 @@ Begin VB.Form frmEgresados
       RowHeight       =   21
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

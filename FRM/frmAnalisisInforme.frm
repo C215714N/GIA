@@ -8,13 +8,13 @@ Begin VB.Form frmAnalisisInforme
    ClientLeft      =   2970
    ClientTop       =   2205
    ClientWidth     =   9645
+   FillStyle       =   7  'Diagonal Cross
    ForeColor       =   &H00E0E0E0&
    Icon            =   "frmAnalisisInforme.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmAnalisisInforme.frx":324A
    ScaleHeight     =   3390
    ScaleWidth      =   9645
    Begin MSDataGridLib.DataGrid grilla 
@@ -31,7 +31,7 @@ Begin VB.Form frmAnalisisInforme
       RowHeight       =   21
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

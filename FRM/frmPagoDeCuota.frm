@@ -16,7 +16,6 @@ Begin VB.Form frmPagoDeCuota
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmPagoDeCuota.frx":324A
    ScaleHeight     =   4305
    ScaleWidth      =   5460
    Begin MSAdodcLib.Adodc Adodc 
@@ -57,7 +56,7 @@ Begin VB.Form frmPagoDeCuota
       Caption         =   "Adodc1"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -81,7 +80,7 @@ Begin VB.Form frmPagoDeCuota
       RowDividerStyle =   0
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -137,7 +136,7 @@ Begin VB.Form frmPagoDeCuota
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -155,7 +154,7 @@ Begin VB.Form frmPagoDeCuota
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -173,7 +172,7 @@ Begin VB.Form frmPagoDeCuota
       Alignment       =   1  'Right Justify
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -190,7 +189,7 @@ Begin VB.Form frmPagoDeCuota
       Alignment       =   1  'Right Justify
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -206,7 +205,7 @@ Begin VB.Form frmPagoDeCuota
    Begin VB.ComboBox cmbTipoPago 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -214,9 +213,9 @@ Begin VB.Form frmPagoDeCuota
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      ItemData        =   "frmPagoDeCuota.frx":AC67
+      ItemData        =   "frmPagoDeCuota.frx":324A
       Left            =   3960
-      List            =   "frmPagoDeCuota.frx":AC74
+      List            =   "frmPagoDeCuota.frx":3257
       Style           =   2  'Dropdown List
       TabIndex        =   0
       Top             =   360
@@ -230,7 +229,7 @@ Begin VB.Form frmPagoDeCuota
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmPagoDeCuota.frx":AC96
+      Icon            =   "frmPagoDeCuota.frx":3279
       Style           =   8
       Caption         =   "     Cobrar"
       IconSize        =   18
@@ -245,7 +244,7 @@ Begin VB.Form frmPagoDeCuota
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -261,7 +260,7 @@ Begin VB.Form frmPagoDeCuota
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmPagoDeCuota.frx":B570
+      Icon            =   "frmPagoDeCuota.frx":3B53
       Style           =   8
       Caption         =   "     Volver"
       IconSize        =   18
@@ -276,7 +275,7 @@ Begin VB.Form frmPagoDeCuota
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -290,7 +289,7 @@ Begin VB.Form frmPagoDeCuota
       Caption         =   "Plan de Pago"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -310,7 +309,7 @@ Begin VB.Form frmPagoDeCuota
       Caption         =   "Total $"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -330,7 +329,7 @@ Begin VB.Form frmPagoDeCuota
       Caption         =   "Resta $"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -350,7 +349,7 @@ Begin VB.Form frmPagoDeCuota
       Caption         =   "Nro Factura"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -370,7 +369,7 @@ Begin VB.Form frmPagoDeCuota
       Caption         =   "Monto $"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -390,7 +389,7 @@ Begin VB.Form frmPagoDeCuota
       Caption         =   "Tipo de Pago"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -580,7 +579,7 @@ If KeyAscii = 13 Then
         !CodAlumno = Val(frmCobranza.lblCodAlumno.Caption)
         !NroCuota = Val(frmCobranza.txtNroCuota.Text)
         If cmbTipoPago.Text = "Efectivo" Then
-            !cuenta = "CAJA ADMINISTRACION"
+            !cuenta = "CAJA ADMINISTRAcion"
         ElseIf cmbTipoPago.Text = "Tarjeta" Then
             !cuenta = "DEBITO TARJETA CREDITO"
         Else

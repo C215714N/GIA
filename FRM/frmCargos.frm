@@ -11,7 +11,7 @@ Begin VB.Form frmCargos
    FillColor       =   &H00800000&
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   10
+      Size            =   9.75
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -24,7 +24,6 @@ Begin VB.Form frmCargos
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmCargos.frx":324A
    ScaleHeight     =   1425
    ScaleWidth      =   3780
    Begin VB.TextBox txtCargo 
@@ -42,7 +41,7 @@ Begin VB.Form frmCargos
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCargos.frx":AC67
+      Icon            =   "frmCargos.frx":324A
       Style           =   8
       Caption         =   "     Aceptar"
       IconSize        =   18
@@ -57,7 +56,7 @@ Begin VB.Form frmCargos
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -73,7 +72,7 @@ Begin VB.Form frmCargos
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCargos.frx":B541
+      Icon            =   "frmCargos.frx":3B24
       Style           =   8
       Caption         =   "     Cancelar"
       IconSize        =   18
@@ -88,7 +87,7 @@ Begin VB.Form frmCargos
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -102,7 +101,7 @@ Begin VB.Form frmCargos
       Caption         =   "Nuevo Cargo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

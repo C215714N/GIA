@@ -10,7 +10,7 @@ Begin VB.Form frmReingresos
    ClientWidth     =   4020
    BeginProperty Font 
       Name            =   "Century Gothic"
-      Size            =   10
+      Size            =   9.75
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -23,15 +23,14 @@ Begin VB.Form frmReingresos
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmReingresos.frx":324A
    ScaleHeight     =   1665
    ScaleWidth      =   4020
    Begin VB.Frame Frame1 
-      BackColor       =   &H00884400&
+      BackColor       =   &H00662200&
       Caption         =   "Codigo"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -66,7 +65,7 @@ Begin VB.Form frmReingresos
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmReingresos.frx":AC67
+         Icon            =   "frmReingresos.frx":324A
          Style           =   8
          Caption         =   "     Reingreso"
          IconSize        =   18
@@ -81,7 +80,7 @@ Begin VB.Form frmReingresos
          ttForeColor     =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   10
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -93,11 +92,20 @@ Begin VB.Form frmReingresos
          Alignment       =   2  'Center
          BackStyle       =   0  'Transparent
          Caption         =   "--->"
+         BeginProperty Font 
+            Name            =   "Century Gothic"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          ForeColor       =   &H8000000F&
          Height          =   255
          Left            =   960
          TabIndex        =   5
-         Top             =   550
+         Top             =   540
          Width           =   375
       End
       Begin VB.Label Label2 
@@ -126,7 +134,7 @@ Begin VB.Form frmReingresos
       Caption         =   "ATENCION: RECUERDE QUE EL REINGRESO  APLICA SOLAMENTE A LOS LIBROS DE AULA."
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -145,7 +153,7 @@ Begin VB.Form frmReingresos
       Caption         =   "ATENCION: RECUERDE QUE EL REINGRESO  APLICA SOLAMENTE A LOS LIBROS DE AULA."
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

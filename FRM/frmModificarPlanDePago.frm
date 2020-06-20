@@ -15,7 +15,6 @@ Begin VB.Form frmModificarPlanDePago
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Picture         =   "frmModificarPlanDePago.frx":324A
    ScaleHeight     =   2055
    ScaleWidth      =   3000
    Begin MSComCtl2.DTPicker dtpFecha 
@@ -29,20 +28,20 @@ Begin VB.Form frmModificarPlanDePago
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   130154497
+      Format          =   92798977
       CurrentDate     =   41353
    End
    Begin VB.TextBox txtMonto 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -58,7 +57,7 @@ Begin VB.Form frmModificarPlanDePago
    Begin VB.TextBox txtNroCuota 
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -79,7 +78,7 @@ Begin VB.Form frmModificarPlanDePago
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmModificarPlanDePago.frx":AC67
+      Icon            =   "frmModificarPlanDePago.frx":324A
       Style           =   8
       Caption         =   "     Aceptar"
       IconSize        =   18
@@ -92,7 +91,7 @@ Begin VB.Form frmModificarPlanDePago
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -108,7 +107,7 @@ Begin VB.Form frmModificarPlanDePago
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmModificarPlanDePago.frx":B541
+      Icon            =   "frmModificarPlanDePago.frx":3B24
       Style           =   8
       Caption         =   "     Cancelar"
       IconSize        =   18
@@ -121,7 +120,7 @@ Begin VB.Form frmModificarPlanDePago
       ttForeColor     =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -136,7 +135,7 @@ Begin VB.Form frmModificarPlanDePago
       Caption         =   "Monto $"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -157,7 +156,7 @@ Begin VB.Form frmModificarPlanDePago
       Caption         =   "Vencimiento"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -178,7 +177,7 @@ Begin VB.Form frmModificarPlanDePago
       Caption         =   "Desde Cuota"
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -209,23 +208,23 @@ Private Sub cmdAplicar_Click()
         If .State = 1 Then .Close
         .Open "SELECT * FROM plandepago WHERE codalumno=" & Int(frmAnalisisDeCuotas.lblCodAlumno.Caption) & "and nrocuota>=" & Int(txtNroCuota.Text), Cn, adOpenDynamic, adLockPessimistic
         Do Until .EOF
-            !fechavto = DTPFecha.Value
+            !fechavto = dtpFecha.Value
             !deuda = txtMonto.Text
             If !recargoxfecha = True Then !recargoxfecha = False
             If !recargoxmes = True Then !recargoxmes = False
             !DeudaTotal = txtMonto.Text
             .UpdateBatch
             .MoveNext
-            If DTPFecha.Month = 12 Then
-                DTPFecha.Month = 1
-                DTPFecha.Year = DTPFecha.Year + 1
+            If dtpFecha.Month = 12 Then
+                dtpFecha.Month = 1
+                dtpFecha.Year = dtpFecha.Year + 1
             Else
-                DTPFecha.Month = DTPFecha.Month + 1
+                dtpFecha.Month = dtpFecha.Month + 1
             End If
         Loop
     End With
     
-    ''' muestra en ventana analisis de cuotas la info actualizada y cierra
+    ''' muestra en ventana Analisis de cuotas la info actualizada y cierra
     AnalisisDeCuota
     With frmAnalisisDeCuotas
         Set .grilla1.DataSource = rsAnalisisDeCuenta
@@ -240,7 +239,7 @@ End Sub
 
 Private Sub Form_Load()
     Centrar Me
-    DTPFecha.Value = Date
+    dtpFecha.Value = Date
 End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
