@@ -110,7 +110,7 @@ Begin VB.Form frmCapacitaciones
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCapacitaciones.frx":324A
+      Icon            =   "frmCapacitaciones.frx":10CA
       Style           =   8
       Caption         =   "     Aceptar"
       IconSize        =   18
@@ -141,7 +141,7 @@ Begin VB.Form frmCapacitaciones
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCapacitaciones.frx":3B24
+      Icon            =   "frmCapacitaciones.frx":19A4
       Style           =   8
       Caption         =   "     Cancelar"
       IconSize        =   18
@@ -172,7 +172,7 @@ Begin VB.Form frmCapacitaciones
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCapacitaciones.frx":43FE
+      Icon            =   "frmCapacitaciones.frx":227E
       Style           =   8
       Caption         =   "     Nuevo"
       IconSize        =   18
@@ -203,7 +203,7 @@ Begin VB.Form frmCapacitaciones
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCapacitaciones.frx":4CD8
+      Icon            =   "frmCapacitaciones.frx":2B58
       Style           =   8
       Caption         =   "     Editar"
       IconSize        =   18
@@ -234,7 +234,7 @@ Begin VB.Form frmCapacitaciones
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCapacitaciones.frx":55B2
+      Icon            =   "frmCapacitaciones.frx":3432
       Style           =   8
       Caption         =   "     Volver"
       IconSize        =   18
@@ -265,7 +265,7 @@ Begin VB.Form frmCapacitaciones
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCapacitaciones.frx":5E8C
+      Icon            =   "frmCapacitaciones.frx":3D0C
       Style           =   8
       Caption         =   "     Eliminar"
       IconSize        =   18
@@ -356,38 +356,39 @@ Private Sub cmdEliminar_Click()
 End Sub
 
 Private Sub cmdGrabar_Click()
-If txtCurso.Text = "" Then MsgBox "Primero debe agregar el nombre del curso", vbOKOnly + vbInformation, "Capacitaciones": txtCurso.SetFocus: Exit Sub
-On Error GoTo LineaError
-
-If Modi = True Then
-    With rsCapacitaciones
-        .Requery
-        .Find "capacitacion='" & lblID.Caption & "'"
-        !capacitacion = txtCurso.Text
-        .UpdateBatch
-    End With
-    HabilitarBotones True, False
-    grilla.Enabled = True
-    txtCurso.Locked = True
-    txtCurso.Text = ""
-Else
-    With rsCapacitaciones
-        .Requery
-        .AddNew
-        !capacitacion = txtCurso.Text
-        .Update
-    End With
-    HabilitarBotones True, False
-    grilla.Enabled = True
-    txtCurso.Locked = True
-    txtCurso.Text = ""
-End If
-
+    If txtCurso.Text = "" Then MsgBox "Primero debe agregar el nombre del curso", vbOKOnly + vbInformation, "Capacitaciones": txtCurso.SetFocus: Exit Sub
+    On Error GoTo LineaError
+    
+    If Modi = True Then
+        With rsCapacitaciones
+            .Requery
+            .Find "capacitacion='" & lblID.Caption & "'"
+            !capacitacion = txtCurso.Text
+            .UpdateBatch
+        End With
+        HabilitarBotones True, False
+        grilla.Enabled = True
+        txtCurso.Locked = True
+        txtCurso.Text = ""
+    Else
+        With rsCapacitaciones
+            .Requery
+            .AddNew
+            !capacitacion = txtCurso.Text
+            .Update
+        End With
+        HabilitarBotones True, False
+        grilla.Enabled = True
+        txtCurso.Locked = True
+        txtCurso.Text = ""
+    End If
+    
 LineaError:
     Select Case Err.Number
         Case 3021
             Resume Next
         End Select
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
 End Sub
 
 Private Sub cmdModificar_Click()

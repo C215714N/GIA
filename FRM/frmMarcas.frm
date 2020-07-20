@@ -159,7 +159,7 @@ Begin VB.Form frmMarcas
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmMarcas.frx":324A
+         Icon            =   "frmMarcas.frx":10CA
          Style           =   8
          Caption         =   "     Buscar"
          IconSize        =   18
@@ -198,7 +198,7 @@ Begin VB.Form frmMarcas
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   91750401
+         Format          =   237043713
          CurrentDate     =   41345
       End
       Begin MSComCtl2.DTPicker dtpDesde 
@@ -219,7 +219,7 @@ Begin VB.Form frmMarcas
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   91750401
+         Format          =   237043713
          CurrentDate     =   41345
       End
       Begin VB.CheckBox chkAbona 
@@ -328,7 +328,7 @@ Begin VB.Form frmMarcas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmMarcas.frx":3B24
+      Icon            =   "frmMarcas.frx":19A4
       Style           =   8
       Caption         =   "     Marcar"
       IconSize        =   18
@@ -359,7 +359,7 @@ Begin VB.Form frmMarcas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmMarcas.frx":43FE
+      Icon            =   "frmMarcas.frx":227E
       Style           =   8
       Caption         =   "     Datos"
       IconSize        =   18
@@ -390,7 +390,7 @@ Begin VB.Form frmMarcas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmMarcas.frx":4CD8
+      Icon            =   "frmMarcas.frx":2B58
       Style           =   8
       Caption         =   "     Cuotas"
       IconSize        =   18
@@ -421,7 +421,7 @@ Begin VB.Form frmMarcas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmMarcas.frx":55B2
+      Icon            =   "frmMarcas.frx":3432
       Style           =   8
       Caption         =   "     Volver"
       IconSize        =   18

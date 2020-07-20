@@ -277,14 +277,14 @@ Begin VB.Form frmReservas
       EndProperty
    End
    Begin MSComCtl2.MonthView MonthView1 
-      Height          =   2670
+      Height          =   2820
       Left            =   105
       TabIndex        =   1
       ToolTipText     =   "Seleccione la Fecha"
       Top             =   360
-      Width           =   2700
-      _ExtentX        =   4763
-      _ExtentY        =   4710
+      Width           =   3645
+      _ExtentX        =   6429
+      _ExtentY        =   4974
       _Version        =   393216
       ForeColor       =   8930304
       BackColor       =   6693376
@@ -299,7 +299,7 @@ Begin VB.Form frmReservas
          Strikethrough   =   0   'False
       EndProperty
       MonthBackColor  =   16777215
-      StartOfWeek     =   91947010
+      StartOfWeek     =   155189250
       TitleBackColor  =   8930304
       TitleForeColor  =   16777215
       TrailingForeColor=   14737632
@@ -335,7 +335,7 @@ Begin VB.Form frmReservas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmReservas.frx":324A
+      Icon            =   "frmReservas.frx":10CA
       Style           =   8
       Caption         =   "     Buscar"
       IconSize        =   18
@@ -364,7 +364,7 @@ Begin VB.Form frmReservas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmReservas.frx":3B24
+      Icon            =   "frmReservas.frx":19A4
       Style           =   8
       Caption         =   "     Aceptar"
       IconSize        =   18
@@ -393,7 +393,7 @@ Begin VB.Form frmReservas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmReservas.frx":43FE
+      Icon            =   "frmReservas.frx":227E
       Style           =   8
       Caption         =   "     Cancelar"
       IconSize        =   18
@@ -422,7 +422,7 @@ Begin VB.Form frmReservas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmReservas.frx":4CD8
+      Icon            =   "frmReservas.frx":2B58
       Style           =   8
       Caption         =   "     Agregar"
       IconSize        =   18
@@ -451,7 +451,7 @@ Begin VB.Form frmReservas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmReservas.frx":55B2
+      Icon            =   "frmReservas.frx":3432
       Style           =   8
       Caption         =   "     Eliminar"
       IconSize        =   18
@@ -480,7 +480,7 @@ Begin VB.Form frmReservas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmReservas.frx":5E8C
+      Icon            =   "frmReservas.frx":3D0C
       Style           =   8
       Caption         =   "     Asist."
       IconSize        =   18
@@ -619,7 +619,6 @@ Private Sub btnAgregar_Click()
     cmdBuscar.Enabled = False
     BuscarAlumno = False
     
-
 End Sub
 
 Private Sub btnAsistencia_Click()
@@ -633,19 +632,23 @@ Private Sub btnAsistencia_Click()
 End Sub
 
 Private Sub btnEliminar_Click()
-        a = MsgBox("¿Esta seguro que desea eliminar al alumno " & grilla.Columns(0).Text & "?", vbYesNo, "Eliminar Seleccion")
-        If a = vbYes Then
-            With rsReservas
-                Dim fecha As Date
-                fecha = Format(MonthView1.Value, "mm/dd/yyyy")
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM reservas WHERE nya='" & dtcAlumno.Text & "' and fecha=#" & fecha & "# and hora='" & Index & "'", Cn, adOpenDynamic, adLockPessimistic
-                .MoveFirst
-                .Delete
-                .Update
-                Reservas
-            End With
-       End If
+    On Error GoTo LineaError
+     a = MsgBox("¿Esta seguro que desea eliminar al alumno " & grilla.Columns(0).Text & "?", vbYesNo, "Eliminar Seleccion")
+     If a = vbYes Then
+         With rsReservas
+             Dim fecha As Date
+             fecha = Format(MonthView1.Value, "mm/dd/yyyy")
+             If .State = 1 Then .Close
+             .Open "SELECT * FROM reservas WHERE nya='" & dtcAlumno.Text & "' and fecha=#" & fecha & "# and hora='" & Index & "'", Cn, adOpenDynamic, adLockPessimistic
+             .MoveFirst
+             .Delete
+             .Update
+             Reservas
+         End With
+    End If
+    
+LineaError:
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
 End Sub
 
 

@@ -54,7 +54,7 @@ Begin VB.Form frmExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   91947009
+         Format          =   154533889
          CurrentDate     =   41978
       End
       Begin VB.TextBox txtPromedio 
@@ -129,7 +129,7 @@ Begin VB.Form frmExamenes
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmExamenes.frx":324A
+         Icon            =   "frmExamenes.frx":10CA
          Style           =   8
          Caption         =   "     Aceptar"
          IconSize        =   18
@@ -438,10 +438,11 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub Form_Load()
     Centrar Me
-    DTPFecha.Value = Date
+    dtpFecha.Value = Date
 End Sub
 
 Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
+    On Error GoTo LineaError
     If KeyAscii = 13 Then
         If txtCodigo.Text = "" Then MsgBox "Ingrese el Codigo del alumno", vbOKOnly, "GIA - Examenes": txtCodigo.SetFocus: Exit Sub
         With rsVerificaciones
@@ -458,7 +459,7 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
             If .State = 1 Then .Close
             .Open "SELECT Fecha, Modulo, Teorico as [T], Practico as [P], Promedio as [F] FROM examenes WHERE codalumno=" & Int(txtCodigo.Text) & " ORDER BY fecha,id", Cn, adOpenDynamic, adLockPessimistic
         End With
-        Set grilla.DataSource = rsExamenes
+        Set Grilla.DataSource = rsExamenes
         formatoGrilla
         CargarModulos
         If rsExamenes.RecordCount = cmbModulo.ListCount Then
@@ -466,6 +467,8 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
         Else: cmdAgregar.Enabled = True
         End If
     End If
+LineaError:
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
 End Sub
 
 Private Sub cmbModulo_Change()
@@ -473,6 +476,7 @@ Private Sub cmbModulo_Change()
 End Sub
 
 Private Sub cmdAgregar_Click()
+    On Error GoTo LineaError
     If cmbModulo.Text = "" Then MsgBox "Elija el modulo", vbOKOnly + vbCritical, "GIA - Examenes": cmbModulo.SetFocus: Exit Sub
     If txtTeorico.Text = "" Then MsgBox "Ingrese nota del Examen teorico", vbOKOnly + vbCritical, "GIA - Examenes": txtTeorico.SetFocus: Exit Sub
     If txtPractico.Text = "" Then MsgBox "Ingrese nota del Examen Practico", vbOKOnly + vbCritical, "GIA - Examenes": txtPractico.SetFocus: Exit Sub
@@ -487,7 +491,7 @@ Private Sub cmdAgregar_Click()
             .Requery
             .AddNew
             !CodAlumno = Int(txtCodigo.Text)
-            !fecha = DTPFecha.Value
+            !fecha = dtpFecha.Value
             !T = txtTeorico.Text
             !P = txtPractico.Text
             !F = txtPromedio.Text
@@ -504,7 +508,7 @@ Private Sub cmdAgregar_Click()
             Exit Sub
         End If
         .Open "SELECT Fecha, Modulo, Teorico as [T], Practico as [P], Promedio as [F] FROM examenes WHERE codalumno=" & Int(txtCodigo.Text) & " ORDER BY fecha,id", Cn, adOpenDynamic, adLockPessimistic
-        Set grilla.DataSource = rsExamenes
+        Set Grilla.DataSource = rsExamenes
         formatoGrilla
     
     '''ALUMNO EGRESADO
@@ -524,7 +528,7 @@ Private Sub cmdAgregar_Click()
                 .Requery
                 .AddNew
                 !CodAlumno = Int(txtCodigo.Text)
-                !fecha = DTPFecha.Value
+                !fecha = dtpFecha.Value
                 .Update
             End With
             With rsVerificaciones
@@ -543,6 +547,9 @@ Private Sub cmdAgregar_Click()
     txtTeorico.Text = ""
     txtPromedio.Text = ""
     Egresado = False
+
+LineaError:
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
 End Sub
 
 Private Sub txtTeorico_KeyPress(KeyAscii As Integer)
@@ -717,6 +724,6 @@ Sub formatoGrilla()
             w = N * 2000
         Else: w = 350
         End If
-        grilla.Columns(N).Width = w
+        Grilla.Columns(N).Width = w
     Next
 End Sub

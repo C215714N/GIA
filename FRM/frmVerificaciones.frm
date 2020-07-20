@@ -49,7 +49,7 @@ Begin VB.Form frmVerificaciones
          MaxLength       =   300
          Appearance      =   0
          AutoVerbMenu    =   -1  'True
-         TextRTF         =   $"frmVerificaciones.frx":324A
+         TextRTF         =   $"frmVerificaciones.frx":10CA
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
             Size            =   9.75
@@ -241,7 +241,7 @@ Begin VB.Form frmVerificaciones
          Top             =   1200
          Width           =   2655
          _ExtentX        =   4683
-         _ExtentY        =   635
+         _ExtentY        =   661
          _Version        =   393216
          Text            =   ""
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -299,9 +299,9 @@ Begin VB.Form frmVerificaciones
             Strikethrough   =   0   'False
          EndProperty
          Height          =   360
-         ItemData        =   "frmVerificaciones.frx":32D0
+         ItemData        =   "frmVerificaciones.frx":1150
          Left            =   3720
-         List            =   "frmVerificaciones.frx":32DD
+         List            =   "frmVerificaciones.frx":115D
          Locked          =   -1  'True
          TabIndex        =   1
          Top             =   600
@@ -392,7 +392,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   91750401
+         Format          =   154992641
          CurrentDate     =   41308
       End
       Begin MSDataListLib.DataCombo dtcAsistente 
@@ -402,7 +402,7 @@ Begin VB.Form frmVerificaciones
          Top             =   2400
          Width           =   2655
          _ExtentX        =   4683
-         _ExtentY        =   635
+         _ExtentY        =   661
          _Version        =   393216
          Style           =   2
          Text            =   ""
@@ -423,7 +423,7 @@ Begin VB.Form frmVerificaciones
          Top             =   2400
          Width           =   3495
          _ExtentX        =   6165
-         _ExtentY        =   635
+         _ExtentY        =   661
          _Version        =   393216
          Style           =   2
          Text            =   ""
@@ -779,7 +779,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   91750401
+         Format          =   154927105
          CurrentDate     =   41308
       End
       Begin MSComCtl2.DTPicker DTPFechaVerificacion 
@@ -800,7 +800,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   91750401
+         Format          =   154927105
          CurrentDate     =   41308
       End
       Begin VB.Label Label17 
@@ -965,7 +965,7 @@ Begin VB.Form frmVerificaciones
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmVerificaciones.frx":32EE
+         Icon            =   "frmVerificaciones.frx":116E
          Style           =   8
          Caption         =   "     Verificar"
          IconSize        =   18
@@ -997,7 +997,7 @@ Begin VB.Form frmVerificaciones
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmVerificaciones.frx":3BC8
+         Icon            =   "frmVerificaciones.frx":1A48
          Style           =   8
          Caption         =   "     Editar"
          IconSize        =   18
@@ -1029,7 +1029,7 @@ Begin VB.Form frmVerificaciones
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmVerificaciones.frx":44A2
+         Icon            =   "frmVerificaciones.frx":2322
          Style           =   8
          Caption         =   "     Buscar"
          IconSize        =   18
@@ -1061,7 +1061,7 @@ Begin VB.Form frmVerificaciones
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmVerificaciones.frx":4D7C
+         Icon            =   "frmVerificaciones.frx":2BFC
          Style           =   8
          Caption         =   "     P.Pago"
          IconSize        =   18
@@ -1093,7 +1093,7 @@ Begin VB.Form frmVerificaciones
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmVerificaciones.frx":5656
+         Icon            =   "frmVerificaciones.frx":34D6
          Style           =   8
          Caption         =   "     Aceptar"
          IconSize        =   18
@@ -1125,7 +1125,7 @@ Begin VB.Form frmVerificaciones
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmVerificaciones.frx":5F30
+         Icon            =   "frmVerificaciones.frx":3DB0
          Style           =   8
          Caption         =   "     Cancelar"
          IconSize        =   18
@@ -1157,7 +1157,7 @@ Begin VB.Form frmVerificaciones
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmVerificaciones.frx":680A
+         Icon            =   "frmVerificaciones.frx":468A
          Style           =   8
          Caption         =   "     Volver"
          IconSize        =   18
@@ -1224,7 +1224,6 @@ End Sub
 
 Private Sub cmdGrabar_Click()
     Dim codigo As Long
-
     If txtNya.Text = "" Then MsgBox "Debe ingresar un Nombre de Alumno", vbOKOnly + vbInformation, "Suscripciones": txtNya.SetFocus: Exit Sub
     If cmbTipoDoc.Text = "" Then MsgBox "Debe ingresar un Tipo de Documento", vbOKOnly + vbInformation, "Suscripciones": cmbTipoDoc.SetFocus: Exit Sub
     If txtDocumento.Text = "" Then MsgBox "Debe ingresar un Numero de Documento", vbOKOnly + vbInformation, "Suscripciones": txtDocumento.SetFocus: Exit Sub
@@ -1369,6 +1368,8 @@ LineaError:
         Case 3021
             Resume Next
         End Select
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+
 End Sub
 
 Private Sub cmdModificar_Click()

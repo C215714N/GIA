@@ -41,7 +41,7 @@ Begin VB.Form frmPresupuesto
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.75
+            Size            =   9
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -59,7 +59,7 @@ Begin VB.Form frmPresupuesto
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.75
+            Size            =   9
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -77,7 +77,7 @@ Begin VB.Form frmPresupuesto
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.75
+            Size            =   9
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -242,9 +242,9 @@ Begin VB.Form frmPresupuesto
             Strikethrough   =   0   'False
          EndProperty
          Height          =   375
-         ItemData        =   "frmPresupuesto.frx":324A
+         ItemData        =   "frmPresupuesto.frx":10CA
          Left            =   120
-         List            =   "frmPresupuesto.frx":3272
+         List            =   "frmPresupuesto.frx":10F2
          Style           =   2  'Dropdown List
          TabIndex        =   13
          Top             =   420
@@ -269,7 +269,7 @@ Begin VB.Form frmPresupuesto
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "yyyy"
-         Format          =   92078083
+         Format          =   131596291
          CurrentDate     =   36526
          MaxDate         =   401876
          MinDate         =   36526
@@ -282,7 +282,7 @@ Begin VB.Form frmPresupuesto
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmPresupuesto.frx":32DB
+         Icon            =   "frmPresupuesto.frx":115B
          Style           =   8
          Caption         =   "     Informe"
          IconSize        =   18

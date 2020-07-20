@@ -50,7 +50,7 @@ Begin VB.Form frmRetiroDiploma
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   92078081
+      Format          =   111935489
       CurrentDate     =   42181
    End
    Begin isButtonTest.isButton cmdGrabar 
@@ -61,7 +61,7 @@ Begin VB.Form frmRetiroDiploma
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmRetiroDiploma.frx":324A
+      Icon            =   "frmRetiroDiploma.frx":10CA
       Style           =   8
       Caption         =   "     Aceptar"
       IconSize        =   18

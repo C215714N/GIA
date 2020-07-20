@@ -148,9 +148,9 @@ Begin VB.Form frmConsultarCheques
             Strikethrough   =   0   'False
          EndProperty
          Height          =   375
-         ItemData        =   "frmConsultarCheques.frx":324A
+         ItemData        =   "frmConsultarCheques.frx":10CA
          Left            =   1440
-         List            =   "frmConsultarCheques.frx":3251
+         List            =   "frmConsultarCheques.frx":10D1
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   2
@@ -176,7 +176,7 @@ Begin VB.Form frmConsultarCheques
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   92930049
+         Format          =   131203073
          CurrentDate     =   41782
       End
       Begin MSComCtl2.DTPicker dtpDesde 
@@ -198,7 +198,7 @@ Begin VB.Form frmConsultarCheques
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   92930049
+         Format          =   131203073
          CurrentDate     =   41782
       End
       Begin isButtonTest.isButton cmdBuscar 
@@ -209,7 +209,7 @@ Begin VB.Form frmConsultarCheques
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmConsultarCheques.frx":325D
+         Icon            =   "frmConsultarCheques.frx":10DD
          Style           =   8
          Caption         =   "     Buscar"
          IconSize        =   18
@@ -254,9 +254,9 @@ Begin VB.Form frmConsultarCheques
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.75
+            Size            =   9
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
@@ -315,7 +315,7 @@ Begin VB.Form frmConsultarCheques
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmConsultarCheques.frx":3B37
+      Icon            =   "frmConsultarCheques.frx":19B7
       Style           =   8
       Caption         =   "     Eliminar"
       IconSize        =   18
@@ -346,7 +346,7 @@ Begin VB.Form frmConsultarCheques
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmConsultarCheques.frx":4411
+      Icon            =   "frmConsultarCheques.frx":2291
       Style           =   8
       Caption         =   "     Deposito"
       IconSize        =   18
@@ -374,9 +374,9 @@ Begin VB.Form frmConsultarCheques
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   9
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
@@ -393,9 +393,9 @@ Begin VB.Form frmConsultarCheques
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   9
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
@@ -458,25 +458,23 @@ End Sub
 
 Private Sub cmddepositar_Click()
     If MsgBox("¿Esta Seguro que se ha depositado este cheque?", vbQuestion + vbYesNo, "Cheques") = vbYes Then
-        grilla.Col = 2
+        Grilla.Col = 2
         With rsCheques
             .Close
-            .Open "SELECT * FROM cheques WHERE numerocheque='" & grilla.Text & "'", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT * FROM cheques WHERE numerocheque='" & Grilla.Text & "'", Cn, adOpenDynamic, adLockPessimistic
             !estado = "DEPOSITADO"
             .UpdateBatch
         End With
         Busqueda
-        
     End If
-    
 End Sub
 
 Private Sub cmdEliminar_Click()
-    grilla.Col = 2
-    If MsgBox("¿Esta seguro que desea eliminar el cheque N° " & grilla.Text & "?", vbQuestion + vbYesNo, "Consultar Cheques") = vbYes Then
+    Grilla.Col = 2
+    If MsgBox("¿Esta seguro que desea eliminar el cheque N° " & Grilla.Text & "?", vbQuestion + vbYesNo, "Consultar Cheques") = vbYes Then
         With rsCheques
             .Close
-            .Open "SELECT * FROM cheques WHERE numerocheque='" & grilla.Text & "'", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT * FROM cheques WHERE numerocheque='" & Grilla.Text & "'", Cn, adOpenDynamic, adLockPessimistic
             .Requery
             .MoveFirst
             .Delete
@@ -596,47 +594,47 @@ Private Sub Busqueda()
         MsgBox "Elija parametros de busqueda", vbCritical, "Consultar cheques"
     End If
     
-    grilla.Clear
+    Grilla.Clear
     If rsCheques.BOF Or rsCheques.EOF Then Exit Sub
-        grilla.Rows = Int(lblCantidad.Caption) + 2
-        grilla.Col = 0
-        grilla.Row = 0
-        grilla.Text = "Fecha"
-        grilla.Col = 1
-        grilla.Text = "Beneficiario"
-        grilla.Col = 2
-        grilla.Text = "N° Cheque"
-        grilla.Col = 3
-        grilla.Text = "Importe"
-        grilla.Col = 4
-        grilla.Text = "Firma"
-        grilla.Col = 5
-        grilla.Text = "Estado"
-        grilla.Col = 0
-        grilla.Row = grilla.Row + 1
+        Grilla.Rows = Int(lblCantidad.Caption) + 2
+        Grilla.Col = 0
+        Grilla.Row = 0
+        Grilla.Text = "Fecha"
+        Grilla.Col = 1
+        Grilla.Text = "Beneficiario"
+        Grilla.Col = 2
+        Grilla.Text = "N° Cheque"
+        Grilla.Col = 3
+        Grilla.Text = "Importe"
+        Grilla.Col = 4
+        Grilla.Text = "Firma"
+        Grilla.Col = 5
+        Grilla.Text = "Estado"
+        Grilla.Col = 0
+        Grilla.Row = Grilla.Row + 1
     
     rsCheques.MoveFirst
     Do Until rsCheques.EOF
-        grilla.Text = rsCheques!fecha
-        grilla.Col = 1
-        grilla.Text = rsCheques!beneficiario
-        grilla.Col = 2
-        grilla.Text = rsCheques!numerocheque
-        grilla.Col = 3
-        grilla.Text = rsCheques!importe
-        grilla.Col = 4
-        grilla.Text = rsCheques!firma
-        grilla.Col = 5
-        grilla.Text = rsCheques!estado
-        If grilla.Text = "DEPOSITADO" Then
-            grilla.CellForeColor = vbGreen
-            grilla.CellFontBold = True
+        Grilla.Text = rsCheques!fecha
+        Grilla.Col = 1
+        Grilla.Text = rsCheques!beneficiario
+        Grilla.Col = 2
+        Grilla.Text = rsCheques!numerocheque
+        Grilla.Col = 3
+        Grilla.Text = rsCheques!importe
+        Grilla.Col = 4
+        Grilla.Text = rsCheques!firma
+        Grilla.Col = 5
+        Grilla.Text = rsCheques!estado
+        If Grilla.Text = "DEPOSITADO" Then
+            Grilla.CellForeColor = vbGreen
+            Grilla.CellFontBold = True
         Else
-            grilla.CellForeColor = vbRed
-            grilla.CellFontBold = True
+            Grilla.CellForeColor = vbRed
+            Grilla.CellFontBold = True
         End If
-        grilla.Col = 0
-        grilla.Row = grilla.Row + 1
+        Grilla.Col = 0
+        Grilla.Row = Grilla.Row + 1
         rsCheques.MoveNext
     Loop
     formatoGrilla
@@ -652,6 +650,6 @@ Sub formatoGrilla()
         Else:
             w = 900
         End If
-        grilla.ColWidth(N) = w
+        Grilla.ColWidth(N) = w
     Next
 End Sub

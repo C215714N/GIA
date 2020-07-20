@@ -40,7 +40,7 @@ Begin VB.Form frmCrearCuenta
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCrearCuenta.frx":324A
+      Icon            =   "frmCrearCuenta.frx":10CA
       Style           =   8
       Caption         =   "     Aceptar"
       IconSize        =   18

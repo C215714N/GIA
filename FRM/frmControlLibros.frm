@@ -8,7 +8,7 @@ Begin VB.Form frmControlLibros
    ClientHeight    =   3315
    ClientLeft      =   6030
    ClientTop       =   2235
-   ClientWidth     =   6405
+   ClientWidth     =   4755
    ForeColor       =   &H00E0E0E0&
    Icon            =   "frmControlLibros.frx":0000
    LinkTopic       =   "Form1"
@@ -16,7 +16,23 @@ Begin VB.Form frmControlLibros
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    ScaleHeight     =   3315
-   ScaleWidth      =   6405
+   ScaleWidth      =   4755
+   Begin VB.TextBox txtManual 
+      BeginProperty Font 
+         Name            =   "Century Gothic"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   360
+      Left            =   120
+      TabIndex        =   8
+      Top             =   360
+      Width           =   2775
+   End
    Begin VB.Frame Frame1 
       BackColor       =   &H00662200&
       Caption         =   "Agregar"
@@ -30,11 +46,11 @@ Begin VB.Form frmControlLibros
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H8000000F&
-      Height          =   3015
-      Left            =   4680
+      Height          =   2895
+      Left            =   3000
       TabIndex        =   1
-      Top             =   120
-      Width           =   1600
+      Top             =   240
+      Width           =   1605
       Begin VB.TextBox txtPrecio 
          BeginProperty Font 
             Name            =   "Century Gothic"
@@ -47,8 +63,8 @@ Begin VB.Form frmControlLibros
          EndProperty
          Height          =   360
          Left            =   120
-         TabIndex        =   4
-         Top             =   1920
+         TabIndex        =   3
+         Top             =   1320
          Width           =   1355
       End
       Begin VB.TextBox txtStock 
@@ -63,12 +79,32 @@ Begin VB.Form frmControlLibros
          EndProperty
          Height          =   360
          Left            =   120
-         TabIndex        =   3
-         Top             =   1200
+         TabIndex        =   2
+         Top             =   600
          Width           =   1355
       End
-      Begin VB.TextBox txtManual 
-         BeginProperty Font 
+      Begin isButtonTest.isButton cmdAgregar 
+         Height          =   420
+         Left            =   120
+         TabIndex        =   6
+         Top             =   2280
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   741
+         Icon            =   "frmControlLibros.frx":10CA
+         Style           =   8
+         Caption         =   "     Aceptar"
+         IconSize        =   18
+         IconAlign       =   1
+         CaptionAlign    =   1
+         iNonThemeStyle  =   7
+         HighlightColor  =   4194304
+         FontHighlightColor=   14737632
+         Tooltiptitle    =   ""
+         ToolTipIcon     =   0
+         ToolTipType     =   0
+         ttForeColor     =   0
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
             Size            =   9.75
             Charset         =   0
@@ -77,23 +113,18 @@ Begin VB.Form frmControlLibros
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   360
-         Left            =   120
-         TabIndex        =   2
-         Top             =   480
-         Width           =   1355
       End
-      Begin isButtonTest.isButton cmdAgregar 
+      Begin isButtonTest.isButton cmdEliminar 
          Height          =   420
          Left            =   120
-         TabIndex        =   8
-         Top             =   2400
+         TabIndex        =   7
+         Top             =   1800
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmControlLibros.frx":324A
+         Icon            =   "frmControlLibros.frx":19A4
          Style           =   8
-         Caption         =   "     Aceptar"
+         Caption         =   "     Eliminar"
          IconSize        =   18
          IconAlign       =   1
          CaptionAlign    =   1
@@ -129,8 +160,8 @@ Begin VB.Form frmControlLibros
          ForeColor       =   &H8000000F&
          Height          =   255
          Left            =   120
-         TabIndex        =   7
-         Top             =   1680
+         TabIndex        =   5
+         Top             =   1080
          Width           =   1350
       End
       Begin VB.Label Label2 
@@ -148,38 +179,19 @@ Begin VB.Form frmControlLibros
          ForeColor       =   &H8000000F&
          Height          =   255
          Left            =   120
-         TabIndex        =   6
-         Top             =   960
+         TabIndex        =   4
+         Top             =   360
          Width           =   1350
-      End
-      Begin VB.Label Label1 
-         BackStyle       =   0  'Transparent
-         Caption         =   "Manual"
-         BeginProperty Font 
-            Name            =   "Century Gothic"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H8000000F&
-         Height          =   255
-         Left            =   120
-         TabIndex        =   5
-         Top             =   240
-         Width           =   1355
       End
    End
    Begin MSDataGridLib.DataGrid grilla 
-      Height          =   2895
+      Height          =   2295
       Left            =   120
       TabIndex        =   0
-      Top             =   240
-      Width           =   4455
-      _ExtentX        =   7858
-      _ExtentY        =   5106
+      Top             =   840
+      Width           =   2775
+      _ExtentX        =   4895
+      _ExtentY        =   4048
       _Version        =   393216
       AllowUpdate     =   0   'False
       HeadLines       =   1
@@ -237,12 +249,49 @@ Begin VB.Form frmControlLibros
          EndProperty
       EndProperty
    End
+   Begin VB.Label Label1 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Manual"
+      BeginProperty Font 
+         Name            =   "Century Gothic"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H8000000F&
+      Height          =   255
+      Left            =   120
+      TabIndex        =   9
+      Top             =   120
+      Width           =   1350
+   End
 End
 Attribute VB_Name = "frmControlLibros"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+
+Private Sub cmdEliminar_Click()
+    If txtManual.Text = "" Then
+        MsgBox "Primero debe elegir un Manual", vbOKOnly + vbInformation, "Manuales"
+    Else
+        a = MsgBox("¿Esta seguro que desea eliminar ese Manual?", vbYesNo + vbQuestion, "Manuales")
+        If a = vbYes Then
+            With rsManuales
+                .Requery
+                .Find "Manual='" & txtManual.Text & "'"
+                .Delete
+                .Update
+            End With
+            Grilla.Refresh
+            txtManual.Text = ""
+        End If
+    End If
+End Sub
 
 Private Sub Form_Load()
     Centrar Me
@@ -251,7 +300,7 @@ Private Sub Form_Load()
         .Open "SELECT Manual, Stock, Precio FROM manuales ORDER BY manual", Cn, adOpenDynamic, adLockPessimistic
     End With
 
-    Set grilla.DataSource = rsManuales
+    Set Grilla.DataSource = rsManuales
     formatoGrilla
 End Sub
 
@@ -260,6 +309,8 @@ Private Sub cmdAgregar_Click()
     If txtManual.Text = "" Then MsgBox "Ingrese nombre del manual", vbCritical, "Control de Manuales": txtManual.SetFocus: Exit Sub
     If txtStock.Text = "" Then MsgBox "Ingrese cantidad de manuales", vbCritical, "Control de Manuales": txtCantidad.SetFocus: Exit Sub
     If txtPrecio.Text = "" Then MsgBox "Ingrese precio del manual", vbCritical, "Control de Manuales": txtPrecio.SetFocus: Exit Sub
+    
+    On Error GoTo LineaError
     
     With rsManuales
         .Requery
@@ -277,19 +328,23 @@ Private Sub cmdAgregar_Click()
         End If
         .Close
         .Open "SELECT Manual, Stock, Precio FROM manuales ORDER BY manual", Cn, adOpenDynamic, adLockPessimistic
-        Set grilla.DataSource = rsManuales
+        Set Grilla.DataSource = rsManuales
         formatoGrilla
     End With
     '''Restablece los Datos
     txtManual.Text = ""
     txtStock.Text = ""
     txtPrecio.Text = ""
+
+LineaError:
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+
 End Sub
 
 Private Sub grilla_Click()
-    txtManual.Text = grilla.Columns(0).Text
-    txtStock.Text = grilla.Columns(1).Text
-    txtPrecio.Text = grilla.Columns(2).Text
+    txtManual.Text = Grilla.Columns(0).Text
+    txtStock.Text = Grilla.Columns(1).Text
+    txtPrecio.Text = Grilla.Columns(2).Text
 End Sub
 
 Sub formatoGrilla()
@@ -299,12 +354,12 @@ Sub formatoGrilla()
             w = 2100
         Else:
             w = 800
-            grilla.Columns(N).Alignment = dbgCenter
+            Grilla.Columns(N).Alignment = dbgCenter
             If N = 2 Then
-                grilla.Columns(N).NumberFormat = "$ #####"
+                Grilla.Columns(N).NumberFormat = "$ #####"
             End If
         End If
-        grilla.Columns(N).Width = w
+        Grilla.Columns(N).Width = w
     Next
 End Sub
 

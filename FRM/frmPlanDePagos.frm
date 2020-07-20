@@ -111,7 +111,7 @@ Begin VB.Form frmPlanDePagos
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   92733441
+      Format          =   131530753
       CurrentDate     =   41323
    End
    Begin VB.TextBox txtNroCuota 
@@ -150,7 +150,7 @@ Begin VB.Form frmPlanDePagos
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   92733441
+      Format          =   237109249
       CurrentDate     =   41323
    End
    Begin isButtonTest.isButton cmdCrearPlan 
@@ -161,7 +161,7 @@ Begin VB.Form frmPlanDePagos
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmPlanDePagos.frx":324A
+      Icon            =   "frmPlanDePagos.frx":10CA
       Style           =   8
       Caption         =   "     Asignar"
       IconSize        =   18
@@ -192,7 +192,7 @@ Begin VB.Form frmPlanDePagos
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmPlanDePagos.frx":3B24
+      Icon            =   "frmPlanDePagos.frx":19A4
       Style           =   8
       Caption         =   "     Volver"
       IconSize        =   18
@@ -355,7 +355,7 @@ Private Sub cmdCrearPlan_Click()
             .Requery
             .AddNew
             !CodAlumno = lblCodAlumno.Caption
-            !NyA = lblNya.Caption
+            !NyA = lblNyA.Caption
             !NroCuota = NroCuota
             If NroCuota = 1 Then
                 !fechavto = DTPFechaVto.Value
@@ -429,7 +429,7 @@ Private Sub Form_Load()
     Centrar Me
     PlanDePago
     lblCodAlumno.Caption = frmVerificaciones.lblCodAlumno.Caption
-    lblNya.Caption = frmVerificaciones.txtNya.Text
+    lblNyA.Caption = frmVerificaciones.txtNya.Text
     txtTotalCuotas.Text = frmVerificaciones.txtTotalCuotas.Text
     txtNroCuota.Locked = True
     txtDeuda.Text = Val(frmVerificaciones.txtTotalCurso.Text) / Val(txtTotalCuotas.Text)

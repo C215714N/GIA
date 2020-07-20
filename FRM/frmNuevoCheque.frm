@@ -28,9 +28,9 @@ Begin VB.Form frmNuevoCheque
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      ItemData        =   "frmNuevoCheque.frx":324A
+      ItemData        =   "frmNuevoCheque.frx":10CA
       Left            =   3000
-      List            =   "frmNuevoCheque.frx":3251
+      List            =   "frmNuevoCheque.frx":10D1
       Sorted          =   -1  'True
       Style           =   2  'Dropdown List
       TabIndex        =   4
@@ -103,7 +103,7 @@ Begin VB.Form frmNuevoCheque
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   92078081
+      Format          =   153026561
       CurrentDate     =   41782
    End
    Begin isButtonTest.isButton cmdAgregar 
@@ -114,7 +114,7 @@ Begin VB.Form frmNuevoCheque
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmNuevoCheque.frx":325D
+      Icon            =   "frmNuevoCheque.frx":10DD
       Style           =   8
       Caption         =   "     Aceptar"
       IconSize        =   18
@@ -143,7 +143,7 @@ Begin VB.Form frmNuevoCheque
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmNuevoCheque.frx":3B37
+      Icon            =   "frmNuevoCheque.frx":19B7
       Style           =   8
       Caption         =   "     Cancelar"
       IconSize        =   18
@@ -266,6 +266,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cmdAgregar_Click()
+    On Error GoTo LineaError
     If txtDestinatario.Text = "" Then MsgBox "Debe agregar el destinatario del cheque", vbCritical, "Cheques": txtDestinatario.SetFocus: Exit Sub
     If txtNroCheque.Text = "" Then MsgBox "Debe agregar el numero del cheque", vbCritical, "Cheques": txtNroCheque.SetFocus: Exit Sub
     If txtMonto.Text = "" Then MsgBox "Debe agregar el monto", vbCritical, "Cheques": txtMonto.SetFocus: Exit Sub
@@ -276,7 +277,7 @@ Private Sub cmdAgregar_Click()
         .Open "SELECT * FROM cheques", Cn, adOpenDynamic, adLockPessimistic
         .Requery
         .AddNew
-        !fecha = DTPFecha.Value
+        !fecha = dtpFecha.Value
         !destinatario = txtDestinatario.Text
         !numerocheque = txtNroCheque.Text
         !monto = txtMonto.Text
@@ -292,6 +293,8 @@ Private Sub cmdAgregar_Click()
     Else
         Unload Me
     End If
+LineaError:
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
 End Sub
 
 Private Sub cmdCancelar_Click()
@@ -304,7 +307,7 @@ End Sub
 
 Private Sub Form_Load()
     Centrar Me
-    DTPFecha.Value = Date
+    dtpFecha.Value = Date
 End Sub
 
 Private Sub txtDestinatario_KeyPress(KeyAscii As Integer)

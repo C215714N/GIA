@@ -49,7 +49,7 @@ Begin VB.Form frmSuscripciones
          MaxLength       =   300
          Appearance      =   0
          AutoVerbMenu    =   -1  'True
-         TextRTF         =   $"frmSuscripciones.frx":324A
+         TextRTF         =   $"frmSuscripciones.frx":10CA
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
             Size            =   9.75
@@ -87,7 +87,7 @@ Begin VB.Form frmSuscripciones
          Width           =   1350
          _ExtentX        =   2381
          _ExtentY        =   741
-         Icon            =   "frmSuscripciones.frx":32D0
+         Icon            =   "frmSuscripciones.frx":1150
          Style           =   8
          Caption         =   "     Nuevo"
          IconSize        =   18
@@ -116,7 +116,7 @@ Begin VB.Form frmSuscripciones
          Width           =   1350
          _ExtentX        =   2381
          _ExtentY        =   741
-         Icon            =   "frmSuscripciones.frx":3BAA
+         Icon            =   "frmSuscripciones.frx":1A2A
          Style           =   8
          Caption         =   "     Editar"
          IconSize        =   18
@@ -145,7 +145,7 @@ Begin VB.Form frmSuscripciones
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmSuscripciones.frx":4484
+         Icon            =   "frmSuscripciones.frx":2304
          Style           =   8
          Caption         =   "     Buscar"
          IconSize        =   18
@@ -174,7 +174,7 @@ Begin VB.Form frmSuscripciones
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmSuscripciones.frx":4D5E
+         Icon            =   "frmSuscripciones.frx":2BDE
          Style           =   8
          Caption         =   "     Aceptar"
          IconSize        =   18
@@ -203,7 +203,7 @@ Begin VB.Form frmSuscripciones
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmSuscripciones.frx":5638
+         Icon            =   "frmSuscripciones.frx":34B8
          Style           =   8
          Caption         =   "     Cancelar"
          IconSize        =   18
@@ -232,7 +232,7 @@ Begin VB.Form frmSuscripciones
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmSuscripciones.frx":5F12
+         Icon            =   "frmSuscripciones.frx":3D92
          Style           =   8
          Caption         =   "     Volver"
          IconSize        =   18
@@ -318,9 +318,9 @@ Begin VB.Form frmSuscripciones
             Strikethrough   =   0   'False
          EndProperty
          Height          =   360
-         ItemData        =   "frmSuscripciones.frx":67EC
+         ItemData        =   "frmSuscripciones.frx":466C
          Left            =   120
-         List            =   "frmSuscripciones.frx":67F9
+         List            =   "frmSuscripciones.frx":4679
          Style           =   2  'Dropdown List
          TabIndex        =   23
          Top             =   2400
@@ -343,7 +343,7 @@ Begin VB.Form frmSuscripciones
          Left            =   1440
          TabIndex        =   25
          Top             =   2520
-         Width           =   1500
+         Width           =   1260
       End
       Begin VB.CheckBox chkExamenes 
          BackColor       =   &H00662200&
@@ -362,7 +362,7 @@ Begin VB.Form frmSuscripciones
          Left            =   1440
          TabIndex        =   24
          Top             =   2280
-         Width           =   1500
+         Width           =   1260
       End
       Begin VB.TextBox txtGastoAdm 
          Alignment       =   1  'Right Justify
@@ -436,7 +436,7 @@ Begin VB.Form frmSuscripciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   91750401
+         Format          =   152961025
          CurrentDate     =   41308
       End
       Begin VB.Label Label20 
@@ -828,9 +828,9 @@ Begin VB.Form frmSuscripciones
             Strikethrough   =   0   'False
          EndProperty
          Height          =   360
-         ItemData        =   "frmSuscripciones.frx":681B
+         ItemData        =   "frmSuscripciones.frx":469B
          Left            =   3720
-         List            =   "frmSuscripciones.frx":6828
+         List            =   "frmSuscripciones.frx":46A8
          Locked          =   -1  'True
          TabIndex        =   1
          Top             =   600
@@ -877,7 +877,7 @@ Begin VB.Form frmSuscripciones
          Top             =   1200
          Width           =   2655
          _ExtentX        =   4683
-         _ExtentY        =   635
+         _ExtentY        =   661
          _Version        =   393216
          Text            =   ""
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -908,7 +908,7 @@ Begin VB.Form frmSuscripciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   91750401
+         Format          =   111935489
          CurrentDate     =   41308
       End
       Begin MSDataListLib.DataCombo dtcAsistente 
@@ -918,7 +918,7 @@ Begin VB.Form frmSuscripciones
          Top             =   2400
          Width           =   2655
          _ExtentX        =   4683
-         _ExtentY        =   635
+         _ExtentY        =   661
          _Version        =   393216
          Style           =   2
          Text            =   ""
@@ -939,7 +939,7 @@ Begin VB.Form frmSuscripciones
          Top             =   2400
          Width           =   3495
          _ExtentX        =   6165
-         _ExtentY        =   635
+         _ExtentY        =   661
          _Version        =   393216
          Style           =   2
          Text            =   ""
@@ -1395,6 +1395,8 @@ LineaError:
         Case 3021
             Resume Next
         End Select
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+
 End Sub
 
 Private Sub cmdModificar_Click()

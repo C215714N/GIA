@@ -43,7 +43,7 @@ Begin VB.Form frmPersonal
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmPersonal.frx":324A
+         Icon            =   "frmPersonal.frx":10CA
          Style           =   8
          Caption         =   "     Buscar"
          IconSize        =   18
@@ -72,7 +72,7 @@ Begin VB.Form frmPersonal
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmPersonal.frx":3B24
+         Icon            =   "frmPersonal.frx":19A4
          Style           =   8
          Caption         =   "     Guardar"
          IconSize        =   18
@@ -101,7 +101,7 @@ Begin VB.Form frmPersonal
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmPersonal.frx":43FE
+         Icon            =   "frmPersonal.frx":227E
          Style           =   8
          Caption         =   "     Cancelar"
          IconSize        =   18
@@ -130,7 +130,7 @@ Begin VB.Form frmPersonal
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmPersonal.frx":4CD8
+         Icon            =   "frmPersonal.frx":2B58
          Style           =   8
          Caption         =   "     Nuevo"
          IconSize        =   18
@@ -161,7 +161,7 @@ Begin VB.Form frmPersonal
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmPersonal.frx":55B2
+         Icon            =   "frmPersonal.frx":3432
          Style           =   8
          Caption         =   "     Editar"
          IconSize        =   18
@@ -192,7 +192,7 @@ Begin VB.Form frmPersonal
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmPersonal.frx":5E8C
+         Icon            =   "frmPersonal.frx":3D0C
          Style           =   8
          Caption         =   "     Volver"
          IconSize        =   18
@@ -272,7 +272,7 @@ Begin VB.Form frmPersonal
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   92078081
+         Format          =   238419969
          CurrentDate     =   41319
       End
       Begin VB.TextBox txtNya 
@@ -382,9 +382,9 @@ Begin VB.Form frmPersonal
             Strikethrough   =   0   'False
          EndProperty
          Height          =   360
-         ItemData        =   "frmPersonal.frx":6766
+         ItemData        =   "frmPersonal.frx":45E6
          Left            =   1560
-         List            =   "frmPersonal.frx":6773
+         List            =   "frmPersonal.frx":45F3
          Style           =   2  'Dropdown List
          TabIndex        =   2
          Top             =   1080
@@ -408,7 +408,7 @@ Begin VB.Form frmPersonal
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   92078081
+         Format          =   110690305
          CurrentDate     =   41319
       End
       Begin VB.Label Label10 

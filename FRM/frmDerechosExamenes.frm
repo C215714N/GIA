@@ -116,9 +116,9 @@ Begin VB.Form frmDerechosExamenes
             Strikethrough   =   0   'False
          EndProperty
          Height          =   345
-         ItemData        =   "frmDerechosExamenes.frx":324A
+         ItemData        =   "frmDerechosExamenes.frx":10CA
          Left            =   150
-         List            =   "frmDerechosExamenes.frx":3257
+         List            =   "frmDerechosExamenes.frx":10D7
          Style           =   2  'Dropdown List
          TabIndex        =   2
          Top             =   1680
@@ -152,9 +152,9 @@ Begin VB.Form frmDerechosExamenes
             Strikethrough   =   0   'False
          EndProperty
          Height          =   345
-         ItemData        =   "frmDerechosExamenes.frx":3279
+         ItemData        =   "frmDerechosExamenes.frx":10F9
          Left            =   150
-         List            =   "frmDerechosExamenes.frx":327B
+         List            =   "frmDerechosExamenes.frx":10FB
          TabIndex        =   1
          Top             =   1080
          Width           =   1335
@@ -178,7 +178,7 @@ Begin VB.Form frmDerechosExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   91947009
+         Format          =   154599425
          CurrentDate     =   41978
       End
       Begin isButtonTest.isButton cmdAgregar 
@@ -189,7 +189,7 @@ Begin VB.Form frmDerechosExamenes
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmDerechosExamenes.frx":327D
+         Icon            =   "frmDerechosExamenes.frx":10FD
          Style           =   8
          Caption         =   "     Aceptar"
          IconSize        =   18
@@ -218,7 +218,7 @@ Begin VB.Form frmDerechosExamenes
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmDerechosExamenes.frx":3B57
+         Icon            =   "frmDerechosExamenes.frx":19D7
          Style           =   8
          Caption         =   "     Examen"
          IconSize        =   18
@@ -467,7 +467,7 @@ Private Sub Form_Load()
     Centrar Me
     Control
     txtPrecio.Text = Format(rsControl!derechoExamen, "currency")
-    DTPFecha.Value = Date
+    dtpFecha.Value = Date
 End Sub
 
 Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
@@ -488,12 +488,12 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
                 .Open "SELECT Fecha, Modulo FROM derechoexamen WHERE codalumno=" & Int(txtCodigo.Text) & " ORDER BY fecha", Cn, adOpenDynamic, adLockPessimistic
             End With
             
-            Set grilla.DataSource = rsDerechosExamenes
+            Set Grilla.DataSource = rsDerechosExamenes
             formatoGrilla
             CargarModulos
             txtPrecio.Text = Format(rsControl!derechoExamen, "currency")
             cmbModulo.Enabled = True
-            DTPFecha.Enabled = True
+            dtpFecha.Enabled = True
             cmdAgregar.Enabled = True
             cmbModulo.SetFocus
             
@@ -505,6 +505,7 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub cmdAgregar_Click()
+    On Error GoTo LineaError
     If cmbModulo.Text = "" Then MsgBox "Elija el modulo", vbOKOnly + vbCritical, "GIA - Examenes": cmbModulo.SetFocus: Exit Sub
     If cmbPago.Text = "" Then MsgBox "Elija el tipo de pago", vbOKOnly + vbCritical, "GIA - Examenes": cmbPago.SetFocus: Exit Sub
     If txtRecibo.Text = "" Then MsgBox "Ingrese el numero de recibo", vbOKOnly + vbCritical, "GIA - Examenes": txtRecibo.SetFocus: Exit Sub
@@ -515,12 +516,12 @@ Private Sub cmdAgregar_Click()
         .Requery
         .AddNew
         !CodAlumno = Int(txtCodigo.Text)
-        !fecha = DTPFecha.Value
+        !fecha = dtpFecha.Value
         !modulo = cmbModulo.Text
         .Update
         .Close
         .Open "SELECT Fecha, Modulo as Modulo FROM derechoexamen WHERE codalumno=" & Int(txtCodigo.Text) & " ORDER BY fecha", Cn, adOpenDynamic, adLockPessimistic
-        Set grilla.DataSource = rsDerechosExamenes
+        Set Grilla.DataSource = rsDerechosExamenes
         formatoGrilla
     End With
 '''GESTION CONTABLE - ASIENTO
@@ -563,7 +564,8 @@ Private Sub cmdAgregar_Click()
     Else
         MsgBox "Recuerde realizar el asiento contable correspondiente a esta operacion", vbExclamation, "Derechos de Examenes"
     End If
-
+LineaError:
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
 End Sub
 
 Private Sub txtRecibo_KeyPress(KeyAscii As Integer)
@@ -724,6 +726,6 @@ End Sub
 
 Sub formatoGrilla()
     For N = 0 To 1
-        grilla.Columns(N).Width = 1150 + (N * 800)
+        Grilla.Columns(N).Width = 1150 + (N * 800)
     Next
 End Sub

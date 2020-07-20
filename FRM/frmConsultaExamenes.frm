@@ -151,7 +151,7 @@ Begin VB.Form frmConsultaExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   92078081
+         Format          =   237633537
          CurrentDate     =   41978
       End
       Begin MSComCtl2.DTPicker dtpDesde 
@@ -172,7 +172,7 @@ Begin VB.Form frmConsultaExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   92078081
+         Format          =   237633537
          CurrentDate     =   41978
       End
       Begin isButtonTest.isButton cmdConsultar 
@@ -183,7 +183,7 @@ Begin VB.Form frmConsultaExamenes
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmConsultaExamenes.frx":324A
+         Icon            =   "frmConsultaExamenes.frx":10CA
          Style           =   8
          Caption         =   "     Consultar"
          IconSize        =   18
@@ -214,7 +214,7 @@ Begin VB.Form frmConsultaExamenes
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmConsultaExamenes.frx":3B24
+         Icon            =   "frmConsultaExamenes.frx":19A4
          Style           =   8
          Caption         =   "     Imprimir"
          IconSize        =   18
@@ -245,7 +245,7 @@ Begin VB.Form frmConsultaExamenes
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmConsultaExamenes.frx":43FE
+         Icon            =   "frmConsultaExamenes.frx":227E
          Style           =   8
          Caption         =   "     Diploma"
          IconSize        =   18
@@ -276,7 +276,7 @@ Begin VB.Form frmConsultaExamenes
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmConsultaExamenes.frx":48F8
+         Icon            =   "frmConsultaExamenes.frx":2778
          Style           =   8
          Caption         =   "     Exportar"
          IconSize        =   18

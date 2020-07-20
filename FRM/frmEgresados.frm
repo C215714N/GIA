@@ -95,7 +95,7 @@ Begin VB.Form frmEgresados
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   92078081
+         Format          =   132186113
          CurrentDate     =   41978
       End
       Begin MSComCtl2.DTPicker dtpDesde 
@@ -116,7 +116,7 @@ Begin VB.Form frmEgresados
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   92078081
+         Format          =   132186113
          CurrentDate     =   41978
       End
       Begin isButtonTest.isButton cmdConsultar 
@@ -127,7 +127,7 @@ Begin VB.Form frmEgresados
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmEgresados.frx":324A
+         Icon            =   "frmEgresados.frx":10CA
          Style           =   8
          Caption         =   "     Consulta"
          IconSize        =   18

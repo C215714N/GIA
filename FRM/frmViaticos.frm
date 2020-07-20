@@ -26,7 +26,7 @@ Begin VB.Form frmViaticos
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   Palette         =   "frmViaticos.frx":324A
+   Palette         =   "frmViaticos.frx":10CA
    ScaleHeight     =   4155
    ScaleWidth      =   4695
    Begin isButtonTest.isButton cmdAgregar 
@@ -37,7 +37,7 @@ Begin VB.Form frmViaticos
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmViaticos.frx":37E4
+      Icon            =   "frmViaticos.frx":1664
       Style           =   8
       Caption         =   "     Aceptar"
       IconAlign       =   1
@@ -217,7 +217,7 @@ Begin VB.Form frmViaticos
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   91947009
+         Format          =   154992641
          CurrentDate     =   42277
       End
       Begin VB.Label Label4 
@@ -283,6 +283,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cmdAgregar_Click()
+On Error GoTo LineaError
     If dtcAsistente.Text = "" Then MsgBox "Elija el Asesor Educativo", vbCritical, "Viaticos": dtcAsistente.SetFocus: Exit Sub
     If txtMonto.Text = "" Then MsgBox "Agregue el monto del Viatico", vbCritical, "Viaticos": txtMonto.SetFocus: Exit Sub
     If optMonto(0).Value = False And optMonto(1).Value = False Then MsgBox "Elija si el Asesor Educativo lleva o rinde el dinero", vbCritical, "Viaticos": optMonto(0).SetFocus: Exit Sub
@@ -292,7 +293,7 @@ Private Sub cmdAgregar_Click()
         .Open "SELECT * FROM viaticos", Cn, adOpenDynamic, adLockPessimistic
         .Requery
         .AddNew
-        !fecha = DTPFecha.Value
+        !fecha = dtpFecha.Value
         !asesor = dtcAsistente.Text
         
         If optMonto(0).Value = True Then
@@ -309,9 +310,11 @@ Private Sub cmdAgregar_Click()
         .Open "SELECT Fecha,Monto FROM viaticos WHERE asesor='" & dtcAsistente.Text & "' ORDER BY fecha desc,id desc", Cn, adOpenDynamic, adLockPessimistic
     End With
     
-    Set grilla.DataSource = rsViaticos
-    
+    Set Grilla.DataSource = rsViaticos
     txtMonto.Text = ""
+
+LineaError:
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
 End Sub
 
 Private Sub dtcAsistente_Change()
@@ -322,14 +325,14 @@ Private Sub dtcAsistente_Change()
         .Close
         .Open "SELECT Fecha,Monto FROM viaticos WHERE asesor='" & dtcAsistente.Text & "' ORDER BY fecha desc,id desc", Cn, adOpenDynamic, adLockPessimistic
     End With
-    Set grilla.DataSource = rsViaticos
+    Set Grilla.DataSource = rsViaticos
     formatoGrilla
     
 End Sub
 
 Private Sub Form_Load()
     Centrar Me
-    DTPFecha.Value = Date
+    dtpFecha.Value = Date
     Asistente
     Set dtcAsistente.RowSource = rsPersonal
     dtcAsistente.BoundColumn = "Personal"
@@ -339,7 +342,7 @@ End Sub
 
 Sub formatoGrilla()
     For N = 0 To 1 Step 1
-        grilla.Columns(N).Width = 1150 - (N * 250)
-        grilla.Columns(N).Alignment = dbgCenter
+        Grilla.Columns(N).Width = 1150 - (N * 250)
+        Grilla.Columns(N).Alignment = dbgCenter
     Next
 End Sub

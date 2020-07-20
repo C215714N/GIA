@@ -157,7 +157,7 @@ Begin VB.Form frmInformeBajas
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   92733441
+         Format          =   132120577
          CurrentDate     =   42108
       End
       Begin MSComCtl2.DTPicker dtpDesde 
@@ -178,7 +178,7 @@ Begin VB.Form frmInformeBajas
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   92733441
+         Format          =   237568001
          CurrentDate     =   42108
       End
       Begin isButtonTest.isButton cmdBuscar 
@@ -189,7 +189,7 @@ Begin VB.Form frmInformeBajas
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmInformeBajas.frx":324A
+         Icon            =   "frmInformeBajas.frx":10CA
          Style           =   8
          Caption         =   "     Buscar"
          IconSize        =   18
@@ -218,7 +218,7 @@ Begin VB.Form frmInformeBajas
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmInformeBajas.frx":3B24
+         Icon            =   "frmInformeBajas.frx":19A4
          Style           =   8
          Caption         =   "     Imprimir"
          IconSize        =   18

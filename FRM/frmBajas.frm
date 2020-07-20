@@ -27,9 +27,9 @@ Begin VB.Form frmBajas
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      ItemData        =   "frmBajas.frx":324A
+      ItemData        =   "frmBajas.frx":10CA
       Left            =   2500
-      List            =   "frmBajas.frx":3254
+      List            =   "frmBajas.frx":10D4
       Style           =   2  'Dropdown List
       TabIndex        =   1
       Top             =   360
@@ -60,7 +60,7 @@ Begin VB.Form frmBajas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmBajas.frx":3260
+      Icon            =   "frmBajas.frx":10E0
       Style           =   8
       Caption         =   "     Dar Baja"
       IconAlign       =   1
@@ -127,6 +127,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cmdConfirmar_Click()
+On Error GoTo LineaError
 If txtmotivo.Text = "" Then MsgBox "Debera escribir el motivo de la baja": txtmotivo.SetFocus: Exit Sub
 If cmbPagoBaja.Text = "" Then MsgBox "Defina si el alumno pago la baja": cmbPagoBaja.SetFocus: Exit Sub
 
@@ -182,6 +183,9 @@ With rsPlanDePago
         frmBajas.Hide
         frmAnalisisDeCuotas.Enabled = True
         
+LineaError:
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+
 End Sub
 
 Private Sub Form_Load()

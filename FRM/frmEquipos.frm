@@ -40,7 +40,7 @@ Begin VB.Form frmEquipos
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmEquipos.frx":324A
+      Icon            =   "frmEquipos.frx":10CA
       Style           =   8
       Caption         =   "     Aceptar"
       IconSize        =   18
@@ -69,7 +69,7 @@ Begin VB.Form frmEquipos
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmEquipos.frx":3B24
+      Icon            =   "frmEquipos.frx":19A4
       Style           =   8
       Caption         =   "     Cancelar"
       IconSize        =   18

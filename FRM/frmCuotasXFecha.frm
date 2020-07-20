@@ -160,7 +160,7 @@ Begin VB.Form frmCuotasXFecha
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   91815937
+      Format          =   154533889
       CurrentDate     =   41345
    End
    Begin MSComCtl2.DTPicker dtpHasta 
@@ -181,7 +181,7 @@ Begin VB.Form frmCuotasXFecha
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   91815937
+      Format          =   154533889
       CurrentDate     =   41345
    End
    Begin isButtonTest.isButton cmdBuscar 
@@ -192,7 +192,7 @@ Begin VB.Form frmCuotasXFecha
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCuotasXFecha.frx":324A
+      Icon            =   "frmCuotasXFecha.frx":10CA
       Style           =   8
       Caption         =   "     Buscar"
       IconSize        =   18
@@ -221,7 +221,7 @@ Begin VB.Form frmCuotasXFecha
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCuotasXFecha.frx":3B24
+      Icon            =   "frmCuotasXFecha.frx":19A4
       Style           =   8
       Caption         =   "     Marcar"
       IconSize        =   18
@@ -252,7 +252,7 @@ Begin VB.Form frmCuotasXFecha
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCuotasXFecha.frx":43FE
+      Icon            =   "frmCuotasXFecha.frx":227E
       Style           =   8
       Caption         =   "     Datos"
       IconSize        =   18
@@ -283,7 +283,7 @@ Begin VB.Form frmCuotasXFecha
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCuotasXFecha.frx":4CD8
+      Icon            =   "frmCuotasXFecha.frx":2B58
       Style           =   8
       Caption         =   "     Cuotas"
       IconSize        =   18
@@ -314,7 +314,7 @@ Begin VB.Form frmCuotasXFecha
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCuotasXFecha.frx":55B2
+      Icon            =   "frmCuotasXFecha.frx":3432
       Style           =   8
       Caption         =   "     Volver"
       IconSize        =   18
@@ -345,7 +345,7 @@ Begin VB.Form frmCuotasXFecha
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCuotasXFecha.frx":5E8C
+      Icon            =   "frmCuotasXFecha.frx":3D0C
       Style           =   8
       Caption         =   "     Exportar"
       IconSize        =   18
@@ -371,6 +371,15 @@ Begin VB.Form frmCuotasXFecha
    Begin VB.Label lblTotalAlumnos 
       Alignment       =   1  'Right Justify
       BorderStyle     =   1  'Fixed Single
+      BeginProperty Font 
+         Name            =   "Century Gothic"
+         Size            =   9
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   360
       Left            =   5280
       TabIndex        =   9
@@ -419,6 +428,15 @@ Begin VB.Form frmCuotasXFecha
    Begin VB.Label lblResta 
       Alignment       =   1  'Right Justify
       BorderStyle     =   1  'Fixed Single
+      BeginProperty Font 
+         Name            =   "Century Gothic"
+         Size            =   9
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   360
       Left            =   5280
       TabIndex        =   7
@@ -448,6 +466,15 @@ Begin VB.Form frmCuotasXFecha
    Begin VB.Label lblDeudaTotal 
       Alignment       =   1  'Right Justify
       BorderStyle     =   1  'Fixed Single
+      BeginProperty Font 
+         Name            =   "Century Gothic"
+         Size            =   9
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   360
       Left            =   5280
       TabIndex        =   5
@@ -540,7 +567,7 @@ If DateDiff("m", Date, dtpDesde.Value) = 1 And DateDiff("m", Date, dtpHasta.Valu
     End With
     
     lblTotalAlumnos.Caption = rsCuotasXFecha.RecordCount
-    Set grilla.DataSource = rsCuotasXFecha
+    Set Grilla.DataSource = rsCuotasXFecha
 
 Else
     With rsCuotasXFecha
@@ -559,7 +586,7 @@ Else
         .Open "SELECT p.codalumno as Alumno,p.nrocuota as N°, p.fechavto as Vencimiento, p.deudatotal as Deuda,M.fechacompromiso as Compromiso,M.LPA FROM plandepago as p, marcas as m WHERE fechavto>=#" & fecha1 & "# and fechavto<=#" & fecha2 & "# and deudatotal >0 and cantidadcuotas=1 and p.codalumno=m.codalumno ORDER BY p.codalumno", Cn, adOpenDynamic, adLockPessimistic
     End With
 
-    Set grilla.DataSource = rsCuotasXFecha
+    Set Grilla.DataSource = rsCuotasXFecha
     lblTotalAlumnos.Caption = rsCuotasXFecha.RecordCount
     formatoGrilla
 End If
@@ -571,19 +598,19 @@ End Sub
 Sub formatoGrilla()
     Dim w As Integer
     For N = 0 To 5 Step 1
-        grilla.Columns(N).Alignment = dbgCenter
+        Grilla.Columns(N).Alignment = dbgCenter
         If N = 0 Or N = 3 Then
             w = 750
             ElseIf N = 1 Or N = 5 Then
             w = 300
             Else: w = 1150
         End If
-        grilla.Columns(N).Width = w
+        Grilla.Columns(N).Width = w
     Next
 End Sub
 
 Private Sub cmdCuotas_Click()
-    CodAlumno = grilla.Columns(0).Text
+    CodAlumno = Grilla.Columns(0).Text
     frmAnalisisDeCuotas.Show
     frmAnalisisDeCuotas.Label11.Caption = Me.Name
     Me.Enabled = False
@@ -595,7 +622,7 @@ Private Sub cmdDatos_Click()
     
     Verificaciones
     frmVerificaciones.Show
-    CodAlumno = grilla.Columns(0).Text
+    CodAlumno = Grilla.Columns(0).Text
     With rsVerificaciones
         .Requery
         .Find "CodAlumno=" & CodAlumno
@@ -658,7 +685,7 @@ Private Sub cmdDatos_Click()
 End Sub
 
 Private Sub cmdExportar_Click()
-    Call Exportar_Datagrid(grilla.ApproxCount)
+    Call Exportar_Datagrid(Grilla.ApproxCount)
 End Sub
 
 Private Sub Exportar_Datagrid(TotalFilas As Long)
@@ -668,12 +695,12 @@ Private Sub Exportar_Datagrid(TotalFilas As Long)
     Set obj_Hoja = obj_excel.ActiveSheet
        
     Columna = 0
-    For X = 0 To grilla.Columns.Count - 1
-        If grilla.Columns(X).Visible Then
+    For X = 0 To Grilla.Columns.Count - 1
+        If Grilla.Columns(X).Visible Then
             Columna = Columna + 1
-            obj_Hoja.Cells(1, Columna) = grilla.Columns(X).Caption
+            obj_Hoja.Cells(1, Columna) = Grilla.Columns(X).Caption
             For Y = 0 To TotalFilas - 1
-                obj_Hoja.Cells(Y + 2, Columna) = grilla.Columns(X).CellValue(grilla.GetBookmark(Y))
+                obj_Hoja.Cells(Y + 2, Columna) = Grilla.Columns(X).CellValue(Grilla.GetBookmark(Y))
             Next
         End If
     Next
@@ -689,7 +716,7 @@ Private Sub Exportar_Datagrid(TotalFilas As Long)
 End Sub
 
 Private Sub cmdMarcar_Click()
-    CodAlumno = grilla.Columns(0).Text
+    CodAlumno = Grilla.Columns(0).Text
     frmMarcar.Label1.Caption = Me.Name
     frmMarcar.Show
     Me.Enabled = False

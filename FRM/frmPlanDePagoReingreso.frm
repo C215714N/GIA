@@ -83,7 +83,7 @@ Begin VB.Form frmPlanDePagoReingreso
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   92798977
+      Format          =   152764417
       CurrentDate     =   41353
    End
    Begin isButtonTest.isButton cmdAplicar 
@@ -94,7 +94,7 @@ Begin VB.Form frmPlanDePagoReingreso
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmPlanDePagoReingreso.frx":324A
+      Icon            =   "frmPlanDePagoReingreso.frx":10CA
       Style           =   8
       Caption         =   "     Aceptar"
       IconSize        =   18
@@ -123,7 +123,7 @@ Begin VB.Form frmPlanDePagoReingreso
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmPlanDePagoReingreso.frx":3B24
+      Icon            =   "frmPlanDePagoReingreso.frx":19A4
       Style           =   8
       Caption         =   "     Cancelar"
       IconSize        =   18
@@ -230,6 +230,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cmdAplicar_Click()
+    On Error GoTo LineaError
     Dim CuotaMax As Integer
     CuotaMax = Int(txtCantidadCuotas.Text) + Int(txtNroCuota.Text) - 1
     ''genera las nuevas cuotas
@@ -240,7 +241,7 @@ Private Sub cmdAplicar_Click()
         Do Until Int(txtNroCuota.Text) > CuotaMax
             .AddNew
             !CodAlumno = frmAnalisisDeCuotas.lblCodAlumno.Caption
-            !NyA = frmAnalisisDeCuotas.lblNya.Caption
+            !NyA = frmAnalisisDeCuotas.lblNyA.Caption
             !NroCuota = Int(txtNroCuota.Text)
             !deuda = txtMonto.Text
             !totalcobrado = 0
@@ -271,7 +272,8 @@ Private Sub cmdAplicar_Click()
     rsAnalisisDeCuenta.Requery
     frmAnalisisDeCuotas.formatoGrilla
     Unload Me
-    
+LineaError:
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
 End Sub
 
 Private Sub cmdCancelar_Click()

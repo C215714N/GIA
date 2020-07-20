@@ -26,7 +26,7 @@ Begin VB.Form frmLibro
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmLibro.frx":324A
+      Icon            =   "frmLibro.frx":10CA
       Style           =   8
       Caption         =   "     Nuevo"
       IconSize        =   18
@@ -57,7 +57,7 @@ Begin VB.Form frmLibro
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmLibro.frx":3B24
+      Icon            =   "frmLibro.frx":19A4
       Style           =   8
       Caption         =   "     Editar"
       IconSize        =   18
@@ -459,7 +459,7 @@ Begin VB.Form frmLibro
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmLibro.frx":43FE
+      Icon            =   "frmLibro.frx":227E
       Style           =   8
       Caption         =   "     Aceptar"
       IconSize        =   18
@@ -490,7 +490,7 @@ Begin VB.Form frmLibro
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmLibro.frx":4CD8
+      Icon            =   "frmLibro.frx":2B58
       Style           =   8
       Caption         =   "     Eliminar"
       IconSize        =   18
@@ -521,7 +521,7 @@ Begin VB.Form frmLibro
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmLibro.frx":55B2
+      Icon            =   "frmLibro.frx":3432
       Style           =   8
       Caption         =   "     Imprimir"
       IconSize        =   18
@@ -570,46 +570,48 @@ Attribute VB_Exposed = False
 Dim fecha As Date
 
 Private Sub cmdAgregar_Click()
-
-'''guarda la modificacion al libro de aula
-If ModiLibro = False Then
-    With rsLibro
-        If .State = 1 Then .Close
-            .Open "SELECT * FROM LibroDeAula", Cn, adOpenDynamic, adLockPessimistic
-            .AddNew
-            !CodAlumno = Int(lblCodAlumno.Caption)
-            !numclase = Int(txtNumClase.Text)
-            !Tema = txtTema.Text
-            !fecha = Date
-            .Update
+On Error GoTo LineaError
+    '''guarda la modificacion al libro de aula
+    If ModiLibro = False Then
+        With rsLibro
+            If .State = 1 Then .Close
+                .Open "SELECT * FROM LibroDeAula", Cn, adOpenDynamic, adLockPessimistic
+                .AddNew
+                !CodAlumno = Int(lblCodAlumno.Caption)
+                !numclase = Int(txtNumClase.Text)
+                !Tema = txtTema.Text
+                !fecha = Date
+                .Update
+                .Close
+                .Open "SELECT numClase as [N°],Fecha,Tema FROM librodeaula WHERE codalumno=" & CodAlumno & " ORDER BY NumClase", Cn, adOpenDynamic, adLockPessimistic
+        End With
+    Else
+        With rsLibro
+            fecha = Format(Label10.Caption, "mm/dd/yyyy")
             .Close
-            .Open "SELECT numClase as [N°],Fecha,Tema FROM librodeaula WHERE codalumno=" & CodAlumno & " ORDER BY NumClase", Cn, adOpenDynamic, adLockPessimistic
-    End With
-Else
-    With rsLibro
-        fecha = Format(Label10.Caption, "mm/dd/yyyy")
-        .Close
-        .Open "SELECT numClase as [N°],Fecha,Tema FROM librodeaula WHERE codalumno=" & CodAlumno & " and fecha=#" & fecha & "#", Cn, adOpenDynamic, adLockPessimistic
-        .MoveFirst
-            !N° = Int(txtNumClase.Text)
-            !Tema = txtTema.Text
-            .UpdateBatch
-            .Close
-            .Open "SELECT numClase as [N°],Fecha,Tema FROM librodeaula WHERE codalumno=" & CodAlumno & " ORDER BY NumClase", Cn, adOpenDynamic, adLockPessimistic
-    End With
-End If
-
-'''muestra grilla actualizada
-Set grilla.DataSource = rsLibro
-    formatoGrilla
-
-botones True, False
+            .Open "SELECT numClase as [N°],Fecha,Tema FROM librodeaula WHERE codalumno=" & CodAlumno & " and fecha=#" & fecha & "#", Cn, adOpenDynamic, adLockPessimistic
+            .MoveFirst
+                !N° = Int(txtNumClase.Text)
+                !Tema = txtTema.Text
+                .UpdateBatch
+                .Close
+                .Open "SELECT numClase as [N°],Fecha,Tema FROM librodeaula WHERE codalumno=" & CodAlumno & " ORDER BY NumClase", Cn, adOpenDynamic, adLockPessimistic
+        End With
+    End If
+    
+    '''muestra grilla actualizada
+    Set grilla.DataSource = rsLibro
+        formatoGrilla
+    
+    botones True, False
     
 LineaError:
     Select Case Err.Number
         Case 3021
             Resume Next
         End Select
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+
 End Sub
 
 Private Sub cmdEliminar_Click()

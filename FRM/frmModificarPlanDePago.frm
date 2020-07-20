@@ -35,7 +35,7 @@ Begin VB.Form frmModificarPlanDePago
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   92798977
+      Format          =   153092097
       CurrentDate     =   41353
    End
    Begin VB.TextBox txtMonto 
@@ -78,7 +78,7 @@ Begin VB.Form frmModificarPlanDePago
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmModificarPlanDePago.frx":324A
+      Icon            =   "frmModificarPlanDePago.frx":10CA
       Style           =   8
       Caption         =   "     Aceptar"
       IconSize        =   18
@@ -107,7 +107,7 @@ Begin VB.Form frmModificarPlanDePago
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmModificarPlanDePago.frx":3B24
+      Icon            =   "frmModificarPlanDePago.frx":19A4
       Style           =   8
       Caption         =   "     Cancelar"
       IconSize        =   18
@@ -198,6 +198,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cmdAplicar_Click()
+    On Error GoTo LineaError
     Dim DeudaTotal As Currency
     
     If txtNroCuota.Text = "" Then MsgBox "Debe Ingresar desde que cuota se modifica el plan de pago", vbOKOnly + vbInformation, "Plan de Pago": txtNroCuota.SetFocus: Exit Sub
@@ -231,6 +232,9 @@ Private Sub cmdAplicar_Click()
         .formatoGrilla
     End With
     Unload Me
+    
+LineaError:
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
 End Sub
 
 Private Sub cmdCancelar_Click()

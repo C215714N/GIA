@@ -112,7 +112,7 @@ Begin VB.Form frmLibroArmado
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmLibroArmado.frx":324A
+      Icon            =   "frmLibroArmado.frx":10CA
       Style           =   8
       Caption         =   "     Buscar"
       IconSize        =   18

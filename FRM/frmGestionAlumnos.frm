@@ -107,7 +107,7 @@ Begin VB.Form frmGestionAlumnos
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmGestionAlumnos.frx":324A
+      Icon            =   "frmGestionAlumnos.frx":10CA
       Style           =   8
       Caption         =   "     Agregar"
       IconSize        =   18
@@ -136,7 +136,7 @@ Begin VB.Form frmGestionAlumnos
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmGestionAlumnos.frx":3B24
+      Icon            =   "frmGestionAlumnos.frx":19A4
       Style           =   8
       Caption         =   "     Eliminar"
       IconSize        =   18
@@ -265,9 +265,9 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 
 Private Sub cmdAgregar_Click()
-        
     If txtCodAlumno.Text = "" Then MsgBox "Ingrese el codigo de alumno a agregar en el curso", vbCritical + vbOKOnly, "Gestion de Alumnos": txtCodAlumno.SetFocus: Exit Sub
     
+    On Error GoTo LineaError
     '''comprueba q no esta el alumno asignado a un curso
     With rsAlumnosArmado
         If .State = 1 Then .Close
@@ -286,17 +286,20 @@ Private Sub cmdAgregar_Click()
         .Open "SELECT v.nya as Alumnos,v.codalumno FROM verificaciones as v,alumnosdearmado as a WHERE v.codalumno=a.codalumno and a.grupo=" & CodCurso, Cn, adOpenDynamic, adLockPessimistic
     End With
     
-    Set grilla.DataSource = rsAlumnosArmado
-    grilla.Columns(0).Width = 3000
-    grilla.Columns(1).Width = 0
+    Set Grilla.DataSource = rsAlumnosArmado
+    Grilla.Columns(0).Width = 3000
+    Grilla.Columns(1).Width = 0
     txtCodAlumno.Text = ""
     txtCodAlumno.SetFocus
 
+LineaError:
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
 End Sub
 
 Private Sub cmdQuitar_Click()
-    If MsgBox("¿Esta seguro que desea quitar al alumno " & grilla.Columns(0).Text & " del grupo?", vbYesNo + vbQuestion, "Gestion de Alumnos") = vbYes Then
-        Label4.Caption = grilla.Columns(1).Text
+    On Error GoTo LineaError
+    If MsgBox("¿Esta seguro que desea quitar al alumno " & Grilla.Columns(0).Text & " del grupo?", vbYesNo + vbQuestion, "Gestion de Alumnos") = vbYes Then
+        Label4.Caption = Grilla.Columns(1).Text
         
         '''carga a los alumnos del curso y los muestra en la grilla
         With rsAlumnosArmado
@@ -311,10 +314,12 @@ Private Sub cmdQuitar_Click()
             .Open "SELECT v.nya as Alumnos,v.codalumno FROM verificaciones as v,alumnosdearmado as a WHERE v.codalumno=a.codalumno and a.grupo=" & CodCurso, Cn, adOpenDynamic, adLockPessimistic
         End With
     
-        Set grilla.DataSource = rsAlumnosArmado
-        grilla.Columns(0).Width = 3000
-        grilla.Columns(1).Width = 0
+        Set Grilla.DataSource = rsAlumnosArmado
+        Grilla.Columns(0).Width = 3000
+        Grilla.Columns(1).Width = 0
     End If
+LineaError:
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
 End Sub
 
 Private Sub Form_Load()
@@ -325,9 +330,9 @@ Private Sub Form_Load()
         .Open "SELECT v.nya as Alumnos,v.codalumno FROM verificaciones as v,alumnosdearmado as a WHERE v.codalumno=a.codalumno and a.grupo=" & CodCurso & " ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
     End With
     
-    Set grilla.DataSource = rsAlumnosArmado
-    grilla.Columns(0).Width = 3000
-    grilla.Columns(1).Width = 0
+    Set Grilla.DataSource = rsAlumnosArmado
+    Grilla.Columns(0).Width = 3000
+    Grilla.Columns(1).Width = 0
 End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)

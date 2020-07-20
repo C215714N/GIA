@@ -236,7 +236,7 @@ Begin VB.Form frmInformeSuscripciones
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   92798977
+      Format          =   111149057
       CurrentDate     =   41345
    End
    Begin MSComCtl2.DTPicker dtpHasta 
@@ -257,7 +257,7 @@ Begin VB.Form frmInformeSuscripciones
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   92798977
+      Format          =   111083521
       CurrentDate     =   41345
    End
    Begin isButtonTest.isButton cmdBuscar 
@@ -268,7 +268,7 @@ Begin VB.Form frmInformeSuscripciones
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmInformeSuscripciones.frx":324A
+      Icon            =   "frmInformeSuscripciones.frx":10CA
       Style           =   8
       Caption         =   "     Buscar"
       IconSize        =   18

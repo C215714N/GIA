@@ -197,7 +197,7 @@ Begin VB.Form frmBuscarVerificacion
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmBuscarVerificacion.frx":324A
+      Icon            =   "frmBuscarVerificacion.frx":10CA
       Style           =   8
       Caption         =   "     Aceptar"
       IconSize        =   18
@@ -229,7 +229,7 @@ Begin VB.Form frmBuscarVerificacion
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmBuscarVerificacion.frx":3B24
+      Icon            =   "frmBuscarVerificacion.frx":19A4
       Style           =   8
       Caption         =   "     Cancelar"
       IconSize        =   18
@@ -261,104 +261,106 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Text
 Private Sub cmdAceptar_Click()
-If Adodc.Recordset.RecordCount = 0 Then MsgBox "Debe realizar una busqueda", vbOKOnly + vbCritical, "Gestion Integral del Alumno": Exit Sub
-    
-    
-If Analisis = False Then
-    frmVerificaciones.lblCodAlumno.Caption = grilla.Columns(0).Text
-    frmVerificaciones.txtNya.Text = grilla.Columns(1).Text
-    frmVerificaciones.cmbTipoDoc.Text = grilla.Columns(2).Text
-    frmVerificaciones.txtDocumento.Text = grilla.Columns(3).Text
-    frmVerificaciones.txtDireccion.Text = grilla.Columns(4).Text
-    frmVerificaciones.txtCP.Text = grilla.Columns(5).Text
-    frmVerificaciones.dtcLocalidad.Text = grilla.Columns(6).Text
-    frmVerificaciones.txtNacionalidad.Text = grilla.Columns(7).Text
-    
-    If Month(grilla.Columns(9).Text) < Month(Date) Then
-        frmVerificaciones.txtEdad.Text = DateDiff("yyyy", grilla.Columns(9).Text, Date)
-    ElseIf Day(grilla.Columns(9).Text) <= Day(Date) And Month(grilla.Columns(9).Text) = Month(Date) Then
-        frmVerificaciones.txtEdad.Text = DateDiff("yyyy", grilla.Columns(9).Text, Date)
-    ElseIf Day(grilla.Columns(9).Text) > Day(Date) And Month(grilla.Columns(9).Text) >= Month(Date) Then
-        frmVerificaciones.txtEdad.Text = DateDiff("yyyy", grilla.Columns(9).Text, Date) - 1
+    On Error GoTo LineaError
+    If Adodc.Recordset.RecordCount = 0 Then MsgBox "Debe realizar una busqueda", vbOKOnly + vbCritical, "Gestion Integral del Alumno": Exit Sub
+        
+    If Analisis = False Then
+        frmVerificaciones.lblCodAlumno.Caption = grilla.Columns(0).Text
+        frmVerificaciones.txtNya.Text = grilla.Columns(1).Text
+        frmVerificaciones.cmbTipoDoc.Text = grilla.Columns(2).Text
+        frmVerificaciones.txtDocumento.Text = grilla.Columns(3).Text
+        frmVerificaciones.txtDireccion.Text = grilla.Columns(4).Text
+        frmVerificaciones.txtCP.Text = grilla.Columns(5).Text
+        frmVerificaciones.dtcLocalidad.Text = grilla.Columns(6).Text
+        frmVerificaciones.txtNacionalidad.Text = grilla.Columns(7).Text
+        
+        If Month(grilla.Columns(9).Text) < Month(Date) Then
+                frmVerificaciones.txtEdad.Text = DateDiff("yyyy", grilla.Columns(9).Text, Date)
+            ElseIf Day(grilla.Columns(9).Text) <= Day(Date) And Month(grilla.Columns(9).Text) = Month(Date) Then
+                frmVerificaciones.txtEdad.Text = DateDiff("yyyy", grilla.Columns(9).Text, Date)
+            ElseIf Day(grilla.Columns(9).Text) > Day(Date) And Month(grilla.Columns(9).Text) >= Month(Date) Then
+                frmVerificaciones.txtEdad.Text = DateDiff("yyyy", grilla.Columns(9).Text, Date) - 1
+            Else
+                frmVerificaciones.txtEdad.Text = DateDiff("yyyy", grilla.Columns(9).Text, Date) - 1
+        End If
+        
+        frmVerificaciones.dtpFechaNacimiento.Value = grilla.Columns(9).Text
+        frmVerificaciones.dtcCapacitacion.Text = grilla.Columns(10).Text
+        frmVerificaciones.dtcAsistente.Text = grilla.Columns(11).Text
+        frmVerificaciones.txtTel1.Text = grilla.Columns(12).Text
+        frmVerificaciones.txtTel2.Text = grilla.Columns(13).Text
+        frmVerificaciones.txtTel3.Text = grilla.Columns(14).Text
+        frmVerificaciones.txtTel4.Text = grilla.Columns(15).Text
+        frmVerificaciones.txtPT1.Text = grilla.Columns(16).Text
+        frmVerificaciones.txtPT2.Text = grilla.Columns(17).Text
+        frmVerificaciones.txtPT3.Text = grilla.Columns(18).Text
+        frmVerificaciones.txtPT4.Text = grilla.Columns(19).Text
+        frmVerificaciones.txtTotalCurso.Text = grilla.Columns(20).Text
+        frmVerificaciones.txtTotalCuotas.Text = grilla.Columns(21).Text
+        frmVerificaciones.txtGastoAdm.Text = grilla.Columns(22).Text
+        frmVerificaciones.dtpFechaSuscripcion.Value = grilla.Columns(23).Text
+        frmVerificaciones.DTPFechaVerificacion.Value = grilla.Columns(24).Text
+        frmVerificaciones.txtObservaciones.Text = grilla.Columns(25).Text
+        
+        If grilla.Columns(26).Text = "0" Then
+                frmVerificaciones.chkManuales.Value = 0
+            Else
+                frmVerificaciones.chkManuales.Value = 1
+        End If
+        If grilla.Columns(27).Text = "0" Then
+                frmVerificaciones.chkExamenes.Value = 0
+            Else
+                frmVerificaciones.chkExamenes.Value = 1
+        End If
+        
+        frmVerificaciones.Enabled = True
+        If Trim(Len(frmVerificaciones.lblCodAlumno.Caption)) = 1 Then frmVerificaciones.lblCodAlumno.Caption = Format(frmVerificaciones.lblCodAlumno.Caption, "0000#")
+        If Trim(Len(frmVerificaciones.lblCodAlumno.Caption)) = 2 Then frmVerificaciones.lblCodAlumno.Caption = Format(frmVerificaciones.lblCodAlumno.Caption, "000##")
+        If Trim(Len(frmVerificaciones.lblCodAlumno.Caption)) = 3 Then frmVerificaciones.lblCodAlumno.Caption = Format(frmVerificaciones.lblCodAlumno.Caption, "00###")
+        If Trim(Len(frmVerificaciones.lblCodAlumno.Caption)) = 4 Then frmVerificaciones.lblCodAlumno.Caption = Format(frmVerificaciones.lblCodAlumno.Caption, "0####")
     Else
-        frmVerificaciones.txtEdad.Text = DateDiff("yyyy", grilla.Columns(9).Text, Date) - 1
+        CodAlumno = grilla.Columns(0).Text
+        frmAnalisisDeCuotas.Show
+        BotonMarcar = 0
+        
+        frmAnalisisDeCuotas.lblCodAlumno.Caption = grilla.Columns(0).Text
+        frmAnalisisDeCuotas.lblNyA.Caption = grilla.Columns(1).Text
+    
+        If Trim(Len(frmAnalisisDeCuotas.lblCodAlumno.Caption)) = 1 Then frmAnalisisDeCuotas.lblCodAlumno.Caption = Format(frmAnalisisDeCuotas.lblCodAlumno.Caption, "0000#")
+        If Trim(Len(frmAnalisisDeCuotas.lblCodAlumno.Caption)) = 2 Then frmAnalisisDeCuotas.lblCodAlumno.Caption = Format(frmAnalisisDeCuotas.lblCodAlumno.Caption, "000##")
+        If Trim(Len(frmAnalisisDeCuotas.lblCodAlumno.Caption)) = 3 Then frmAnalisisDeCuotas.lblCodAlumno.Caption = Format(frmAnalisisDeCuotas.lblCodAlumno.Caption, "00###")
+        If Trim(Len(frmAnalisisDeCuotas.lblCodAlumno.Caption)) = 4 Then frmAnalisisDeCuotas.lblCodAlumno.Caption = Format(frmAnalisisDeCuotas.lblCodAlumno.Caption, "0####")
+    
+        If Usuario = "adm" And Clave = "2910" Then
+            frmAnalisisDeCuotas.cmdBaja.Visible = False
+            frmAnalisisDeCuotas.cmdEditar.Visible = False
+            frmAnalisisDeCuotas.cmdEgresado.Visible = False
+            frmAnalisisDeCuotas.cmdReingresar.Visible = False
+        
+        ElseIf Usuario = "Cobranza" And Clave = "llamados" Then
+            frmAnalisisDeCuotas.cmdBaja.Visible = False
+            frmAnalisisDeCuotas.cmdEditar.Visible = False
+            frmAnalisisDeCuotas.cmdEgresado.Visible = False
+            frmAnalisisDeCuotas.cmdReingresar.Visible = False
+        
+        ElseIf Usuario = "adm" And Clave = "SuperV" Then
+            frmAnalisisDeCuotas.cmdBaja.Visible = True
+            frmAnalisisDeCuotas.cmdEditar.Visible = True
+            frmAnalisisDeCuotas.cmdEgresado.Visible = True
+            frmAnalisisDeCuotas.cmdReingresar.Visible = True
+        
+        ElseIf Usuario = "Admin" And Clave = "C215714N" Then
+            frmAnalisisDeCuotas.cmdBaja.Visible = True
+            frmAnalisisDeCuotas.cmdEditar.Visible = True
+            frmAnalisisDeCuotas.cmdEgresado.Visible = True
+            frmAnalisisDeCuotas.cmdReingresar.Visible = True
+        End If
+    
     End If
-
-    
-    frmVerificaciones.dtpFechaNacimiento.Value = grilla.Columns(9).Text
-    frmVerificaciones.dtcCapacitacion.Text = grilla.Columns(10).Text
-    frmVerificaciones.dtcAsistente.Text = grilla.Columns(11).Text
-    frmVerificaciones.txtTel1.Text = grilla.Columns(12).Text
-    frmVerificaciones.txtTel2.Text = grilla.Columns(13).Text
-    frmVerificaciones.txtTel3.Text = grilla.Columns(14).Text
-    frmVerificaciones.txtTel4.Text = grilla.Columns(15).Text
-    frmVerificaciones.txtPT1.Text = grilla.Columns(16).Text
-    frmVerificaciones.txtPT2.Text = grilla.Columns(17).Text
-    frmVerificaciones.txtPT3.Text = grilla.Columns(18).Text
-    frmVerificaciones.txtPT4.Text = grilla.Columns(19).Text
-    frmVerificaciones.txtTotalCurso.Text = grilla.Columns(20).Text
-    frmVerificaciones.txtTotalCuotas.Text = grilla.Columns(21).Text
-    frmVerificaciones.txtGastoAdm.Text = grilla.Columns(22).Text
-    frmVerificaciones.dtpFechaSuscripcion.Value = grilla.Columns(23).Text
-    frmVerificaciones.DTPFechaVerificacion.Value = grilla.Columns(24).Text
-    frmVerificaciones.txtObservaciones.Text = grilla.Columns(25).Text
-    If grilla.Columns(26).Text = "0" Then
-        frmVerificaciones.chkManuales.Value = 0
-    Else
-        frmVerificaciones.chkManuales.Value = 1
-    End If
-    If grilla.Columns(27).Text = "0" Then
-        frmVerificaciones.chkExamenes.Value = 0
-    Else
-        frmVerificaciones.chkExamenes.Value = 1
-    End If
-    frmVerificaciones.Enabled = True
-    
-    If Trim(Len(frmVerificaciones.lblCodAlumno.Caption)) = 1 Then frmVerificaciones.lblCodAlumno.Caption = Format(frmVerificaciones.lblCodAlumno.Caption, "0000#")
-    If Trim(Len(frmVerificaciones.lblCodAlumno.Caption)) = 2 Then frmVerificaciones.lblCodAlumno.Caption = Format(frmVerificaciones.lblCodAlumno.Caption, "000##")
-    If Trim(Len(frmVerificaciones.lblCodAlumno.Caption)) = 3 Then frmVerificaciones.lblCodAlumno.Caption = Format(frmVerificaciones.lblCodAlumno.Caption, "00###")
-    If Trim(Len(frmVerificaciones.lblCodAlumno.Caption)) = 4 Then frmVerificaciones.lblCodAlumno.Caption = Format(frmVerificaciones.lblCodAlumno.Caption, "0####")
-Else
-    CodAlumno = grilla.Columns(0).Text
-    frmAnalisisDeCuotas.Show
-    BotonMarcar = 0
-    
-    frmAnalisisDeCuotas.lblCodAlumno.Caption = grilla.Columns(0).Text
-    frmAnalisisDeCuotas.lblNya.Caption = grilla.Columns(1).Text
-
-    If Trim(Len(frmAnalisisDeCuotas.lblCodAlumno.Caption)) = 1 Then frmAnalisisDeCuotas.lblCodAlumno.Caption = Format(frmAnalisisDeCuotas.lblCodAlumno.Caption, "0000#")
-    If Trim(Len(frmAnalisisDeCuotas.lblCodAlumno.Caption)) = 2 Then frmAnalisisDeCuotas.lblCodAlumno.Caption = Format(frmAnalisisDeCuotas.lblCodAlumno.Caption, "000##")
-    If Trim(Len(frmAnalisisDeCuotas.lblCodAlumno.Caption)) = 3 Then frmAnalisisDeCuotas.lblCodAlumno.Caption = Format(frmAnalisisDeCuotas.lblCodAlumno.Caption, "00###")
-    If Trim(Len(frmAnalisisDeCuotas.lblCodAlumno.Caption)) = 4 Then frmAnalisisDeCuotas.lblCodAlumno.Caption = Format(frmAnalisisDeCuotas.lblCodAlumno.Caption, "0####")
-
-    If Usuario = "adm" And Clave = "2910" Then
-        frmAnalisisDeCuotas.cmdBaja.Visible = False
-        frmAnalisisDeCuotas.cmdEditar.Visible = False
-        frmAnalisisDeCuotas.cmdEgresado.Visible = False
-        frmAnalisisDeCuotas.cmdReingresar.Visible = False
-    
-    ElseIf Usuario = "Cobranza" And Clave = "llamados" Then
-        frmAnalisisDeCuotas.cmdBaja.Visible = False
-        frmAnalisisDeCuotas.cmdEditar.Visible = False
-        frmAnalisisDeCuotas.cmdEgresado.Visible = False
-        frmAnalisisDeCuotas.cmdReingresar.Visible = False
-    
-    ElseIf Usuario = "adm" And Clave = "SuperV" Then
-        frmAnalisisDeCuotas.cmdBaja.Visible = True
-        frmAnalisisDeCuotas.cmdEditar.Visible = True
-        frmAnalisisDeCuotas.cmdEgresado.Visible = True
-        frmAnalisisDeCuotas.cmdReingresar.Visible = True
-    
-    ElseIf Usuario = "Admin" And Clave = "C215714N" Then
-        frmAnalisisDeCuotas.cmdBaja.Visible = True
-        frmAnalisisDeCuotas.cmdEditar.Visible = True
-        frmAnalisisDeCuotas.cmdEgresado.Visible = True
-        frmAnalisisDeCuotas.cmdReingresar.Visible = True
-    End If
-
-End If
     Unload Me
-
+    
+LineaError:
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
 End Sub
 
 Private Sub cmdCancelar_Click()

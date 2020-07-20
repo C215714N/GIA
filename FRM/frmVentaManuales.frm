@@ -53,9 +53,9 @@ Begin VB.Form frmVentaManuales
       End
       Begin VB.ComboBox cmbPago 
          Height          =   360
-         ItemData        =   "frmVentaManuales.frx":324A
+         ItemData        =   "frmVentaManuales.frx":10CA
          Left            =   120
-         List            =   "frmVentaManuales.frx":3257
+         List            =   "frmVentaManuales.frx":10D7
          Style           =   2  'Dropdown List
          TabIndex        =   4
          Top             =   2280
@@ -94,7 +94,7 @@ Begin VB.Form frmVentaManuales
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmVentaManuales.frx":3279
+         Icon            =   "frmVentaManuales.frx":10F9
          Style           =   8
          Caption         =   "     Aceptar"
          IconSize        =   18
@@ -367,6 +367,7 @@ Private Sub cmbPago_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub cmdVender_Click()
+    On Error GoTo LineaError
     If cmbManual.Text = "" Then MsgBox "Elija manual", vbCritical, "Venta de Manuales": cmbManual.SetFocus: Exit Sub
     If txtStock.Text = "" Then MsgBox "Controle el stock del manual", vbCritical, "Venta de Manuales": cmbManual.SetFocus: Exit Sub
     If txtRecibo.Text = "" Then MsgBox "Ingrese numero de recibo", vbCritical, "Venta de Manuales": txtRecibo.SetFocus: Exit Sub
@@ -394,7 +395,7 @@ Private Sub cmdVender_Click()
         .Update
         .Close
         .Open "SELECT Fecha, Manual FROM ventamanuales WHERE codalumno=" & Int(txtCodigo.Text) & " ORDER BY fecha", Cn, adOpenDynamic, adLockPessimistic
-        Set grilla.DataSource = rsVentaManuales
+        Set Grilla.DataSource = rsVentaManuales
     End With
     
 ''' GESTION CONTABLE - ASIENTO
@@ -445,6 +446,8 @@ Private Sub cmdVender_Click()
     txtRecibo.Text = ""
     txtCodigo.SetFocus
     formatoGrilla
+LineaError:
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
 End Sub
 
 Private Sub Form_Load()
@@ -454,6 +457,7 @@ End Sub
 
 
 Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
+    On Error GoTo LineaError
     If KeyAscii = 13 Then
         If txtCodigo.Text = "" Then MsgBox "Ingrese el codigo del alumno", vbOKOnly, "GIA - Examenes": txtCodigo.SetFocus: Exit Sub
       
@@ -467,18 +471,20 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
             If .State = 1 Then .Close
             .Open "SELECT Fecha, Manual FROM ventamanuales WHERE codalumno=" & Int(txtCodigo.Text) & " ORDER BY fecha", Cn, adOpenDynamic, adLockPessimistic
         End With
-        Set grilla.DataSource = rsVentaManuales
+        Set Grilla.DataSource = rsVentaManuales
+        cmbManual.Clear
         cargarManuales
         cmbManual.SetFocus
     End If
     formatoGrilla
+LineaError:
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
 End Sub
 
 Sub cargarManuales()
 
     If txtCurso.Text = "Operador de Pc" Then
         With cmbManual
-            .Clear
             .AddItem ("Windows")
             .AddItem ("Word")
             .AddItem ("Excel")
@@ -488,22 +494,19 @@ Sub cargarManuales()
     
     ElseIf txtCurso.Text = "Redes Sociales" Then
         With cmbManual
-            .Clear
             .AddItem ("Windows")
         End With
     
-    ElseIf txtCurso.Text = "Diseï¿½o Gráfico" Then
+    ElseIf txtCurso.Text = "Diseño Gráfico" Then
         With cmbManual
-            .Clear
             .AddItem ("Windows")
             .AddItem ("Corel Draw")
             .AddItem ("Photoshop")
             .AddItem ("Page Maker")
         End With
     
-    ElseIf txtCurso.Text = "Diseï¿½o Web" Then
+    ElseIf txtCurso.Text = "Diseño Web" Then
         With cmbManual
-            .Clear
             .AddItem ("FrontPage - Fireworks")
             .AddItem ("Flash")
             .AddItem ("Dreamweaver")
@@ -511,26 +514,22 @@ Sub cargarManuales()
     
     ElseIf txtCurso.Text = "Programación" Then
         With cmbManual
-            .Clear
             .AddItem ("Programación")
         End With
     
     ElseIf txtCurso.Text = "Programación + Access" Then
         With cmbManual
-            .Clear
             .AddItem ("Access")
             .AddItem ("Programación")
         End With
     
     ElseIf txtCurso.Text = "Telefonía Celular" Then
         With cmbManual
-            .Clear
             .AddItem ("Telefonía Celular")
         End With
     
     ElseIf txtCurso.Text = "Armado y Reparación de PC y Redes" Then
         With cmbManual
-            .Clear
             .AddItem ("Armado I")
             .AddItem ("Armado II")
             .AddItem ("Armado III")
@@ -542,7 +541,6 @@ Sub cargarManuales()
     
     ElseIf txtCurso.Text = "Armado y Reparación de PC" Then
         With cmbManual
-            .Clear
             .AddItem ("Armado I")
             .AddItem ("Armado II")
             .AddItem ("Armado III")
@@ -551,7 +549,6 @@ Sub cargarManuales()
     
     ElseIf txtCurso.Text = "Redes" Then
         With cmbManual
-            .Clear
             .AddItem ("Redes I")
             .AddItem ("Redes II")
             .AddItem ("Redes III")
@@ -559,14 +556,12 @@ Sub cargarManuales()
     
     ElseIf txtCurso.Text = "Técnico en Pc nivel I" Then
         With cmbManual
-            .Clear
             .AddItem ("TPC 1 Hardware")
             .AddItem ("TPC 1 Software")
         End With
     
     ElseIf txtCurso.Text = "Técnico en Pc nivel II" Then
         With cmbManual
-            .Clear
             .AddItem ("TPC 2 Malware(Diagnostico)")
             .AddItem ("TPC 2 Rep.Avanz.")
             .AddItem ("TPC 2 Redes Informaticas")
@@ -575,25 +570,26 @@ Sub cargarManuales()
     
     ElseIf txtCurso.Text = "Técnico en aire acondicionado" Then
         With cmbManual
-            .Clear
             .AddItem ("Aire Acondicionado")
         End With
     
     ElseIf txtCurso.Text = "Electricidad domiciliaria" Then
         With cmbManual
-            .Clear
             .AddItem ("Electricidad")
         End With
     
+    ElseIf txtCurso.Text = "Auxiliar de Farmacia" Then
+        With cmbManual
+            .AddItem ("Farmacia")
+        End With
+        
     ElseIf txtCurso.Text = "Extracc. Adm. Y Asist. Tec. Laborat." Then
         With cmbManual
-            .Clear
             .AddItem ("Extraccionista")
         End With
         
     ElseIf txtCurso.Text = "Asistente Terapeutico" Or txtCurso.Text = "Cuidador Domiciliario" Then
         With cmbManual
-            .Clear
             .AddItem ("Cuid. Dom.")
         End With
     End If
@@ -601,6 +597,6 @@ End Sub
 
 Sub formatoGrilla()
     For N = 0 To 1
-        grilla.Columns(N).Width = 1150 + (N * 800)
+        Grilla.Columns(N).Width = 1150 + (N * 800)
     Next
 End Sub

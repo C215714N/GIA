@@ -33,10 +33,10 @@ Begin VB.Form frmConsultarCuentas
       EndProperty
       ForeColor       =   &H8000000F&
       Height          =   3135
-      Left            =   8520
+      Left            =   8040
       TabIndex        =   7
       Top             =   720
-      Width           =   1575
+      Width           =   2055
       Begin isButtonTest.isButton cmdDetalle 
          Height          =   420
          Left            =   120
@@ -45,7 +45,7 @@ Begin VB.Form frmConsultarCuentas
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmConsultarCuentas.frx":324A
+         Icon            =   "frmConsultarCuentas.frx":10CA
          Style           =   8
          Caption         =   "     Detalle"
          IconSize        =   18
@@ -76,7 +76,7 @@ Begin VB.Form frmConsultarCuentas
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmConsultarCuentas.frx":3B24
+         Icon            =   "frmConsultarCuentas.frx":19A4
          Style           =   8
          Caption         =   "     Volver"
          IconSize        =   18
@@ -106,7 +106,7 @@ Begin VB.Form frmConsultarCuentas
          Caption         =   "0.00"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.75
+            Size            =   9
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -117,7 +117,7 @@ Begin VB.Form frmConsultarCuentas
          Left            =   120
          TabIndex        =   10
          Top             =   1320
-         Width           =   1335
+         Width           =   1815
       End
       Begin VB.Label lblSaldoAnterior 
          Alignment       =   1  'Right Justify
@@ -125,7 +125,7 @@ Begin VB.Form frmConsultarCuentas
          Caption         =   "0.00"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.75
+            Size            =   9
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -136,7 +136,7 @@ Begin VB.Form frmConsultarCuentas
          Left            =   120
          TabIndex        =   8
          Top             =   600
-         Width           =   1335
+         Width           =   1815
       End
       Begin VB.Label Label5 
          BackStyle       =   0  'Transparent
@@ -229,8 +229,8 @@ Begin VB.Form frmConsultarCuentas
       Left            =   120
       TabIndex        =   2
       Top             =   840
-      Width           =   8295
-      _ExtentX        =   14631
+      Width           =   7815
+      _ExtentX        =   13785
       _ExtentY        =   5318
       _Version        =   393216
       AllowUpdate     =   0   'False
@@ -317,7 +317,7 @@ Begin VB.Form frmConsultarCuentas
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   91947009
+      Format          =   237568001
       CurrentDate     =   41334
    End
    Begin MSComCtl2.DTPicker dtpHasta 
@@ -338,7 +338,7 @@ Begin VB.Form frmConsultarCuentas
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   91947009
+      Format          =   237568001
       CurrentDate     =   41332
    End
    Begin isButtonTest.isButton cmdBuscar 
@@ -349,7 +349,7 @@ Begin VB.Form frmConsultarCuentas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmConsultarCuentas.frx":43FE
+      Icon            =   "frmConsultarCuentas.frx":227E
       Style           =   8
       Caption         =   "     Buscar"
       IconSize        =   18

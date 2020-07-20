@@ -133,9 +133,9 @@ Begin VB.Form frmPP
       Width           =   2535
       Begin VB.ComboBox cmbMes 
          Height          =   375
-         ItemData        =   "frmPP.frx":324A
+         ItemData        =   "frmPP.frx":10CA
          Left            =   120
-         List            =   "frmPP.frx":3272
+         List            =   "frmPP.frx":10F2
          Style           =   2  'Dropdown List
          TabIndex        =   2
          Top             =   480
@@ -160,7 +160,7 @@ Begin VB.Form frmPP
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "yyyy"
-         Format          =   92078083
+         Format          =   131596291
          CurrentDate     =   43573
       End
       Begin VB.Label Label2 
@@ -194,7 +194,7 @@ Begin VB.Form frmPP
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmPP.frx":32DB
+      Icon            =   "frmPP.frx":115B
       Style           =   8
       Caption         =   "     Eliminar"
       IconSize        =   18
@@ -225,7 +225,7 @@ Begin VB.Form frmPP
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmPP.frx":3BB5
+      Icon            =   "frmPP.frx":1A35
       Style           =   8
       Caption         =   "     Agregar"
       IconSize        =   18
@@ -256,7 +256,7 @@ Begin VB.Form frmPP
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmPP.frx":448F
+      Icon            =   "frmPP.frx":230F
       Style           =   8
       Caption         =   "     Nueva"
       IconSize        =   18

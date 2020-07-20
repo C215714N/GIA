@@ -35,7 +35,7 @@ Begin VB.Form frmEliminarReservas
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   92078081
+      Format          =   237502465
       CurrentDate     =   41037
    End
    Begin isButtonTest.isButton cmdEliminar 
@@ -46,7 +46,7 @@ Begin VB.Form frmEliminarReservas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmEliminarReservas.frx":324A
+      Icon            =   "frmEliminarReservas.frx":10CA
       Style           =   8
       Caption         =   "     Eliminar"
       IconSize        =   18

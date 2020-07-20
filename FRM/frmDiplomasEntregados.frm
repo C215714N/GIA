@@ -9,6 +9,7 @@ Begin VB.Form frmDiplomasEntregados
    ClientTop       =   1935
    ClientWidth     =   4005
    ForeColor       =   &H00E0E0E0&
+   Icon            =   "frmDiplomasEntregados.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
@@ -200,6 +201,7 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
+    On Error GoTo LineaError
     If KeyAscii = 13 Then
         If txtCodigo.Text = "" Then MsgBox "Ingrese el codigo del alumno", vbOKOnly, "GIA - Examenes": txtCodigo.SetFocus: Exit Sub
       
@@ -216,9 +218,11 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
             .Open "SELECT FechaRetiro, Modulo, Retiro FROM examenes WHERE codalumno=" & Int(txtCodigo.Text) & " and retiro<> ''", Cn, adOpenDynamic, adLockPessimistic
         End With
 
-      Set grilla.DataSource = rsExamenes
+      Set Grilla.DataSource = rsExamenes
       formatoGrilla
     End If
+LineaError:
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
 End Sub
 
 Sub formatoGrilla()
@@ -229,6 +233,6 @@ Sub formatoGrilla()
         Else:
             w = 1150
         End If
-        grilla.Columns(N).Width = w
+        Grilla.Columns(N).Width = w
     Next
 End Sub

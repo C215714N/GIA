@@ -51,7 +51,7 @@ Begin VB.Form frmComisionCuota
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmComisionCuota.frx":324A
+         Icon            =   "frmComisionCuota.frx":10CA
          Style           =   8
          Caption         =   "     Aceptar"
          IconSize        =   18
@@ -352,6 +352,7 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub cmdAceptar_Click()
+    On Error GoTo LineaError
     If txtCoordinador.Text = "" Then MsgBox "ingrese el valor de la comision del Coordinador", vbCritical, "Comision de Primera Cuota": txtCoordinador.SetFocus: Exit Sub
     If txtPorcentajeAsesor.Text = "" Then MsgBox "Ingrese el porcentaje de comision del Asesor", vbCritical, "Comision de Primera Cuota": txtPorcentajeAsesor.SetFocus: Exit Sub
     If txtPagoParcial.Text = "" Then MsgBox "Ingrese el pago parcial de la primera cuota", vbCritical, "Comision de Primera Cuota": txtPagoParcial.SetFocus: Exit Sub
@@ -444,6 +445,9 @@ Private Sub cmdAceptar_Click()
     End With
     aceptar = True
     Unload Me
+    
+LineaError:
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
 End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)

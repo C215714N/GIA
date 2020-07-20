@@ -65,7 +65,7 @@ Begin VB.Form frmReingresos
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmReingresos.frx":324A
+         Icon            =   "frmReingresos.frx":10CA
          Style           =   8
          Caption         =   "     Reingreso"
          IconSize        =   18

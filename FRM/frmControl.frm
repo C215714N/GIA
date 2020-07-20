@@ -397,7 +397,7 @@ Begin VB.Form frmControl
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmControl.frx":324A
+      Icon            =   "frmControl.frx":10CA
       Style           =   8
       Caption         =   "     Aceptar"
       IconSize        =   18
@@ -426,7 +426,7 @@ Begin VB.Form frmControl
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmControl.frx":3B24
+      Icon            =   "frmControl.frx":19A4
       Style           =   8
       Caption         =   "     Cancelar"
       IconSize        =   18
@@ -455,7 +455,7 @@ Begin VB.Form frmControl
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmControl.frx":43FE
+      Icon            =   "frmControl.frx":227E
       Style           =   8
       Caption         =   "     Editar"
       IconSize        =   18
@@ -486,7 +486,7 @@ Begin VB.Form frmControl
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmControl.frx":4CD8
+      Icon            =   "frmControl.frx":2B58
       Style           =   8
       Caption         =   "     Volver"
       IconSize        =   18
@@ -525,6 +525,7 @@ Private Sub cmdCerrar_Click()
 End Sub
 
 Private Sub cmdGrabar_Click()
+    On Error GoTo LineaError
     ''' declara variable para comprobar fechas
     Dim fecha As Date
     fecha = Format(rsControl!ultimafecha, "dd/mm/yyyy")
@@ -599,6 +600,8 @@ Private Sub cmdGrabar_Click()
             Loop
         End With
     End If
+LineaError:
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
 End Sub
 
 Private Sub cmdModificar_Click()

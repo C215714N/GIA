@@ -25,7 +25,7 @@ Begin VB.Form frmMarcar
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmMarcar.frx":324A
+      Icon            =   "frmMarcar.frx":10CA
       Style           =   8
       Caption         =   "     Aceptar"
       IconSize        =   18
@@ -66,7 +66,7 @@ Begin VB.Form frmMarcar
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   91750401
+      Format          =   153026561
       CurrentDate     =   41341
    End
    Begin VB.CheckBox chkLlamar 
@@ -147,12 +147,13 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cmdGrabar_Click()
+    On Error GoTo LineaError
     Marcar
     With rsMarcar
         .Requery
         .Find "Codalumno=" & CodAlumno
         If .BOF Or .EOF Then MsgBox "El alumno no se puede gestionar", vbCritical, "Marcar": Exit Sub
-            !fechacompromiso = DTPFecha.Value
+            !fechacompromiso = dtpFecha.Value
             !fechagestion = Date
             If chkLlamar.Value = 1 Then
                 !LPA = "L"
@@ -169,11 +170,14 @@ Private Sub cmdGrabar_Click()
             .UpdateBatch
     End With
     Unload Me
+    
+LineaError:
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
 End Sub
 
 Private Sub Form_Load()
     Centrar Me
-    DTPFecha.Value = Date
+    dtpFecha.Value = Date
 End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)

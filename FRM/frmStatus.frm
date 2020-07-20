@@ -42,7 +42,7 @@ Begin VB.Form frmStatus
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmStatus.frx":324A
+         Icon            =   "frmStatus.frx":10CA
          Style           =   8
          Caption         =   "     Detalles"
          IconSize        =   18

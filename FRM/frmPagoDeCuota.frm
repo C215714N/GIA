@@ -213,9 +213,9 @@ Begin VB.Form frmPagoDeCuota
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      ItemData        =   "frmPagoDeCuota.frx":324A
+      ItemData        =   "frmPagoDeCuota.frx":10CA
       Left            =   3960
-      List            =   "frmPagoDeCuota.frx":3257
+      List            =   "frmPagoDeCuota.frx":10D7
       Style           =   2  'Dropdown List
       TabIndex        =   0
       Top             =   360
@@ -229,7 +229,7 @@ Begin VB.Form frmPagoDeCuota
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmPagoDeCuota.frx":3279
+      Icon            =   "frmPagoDeCuota.frx":10F9
       Style           =   8
       Caption         =   "     Cobrar"
       IconSize        =   18
@@ -260,7 +260,7 @@ Begin VB.Form frmPagoDeCuota
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmPagoDeCuota.frx":3B53
+      Icon            =   "frmPagoDeCuota.frx":19D3
       Style           =   8
       Caption         =   "     Volver"
       IconSize        =   18
@@ -521,7 +521,7 @@ Private Sub Form_Load()
     Adodc.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=T:\base.mdb;Persist Security Info=False;Jet OLEDB:Database Password=ascir"
     Adodc.RecordSource = "SELECT * FROM contabilidadtemp"
     Adodc.Refresh
-    Set grilla.DataSource = Adodc
+    Set Grilla.DataSource = Adodc
     formatoGrilla
 End Sub
 
@@ -606,11 +606,11 @@ Private Sub txtNroFactura_KeyPress(KeyAscii As Integer)
 End Sub
 
 Sub formatoGrilla()
-    grilla.Columns(0).Width = 0
-    grilla.Columns(1).Width = 0
-    grilla.Columns(4).Width = 0
-    grilla.Columns(2).Width = 800
-    grilla.Columns(6).Width = 0
+    Grilla.Columns(0).Width = 0
+    Grilla.Columns(1).Width = 0
+    Grilla.Columns(4).Width = 0
+    Grilla.Columns(2).Width = 800
+    Grilla.Columns(6).Width = 0
 
 End Sub
 

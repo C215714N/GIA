@@ -108,7 +108,7 @@ Begin VB.Form frmDetalle
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmDetalle.frx":324A
+         Icon            =   "frmDetalle.frx":10CA
          Style           =   8
          Caption         =   "     Imprimir"
          IconSize        =   18
@@ -139,7 +139,7 @@ Begin VB.Form frmDetalle
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmDetalle.frx":3B24
+         Icon            =   "frmDetalle.frx":19A4
          Style           =   8
          Caption         =   "     Volver"
          IconSize        =   18
@@ -168,7 +168,7 @@ Begin VB.Form frmDetalle
          Caption         =   "0.00"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.75
+            Size            =   9
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -206,7 +206,7 @@ Begin VB.Form frmDetalle
          Caption         =   "0.00"
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.75
+            Size            =   9
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False

@@ -31,7 +31,7 @@ Begin VB.Form frmAnalisisDeCuotas
       MaxLength       =   300
       Appearance      =   0
       AutoVerbMenu    =   -1  'True
-      TextRTF         =   $"frmAnalisisDeCuotas.frx":324A
+      TextRTF         =   $"frmAnalisisDeCuotas.frx":10CA
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
          Size            =   9.75
@@ -50,7 +50,7 @@ Begin VB.Form frmAnalisisDeCuotas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmAnalisisDeCuotas.frx":32D0
+      Icon            =   "frmAnalisisDeCuotas.frx":1150
       Style           =   8
       Caption         =   "     Datos"
       IconSize        =   18
@@ -79,7 +79,7 @@ Begin VB.Form frmAnalisisDeCuotas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmAnalisisDeCuotas.frx":3BAA
+      Icon            =   "frmAnalisisDeCuotas.frx":1A2A
       Style           =   8
       Caption         =   "     Reingreso"
       IconSize        =   18
@@ -108,7 +108,7 @@ Begin VB.Form frmAnalisisDeCuotas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmAnalisisDeCuotas.frx":4484
+      Icon            =   "frmAnalisisDeCuotas.frx":2304
       Style           =   8
       Caption         =   "     Egresado"
       IconSize        =   18
@@ -139,7 +139,7 @@ Begin VB.Form frmAnalisisDeCuotas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmAnalisisDeCuotas.frx":4D5E
+      Icon            =   "frmAnalisisDeCuotas.frx":2BDE
       Style           =   8
       Caption         =   "     Editar"
       IconSize        =   18
@@ -170,7 +170,7 @@ Begin VB.Form frmAnalisisDeCuotas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmAnalisisDeCuotas.frx":5638
+      Icon            =   "frmAnalisisDeCuotas.frx":34B8
       Style           =   8
       Caption         =   "     Baja"
       IconSize        =   18
@@ -337,7 +337,7 @@ Begin VB.Form frmAnalisisDeCuotas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmAnalisisDeCuotas.frx":5F12
+      Icon            =   "frmAnalisisDeCuotas.frx":3D92
       Style           =   8
       Caption         =   "     Buscar"
       IconSize        =   18
@@ -366,7 +366,7 @@ Begin VB.Form frmAnalisisDeCuotas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmAnalisisDeCuotas.frx":67EC
+      Icon            =   "frmAnalisisDeCuotas.frx":466C
       Style           =   8
       Caption         =   "     Aceptar"
       IconSize        =   18
@@ -395,7 +395,7 @@ Begin VB.Form frmAnalisisDeCuotas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmAnalisisDeCuotas.frx":70C6
+      Icon            =   "frmAnalisisDeCuotas.frx":4F46
       Style           =   8
       Caption         =   "     Marcar"
       IconSize        =   18
@@ -572,6 +572,7 @@ LineaError:
         Case 3021
             Resume Next
         End Select
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
 End Sub
 
 Private Sub cmdMarcar_Click()
@@ -651,25 +652,28 @@ Private Sub cmdEditar_Click()
 End Sub
 
 Private Sub cmdReingresar_Click()
+    On Error GoTo LineaError
     grilla1.Row = rsAnalisisDeCuenta.RecordCount - 1
     frmPlanDePagoReingreso.txtNroCuota = Int(grilla1.Columns(0).Text) + 1
     frmPlanDePagoReingreso.txtCantidadCuotas = 1
-    frmPlanDePagoReingreso.DTPFecha.Value = grilla1.Columns(1).Text
+    frmPlanDePagoReingreso.dtpFecha.Value = grilla1.Columns(1).Text
     frmPlanDePagoReingreso.txtMonto.Text = grilla1.Columns(3).Text
     
-    If frmPlanDePagoReingreso.DTPFecha.Month = 12 Then
-        frmPlanDePagoReingreso.DTPFecha.Month = 1
-        frmPlanDePagoReingreso.DTPFecha.Year = frmPlanDePagoReingreso.DTPFecha.Year + 1
+    If frmPlanDePagoReingreso.dtpFecha.Month = 12 Then
+        frmPlanDePagoReingreso.dtpFecha.Month = 1
+        frmPlanDePagoReingreso.dtpFecha.Year = frmPlanDePagoReingreso.dtpFecha.Year + 1
     Else
-        If frmPlanDePagoReingreso.DTPFecha.Day > 28 Then
-            frmPlanDePagoReingreso.DTPFecha.Day = 28
-            frmPlanDePagoReingreso.DTPFecha.Month = frmPlanDePagoReingreso.DTPFecha.Month + 1
-        Else: frmPlanDePagoReingreso.DTPFecha.Month = frmPlanDePagoReingreso.DTPFecha.Month + 1
+        If frmPlanDePagoReingreso.dtpFecha.Day > 28 Then
+            frmPlanDePagoReingreso.dtpFecha.Day = 28
+            frmPlanDePagoReingreso.dtpFecha.Month = frmPlanDePagoReingreso.dtpFecha.Month + 1
+        Else: frmPlanDePagoReingreso.dtpFecha.Month = frmPlanDePagoReingreso.dtpFecha.Month + 1
         End If
     End If
     
     frmPlanDePagoReingreso.Show
     Me.Enabled = False
+LineaError:
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
 End Sub
 
 Private Sub cmdBaja_Click()
@@ -724,11 +728,11 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
     ElseIf Label11.Caption = "frmAnalisisSituacion" Then
         frmAnalisisSituacion.Enabled = True
         rsAnalisisSituacionDeDeuda.Requery
-        frmAnalisisSituacion.grilla.Columns(2).Width = 800
+        frmAnalisisSituacion.Grilla.Columns(2).Width = 800
     ElseIf Label11.Caption = "frmMarcas" Then
         frmMarcas.Enabled = True
         rsMarcas.Requery
-        frmMarcas.grilla.Columns(2).Width = 400
+        frmMarcas.Grilla.Columns(2).Width = 400
     End If
 
 End Sub

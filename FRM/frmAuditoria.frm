@@ -108,7 +108,7 @@ Begin VB.Form frmAuditoria
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmAuditoria.frx":324A
+      Icon            =   "frmAuditoria.frx":10CA
       Style           =   8
       Caption         =   "     Agregar"
       IconSize        =   18
@@ -162,7 +162,7 @@ Begin VB.Form frmAuditoria
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmAuditoria.frx":3B24
+         Icon            =   "frmAuditoria.frx":19A4
          Style           =   8
          Caption         =   "     Cargar"
          IconSize        =   18
@@ -221,7 +221,7 @@ Begin VB.Form frmAuditoria
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   91947009
+      Format          =   135004161
       CurrentDate     =   42492
    End
 End
@@ -230,71 +230,68 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Private Sub cmdActualizar_Click()
-        Dim fechafutura As Date
-        fechafutura = Format(dtpFechaFutura.Value, "mm/dd/yyyy")
+Private Sub btnActualizar_Click()
+    Dim fechafutura As Date
+    fechafutura = Format(dtpFechaFutura.Value, "mm/dd/yyyy")
         
-           '''actualiza la info de situacion de cartera en marcas
-            ''' consulta cuotas debidas a la fecha
-            With rsPlanDePago
-                If .State = 1 Then .Close
-                .Open "SELECT p.codalumno,min(p.nrocuota) as Cuota, sum(p.Deudatotal) as Deuda,sum(p.CuotasDebidas) as CuotasDebidas,  DateDiff('m',Min(p.fechavto),#" & fechafutura & "#) AS Meses, Max(p.NroCuota) AS MaxCuota,max(V.Cuotas) AS UltimaCuota FROM plandepago as p, verificaciones as v WHERE v.codalumno=p.codalumno and p.cuotasdebidas > 0 and p.fechavto<#" & fechafutura & "# and p.codalumno>=" & Int(txtCodigo.Text) & " group by p.codalumno ORDER BY p.codalumno", Cn, adOpenDynamic, adLockPessimistic
-                .MoveFirst
-            End With
-            
-            With rsMarcar
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM marcas WHERE codalumno>=" & txtCodigo.Text & " ORDER BY codalumno", Cn, adOpenDynamic, adLockPessimistic
-                .Requery
-                .MoveFirst
-                '''actualiza el alumno
-                Do Until .EOF
-                    If rsPlanDePago.EOF Then
-                        !cuota = 0
-                        !deuda = 0
-                        !cantidadcuotas = 0
-                        !cobrado = 0
-                        !pago = 0
-                        .Update
-                        .MoveNext
-                    ElseIf !CodAlumno = rsPlanDePago!CodAlumno Then
-                        !cuota = rsPlanDePago!cuota
-                        !deuda = rsPlanDePago!deuda
-                        If rsPlanDePago!maxcuota = rsPlanDePago!ultimacuota And rsPlanDePago!Meses > rsPlanDePago!CuotasDebidas Then
-                            !cantidadcuotas = rsPlanDePago!Meses
-                        Else
-                            !cantidadcuotas = rsPlanDePago!CuotasDebidas
-                        End If
-                        !cobrado = 0
-                        !pago = 0
-                        .UpdateBatch
-                        .MoveNext
-                        rsPlanDePago.MoveNext
-                    Else
-                        !cuota = 0
-                        !deuda = 0
-                        !cantidadcuotas = 0
-                        !cobrado = 0
-                        !pago = 0
-                        .Update
-                        .MoveNext
-                    End If
-                Loop
-                
-                MsgBox "La Base de Datos fue actualizada exitosamente", , "Auditoria"
-            End With
-
-
+    '''actualiza la info de situacion de cartera en marcas
+    ''' consulta cuotas debidas a la fecha
+    With rsPlanDePago
+        If .State = 1 Then .Close
+        .Open "SELECT p.codalumno,min(p.nrocuota) as Cuota, sum(p.Deudatotal) as Deuda,sum(p.CuotasDebidas) as CuotasDebidas,  DateDiff('m',Min(p.fechavto),#" & fechafutura & "#) AS Meses, Max(p.NroCuota) AS MaxCuota,max(V.Cuotas) AS UltimaCuota FROM plandepago as p, verificaciones as v WHERE v.codalumno=p.codalumno and p.cuotasdebidas > 0 and p.fechavto<#" & fechafutura & "# and p.codalumno>=" & Int(txtCodigo.Text) & " group by p.codalumno ORDER BY p.codalumno", Cn, adOpenDynamic, adLockPessimistic
+        .MoveFirst
+    End With
+    
+    With rsMarcar
+        If .State = 1 Then .Close
+        .Open "SELECT * FROM marcas WHERE codalumno>=" & txtCodigo.Text & " ORDER BY codalumno", Cn, adOpenDynamic, adLockPessimistic
+        .Requery
+        .MoveFirst
+        '''actualiza el alumno
+        Do Until .EOF
+            If rsPlanDePago.EOF Then
+                !cuota = 0
+                !deuda = 0
+                !cantidadcuotas = 0
+                !cobrado = 0
+                !pago = 0
+                .Update
+                .MoveNext
+            ElseIf !CodAlumno = rsPlanDePago!CodAlumno Then
+                !cuota = rsPlanDePago!cuota
+                !deuda = rsPlanDePago!deuda
+                If rsPlanDePago!maxcuota = rsPlanDePago!ultimacuota And rsPlanDePago!Meses > rsPlanDePago!CuotasDebidas Then
+                    !cantidadcuotas = rsPlanDePago!Meses
+                Else
+                    !cantidadcuotas = rsPlanDePago!CuotasDebidas
+                End If
+                !cobrado = 0
+                !pago = 0
+                .UpdateBatch
+                .MoveNext
+                rsPlanDePago.MoveNext
+            Else
+                !cuota = 0
+                !deuda = 0
+                !cantidadcuotas = 0
+                !cobrado = 0
+                !pago = 0
+                .Update
+                .MoveNext
+            End If
+        Loop
+        
+        MsgBox "La Base de Datos fue actualizada exitosamente", , "Auditoria"
+    End With
 End Sub
+
 
 Private Sub cmdAgregar_Click()
     If MsgBox("¿Esta seguro que desea agregar estos codigos a la tabla MARCAS?", vbQuestion + vbYesNo, "GIA") = vbYes Then
             With rsActualizarMarcas
                 If .State = 1 Then .Close
                 .Open "SELECT * FROM marcas", Cn, adOpenDynamic, adLockPessimistic
-        
                 Do Until List1.ListCount = 0
-            
                     .Requery
                     .AddNew
                     !CodAlumno = Int(List1.List(0))
@@ -306,7 +303,6 @@ Private Sub cmdAgregar_Click()
                     !LPA = ""
                     .Update
                     List1.RemoveItem (0)
-                
                 Loop
             End With
     End If
@@ -356,5 +352,4 @@ Private Sub Form_Load()
         dtpFechaFutura.Day = 25
         dtpFechaFutura.Month = dtpFechaFutura.Month + 1
     End If
-    
 End Sub

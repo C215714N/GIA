@@ -25,7 +25,7 @@ Begin VB.Form frmUltimasCuotas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmUltimasCuotas.frx":324A
+      Icon            =   "frmUltimasCuotas.frx":10CA
       Style           =   8
       Caption         =   "     Buscar"
       IconSize        =   18

@@ -36,7 +36,7 @@ Begin VB.Form frmClave
       _ExtentX        =   2778
       _ExtentY        =   661
       _Version        =   393216
-      Format          =   91750401
+      Format          =   254083073
       CurrentDate     =   42125
    End
    Begin MSComCtl2.DTPicker DTPFecha 
@@ -57,7 +57,7 @@ Begin VB.Form frmClave
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   91750401
+      Format          =   254083073
       CurrentDate     =   41327
    End
    Begin VB.TextBox txtClave 
@@ -102,7 +102,7 @@ Begin VB.Form frmClave
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmClave.frx":324A
+      Icon            =   "frmClave.frx":10CA
       Style           =   8
       Caption         =   "     Ingresar"
       IconSize        =   18
@@ -134,7 +134,7 @@ Begin VB.Form frmClave
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmClave.frx":3B24
+      Icon            =   "frmClave.frx":19A4
       Style           =   8
       Caption         =   "     Cerrar"
       IconSize        =   18
@@ -160,7 +160,7 @@ Begin VB.Form frmClave
    Begin VB.Image Image1 
       Height          =   1755
       Left            =   120
-      Picture         =   "frmClave.frx":43FE
+      Picture         =   "frmClave.frx":227E
       Stretch         =   -1  'True
       Top             =   480
       Width           =   1755
@@ -253,9 +253,9 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
     Option Compare Text
 Private Sub cmdIngresar_Click()
-    
+On Error GoTo LineaError
 '''Usuario Administrador - Todos los permisos
-    If txtUsuario.Text = "Admin" And txtClave.Text = "C215714N" Then
+    If txtUsuario.Text = "C215714N" And txtClave.Text = "root" Then
         Usuario = txtUsuario.Text
         Clave = txtClave.Text
         MDI.Caption = frmClave.Caption
@@ -439,7 +439,7 @@ Private Sub cmdIngresar_Click()
                         !Cobranza = rsSituacionDeCartera!Cobranza
                         !porcentaje = rsSituacionDeCartera![Porcentaje Cobrado]
                         !resto = rsSituacionDeCartera![Resto a Cobrar]
-                        .Update
+                        .UpdateBatch
                         rsSituacionDeCartera.MoveNext
                     Loop
                 End With
@@ -553,7 +553,7 @@ SituacionDeCartera:
                         !cantidadcuotas = 0
                         !cobrado = 0
                         !pago = 0
-                        .Update
+                        .UpdateBatch
                         .MoveNext
                     ElseIf !CodAlumno = rsPlanDePago!CodAlumno Then
                         !cuota = rsPlanDePago!cuota
@@ -574,7 +574,7 @@ SituacionDeCartera:
                         !cantidadcuotas = 0
                         !cobrado = 0
                         !pago = 0
-                        .Update
+                        .UpdateBatch
                         .MoveNext
                     End If
                 Loop
@@ -617,6 +617,8 @@ fecha:
         MDI.Show
         MDI.StatusBar1.Panels(5).Text = "Usuario: " & txtUsuario.Text
     End If
+LineaError:
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
 End Sub
 
 Private Sub cmdIngresar_KeyPress(KeyAscii As Integer)

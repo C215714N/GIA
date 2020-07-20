@@ -30,9 +30,10 @@ Begin VB.Form frmCobranza
       _ExtentX        =   7011
       _ExtentY        =   1720
       _Version        =   393217
+      Enabled         =   -1  'True
       Appearance      =   0
       AutoVerbMenu    =   -1  'True
-      TextRTF         =   $"frmCobranza.frx":324A
+      TextRTF         =   $"frmCobranza.frx":10CA
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
          Size            =   9.75
@@ -192,7 +193,7 @@ Begin VB.Form frmCobranza
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   91750401
+      Format          =   154730497
       CurrentDate     =   41326
    End
    Begin VB.TextBox txtFechaVto 
@@ -239,7 +240,7 @@ Begin VB.Form frmCobranza
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCobranza.frx":32D0
+      Icon            =   "frmCobranza.frx":1150
       Style           =   8
       Caption         =   "     Derechos"
       IconSize        =   18
@@ -268,7 +269,7 @@ Begin VB.Form frmCobranza
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCobranza.frx":3BAA
+      Icon            =   "frmCobranza.frx":1A2A
       Style           =   8
       Caption         =   "     Manuales"
       IconSize        =   18
@@ -297,7 +298,7 @@ Begin VB.Form frmCobranza
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCobranza.frx":4484
+      Icon            =   "frmCobranza.frx":2304
       Style           =   8
       Caption         =   "     Volver"
       IconSize        =   18
@@ -326,7 +327,7 @@ Begin VB.Form frmCobranza
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCobranza.frx":4D5E
+      Icon            =   "frmCobranza.frx":2BDE
       Style           =   8
       Caption         =   "     Abonar"
       IconSize        =   18
@@ -546,9 +547,9 @@ Private Sub Form_Load()
     PlanDePago
     Adodc.CursorLocation = adUseClient
     Adodc.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=T:\base.mdb;Persist Security Info=False;Jet OLEDB:Database Password=ascir"
-    Adodc.RecordSource = "SELECT id, codalumno, nya, nrocuota as [N°], fechavto as [Vencimiento], fechapago As [Fecha Pago], tipodepago, recibo, deuda As Monto, recargoxfecha, recargoxmes, deudatotal, totalcobrado, cuotasdebidas, observaciones, campo1, campo2 FROM plandepago WHERE codalumno =" & frmBuscarCobranza.grilla.Columns(0).Text & " ORDER BY nrocuota"
+    Adodc.RecordSource = "SELECT id, codalumno, nya, nrocuota as [N°], fechavto as [Vencimiento], fechapago As [Fecha Pago], tipodepago, recibo, deuda As Monto, recargoxfecha, recargoxmes, deudatotal, totalcobrado, cuotasdebidas, observaciones, campo1, campo2 FROM plandepago WHERE codalumno =" & frmBuscarCobranza.Grilla.Columns(0).Text & " ORDER BY nrocuota"
     Adodc.Refresh
-    Set grilla.DataSource = Adodc
+    Set Grilla.DataSource = Adodc
     formatoGrilla
     DTPFechaPago.Value = Date
 End Sub
@@ -558,12 +559,12 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
 End Sub
 
 Private Sub grilla_Click()
-    txtNroCuota.Text = grilla.Columns(3).Text
-    txtFechaVto.Text = grilla.Columns(4).Text
-    txtObservaciones.Text = grilla.Columns(14).Text
-    txtAdeuda.Text = grilla.Columns(11).Text
+    txtNroCuota.Text = Grilla.Columns(3).Text
+    txtFechaVto.Text = Grilla.Columns(4).Text
+    txtObservaciones.Text = Grilla.Columns(14).Text
+    txtAdeuda.Text = Grilla.Columns(11).Text
     txtAdeuda.Text = Format(txtAdeuda.Text, "currency")
-    If grilla.Columns(11).Text = 0 Then
+    If Grilla.Columns(11).Text = 0 Then
         cmdPagar.Enabled = False
     Else
         cmdPagar.Enabled = True
@@ -577,13 +578,13 @@ Sub formatoGrilla()
             w = 1200
         ElseIf N = 8 Then
             w = 800
-            grilla.Columns(N).NumberFormat = "$ #####"
+            Grilla.Columns(N).NumberFormat = "$ #####"
         ElseIf N = 3 Then
             w = 300
         Else:
             w = 0
         End If
-        grilla.Columns(N).Alignment = dbgCenter
-        grilla.Columns(N).Width = w
+        Grilla.Columns(N).Alignment = dbgCenter
+        Grilla.Columns(N).Width = w
     Next
 End Sub

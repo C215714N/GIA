@@ -44,7 +44,7 @@ Begin VB.Form frmContabilidad
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmContabilidad.frx":324A
+         Icon            =   "frmContabilidad.frx":10CA
          Style           =   8
          Caption         =   "     Cuenta"
          IconSize        =   18
@@ -75,7 +75,7 @@ Begin VB.Form frmContabilidad
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmContabilidad.frx":3B24
+         Icon            =   "frmContabilidad.frx":19A4
          Style           =   8
          Caption         =   "     Asiento"
          IconSize        =   18
@@ -106,7 +106,7 @@ Begin VB.Form frmContabilidad
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmContabilidad.frx":43FE
+         Icon            =   "frmContabilidad.frx":227E
          Style           =   8
          Caption         =   "     Cancelar"
          IconSize        =   18
@@ -455,47 +455,49 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cmdBajarAsiento_Click()
-    
-If Debe = Haber Then
-    With rsContabilidadTemp
-        .MoveFirst
-        Do Until .EOF
-            rsContabilidad.Requery
-            rsContabilidad.AddNew
-            rsContabilidad!asiento = !asiento
-            rsContabilidad!fecha = !fecha
-            rsContabilidad!cuenta = !cuenta
-            rsContabilidad!Detalle = !Detalle
-            rsContabilidad!Debe = !Debe
-            rsContabilidad!Haber = !Haber
-            rsContabilidad!nrofactura = !nrofactura
-            rsContabilidad!NroCuota = !NroCuota
-            rsContabilidad!CodAlumno = !CodAlumno
-            rsContabilidad.Update
-            .Delete
-            .Update
+    On Error GoTo LineaError
+    If Debe = Haber Then
+        With rsContabilidadTemp
             .MoveFirst
-        Loop
-    End With
+            Do Until .EOF
+                rsContabilidad.Requery
+                rsContabilidad.AddNew
+                rsContabilidad!asiento = !asiento
+                rsContabilidad!fecha = !fecha
+                rsContabilidad!cuenta = !cuenta
+                rsContabilidad!Detalle = !Detalle
+                rsContabilidad!Debe = !Debe
+                rsContabilidad!Haber = !Haber
+                rsContabilidad!nrofactura = !nrofactura
+                rsContabilidad!NroCuota = !NroCuota
+                rsContabilidad!CodAlumno = !CodAlumno
+                rsContabilidad.Update
+                .Delete
+                .Update
+                .MoveFirst
+            Loop
+        End With
+        Dim nroasiento As Long
+        With rsControl
+            .Requery
+            .MoveFirst
+            nroasiento = !nroasiento
+            nroasiento = nroasiento + 1
+            !nroasiento = nroasiento
+            .UpdateBatch
+        End With
+        lblNroAsiento.Caption = nroasiento
+        txtNroFactura.Text = ""
+        txtDetalle.Text = ""
+        txtNroFactura.Locked = False
+        txtNroFactura.SetFocus
+        cmdBajarAsiento.Enabled = False
+    Else
+        MsgBox "No coinciden Debe y Haber", vbOKOnly + vbInformation, "Contabilidad"
+    End If
     
-    Dim nroasiento As Long
-    With rsControl
-        .Requery
-        .MoveFirst
-        nroasiento = !nroasiento
-        nroasiento = nroasiento + 1
-        !nroasiento = nroasiento
-        .UpdateBatch
-    End With
-    lblNroAsiento.Caption = nroasiento
-    txtNroFactura.Text = ""
-    txtDetalle.Text = ""
-    txtNroFactura.Locked = False
-    txtNroFactura.SetFocus
-    cmdBajarAsiento.Enabled = False
-Else
-    MsgBox "No coinciden Debe y Haber", vbOKOnly + vbInformation, "Contabilidad"
-End If
+LineaError:
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
 End Sub
 
 Private Sub cmdBajarCuenta_Click()
@@ -508,12 +510,12 @@ Private Sub cmdBajarCuenta_Click()
     Haber = Haber + Val(txtHaber.Text)
     
     If Debe > 0 And Debe = Haber Then cmdBajarAsiento.Enabled = True
-    
+    On Error GoTo LineaError
     With rsContabilidadTemp
         .Requery
         .AddNew
         !asiento = lblNroAsiento.Caption
-        !fecha = CDate(lblfecha.Caption)
+        !fecha = CDate(lblFecha.Caption)
         !cuenta = dtcCuenta.Text
         !Detalle = txtDetalle.Text
         !NroCuota = Null
@@ -533,6 +535,10 @@ Private Sub cmdBajarCuenta_Click()
     End With
     formatoGrilla
     Limpiar
+
+LineaError:
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+
 End Sub
 
 Private Sub cmdCancelar_Click()
@@ -561,11 +567,11 @@ Private Sub Form_Load()
     Contabilidad
     ContabilidadTemp
     lblNroAsiento.Caption = rsControl!nroasiento
-    lblfecha.Caption = Date
+    lblFecha.Caption = Date
     Set dtcCuenta.RowSource = rsCuentas
     dtcCuenta.BoundColumn = "cuenta"
     dtcCuenta.ListField = "cuenta"
-    Set grilla.DataSource = rsContabilidadTemp
+    Set Grilla.DataSource = rsContabilidadTemp
     formatoGrilla
     txtNroFactura.Locked = False
     Haber = 0
@@ -573,10 +579,10 @@ Private Sub Form_Load()
 End Sub
 
 Sub formatoGrilla()
-    grilla.Columns(0).Width = 0
-    grilla.Columns(1).Width = 0
-    grilla.Columns(2).Width = 0
-    grilla.Columns(7).Width = 0
+    Grilla.Columns(0).Width = 0
+    Grilla.Columns(1).Width = 0
+    Grilla.Columns(2).Width = 0
+    Grilla.Columns(7).Width = 0
 End Sub
 
 Sub Limpiar()

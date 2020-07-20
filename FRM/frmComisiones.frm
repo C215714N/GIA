@@ -142,7 +142,7 @@ Begin VB.Form frmComisiones
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   92733441
+      Format          =   237633537
       CurrentDate     =   41355
    End
    Begin MSComCtl2.DTPicker dtpDesde 
@@ -163,7 +163,7 @@ Begin VB.Form frmComisiones
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   92733441
+      Format          =   237633537
       CurrentDate     =   41355
    End
    Begin isButtonTest.isButton cmdConsultar 
@@ -174,7 +174,7 @@ Begin VB.Form frmComisiones
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmComisiones.frx":324A
+      Icon            =   "frmComisiones.frx":10CA
       Style           =   8
       Caption         =   "     Consulta"
       IconSize        =   18

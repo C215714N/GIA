@@ -41,7 +41,7 @@ Begin VB.Form frmMatriculas
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.75
+            Size            =   9
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -60,7 +60,7 @@ Begin VB.Form frmMatriculas
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.75
+            Size            =   9
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -79,7 +79,7 @@ Begin VB.Form frmMatriculas
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.75
+            Size            =   9
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -187,7 +187,7 @@ Begin VB.Form frmMatriculas
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   92078081
+         Format          =   237043713
          CurrentDate     =   42089
       End
       Begin MSComCtl2.DTPicker dtpHasta 
@@ -208,7 +208,7 @@ Begin VB.Form frmMatriculas
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   92078081
+         Format          =   237043713
          CurrentDate     =   42089
       End
       Begin isButtonTest.isButton cmdBuscar 
@@ -219,7 +219,7 @@ Begin VB.Form frmMatriculas
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmMatriculas.frx":324A
+         Icon            =   "frmMatriculas.frx":10CA
          Style           =   8
          Caption         =   "     Buscar"
          IconSize        =   18

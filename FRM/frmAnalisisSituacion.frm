@@ -89,7 +89,7 @@ Begin VB.Form frmAnalisisSituacion
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   9
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -111,7 +111,7 @@ Begin VB.Form frmAnalisisSituacion
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmAnalisisSituacion.frx":324A
+      Icon            =   "frmAnalisisSituacion.frx":10CA
       Style           =   8
       Caption         =   "     Marcar"
       IconSize        =   18
@@ -142,7 +142,7 @@ Begin VB.Form frmAnalisisSituacion
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmAnalisisSituacion.frx":3B24
+      Icon            =   "frmAnalisisSituacion.frx":19A4
       Style           =   8
       Caption         =   "     Datos"
       IconSize        =   18
@@ -173,7 +173,7 @@ Begin VB.Form frmAnalisisSituacion
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmAnalisisSituacion.frx":43FE
+      Icon            =   "frmAnalisisSituacion.frx":227E
       Style           =   8
       Caption         =   "     Cuotas"
       IconSize        =   18
@@ -204,7 +204,7 @@ Begin VB.Form frmAnalisisSituacion
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmAnalisisSituacion.frx":4CD8
+      Icon            =   "frmAnalisisSituacion.frx":2B58
       Style           =   8
       Caption         =   "     Volver"
       IconSize        =   18
@@ -231,7 +231,7 @@ Begin VB.Form frmAnalisisSituacion
       BorderStyle     =   1  'Fixed Single
       BeginProperty Font 
          Name            =   "Century Gothic"
-         Size            =   9.75
+         Size            =   9
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False

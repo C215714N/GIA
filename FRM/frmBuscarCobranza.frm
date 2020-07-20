@@ -181,7 +181,7 @@ Begin VB.Form frmBuscarCobranza
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmBuscarCobranza.frx":324A
+      Icon            =   "frmBuscarCobranza.frx":10CA
       Style           =   8
       Caption         =   "     Aceptar"
       IconSize        =   18
@@ -213,7 +213,7 @@ Begin VB.Form frmBuscarCobranza
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmBuscarCobranza.frx":3B24
+      Icon            =   "frmBuscarCobranza.frx":19A4
       Style           =   8
       Caption         =   "     Cancelar"
       IconSize        =   18
@@ -246,8 +246,8 @@ Attribute VB_Exposed = False
 Private Sub cmdAceptar_Click()
     On Error GoTo LineaError:
     
-    frmCobranza.lblCodAlumno.Caption = grilla.Columns(0).Text
-    frmCobranza.lblNyA.Caption = grilla.Columns(1).Text
+    frmCobranza.lblCodAlumno.Caption = Grilla.Columns(0).Text
+    frmCobranza.lblNyA.Caption = Grilla.Columns(1).Text
     If Trim(Len(frmCobranza.lblCodAlumno.Caption)) = 1 Then frmCobranza.lblCodAlumno.Caption = Format(frmCobranza.lblCodAlumno.Caption, "0000#")
     If Trim(Len(frmCobranza.lblCodAlumno.Caption)) = 2 Then frmCobranza.lblCodAlumno.Caption = Format(frmCobranza.lblCodAlumno.Caption, "000##")
     If Trim(Len(frmCobranza.lblCodAlumno.Caption)) = 3 Then frmCobranza.lblCodAlumno.Caption = Format(frmCobranza.lblCodAlumno.Caption, "00###")
@@ -258,6 +258,7 @@ Private Sub cmdAceptar_Click()
     
 LineaError:
     MsgBox "Debe realizar una busqueda", vbOKOnly + vbCritical, "Gestion Integral del Alumno"
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
     Exit Sub
 End Sub
 
@@ -292,7 +293,7 @@ Sub BuscarCodigo()
     busca = UCase(Trim(txtBuscar.Text)) & "%"
     Adodc.RecordSource = "SELECT codalumno as [Codigo], nya as [Nombre y Apellido], tipodoc as [Tipo],DNI as [N°], capac as [Capacitacion] FROM verificaciones WHERE [codalumno] like '" & busca & "' ORDER BY codalumno"
     Adodc.Refresh
-    Set grilla.DataSource = Adodc
+    Set Grilla.DataSource = Adodc
     formatoGrilla
 End Sub
 
@@ -300,7 +301,7 @@ Sub BuscarAlumno()
     busca = UCase(Trim(txtBuscar.Text)) & "%"
     Adodc.RecordSource = "SELECT  codalumno as [Codigo], nya as [Nombre y Apellido], tipodoc as [Tipo],DNI as [N°], capac as [Capacitacion] FROM verificaciones WHERE [nya] like '" & busca & "' ORDER BY nya"
     Adodc.Refresh
-    Set grilla.DataSource = Adodc
+    Set Grilla.DataSource = Adodc
     formatoGrilla
 End Sub
 
@@ -312,9 +313,9 @@ Sub formatoGrilla()
         w = 3400
     Else:
         w = 700 - N * (-5.5 ^ N)
-        grilla.Columns(N).Alignment = dbgCenter
+        Grilla.Columns(N).Alignment = dbgCenter
     End If
-    grilla.Columns(N).Width = w
+    Grilla.Columns(N).Width = w
     Next
 End Sub
 

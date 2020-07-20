@@ -41,7 +41,7 @@ Begin VB.Form frmCargos
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCargos.frx":324A
+      Icon            =   "frmCargos.frx":10CA
       Style           =   8
       Caption         =   "     Aceptar"
       IconSize        =   18
@@ -72,7 +72,7 @@ Begin VB.Form frmCargos
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCargos.frx":3B24
+      Icon            =   "frmCargos.frx":19A4
       Style           =   8
       Caption         =   "     Cancelar"
       IconSize        =   18
@@ -122,6 +122,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cmdAgregar_Click()
+    On Error GoTo LineaError
     If txtCargo.Text = "" Then MsgBox "Primero debe Agregar un Nuevo Cargo", vbOKOnly + vbInformation, "Cargos": txtCargo.SetFocus: Exit Sub
     With rsCargos
         .Find "Cargo='" & txtCargo.Text & " '"
@@ -136,6 +137,9 @@ Private Sub cmdAgregar_Click()
             txtCargo.SetFocus
         End If
     End With
+LineaError:
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+
 End Sub
 
 Private Sub cmdSalir_Click()

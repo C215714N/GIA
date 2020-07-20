@@ -27,9 +27,9 @@ Begin VB.Form frmGruposArmado
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      ItemData        =   "frmGruposArmado.frx":324A
+      ItemData        =   "frmGruposArmado.frx":10CA
       Left            =   120
-      List            =   "frmGruposArmado.frx":326C
+      List            =   "frmGruposArmado.frx":10EC
       Style           =   2  'Dropdown List
       TabIndex        =   1
       Top             =   1080
@@ -46,9 +46,9 @@ Begin VB.Form frmGruposArmado
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      ItemData        =   "frmGruposArmado.frx":32D4
+      ItemData        =   "frmGruposArmado.frx":1154
       Left            =   120
-      List            =   "frmGruposArmado.frx":32EA
+      List            =   "frmGruposArmado.frx":116A
       Style           =   2  'Dropdown List
       TabIndex        =   0
       Top             =   480
@@ -62,7 +62,7 @@ Begin VB.Form frmGruposArmado
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmGruposArmado.frx":3321
+      Icon            =   "frmGruposArmado.frx":11A1
       Style           =   8
       Caption         =   "     Alumnos"
       IconSize        =   18
@@ -93,7 +93,7 @@ Begin VB.Form frmGruposArmado
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmGruposArmado.frx":3BFB
+      Icon            =   "frmGruposArmado.frx":1A7B
       Style           =   8
       Caption         =   "     Nuevo"
       IconSize        =   18
@@ -124,7 +124,7 @@ Begin VB.Form frmGruposArmado
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmGruposArmado.frx":44D5
+      Icon            =   "frmGruposArmado.frx":2355
       Style           =   8
       Caption         =   "     Eliminar"
       IconSize        =   18

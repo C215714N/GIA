@@ -30,7 +30,7 @@ Begin VB.Form frmBecaTotal
       _ExtentY        =   1508
       _Version        =   393217
       Appearance      =   0
-      TextRTF         =   $"frmBecaTotal.frx":324A
+      TextRTF         =   $"frmBecaTotal.frx":10CA
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
          Size            =   9.75
@@ -129,9 +129,9 @@ Begin VB.Form frmBecaTotal
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.75
+            Size            =   9
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
@@ -147,9 +147,9 @@ Begin VB.Form frmBecaTotal
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.75
+            Size            =   9
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
@@ -205,9 +205,9 @@ Begin VB.Form frmBecaTotal
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.75
+            Size            =   9
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
@@ -259,9 +259,9 @@ Begin VB.Form frmBecaTotal
       Begin VB.TextBox txtDebe 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.75
+            Size            =   9
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
@@ -275,9 +275,9 @@ Begin VB.Form frmBecaTotal
       Begin VB.TextBox txtMatricula 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.75
+            Size            =   9
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
@@ -291,9 +291,9 @@ Begin VB.Form frmBecaTotal
       Begin VB.TextBox txtComision 
          BeginProperty Font 
             Name            =   "Century Gothic"
-            Size            =   9.75
+            Size            =   9
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
@@ -322,7 +322,7 @@ Begin VB.Form frmBecaTotal
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   91750401
+         Format          =   131203073
          CurrentDate     =   42093
       End
       Begin isButtonTest.isButton cmdGrabar 
@@ -333,7 +333,7 @@ Begin VB.Form frmBecaTotal
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmBecaTotal.frx":32D0
+         Icon            =   "frmBecaTotal.frx":1150
          Style           =   8
          Caption         =   "     Aceptar"
          IconAlign       =   1
@@ -450,7 +450,7 @@ Begin VB.Form frmBecaTotal
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   91750401
+      Format          =   131203073
       CurrentDate     =   42089
    End
    Begin MSComCtl2.DTPicker dtpDesde 
@@ -471,7 +471,7 @@ Begin VB.Form frmBecaTotal
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   91750401
+      Format          =   131203073
       CurrentDate     =   42089
    End
    Begin VB.Frame Frame1 
@@ -500,7 +500,7 @@ Begin VB.Form frmBecaTotal
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   741
-         Icon            =   "frmBecaTotal.frx":3BAA
+         Icon            =   "frmBecaTotal.frx":1A2A
          Style           =   8
          Caption         =   "     Buscar"
          IconSize        =   18
@@ -593,7 +593,7 @@ Private Sub cmdGrabar_Click()
     On Error GoTo LineaError
     
     With rsAlumnosBecados
-        .Find "idreferencial=" & grilla.Columns(0).Text
+        .Find "idreferencial=" & Grilla.Columns(0).Text
         !matricula = txtMatricula.Text
         !Debe = txtDebe.Text
         !comision = txtComision.Text
@@ -614,7 +614,8 @@ LineaError:
     Select Case Err.Number
         Case 3021
             Resume Next
-        End Select
+    End Select
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
 End Sub
 Private Sub Form_Load()
     Centrar Me
@@ -623,11 +624,11 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub grilla_Click()
-    txtMatricula.Text = grilla.Columns(5).Text
-    txtDebe.Text = grilla.Columns(6).Text
-    txtComision.Text = grilla.Columns(7).Text
-    dtpCancelacion.Value = grilla.Columns(9).Text
-    txtObservaciones.Text = grilla.Columns(10).Text
+    txtMatricula.Text = Grilla.Columns(5).Text
+    txtDebe.Text = Grilla.Columns(6).Text
+    txtComision.Text = Grilla.Columns(7).Text
+    dtpCancelacion.Value = Grilla.Columns(9).Text
+    txtObservaciones.Text = Grilla.Columns(10).Text
     cmdGrabar.Enabled = True
 End Sub
 
@@ -649,7 +650,7 @@ Private Sub Buscar()
         .Open "SELECT idreferencial,nya as Alumno, tel1 as Telefono, capac as Curso, Asistente, Matricula,Debe,Comision, Fechasus as Fecha, Cancelacion, b.Observaciones FROM suscripciones as s, alumnosbecados as b WHERE b.idreferencial=s.id and cancelacion>=#" & desde & "# and cancelacion<=#" & hasta & "#", Cn, adOpenDynamic, adLockPessimistic
     End With
     
-    Set grilla.DataSource = rsAlumnosBecados
+    Set Grilla.DataSource = rsAlumnosBecados
     formatoGrilla
 End Sub
 
@@ -660,13 +661,13 @@ Sub formatoGrilla()
             w = 3200
         ElseIf N = 5 Or N = 6 Then
             w = 800
-            grilla.Columns(N).NumberFormat = "$ #####"
+            Grilla.Columns(N).NumberFormat = "$ #####"
         ElseIf N = 8 Or N = 9 Then
             w = 1150
         Else:
             w = 0
         End If
-        grilla.Columns(N).Width = w
+        Grilla.Columns(N).Width = w
     Next
 End Sub
 

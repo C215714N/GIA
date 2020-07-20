@@ -80,9 +80,9 @@ Begin VB.Form frmCuentas
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      ItemData        =   "frmCuentas.frx":324A
+      ItemData        =   "frmCuentas.frx":10CA
       Left            =   120
-      List            =   "frmCuentas.frx":3254
+      List            =   "frmCuentas.frx":10D4
       Style           =   2  'Dropdown List
       TabIndex        =   2
       Top             =   2160
@@ -130,7 +130,7 @@ Begin VB.Form frmCuentas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCuentas.frx":3265
+      Icon            =   "frmCuentas.frx":10E5
       Style           =   8
       Caption         =   "     Guardar"
       IconSize        =   18
@@ -159,7 +159,7 @@ Begin VB.Form frmCuentas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCuentas.frx":3B3F
+      Icon            =   "frmCuentas.frx":19BF
       Style           =   8
       Caption         =   "     Cancelar"
       IconSize        =   18
@@ -188,7 +188,7 @@ Begin VB.Form frmCuentas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCuentas.frx":4419
+      Icon            =   "frmCuentas.frx":2299
       Style           =   8
       Caption         =   "     Nuevo"
       IconSize        =   18
@@ -219,7 +219,7 @@ Begin VB.Form frmCuentas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCuentas.frx":4CF3
+      Icon            =   "frmCuentas.frx":2B73
       Style           =   8
       Caption         =   "     Editar"
       IconSize        =   18
@@ -250,7 +250,7 @@ Begin VB.Form frmCuentas
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
-      Icon            =   "frmCuentas.frx":55CD
+      Icon            =   "frmCuentas.frx":344D
       Style           =   8
       Caption         =   "     Volver"
       IconSize        =   18
@@ -377,6 +377,7 @@ Private Sub cmbTipoCta_Change()
 End Sub
 
 Private Sub cmdBuscar1_Click()
+    On Error GoTo LineaError
     X = InputBox("Ingrese la Cuenta a Buscar", "Buscar Cuenta")
     With rsCuentas
         If .BOF Or .EOF Then Exit Sub
@@ -388,10 +389,12 @@ Private Sub cmdBuscar1_Click()
         txtNombreCuenta.Text = !cuenta
         txtDetalle.Text = !Detalle
     End With
-
+LineaError:
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
 End Sub
 
 Private Sub cmdBuscar2_Click()
+    On Error GoTo LineaError
     X = InputBox("Ingrese el Codigo de Cuenta a Buscar", "Buscar Cuenta")
     With rsCuentas
         If .BOF Or .EOF Then Exit Sub
@@ -403,7 +406,9 @@ Private Sub cmdBuscar2_Click()
         txtNombreCuenta.Text = !cuenta
         txtDetalle.Text = !Detalle
     End With
-    
+LineaError:
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+
 End Sub
 
 Private Sub cmdCancelar_Click()
