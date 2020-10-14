@@ -242,50 +242,50 @@ Private Sub cmdAceptar_Click()
     If Adodc.Recordset.RecordCount = 0 Then MsgBox "Debe realizar una busqueda", vbOKOnly + vbCritical, "Gestion Integral del Alumno": Exit Sub
 
     If Verificar = False Then
-        frmSuscripciones.lblID.Caption = Grilla.Columns(0).Text
-        frmSuscripciones.txtNya.Text = Grilla.Columns(1).Text
-        frmSuscripciones.cmbTipoDoc.Text = Grilla.Columns(2).Text
-        frmSuscripciones.txtDocumento.Text = Grilla.Columns(3).Text
-        frmSuscripciones.txtDireccion.Text = Grilla.Columns(4).Text
-        frmSuscripciones.txtCP.Text = Grilla.Columns(5).Text
-        frmSuscripciones.dtcLocalidad.Text = Grilla.Columns(6).Text
-        frmSuscripciones.txtNacionalidad.Text = Grilla.Columns(7).Text
+        frmSuscripciones.lblID.Caption = grilla.Columns(0).Text
+        frmSuscripciones.txtNya.Text = grilla.Columns(1).Text
+        frmSuscripciones.cmbTipoDoc.Text = grilla.Columns(2).Text
+        frmSuscripciones.txtDocumento.Text = grilla.Columns(3).Text
+        frmSuscripciones.txtDireccion.Text = grilla.Columns(4).Text
+        frmSuscripciones.txtCP.Text = grilla.Columns(5).Text
+        frmSuscripciones.dtcLocalidad.Text = grilla.Columns(6).Text
+        frmSuscripciones.txtNacionalidad.Text = grilla.Columns(7).Text
     
-        If Month(Grilla.Columns(9).Text) < Month(Date) Then
-                frmSuscripciones.txtEdad.Text = DateDiff("yyyy", Grilla.Columns(9).Text, Date)
-            ElseIf Day(Grilla.Columns(9).Text) <= Day(Date) And Month(Grilla.Columns(9).Text) = Month(Date) Then
-                frmSuscripciones.txtEdad.Text = DateDiff("yyyy", Grilla.Columns(9).Text, Date)
-            ElseIf Day(Grilla.Columns(9).Text) > Day(Date) And Month(Grilla.Columns(9).Text) >= Month(Date) Then
-                frmSuscripciones.txtEdad.Text = DateDiff("yyyy", Grilla.Columns(9).Text, Date) - 1
+        If Month(grilla.Columns(9).Text) < Month(Date) Then
+                frmSuscripciones.txtEdad.Text = DateDiff("yyyy", grilla.Columns(9).Text, Date)
+            ElseIf Day(grilla.Columns(9).Text) <= Day(Date) And Month(grilla.Columns(9).Text) = Month(Date) Then
+                frmSuscripciones.txtEdad.Text = DateDiff("yyyy", grilla.Columns(9).Text, Date)
+            ElseIf Day(grilla.Columns(9).Text) > Day(Date) And Month(grilla.Columns(9).Text) >= Month(Date) Then
+                frmSuscripciones.txtEdad.Text = DateDiff("yyyy", grilla.Columns(9).Text, Date) - 1
             Else
-              frmSuscripciones.txtEdad.Text = DateDiff("yyyy", Grilla.Columns(9).Text, Date) - 1
+              frmSuscripciones.txtEdad.Text = DateDiff("yyyy", grilla.Columns(9).Text, Date) - 1
         End If
     
-        frmSuscripciones.dtpFechaNacimiento.Value = Grilla.Columns(9).Text
-        frmSuscripciones.dtcCapacitacion.Text = Grilla.Columns(10).Text
-        frmSuscripciones.dtcAsistente.Text = Grilla.Columns(11).Text
-        frmSuscripciones.txtTel1.Text = Grilla.Columns(12).Text
-        frmSuscripciones.txtTel2.Text = Grilla.Columns(13).Text
-        frmSuscripciones.txtTel3.Text = Grilla.Columns(14).Text
-        frmSuscripciones.txtTel4.Text = Grilla.Columns(15).Text
-        frmSuscripciones.txtPT1.Text = Grilla.Columns(16).Text
-        frmSuscripciones.txtPT2.Text = Grilla.Columns(17).Text
-        frmSuscripciones.txtPT3.Text = Grilla.Columns(18).Text
-        frmSuscripciones.txtPT4.Text = Grilla.Columns(19).Text
-        frmSuscripciones.txtTotalCurso.Text = Grilla.Columns(20).Text
-        frmSuscripciones.txtTotalCuotas.Text = Grilla.Columns(21).Text
-        frmSuscripciones.txtGastoAdm.Text = Grilla.Columns(22).Text
-        frmSuscripciones.dtpFechaSuscripcion.Value = Grilla.Columns(23).Text
-        frmSuscripciones.txtObservaciones.Text = Grilla.Columns(24).Text
-        frmSuscripciones.txtNroFactura.Text = Grilla.Columns(28).Text
-        frmSuscripciones.txtTotalMatricula.Text = Grilla.Columns(27).Text
+        frmSuscripciones.dtpFechaNacimiento.Value = grilla.Columns(9).Text
+        frmSuscripciones.dtcCapacitacion.Text = grilla.Columns(10).Text
+        frmSuscripciones.dtcAsistente.Text = grilla.Columns(11).Text
+        frmSuscripciones.txtTel1.Text = grilla.Columns(12).Text
+        frmSuscripciones.txtTel2.Text = grilla.Columns(13).Text
+        frmSuscripciones.txtTel3.Text = grilla.Columns(14).Text
+        frmSuscripciones.txtTel4.Text = grilla.Columns(15).Text
+        frmSuscripciones.txtPT1.Text = grilla.Columns(16).Text
+        frmSuscripciones.txtPT2.Text = grilla.Columns(17).Text
+        frmSuscripciones.txtPT3.Text = grilla.Columns(18).Text
+        frmSuscripciones.txtPT4.Text = grilla.Columns(19).Text
+        frmSuscripciones.txtTotalCurso.Text = grilla.Columns(20).Text
+        frmSuscripciones.txtTotalCuotas.Text = grilla.Columns(21).Text
+        frmSuscripciones.txtGastoAdm.Text = grilla.Columns(22).Text
+        frmSuscripciones.dtpFechaSuscripcion.Value = grilla.Columns(23).Text
+        frmSuscripciones.txtObservaciones.Text = grilla.Columns(24).Text
+        frmSuscripciones.txtNroFactura.Text = grilla.Columns(28).Text
+        frmSuscripciones.txtTotalMatricula.Text = grilla.Columns(27).Text
         
-        If Grilla.Columns(25).Text = "0" Then
+        If grilla.Columns(25).Text = "0" Then
                 frmSuscripciones.chkManuales.Value = 0
             Else
                 frmSuscripciones.chkManuales.Value = 1
             End If
-            If Grilla.Columns(26).Text = "0" Then
+            If grilla.Columns(26).Text = "0" Then
                 frmSuscripciones.chkExamenes.Value = 0
             Else
             frmSuscripciones.chkExamenes.Value = 1
@@ -300,47 +300,47 @@ Private Sub cmdAceptar_Click()
         frmVerificaciones.txtNya.SetFocus
         frmVerificaciones.DTPFechaVerificacion.Value = Date
         frmVerificaciones.lblCodAlumno.Caption = ""
-        frmVerificaciones.txtNya.Text = Grilla.Columns(1).Text
-        frmVerificaciones.cmbTipoDoc.Text = Grilla.Columns(2).Text
-        frmVerificaciones.txtDocumento.Text = Grilla.Columns(3).Text
-        frmVerificaciones.txtDireccion.Text = Grilla.Columns(4).Text
-        frmVerificaciones.txtCP.Text = Grilla.Columns(5).Text
-        frmVerificaciones.dtcLocalidad.Text = Grilla.Columns(6).Text
-        frmVerificaciones.txtNacionalidad.Text = Grilla.Columns(7).Text
+        frmVerificaciones.txtNya.Text = grilla.Columns(1).Text
+        frmVerificaciones.cmbTipoDoc.Text = grilla.Columns(2).Text
+        frmVerificaciones.txtDocumento.Text = grilla.Columns(3).Text
+        frmVerificaciones.txtDireccion.Text = grilla.Columns(4).Text
+        frmVerificaciones.txtCP.Text = grilla.Columns(5).Text
+        frmVerificaciones.dtcLocalidad.Text = grilla.Columns(6).Text
+        frmVerificaciones.txtNacionalidad.Text = grilla.Columns(7).Text
         
-        If Month(Grilla.Columns(9).Text) < Month(Date) Then
-                frmVerificaciones.txtEdad.Text = DateDiff("yyyy", Grilla.Columns(9).Text, Date)
-            ElseIf Day(Grilla.Columns(9).Text) <= Day(Date) And Month(Grilla.Columns(9).Text) = Month(Date) Then
-                frmVerificaciones.txtEdad.Text = DateDiff("yyyy", Grilla.Columns(9).Text, Date)
-            ElseIf Day(Grilla.Columns(9).Text) > Day(Date) And Month(Grilla.Columns(9).Text) >= Month(Date) Then
-                frmVerificaciones.txtEdad.Text = DateDiff("yyyy", Grilla.Columns(9).Text, Date) - 1
+        If Month(grilla.Columns(9).Text) < Month(Date) Then
+                frmVerificaciones.txtEdad.Text = DateDiff("yyyy", grilla.Columns(9).Text, Date)
+            ElseIf Day(grilla.Columns(9).Text) <= Day(Date) And Month(grilla.Columns(9).Text) = Month(Date) Then
+                frmVerificaciones.txtEdad.Text = DateDiff("yyyy", grilla.Columns(9).Text, Date)
+            ElseIf Day(grilla.Columns(9).Text) > Day(Date) And Month(grilla.Columns(9).Text) >= Month(Date) Then
+                frmVerificaciones.txtEdad.Text = DateDiff("yyyy", grilla.Columns(9).Text, Date) - 1
             Else
-                frmVerificaciones.txtEdad.Text = DateDiff("yyyy", Grilla.Columns(9).Text, Date) - 1
+                frmVerificaciones.txtEdad.Text = DateDiff("yyyy", grilla.Columns(9).Text, Date) - 1
         End If
         
-        frmVerificaciones.dtpFechaNacimiento.Value = Grilla.Columns(9).Text
-        frmVerificaciones.dtcCapacitacion.Text = Grilla.Columns(10).Text
-        frmVerificaciones.dtcAsistente.Text = Grilla.Columns(11).Text
-        frmVerificaciones.txtTel1.Text = Grilla.Columns(12).Text
-        frmVerificaciones.txtTel2.Text = Grilla.Columns(13).Text
-        frmVerificaciones.txtTel3.Text = Grilla.Columns(14).Text
-        frmVerificaciones.txtTel4.Text = Grilla.Columns(15).Text
-        frmVerificaciones.txtPT1.Text = Grilla.Columns(16).Text
-        frmVerificaciones.txtPT2.Text = Grilla.Columns(17).Text
-        frmVerificaciones.txtPT3.Text = Grilla.Columns(18).Text
-        frmVerificaciones.txtPT4.Text = Grilla.Columns(19).Text
-        frmVerificaciones.txtTotalCurso.Text = Grilla.Columns(20).Text
-        frmVerificaciones.txtTotalCuotas.Text = Grilla.Columns(21).Text
-        frmVerificaciones.txtGastoAdm.Text = Grilla.Columns(22).Text
-        frmVerificaciones.dtpFechaSuscripcion.Value = Grilla.Columns(23).Text
-        frmVerificaciones.txtObservaciones.Text = Grilla.Columns(24).Text
+        frmVerificaciones.dtpFechaNacimiento.Value = grilla.Columns(9).Text
+        frmVerificaciones.dtcCapacitacion.Text = grilla.Columns(10).Text
+        frmVerificaciones.dtcAsistente.Text = grilla.Columns(11).Text
+        frmVerificaciones.txtTel1.Text = grilla.Columns(12).Text
+        frmVerificaciones.txtTel2.Text = grilla.Columns(13).Text
+        frmVerificaciones.txtTel3.Text = grilla.Columns(14).Text
+        frmVerificaciones.txtTel4.Text = grilla.Columns(15).Text
+        frmVerificaciones.txtPT1.Text = grilla.Columns(16).Text
+        frmVerificaciones.txtPT2.Text = grilla.Columns(17).Text
+        frmVerificaciones.txtPT3.Text = grilla.Columns(18).Text
+        frmVerificaciones.txtPT4.Text = grilla.Columns(19).Text
+        frmVerificaciones.txtTotalCurso.Text = grilla.Columns(20).Text
+        frmVerificaciones.txtTotalCuotas.Text = grilla.Columns(21).Text
+        frmVerificaciones.txtGastoAdm.Text = grilla.Columns(22).Text
+        frmVerificaciones.dtpFechaSuscripcion.Value = grilla.Columns(23).Text
+        frmVerificaciones.txtObservaciones.Text = grilla.Columns(24).Text
         
-        If Grilla.Columns(25).Text = "0" Then
+        If grilla.Columns(25).Text = "0" Then
                 frmVerificaciones.chkManuales.Value = 0
             Else
                 frmVerificaciones.chkManuales.Value = 1
             End If
-            If Grilla.Columns(26).Text = "0" Then
+            If grilla.Columns(26).Text = "0" Then
                 frmVerificaciones.chkExamenes.Value = 0
             Else
                 frmVerificaciones.chkExamenes.Value = 1
@@ -367,7 +367,7 @@ Private Sub Form_Load()
     Adodc.CursorLocation = adUseClient
     Adodc.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=T:\base.mdb;Persist Security Info=False;Jet OLEDB:Database Password=ascir"
     Adodc.RecordSource = "SELECT id, Nya as [Apellido y Nombres], tipoDoc as [Tipo], DNI as [N°], Direccion, CP, Localidad, Nacionalidad, Edad, FechaNac, Capac as [Capacitacion], Asistente, Tel1, Tel2, Tel3, Tel4, PTel1, PTel2, PTel3, PTel4, TotalCurso, Cuotas, GastoAdm, Fechasus, Observaciones, Manuales, DchoExamen, TotalMatricula, NroFactura FROM suscripciones WHERE [Nya] like '" & busca & "'"
-    Set Grilla.DataSource = Adodc
+    Set grilla.DataSource = Adodc
     formatoGrilla
 End Sub
 
@@ -387,9 +387,8 @@ Private Sub txtBuscar_Change()
         cmdAceptar.Enabled = True
     End If
     busca = UCase(Trim(txtBuscar.Text)) & "%"
-    Adodc.RecordSource = "SELECT id, Nya as [Apellido y Nombres], tipoDoc as [Tipo], DNI as [N°], Direccion, CP, Localidad, Nacionalidad, Edad, FechaNac, Capac as [Capacitacion], Asistente, Tel1, Tel2, Tel3, Tel4, PTel1, PTel2, PTel3, PTel4, TotalCurso, Cuotas, GastoAdm, Fechasus, Observaciones, Manuales, DchoExamen, TotalMatricula, NroFactura FROM suscripciones WHERE [nya] like '" & busca & "'"
+    Adodc.RecordSource = "SELECT id, Nya as [Apellido y Nombres], tipoDoc as [Tipo], DNI as [N°], Direccion, CP, Localidad, Nacionalidad, Edad, FechaNac, Capac as [Capacitacion], Asistente, Tel1, Tel2, Tel3, Tel4, PTel1, PTel2, PTel3, PTel4, TotalCurso, Cuotas, GastoAdm, Fechasus, Observaciones, Manuales, DchoExamen, TotalMatricula, NroFactura FROM suscripciones WHERE dni LIKE '" & busca & "' OR [nya] LIKE '" & busca & "' ORDER BY nya, dni"
     Adodc.Refresh
-    
     Adodc.Refresh
     formatoGrilla
 End Sub
@@ -404,7 +403,7 @@ Dim N As Integer
         Else:
             w = 0
         End If
-        Grilla.Columns(N).Width = w
+        grilla.Columns(N).Width = w
     Next
 End Sub
 

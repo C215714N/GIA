@@ -21,7 +21,7 @@ Begin VB.Form frmBuscarVerificacion
    Begin MSDataGridLib.DataGrid grilla 
       Height          =   3015
       Left            =   120
-      TabIndex        =   3
+      TabIndex        =   1
       Top             =   840
       Width           =   9135
       _ExtentX        =   16113
@@ -101,47 +101,6 @@ Begin VB.Form frmBuscarVerificacion
       Top             =   360
       Width           =   4000
    End
-   Begin VB.OptionButton optBuscar 
-      BackColor       =   &H00662200&
-      Caption         =   "Nombre"
-      BeginProperty Font 
-         Name            =   "Century Gothic"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H8000000F&
-      Height          =   255
-      Index           =   1
-      Left            =   1440
-      TabIndex        =   2
-      Top             =   120
-      Width           =   1935
-   End
-   Begin VB.OptionButton optBuscar 
-      BackColor       =   &H00662200&
-      Caption         =   "Codigo"
-      BeginProperty Font 
-         Name            =   "Century Gothic"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H8000000F&
-      Height          =   255
-      Index           =   0
-      Left            =   120
-      TabIndex        =   1
-      Top             =   120
-      Value           =   -1  'True
-      Width           =   1815
-   End
    Begin MSAdodcLib.Adodc Adodc 
       Height          =   330
       Left            =   120
@@ -192,7 +151,7 @@ Begin VB.Form frmBuscarVerificacion
    Begin isButtonTest.isButton cmdAceptar 
       Height          =   420
       Left            =   4200
-      TabIndex        =   4
+      TabIndex        =   2
       Top             =   300
       Width           =   1335
       _ExtentX        =   2355
@@ -224,7 +183,7 @@ Begin VB.Form frmBuscarVerificacion
    Begin isButtonTest.isButton cmdCancelar 
       Height          =   420
       Left            =   5640
-      TabIndex        =   5
+      TabIndex        =   3
       Top             =   300
       Width           =   1335
       _ExtentX        =   2355
@@ -252,6 +211,25 @@ Begin VB.Form frmBuscarVerificacion
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+   End
+   Begin VB.Label lblAlumno 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Ingrese Codigo, Documento o Nombre"
+      BeginProperty Font 
+         Name            =   "Century Gothic"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   255
+      Left            =   120
+      TabIndex        =   4
+      Top             =   120
+      Width           =   3975
    End
 End
 Attribute VB_Name = "frmBuscarVerificacion"
@@ -388,25 +366,15 @@ Private Sub txtBuscar_Change()
     Else
         cmdAceptar.Enabled = True
     End If
-    If optBuscar(0).Value = True Then
-        BuscarCodigo
-    Else
-        BuscarAlumno
-    End If
-End Sub
-
-Sub BuscarCodigo()
-    busca = UCase(Trim(txtBuscar.Text)) & "%"
-    Adodc.RecordSource = "SELECT codalumno as [Codigo], Nya as [Alumno], tipoDoc as[Tipo], DNI as [N°], Direccion, CP, Localidad, Nacionalidad, Edad, FechaNac, capac as [Capacitacion], Asistente, Tel1, Tel2, Tel3, Tel4, PTel1, PTel2, PTel3, PTel4, TotalCurso, Cuotas, GastoAdm, FechaSus, FechaVerif, Observaciones, Manuales, DchoExamen, Estado FROM verificaciones WHERE [codalumno] like '" & busca & "' ORDER BY codalumno"
-    Adodc.Refresh
-    formatoGrilla
+    BuscarAlumno
 End Sub
 
 Sub BuscarAlumno()
     busca = UCase(Trim(txtBuscar.Text)) & "%"
-    Adodc.RecordSource = "SELECT codalumno as [Codigo], Nya as [Alumno], tipoDoc as[Tipo], DNI as [N°], Direccion, CP, Localidad, Nacionalidad, Edad, FechaNac, capac as [Capacitacion], Asistente, Tel1, Tel2, Tel3, Tel4, PTel1, PTel2, PTel3, PTel4, TotalCurso, Cuotas, GastoAdm, FechaSus, FechaVerif, Observaciones, Manuales, DchoExamen, Estado FROM verificaciones WHERE [nya] like '" & busca & "' ORDER BY nya"
+    Adodc.RecordSource = "SELECT codalumno as [Codigo], Nya as [Alumno], tipoDoc as[Tipo], DNI as [N°], Direccion, CP, Localidad, Nacionalidad, Edad, FechaNac, capac as [Capacitacion], Asistente, Tel1, Tel2, Tel3, Tel4, PTel1, PTel2, PTel3, PTel4, TotalCurso, Cuotas, GastoAdm, FechaSus, FechaVerif, Observaciones, Manuales, DchoExamen, Estado FROM verificaciones WHERE [codalumno] like '" & busca & "' OR dni LIKE '" & busca & "' OR NyA like '" & busca & "' ORDER BY codalumno, NyA, DNI"
     Adodc.Refresh
     formatoGrilla
+    
 End Sub
 
 Sub formatoGrilla()

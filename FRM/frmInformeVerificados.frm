@@ -98,17 +98,17 @@ Begin VB.Form frmInformeVerificados
             Name            =   "Century Gothic"
             Size            =   9.75
             Charset         =   0
-            Weight          =   700
+            Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H8000000F&
-         Height          =   225
+         Height          =   255
          Left            =   120
          TabIndex        =   3
          Top             =   240
-         Width           =   1125
+         Width           =   1260
       End
       Begin VB.Label Label5 
          AutoSize        =   -1  'True
@@ -118,17 +118,17 @@ Begin VB.Form frmInformeVerificados
             Name            =   "Century Gothic"
             Size            =   9.75
             Charset         =   0
-            Weight          =   700
+            Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H8000000F&
-         Height          =   225
+         Height          =   255
          Left            =   120
          TabIndex        =   2
          Top             =   960
-         Width           =   1170
+         Width           =   1335
       End
       Begin VB.Label Label6 
          AutoSize        =   -1  'True
@@ -138,17 +138,17 @@ Begin VB.Form frmInformeVerificados
             Name            =   "Century Gothic"
             Size            =   9.75
             Charset         =   0
-            Weight          =   700
+            Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H8000000F&
-         Height          =   225
+         Height          =   255
          Left            =   120
          TabIndex        =   1
          Top             =   1680
-         Width           =   660
+         Width           =   765
       End
    End
    Begin MSDataGridLib.DataGrid grilla 
@@ -236,7 +236,7 @@ Begin VB.Form frmInformeVerificados
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   111083521
+      Format          =   112721921
       CurrentDate     =   41345
    End
    Begin MSComCtl2.DTPicker dtpHasta 
@@ -257,7 +257,7 @@ Begin VB.Form frmInformeVerificados
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   111083521
+      Format          =   112721921
       CurrentDate     =   41345
    End
    Begin isButtonTest.isButton cmdBuscar 

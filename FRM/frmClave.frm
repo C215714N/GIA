@@ -36,7 +36,7 @@ Begin VB.Form frmClave
       _ExtentX        =   2778
       _ExtentY        =   661
       _Version        =   393216
-      Format          =   254083073
+      Format          =   131989505
       CurrentDate     =   42125
    End
    Begin MSComCtl2.DTPicker DTPFecha 
@@ -57,7 +57,7 @@ Begin VB.Form frmClave
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   254083073
+      Format          =   131989505
       CurrentDate     =   41327
    End
    Begin VB.TextBox txtClave 
@@ -587,7 +587,7 @@ SituacionDeCartera:
         End If
           
 Recargo:
-    ''' Recargo x fuera de fecha
+    ''' RECARGO FUERA DE FECHA
         Control
         rsControl.MoveFirst
         

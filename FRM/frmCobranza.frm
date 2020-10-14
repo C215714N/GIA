@@ -30,7 +30,6 @@ Begin VB.Form frmCobranza
       _ExtentX        =   7011
       _ExtentY        =   1720
       _Version        =   393217
-      Enabled         =   -1  'True
       Appearance      =   0
       AutoVerbMenu    =   -1  'True
       TextRTF         =   $"frmCobranza.frx":10CA
@@ -193,7 +192,7 @@ Begin VB.Form frmCobranza
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   154730497
+      Format          =   130220033
       CurrentDate     =   41326
    End
    Begin VB.TextBox txtFechaVto 
@@ -547,9 +546,9 @@ Private Sub Form_Load()
     PlanDePago
     Adodc.CursorLocation = adUseClient
     Adodc.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=T:\base.mdb;Persist Security Info=False;Jet OLEDB:Database Password=ascir"
-    Adodc.RecordSource = "SELECT id, codalumno, nya, nrocuota as [N°], fechavto as [Vencimiento], fechapago As [Fecha Pago], tipodepago, recibo, deuda As Monto, recargoxfecha, recargoxmes, deudatotal, totalcobrado, cuotasdebidas, observaciones, campo1, campo2 FROM plandepago WHERE codalumno =" & frmBuscarCobranza.Grilla.Columns(0).Text & " ORDER BY nrocuota"
+    Adodc.RecordSource = "SELECT id, codalumno, nya, nrocuota as [N°], fechavto as [Vencimiento], fechapago As [Fecha Pago], tipodepago, recibo, deuda As Monto, recargoxfecha, recargoxmes, deudatotal, totalcobrado, cuotasdebidas, observaciones, campo1, campo2 FROM plandepago WHERE codalumno =" & frmBuscarCobranza.grilla.Columns(0).Text & " ORDER BY nrocuota"
     Adodc.Refresh
-    Set Grilla.DataSource = Adodc
+    Set grilla.DataSource = Adodc
     formatoGrilla
     DTPFechaPago.Value = Date
 End Sub
@@ -559,12 +558,12 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
 End Sub
 
 Private Sub grilla_Click()
-    txtNroCuota.Text = Grilla.Columns(3).Text
-    txtFechaVto.Text = Grilla.Columns(4).Text
-    txtObservaciones.Text = Grilla.Columns(14).Text
-    txtAdeuda.Text = Grilla.Columns(11).Text
+    txtNroCuota.Text = grilla.Columns(3).Text
+    txtFechaVto.Text = grilla.Columns(4).Text
+    txtObservaciones.Text = grilla.Columns(14).Text
+    txtAdeuda.Text = grilla.Columns(11).Text
     txtAdeuda.Text = Format(txtAdeuda.Text, "currency")
-    If Grilla.Columns(11).Text = 0 Then
+    If grilla.Columns(11).Text = 0 Then
         cmdPagar.Enabled = False
     Else
         cmdPagar.Enabled = True
@@ -578,13 +577,13 @@ Sub formatoGrilla()
             w = 1200
         ElseIf N = 8 Then
             w = 800
-            Grilla.Columns(N).NumberFormat = "$ #####"
+            grilla.Columns(N).NumberFormat = "$ #####"
         ElseIf N = 3 Then
             w = 300
         Else:
             w = 0
         End If
-        Grilla.Columns(N).Alignment = dbgCenter
-        Grilla.Columns(N).Width = w
+        grilla.Columns(N).Alignment = dbgCenter
+        grilla.Columns(N).Width = w
     Next
 End Sub

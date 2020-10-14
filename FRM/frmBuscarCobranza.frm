@@ -80,36 +80,10 @@ Begin VB.Form frmBuscarCobranza
       EndProperty
       _Version        =   393216
    End
-   Begin VB.OptionButton optBuscar 
-      BackColor       =   &H00662200&
-      Caption         =   "Codigo"
-      ForeColor       =   &H8000000F&
-      Height          =   255
-      Index           =   0
-      Left            =   120
-      MaskColor       =   &H00800000&
-      TabIndex        =   1
-      Top             =   120
-      UseMaskColor    =   -1  'True
-      Width           =   1335
-   End
-   Begin VB.OptionButton optBuscar 
-      BackColor       =   &H00662200&
-      Caption         =   "Nombre"
-      ForeColor       =   &H8000000B&
-      Height          =   255
-      Index           =   1
-      Left            =   1440
-      MaskColor       =   &H00800000&
-      TabIndex        =   2
-      Top             =   120
-      UseMaskColor    =   -1  'True
-      Width           =   1335
-   End
    Begin MSDataGridLib.DataGrid grilla 
       Height          =   3015
       Left            =   120
-      TabIndex        =   3
+      TabIndex        =   1
       Top             =   840
       Width           =   9120
       _ExtentX        =   16087
@@ -176,7 +150,7 @@ Begin VB.Form frmBuscarCobranza
    Begin isButtonTest.isButton cmdAceptar 
       Height          =   420
       Left            =   4200
-      TabIndex        =   4
+      TabIndex        =   2
       Top             =   300
       Width           =   1335
       _ExtentX        =   2355
@@ -208,7 +182,7 @@ Begin VB.Form frmBuscarCobranza
    Begin isButtonTest.isButton cmdCancelar 
       Height          =   420
       Left            =   5640
-      TabIndex        =   5
+      TabIndex        =   3
       Top             =   300
       Width           =   1335
       _ExtentX        =   2355
@@ -237,6 +211,16 @@ Begin VB.Form frmBuscarCobranza
          Strikethrough   =   0   'False
       EndProperty
    End
+   Begin VB.Label lblAlumno 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Ingrese Codigo, Documento o Nombre"
+      ForeColor       =   &H00FFFFFF&
+      Height          =   255
+      Left            =   120
+      TabIndex        =   4
+      Top             =   120
+      Width           =   3975
+   End
 End
 Attribute VB_Name = "frmBuscarCobranza"
 Attribute VB_GlobalNameSpace = False
@@ -246,8 +230,8 @@ Attribute VB_Exposed = False
 Private Sub cmdAceptar_Click()
     On Error GoTo LineaError:
     
-    frmCobranza.lblCodAlumno.Caption = Grilla.Columns(0).Text
-    frmCobranza.lblNyA.Caption = Grilla.Columns(1).Text
+    frmCobranza.lblCodAlumno.Caption = grilla.Columns(0).Text
+    frmCobranza.lblNyA.Caption = grilla.Columns(1).Text
     If Trim(Len(frmCobranza.lblCodAlumno.Caption)) = 1 Then frmCobranza.lblCodAlumno.Caption = Format(frmCobranza.lblCodAlumno.Caption, "0000#")
     If Trim(Len(frmCobranza.lblCodAlumno.Caption)) = 2 Then frmCobranza.lblCodAlumno.Caption = Format(frmCobranza.lblCodAlumno.Caption, "000##")
     If Trim(Len(frmCobranza.lblCodAlumno.Caption)) = 3 Then frmCobranza.lblCodAlumno.Caption = Format(frmCobranza.lblCodAlumno.Caption, "00###")
@@ -270,11 +254,9 @@ Private Sub Form_Load()
     Centrar Me
     Dim busca As String
     Verificaciones
-    optBuscar(0).Value = True
     Adodc.CursorLocation = adUseClient
     Adodc.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=T:\base.mdb;Persist Security Info=False;Jet OLEDB:Database Password=ascir"
 End Sub
-
 
 Private Sub txtBuscar_Change()
     If txtBuscar.Text = "" Then
@@ -282,26 +264,14 @@ Private Sub txtBuscar_Change()
     Else
         cmdAceptar.Enabled = True
     End If
-    If optBuscar(0).Value = True Then
-        BuscarCodigo
-    Else
-        BuscarAlumno
-    End If
-End Sub
-
-Sub BuscarCodigo()
-    busca = UCase(Trim(txtBuscar.Text)) & "%"
-    Adodc.RecordSource = "SELECT codalumno as [Codigo], nya as [Nombre y Apellido], tipodoc as [Tipo],DNI as [N°], capac as [Capacitacion] FROM verificaciones WHERE [codalumno] like '" & busca & "' ORDER BY codalumno"
-    Adodc.Refresh
-    Set Grilla.DataSource = Adodc
-    formatoGrilla
+    BuscarAlumno
 End Sub
 
 Sub BuscarAlumno()
     busca = UCase(Trim(txtBuscar.Text)) & "%"
-    Adodc.RecordSource = "SELECT  codalumno as [Codigo], nya as [Nombre y Apellido], tipodoc as [Tipo],DNI as [N°], capac as [Capacitacion] FROM verificaciones WHERE [nya] like '" & busca & "' ORDER BY nya"
+    Adodc.RecordSource = "SELECT  codalumno as [Cod], nya as [Alumno], tipodoc as [Tipo],DNI as [N°], capac as [Capacitacion] FROM verificaciones WHERE codAlumno LIKE '" & busca & "' OR dni  LIKE '" & busca & "' OR nya  LIKE '" & busca & "' ORDER BY codalumno, nya, dni"
     Adodc.Refresh
-    Set Grilla.DataSource = Adodc
+    Set grilla.DataSource = Adodc
     formatoGrilla
 End Sub
 
@@ -313,9 +283,9 @@ Sub formatoGrilla()
         w = 3400
     Else:
         w = 700 - N * (-5.5 ^ N)
-        Grilla.Columns(N).Alignment = dbgCenter
+        grilla.Columns(N).Alignment = dbgCenter
     End If
-    Grilla.Columns(N).Width = w
+    grilla.Columns(N).Width = w
     Next
 End Sub
 

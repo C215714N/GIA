@@ -44,17 +44,17 @@ Begin VB.Form frmInformeSuscripciones
             Name            =   "Century Gothic"
             Size            =   9.75
             Charset         =   0
-            Weight          =   700
+            Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H8000000F&
-         Height          =   225
+         Height          =   255
          Left            =   120
          TabIndex        =   11
          Top             =   1680
-         Width           =   660
+         Width           =   765
       End
       Begin VB.Label Label5 
          AutoSize        =   -1  'True
@@ -64,17 +64,17 @@ Begin VB.Form frmInformeSuscripciones
             Name            =   "Century Gothic"
             Size            =   9.75
             Charset         =   0
-            Weight          =   700
+            Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H8000000F&
-         Height          =   225
+         Height          =   255
          Left            =   120
          TabIndex        =   10
          Top             =   960
-         Width           =   1170
+         Width           =   1335
       End
       Begin VB.Label Label3 
          AutoSize        =   -1  'True
@@ -84,17 +84,17 @@ Begin VB.Form frmInformeSuscripciones
             Name            =   "Century Gothic"
             Size            =   9.75
             Charset         =   0
-            Weight          =   700
+            Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H8000000F&
-         Height          =   225
+         Height          =   255
          Left            =   120
          TabIndex        =   9
          Top             =   240
-         Width           =   1125
+         Width           =   1260
       End
       Begin VB.Label lblSuscriptos 
          Alignment       =   1  'Right Justify
@@ -236,7 +236,7 @@ Begin VB.Form frmInformeSuscripciones
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   111149057
+      Format          =   111804417
       CurrentDate     =   41345
    End
    Begin MSComCtl2.DTPicker dtpHasta 
@@ -257,7 +257,7 @@ Begin VB.Form frmInformeSuscripciones
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   111083521
+      Format          =   130285569
       CurrentDate     =   41345
    End
    Begin isButtonTest.isButton cmdBuscar 
