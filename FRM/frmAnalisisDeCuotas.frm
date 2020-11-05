@@ -52,7 +52,7 @@ Begin VB.Form frmAnalisisDeCuotas
       _ExtentY        =   741
       Icon            =   "frmAnalisisDeCuotas.frx":1150
       Style           =   8
-      Caption         =   "     Datos"
+      Caption         =   "     &Datos"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -81,7 +81,7 @@ Begin VB.Form frmAnalisisDeCuotas
       _ExtentY        =   741
       Icon            =   "frmAnalisisDeCuotas.frx":1A2A
       Style           =   8
-      Caption         =   "     Reingreso"
+      Caption         =   "     &Reingreso"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -110,7 +110,7 @@ Begin VB.Form frmAnalisisDeCuotas
       _ExtentY        =   741
       Icon            =   "frmAnalisisDeCuotas.frx":2304
       Style           =   8
-      Caption         =   "     Egresado"
+      Caption         =   "     &Egresado"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -141,7 +141,7 @@ Begin VB.Form frmAnalisisDeCuotas
       _ExtentY        =   741
       Icon            =   "frmAnalisisDeCuotas.frx":2BDE
       Style           =   8
-      Caption         =   "     Editar"
+      Caption         =   "     Edi&tar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -172,7 +172,7 @@ Begin VB.Form frmAnalisisDeCuotas
       _ExtentY        =   741
       Icon            =   "frmAnalisisDeCuotas.frx":34B8
       Style           =   8
-      Caption         =   "     Baja"
+      Caption         =   "     &Baja"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -339,7 +339,7 @@ Begin VB.Form frmAnalisisDeCuotas
       _ExtentY        =   741
       Icon            =   "frmAnalisisDeCuotas.frx":3D92
       Style           =   8
-      Caption         =   "     Buscar"
+      Caption         =   "     Bu&scar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -368,7 +368,7 @@ Begin VB.Form frmAnalisisDeCuotas
       _ExtentY        =   741
       Icon            =   "frmAnalisisDeCuotas.frx":466C
       Style           =   8
-      Caption         =   "     Aceptar"
+      Caption         =   "     &Aceptar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -397,7 +397,7 @@ Begin VB.Form frmAnalisisDeCuotas
       _ExtentY        =   741
       Icon            =   "frmAnalisisDeCuotas.frx":4F46
       Style           =   8
-      Caption         =   "     Marcar"
+      Caption         =   "     &Marcar"
       IconSize        =   18
       IconAlign       =   1
       CaptionAlign    =   1
@@ -656,17 +656,17 @@ Private Sub cmdReingresar_Click()
     grilla1.Row = rsAnalisisDeCuenta.RecordCount - 1
     frmPlanDePagoReingreso.txtNroCuota = Int(grilla1.Columns(0).Text) + 1
     frmPlanDePagoReingreso.txtCantidadCuotas = 1
-    frmPlanDePagoReingreso.dtpFecha.Value = grilla1.Columns(1).Text
+    frmPlanDePagoReingreso.DTPFecha.Value = grilla1.Columns(1).Text
     frmPlanDePagoReingreso.txtMonto.Text = grilla1.Columns(3).Text
     
-    If frmPlanDePagoReingreso.dtpFecha.Month = 12 Then
-        frmPlanDePagoReingreso.dtpFecha.Month = 1
-        frmPlanDePagoReingreso.dtpFecha.Year = frmPlanDePagoReingreso.dtpFecha.Year + 1
+    If frmPlanDePagoReingreso.DTPFecha.Month = 12 Then
+        frmPlanDePagoReingreso.DTPFecha.Month = 1
+        frmPlanDePagoReingreso.DTPFecha.Year = frmPlanDePagoReingreso.DTPFecha.Year + 1
     Else
-        If frmPlanDePagoReingreso.dtpFecha.Day > 28 Then
-            frmPlanDePagoReingreso.dtpFecha.Day = 28
-            frmPlanDePagoReingreso.dtpFecha.Month = frmPlanDePagoReingreso.dtpFecha.Month + 1
-        Else: frmPlanDePagoReingreso.dtpFecha.Month = frmPlanDePagoReingreso.dtpFecha.Month + 1
+        If frmPlanDePagoReingreso.DTPFecha.Day > 28 Then
+            frmPlanDePagoReingreso.DTPFecha.Day = 28
+            frmPlanDePagoReingreso.DTPFecha.Month = frmPlanDePagoReingreso.DTPFecha.Month + 1
+        Else: frmPlanDePagoReingreso.DTPFecha.Month = frmPlanDePagoReingreso.DTPFecha.Month + 1
         End If
     End If
     
@@ -728,11 +728,11 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
     ElseIf Label11.Caption = "frmAnalisisSituacion" Then
         frmAnalisisSituacion.Enabled = True
         rsAnalisisSituacionDeDeuda.Requery
-        frmAnalisisSituacion.Grilla.Columns(2).Width = 800
+        frmAnalisisSituacion.grilla.Columns(2).Width = 800
     ElseIf Label11.Caption = "frmMarcas" Then
         frmMarcas.Enabled = True
         rsMarcas.Requery
-        frmMarcas.Grilla.Columns(2).Width = 400
+        frmMarcas.grilla.Columns(2).Width = 400
     End If
 
 End Sub

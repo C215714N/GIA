@@ -178,11 +178,11 @@ Begin VB.MDIForm MDI
          NumPanels       =   5
          BeginProperty Panel1 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   6
-            TextSave        =   "3/10/2020"
+            TextSave        =   "5/11/2020"
          EndProperty
          BeginProperty Panel2 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   5
-            TextSave        =   "18:59"
+            TextSave        =   "19:17"
          EndProperty
          BeginProperty Panel3 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   2
@@ -243,8 +243,8 @@ Begin VB.MDIForm MDI
             Caption         =   "Marcas"
          End
          Begin VB.Menu subCuotas 
-            Caption         =   "&Cuotas"
-            Shortcut        =   ^C
+            Caption         =   "Cuo&tas"
+            Shortcut        =   ^T
          End
          Begin VB.Menu subUltimasCuotas 
             Caption         =   "Ultimas Cuotas"
@@ -380,7 +380,7 @@ Begin VB.MDIForm MDI
       End
       Begin VB.Menu subEliminarReservas 
          Caption         =   "Eliminar Reservas"
-         Shortcut        =   ^X
+         Shortcut        =   +{DEL}
       End
       Begin VB.Menu subEquipos 
          Caption         =   "Equipos"
@@ -400,15 +400,19 @@ Begin VB.MDIForm MDI
       Caption         =   "Configuraciones"
       Begin VB.Menu subControl 
          Caption         =   "Control"
+         Shortcut        =   ^{F1}
       End
       Begin VB.Menu subReingresos 
          Caption         =   "Reingresos"
+         Shortcut        =   ^{F2}
       End
       Begin VB.Menu subStatus 
          Caption         =   "Status de la Base"
+         Shortcut        =   ^{F3}
       End
       Begin VB.Menu subAuditoria 
          Caption         =   "Auditoria"
+         Shortcut        =   ^{F4}
       End
       Begin VB.Menu g8 
          Caption         =   "-"

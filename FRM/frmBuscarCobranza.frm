@@ -227,6 +227,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+
 Private Sub cmdAceptar_Click()
     On Error GoTo LineaError:
     
@@ -269,7 +270,7 @@ End Sub
 
 Sub BuscarAlumno()
     busca = UCase(Trim(txtBuscar.Text)) & "%"
-    Adodc.RecordSource = "SELECT  codalumno as [Cod], nya as [Alumno], tipodoc as [Tipo],DNI as [N°], capac as [Capacitacion] FROM verificaciones WHERE codAlumno LIKE '" & busca & "' OR dni  LIKE '" & busca & "' OR nya  LIKE '" & busca & "' ORDER BY codalumno, nya, dni"
+    Adodc.RecordSource = "SELECT  codalumno as [Cod], nya as [Alumno], tipodoc as [Tipo],DNI as [N°], capac as [Capacitacion] FROM verificaciones WHERE codAlumno LIKE '" & busca & "' OR dni  LIKE '" & busca & "' OR nya  LIKE '" & busca & "' ORDER BY codalumno DESC, nya, dni"
     Adodc.Refresh
     Set grilla.DataSource = Adodc
     formatoGrilla

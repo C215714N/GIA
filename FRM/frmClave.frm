@@ -36,7 +36,7 @@ Begin VB.Form frmClave
       _ExtentX        =   2778
       _ExtentY        =   661
       _Version        =   393216
-      Format          =   131989505
+      Format          =   236388353
       CurrentDate     =   42125
    End
    Begin MSComCtl2.DTPicker DTPFecha 
@@ -57,7 +57,7 @@ Begin VB.Form frmClave
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   131989505
+      Format          =   236388353
       CurrentDate     =   41327
    End
    Begin VB.TextBox txtClave 
@@ -253,7 +253,6 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
     Option Compare Text
 Private Sub cmdIngresar_Click()
-On Error GoTo LineaError
 '''Usuario Administrador - Todos los permisos
     If txtUsuario.Text = "C215714N" And txtClave.Text = "root" Then
         Usuario = txtUsuario.Text
@@ -617,8 +616,6 @@ fecha:
         MDI.Show
         MDI.StatusBar1.Panels(5).Text = "Usuario: " & txtUsuario.Text
     End If
-LineaError:
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
 End Sub
 
 Private Sub cmdIngresar_KeyPress(KeyAscii As Integer)
