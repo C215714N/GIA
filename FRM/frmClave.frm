@@ -36,7 +36,7 @@ Begin VB.Form frmClave
       _ExtentX        =   2778
       _ExtentY        =   661
       _Version        =   393216
-      Format          =   236388353
+      Format          =   356712449
       CurrentDate     =   42125
    End
    Begin MSComCtl2.DTPicker DTPFecha 
@@ -57,7 +57,7 @@ Begin VB.Form frmClave
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   236388353
+      Format          =   356712449
       CurrentDate     =   41327
    End
    Begin VB.TextBox txtClave 
@@ -251,6 +251,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+    
     Option Compare Text
 Private Sub cmdIngresar_Click()
 '''Usuario Administrador - Todos los permisos
@@ -366,7 +367,7 @@ Private Sub cmdIngresar_Click()
             MDI.g4.Visible = False
             MDI.subPP.Visible = False
             MDI.SubPresupuesto.Visible = False
-            MDI.StatusBar1.Panels(5).Text = "Usuario: " & "Administracion"
+            MDI.StatusBar1.Panels(5).Text = "Usuario: Administracion"
             
     '''Usuario Supervisor - Gestion de Bajas y Egresos
         ElseIf txtUsuario.Text = "adm" And txtClave.Text = "SuperV" Then
@@ -379,7 +380,7 @@ Private Sub cmdIngresar_Click()
             MDI.mnuLibro.Visible = True
             MDI.subGrupoArmado.Visible = True
             MDI.g56.Visible = True
-            MDI.StatusBar1.Panels(5).Text = "Usuario: " & "Supervisor"
+            MDI.StatusBar1.Panels(5).Text = "Usuario: Supervisor"
         
     '''Usuario Cobranzas - Gestion Comercial
         ElseIf txtUsuario.Text = "cobranza" And txtClave.Text = "llamados" Then
