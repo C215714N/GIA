@@ -103,7 +103,7 @@ Begin VB.Form frmNuevoCheque
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   153026561
+      Format          =   120389633
       CurrentDate     =   41782
    End
    Begin isButtonTest.isButton cmdAgregar 
@@ -277,7 +277,7 @@ Private Sub cmdAgregar_Click()
         .Open "SELECT * FROM cheques", Cn, adOpenDynamic, adLockPessimistic
         .Requery
         .AddNew
-        !fecha = dtpFecha.Value
+        !fecha = DTPFecha.Value
         !destinatario = txtDestinatario.Text
         !numerocheque = txtNroCheque.Text
         !monto = txtMonto.Text
@@ -286,7 +286,7 @@ Private Sub cmdAgregar_Click()
         .Update
     End With
     
-    If MsgBox("ï¿½Desea ingresar otro cheque?", vbQuestion + vbYesNo, "Cheques") = vbYes Then
+    If MsgBox("¿Desea ingresar otro cheque?", vbQuestion + vbYesNo, "Cheques") = vbYes Then
         txtDestinatario.Text = ""
         txtMonto.Text = ""
         txtNroCheque.Text = ""
@@ -307,7 +307,7 @@ End Sub
 
 Private Sub Form_Load()
     Centrar Me
-    dtpFecha.Value = Date
+    DTPFecha.Value = Date
 End Sub
 
 Private Sub txtDestinatario_KeyPress(KeyAscii As Integer)

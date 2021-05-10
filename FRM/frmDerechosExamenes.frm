@@ -178,7 +178,7 @@ Begin VB.Form frmDerechosExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   154599425
+         Format          =   165347329
          CurrentDate     =   41978
       End
       Begin isButtonTest.isButton cmdAgregar 
@@ -488,7 +488,7 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
                 .Open "SELECT Fecha, Modulo FROM derechoexamen WHERE codalumno=" & Int(txtCodigo.Text) & " ORDER BY fecha", Cn, adOpenDynamic, adLockPessimistic
             End With
             
-            Set Grilla.DataSource = rsDerechosExamenes
+            Set grilla.DataSource = rsDerechosExamenes
             formatoGrilla
             CargarModulos
             txtPrecio.Text = Format(rsControl!derechoExamen, "currency")
@@ -521,11 +521,11 @@ Private Sub cmdAgregar_Click()
         .Update
         .Close
         .Open "SELECT Fecha, Modulo as Modulo FROM derechoexamen WHERE codalumno=" & Int(txtCodigo.Text) & " ORDER BY fecha", Cn, adOpenDynamic, adLockPessimistic
-        Set Grilla.DataSource = rsDerechosExamenes
+        Set grilla.DataSource = rsDerechosExamenes
         formatoGrilla
     End With
 '''GESTION CONTABLE - ASIENTO
-    If MsgBox("ï¿½Abona el total del Derecho de Examen?", vbYesNo + vbQuestion, "Derechos de Examenes") = vbYes Then
+    If MsgBox("¿Abona el total del Derecho de Examen?", vbYesNo + vbQuestion, "Derechos de Examenes") = vbYes Then
         With rsContabilidad
             If .State = 1 Then .Close
             .Open "SELECT * FROM contabilidad", Cn, adOpenDynamic, adLockPessimistic
@@ -535,7 +535,7 @@ Private Sub cmdAgregar_Click()
             !asiento = Null
             !NroCuota = Null
             !CodAlumno = Null
-            !cuenta = "DERECHO DE EXAMEN"
+            !Cuenta = "DERECHO DE EXAMEN"
             !Detalle = txtAlumno.Text & " - " & cmbModulo.Text
             !nrofactura = txtRecibo.Text
             !Haber = CSng(txtPrecio.Text)
@@ -546,11 +546,11 @@ Private Sub cmdAgregar_Click()
             !fecha = Date
             
             If cmbPago.Text = "Efectivo" Then
-                !cuenta = "CAJA ADMINISTRAcion"
+                !Cuenta = "CAJA ADMINISTRAcion"
             ElseIf cmbPago.Text = "Descuento" Then
-                !cuenta = "Descuento"
+                !Cuenta = "Descuento"
             Else
-                !cuenta = "DEBITO TARJETA CREDITO"
+                !Cuenta = "DEBITO TARJETA CREDITO"
             End If
             !Detalle = txtAlumno.Text & " - Derecho de Examen de " & cmbModulo.Text
             !nrofactura = txtRecibo.Text
@@ -605,6 +605,15 @@ Private Sub CargarModulos()
             .AddItem ("Page Maker")
         End With
         
+    ElseIf txtCurso.Text = "Diseño Web" Then
+        With cmbModulo
+            .Clear
+            .AddItem ("Front Page")
+            .AddItem ("Fireworks")
+            .AddItem ("Flash")
+            .AddItem ("Dreamweaver")
+        End With
+            
     ElseIf txtCurso.Text = "Programación + Access" Then
         With cmbModulo
             .Clear
@@ -681,16 +690,7 @@ Private Sub CargarModulos()
             .AddItem ("Inglés II")
             .AddItem ("Inglés III")
         End With
-        
-    ElseIf txtCurso.Text = "DiseÃ±o Web" Then
-        With cmbModulo
-            .Clear
-            .AddItem ("Front Page")
-            .AddItem ("Fireworks")
-            .AddItem ("Flash")
-            .AddItem ("Dreamweaver")
-        End With
-    
+
     ElseIf txtCurso.Text = "Extracc. Adm. Y Asist. Tec. Laborat." Then
         With cmbModulo
             .Clear
@@ -721,11 +721,19 @@ Private Sub CargarModulos()
             .AddItem ("Auxiliar I")
             .AddItem ("Auxiliar II")
         End With
+    
+    ElseIf txtCurso.Text = "Emergencias Médicas" Then
+        With cmbModulo
+            .Clear
+            .AddItem ("Parcial")
+            .AddItem ("Final")
+        End With
+        
     End If
 End Sub
 
 Sub formatoGrilla()
     For N = 0 To 1
-        Grilla.Columns(N).Width = 1150 + (N * 800)
+        grilla.Columns(N).Width = 1150 + (N * 800)
     Next
 End Sub

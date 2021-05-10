@@ -36,7 +36,7 @@ Begin VB.Form frmClave
       _ExtentX        =   2778
       _ExtentY        =   661
       _Version        =   393216
-      Format          =   356712449
+      Format          =   105185281
       CurrentDate     =   42125
    End
    Begin MSComCtl2.DTPicker DTPFecha 
@@ -57,7 +57,7 @@ Begin VB.Form frmClave
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   356712449
+      Format          =   105185281
       CurrentDate     =   41327
    End
    Begin VB.TextBox txtClave 
@@ -251,6 +251,8 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+    
+    
     
     Option Compare Text
 Private Sub cmdIngresar_Click()
@@ -496,19 +498,19 @@ Private Sub cmdIngresar_Click()
             Control
             Marcar
         '''Agrega alumnos del mes a situacion de cartera cuando inicia mes
-            With rsAlumnosDelMes
-                If .State = 1 Then .Close
-                .Open "SELECT * FROM alumnosdelmes ORDER BY codalumno", Cn, adOpenDynamic, adLockPessimistic
-                If .BOF Or .EOF Then GoTo continuar '''si no hay alumnos que agregar continua con la proxima accion
+        With rsAlumnosDelMes
+            If .State = 1 Then .Close
+            .Open "SELECT * FROM alumnosdelmes ORDER BY codalumno", Cn, adOpenDynamic, adLockPessimistic
+            If .BOF Or .EOF Then GoTo continuar '''si no hay alumnos que agregar continua con la proxima accion
                 .MoveFirst
-                Do Until .EOF
-                    rsMarcar.Requery
-                    rsMarcar.AddNew
-                    rsMarcar!CodAlumno = !CodAlumno
-                    .Delete
-                    .Requery
-                Loop
-            End With
+            Do Until .EOF
+                rsMarcar.AddNew
+                rsMarcar!CodAlumno = !CodAlumno
+                rsMarcar.Update
+                .Delete
+                .Requery
+            Loop
+        End With
 
 continuar:
 '''RECARGO FUERA DE MES

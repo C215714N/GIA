@@ -54,7 +54,7 @@ Begin VB.Form frmExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   154533889
+         Format          =   165347329
          CurrentDate     =   41978
       End
       Begin VB.TextBox txtPromedio 
@@ -459,7 +459,7 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
             If .State = 1 Then .Close
             .Open "SELECT Fecha, Modulo, Teorico as [T], Practico as [P], Promedio as [F] FROM examenes WHERE codalumno=" & Int(txtCodigo.Text) & " ORDER BY fecha,id", Cn, adOpenDynamic, adLockPessimistic
         End With
-        Set Grilla.DataSource = rsExamenes
+        Set grilla.DataSource = rsExamenes
         formatoGrilla
         CargarModulos
         If rsExamenes.RecordCount = cmbModulo.ListCount Then
@@ -508,7 +508,7 @@ Private Sub cmdAgregar_Click()
             Exit Sub
         End If
         .Open "SELECT Fecha, Modulo, Teorico as [T], Practico as [P], Promedio as [F] FROM examenes WHERE codalumno=" & Int(txtCodigo.Text) & " ORDER BY fecha,id", Cn, adOpenDynamic, adLockPessimistic
-        Set Grilla.DataSource = rsExamenes
+        Set grilla.DataSource = rsExamenes
         formatoGrilla
     
     '''ALUMNO EGRESADO
@@ -590,7 +590,16 @@ Private Sub CargarModulos()
             .AddItem ("Photoshop")
             .AddItem ("Page Maker")
         End With
-    
+            
+    ElseIf txtCurso.Text = "Diseño Web" Then
+        With cmbModulo
+            .Clear
+            .AddItem ("Front Page")
+            .AddItem ("Fireworks")
+            .AddItem ("Flash")
+            .AddItem ("Dreamweaver")
+        End With
+        
     ElseIf txtCurso.Text = "Programación" Then
         With cmbModulo
             .Clear
@@ -673,16 +682,7 @@ Private Sub CargarModulos()
             .AddItem ("Inglés II")
             .AddItem ("Inglés III")
         End With
-        
-    ElseIf txtCurso.Text = "Diseño Web" Then
-        With cmbModulo
-            .Clear
-            .AddItem ("Front Page")
-            .AddItem ("Fireworks")
-            .AddItem ("Flash")
-            .AddItem ("Dreamweaver")
-        End With
-        
+
     ElseIf txtCurso.Text = "Extracc. Adm. Y Asist. Tec. Laborat." Then
         With cmbModulo
             .Clear
@@ -713,6 +713,14 @@ Private Sub CargarModulos()
             .AddItem ("Salud II")
             .AddItem ("Salud III")
         End With
+            
+    ElseIf txtCurso.Text = "Emergencias Médicas" Then
+        With cmbModulo
+            .Clear
+            .AddItem ("Parcial")
+            .AddItem ("Final")
+        End With
+        
     End If
     cmbModulo.SetFocus
 End Sub
@@ -724,6 +732,6 @@ Sub formatoGrilla()
             w = N * 2000
         Else: w = 350
         End If
-        Grilla.Columns(N).Width = w
+        grilla.Columns(N).Width = w
     Next
 End Sub

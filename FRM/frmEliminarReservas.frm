@@ -35,7 +35,7 @@ Begin VB.Form frmEliminarReservas
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   237502465
+      Format          =   121438209
       CurrentDate     =   41037
    End
    Begin isButtonTest.isButton cmdEliminar 
@@ -100,7 +100,7 @@ Private Sub cmdEliminar_Click()
     Dim feha As Date
     fecha = Format(DTP.Value, "mm/dd/yyyy")
 
-    If MsgBox("ï¿½Desea eliminar la base de datos anterior al " & DTP.Value & "?", vbYesNo, "Reservas") = vbYes Then
+    If MsgBox("¿Desea eliminar la base de datos anterior al " & DTP.Value & "?", vbYesNo, "Reservas") = vbYes Then
         With rsEliminar
             If .State = 1 Then .Close
             .Open "SELECT * FROM reservas WHERE Fecha <#" & fecha & "#", Cn, adOpenDynamic, adLockPessimistic

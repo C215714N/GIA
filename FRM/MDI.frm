@@ -178,11 +178,11 @@ Begin VB.MDIForm MDI
          NumPanels       =   5
          BeginProperty Panel1 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   6
-            TextSave        =   "5/11/2020"
+            TextSave        =   "15/3/2021"
          EndProperty
          BeginProperty Panel2 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   5
-            TextSave        =   "19:17"
+            TextSave        =   "20:58"
          EndProperty
          BeginProperty Panel3 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   2
@@ -482,7 +482,7 @@ Private Sub subBackUp_Click()
     Dim Destino As String
     Origen = "T:\base.mdb"
     Destino = "T:\CopiaBase.mdb"
-    If MsgBox("ï¿½Realizar Copia de Seguridad?", vbQuestion + vbYesNo, "Gestion Integral del Alumno") = vbYes Then
+    If MsgBox("¿Realizar Copia de Seguridad?", vbQuestion + vbYesNo, "Gestion Integral del Alumno") = vbYes Then
             Set Fs = CreateObject("Scripting.FileSystemObject")
             Fs.CopyFile Origen, Destino
             MsgBox "La Copia de Respaldo se Realizo Correctamente", vbInformation + vbOKOnly, "Gestion Integral del Alumno"
@@ -534,12 +534,12 @@ Private Sub subControl_Click()
 End Sub
 
 Private Sub subCopiarPresupuesto_Click()
-    If MsgBox("ï¿½Copiar el presupuesto actual para el mes Praximo?", vbQuestion + vbYesNo, "Copiar Presupuesto") = vbYes Then
+    If MsgBox("¿Copiar el presupuesto actual para el mes Praximo?", vbQuestion + vbYesNo, "Copiar Presupuesto") = vbYes Then
           
     '''Carga el presupuesto del mes en curso
         With rsCuentasPresupuesto
             If .State = 1 Then .Close
-            .Open "SELECT * FROM presupuesto WHERE aï¿½o=" & Year(Date) & "and mes='" & MonthName(Month(Date)) & "'", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT * FROM presupuesto WHERE a¿o=" & Year(Date) & "and mes='" & MonthName(Month(Date)) & "'", Cn, adOpenDynamic, adLockPessimistic
             .Requery
             .MoveFirst
         End With
@@ -559,9 +559,9 @@ Private Sub subCopiarPresupuesto_Click()
                 
                 If Month(Date) = 12 Then
                     !mes = "Enero"
-                    !aï¿½o = Year(Date) + 1
+                    !a¿o = Year(Date) + 1
                 Else
-                    !aï¿½o = Year(Date)
+                    !a¿o = Year(Date)
                     !mes = MonthName(Month(Date) + 1)
                 End If
                 .UpdateBatch
@@ -675,7 +675,7 @@ Private Sub subRestaurar_Click()
     Dim Destino As String
     Origen = "T:\base.mdb"
     Destino = "T:\CopiaBase.mdb"
-    If MsgBox("ï¿½Restaurar Copia de Seguridad?", vbQuestion + vbYesNo, "Gestion Integral del Alumno") = vbYes Then
+    If MsgBox("¿Restaurar Copia de Seguridad?", vbQuestion + vbYesNo, "Gestion Integral del Alumno") = vbYes Then
             Set Fs = CreateObject("Scripting.FileSystemObject")
             Fs.CopyFile Destino, Origen
             MsgBox "La Restauracion se Realizo Correctamente", vbInformation + vbOKOnly, "Gestion Integral del Alumno"

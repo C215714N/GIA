@@ -317,7 +317,7 @@ Begin VB.Form frmConsultarCuentas
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   237568001
+      Format          =   127598593
       CurrentDate     =   41334
    End
    Begin MSComCtl2.DTPicker dtpHasta 
@@ -338,7 +338,7 @@ Begin VB.Form frmConsultarCuentas
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   237568001
+      Format          =   127598593
       CurrentDate     =   41332
    End
    Begin isButtonTest.isButton cmdBuscar 
@@ -461,12 +461,12 @@ Private Sub cmdBuscar_Click()
 ''' consulta cuentas en las fechas y muestra en grilla
     
     If Clave = "cobranza" Then
-        Adodc.RecordSource = "SELECT Cuenta, round(sum(Debe),2) as [Debe], round(sum(Haber),2) as [Haber] FROM contabilidad WHERE cuenta='CAJA ADMINISTRAcion' and Fecha>= #" & fecha1 & "# And Fecha<= #" & fecha2 & "# and detalle like 'alumno %' or cuenta='Descuento' and Fecha>=#" & fecha1 & "# And Fecha<=#" & fecha2 & "# and detalle like 'alumno %' or cuenta='ARANCELES CURSOS' and Fecha>=#" & fecha1 & "# and Fecha<= #" & fecha2 & "# group by cuenta"
+        Adodc.RecordSource = "SELECT Cuenta, round(sum(Debe),2) as [DEBE], round(sum(Haber),2) AS [HABER] FROM contabilidad WHERE cuenta='CAJA ADMINISTRACION' and Fecha>= #" & fecha1 & "# And Fecha<= #" & fecha2 & "# and detalle like 'alumno %' or cuenta='Descuento' and Fecha>=#" & fecha1 & "# And Fecha<=#" & fecha2 & "# and detalle like 'alumno %' or cuenta='ARANCELES CURSOS' and Fecha>=#" & fecha1 & "# and Fecha<= #" & fecha2 & "# group by cuenta"
         Adodc.Refresh
         Set grilla.DataSource = Adodc
         grilla.Columns(0).Width = 3000
     Else
-        Adodc.RecordSource = "SELECT Cuenta, round(sum(Debe),2) as [Debe], round(sum(Haber),2) as Haber FROM contabilidad WHERE  Fecha>= #" & fecha1 & "# And Fecha<= #" & fecha2 & "# group by cuenta"
+        Adodc.RecordSource = "SELECT Cuenta, round(sum(Debe),2) as [DEBE], round(sum(Haber),2) as [HABER] FROM contabilidad WHERE  Fecha>= #" & fecha1 & "# And Fecha<= #" & fecha2 & "# group by cuenta"
         Adodc.Refresh
         Set grilla.DataSource = Adodc
         grilla.Columns(0).Width = 3000

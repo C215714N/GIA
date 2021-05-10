@@ -238,7 +238,7 @@ Private Sub cmdNuevo_Click()
     If cmbHorario.Text = "" Then MsgBox "Debe elegir un horario", vbOKOnly + vbCritical, "Grupos de Armado": cmbHorario.SetFocus: Exit Sub
     
     '''agrega grupo
-    If MsgBox("ï¿½Crear un grupo el dia " & cmbDia.Text & " a las " & cmbHorario.Text & "?", vbYesNo + vbQuestion, "Grupos de Armado") = vbYes Then
+    If MsgBox("¿Crear un grupo el dia " & cmbDia.Text & " a las " & cmbHorario.Text & "?", vbYesNo + vbQuestion, "Grupos de Armado") = vbYes Then
         With rsGruposDeArmado
             If .State = 1 Then .Close
             .Open "SELECT * FROM Gruposdearmado WHERE dia='" & cmbDia.Text & "' and horario='" & cmbHorario.Text & "'", Cn, adOpenDynamic, adLockPessimistic
