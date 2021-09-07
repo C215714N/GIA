@@ -1,14 +1,14 @@
 VERSION 5.00
 Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrLibro 
    Caption         =   "GIA - Libro de Aula"
-   ClientHeight    =   9825
+   ClientHeight    =   8535
    ClientLeft      =   3000
    ClientTop       =   465
    ClientWidth     =   13605
    Icon            =   "dtrLibro.dsx":0000
    MDIChild        =   -1  'True
    _ExtentX        =   23998
-   _ExtentY        =   17330
+   _ExtentY        =   15055
    _Version        =   393216
    _DesignerVersion=   100684101
    ReportWidth     =   6705
@@ -32,7 +32,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrLibro
    SectionCode0    =   1
    BeginProperty Section0 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
-      Name            =   "Sección4"
+      Name            =   "Seccion4"
       Object.Height          =   1035
       NumControls     =   9
       ItemType0       =   3
@@ -227,7 +227,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrLibro
    SectionCode1    =   2
    BeginProperty Section1 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
-      Name            =   "Sección2"
+      Name            =   "Seccion2"
       Object.Height          =   330
       NumControls     =   4
       ItemType0       =   3
@@ -307,7 +307,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrLibro
    SectionCode2    =   4
    BeginProperty Section2 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
-      Name            =   "Sección1"
+      Name            =   "Seccion1"
       Object.Height          =   315
       NumControls     =   3
       ItemType0       =   4
@@ -396,13 +396,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrLibro
    SectionCode3    =   7
    BeginProperty Section3 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
-      Name            =   "Sección3"
+      Name            =   "Seccion3"
       NumControls     =   0
    EndProperty
    SectionCode4    =   8
    BeginProperty Section4 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
-      Name            =   "Sección5"
+      Name            =   "Seccion5"
       NumControls     =   0
    EndProperty
 End

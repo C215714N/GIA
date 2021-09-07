@@ -1,14 +1,14 @@
 VERSION 5.00
 Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion 
    Caption         =   "GIA - Informe Situacion de Cartera"
-   ClientHeight    =   9840
+   ClientHeight    =   8535
    ClientLeft      =   3000
    ClientTop       =   330
-   ClientWidth     =   13605
+   ClientWidth     =   15240
    Icon            =   "dtrSituacion.dsx":0000
    MDIChild        =   -1  'True
-   _ExtentX        =   23998
-   _ExtentY        =   17357
+   _ExtentX        =   26882
+   _ExtentY        =   15055
    _Version        =   393216
    _DesignerVersion=   100684101
    ReportWidth     =   7200
@@ -32,7 +32,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
    SectionCode0    =   1
    BeginProperty Section0 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
-      Name            =   "Sección4"
+      Name            =   "Seccion4"
       Object.Height          =   1005
       NumControls     =   5
       ItemType0       =   3
@@ -149,7 +149,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
    SectionCode1    =   2
    BeginProperty Section1 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
-      Name            =   "Sección2"
+      Name            =   "Seccion2"
       Object.Height          =   300
       NumControls     =   8
       ItemType0       =   3
@@ -318,7 +318,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
    SectionCode2    =   4
    BeginProperty Section2 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
-      Name            =   "Sección1"
+      Name            =   "Seccion1"
       Object.Height          =   300
       NumControls     =   7
       ItemType0       =   4
@@ -520,13 +520,13 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrSituacion
    SectionCode3    =   7
    BeginProperty Section3 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
-      Name            =   "Sección3"
+      Name            =   "Seccion3"
       NumControls     =   0
    EndProperty
    SectionCode4    =   8
    BeginProperty Section4 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
-      Name            =   "Sección5"
+      Name            =   "Seccion5"
       Object.Height          =   600
       NumControls     =   14
       ItemType0       =   3

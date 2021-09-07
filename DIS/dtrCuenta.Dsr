@@ -1,14 +1,14 @@
 VERSION 5.00
 Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrCuenta 
    Caption         =   "GIA - Detalle de Cuenta"
-   ClientHeight    =   9840
+   ClientHeight    =   8535
    ClientLeft      =   3000
    ClientTop       =   390
    ClientWidth     =   13605
    Icon            =   "dtrCuenta.dsx":0000
    MDIChild        =   -1  'True
    _ExtentX        =   23998
-   _ExtentY        =   17357
+   _ExtentY        =   15055
    _Version        =   393216
    _DesignerVersion=   100684101
    ReportWidth     =   9060
@@ -32,7 +32,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrCuenta
    SectionCode0    =   1
    BeginProperty Section0 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
-      Name            =   "Sección4"
+      Name            =   "Seccion4"
       Object.Height          =   1035
       NumControls     =   9
       ItemType0       =   3
@@ -239,7 +239,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrCuenta
    SectionCode1    =   2
    BeginProperty Section1 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
-      Name            =   "Sección2"
+      Name            =   "Seccion2"
       Object.Height          =   300
       NumControls     =   6
       ItemType0       =   3
@@ -548,14 +548,14 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrCuenta
    SectionCode3    =   7
    BeginProperty Section3 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
-      Name            =   "Sección3"
+      Name            =   "Seccion3"
       Object.Height          =   6
       NumControls     =   0
    EndProperty
    SectionCode4    =   8
    BeginProperty Section4 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
-      Name            =   "Sección5"
+      Name            =   "Seccion5"
       Object.Height          =   618
       NumControls     =   2
       ItemType0       =   3
