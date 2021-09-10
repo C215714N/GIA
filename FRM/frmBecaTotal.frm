@@ -29,6 +29,7 @@ Begin VB.Form frmBecaTotal
       _ExtentX        =   13361
       _ExtentY        =   1508
       _Version        =   393217
+      MaxLength       =   1000
       Appearance      =   0
       TextRTF         =   $"frmBecaTotal.frx":10CA
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -322,7 +323,7 @@ Begin VB.Form frmBecaTotal
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   131203073
+         Format          =   172359681
          CurrentDate     =   42093
       End
       Begin isButtonTest.isButton cmdGrabar 
@@ -450,7 +451,7 @@ Begin VB.Form frmBecaTotal
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   131203073
+      Format          =   172359681
       CurrentDate     =   42089
    End
    Begin MSComCtl2.DTPicker dtpDesde 
@@ -471,7 +472,7 @@ Begin VB.Form frmBecaTotal
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   131203073
+      Format          =   172359681
       CurrentDate     =   42089
    End
    Begin VB.Frame Frame1 
@@ -593,7 +594,7 @@ Private Sub cmdGrabar_Click()
     On Error GoTo LineaError
     
     With rsAlumnosBecados
-        .Find "idreferencial=" & Grilla.Columns(0).Text
+        .Find "idreferencial=" & grilla.Columns(0).Text
         !matricula = txtMatricula.Text
         !Debe = txtDebe.Text
         !comision = txtComision.Text
@@ -624,11 +625,11 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub grilla_Click()
-    txtMatricula.Text = Grilla.Columns(5).Text
-    txtDebe.Text = Grilla.Columns(6).Text
-    txtComision.Text = Grilla.Columns(7).Text
-    dtpCancelacion.Value = Grilla.Columns(9).Text
-    txtObservaciones.Text = Grilla.Columns(10).Text
+    txtMatricula.Text = grilla.Columns(5).Text
+    txtDebe.Text = grilla.Columns(6).Text
+    txtComision.Text = grilla.Columns(7).Text
+    dtpCancelacion.Value = grilla.Columns(9).Text
+    txtObservaciones.Text = grilla.Columns(10).Text
     cmdGrabar.Enabled = True
 End Sub
 
@@ -650,7 +651,7 @@ Private Sub Buscar()
         .Open "SELECT idreferencial,nya as Alumno, tel1 as Telefono, capac as Curso, Asistente, Matricula,Debe,Comision, Fechasus as Fecha, Cancelacion, b.Observaciones FROM suscripciones as s, alumnosbecados as b WHERE b.idreferencial=s.id and cancelacion>=#" & desde & "# and cancelacion<=#" & hasta & "#", Cn, adOpenDynamic, adLockPessimistic
     End With
     
-    Set Grilla.DataSource = rsAlumnosBecados
+    Set grilla.DataSource = rsAlumnosBecados
     formatoGrilla
 End Sub
 
@@ -661,13 +662,13 @@ Sub formatoGrilla()
             w = 3200
         ElseIf N = 5 Or N = 6 Then
             w = 800
-            Grilla.Columns(N).NumberFormat = "$ #####"
+            grilla.Columns(N).NumberFormat = "$ #####"
         ElseIf N = 8 Or N = 9 Then
             w = 1150
         Else:
             w = 0
         End If
-        Grilla.Columns(N).Width = w
+        grilla.Columns(N).Width = w
     Next
 End Sub
 

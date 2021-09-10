@@ -178,11 +178,11 @@ Begin VB.MDIForm MDI
          NumPanels       =   5
          BeginProperty Panel1 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   6
-            TextSave        =   "15/3/2021"
+            TextSave        =   "11/8/2021"
          EndProperty
          BeginProperty Panel2 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   5
-            TextSave        =   "20:58"
+            TextSave        =   "19:23"
          EndProperty
          BeginProperty Panel3 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   2
@@ -551,7 +551,7 @@ Private Sub subCopiarPresupuesto_Click()
             .Requery
             Do Until rsCuentasPresupuesto.EOF
                 .AddNew
-                !cuenta = rsCuentasPresupuesto!cuenta
+                !Cuenta = rsCuentasPresupuesto!Cuenta
                 !deuda = rsCuentasPresupuesto!deuda
                 !pagado = 0
                 !saldo = rsCuentasPresupuesto!deuda

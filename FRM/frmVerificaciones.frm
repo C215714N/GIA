@@ -46,7 +46,8 @@ Begin VB.Form frmVerificaciones
          _ExtentX        =   8281
          _ExtentY        =   2778
          _Version        =   393217
-         MaxLength       =   300
+         Enabled         =   -1  'True
+         MaxLength       =   1000
          Appearance      =   0
          AutoVerbMenu    =   -1  'True
          TextRTF         =   $"frmVerificaciones.frx":10CA
@@ -80,6 +81,7 @@ Begin VB.Form frmVerificaciones
       Top             =   3000
       Width           =   4455
       Begin VB.TextBox txtPT1 
+         CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "Century Gothic"
             Size            =   9.75
@@ -91,12 +93,12 @@ Begin VB.Form frmVerificaciones
          EndProperty
          Height          =   360
          Left            =   2280
-         Locked          =   -1  'True
          TabIndex        =   10
          Top             =   300
          Width           =   2055
       End
       Begin VB.TextBox txtPT2 
+         CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "Century Gothic"
             Size            =   9.75
@@ -108,12 +110,12 @@ Begin VB.Form frmVerificaciones
          EndProperty
          Height          =   360
          Left            =   2280
-         Locked          =   -1  'True
          TabIndex        =   12
          Top             =   700
          Width           =   2055
       End
       Begin VB.TextBox txtPT3 
+         CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "Century Gothic"
             Size            =   9.75
@@ -125,12 +127,12 @@ Begin VB.Form frmVerificaciones
          EndProperty
          Height          =   360
          Left            =   2280
-         Locked          =   -1  'True
          TabIndex        =   14
          Top             =   1100
          Width           =   2055
       End
       Begin VB.TextBox txtPT4 
+         CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "Century Gothic"
             Size            =   9.75
@@ -142,7 +144,6 @@ Begin VB.Form frmVerificaciones
          EndProperty
          Height          =   360
          Left            =   2280
-         Locked          =   -1  'True
          TabIndex        =   16
          Top             =   1500
          Width           =   2055
@@ -159,12 +160,12 @@ Begin VB.Form frmVerificaciones
          EndProperty
          Height          =   360
          Left            =   120
-         Locked          =   -1  'True
          TabIndex        =   9
          Top             =   300
          Width           =   2055
       End
       Begin VB.TextBox txtTel2 
+         CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "Century Gothic"
             Size            =   9.75
@@ -176,12 +177,12 @@ Begin VB.Form frmVerificaciones
          EndProperty
          Height          =   360
          Left            =   120
-         Locked          =   -1  'True
          TabIndex        =   11
          Top             =   700
          Width           =   2055
       End
       Begin VB.TextBox txtTel3 
+         CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "Century Gothic"
             Size            =   9.75
@@ -193,12 +194,12 @@ Begin VB.Form frmVerificaciones
          EndProperty
          Height          =   360
          Left            =   120
-         Locked          =   -1  'True
          TabIndex        =   13
          Top             =   1100
          Width           =   2055
       End
       Begin VB.TextBox txtTel4 
+         CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "Century Gothic"
             Size            =   9.75
@@ -210,7 +211,6 @@ Begin VB.Form frmVerificaciones
          EndProperty
          Height          =   360
          Left            =   120
-         Locked          =   -1  'True
          TabIndex        =   15
          Top             =   1500
          Width           =   2055
@@ -392,7 +392,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   154992641
+         Format          =   107282433
          CurrentDate     =   41308
       End
       Begin MSDataListLib.DataCombo dtcAsistente 
@@ -779,7 +779,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   154927105
+         Format          =   125894657
          CurrentDate     =   41308
       End
       Begin MSComCtl2.DTPicker DTPFechaVerificacion 
@@ -800,7 +800,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   154927105
+         Format          =   125894657
          CurrentDate     =   41308
       End
       Begin VB.Label Label17 
@@ -1266,14 +1266,14 @@ Private Sub cmdGrabar_Click()
             !fechanac = dtpFechaNacimiento.Value
             !capac = dtcCapacitacion.Text
             !Asistente = dtcAsistente.Text
-            !ptel1 = txtPT1.Text
-            !ptel2 = txtPT2.Text
-            !ptel3 = txtPT3.Text
-            !ptel4 = txtPT4.Text
-            !tel1 = txtTel1.Text
-            !tel2 = txtTel2.Text
-            !tel3 = txtTel3.Text
-            !tel4 = txtTel4.Text
+            !PTel1 = txtPT1.Text
+            !PTel2 = txtPT2.Text
+            !PTel3 = txtPT3.Text
+            !PTel4 = txtPT4.Text
+            !Tel1 = txtTel1.Text
+            !Tel2 = txtTel2.Text
+            !Tel3 = txtTel3.Text
+            !Tel4 = txtTel4.Text
             !totalcurso = Int(txtTotalCurso.Text)
             !cuotas = Int(txtTotalCuotas.Text)
             !gastoadm = Int(txtGastoAdm.Text)
@@ -1322,14 +1322,14 @@ Private Sub cmdGrabar_Click()
             !fechanac = dtpFechaNacimiento.Value
             !capac = dtcCapacitacion.Text
             !Asistente = dtcAsistente.Text
-            !ptel1 = txtPT1.Text
-            !ptel2 = txtPT2.Text
-            !ptel3 = txtPT3.Text
-            !ptel4 = txtPT4.Text
-            !tel1 = txtTel1.Text
-            !tel2 = txtTel2.Text
-            !tel3 = txtTel3.Text
-            !tel4 = txtTel4.Text
+            !PTel1 = txtPT1.Text
+            !PTel2 = txtPT2.Text
+            !PTel3 = txtPT3.Text
+            !PTel4 = txtPT4.Text
+            !Tel1 = txtTel1.Text
+            !Tel2 = txtTel2.Text
+            !Tel3 = txtTel3.Text
+            !Tel4 = txtTel4.Text
             !totalcurso = Int(txtTotalCurso.Text)
             !cuotas = Int(txtTotalCuotas.Text)
             !gastoadm = Int(txtGastoAdm.Text)

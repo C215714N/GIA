@@ -36,7 +36,7 @@ Begin VB.Form frmClave
       _ExtentX        =   2778
       _ExtentY        =   661
       _Version        =   393216
-      Format          =   105185281
+      Format          =   307953665
       CurrentDate     =   42125
    End
    Begin MSComCtl2.DTPicker DTPFecha 
@@ -57,7 +57,7 @@ Begin VB.Form frmClave
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   105185281
+      Format          =   307953665
       CurrentDate     =   41327
    End
    Begin VB.TextBox txtClave 
@@ -251,10 +251,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-    
-    
-    
-    Option Compare Text
+Option Compare Text
 Private Sub cmdIngresar_Click()
 '''Usuario Administrador - Todos los permisos
     If txtUsuario.Text = "C215714N" And txtClave.Text = "root" Then
@@ -423,7 +420,7 @@ Private Sub cmdIngresar_Click()
             With rsSituacionDeCartera
                 If .State = 1 Then .Close
             '''Situacion al dia de la Fecha
-                .Open "SELECT cantidadcuotas * 30 -30 as Dias, count(codalumno) as [Total de Alumnos], sum(deuda) as Deuda, sum(cobrado) as Cobranza, sum(pago) as [Total Cobrado], sum(cobrado) * 100 / sum(deuda) as [Porcentaje Cobrado], sum(deuda)-sum(cobrado) as [Resto a Cobrar] FROM marcas WHERE cantidadcuotas > 0 GROUP BY cantidadcuotas", Cn, adOpenDynamic, adLockPessimistic
+                .Open "SELECT cantidadcuotas * 30 -30 as Dias, count(codalumno) as [Total de Alumnos], sum(deuda) as Deuda, sum(cobrado) as Cobranza, sum(pago) as [Total Cobrado], round(sum(cobrado) * 100 / sum(deuda), 2) as [Porcentaje Cobrado], sum(deuda)-sum(cobrado) as [Resto a Cobrar] FROM marcas WHERE cantidadcuotas > 0 GROUP BY cantidadcuotas", Cn, adOpenDynamic, adLockPessimistic
                 .MoveFirst
                
             '''Carga el Registro en la Tabla Situaciones de Cartera
@@ -460,7 +457,7 @@ Private Sub cmdIngresar_Click()
 
             ''' Totales de Ultima Fecha
                 .Close
-                .Open "SELECT cantidadcuotas * 30 -30 , COUNT(codalumno), SUM(deuda), SUM(cobrado), SUM(pago), SUM(cobrado) * 100 / SUM(deuda), SUM(deuda)-sum(cobrado) FROM marcas WHERE cantidadcuotas > 0 group by cantidadcuotas", Cn, adOpenDynamic, adLockPessimistic
+                .Open "SELECT cantidadcuotas * 30 - 30 , COUNT(codalumno), SUM(deuda), SUM(cobrado), SUM(pago), round(SUM(cobrado) * 100 / SUM(deuda),2), SUM(deuda) - sum(cobrado) FROM marcas WHERE cantidadcuotas > 0 group by cantidadcuotas", Cn, adOpenDynamic, adLockPessimistic
                 .MoveFirst
         
                 Do Until .EOF

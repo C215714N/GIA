@@ -597,6 +597,7 @@ Sub cargarManuales()
         With cmbManual
             .AddItem ("Extraccionista")
             .AddItem ("Guia Practica")
+            .AddItem ("Primeros Auxilios")
             .AddItem ("Materiales 01")
             .AddItem ("Materiales 02")
             .AddItem ("Lazo")

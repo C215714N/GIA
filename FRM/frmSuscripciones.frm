@@ -46,7 +46,7 @@ Begin VB.Form frmSuscripciones
          _ExtentX        =   8281
          _ExtentY        =   2778
          _Version        =   393217
-         MaxLength       =   300
+         MaxLength       =   1000
          Appearance      =   0
          AutoVerbMenu    =   -1  'True
          TextRTF         =   $"frmSuscripciones.frx":10CA
@@ -436,7 +436,7 @@ Begin VB.Form frmSuscripciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   152961025
+         Format          =   172556289
          CurrentDate     =   41308
       End
       Begin VB.Label Label20 
@@ -908,7 +908,7 @@ Begin VB.Form frmSuscripciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   111935489
+         Format          =   171442177
          CurrentDate     =   41308
       End
       Begin MSDataListLib.DataCombo dtcAsistente 
@@ -1276,7 +1276,7 @@ Private Sub cmdGrabar_Click()
             !asiento = Null
             !NroCuota = Null
             !CodAlumno = Null
-            !cuenta = "MATRICULA DE CURSO"
+            !Cuenta = "MATRICULA DE CURSO"
             !Detalle = "Matricula del Alumno " & txtNya.Text
             !nrofactura = txtNroFactura.Text
             !Haber = CSng(txtGastoAdm.Text)
@@ -1287,11 +1287,11 @@ Private Sub cmdGrabar_Click()
             !fecha = dtpFechaSuscripcion.Value
             
             If cmbTipoPago.Text = "Efectivo" Then
-                !cuenta = "CAJA ADMINISTRAcion"
+                !Cuenta = "CAJA ADMINISTRAcion"
             ElseIf cmbTipoPago.Text = "Descuento" Then
-                !cuenta = "Descuento"
+                !Cuenta = "Descuento"
             Else
-                !cuenta = "DEBITO TARJETA CREDITO"
+                !Cuenta = "DEBITO TARJETA CREDITO"
             End If
             
             !Detalle = "Matricula del Alumno " & txtNya.Text

@@ -198,7 +198,7 @@ Begin VB.Form frmMarcas
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   237043713
+         Format          =   126091265
          CurrentDate     =   41345
       End
       Begin MSComCtl2.DTPicker dtpDesde 
@@ -219,7 +219,7 @@ Begin VB.Form frmMarcas
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   237043713
+         Format          =   126091265
          CurrentDate     =   41345
       End
       Begin VB.CheckBox chkAbona 
@@ -561,20 +561,20 @@ Private Sub cmdDatos_Click()
             frmVerificaciones.dtpFechaNacimiento.Value = !fechanac
             frmVerificaciones.dtcCapacitacion.Text = !capac
             frmVerificaciones.dtcAsistente.Text = !Asistente
-            frmVerificaciones.txtTel1.Text = !tel1
-            frmVerificaciones.txtTel2.Text = !tel2
-            frmVerificaciones.txtTel3.Text = !tel3
-            frmVerificaciones.txtTel4.Text = !tel4
-            frmVerificaciones.txtPT1.Text = !ptel1
-            frmVerificaciones.txtPT2.Text = !ptel2
-            frmVerificaciones.txtPT3.Text = !ptel3
-            frmVerificaciones.txtPT4.Text = !ptel4
+            frmVerificaciones.txtTel1.Text = !tel1 & ""
+            frmVerificaciones.txtTel2.Text = !tel2 & ""
+            frmVerificaciones.txtTel3.Text = !tel3 & ""
+            frmVerificaciones.txtTel4.Text = !tel4 & ""
+            frmVerificaciones.txtPT1.Text = !ptel1 & ""
+            frmVerificaciones.txtPT2.Text = !ptel2 & ""
+            frmVerificaciones.txtPT3.Text = !ptel3 & ""
+            frmVerificaciones.txtPT4.Text = !ptel4 & ""
             frmVerificaciones.txtTotalCurso.Text = !totalcurso
             frmVerificaciones.txtTotalCuotas.Text = !cuotas
             frmVerificaciones.txtGastoAdm.Text = !gastoadm
             frmVerificaciones.dtpFechaSuscripcion.Value = !fechasus
             frmVerificaciones.DTPFechaVerificacion.Value = !FechaVerif
-            frmVerificaciones.txtObservaciones.Text = !observaciones
+            frmVerificaciones.txtObservaciones.Text = !observaciones & ""
             If !manuales = False Then
                 frmVerificaciones.chkManuales.Value = 0
             Else

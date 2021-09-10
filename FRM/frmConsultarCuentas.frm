@@ -317,7 +317,7 @@ Begin VB.Form frmConsultarCuentas
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   127598593
+      Format          =   107282433
       CurrentDate     =   41334
    End
    Begin MSComCtl2.DTPicker dtpHasta 
@@ -338,7 +338,7 @@ Begin VB.Form frmConsultarCuentas
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   127598593
+      Format          =   107282433
       CurrentDate     =   41332
    End
    Begin isButtonTest.isButton cmdBuscar 
@@ -466,7 +466,7 @@ Private Sub cmdBuscar_Click()
         Set grilla.DataSource = Adodc
         grilla.Columns(0).Width = 3000
     Else
-        Adodc.RecordSource = "SELECT Cuenta, round(sum(Debe),2) as [DEBE], round(sum(Haber),2) as [HABER] FROM contabilidad WHERE  Fecha>= #" & fecha1 & "# And Fecha<= #" & fecha2 & "# group by cuenta"
+        Adodc.RecordSource = "SELECT Cuenta, sum(Debe) as [DEBE], sum(Haber) as [HABER] FROM contabilidad WHERE  Fecha>= #" & fecha1 & "# And Fecha<= #" & fecha2 & "# group by cuenta"
         Adodc.Refresh
         Set grilla.DataSource = Adodc
         grilla.Columns(0).Width = 3000

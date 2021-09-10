@@ -299,7 +299,7 @@ Begin VB.Form frmReservas
          Strikethrough   =   0   'False
       EndProperty
       MonthBackColor  =   16777215
-      StartOfWeek     =   333512706
+      StartOfWeek     =   171376642
       TitleBackColor  =   8930304
       TitleForeColor  =   16777215
       TrailingForeColor=   14737632
@@ -832,7 +832,7 @@ If BuscarAlumno = False Then
         If .State = 1 Then .Close
         .Open "SELECT codalumno,(nya + ' - ' + capac) as alumno FROM verificaciones WHERE capac='Operador de PC' or capac='Programación' or capac='Diseño Web' or capac='Diseño Gráfico' or capac='Programación + Access' or capac='Redes Sociales' ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
         .Find "alumno='" & dtcAlumno.Text & "'"
-        lblCodalumno.Caption = !CodAlumno
+        lblCodAlumno.Caption = !CodAlumno
     End With
 
     With rsReservas
@@ -863,7 +863,7 @@ If BuscarAlumno = False Then
                 !hora = rbt9.Caption
             End If
             !pa = ""
-            !CodAlumno = Int(lblCodalumno.Caption)
+            !CodAlumno = Int(lblCodAlumno.Caption)
             .Update
             .Close
     End With
@@ -884,13 +884,13 @@ Else
         If .State = 1 Then .Close
         .Open "SELECT codalumno,(nya + ' - ' + capac) as alumno FROM verificaciones WHERE capac='Operador de PC' or capac='Programación' or capac='Diseño Web' or capac='Diseño Gráfico' or capac='Programación + Access' or capac='Redes Sociales' ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
         .Find "alumno='" & dtcAlumno.Text & "'"
-        lblCodalumno.Caption = !CodAlumno
+        lblCodAlumno.Caption = !CodAlumno
     End With
 
     
     With rsReservas
         If .State = 1 Then .Close
-            .Open "SELECT nya as [Apellido y Nombre], pa as [P/A],Fecha, hora as Horario FROM Reservas WHERE codalumno=" & Int(lblCodalumno.Caption) & " ORDER BY  fecha desc,hora", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT nya as [Apellido y Nombre], pa as [P/A],Fecha, hora as Horario FROM Reservas WHERE codalumno=" & Int(lblCodAlumno.Caption) & " ORDER BY  fecha desc,hora", Cn, adOpenDynamic, adLockPessimistic
             Set grilla.DataSource = rsReservas
             lblreservas.Caption = rsReservas.RecordCount
     End With
