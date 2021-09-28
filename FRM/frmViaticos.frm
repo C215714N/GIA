@@ -169,7 +169,7 @@ Begin VB.Form frmViaticos
          Left            =   120
          TabIndex        =   2
          Top             =   720
-         Width           =   855
+         Width           =   1335
       End
       Begin VB.OptionButton optMonto 
          BackColor       =   &H00662200&
@@ -180,7 +180,7 @@ Begin VB.Form frmViaticos
          Left            =   120
          TabIndex        =   1
          Top             =   360
-         Width           =   855
+         Width           =   1335
       End
       Begin VB.TextBox txtMonto 
          Alignment       =   1  'Right Justify
@@ -217,7 +217,7 @@ Begin VB.Form frmViaticos
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   154992641
+         Format          =   126222337
          CurrentDate     =   42277
       End
       Begin VB.Label Label4 
@@ -293,7 +293,7 @@ On Error GoTo LineaError
         .Open "SELECT * FROM viaticos", Cn, adOpenDynamic, adLockPessimistic
         .Requery
         .AddNew
-        !fecha = dtpFecha.Value
+        !fecha = DTPFecha.Value
         !asesor = dtcAsistente.Text
         
         If optMonto(0).Value = True Then
@@ -310,7 +310,7 @@ On Error GoTo LineaError
         .Open "SELECT Fecha,Monto FROM viaticos WHERE asesor='" & dtcAsistente.Text & "' ORDER BY fecha desc,id desc", Cn, adOpenDynamic, adLockPessimistic
     End With
     
-    Set Grilla.DataSource = rsViaticos
+    Set grilla.DataSource = rsViaticos
     txtMonto.Text = ""
 
 LineaError:
@@ -325,14 +325,14 @@ Private Sub dtcAsistente_Change()
         .Close
         .Open "SELECT Fecha,Monto FROM viaticos WHERE asesor='" & dtcAsistente.Text & "' ORDER BY fecha desc,id desc", Cn, adOpenDynamic, adLockPessimistic
     End With
-    Set Grilla.DataSource = rsViaticos
+    Set grilla.DataSource = rsViaticos
     formatoGrilla
     
 End Sub
 
 Private Sub Form_Load()
     Centrar Me
-    dtpFecha.Value = Date
+    DTPFecha.Value = Date
     Asistente
     Set dtcAsistente.RowSource = rsPersonal
     dtcAsistente.BoundColumn = "Personal"
@@ -342,7 +342,7 @@ End Sub
 
 Sub formatoGrilla()
     For N = 0 To 1 Step 1
-        Grilla.Columns(N).Width = 1150 - (N * 250)
-        Grilla.Columns(N).Alignment = dbgCenter
+        grilla.Columns(N).Width = 1150 - (N * 250)
+        grilla.Columns(N).Alignment = dbgCenter
     Next
 End Sub

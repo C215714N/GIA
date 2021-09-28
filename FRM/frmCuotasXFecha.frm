@@ -160,7 +160,7 @@ Begin VB.Form frmCuotasXFecha
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   127205377
+      Format          =   106954753
       CurrentDate     =   41345
    End
    Begin MSComCtl2.DTPicker dtpHasta 
@@ -181,7 +181,7 @@ Begin VB.Form frmCuotasXFecha
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   127205377
+      Format          =   126353409
       CurrentDate     =   41345
    End
    Begin isButtonTest.isButton cmdBuscar 
@@ -648,14 +648,14 @@ Private Sub cmdDatos_Click()
         frmVerificaciones.dtpFechaNacimiento.Value = !fechanac
         frmVerificaciones.dtcCapacitacion.Text = !capac
         frmVerificaciones.dtcAsistente.Text = !Asistente
-        frmVerificaciones.txtTel1.Text = !tel1
-        frmVerificaciones.txtTel2.Text = !tel2
-        frmVerificaciones.txtTel3.Text = !tel3
-        frmVerificaciones.txtTel4.Text = !tel4
-        frmVerificaciones.txtPT1.Text = !ptel1
-        frmVerificaciones.txtPT2.Text = !ptel2
-        frmVerificaciones.txtPT3.Text = !ptel3
-        frmVerificaciones.txtPT4.Text = !ptel4
+        frmVerificaciones.txtTel1.Text = !tel1 & ""
+        frmVerificaciones.txtTel2.Text = !tel2 & ""
+        frmVerificaciones.txtTel3.Text = !tel3 & ""
+        frmVerificaciones.txtTel4.Text = !tel4 & ""
+        frmVerificaciones.txtPT1.Text = !ptel1 & ""
+        frmVerificaciones.txtPT2.Text = !ptel2 & ""
+        frmVerificaciones.txtPT3.Text = !ptel3 & ""
+        frmVerificaciones.txtPT4.Text = !ptel4 & ""
         frmVerificaciones.txtTotalCurso.Text = !totalcurso
         frmVerificaciones.txtTotalCuotas.Text = !cuotas
         frmVerificaciones.txtGastoAdm.Text = !gastoadm
