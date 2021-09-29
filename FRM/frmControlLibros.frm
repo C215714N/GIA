@@ -8,7 +8,7 @@ Begin VB.Form frmControlLibros
    ClientHeight    =   3315
    ClientLeft      =   6030
    ClientTop       =   2235
-   ClientWidth     =   4755
+   ClientWidth     =   6330
    ForeColor       =   &H00E0E0E0&
    Icon            =   "frmControlLibros.frx":0000
    LinkTopic       =   "Form1"
@@ -16,7 +16,7 @@ Begin VB.Form frmControlLibros
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    ScaleHeight     =   3315
-   ScaleWidth      =   4755
+   ScaleWidth      =   6330
    Begin VB.TextBox txtManual 
       BeginProperty Font 
          Name            =   "Century Gothic"
@@ -31,7 +31,7 @@ Begin VB.Form frmControlLibros
       Left            =   120
       TabIndex        =   8
       Top             =   360
-      Width           =   2775
+      Width           =   4335
    End
    Begin VB.Frame Frame1 
       BackColor       =   &H00662200&
@@ -47,7 +47,7 @@ Begin VB.Form frmControlLibros
       EndProperty
       ForeColor       =   &H8000000F&
       Height          =   2895
-      Left            =   3000
+      Left            =   4560
       TabIndex        =   1
       Top             =   240
       Width           =   1605
@@ -189,8 +189,8 @@ Begin VB.Form frmControlLibros
       Left            =   120
       TabIndex        =   0
       Top             =   840
-      Width           =   2775
-      _ExtentX        =   4895
+      Width           =   4335
+      _ExtentX        =   7646
       _ExtentY        =   4048
       _Version        =   393216
       AllowUpdate     =   0   'False
@@ -287,7 +287,7 @@ Private Sub cmdEliminar_Click()
                 .Delete
                 .Update
             End With
-            Grilla.Refresh
+            grilla.Refresh
             txtManual.Text = ""
         End If
     End If
@@ -300,7 +300,7 @@ Private Sub Form_Load()
         .Open "SELECT Manual, Stock, Precio FROM manuales ORDER BY manual", Cn, adOpenDynamic, adLockPessimistic
     End With
 
-    Set Grilla.DataSource = rsManuales
+    Set grilla.DataSource = rsManuales
     formatoGrilla
 End Sub
 
@@ -328,7 +328,7 @@ Private Sub cmdAgregar_Click()
         End If
         .Close
         .Open "SELECT Manual, Stock, Precio FROM manuales ORDER BY manual", Cn, adOpenDynamic, adLockPessimistic
-        Set Grilla.DataSource = rsManuales
+        Set grilla.DataSource = rsManuales
         formatoGrilla
     End With
     '''Restablece los Datos
@@ -342,9 +342,9 @@ LineaError:
 End Sub
 
 Private Sub grilla_Click()
-    txtManual.Text = Grilla.Columns(0).Text
-    txtStock.Text = Grilla.Columns(1).Text
-    txtPrecio.Text = Grilla.Columns(2).Text
+    txtManual.Text = grilla.Columns(0).Text
+    txtStock.Text = grilla.Columns(1).Text
+    txtPrecio.Text = grilla.Columns(2).Text
 End Sub
 
 Sub formatoGrilla()
@@ -354,12 +354,12 @@ Sub formatoGrilla()
             w = 2100
         Else:
             w = 800
-            Grilla.Columns(N).Alignment = dbgCenter
+            grilla.Columns(N).Alignment = dbgCenter
             If N = 2 Then
-                Grilla.Columns(N).NumberFormat = "$ #####"
+                grilla.Columns(N).NumberFormat = "$ #####"
             End If
         End If
-        Grilla.Columns(N).Width = w
+        grilla.Columns(N).Width = w
     Next
 End Sub
 

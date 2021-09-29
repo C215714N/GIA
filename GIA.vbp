@@ -100,6 +100,7 @@ Designer=DIS\dtrSituacion.Dsr
 Object={25959BEC-E700-11D2-A7AF-00C04F806200}#1.0#0; ieinfo5.OCX
 Object={0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0; isButton.ocx
 Reference=*\G{00025E01-0000-0000-C000-000000000046}#4.0#0#C:\Program Files\Common Files\Microsoft Shared\DAO\DAO350.DLL#Microsoft DAO 3.51 Object Library
+Designer=DIS\dtrPresupuesto.Dsr
 IconForm="MDI"
 Startup="Sub Main"
 HelpFile=""

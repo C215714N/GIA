@@ -18,22 +18,6 @@ Begin VB.Form frmPresupuesto
    MinButton       =   0   'False
    ScaleHeight     =   5745
    ScaleWidth      =   9285
-   Begin VB.Data dtrPresupuesto 
-      Connect         =   "Access"
-      DatabaseName    =   ""
-      DefaultCursorType=   0  'DefaultCursor
-      DefaultType     =   2  'UseODBC
-      Exclusive       =   0   'False
-      Height          =   375
-      Left            =   7560
-      Options         =   0
-      ReadOnly        =   0   'False
-      RecordsetType   =   1  'Dynaset
-      RecordSource    =   ""
-      Top             =   3600
-      Visible         =   0   'False
-      Width           =   1575
-   End
    Begin VB.Frame Frame2 
       BackColor       =   &H00662200&
       Caption         =   "Totales"
@@ -285,7 +269,7 @@ Begin VB.Form frmPresupuesto
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "yyyy"
-         Format          =   271515651
+         Format          =   272171011
          CurrentDate     =   36526
          MaxDate         =   401876
          MinDate         =   36526

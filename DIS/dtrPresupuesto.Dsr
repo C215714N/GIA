@@ -32,7 +32,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrPresupuesto
    SectionCode0    =   1
    BeginProperty Section0 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
-      Name            =   "Sección4"
+      Name            =   "Seccion4"
       Object.Height          =   675
       NumControls     =   7
       ItemType0       =   3
@@ -171,7 +171,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrPresupuesto
    SectionCode1    =   2
    BeginProperty Section1 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
-      Name            =   "Sección2"
+      Name            =   "Seccion2"
       Object.Height          =   465
       NumControls     =   6
       ItemType0       =   3
@@ -286,7 +286,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrPresupuesto
    SectionCode2    =   4
    BeginProperty Section2 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
-      Name            =   "Sección1"
+      Name            =   "Seccion1"
       Object.Height          =   375
       NumControls     =   5
       ItemType0       =   4
@@ -438,14 +438,14 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrPresupuesto
    SectionCode3    =   7
    BeginProperty Section3 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
-      Name            =   "Sección3"
+      Name            =   "Seccion3"
       Object.Height          =   360
       NumControls     =   0
    EndProperty
    SectionCode4    =   8
    BeginProperty Section4 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
-      Name            =   "Sección5"
+      Name            =   "Seccion5"
       Object.Height          =   957
       NumControls     =   6
       ItemType0       =   3
