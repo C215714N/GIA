@@ -221,7 +221,7 @@ Begin VB.Form frmAuditoria
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   135004161
+      Format          =   127533057
       CurrentDate     =   42492
    End
 End
@@ -238,7 +238,7 @@ Private Sub btnActualizar_Click()
     ''' consulta cuotas debidas a la fecha
     With rsPlanDePago
         If .State = 1 Then .Close
-        .Open "SELECT p.codalumno,min(p.nrocuota) as Cuota, sum(p.Deudatotal) as Deuda,sum(p.CuotasDebidas) as CuotasDebidas,  DateDiff('m',Min(p.fechavto),#" & fechafutura & "#) AS Meses, Max(p.NroCuota) AS MaxCuota,max(V.Cuotas) AS UltimaCuota FROM plandepago as p, verificaciones as v WHERE v.codalumno=p.codalumno and p.cuotasdebidas > 0 and p.fechavto<#" & fechafutura & "# and p.codalumno>=" & Int(txtCodigo.Text) & " group by p.codalumno ORDER BY p.codalumno", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT p.codalumno,min(p.nrocuota) as Cuota, sum(p.Deudatotal) as Deuda,sum(p.CuotasDebidas) as CuotasDebidas,  DateDiff('m',Min(p.fechavto),#" & fechafutura & "#) AS Meses, Max(p.NroCuota) AS MaxCuota,max(V.Cuotas) AS UltimaCuota FROM plandepago as p, verificaciones as v WHERE v.codalumno=p.codalumno AND p.cuotasdebidas > 0 AND p.fechavto<#" & fechafutura & "# AND p.codalumno>=" & Int(txtCodigo.Text) & " GROUP BY p.codalumno ORDER BY p.codalumno", Cn, adOpenDynamic, adLockPessimistic
         .MoveFirst
     End With
     

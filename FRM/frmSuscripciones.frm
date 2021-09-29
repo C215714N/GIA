@@ -436,7 +436,7 @@ Begin VB.Form frmSuscripciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   172556289
+         Format          =   127533057
          CurrentDate     =   41308
       End
       Begin VB.Label Label20 
@@ -908,7 +908,7 @@ Begin VB.Form frmSuscripciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   171442177
+         Format          =   127533057
          CurrentDate     =   41308
       End
       Begin MSDataListLib.DataCombo dtcAsistente 
@@ -1287,7 +1287,7 @@ Private Sub cmdGrabar_Click()
             !fecha = dtpFechaSuscripcion.Value
             
             If cmbTipoPago.Text = "Efectivo" Then
-                !Cuenta = "CAJA ADMINISTRAcion"
+                !Cuenta = "CAJA ADMINISTRACION"
             ElseIf cmbTipoPago.Text = "Descuento" Then
                 !Cuenta = "Descuento"
             Else

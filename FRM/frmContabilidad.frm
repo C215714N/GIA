@@ -464,7 +464,7 @@ Private Sub cmdBajarAsiento_Click()
                 rsContabilidad.AddNew
                 rsContabilidad!asiento = !asiento
                 rsContabilidad!fecha = !fecha
-                rsContabilidad!cuenta = !cuenta
+                rsContabilidad!Cuenta = !Cuenta
                 rsContabilidad!Detalle = !Detalle
                 rsContabilidad!Debe = !Debe
                 rsContabilidad!Haber = !Haber
@@ -515,8 +515,8 @@ Private Sub cmdBajarCuenta_Click()
         .Requery
         .AddNew
         !asiento = lblNroAsiento.Caption
-        !fecha = CDate(lblFecha.Caption)
-        !cuenta = dtcCuenta.Text
+        !fecha = CDate(lblfecha.Caption)
+        !Cuenta = dtcCuenta.Text
         !Detalle = txtDetalle.Text
         !NroCuota = Null
         !CodAlumno = Null
@@ -567,11 +567,11 @@ Private Sub Form_Load()
     Contabilidad
     ContabilidadTemp
     lblNroAsiento.Caption = rsControl!nroasiento
-    lblFecha.Caption = Date
+    lblfecha.Caption = Date
     Set dtcCuenta.RowSource = rsCuentas
     dtcCuenta.BoundColumn = "cuenta"
     dtcCuenta.ListField = "cuenta"
-    Set Grilla.DataSource = rsContabilidadTemp
+    Set grilla.DataSource = rsContabilidadTemp
     formatoGrilla
     txtNroFactura.Locked = False
     Haber = 0
@@ -579,10 +579,10 @@ Private Sub Form_Load()
 End Sub
 
 Sub formatoGrilla()
-    Grilla.Columns(0).Width = 0
-    Grilla.Columns(1).Width = 0
-    Grilla.Columns(2).Width = 0
-    Grilla.Columns(7).Width = 0
+    grilla.Columns(0).Width = 0
+    grilla.Columns(1).Width = 0
+    grilla.Columns(2).Width = 0
+    grilla.Columns(7).Width = 0
 End Sub
 
 Sub Limpiar()

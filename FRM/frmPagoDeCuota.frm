@@ -442,7 +442,7 @@ Private Sub cmdCobrar_Click()
             rsContabilidad.AddNew
             rsContabilidad!asiento = !asiento
             rsContabilidad!fecha = !fecha
-            rsContabilidad!cuenta = !cuenta
+            rsContabilidad!Cuenta = !Cuenta
             rsContabilidad!Detalle = !Detalle
             rsContabilidad!Debe = !Debe
             rsContabilidad!Haber = !Haber
@@ -518,10 +518,10 @@ Private Sub Form_Load()
     txtNroFactura.Text = ""
     txtMonto.Text = ""
     Adodc.CursorLocation = adUseClient
-    Adodc.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=T:\base.mdb;Persist Security Info=False;Jet OLEDB:Database Password=ascir"
+    Adodc.ConnectionString = DbCon
     Adodc.RecordSource = "SELECT * FROM contabilidadtemp"
     Adodc.Refresh
-    Set Grilla.DataSource = Adodc
+    Set grilla.DataSource = Adodc
     formatoGrilla
 End Sub
 
@@ -579,11 +579,11 @@ If KeyAscii = 13 Then
         !CodAlumno = Val(frmCobranza.lblCodAlumno.Caption)
         !NroCuota = Val(frmCobranza.txtNroCuota.Text)
         If cmbTipoPago.Text = "Efectivo" Then
-            !cuenta = "CAJA ADMINISTRAcion"
+            !Cuenta = "CAJA ADMINISTRACION"
         ElseIf cmbTipoPago.Text = "Tarjeta" Then
-            !cuenta = "DEBITO TARJETA CREDITO"
+            !Cuenta = "DEBITO TARJETA CREDITO"
         Else
-            !cuenta = "Descuento"
+            !Cuenta = "Descuento"
         End If
         !Detalle = "ALUMNO " & frmCobranza.lblCodAlumno.Caption
         .Update
@@ -606,11 +606,11 @@ Private Sub txtNroFactura_KeyPress(KeyAscii As Integer)
 End Sub
 
 Sub formatoGrilla()
-    Grilla.Columns(0).Width = 0
-    Grilla.Columns(1).Width = 0
-    Grilla.Columns(4).Width = 0
-    Grilla.Columns(2).Width = 800
-    Grilla.Columns(6).Width = 0
+    grilla.Columns(0).Width = 0
+    grilla.Columns(1).Width = 0
+    grilla.Columns(4).Width = 0
+    grilla.Columns(2).Width = 800
+    grilla.Columns(6).Width = 0
 
 End Sub
 

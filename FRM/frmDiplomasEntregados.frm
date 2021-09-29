@@ -215,10 +215,10 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
       
         With rsExamenes
             If .State = 1 Then .Close
-            .Open "SELECT FechaRetiro, Modulo, Retiro FROM examenes WHERE codalumno=" & Int(txtCodigo.Text) & " and retiro<> ''", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT FechaRetiro, Modulo, Retiro FROM examenes WHERE codalumno=" & Int(txtCodigo.Text) & " AND retiro<> ''", Cn, adOpenDynamic, adLockPessimistic
         End With
 
-      Set Grilla.DataSource = rsExamenes
+      Set grilla.DataSource = rsExamenes
       formatoGrilla
     End If
 LineaError:
@@ -233,6 +233,6 @@ Sub formatoGrilla()
         Else:
             w = 1150
         End If
-        Grilla.Columns(N).Width = w
+        grilla.Columns(N).Width = w
     Next
 End Sub

@@ -180,7 +180,7 @@ Private Sub cmdBuscar_Click()
     '''busca los alumnos del curso
     With rsAlumnosArmado
         If .State = 1 Then .Close
-        .Open "SELECT v.codalumno as [Codigo],v.nya as [Alumnos] FROM verificaciones as v,alumnosdearmado as a WHERE v.codalumno=a.codalumno and grupo=" & rsGruposDeArmado!ID & " ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT v.codalumno as [Codigo],v.nya as [Alumnos] FROM verificaciones as v,alumnosdearmado as a WHERE v.codalumno=a.codalumno AND grupo=" & rsGruposDeArmado!ID & " ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
         If .BOF = True And .EOF = True Then
             MsgBox "No se encontraron alumnos en este grupo", vbExclamation, "Gestion Integral del Alumno"
         End If

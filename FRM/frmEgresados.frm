@@ -95,7 +95,7 @@ Begin VB.Form frmEgresados
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   132186113
+         Format          =   108068865
          CurrentDate     =   41978
       End
       Begin MSComCtl2.DTPicker dtpDesde 
@@ -116,7 +116,7 @@ Begin VB.Form frmEgresados
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   132186113
+         Format          =   126615553
          CurrentDate     =   41978
       End
       Begin isButtonTest.isButton cmdConsultar 
@@ -290,9 +290,9 @@ Private Sub cmdConsultar_Click()
         If .State = 1 Then .Close
         
         If optBuscar(0).Value = True Then
-            .Open "SELECT nya as Alumno,DNI,Fechanac as [Fecha Nacimiento],capac as Curso, Nacionalidad,v.codalumno FROM Verificaciones as V,Egresados as E WHERE v.codalumno=e.codalumno and fecha>=#" & desde & "# and fecha <=#" & hasta & "# ORDER BY nya,fecha", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT nya as Alumno,DNI,Fechanac as [Fecha Nacimiento],capac as Curso, Nacionalidad,v.codalumno FROM Verificaciones as V,Egresados as E WHERE v.codalumno=e.codalumno AND fecha BETWEEN #" & desde & "# AND #" & hasta & "# ORDER BY nya,fecha", Cn, adOpenDynamic, adLockPessimistic
         Else
-            .Open "SELECT nya as Alumno,DNI,Fechanac as [Fecha Nacimiento],capac as Curso,Nacionalidad,v.codalumno FROM Verificaciones as V,Egresados as E WHERE v.codalumno=e.codalumno and fecha>=#" & desde & "# and fecha <=#" & hasta & "# ORDER BY capac,fecha", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT nya as Alumno,DNI,Fechanac as [Fecha Nacimiento],capac as Curso,Nacionalidad,v.codalumno FROM Verificaciones as V,Egresados as E WHERE v.codalumno=e.codalumno AND fecha BETWEEN #" & desde & "# AND #" & hasta & "# ORDER BY capac,fecha", Cn, adOpenDynamic, adLockPessimistic
         End If
         
         Set grilla.DataSource = rsEgresados

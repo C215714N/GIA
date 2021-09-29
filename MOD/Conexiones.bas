@@ -2,7 +2,7 @@ Attribute VB_Name = "Conexiones"
 Sub Main()
 ''' Conexion con la Base de Datos
     Cn.CursorLocation = adUseClient
-    Cn.Open "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=T:\Base.mdb;Persist Security Info=False;Jet OLEDB:Database Password=ascir"
+    Cn.Open DbCon
 ''' Formulario de Inicio de Sesion
     frmClave.Show
 ''' Carga los Datos de la Empresa - Control

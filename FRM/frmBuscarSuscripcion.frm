@@ -365,7 +365,7 @@ Private Sub Form_Load()
     Centrar Me
     Dim busca As String
     Adodc.CursorLocation = adUseClient
-    Adodc.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=T:\base.mdb;Persist Security Info=False;Jet OLEDB:Database Password=ascir"
+    Adodc.ConnectionString = DbCon
     Adodc.RecordSource = "SELECT id, Nya as [Apellido y Nombres], tipoDoc as [Tipo], DNI as [N°], Direccion, CP, Localidad, Nacionalidad, Edad, FechaNac, Capac as [Capacitacion], Asistente, Tel1, Tel2, Tel3, Tel4, PTel1, PTel2, PTel3, PTel4, TotalCurso, Cuotas, GastoAdm, Fechasus, Observaciones, Manuales, DchoExamen, TotalMatricula, NroFactura FROM suscripciones WHERE [Nya] like '" & busca & "'"
     Set grilla.DataSource = Adodc
     formatoGrilla

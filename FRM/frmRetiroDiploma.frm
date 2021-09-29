@@ -50,7 +50,7 @@ Begin VB.Form frmRetiroDiploma
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   111935489
+      Format          =   127336449
       CurrentDate     =   42181
    End
    Begin isButtonTest.isButton cmdGrabar 
@@ -254,7 +254,7 @@ Attribute VB_Exposed = False
 Private Sub cmdGrabar_Click()
     With rsDiplomas
         If .State = 1 Then .Close
-        .Open "SELECT * FROM examenes WHERE codalumno=" & Int(lblCodAlumno.Caption) & " and modulo='" & lblModulo.Caption & "'", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT * FROM examenes WHERE codalumno=" & Int(lblCodAlumno.Caption) & " AND modulo='" & lblModulo.Caption & "'", Cn, adOpenDynamic, adLockPessimistic
         .Requery
         .MoveFirst
         !retiro = txtRetira.Text

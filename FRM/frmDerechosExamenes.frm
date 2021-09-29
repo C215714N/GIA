@@ -178,7 +178,7 @@ Begin VB.Form frmDerechosExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   165347329
+         Format          =   273285121
          CurrentDate     =   41978
       End
       Begin isButtonTest.isButton cmdAgregar 
@@ -467,7 +467,7 @@ Private Sub Form_Load()
     Centrar Me
     Control
     txtPrecio.Text = Format(rsControl!derechoExamen, "currency")
-    dtpFecha.Value = Date
+    DTPFecha.Value = Date
 End Sub
 
 Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
@@ -493,7 +493,7 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
             CargarModulos
             txtPrecio.Text = Format(rsControl!derechoExamen, "currency")
             cmbModulo.Enabled = True
-            dtpFecha.Enabled = True
+            DTPFecha.Enabled = True
             cmdAgregar.Enabled = True
             cmbModulo.SetFocus
             
@@ -516,7 +516,7 @@ Private Sub cmdAgregar_Click()
         .Requery
         .AddNew
         !CodAlumno = Int(txtCodigo.Text)
-        !fecha = dtpFecha.Value
+        !fecha = DTPFecha.Value
         !modulo = cmbModulo.Text
         .Update
         .Close
@@ -546,7 +546,7 @@ Private Sub cmdAgregar_Click()
             !fecha = Date
             
             If cmbPago.Text = "Efectivo" Then
-                !Cuenta = "CAJA ADMINISTRAcion"
+                !Cuenta = "CAJA ADMINISTRACION"
             ElseIf cmbPago.Text = "Descuento" Then
                 !Cuenta = "Descuento"
             Else

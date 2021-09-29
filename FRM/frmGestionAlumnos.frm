@@ -271,7 +271,7 @@ Private Sub cmdAgregar_Click()
     '''comprueba q no esta el alumno asignado a un curso
     With rsAlumnosArmado
         If .State = 1 Then .Close
-        .Open "SELECT * FROM alumnosdearmado WHERE grupo=" & CodCurso & " and codalumno=" & Int(txtCodAlumno.Text), Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT * FROM alumnosdearmado WHERE grupo=" & CodCurso & " AND codalumno=" & Int(txtCodAlumno.Text), Cn, adOpenDynamic, adLockPessimistic
         If .BOF Or .EOF Then
             .Requery
             .AddNew
@@ -283,12 +283,12 @@ Private Sub cmdAgregar_Click()
         End If
         
         .Close
-        .Open "SELECT v.nya as Alumnos,v.codalumno FROM verificaciones as v,alumnosdearmado as a WHERE v.codalumno=a.codalumno and a.grupo=" & CodCurso, Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT v.nya as Alumnos,v.codalumno FROM verificaciones as v,alumnosdearmado as a WHERE v.codalumno=a.codalumno AND a.grupo=" & CodCurso, Cn, adOpenDynamic, adLockPessimistic
     End With
     
-    Set Grilla.DataSource = rsAlumnosArmado
-    Grilla.Columns(0).Width = 3000
-    Grilla.Columns(1).Width = 0
+    Set grilla.DataSource = rsAlumnosArmado
+    grilla.Columns(0).Width = 3000
+    grilla.Columns(1).Width = 0
     txtCodAlumno.Text = ""
     txtCodAlumno.SetFocus
 
@@ -298,25 +298,25 @@ End Sub
 
 Private Sub cmdQuitar_Click()
     On Error GoTo LineaError
-    If MsgBox("¿Esta seguro que desea quitar al alumno " & Grilla.Columns(0).Text & " del grupo?", vbYesNo + vbQuestion, "Gestion de Alumnos") = vbYes Then
-        Label4.Caption = Grilla.Columns(1).Text
+    If MsgBox("¿Esta seguro que desea quitar al alumno " & grilla.Columns(0).Text & " del grupo?", vbYesNo + vbQuestion, "Gestion de Alumnos") = vbYes Then
+        Label4.Caption = grilla.Columns(1).Text
         
         '''carga a los alumnos del curso y los muestra en la grilla
         With rsAlumnosArmado
             If .State = 1 Then .Close
-            '.Open "SELECT v.nya,a.grupo,a.codalumno as Alumnos FROM verificaciones as v,alumnosdearmado as a WHERE v.codalumno=a.codalumno and v.nya='" & Label4.Caption & "'", cn, adOpenDynamic, adLockPessimistic
-            '.Open "SELECT v.nya as Alumnos FROM verificaciones as v,alumnosdearmado as a WHERE v.codalumno=a.codalumno and v.nya='" & Label4.Caption & "'", cn, adOpenDynamic, adLockPessimistic
+            '.Open "SELECT v.nya,a.grupo,a.codalumno as Alumnos FROM verificaciones as v,alumnosdearmado as a WHERE v.codalumno=a.codalumno AND v.nya='" & Label4.Caption & "'", cn, adOpenDynamic, adLockPessimistic
+            '.Open "SELECT v.nya as Alumnos FROM verificaciones as v,alumnosdearmado as a WHERE v.codalumno=a.codalumno AND v.nya='" & Label4.Caption & "'", cn, adOpenDynamic, adLockPessimistic
             .Open "SELECT * FROM alumnosdearmado WHERE codalumno=" & Label4.Caption, Cn, adOpenDynamic, adLockPessimistic
             .MoveFirst
             .Delete
             .Update
             .Close
-            .Open "SELECT v.nya as Alumnos,v.codalumno FROM verificaciones as v,alumnosdearmado as a WHERE v.codalumno=a.codalumno and a.grupo=" & CodCurso, Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT v.nya as Alumnos,v.codalumno FROM verificaciones as v,alumnosdearmado as a WHERE v.codalumno=a.codalumno AND a.grupo=" & CodCurso, Cn, adOpenDynamic, adLockPessimistic
         End With
     
-        Set Grilla.DataSource = rsAlumnosArmado
-        Grilla.Columns(0).Width = 3000
-        Grilla.Columns(1).Width = 0
+        Set grilla.DataSource = rsAlumnosArmado
+        grilla.Columns(0).Width = 3000
+        grilla.Columns(1).Width = 0
     End If
 LineaError:
     If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
@@ -327,12 +327,12 @@ Private Sub Form_Load()
     '''carga a los alumnos del curso y los muestra en la grilla
     With rsAlumnosArmado
         If .State = 1 Then .Close
-        .Open "SELECT v.nya as Alumnos,v.codalumno FROM verificaciones as v,alumnosdearmado as a WHERE v.codalumno=a.codalumno and a.grupo=" & CodCurso & " ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT v.nya as Alumnos,v.codalumno FROM verificaciones as v,alumnosdearmado as a WHERE v.codalumno=a.codalumno AND a.grupo=" & CodCurso & " ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
     End With
     
-    Set Grilla.DataSource = rsAlumnosArmado
-    Grilla.Columns(0).Width = 3000
-    Grilla.Columns(1).Width = 0
+    Set grilla.DataSource = rsAlumnosArmado
+    grilla.Columns(0).Width = 3000
+    grilla.Columns(1).Width = 0
 End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)

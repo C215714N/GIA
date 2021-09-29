@@ -299,7 +299,7 @@ Begin VB.Form frmReservas
          Strikethrough   =   0   'False
       EndProperty
       MonthBackColor  =   16777215
-      StartOfWeek     =   171376642
+      StartOfWeek     =   127336450
       TitleBackColor  =   8930304
       TitleForeColor  =   16777215
       TrailingForeColor=   14737632
@@ -639,7 +639,7 @@ Private Sub btnEliminar_Click()
              Dim fecha As Date
              fecha = Format(MonthView1.Value, "mm/dd/yyyy")
              If .State = 1 Then .Close
-             .Open "SELECT * FROM reservas WHERE nya='" & dtcAlumno.Text & "' and fecha=#" & fecha & "# and hora='" & Index & "'", Cn, adOpenDynamic, adLockPessimistic
+             .Open "SELECT * FROM reservas WHERE nya='" & dtcAlumno.Text & "' AND fecha=#" & fecha & "# AND hora='" & Index & "'", Cn, adOpenDynamic, adLockPessimistic
              .MoveFirst
              .Delete
              .Update
@@ -685,7 +685,7 @@ fecha = Format(MonthView1.Value, "mm/dd/yyyy")
     
     With rsReservas
         If .State = 1 Then .Close
-        .Open "SELECT nya as [Apellido y Nombre], pa as [P/A],Fecha, hora as Horario FROM Reservas WHERE fecha=#" & fecha & "# and hora ='" & Index & "' ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT nya as [Apellido y Nombre], pa as [P/A],Fecha, hora as Horario FROM Reservas WHERE fecha=#" & fecha & "# AND hora ='" & Index & "' ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
         If .BOF Or .EOF Then lblreservas.Caption = 0: lblAsistencia.Visible = False: txtAsistencia.Text = "": txtAsistencia.Visible = False: btnAgregar.Enabled = True: btnEliminar.Enabled = False: btnAsistencia.Enabled = False:  Exit Sub
     End With
     
@@ -754,7 +754,7 @@ Private Sub Form_Load()
     ''' consulta alumnos
     With rsVerificaciones
         If .State = 1 Then .Close
-        .Open "SELECT max(codalumno),nya,(nya + ' - ' + capac) as Alumno,capac FROM verificaciones WHERE capac='Operador de PC' or capac='Programación' or capac='Diseño Web' or capac='Diseño Gráfico' or capac='Programación + Access' or capac='Redes Sociales' group by nya,capac ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT max(codalumno),nya,(nya + ' - ' + capac) as Alumno,capac FROM verificaciones WHERE capac='Operador de PC' or capac='Programación' or capac='Diseño Web' or capac='Diseño Gráfico' or capac='Programación + Access' or capac='Redes Sociales' GROUP BY nya,capac ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
     End With
 
         ''' carga alumnos en DataCombo
@@ -916,7 +916,7 @@ Private Sub txtAsistencia_KeyPress(KeyAscii As Integer)
             Dim fecha As Date
             fecha = Format(MonthView1.Value, "mm/dd/yyyy")
             If .State = 1 Then .Close
-            .Open "SELECT * FROM reservas WHERE nya='" & dtcAlumno.Text & "' and fecha=#" & fecha & "# and hora='" & Index & "'", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT * FROM reservas WHERE nya='" & dtcAlumno.Text & "' AND fecha=#" & fecha & "# AND hora='" & Index & "'", Cn, adOpenDynamic, adLockPessimistic
             .MoveFirst
             !pa = txtAsistencia.Text
             .UpdateBatch

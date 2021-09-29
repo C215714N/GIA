@@ -46,7 +46,6 @@ Begin VB.Form frmVerificaciones
          _ExtentX        =   8281
          _ExtentY        =   2778
          _Version        =   393217
-         Enabled         =   -1  'True
          MaxLength       =   1000
          Appearance      =   0
          AutoVerbMenu    =   -1  'True
@@ -392,7 +391,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   107282433
+         Format          =   127336449
          CurrentDate     =   41308
       End
       Begin MSDataListLib.DataCombo dtcAsistente 
@@ -779,7 +778,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   125894657
+         Format          =   127270913
          CurrentDate     =   41308
       End
       Begin MSComCtl2.DTPicker DTPFechaVerificacion 
@@ -800,7 +799,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   125894657
+         Format          =   272171009
          CurrentDate     =   41308
       End
       Begin VB.Label Label17 
@@ -1266,14 +1265,14 @@ Private Sub cmdGrabar_Click()
             !fechanac = dtpFechaNacimiento.Value
             !capac = dtcCapacitacion.Text
             !Asistente = dtcAsistente.Text
-            !PTel1 = txtPT1.Text
-            !PTel2 = txtPT2.Text
-            !PTel3 = txtPT3.Text
-            !PTel4 = txtPT4.Text
-            !Tel1 = txtTel1.Text
-            !Tel2 = txtTel2.Text
-            !Tel3 = txtTel3.Text
-            !Tel4 = txtTel4.Text
+            !ptel1 = txtPT1.Text
+            !ptel2 = txtPT2.Text
+            !ptel3 = txtPT3.Text
+            !ptel4 = txtPT4.Text
+            !tel1 = txtTel1.Text
+            !tel2 = txtTel2.Text
+            !tel3 = txtTel3.Text
+            !tel4 = txtTel4.Text
             !totalcurso = Int(txtTotalCurso.Text)
             !cuotas = Int(txtTotalCuotas.Text)
             !gastoadm = Int(txtGastoAdm.Text)
@@ -1297,7 +1296,7 @@ Private Sub cmdGrabar_Click()
        
        With rsInformeSuscripciones
             If .State = 1 Then .Close
-            .Open "SELECT * FROM informesuscripciones WHERE curso='" & dtcCapacitacion.Text & "' and asistente='" & dtcAsistente.Text & "' and totalcurso=" & txtTotalCurso.Text & " and verificado=0", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT * FROM informesuscripciones WHERE curso='" & dtcCapacitacion.Text & "' AND asistente='" & dtcAsistente.Text & "' AND totalcurso=" & txtTotalCurso.Text & " AND verificado=0", Cn, adOpenDynamic, adLockPessimistic
             If .BOF Or .EOF Then MsgBox "El Alumno fue verificado con Exito" & vbNewLine & vbNewLine & "Recuerde que para una Correcta Gestion Administrativa debera asignarle un plan de pago, incluso si la capacitacion estuviese Completamente Becada", vbOKOnly + vbInformation: GoSub continuar
             .MoveFirst
             !fechaV = DTPFechaVerificacion.Value
@@ -1322,14 +1321,14 @@ Private Sub cmdGrabar_Click()
             !fechanac = dtpFechaNacimiento.Value
             !capac = dtcCapacitacion.Text
             !Asistente = dtcAsistente.Text
-            !PTel1 = txtPT1.Text
-            !PTel2 = txtPT2.Text
-            !PTel3 = txtPT3.Text
-            !PTel4 = txtPT4.Text
-            !Tel1 = txtTel1.Text
-            !Tel2 = txtTel2.Text
-            !Tel3 = txtTel3.Text
-            !Tel4 = txtTel4.Text
+            !ptel1 = txtPT1.Text
+            !ptel2 = txtPT2.Text
+            !ptel3 = txtPT3.Text
+            !ptel4 = txtPT4.Text
+            !tel1 = txtTel1.Text
+            !tel2 = txtTel2.Text
+            !tel3 = txtTel3.Text
+            !tel4 = txtTel4.Text
             !totalcurso = Int(txtTotalCurso.Text)
             !cuotas = Int(txtTotalCuotas.Text)
             !gastoadm = Int(txtGastoAdm.Text)

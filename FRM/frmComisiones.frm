@@ -142,7 +142,7 @@ Begin VB.Form frmComisiones
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   237633537
+      Format          =   273743873
       CurrentDate     =   41355
    End
    Begin MSComCtl2.DTPicker dtpDesde 
@@ -163,7 +163,7 @@ Begin VB.Form frmComisiones
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   237633537
+      Format          =   273743873
       CurrentDate     =   41355
    End
    Begin isButtonTest.isButton cmdConsultar 
@@ -417,7 +417,7 @@ Private Sub cmdConsultar_Click()
              
     With rsPlanDePago
         If .State = 1 Then .Close
-        .Open "SELECT sum(totalcobrado), sum((totalcobrado)*" & Int(txtComision.Text) & "/100) FROM plandepago WHERE fechapago>=#" & fecha1 & "# and fechapago<=#" & fecha2 & "# and nrocuota=" & Int(txtCuota.Text), Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT sum(totalcobrado), sum((totalcobrado)*" & Int(txtComision.Text) & "/100) FROM plandepago WHERE fechapago BETWEEN#" & fecha1 & "# AND #" & fecha2 & "# AND nrocuota=" & Int(txtCuota.Text), Cn, adOpenDynamic, adLockPessimistic
         lblTotalCobrado.Caption = !expr1000
         lblTotalComisiones.Caption = !expr1001
         lblTotalComisiones.Caption = Format(lblTotalComisiones.Caption, "currency")
@@ -426,7 +426,7 @@ Private Sub cmdConsultar_Click()
 
     With rsPlanDePago
         If .State = 1 Then .Close
-        .Open "SELECT codalumno as [Codigo],nrocuota as [N°],fechapago as [Fecha],totalcobrado as [Monto], ((totalcobrado)*" & Int(txtComision.Text) & "/100) as [Comision] FROM plandepago WHERE fechapago>=#" & fecha1 & "# and fechapago<=#" & fecha2 & "# and nrocuota=" & Int(txtCuota.Text), Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT codalumno as [Codigo],nrocuota as [N°],fechapago as [Fecha],totalcobrado as [Monto], ((totalcobrado)*" & Int(txtComision.Text) & "/100) as [Comision] FROM plandepago WHERE fechapago BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# AND nrocuota=" & Int(txtCuota.Text), Cn, adOpenDynamic, adLockPessimistic
     End With
 
     Set grilla.DataSource = rsPlanDePago

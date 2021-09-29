@@ -36,7 +36,7 @@ Begin VB.Form frmClave
       _ExtentX        =   2778
       _ExtentY        =   661
       _Version        =   393216
-      Format          =   307953665
+      Format          =   273743873
       CurrentDate     =   42125
    End
    Begin MSComCtl2.DTPicker DTPFecha 
@@ -44,8 +44,8 @@ Begin VB.Form frmClave
       Left            =   2040
       TabIndex        =   4
       Top             =   120
-      Width           =   1335
-      _ExtentX        =   2355
+      Width           =   1455
+      _ExtentX        =   2566
       _ExtentY        =   661
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -57,7 +57,7 @@ Begin VB.Form frmClave
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   307953665
+      Format          =   273743873
       CurrentDate     =   41327
    End
    Begin VB.TextBox txtClave 
@@ -290,7 +290,7 @@ Private Sub cmdIngresar_Click()
         Me.Hide
         Exit Sub
 '''Usuario Armado - Permisos Instruccion
-    ElseIf txtUsuario.Text = "Armado" And txtClave.Text = "TécnicoPC" Then
+    ElseIf txtUsuario.Text = "Armado" And txtClave.Text = "TecnicoPC" Then
         Usuario = txtUsuario.Text
         MDI.Caption = frmClave.Caption
         MDI.StatusBar1.Panels(5).Text = "Usuario: " & txtUsuario.Text
@@ -420,7 +420,7 @@ Private Sub cmdIngresar_Click()
             With rsSituacionDeCartera
                 If .State = 1 Then .Close
             '''Situacion al dia de la Fecha
-                .Open "SELECT cantidadcuotas * 30 -30 as Dias, count(codalumno) as [Total de Alumnos], sum(deuda) as Deuda, sum(cobrado) as Cobranza, sum(pago) as [Total Cobrado], round(sum(cobrado) * 100 / sum(deuda), 2) as [Porcentaje Cobrado], sum(deuda)-sum(cobrado) as [Resto a Cobrar] FROM marcas WHERE cantidadcuotas > 0 GROUP BY cantidadcuotas", Cn, adOpenDynamic, adLockPessimistic
+                .Open "SELECT cantidadcuotas * 30 -30 AS [Dias], count(codalumno) as [Total de Alumnos], sum(deuda) AS [Total Deuda], sum(cobrado) AS [Cobranza], sum(pago) AS [Total Cobrado], round(sum(cobrado) * 100 / sum(deuda), 2) AS [Porcentaje Cobrado], sum(deuda)-sum(cobrado) AS [Resto a Cobrar] FROM marcas WHERE cantidadcuotas > 0 GROUP BY cantidadcuotas", Cn, adOpenDynamic, adLockPessimistic
                 .MoveFirst
                
             '''Carga el Registro en la Tabla Situaciones de Cartera
@@ -457,7 +457,7 @@ Private Sub cmdIngresar_Click()
 
             ''' Totales de Ultima Fecha
                 .Close
-                .Open "SELECT cantidadcuotas * 30 - 30 , COUNT(codalumno), SUM(deuda), SUM(cobrado), SUM(pago), round(SUM(cobrado) * 100 / SUM(deuda),2), SUM(deuda) - sum(cobrado) FROM marcas WHERE cantidadcuotas > 0 group by cantidadcuotas", Cn, adOpenDynamic, adLockPessimistic
+                .Open "SELECT cantidadcuotas * 30 - 30 , COUNT(codalumno), SUM(deuda), SUM(cobrado), SUM(pago), round(SUM(cobrado) * 100 / SUM(deuda),2), SUM(deuda) - sum(cobrado) FROM marcas WHERE cantidadcuotas > 0 GROUP BY cantidadcuotas", Cn, adOpenDynamic, adLockPessimistic
                 .MoveFirst
         
                 Do Until .EOF
@@ -515,7 +515,7 @@ continuar:
     rsControl.MoveFirst
     With rsPlanDePago
         If .State = 1 Then .Close
-        .Open "SELECT * FROM plandepago WHERE fechavto<#" & fecha & "# and cuotasdebidas>0", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT * FROM plandepago WHERE fechavto<#" & fecha & "# AND cuotasdebidas>0", Cn, adOpenDynamic, adLockPessimistic
         If .BOF Or .EOF Then GoTo SituacionDeCartera
         .MoveFirst
         Do Until .EOF
@@ -535,7 +535,7 @@ SituacionDeCartera:
         ''' consulta cuotas debidas a la fecha
             With rsPlanDePago
                 If .State = 1 Then .Close
-                .Open "SELECT p.codalumno, MIN(p.nrocuota) as Cuota, SUM(p.Deudatotal) as Deuda, SUM(p.CuotasDebidas) as CuotasDebidas,  DATEDIFF('m',Min(p.fechavto),#" & fechafutura & "#) AS Meses, MAX(p.NroCuota) AS MaxCuota,max(V.Cuotas) AS UltimaCuota FROM plandepago as p, verificaciones as v WHERE v.codalumno=p.codalumno and p.cuotasdebidas > 0 and p.fechavto<#" & fechafutura & "# GROUP BY p.codalumno ORDER BY p.codalumno", Cn, adOpenDynamic, adLockPessimistic
+                .Open "SELECT p.codalumno, MIN(p.nrocuota) as Cuota, SUM(p.Deudatotal) as Deuda, SUM(p.CuotasDebidas) as CuotasDebidas,  DATEDIFF('m',Min(p.fechavto),#" & fechafutura & "#) AS Meses, MAX(p.NroCuota) AS MaxCuota,max(V.Cuotas) AS UltimaCuota FROM plandepago as p, verificaciones as v WHERE v.codalumno=p.codalumno AND p.cuotasdebidas > 0 AND p.fechavto<#" & fechafutura & "# GROUP BY p.codalumno ORDER BY p.codalumno", Cn, adOpenDynamic, adLockPessimistic
                 .MoveFirst
             End With
             
@@ -592,7 +592,7 @@ Recargo:
         
         With rsPlanDePago
             If .State = 1 Then .Close
-            .Open "SELECT * FROM plandepago WHERE fechavto<#" & fecha & "# and cuotasdebidas>0 and recargoxfecha=false", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT * FROM plandepago WHERE fechavto<#" & fecha & "# AND cuotasdebidas>0 AND recargoxfecha=false", Cn, adOpenDynamic, adLockPessimistic
             On Error GoTo continuar
             Do Until .EOF
                 !recargoxfecha = True

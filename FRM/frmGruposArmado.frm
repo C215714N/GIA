@@ -199,7 +199,7 @@ Private Sub cmdAlumnos_Click()
     ''' busca el curso
     With rsGruposDeArmado
         If .State = 1 Then .Close
-        .Open "SELECT * FROM gruposdearmado WHERE dia='" & cmbDia.Text & "' and horario='" & cmbHorario.Text & "'", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT * FROM gruposdearmado WHERE dia='" & cmbDia.Text & "' AND horario='" & cmbHorario.Text & "'", Cn, adOpenDynamic, adLockPessimistic
         If .BOF Or .EOF Then MsgBox "No hay curso abierto el dia " & cmbDia.Text & " a las " & cmbHorario.Text, vbCritical + vbOKOnly, "Administracion de Grupos de Armado": cmbDia.SetFocus: Exit Sub
         .MoveFirst
         CodCurso = !ID
@@ -221,7 +221,7 @@ Private Sub cmdEliminar_Click()
     If MsgBox("Elminar el grupo del dia " & cmbDia.Text & " a las " & cmbHorario.Text & "?", vbYesNo + vbQuestion, "Grupos de Armado") = vbYes Then
         With rsGruposDeArmado
             If .State = 1 Then .Close
-            .Open "SELECT * FROM Gruposdearmado WHERE dia='" & cmbDia.Text & "' and horario='" & cmbHorario.Text & "'", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT * FROM Gruposdearmado WHERE dia='" & cmbDia.Text & "' AND horario='" & cmbHorario.Text & "'", Cn, adOpenDynamic, adLockPessimistic
             If .RecordCount < 1 Then MsgBox "El grupo no existe", vbOKOnly + vbCritical, "Grupos de Armado": cmbDia.SetFocus: Exit Sub
             .Requery
             .Delete
@@ -241,7 +241,7 @@ Private Sub cmdNuevo_Click()
     If MsgBox("¿Crear un grupo el dia " & cmbDia.Text & " a las " & cmbHorario.Text & "?", vbYesNo + vbQuestion, "Grupos de Armado") = vbYes Then
         With rsGruposDeArmado
             If .State = 1 Then .Close
-            .Open "SELECT * FROM Gruposdearmado WHERE dia='" & cmbDia.Text & "' and horario='" & cmbHorario.Text & "'", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT * FROM Gruposdearmado WHERE dia='" & cmbDia.Text & "' AND horario='" & cmbHorario.Text & "'", Cn, adOpenDynamic, adLockPessimistic
             If .RecordCount > 0 Then MsgBox "El grupo ya existe", vbOKOnly + vbCritical, "Grupos de Armado": cmbDia.SetFocus: Exit Sub
             .Requery
             .AddNew

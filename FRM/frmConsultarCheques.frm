@@ -176,7 +176,7 @@ Begin VB.Form frmConsultarCheques
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   131203073
+         Format          =   272695297
          CurrentDate     =   41782
       End
       Begin MSComCtl2.DTPicker dtpDesde 
@@ -198,7 +198,7 @@ Begin VB.Form frmConsultarCheques
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   131203073
+         Format          =   272695297
          CurrentDate     =   41782
       End
       Begin isButtonTest.isButton cmdBuscar 
@@ -458,10 +458,10 @@ End Sub
 
 Private Sub cmddepositar_Click()
     If MsgBox("¿Esta Seguro que se ha depositado este cheque?", vbQuestion + vbYesNo, "Cheques") = vbYes Then
-        Grilla.Col = 2
+        grilla.Col = 2
         With rsCheques
             .Close
-            .Open "SELECT * FROM cheques WHERE numerocheque='" & Grilla.Text & "'", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT * FROM cheques WHERE numerocheque='" & grilla.Text & "'", Cn, adOpenDynamic, adLockPessimistic
             !estado = "DEPOSITADO"
             .UpdateBatch
         End With
@@ -470,11 +470,11 @@ Private Sub cmddepositar_Click()
 End Sub
 
 Private Sub cmdEliminar_Click()
-    Grilla.Col = 2
-    If MsgBox("¿Esta seguro que desea eliminar el cheque N° " & Grilla.Text & "?", vbQuestion + vbYesNo, "Consultar Cheques") = vbYes Then
+    grilla.Col = 2
+    If MsgBox("¿Esta seguro que desea eliminar el cheque N° " & grilla.Text & "?", vbQuestion + vbYesNo, "Consultar Cheques") = vbYes Then
         With rsCheques
             .Close
-            .Open "SELECT * FROM cheques WHERE numerocheque='" & Grilla.Text & "'", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT * FROM cheques WHERE numerocheque='" & grilla.Text & "'", Cn, adOpenDynamic, adLockPessimistic
             .Requery
             .MoveFirst
             .Delete
@@ -531,19 +531,19 @@ Private Sub Busqueda()
         With rsCheques
             If .State = 1 Then .Close
             
-            .Open "SELECT count(*) FROM cheques WHERE fecha>=#" & fecha1 & "# and fecha <=#" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT count(*) FROM cheques WHERE fecha BETWEEN #" & fecha1 & "# AND #" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
             lblCantidad.Caption = !expr1000
             .Close
             
-            .Open "SELECT sum(monto) FROM cheques WHERE fecha>=#" & fecha1 & "# and fecha <=#" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT sum(monto) FROM cheques WHERE fecha BETWEEN #" & fecha1 & "# AND #" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
             lblTotal.Caption = Format(!expr1000, "currency")
             .Close
             
-            .Open "SELECT sum(monto) FROM cheques WHERE fecha>=#" & fecha1 & "# and fecha <=#" & fecha2 & "# and estado<>'DEPOSITADO'", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT sum(monto) FROM cheques WHERE fecha BETWEEN#" & fecha1 & "# AND #" & fecha2 & "# AND estado<>'DEPOSITADO'", Cn, adOpenDynamic, adLockPessimistic
             lblTotalADepositar.Caption = Format(!expr1000, "currency")
             .Close
             
-            .Open "SELECT Fecha,destinatario as Beneficiario, NumeroCheque,Monto as Importe,Firma,Estado FROM cheques WHERE fecha>=#" & fecha1 & "# and fecha <=#" & fecha2 & "# ORDER BY fecha", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT Fecha,destinatario as Beneficiario, NumeroCheque,Monto as Importe,Firma,Estado FROM cheques WHERE fecha BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# ORDER BY fecha", Cn, adOpenDynamic, adLockPessimistic
         End With
         
     ElseIf optBuscar(1).Value = True Then
@@ -560,7 +560,7 @@ Private Sub Busqueda()
             lblTotal.Caption = Format(!expr1000, "currency")
             .Close
             
-            .Open "SELECT sum(monto) FROM cheques WHERE firma='" & cmbFirma.Text & "' and estado<>'DEPOSITADO'", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT sum(monto) FROM cheques WHERE firma='" & cmbFirma.Text & "' AND estado<>'DEPOSITADO'", Cn, adOpenDynamic, adLockPessimistic
             lblTotalADepositar.Caption = Format(!expr1000, "currency")
             .Close
             
@@ -575,66 +575,66 @@ Private Sub Busqueda()
     '''Consulta por FECHA & por FIRMA
         With rsCheques
             If .State = 1 Then .Close
-            .Open "SELECT count(*) FROM cheques WHERE fecha>=#" & fecha1 & "# and fecha <=#" & fecha2 & "# and firma='" & cmbFirma.Text & "'", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT count(*) FROM cheques WHERE fecha BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# AND firma='" & cmbFirma.Text & "'", Cn, adOpenDynamic, adLockPessimistic
             lblCantidad.Caption = !expr1000
             .Close
             
-            .Open "SELECT sum(monto) FROM cheques WHERE fecha>=#" & fecha1 & "# and fecha <=#" & fecha2 & "# and firma='" & cmbFirma.Text & "'", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT sum(monto) FROM cheques WHERE fecha BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# AND firma='" & cmbFirma.Text & "'", Cn, adOpenDynamic, adLockPessimistic
             lblTotal.Caption = Format(!expr1000, "currency")
             .Close
             
-            .Open "SELECT sum(monto) FROM cheques WHERE fecha>=#" & fecha1 & "# and fecha <=#" & fecha2 & "# and firma='" & cmbFirma.Text & "' and estado<>'DEPOSITADO'", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT sum(monto) FROM cheques WHERE fecha BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# AND firma='" & cmbFirma.Text & "' AND estado<>'DEPOSITADO'", Cn, adOpenDynamic, adLockPessimistic
             lblTotalADepositar.Caption = Format(!expr1000, "currency")
             .Close
             
-            .Open "SELECT Fecha,destinatario as Beneficiario, NumeroCheque,Monto as Importe,Firma,Estado FROM cheques WHERE fecha>=#" & fecha1 & "# and fecha <=#" & fecha2 & "# and firma='" & cmbFirma.Text & "' ORDER BY fecha", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT Fecha,destinatario as Beneficiario, NumeroCheque,Monto as Importe,Firma,Estado FROM cheques WHERE fecha BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# AND firma='" & cmbFirma.Text & "' ORDER BY fecha", Cn, adOpenDynamic, adLockPessimistic
         End With
 
     Else
         MsgBox "Elija parametros de busqueda", vbCritical, "Consultar cheques"
     End If
     
-    Grilla.Clear
+    grilla.Clear
     If rsCheques.BOF Or rsCheques.EOF Then Exit Sub
-        Grilla.Rows = Int(lblCantidad.Caption) + 2
-        Grilla.Col = 0
-        Grilla.Row = 0
-        Grilla.Text = "Fecha"
-        Grilla.Col = 1
-        Grilla.Text = "Beneficiario"
-        Grilla.Col = 2
-        Grilla.Text = "N° Cheque"
-        Grilla.Col = 3
-        Grilla.Text = "Importe"
-        Grilla.Col = 4
-        Grilla.Text = "Firma"
-        Grilla.Col = 5
-        Grilla.Text = "Estado"
-        Grilla.Col = 0
-        Grilla.Row = Grilla.Row + 1
+        grilla.Rows = Int(lblCantidad.Caption) + 2
+        grilla.Col = 0
+        grilla.Row = 0
+        grilla.Text = "Fecha"
+        grilla.Col = 1
+        grilla.Text = "Beneficiario"
+        grilla.Col = 2
+        grilla.Text = "N° Cheque"
+        grilla.Col = 3
+        grilla.Text = "Importe"
+        grilla.Col = 4
+        grilla.Text = "Firma"
+        grilla.Col = 5
+        grilla.Text = "Estado"
+        grilla.Col = 0
+        grilla.Row = grilla.Row + 1
     
     rsCheques.MoveFirst
     Do Until rsCheques.EOF
-        Grilla.Text = rsCheques!fecha
-        Grilla.Col = 1
-        Grilla.Text = rsCheques!beneficiario
-        Grilla.Col = 2
-        Grilla.Text = rsCheques!numerocheque
-        Grilla.Col = 3
-        Grilla.Text = rsCheques!importe
-        Grilla.Col = 4
-        Grilla.Text = rsCheques!firma
-        Grilla.Col = 5
-        Grilla.Text = rsCheques!estado
-        If Grilla.Text = "DEPOSITADO" Then
-            Grilla.CellForeColor = vbGreen
-            Grilla.CellFontBold = True
+        grilla.Text = rsCheques!fecha
+        grilla.Col = 1
+        grilla.Text = rsCheques!beneficiario
+        grilla.Col = 2
+        grilla.Text = rsCheques!numerocheque
+        grilla.Col = 3
+        grilla.Text = rsCheques!importe
+        grilla.Col = 4
+        grilla.Text = rsCheques!firma
+        grilla.Col = 5
+        grilla.Text = rsCheques!estado
+        If grilla.Text = "DEPOSITADO" Then
+            grilla.CellForeColor = vbGreen
+            grilla.CellFontBold = True
         Else
-            Grilla.CellForeColor = vbRed
-            Grilla.CellFontBold = True
+            grilla.CellForeColor = vbRed
+            grilla.CellFontBold = True
         End If
-        Grilla.Col = 0
-        Grilla.Row = Grilla.Row + 1
+        grilla.Col = 0
+        grilla.Row = grilla.Row + 1
         rsCheques.MoveNext
     Loop
     formatoGrilla
@@ -650,6 +650,6 @@ Sub formatoGrilla()
         Else:
             w = 900
         End If
-        Grilla.ColWidth(N) = w
+        grilla.ColWidth(N) = w
     Next
 End Sub

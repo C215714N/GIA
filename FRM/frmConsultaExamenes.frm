@@ -151,7 +151,7 @@ Begin VB.Form frmConsultaExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   237633537
+         Format          =   108134401
          CurrentDate     =   41978
       End
       Begin MSComCtl2.DTPicker dtpDesde 
@@ -172,7 +172,7 @@ Begin VB.Form frmConsultaExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   237633537
+         Format          =   108134401
          CurrentDate     =   41978
       End
       Begin isButtonTest.isButton cmdConsultar 
@@ -375,9 +375,9 @@ Private Sub cmdConsultar_Click()
     With rsExamenes
         If .State = 1 Then .Close
         If optBuscar(0).Value = True Then
-            .Open "SELECT V.Codalumno as [Codigo],nya as [Alumno],TipoDoc, DNI as [Documento],Fechanac as [Nacimiento],Nacionalidad, capac as [Curso], Fecha, Modulo, Promedio FROM Verificaciones as V,Examenes as E WHERE v.codalumno=e.codalumno and fecha>=#" & desde & "# and fecha <=#" & hasta & "# ORDER BY nya,fecha", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT V.Codalumno as [Codigo],nya as [Alumno],TipoDoc, DNI as [Documento],Fechanac as [Nacimiento],Nacionalidad, capac as [Curso], Fecha, Modulo, Promedio FROM Verificaciones as V,Examenes as E WHERE v.codalumno=e.codalumno AND fecha BETWEEN #" & desde & "#  AND #" & hasta & "# ORDER BY nya,fecha", Cn, adOpenDynamic, adLockPessimistic
         Else
-            .Open "SELECT V.Codalumno as [Codigo],nya as [Alumno],TipoDoc, DNI as [Documento],Fechanac as [Nacimiento],Nacionalidad, capac as [Curso], Fecha, Modulo, Promedio FROM Verificaciones as V,Examenes as E WHERE v.codalumno=e.codalumno and fecha>=#" & desde & "# and fecha <=#" & hasta & "# ORDER BY modulo,fecha", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT V.Codalumno as [Codigo],nya as [Alumno],TipoDoc, DNI as [Documento],Fechanac as [Nacimiento],Nacionalidad, capac as [Curso], Fecha, Modulo, Promedio FROM Verificaciones as V,Examenes as E WHERE v.codalumno=e.codalumno AND fecha BETWEEN #" & desde & "#  AND #" & hasta & "# ORDER BY modulo,fecha", Cn, adOpenDynamic, adLockPessimistic
         End If
         Set grilla.DataSource = rsExamenes
         formatoGrilla
@@ -391,7 +391,7 @@ End Sub
 Private Sub cmdDiploma_Click()
     With rsDiplomas
         If .State = 1 Then .Close
-        .Open "SELECT codalumno,modulo,fecharetiro,retiro FROM examenes WHERE codalumno=" & grilla.Columns(0).Text & " and modulo='" & grilla.Columns(8).Text & "'", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT codalumno AS [Codigo],modulo,fecharetiro AS [Fecha],retiro FROM examenes WHERE codalumno=" & grilla.Columns(0).Text & " AND modulo='" & grilla.Columns(8).Text & "'", Cn, adOpenDynamic, adLockPessimistic
         .Requery
         .MoveFirst
         If !retiro = "" Or retiro = Null Then

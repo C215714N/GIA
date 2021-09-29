@@ -390,11 +390,11 @@ Private Sub Form_Load()
         Label1.Caption = "Analizado - " & Situacion
     End If
     
-    With rsAnalisisSituacionDeDeuda
+    With rsAnalisisSituacionDeuda
         If .State = 1 Then .Close
-        .Open "SELECT codalumno as Alumno, Cuota, Deuda, fechaCompromiso as Compromiso, LPA FROM marcas WHERE cantidadcuotas=" & CuotasDebidas & " and pago=0 ORDER BY codalumno", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT codalumno as Alumno, Cuota, Deuda, fechaCompromiso as Compromiso, LPA FROM marcas WHERE cantidadcuotas=" & CuotasDebidas & " AND pago=0 ORDER BY codalumno", Cn, adOpenDynamic, adLockPessimistic
     End With
-    Set grilla.DataSource = rsAnalisisSituacionDeDeuda
+    Set grilla.DataSource = rsAnalisisSituacionDeuda
     formatoGrilla
 End Sub
 

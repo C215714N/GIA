@@ -198,7 +198,7 @@ Begin VB.Form frmMarcas
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   126091265
+         Format          =   271843329
          CurrentDate     =   41345
       End
       Begin MSComCtl2.DTPicker dtpDesde 
@@ -219,7 +219,7 @@ Begin VB.Form frmMarcas
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   126091265
+         Format          =   271843329
          CurrentDate     =   41345
       End
       Begin VB.CheckBox chkAbona 
@@ -491,19 +491,19 @@ Private Sub cmdBuscar_Click()
     With rsMarcas
         If .State = 1 Then .Close
         If chkLlama.Value = 1 And chkPasa.Value = 0 And chkAbona.Value = 0 Then
-            .Open "SELECT codalumno as [Codigo],fechacompromiso as [Compromiso],LPA, Fechagestion as [Gestion] FROM marcas WHERE LPA = 'L' and fechacompromiso >= #" & fecha1 & "# and fechacompromiso <= #" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT codalumno as [Codigo],fechacompromiso as [Compromiso],LPA, Fechagestion as [Gestion] FROM marcas WHERE LPA = 'L' AND fechacompromiso BETWEEN #" & fecha1 & "# AND #" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
         ElseIf chkLlama.Value = 0 And chkPasa.Value = 1 And chkAbona.Value = 0 Then
-            .Open "SELECT codalumno as [Codigo],fechacompromiso as [Compromiso],LPA, Fechagestion as [Gestion] FROM marcas WHERE LPA = 'P' and fechacompromiso >= #" & fecha1 & "# and fechacompromiso <= #" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT codalumno as [Codigo],fechacompromiso as [Compromiso],LPA, Fechagestion as [Gestion] FROM marcas WHERE LPA = 'P' AND fechacompromiso BETWEEN #" & fecha1 & "# AND #" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
         ElseIf chkLlama.Value = 0 And chkPasa.Value = 0 And chkAbona.Value = 1 Then
-            .Open "SELECT codalumno as [Codigo],fechacompromiso as [Compromiso],LPA, Fechagestion as [Gestion] FROM marcas WHERE LPA = 'A' and fechacompromiso >= #" & fecha1 & "# and fechacompromiso <= #" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT codalumno as [Codigo],fechacompromiso as [Compromiso],LPA, Fechagestion as [Gestion] FROM marcas WHERE LPA = 'A' AND fechacompromiso BETWEEN #" & fecha1 & "# AND #" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
         ElseIf chkLlama.Value = 1 And chkPasa.Value = 1 And chkAbona.Value = 0 Then
-            .Open "SELECT codalumno as [Codigo],fechacompromiso as [Compromiso],LPA, Fechagestion as [Gestion] FROM marcas WHERE LPA = 'L' or LPA= 'P' and fechacompromiso >= #" & fecha1 & "# and fechacompromiso <= #" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT codalumno as [Codigo],fechacompromiso as [Compromiso],LPA, Fechagestion as [Gestion] FROM marcas WHERE LPA = 'L' or LPA= 'P' AND fechacompromiso BETWEEN #" & fecha1 & "# AND #" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
         ElseIf chkLlama.Value = 1 And chkPasa.Value = 0 And chkAbona.Value = 1 Then
-            .Open "SELECT codalumno as [Codigo],fechacompromiso as [Compromiso],LPA, Fechagestion as [Gestion] FROM marcas WHERE LPA = 'L'or LPA='A' and fechacompromiso >= #" & fecha1 & "# and fechacompromiso <= #" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT codalumno as [Codigo],fechacompromiso as [Compromiso],LPA, Fechagestion as [Gestion] FROM marcas WHERE LPA = 'L'or LPA='A' AND fechacompromiso BETWEEN #" & fecha1 & "# AND #" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
         ElseIf chkLlama.Value = 0 And chkPasa.Value = 1 And chkAbona.Value = 1 Then
-            .Open "SELECT codalumno as [Codigo],fechacompromiso as [Compromiso],LPA, Fechagestion as [Gestion] FROM marcas WHERE LPA = 'P'or LPA='A' and fechacompromiso >= #" & fecha1 & "# and fechacompromiso <= #" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT codalumno as [Codigo],fechacompromiso as [Compromiso],LPA, Fechagestion as [Gestion] FROM marcas WHERE LPA = 'P'or LPA='A' AND fechacompromiso BETWEEN #" & fecha1 & "# AND #" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
         Else
-            .Open "SELECT codalumno as [Codigo],fechacompromiso as [Compromiso],LPA, Fechagestion as [Gestion] FROM marcas WHERE fechacompromiso >= #" & fecha1 & "# and fechacompromiso <= #" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT codalumno as [Codigo],fechacompromiso as [Compromiso],LPA, Fechagestion as [Gestion] FROM marcas WHERE fechacompromiso BETWEEN #" & fecha1 & "# AND #" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
         End If
     End With
 
@@ -617,7 +617,7 @@ Private Sub Form_Load()
     dtpDesde.Value = Date
     dtpHasta.Value = Date
     Adodc.CursorLocation = adUseClient
-    Adodc.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=T:\Base.mdb;Persist Security Info=False;Jet OLEDB:Database Password=ascir"
+    Adodc.ConnectionString = DbCon
     Label6.Caption = ""
 End Sub
 

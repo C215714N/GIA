@@ -111,7 +111,7 @@ Begin VB.Form frmPlanDePagos
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   131530753
+      Format          =   272171009
       CurrentDate     =   41323
    End
    Begin VB.TextBox txtNroCuota 
@@ -150,7 +150,7 @@ Begin VB.Form frmPlanDePagos
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   237109249
+      Format          =   272171009
       CurrentDate     =   41323
    End
    Begin isButtonTest.isButton cmdCrearPlan 

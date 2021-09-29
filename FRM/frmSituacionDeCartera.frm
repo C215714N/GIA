@@ -36,7 +36,7 @@ Begin VB.Form frmSituacionDeCartera
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   127926273
+      Format          =   272171009
       CurrentDate     =   41624
    End
    Begin VB.Frame Frame1 
@@ -517,7 +517,7 @@ Private Sub cmdBuscar_Click()
     '''Situacion de Cartera - CARGA
         With rsSituacionDeCartera
             If .State = 1 Then .Close
-            .Open "SELECT cantidadcuotas * 30 -30 , count(codalumno), sum(deuda), sum(cobrado), sum(pago), Round(sum(cobrado) * 100 / sum(deuda),2), sum(deuda)-sum(cobrado) FROM marcas WHERE cantidadcuotas > 0 group by cantidadcuotas", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT cantidadcuotas * 30 -30 , count(codalumno), sum(deuda), sum(cobrado), sum(pago), Round(sum(cobrado) * 100 / sum(deuda),2), sum(deuda)-sum(cobrado) FROM marcas WHERE cantidadcuotas > 0 GROUP BY cantidadcuotas", Cn, adOpenDynamic, adLockPessimistic
             .MoveFirst
             Do Until .EOF
                 alumnos = alumnos + !expr1001
@@ -542,7 +542,7 @@ Private Sub cmdBuscar_Click()
         End With
         With rsSituacionDeCartera
             If .State = 1 Then .Close
-            .Open "SELECT cantidadcuotas * 30 -30 as Dias, count(codalumno) as [Alumnos], sum(deuda) as Deuda, sum(cobrado) as [Cobranza], sum(pago) as [Cant], Round(sum(cobrado) * 100 / sum(deuda)) as [%], sum(deuda)-sum(cobrado) as [Resta] FROM marcas WHERE cantidadcuotas > 0 group by cantidadcuotas", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT cantidadcuotas * 30 -30 as Dias, count(codalumno) as [Alumnos], sum(deuda) as Deuda, sum(cobrado) as [Cobranza], sum(pago) as [Cant], Round(sum(cobrado) * 100 / sum(deuda)) as [%], sum(deuda)-sum(cobrado) as [Resta] FROM marcas WHERE cantidadcuotas > 0 GROUP BY cantidadcuotas", Cn, adOpenDynamic, adLockPessimistic
         End With
         cmdAnalizar.Enabled = True
         

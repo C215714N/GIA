@@ -207,7 +207,7 @@ Begin VB.Form frmLibroOperador
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   152961025
+         Format          =   107413505
          CurrentDate     =   41580
       End
       Begin isButtonTest.isButton cmdBuscar 
@@ -291,7 +291,7 @@ Private Sub cmdAsistencia_Click()
     ''' graba el presente
     With rsAsistencia
         If .State = 1 Then .Close
-        .Open "SELECT * FROM reservas WHERE codalumno=" & Int(Grilla.Columns(0).Text) & "and hora='" & cmbHora.Text & "' and fecha=#" & fecha & "#", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT * FROM reservas WHERE codalumno=" & Int(grilla.Columns(0).Text) & "and hora='" & cmbHora.Text & "' AND fecha=#" & fecha & "#", Cn, adOpenDynamic, adLockPessimistic
         .MoveFirst
         !pa = txtAsistencia.Text
         .UpdateBatch
@@ -309,46 +309,46 @@ Private Sub cmdBuscar_Click()
     If cmbHora.Text = "" Then MsgBox "Primero debe elegir un horario de turno", vbOKOnly + vbCritical, "Libro de Aula de las Reservas": cmbHora.SetFocus: Exit Sub
     
     ''' asigna formato fecha a la variable para la busqueda
-    fecha = Format(dtpFecha.Value, "mm/dd/yyyy")
+    fecha = Format(DTPFecha.Value, "mm/dd/yyyy")
     
     '''consulta de reservas
     With rsReservas
         If .State = 1 Then .Close
-        .Open "SELECT codalumno as Codigo,nya as [Apellido y Nombre], pa as [P / A] FROM Reservas WHERE fecha=#" & fecha & "# and hora='" & cmbHora.Text & "' ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT codalumno as Codigo,nya as [Apellido y Nombre], pa as [P / A] FROM Reservas WHERE fecha=#" & fecha & "# AND hora='" & cmbHora.Text & "' ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
     End With
     
     '''muestra consulta en grilla
-    Set Grilla.DataSource = rsReservas
+    Set grilla.DataSource = rsReservas
     formatoGrilla
     cmdAsistencia.Enabled = False
 End Sub
 
 Private Sub Form_Load()
     Centrar Me
-    dtpFecha.Value = Date
+    DTPFecha.Value = Date
 End Sub
 
 Private Sub grilla_Click()
     txtAsistencia.Enabled = True
-    txtAsistencia.Text = Grilla.Columns(2).Text
+    txtAsistencia.Text = grilla.Columns(2).Text
     txtAsistencia.Visible = True
     txtAsistencia.SetFocus
     cmdAsistencia.Enabled = True
-    lblasistencia.Visible = True
+    lblAsistencia.Visible = True
 End Sub
 
 Private Sub grilla_DblClick()
     frmLibro.Show
     frmLibro.lblFormulario.Caption = Me.Caption
     
-    CodAlumno = frmLibroOperador.Grilla.Columns(0).Text
+    CodAlumno = frmLibroOperador.grilla.Columns(0).Text
  
     With rsVerificaciones
         If .State = 1 Then .Close
         .Open "SELECT  nya, FechaVerif,cuotas ,capac FROM verificaciones WHERE codalumno=" & CodAlumno, Cn, adOpenDynamic, adLockPessimistic
         frmLibro.lblCodAlumno.Caption = CodAlumno
         frmLibro.lblAlumno.Caption = !NyA
-        frmLibro.lblFecha.Caption = !FechaVerif
+        frmLibro.lblfecha.Caption = !FechaVerif
         frmLibro.lblDuracion.Caption = !cuotas & " Meses"
         frmLibro.lblCapacitacion.Caption = !capac
     End With
@@ -358,7 +358,7 @@ Private Sub grilla_DblClick()
         .Open "SELECT numClase as [N°],Fecha,Tema FROM librodeaula WHERE codalumno=" & CodAlumno & " ORDER BY NumClase", Cn, adOpenDynamic, adLockPessimistic
     End With
     
-    Set frmLibro.Grilla.DataSource = rsLibro
+    Set frmLibro.grilla.DataSource = rsLibro
         frmLibro.formatoGrilla
     Me.Enabled = False
     Exit Sub
@@ -377,6 +377,6 @@ Sub formatoGrilla()
         Else:
             w = 400 * (N + 2)
         End If
-        Grilla.Columns(N).Width = w
+        grilla.Columns(N).Width = w
     Next
 End Sub

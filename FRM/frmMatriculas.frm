@@ -187,7 +187,7 @@ Begin VB.Form frmMatriculas
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   237043713
+         Format          =   107741185
          CurrentDate     =   42089
       End
       Begin MSComCtl2.DTPicker dtpHasta 
@@ -208,7 +208,7 @@ Begin VB.Form frmMatriculas
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   237043713
+         Format          =   107741185
          CurrentDate     =   42089
       End
       Begin isButtonTest.isButton cmdBuscar 
@@ -368,12 +368,12 @@ Private Sub cmbBuscar_Click()
             If .State = 1 Then .Close: ActualizarMatriculas = False
         End If
 
-        .Open "SELECT sum(matriculas.totalMatricula) as [Matricula],sum(Abonado) as [Abono], sum(Debe) as [Debe] FROM matriculas,suscripciones WHERE matriculas.id=suscripciones.id and fechasus>=#" & desde & "# and fechasus<=#" & hasta & "#", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT sum(matriculas.totalMatricula) as [Matricula],sum(Abonado) as [Abono], sum(Debe) as [Debe] FROM matriculas,suscripciones WHERE matriculas.id=suscripciones.id AND fechasus BETWEEN #" & desde & "# AND #" & hasta & "#", Cn, adOpenDynamic, adLockPessimistic
         lblTotalMatricula.Caption = FormatCurrency(!matricula)
         lblTotalAbonado.Caption = FormatCurrency(!Abono)
         lblTotalDebe.Caption = FormatCurrency(!Debe)
         .Close
-        .Open "SELECT nya as [Alumno],matriculas.totalMatricula as [Matricula],Abonado, Debe, matriculas.Observaciones,matriculas.id,suscripciones.id FROM matriculas,suscripciones WHERE matriculas.id=suscripciones.id and fechasus>=#" & desde & "# and fechasus<=#" & hasta & "#", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT nya as [Alumno],matriculas.totalMatricula as [Matricula],Abonado, Debe, matriculas.Observaciones,matriculas.id,suscripciones.id FROM matriculas,suscripciones WHERE matriculas.id=suscripciones.id AND fechasus BETWEEN #" & desde & "# AND #" & hasta & "#", Cn, adOpenDynamic, adLockPessimistic
         Set grilla.DataSource = rsMatriculas
     End With
     formatoGrilla

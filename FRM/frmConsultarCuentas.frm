@@ -317,7 +317,7 @@ Begin VB.Form frmConsultarCuentas
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   107282433
+      Format          =   272695297
       CurrentDate     =   41334
    End
    Begin MSComCtl2.DTPicker dtpHasta 
@@ -338,7 +338,7 @@ Begin VB.Form frmConsultarCuentas
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   107282433
+      Format          =   272695297
       CurrentDate     =   41332
    End
    Begin isButtonTest.isButton cmdBuscar 
@@ -447,7 +447,7 @@ Private Sub Form_Load()
     dtpDesde.Value = Date
     dtpHasta.Value = Date
     Adodc.CursorLocation = adUseClient
-    Adodc.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=T:\base.mdb;Persist Security Info=False;Jet OLEDB:Database Password=ascir"
+    Adodc.ConnectionString = DbCon
 End Sub
 
 Private Sub cmdBuscar_Click()
@@ -461,12 +461,12 @@ Private Sub cmdBuscar_Click()
 ''' consulta cuentas en las fechas y muestra en grilla
     
     If Clave = "cobranza" Then
-        Adodc.RecordSource = "SELECT Cuenta, round(sum(Debe),2) as [DEBE], round(sum(Haber),2) AS [HABER] FROM contabilidad WHERE cuenta='CAJA ADMINISTRACION' and Fecha>= #" & fecha1 & "# And Fecha<= #" & fecha2 & "# and detalle like 'alumno %' or cuenta='Descuento' and Fecha>=#" & fecha1 & "# And Fecha<=#" & fecha2 & "# and detalle like 'alumno %' or cuenta='ARANCELES CURSOS' and Fecha>=#" & fecha1 & "# and Fecha<= #" & fecha2 & "# group by cuenta"
+        Adodc.RecordSource = "SELECT Cuenta, round(sum(Debe),2) as [DEBE], round(sum(Haber),2) AS [HABER] FROM contabilidad WHERE cuenta='CAJA ADMINISTRACION' AND Fecha BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# AND detalle like 'alumno %' or cuenta='Descuento' AND Fecha BETWEEN#" & fecha1 & "# AND #" & fecha2 & "# AND detalle LIKE 'alumno %' or cuenta='ARANCELES CURSOS' AND Fecha BETWEEN#" & fecha1 & "# AND #" & fecha2 & "# GROUP BY cuenta"
         Adodc.Refresh
         Set grilla.DataSource = Adodc
         grilla.Columns(0).Width = 3000
     Else
-        Adodc.RecordSource = "SELECT Cuenta, sum(Debe) as [DEBE], sum(Haber) as [HABER] FROM contabilidad WHERE  Fecha>= #" & fecha1 & "# And Fecha<= #" & fecha2 & "# group by cuenta"
+        Adodc.RecordSource = "SELECT Cuenta, sum(Debe) as [DEBE], sum(Haber) as [HABER] FROM contabilidad WHERE  Fecha BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# GROUP BY cuenta"
         Adodc.Refresh
         Set grilla.DataSource = Adodc
         grilla.Columns(0).Width = 3000
@@ -524,7 +524,7 @@ If rsCuentas!tipo = "DEBE" Then
     
     With rsContabilidad
         If .State = 1 Then .Close
-        .Open "SELECT sum(debe)-sum(haber) FROM contabilidad WHERE cuenta='" & grilla.Columns(0).Text & "' and fecha<#" & fecha1 & "#", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT sum(debe)-sum(haber) FROM contabilidad WHERE cuenta='" & grilla.Columns(0).Text & "' AND fecha<#" & fecha1 & "#", Cn, adOpenDynamic, adLockPessimistic
         On Error GoTo Error
         SaldoAnterior = !expr1000
         lblSaldoActual.Caption = FormatCurrency(SaldoAnterior + SaldoDeudor - SaldoAcreedor)
@@ -541,7 +541,7 @@ Error:
 Else
     With rsContabilidad
         If .State = 1 Then .Close
-        .Open "SELECT sum(haber)-sum(debe) FROM contabilidad WHERE cuenta='" & grilla.Columns(0).Text & "' and fecha<#" & fecha1 & "#", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT sum(haber)-sum(debe) FROM contabilidad WHERE cuenta='" & grilla.Columns(0).Text & "' AND fecha<#" & fecha1 & "#", Cn, adOpenDynamic, adLockPessimistic
         On Error GoTo error2
         SaldoAnterior = !expr1000
         lblSaldoActual.Caption = FormatCurrency(SaldoAnterior + SaldoAcreedor - SaldoDeudor)

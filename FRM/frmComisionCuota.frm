@@ -362,67 +362,67 @@ Private Sub cmdAceptar_Click()
         If .State = 1 Then .Close
         .Open "SELECT * FROM contabilidad", Cn, adOpenDynamic, adLockPessimistic
     ''' Movimientos de Caja
-        '''CAJA ADMINISTRAcion (Parcial 1Â° Cuota - DEBE)
+        '''CAJA ADMINISTRACION (Parcial 1° Cuota - DEBE)
             .AddNew
             !fecha = Date
-            !cuenta = "CAJA ADMINISTRAcion"
-            !Detalle = "Parcial de 1Â° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
+            !Cuenta = "CAJA ADMINISTRACION"
+            !Detalle = "Parcial de 1° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
             !Debe = Int(lblTotalCuota1.Caption) - Int(txtPagoParcial.Text)
             !Haber = Null
             !nrofactura = txtNroFactura.Text
             !CodAlumno = Int(frmPlanDePagos.lblCodAlumno.Caption)
             !NroCuota = 1
             .Update
-        '''DESCUENTO (Parcial 1Â° Cuota - HABER)
+        '''DESCUENTO (Parcial 1° Cuota - HABER)
             .Requery
             .AddNew
             !fecha = Date
-            !cuenta = "Descuento"
-            !Detalle = "Parcial de 1Â° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
+            !Cuenta = "Descuento"
+            !Detalle = "Parcial de 1° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
             !Debe = Int(txtPagoParcial.Text)
             !nrofactura = txtNroFactura.Text
             !Haber = Null
             !CodAlumno = Int(frmPlanDePagos.lblCodAlumno.Caption)
             !NroCuota = 1
             .Update
-        '''COMISION COORDINADOR (Comision 1Â° Cuota - DEBE)
+        '''COMISION COORDINADOR (Comision 1° Cuota - DEBE)
             .AddNew
             !fecha = Date
-            !cuenta = "COMISIONES VARIAS"
-            !Detalle = "Comision Coord. 1Â° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
+            !Cuenta = "COMISIONES VARIAS"
+            !Detalle = "Comision Coord. 1° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
             !Debe = Int(txtCoordinador.Text)
             !Haber = Null
             !CodAlumno = Null
             !NroCuota = Null
             .Update
-        '''CAJA ADMINISTRAcion (Comision 1Â° Cuota - HABER)
+        '''CAJA ADMINISTRACION (Comision 1° Cuota - HABER)
             .Requery
             .AddNew
             !fecha = Date
-            !cuenta = "CAJA ADMINISTRAcion"
-            !Detalle = "Comision Coord. 1Â° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
+            !Cuenta = "CAJA ADMINISTRACION"
+            !Detalle = "Comision Coord. 1° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
             !Debe = Null
             !Haber = Int(txtCoordinador.Text)
             !CodAlumno = Null
             !NroCuota = Null
             .Update
-        '''COMISION ASESOR (Comision 1Â° Cuota - DEBE)
+        '''COMISION ASESOR (Comision 1° Cuota - DEBE)
             .Requery
             .AddNew
             !fecha = Date
-            !cuenta = "HONORARIOS ASESORES"
-            !Detalle = "Comision de 1Â° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
+            !Cuenta = "HONORARIOS ASESORES"
+            !Detalle = "Comision de 1° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
             !Debe = Int(lblComisionAsesor.Caption)
             !Haber = Null
             !CodAlumno = Null
             !NroCuota = Null
             .Update
-        '''CAJA ADMINISTRAcion (Comision 1Â° Cuota - HABER)
+        '''CAJA ADMINISTRACION (Comision 1° Cuota - HABER)
             .Requery
             .AddNew
             !fecha = Date
-            !cuenta = "CAJA ADMINISTRAcion"
-            !Detalle = "Comision de 1Â° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
+            !Cuenta = "CAJA ADMINISTRACION"
+            !Detalle = "Comision de 1° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
             !Debe = Null
             !Haber = Int(lblComisionAsesor.Caption)
             !CodAlumno = Null

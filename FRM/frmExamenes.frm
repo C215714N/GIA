@@ -54,7 +54,7 @@ Begin VB.Form frmExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   165347329
+         Format          =   271974401
          CurrentDate     =   41978
       End
       Begin VB.TextBox txtPromedio 
@@ -438,7 +438,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub Form_Load()
     Centrar Me
-    dtpFecha.Value = Date
+    DTPFecha.Value = Date
 End Sub
 
 Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
@@ -491,7 +491,7 @@ Private Sub cmdAgregar_Click()
             .Requery
             .AddNew
             !CodAlumno = Int(txtCodigo.Text)
-            !fecha = dtpFecha.Value
+            !fecha = DTPFecha.Value
             !T = txtTeorico.Text
             !P = txtPractico.Text
             !F = txtPromedio.Text
@@ -528,7 +528,7 @@ Private Sub cmdAgregar_Click()
                 .Requery
                 .AddNew
                 !CodAlumno = Int(txtCodigo.Text)
-                !fecha = dtpFecha.Value
+                !fecha = DTPFecha.Value
                 .Update
             End With
             With rsVerificaciones

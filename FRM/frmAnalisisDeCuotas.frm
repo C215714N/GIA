@@ -727,7 +727,7 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
         frmCuotasXFecha.formatoGrilla
     ElseIf Label11.Caption = "frmAnalisisSituacion" Then
         frmAnalisisSituacion.Enabled = True
-        rsAnalisisSituacionDeDeuda.Requery
+        rsAnalisisSituacionDeuda.Requery
         frmAnalisisSituacion.grilla.Columns(2).Width = 800
     ElseIf Label11.Caption = "frmMarcas" Then
         frmMarcas.Enabled = True

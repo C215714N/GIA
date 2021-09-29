@@ -193,7 +193,7 @@ Begin VB.Form frmCobranza
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   171442177
+      Format          =   107413505
       CurrentDate     =   41326
    End
    Begin VB.TextBox txtFechaVto 
@@ -546,8 +546,8 @@ Private Sub Form_Load()
     Centrar Me
     PlanDePago
     Adodc.CursorLocation = adUseClient
-    Adodc.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=T:\base.mdb;Persist Security Info=False;Jet OLEDB:Database Password=ascir"
-    Adodc.RecordSource = "SELECT id, codalumno, nya, nrocuota as [N°], fechavto as [Vencimiento], fechapago As [Fecha Pago], tipodepago, recibo, deuda As Monto, recargoxfecha, recargoxmes, deudatotal, totalcobrado, cuotasdebidas, observaciones, campo1, campo2 FROM plandepago WHERE codalumno =" & frmBuscarCobranza.grilla.Columns(0).Text & " ORDER BY nrocuota"
+    Adodc.ConnectionString = DbCon
+    Adodc.RecordSource = "SELECT id, codalumno AS [Codigo], nya AS [Alumno], nrocuota as [N°], fechavto as [Vto], fechapago As [Fecha Pago], tipodepago, recibo, deuda As Monto, recargoxfecha, recargoxmes, deudatotal, totalcobrado, cuotasdebidas, observaciones, campo1, campo2 FROM plandepago WHERE codalumno =" & frmBuscarCobranza.grilla.Columns(0).Text & " ORDER BY nrocuota"
     Adodc.Refresh
     Set grilla.DataSource = Adodc
     formatoGrilla

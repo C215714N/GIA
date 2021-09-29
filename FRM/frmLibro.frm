@@ -589,7 +589,7 @@ On Error GoTo LineaError
         With rsLibro
             fecha = Format(Label10.Caption, "mm/dd/yyyy")
             .Close
-            .Open "SELECT numClase as [N°],Fecha,Tema FROM librodeaula WHERE codalumno=" & CodAlumno & " and fecha=#" & fecha & "#", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT numClase as [N°],Fecha,Tema FROM librodeaula WHERE codalumno=" & CodAlumno & " AND fecha=#" & fecha & "#", Cn, adOpenDynamic, adLockPessimistic
             .MoveFirst
                 !N° = Int(txtNumClase.Text)
                 !Tema = txtTema.Text
@@ -620,7 +620,7 @@ Private Sub cmdEliminar_Click()
     fecha = Format(Label10.Caption, "mm/dd/yyyy")
     With rsLibro
         .Close
-        .Open "SELECT numClase as [N°],Fecha,Tema FROM librodeaula WHERE codalumno=" & CodAlumno & " and numclase=" & Int(txtNumClase.Text) & " and fecha=#" & fecha & "#", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT numClase as [N°],Fecha,Tema FROM librodeaula WHERE codalumno=" & CodAlumno & " AND numclase=" & Int(txtNumClase.Text) & " AND fecha=#" & fecha & "#", Cn, adOpenDynamic, adLockPessimistic
         .MoveFirst
         .Delete
         .Requery

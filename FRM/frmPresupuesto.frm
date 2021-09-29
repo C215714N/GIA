@@ -269,7 +269,7 @@ Begin VB.Form frmPresupuesto
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "yyyy"
-         Format          =   272171011
+         Format          =   127270915
          CurrentDate     =   36526
          MaxDate         =   401876
          MinDate         =   36526
@@ -391,17 +391,17 @@ Private Sub cmbMonth_Click()
         Else
             If .State = 1 Then .Close: ActualizarPresupuesto = False
         End If
-        .Open "SELECT sum(deuda) FROM presupuesto WHERE mes='" & cmbMonth.Text & "' and Año=" & Year(dtpYear.Value), Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT sum(deuda) FROM presupuesto WHERE mes='" & cmbMonth.Text & "' AND Año=" & Year(dtpYear.Value), Cn, adOpenDynamic, adLockPessimistic
         lblDeuda.Caption = Format(!expr1000, "currency")
         .Close
-        .Open "SELECT sum(pagado) FROM presupuesto WHERE mes='" & cmbMonth.Text & "' and Año=" & Year(dtpYear.Value), Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT sum(pagado) FROM presupuesto WHERE mes='" & cmbMonth.Text & "' AND Año=" & Year(dtpYear.Value), Cn, adOpenDynamic, adLockPessimistic
         lblPagado.Caption = Format(!expr1000, "currency")
         .Close
-        .Open "SELECT sum(saldo) FROM presupuesto WHERE mes='" & cmbMonth.Text & "' and Año=" & Year(dtpYear.Value), Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT sum(saldo) FROM presupuesto WHERE mes='" & cmbMonth.Text & "' AND Año=" & Year(dtpYear.Value), Cn, adOpenDynamic, adLockPessimistic
         lblSaldo.Caption = Format(!expr1000, "currency")
         .Close
-        .Open "SELECT Cuenta,Deuda,Pagado,Saldo,Observaciones,id FROM presupuesto WHERE mes='" & cmbMonth.Text & "' and Año=" & Year(dtpYear.Value) & " ORDER BY cuenta", Cn, adOpenDynamic, adLockPessimistic
-        Set Grilla.DataSource = rsPresupuesto
+        .Open "SELECT Cuenta,Deuda,Pagado,Saldo,Observaciones,id FROM presupuesto WHERE mes='" & cmbMonth.Text & "' AND Año=" & Year(dtpYear.Value) & " ORDER BY cuenta", Cn, adOpenDynamic, adLockPessimistic
+        Set grilla.DataSource = rsPresupuesto
     End With
     formatoGrilla
     cmdInforme.Enabled = True
@@ -426,17 +426,17 @@ Private Sub dtpYear_Change()
         Else
             If .State = 1 Then .Close: ActualizarPresupuesto = False
         End If
-        .Open "SELECT sum(deuda) FROM presupuesto WHERE mes='" & cmbMonth.Text & "' and Año=" & Year(dtpYear.Value), Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT sum(deuda) FROM presupuesto WHERE mes='" & cmbMonth.Text & "' AND Año=" & Year(dtpYear.Value), Cn, adOpenDynamic, adLockPessimistic
         lblDeuda.Caption = Format(!expr1000, "currency")
         .Close
-        .Open "SELECT sum(pagado) FROM presupuesto WHERE mes='" & cmbMonth.Text & "' and Año=" & Year(dtpYear.Value), Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT sum(pagado) FROM presupuesto WHERE mes='" & cmbMonth.Text & "' AND Año=" & Year(dtpYear.Value), Cn, adOpenDynamic, adLockPessimistic
         lblPagado.Caption = Format(!expr1000, "currency")
         .Close
-        .Open "SELECT sum(saldo) FROM presupuesto WHERE mes='" & cmbMonth.Text & "' and Año=" & Year(dtpYear.Value), Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT sum(saldo) FROM presupuesto WHERE mes='" & cmbMonth.Text & "' AND Año=" & Year(dtpYear.Value), Cn, adOpenDynamic, adLockPessimistic
         lblSaldo.Caption = Format(!expr1000, "currency")
         .Close
-        .Open "SELECT Cuenta,Deuda,Pagado,Saldo,Observaciones,id FROM presupuesto WHERE mes='" & cmbMonth.Text & "' and Año=" & Year(dtpYear.Value) & " ORDER BY cuenta", Cn, adOpenDynamic, adLockPessimistic
-        Set Grilla.DataSource = rsPresupuesto
+        .Open "SELECT Cuenta,Deuda,Pagado,Saldo,Observaciones,id FROM presupuesto WHERE mes='" & cmbMonth.Text & "' AND Año=" & Year(dtpYear.Value) & " ORDER BY cuenta", Cn, adOpenDynamic, adLockPessimistic
+        Set grilla.DataSource = rsPresupuesto
     End With
     formatoGrilla
     cmdInforme.Enabled = True
@@ -444,10 +444,10 @@ End Sub
 
 Private Sub grilla_KeyPress(KeyAscii As Integer)
     ActualizarPresupuesto = True
-    If KeyAscii = 13 And Grilla.Col = 2 Then
-        Grilla.Columns(3).Text = Grilla.Columns(1).Text - Grilla.Columns(2).Text
-    ElseIf KeyAscii = 13 And Grilla.Col = 1 Then
-        Grilla.Columns(3).Text = Grilla.Columns(1).Text - Grilla.Columns(2).Text
+    If KeyAscii = 13 And grilla.Col = 2 Then
+        grilla.Columns(3).Text = grilla.Columns(1).Text - grilla.Columns(2).Text
+    ElseIf KeyAscii = 13 And grilla.Col = 1 Then
+        grilla.Columns(3).Text = grilla.Columns(1).Text - grilla.Columns(2).Text
     End If
 End Sub
 
@@ -461,6 +461,6 @@ Private Sub formatoGrilla()
         Else:
             w = 2400
         End If
-        Grilla.Columns(N).Width = w
+        grilla.Columns(N).Width = w
     Next
 End Sub

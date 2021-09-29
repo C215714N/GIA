@@ -178,11 +178,11 @@ Begin VB.MDIForm MDI
          NumPanels       =   5
          BeginProperty Panel1 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   6
-            TextSave        =   "11/8/2021"
+            TextSave        =   "29/9/2021"
          EndProperty
          BeginProperty Panel2 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   5
-            TextSave        =   "19:23"
+            TextSave        =   "00:42"
          EndProperty
          BeginProperty Panel3 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   2
@@ -480,7 +480,7 @@ Private Sub subBackUp_Click()
 '''    FrmBackup.Show
     Dim Origen As String
     Dim Destino As String
-    Origen = "T:\base.mdb"
+    Origen = "" & DB & ""
     Destino = "T:\CopiaBase.mdb"
     If MsgBox("¿Realizar Copia de Seguridad?", vbQuestion + vbYesNo, "Gestion Integral del Alumno") = vbYes Then
             Set Fs = CreateObject("Scripting.FileSystemObject")
@@ -673,7 +673,7 @@ End Sub
 Private Sub subRestaurar_Click()
     Dim Origen As String
     Dim Destino As String
-    Origen = "T:\base.mdb"
+    Origen = "" & DB & ""
     Destino = "T:\CopiaBase.mdb"
     If MsgBox("¿Restaurar Copia de Seguridad?", vbQuestion + vbYesNo, "Gestion Integral del Alumno") = vbYes Then
             Set Fs = CreateObject("Scripting.FileSystemObject")

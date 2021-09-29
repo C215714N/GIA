@@ -243,7 +243,7 @@ Private Sub cmdAceptar_Click()
     With rsPersonal
         If .BOF Or .EOF Then Exit Sub
         .Requery
-        .Find "NyA='" & Grilla.Columns(0).Text & "'"
+        .Find "NyA='" & grilla.Columns(0).Text & "'"
         frmPersonal.lblID.Caption = !ID
         frmPersonal.txtNya.Text = !NyA
         frmPersonal.txtDNI.Text = !dni
@@ -269,9 +269,9 @@ Private Sub Form_Load()
     Centrar Me
     Dim busca As String
     Adodc.CursorLocation = adUseClient
-    Adodc.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=T:\base.mdb;Persist Security Info=False;Jet OLEDB:Database Password=ascir"
+    Adodc.ConnectionString = DbCon
     Adodc.RecordSource = "SELECT nya as [Apellido y Nombres],Direccion,Localidad, Telcasa as [Telefono Casa], telcel as Celular, Cargo FROM personal WHERE [nya] like '" & busca & "'"
-    Set Grilla.DataSource = Adodc
+    Set grilla.DataSource = Adodc
     formatoGrilla
 End Sub
 
@@ -299,7 +299,7 @@ Sub formatoGrilla()
             w = 3400 - (N * 100)
         Else:
             w = 0
-        Grilla.Columns(N).Width = w
+        grilla.Columns(N).Width = w
         End If
     Next
 End Sub

@@ -157,7 +157,7 @@ Begin VB.Form frmInformeBajas
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   132120577
+         Format          =   272629761
          CurrentDate     =   42108
       End
       Begin MSComCtl2.DTPicker dtpDesde 
@@ -178,7 +178,7 @@ Begin VB.Form frmInformeBajas
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   237568001
+         Format          =   272629761
          CurrentDate     =   42108
       End
       Begin isButtonTest.isButton cmdBuscar 
@@ -297,8 +297,7 @@ Private Sub cmdBuscar_Click()
 
     With rsBajas
         If .State = 1 Then .Close
-        '.Open "SELECT distinct p.CodAlumno,p.Nya as Alumno,capac as Curso,Deuda as [Valor de Cuota],datediff('m',fechapago,now)*-30 as [Sit Cartera],(SELECT min(nrocuota) FROM plandepago as p, bajas as b,verificaciones as v WHERE tipodepago='BAJA' and p.codalumno=b.codalumno and p.codalumno=v.codalumno) as [N° Cuota],Fecha,Motivo,PagoBaja FROM plandepago as p,verificaciones as v,bajas as b WHERE v.codalumno=p.codalumno and v.codalumno=b.codalumno and fechapago>=#" & fecha1 & "# and fechapago<=#" & fecha2 & "# and tipodepago='BAJA' ORDER BY fecha,p.codalumno", cn, adOpenDynamic, adLockPessimistic
-        .Open "SELECT distinct v.CodAlumno,v.nya as Alumno, capac as Curso,Deuda as [Valor de Cuota],sitcartera *-1 as [Sit Cartera], b.NroCuota,Fecha,Motivo, PagoBaja FROM verificaciones as v,bajas as b,plandepago WHERE v.codalumno=b.codalumno and v.codalumno=plandepago.codalumno and fechapago>=#" & fecha1 & "# and fechapago<=#" & fecha2 & "# and tipodepago='BAJA' ORDER BY fecha,v.codalumno", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT distinct v.CodAlumno,v.nya as Alumno, capac as Curso,Deuda as [Valor de Cuota],sitcartera * -1 as [Sit Cartera], b.NroCuota,Fecha,Motivo, PagoBaja FROM verificaciones as v,bajas as b,plandepago WHERE v.codalumno=b.codalumno AND v.codalumno=plandepago.codalumno AND fechapago BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# AND tipodepago='BAJA' ORDER BY fecha,v.codalumno", Cn, adOpenDynamic, adLockPessimistic
         Set grilla.DataSource = rsBajas
         If .EOF Or .BOF Then lblCantidadBajas.Caption = "0 Alumnos": cmdImprimir.Enabled = False: Exit Sub
         cmdImprimir.Enabled = True

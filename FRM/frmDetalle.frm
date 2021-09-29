@@ -297,9 +297,9 @@ Private Sub Form_Load()
         With rsContabilidad
             If .State = 1 Then .Close
             If Clave = "cobranza" Then
-                .Open "SELECT Asiento, Fecha, NroFactura as Factura, Detalle, Debe, Haber FROM contabilidad WHERE cuenta='" & frmConsultarCuentas.grilla.Columns(0).Text & "' And  Fecha>= #" & fecha1 & "# And Fecha<= #" & fecha2 & "# and detalle like 'ALUMNO %' ORDER BY Fecha,asiento"
+                .Open "SELECT Asiento, Fecha, NroFactura as Factura, Detalle, Debe, Haber FROM contabilidad WHERE cuenta='" & frmConsultarCuentas.grilla.Columns(0).Text & "' AND  Fecha BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# AND detalle like 'ALUMNO %' ORDER BY Fecha,asiento"
             Else
-                .Open "SELECT Asiento, Fecha, NroFactura as Factura, Detalle, Debe, Haber FROM contabilidad WHERE cuenta='" & frmConsultarCuentas.grilla.Columns(0).Text & "' And  Fecha>= #" & fecha1 & "# And Fecha<= #" & fecha2 & "# ORDER BY Fecha,asiento"
+                .Open "SELECT Asiento, Fecha, NroFactura as Factura, Detalle, Debe, Haber FROM contabilidad WHERE cuenta='" & frmConsultarCuentas.grilla.Columns(0).Text & "' AND  Fecha BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# ORDER BY Fecha,asiento"
             End If
         End With
         ''' carga consulta en grilla y le aplica un formato

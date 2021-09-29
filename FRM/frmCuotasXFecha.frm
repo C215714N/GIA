@@ -10,7 +10,7 @@ Begin VB.Form frmCuotasXFecha
    ClientHeight    =   6090
    ClientLeft      =   3615
    ClientTop       =   2100
-   ClientWidth     =   5310
+   ClientWidth     =   5910
    BeginProperty Font 
       Name            =   "Century Gothic"
       Size            =   9.75
@@ -27,11 +27,11 @@ Begin VB.Form frmCuotasXFecha
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    ScaleHeight     =   6090
-   ScaleWidth      =   5310
+   ScaleWidth      =   5910
    Begin MSAdodcLib.Adodc Adodc 
       Height          =   330
-      Left            =   -1320
-      Top             =   240
+      Left            =   4560
+      Top             =   5880
       Visible         =   0   'False
       Width           =   1455
       _ExtentX        =   2566
@@ -80,8 +80,8 @@ Begin VB.Form frmCuotasXFecha
       Left            =   120
       TabIndex        =   4
       Top             =   780
-      Width           =   3615
-      _ExtentX        =   6376
+      Width           =   4215
+      _ExtentX        =   7435
       _ExtentY        =   9128
       _Version        =   393216
       AllowUpdate     =   0   'False
@@ -146,9 +146,9 @@ Begin VB.Form frmCuotasXFecha
       Height          =   375
       Left            =   120
       TabIndex        =   0
-      Top             =   280
-      Width           =   1695
-      _ExtentX        =   2990
+      Top             =   285
+      Width           =   2055
+      _ExtentX        =   3625
       _ExtentY        =   661
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -160,16 +160,16 @@ Begin VB.Form frmCuotasXFecha
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   106954753
+      Format          =   273285121
       CurrentDate     =   41345
    End
    Begin MSComCtl2.DTPicker dtpHasta 
       Height          =   375
-      Left            =   2040
+      Left            =   2280
       TabIndex        =   1
-      Top             =   280
-      Width           =   1695
-      _ExtentX        =   2990
+      Top             =   285
+      Width           =   2055
+      _ExtentX        =   3625
       _ExtentY        =   661
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -181,12 +181,12 @@ Begin VB.Form frmCuotasXFecha
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   126353409
+      Format          =   273285121
       CurrentDate     =   41345
    End
    Begin isButtonTest.isButton cmdBuscar 
       Height          =   420
-      Left            =   3840
+      Left            =   4440
       TabIndex        =   11
       Top             =   240
       Width           =   1335
@@ -215,7 +215,7 @@ Begin VB.Form frmCuotasXFecha
    End
    Begin isButtonTest.isButton cmdMarcar 
       Height          =   420
-      Left            =   3840
+      Left            =   4440
       TabIndex        =   12
       Top             =   855
       Width           =   1335
@@ -246,7 +246,7 @@ Begin VB.Form frmCuotasXFecha
    End
    Begin isButtonTest.isButton cmdDatos 
       Height          =   420
-      Left            =   3840
+      Left            =   4440
       TabIndex        =   13
       Top             =   1440
       Width           =   1335
@@ -277,7 +277,7 @@ Begin VB.Form frmCuotasXFecha
    End
    Begin isButtonTest.isButton cmdCuotas 
       Height          =   420
-      Left            =   3840
+      Left            =   4440
       TabIndex        =   14
       Top             =   2040
       Width           =   1335
@@ -308,7 +308,7 @@ Begin VB.Form frmCuotasXFecha
    End
    Begin isButtonTest.isButton cmdCerrar 
       Height          =   420
-      Left            =   3840
+      Left            =   4440
       TabIndex        =   15
       Top             =   5520
       Width           =   1335
@@ -339,7 +339,7 @@ Begin VB.Form frmCuotasXFecha
    End
    Begin isButtonTest.isButton cmdExportar 
       Height          =   420
-      Left            =   3840
+      Left            =   4440
       TabIndex        =   16
       Top             =   4920
       Width           =   1335
@@ -381,7 +381,7 @@ Begin VB.Form frmCuotasXFecha
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Left            =   3840
+      Left            =   4440
       TabIndex        =   9
       Top             =   4320
       Width           =   1350
@@ -400,7 +400,7 @@ Begin VB.Form frmCuotasXFecha
       EndProperty
       ForeColor       =   &H8000000F&
       Height          =   255
-      Left            =   3840
+      Left            =   4440
       TabIndex        =   10
       Top             =   4080
       Width           =   735
@@ -420,7 +420,7 @@ Begin VB.Form frmCuotasXFecha
       EndProperty
       ForeColor       =   &H8000000F&
       Height          =   225
-      Left            =   3840
+      Left            =   4440
       TabIndex        =   8
       Top             =   3360
       Width           =   435
@@ -438,7 +438,7 @@ Begin VB.Form frmCuotasXFecha
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Left            =   3840
+      Left            =   4440
       TabIndex        =   7
       Top             =   3600
       Width           =   1350
@@ -458,7 +458,7 @@ Begin VB.Form frmCuotasXFecha
       EndProperty
       ForeColor       =   &H8000000F&
       Height          =   225
-      Left            =   3840
+      Left            =   4440
       TabIndex        =   6
       Top             =   2640
       Width           =   960
@@ -476,7 +476,7 @@ Begin VB.Form frmCuotasXFecha
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Left            =   3840
+      Left            =   4440
       TabIndex        =   5
       Top             =   2880
       Width           =   1350
@@ -496,10 +496,10 @@ Begin VB.Form frmCuotasXFecha
       EndProperty
       ForeColor       =   &H8000000F&
       Height          =   225
-      Left            =   2040
+      Left            =   2280
       TabIndex        =   3
       Top             =   60
-      Width           =   450
+      Width           =   930
    End
    Begin VB.Label Label1 
       AutoSize        =   -1  'True
@@ -519,7 +519,7 @@ Begin VB.Form frmCuotasXFecha
       Left            =   120
       TabIndex        =   2
       Top             =   60
-      Width           =   510
+      Width           =   975
    End
 End
 Attribute VB_Name = "frmCuotasXFecha"
@@ -551,7 +551,7 @@ If DateDiff("m", Date, dtpDesde.Value) = 1 And DateDiff("m", Date, dtpHasta.Valu
     Dim total As Currency
     With rsCuotasXFecha
         If .State = 1 Then .Close
-        .Open "SELECT sum(p.deudatotal) FROM plandepago as p INNER JOIN marcas as m ON p.codalumno=m.codalumno WHERE fechavto>=#" & fecha1 & "# and fechavto<=#" & fecha2 & "#and cantidadcuotas=1 and pago=1 union SELECT sum(p.deudatotal) FROM plandepago as p INNER JOIN alumnosdelmes as a ON p.codalumno=a.codalumno WHERE fechavto>=#" & fecha1 & "# and fechavto<=#" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT sum(p.deudatotal) FROM plandepago as p INNER JOIN marcas as m ON p.codalumno=m.codalumno WHERE fechavto BETWEEN #" & fecha1 & "# AND #" & fecha2 & "#and cantidadcuotas=1 AND pago=1 union SELECT sum(p.deudatotal) FROM plandepago as p INNER JOIN alumnosdelmes as a ON p.codalumno=a.codalumno WHERE fechavto BETWEEN #" & fecha1 & "# AND #" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
         total = 0
         .MoveFirst
         Do Until .EOF
@@ -563,7 +563,7 @@ If DateDiff("m", Date, dtpDesde.Value) = 1 And DateDiff("m", Date, dtpHasta.Valu
     End With
     With rsCuotasXFecha
         If .State = 1 Then .Close
-        .Open "SELECT p.codalumno as Alumno,p.nrocuota as N°, p.fechavto as Vencimiento, p.deudatotal as Deuda FROM plandepago as p INNER JOIN marcas as m on p.codalumno=m.codalumno WHERE fechavto>=#" & fecha1 & "# and fechavto<=#" & fecha2 & "# and cantidadcuotas=1 and pago=1 ORDER BY p.codalumno union SELECT p.codalumno as Alumno,p.nrocuota as N°, p.fechavto as Vencimiento, p.deudatotal as Deuda FROM plandepago as p INNER JOIN alumnosdelmes as a on p.codalumno=a.codalumno WHERE fechavto>=#" & fecha1 & "# and fechavto<=#" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT p.codalumno as Alumno,p.nrocuota as N°, p.fechavto as Vencimiento, p.deudatotal as Deuda FROM plandepago as p INNER JOIN marcas as m on p.codalumno=m.codalumno WHERE fechavto BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# AND cantidadcuotas=1 AND pago=1 ORDER BY p.codalumno union SELECT p.codalumno as Alumno,p.nrocuota as N°, p.fechavto as Vencimiento, p.deudatotal as Deuda FROM plandepago as p INNER JOIN alumnosdelmes as a on p.codalumno=a.codalumno WHERE fechavto BETWEEN #" & fecha1 & "# AND #" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
     End With
     
     lblTotalAlumnos.Caption = rsCuotasXFecha.RecordCount
@@ -571,18 +571,18 @@ If DateDiff("m", Date, dtpDesde.Value) = 1 And DateDiff("m", Date, dtpHasta.Valu
 Else
     With rsCuotasXFecha
         If .State = 1 Then .Close
-        .Open "SELECT sum(m.deuda) FROM plandepago as p,marcas as m WHERE fechavto>=#" & fecha1 & "# and fechavto<=#" & fecha2 & "# and nrocuota>1 and p.codalumno=m.codalumno and cantidadcuotas=1", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT sum(m.deuda) FROM plandepago as p,marcas as m WHERE fechavto BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# AND nrocuota>1 AND p.codalumno=m.codalumno AND cantidadcuotas=1", Cn, adOpenDynamic, adLockPessimistic
         lblDeudaTotal.Caption = Format(!expr1000, "currency")
     End With
     
     With rsCuotasXFecha
         If .State = 1 Then .Close
-        .Open "SELECT sum(deudatotal) FROM plandepago as p,marcas as m WHERE fechavto>=#" & fecha1 & "# and fechavto<=#" & fecha2 & "# and nrocuota>1 and p.codalumno=m.codalumno and cuotasdebidas=1 and cantidadcuotas=1", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT sum(deudatotal) FROM plandepago as p,marcas as m WHERE fechavto BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# AND nrocuota>1 AND p.codalumno=m.codalumno AND cuotasdebidas=1 AND cantidadcuotas=1", Cn, adOpenDynamic, adLockPessimistic
         lblResta.Caption = Format(!expr1000, "currency")
     End With
     With rsCuotasXFecha
         If .State = 1 Then .Close
-        .Open "SELECT p.codalumno as Alumno,p.nrocuota as N°, p.fechavto as Vencimiento, p.deudatotal as Deuda,M.fechacompromiso as Compromiso,M.LPA FROM plandepago as p, marcas as m WHERE fechavto>=#" & fecha1 & "# and fechavto<=#" & fecha2 & "# and deudatotal >0 and cantidadcuotas=1 and p.codalumno=m.codalumno ORDER BY p.codalumno", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT p.codalumno as Alumno,p.nrocuota as N°, p.fechavto as Vencimiento, p.deudatotal as Deuda,M.fechacompromiso as Compromiso,M.LPA FROM plandepago as p, marcas as m WHERE fechavto BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# AND deudatotal >0 AND cantidadcuotas=1 AND p.codalumno=m.codalumno ORDER BY p.codalumno", Cn, adOpenDynamic, adLockPessimistic
     End With
 
     Set grilla.DataSource = rsCuotasXFecha

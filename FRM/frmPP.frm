@@ -160,7 +160,7 @@ Begin VB.Form frmPP
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "yyyy"
-         Format          =   271515651
+         Format          =   127270915
          CurrentDate     =   43573
       End
       Begin VB.Label Label2 
@@ -299,7 +299,7 @@ Attribute VB_Exposed = False
 Private Sub cmbMonth_Click()
     With rsPresupuesto
         If .State = 1 Then .Close
-        .Open "SELECT cuenta,deuda,saldo,mes,Año FROM presupuesto WHERE mes='" & cmbMonth.Text & "' and Año=" & Year(dtpYear.Value) & " ORDER BY cuenta", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT cuenta,deuda,saldo,mes,Año FROM presupuesto WHERE mes='" & cmbMonth.Text & "' AND Año=" & Year(dtpYear.Value) & " ORDER BY cuenta", Cn, adOpenDynamic, adLockPessimistic
         dtlPresupuesto.ListField = "Cuenta"
         Set dtlPresupuesto.RowSource = rsPresupuesto
     End With
@@ -320,7 +320,7 @@ Private Sub cmdAgregar_Click()
         !Año = Year(dtpYear.Value)
         .Update
         .Close
-        .Open "SELECT cuenta,deuda,saldo,mes,Año FROM presupuesto WHERE mes='" & cmbMonth.Text & "' and Año=" & Year(dtpYear.Value) & " ORDER BY cuenta", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT cuenta,deuda,saldo,mes,Año FROM presupuesto WHERE mes='" & cmbMonth.Text & "' AND Año=" & Year(dtpYear.Value) & " ORDER BY cuenta", Cn, adOpenDynamic, adLockPessimistic
         dtlPresupuesto.ListField = "Cuenta"
         Set dtlPresupuesto.RowSource = rsPresupuesto
     End With
@@ -339,7 +339,7 @@ Private Sub cmdQuitar_Click()
         .Delete
         .Update
         .Close
-        .Open "SELECT cuenta,deuda,saldo,mes,Año FROM presupuesto WHERE mes='" & cmbMonth.Text & "' and Año=" & Year(dtpYear.Value) & " ORDER BY cuenta", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT cuenta,deuda,saldo,mes,Año FROM presupuesto WHERE mes='" & cmbMonth.Text & "' AND Año=" & Year(dtpYear.Value) & " ORDER BY cuenta", Cn, adOpenDynamic, adLockPessimistic
         dtlPresupuesto.ListField = "Cuenta"
         Set dtlPresupuesto.RowSource = rsPresupuesto
     End With
@@ -356,7 +356,7 @@ End Sub
 Private Sub dtpYear_Change()
     With rsPresupuesto
         If .State = 1 Then .Close
-        .Open "SELECT cuenta,deuda,saldo,mes,Año FROM presupuesto WHERE mes='" & cmbMonth.Text & "' and Año=" & Year(dtpYear.Value) & " ORDER BY cuenta", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT cuenta,deuda,saldo,mes,Año FROM presupuesto WHERE mes='" & cmbMonth.Text & "' AND Año=" & Year(dtpYear.Value) & " ORDER BY cuenta", Cn, adOpenDynamic, adLockPessimistic
         dtlPresupuesto.ListField = "Cuenta"
         Set dtlPresupuesto.RowSource = rsPresupuesto
     End With

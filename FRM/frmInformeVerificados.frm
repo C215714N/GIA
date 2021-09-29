@@ -236,7 +236,7 @@ Begin VB.Form frmInformeVerificados
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   112721921
+      Format          =   126287873
       CurrentDate     =   41345
    End
    Begin MSComCtl2.DTPicker dtpHasta 
@@ -257,7 +257,7 @@ Begin VB.Form frmInformeVerificados
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   112721921
+      Format          =   126287873
       CurrentDate     =   41345
    End
    Begin isButtonTest.isButton cmdBuscar 
@@ -348,7 +348,7 @@ Private Sub cmdBuscar_Click()
     
     With rsInformeSuscripciones
         If .State = 1 Then .Close
-        .Open "SELECT count(*) as Suscripciones,sum(verificado) as Verificados,sum(totalcurso) as Monto FROM informesuscripciones WHERE fechaV>=#" & fecha1 & "# and fechaV<=#" & fecha2 & "# ", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT count(*) as Suscripciones,sum(verificado) as Verificados,sum(totalcurso) as Monto FROM informesuscripciones WHERE fechaV BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# ", Cn, adOpenDynamic, adLockPessimistic
         lblSuscriptos.Caption = !Suscripciones
         If .RecordCount = 1 And lblSuscriptos.Caption = 0 Then lblMontoTotal.Caption = 0: lblVerificados.Caption = 0: Exit Sub
         
@@ -360,7 +360,7 @@ Private Sub cmdBuscar_Click()
 
     With rsInformeSuscripciones
         If .State = 1 Then .Close
-        .Open "SELECT Asistente,count(*) as S,sum(verificado) as V,sum(totalcurso) as Monto FROM informesuscripciones WHERE fechaV>=#" & fecha1 & "# and fechaV<=#" & fecha2 & "# group by asistente", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT Asistente,count(*) as S,sum(verificado) as V,sum(totalcurso) as Monto FROM informesuscripciones WHERE fechaV BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# GROUP BY asistente", Cn, adOpenDynamic, adLockPessimistic
     End With
         
     Set grilla.DataSource = rsInformeSuscripciones
@@ -386,7 +386,7 @@ End Sub
 Private Sub grilla_DblClick()
     With rsAnalisisInforme
         If .State = 1 Then .Close
-        .Open "SELECT nya as Alumno, Direccion,Localidad,Tel1 as Telefono1,ptel1 as [Telefono Alumno],tel2 as Telefono2,ptel2 as Celular,Fechasus as Suscripcion,Fechaverif as Verificacion, Totalcurso as [Total Curso] FROM verificaciones WHERE fechaverif>=#" & fecha1 & "# and fechaverif<=#" & fecha2 & "# and asistente='" & grilla.Columns(0).Text & "' ORDER BY fechaverif", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT nya as Alumno, Direccion,Localidad,Tel1 as Telefono1,ptel1 as [Telefono Alumno],tel2 as Telefono2,ptel2 as Celular,Fechasus as Suscripcion,Fechaverif as Verificacion, Totalcurso as [Total Curso] FROM verificaciones WHERE fechaverif BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# AND asistente='" & grilla.Columns(0).Text & "' ORDER BY fechaverif", Cn, adOpenDynamic, adLockPessimistic
         frmAnalisisInforme.Show
         Set frmAnalisisInforme.grilla.DataSource = rsAnalisisInforme
         frmAnalisisInforme.grilla.Columns(0).Width = 3000

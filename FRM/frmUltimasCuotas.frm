@@ -160,7 +160,7 @@ Private Sub cmdBuscar_Click()
     ''' suma el total de ultimas cuotas y lo carga en lbl
     With rsUltimasCuotas
         If .State = 1 Then .Close
-        .Open "SELECT sum(Deuda) FROM verificaciones as v,marcas as m WHERE m.codalumno=v.codalumno and v.cuotas > 1 and v.cuotas=m.cuota and m.cantidadcuotas=1", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT sum(Deuda) FROM verificaciones as v,marcas as m WHERE m.codalumno=v.codalumno AND v.cuotas > 1 AND v.cuotas=m.cuota AND m.cantidadcuotas=1", Cn, adOpenDynamic, adLockPessimistic
     End With
     
     lblDeudaTotal.Caption = Format(rsUltimasCuotas!expr1000, "currency")
@@ -168,7 +168,7 @@ Private Sub cmdBuscar_Click()
     ''' consulta ultimas cuotas dentro de un periodo determinado
     With rsUltimasCuotas
         If .State = 1 Then .Close
-        .Open "SELECT m.codalumno as Codigo, v.nya as Alumno,m.deuda as Deuda FROM verificaciones as v,marcas as m WHERE m.codalumno=v.codalumno and v.cuotas > 1 and v.cuotas=m.cuota and m.cantidadcuotas=1 ORDER BY m.codalumno", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT m.codalumno as Codigo, v.nya as Alumno,m.deuda as Deuda FROM verificaciones as v,marcas as m WHERE m.codalumno=v.codalumno AND v.cuotas > 1 AND v.cuotas=m.cuota AND m.cantidadcuotas=1 ORDER BY m.codalumno", Cn, adOpenDynamic, adLockPessimistic
     End With
        
     '''carga consulta en la grilla

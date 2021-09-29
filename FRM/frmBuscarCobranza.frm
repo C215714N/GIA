@@ -256,7 +256,7 @@ Private Sub Form_Load()
     Dim busca As String
     Verificaciones
     Adodc.CursorLocation = adUseClient
-    Adodc.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=T:\base.mdb;Persist Security Info=False;Jet OLEDB:Database Password=ascir"
+    Adodc.ConnectionString = DbCon
 End Sub
 
 Private Sub txtBuscar_Change()

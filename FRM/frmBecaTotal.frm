@@ -323,7 +323,7 @@ Begin VB.Form frmBecaTotal
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   172359681
+         Format          =   126484481
          CurrentDate     =   42093
       End
       Begin isButtonTest.isButton cmdGrabar 
@@ -451,7 +451,7 @@ Begin VB.Form frmBecaTotal
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   172359681
+      Format          =   126484481
       CurrentDate     =   42089
    End
    Begin MSComCtl2.DTPicker dtpDesde 
@@ -472,7 +472,7 @@ Begin VB.Form frmBecaTotal
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   172359681
+      Format          =   126484481
       CurrentDate     =   42089
    End
    Begin VB.Frame Frame1 
@@ -643,12 +643,12 @@ Private Sub Buscar()
     
     With rsAlumnosBecados
         If .State = 1 Then .Close
-        .Open "SELECT sum(matricula),sum(debe),count(*) FROM alumnosbecados WHERE cancelacion>=#" & desde & "# and cancelacion<=#" & hasta & "#", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT sum(matricula),sum(debe),count(*) FROM alumnosbecados WHERE cancelacion BETWEEN #" & desde & "# AND #" & hasta & "#", Cn, adOpenDynamic, adLockPessimistic
         lblTotalPagado.Caption = Format(!expr1000, "currency")
         lblTotalDebido.Caption = Format(!expr1001, "currency")
         lblAlumnos.Caption = !expr1002
         .Close
-        .Open "SELECT idreferencial,nya as Alumno, tel1 as Telefono, capac as Curso, Asistente, Matricula,Debe,Comision, Fechasus as Fecha, Cancelacion, b.Observaciones FROM suscripciones as s, alumnosbecados as b WHERE b.idreferencial=s.id and cancelacion>=#" & desde & "# and cancelacion<=#" & hasta & "#", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT idreferencial,nya as Alumno, tel1 as Telefono, capac as Curso, Asistente, Matricula,Debe,Comision, Fechasus as Fecha, Cancelacion, b.Observaciones FROM suscripciones as s, alumnosbecados as b WHERE b.idreferencial=s.id AND cancelacion BETWEEN #" & desde & "# AND #" & hasta & "#", Cn, adOpenDynamic, adLockPessimistic
     End With
     
     Set grilla.DataSource = rsAlumnosBecados

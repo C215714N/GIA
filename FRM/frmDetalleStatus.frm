@@ -386,7 +386,7 @@ Attribute VB_Exposed = False
 Private Sub cmbFiltroPDP_Change()
     With rsPlanDePago
         If .State = 1 Then .Close
-        .Open "SELECT codalumno as Codigo, min(nrocuota) as Cuota,sum(deudatotal) as Deuda, sum(cuotasdebidas)*30-30 as Categoria FROM plandepago WHERE cuotasdebidas=1 and categoria =" & Int(cmbFiltroPDP.Text) & " group by codalumno", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT codalumno as Codigo, min(nrocuota) as Cuota,sum(deudatotal) as Deuda, sum(cuotasdebidas)*30-30 as Categoria FROM plandepago WHERE cuotasdebidas=1 AND categoria =" & Int(cmbFiltroPDP.Text) & " GROUP BY codalumno", Cn, adOpenDynamic, adLockPessimistic
         Set GrillaPlanDePago.DataSource = rsPlanDePago
         
     End With
@@ -404,7 +404,7 @@ Private Sub Form_Load()
     
     With rsPlanDePago
         If .State = 1 Then .Close
-        .Open "SELECT codalumno as Codigo, min(nrocuota) as Cuota,sum(deudatotal) as Deuda, sum(cuotasdebidas)*30-30 as Categoria FROM plandepago WHERE cuotasdebidas=1 group by codalumno", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT codalumno as Codigo, min(nrocuota) as Cuota,sum(deudatotal) as Deuda, sum(cuotasdebidas)*30-30 as Categoria FROM plandepago WHERE cuotasdebidas=1 GROUP BY codalumno", Cn, adOpenDynamic, adLockPessimistic
         Set GrillaPlanDePago.DataSource = rsPlanDePago
         
     End With
@@ -424,7 +424,7 @@ Private Sub txtFiltroPDP_KeyPress(KeyAscii As Integer)
                 If KeyAscii = 13 Then
         With rsPlanDePago
             If .State = 1 Then .Close
-            .Open "SELECT codalumno as codigo min(nrocuota) as cuota, sum(deudatotal) as deuda,sum(cuotasdebidas)*30-30 as categoria FROM plandepago WHERE cuotasdebidas like " & c & " group by codalumno, cn, adOpenDynamic, adLockPessimistic"
+            .Open "SELECT codalumno as codigo min(nrocuota) as cuota, sum(deudatotal) as deuda,sum(cuotasdebidas)*30-30 as categoria FROM plandepago WHERE cuotasdebidas like " & c & " GROUP BY codalumno, cn, adOpenDynamic, adLockPessimistic"
             Set GrillaPlanDePago.DataSource = rsPlanDePago
             lblTotalPlanDePago.Caption = rsPlanDePago.RecordCount
         End With
