@@ -134,8 +134,12 @@ Public Sub Localidades()
     End With
 End Sub
 
-Public Sub Centrar(frm As Form)
+Sub Centrar(frm As Form)
 '''Centra el Formulario en Pantalla
     frm.Top = (MDI.Height - frm.Height) \ 4 - 500
     frm.Left = (MDI.Width - frm.Width) \ 2
+End Sub
+
+Sub Continue()
+    If KeyAscii = 13 Then SendKeys "{TAB}"
 End Sub

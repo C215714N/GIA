@@ -29,6 +29,7 @@ Begin VB.Form frmBecaTotal
       _ExtentX        =   13361
       _ExtentY        =   1508
       _Version        =   393217
+      Enabled         =   -1  'True
       MaxLength       =   1000
       Appearance      =   0
       TextRTF         =   $"frmBecaTotal.frx":10CA
@@ -323,7 +324,7 @@ Begin VB.Form frmBecaTotal
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   126484481
+         Format          =   160628737
          CurrentDate     =   42093
       End
       Begin isButtonTest.isButton cmdGrabar 
@@ -451,7 +452,7 @@ Begin VB.Form frmBecaTotal
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   126484481
+      Format          =   160694273
       CurrentDate     =   42089
    End
    Begin MSComCtl2.DTPicker dtpDesde 
@@ -472,7 +473,7 @@ Begin VB.Form frmBecaTotal
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   126484481
+      Format          =   160694273
       CurrentDate     =   42089
    End
    Begin VB.Frame Frame1 
@@ -673,17 +674,17 @@ Sub formatoGrilla()
 End Sub
 
 Private Sub txtComision_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 
 Private Sub txtDebe_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 
 Private Sub txtMatricula_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 
 Private Sub txtObservaciones_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub

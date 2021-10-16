@@ -441,5 +441,5 @@ Sub HabilitarBotones(estado1 As Boolean, estado2 As Boolean)
 End Sub
 
 Private Sub txtCurso_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub

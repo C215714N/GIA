@@ -391,7 +391,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   127336449
+         Format          =   161153025
          CurrentDate     =   41308
       End
       Begin MSDataListLib.DataCombo dtcAsistente 
@@ -778,7 +778,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   127270913
+         Format          =   161153025
          CurrentDate     =   41308
       End
       Begin MSComCtl2.DTPicker DTPFechaVerificacion 
@@ -799,7 +799,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   272171009
+         Format          =   161153025
          CurrentDate     =   41308
       End
       Begin VB.Label Label17 
@@ -1413,10 +1413,10 @@ Private Sub cmdVerificar_Click()
     Modi = False
 End Sub
 Private Sub dtcAsistente_KeyPress(KeyAscii As Integer)
-        If KeyAscii = 13 Then SendKeys "{TAB}"
+        Continue
 End Sub
 Private Sub dtcCapacitacion_KeyPress(KeyAscii As Integer)
-        If KeyAscii = 13 Then SendKeys "{TAB}"
+        Continue
 End Sub
 
 Private Sub dtcLocalidad_KeyPress(KeyAscii As Integer)
@@ -1430,16 +1430,11 @@ Private Sub dtcLocalidad_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub dtpFechaNacimiento_Change()
-    If Month(dtpFechaNacimiento.Value) < Month(Date) Then
+    If (Month(dtpFechaNacimiento.Value) < Month(Date)) Or (Day(dtpFechaNacimiento.Value) <= Day(Date) And Month(dtpFechaNacimiento.Value) = Month(Date)) Then
         txtEdad.Text = DateDiff("yyyy", dtpFechaNacimiento.Value, Date)
-    ElseIf Day(dtpFechaNacimiento.Value) <= Day(Date) And Month(dtpFechaNacimiento.Value) = Month(Date) Then
-        txtEdad.Text = DateDiff("yyyy", dtpFechaNacimiento.Value, Date)
-    ElseIf Day(dtpFechaNacimiento.Value) > Day(Date) And Month(dtpFechaNacimiento.Value) >= Month(Date) Then
-        txtEdad.Text = DateDiff("yyyy", dtpFechaNacimiento.Value, Date) - 1
     Else
-      txtEdad.Text = DateDiff("yyyy", dtpFechaNacimiento.Value, Date) - 1
+        txtEdad.Text = DateDiff("yyyy", dtpFechaNacimiento.Value, Date) - 1
     End If
-
 End Sub
 
 Private Sub Form_Load()
@@ -1449,6 +1444,7 @@ Private Sub Form_Load()
     Control
     Capacitaciones
     Asistente
+    
     Set dtcLocalidad.RowSource = rsLocalidades
     dtcLocalidad.BoundColumn = "localidad"
     dtcLocalidad.ListField = "localidad"
@@ -1456,9 +1452,11 @@ Private Sub Form_Load()
     Set dtcCapacitacion.RowSource = rsCapacitaciones
     dtcCapacitacion.BoundColumn = "capacitacion"
     dtcCapacitacion.ListField = "capacitacion"
+    
     Set dtcAsistente.RowSource = rsPersonal
     dtcAsistente.BoundColumn = "Personal"
     dtcAsistente.ListField = "Personal"
+    
     HabilitarBotones True, False
     HabilitarCuadros True, False
     Limpiar
@@ -1549,71 +1547,67 @@ Sub Limpiar()
     chkExamenes.Value = 0
 End Sub
 
-
 Private Sub txtCP_KeyPress(KeyAscii As Integer)
-        If KeyAscii = 13 Then SendKeys "{TAB}"
+        Continue
 End Sub
 Private Sub txtDireccion_KeyPress(KeyAscii As Integer)
-        If KeyAscii = 13 Then SendKeys "{TAB}"
+        Continue
 End Sub
 Private Sub txtDocumento_KeyPress(KeyAscii As Integer)
-        If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
     If KeyAscii = 46 Then KeyAscii = 0
 End Sub
 Private Sub txtEdad_KeyPress(KeyAscii As Integer)
-        If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtGastoAdm_KeyPress(KeyAscii As Integer)
-        If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtLocalidad_KeyPress(KeyAscii As Integer)
-        If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtNacionalidad_KeyPress(KeyAscii As Integer)
-        If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtNya_KeyPress(KeyAscii As Integer)
-        If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtPT1_KeyPress(KeyAscii As Integer)
-        If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtPT2_KeyPress(KeyAscii As Integer)
-        If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtPT3_KeyPress(KeyAscii As Integer)
-        If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtPT4_KeyPress(KeyAscii As Integer)
-        If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtTel1_KeyPress(KeyAscii As Integer)
-        If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtTel2_KeyPress(KeyAscii As Integer)
-        If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtTel3_KeyPress(KeyAscii As Integer)
-        If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtTel4_KeyPress(KeyAscii As Integer)
-        If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtTotalCuotas_KeyPress(KeyAscii As Integer)
-        If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtTotalCurso_KeyPress(KeyAscii As Integer)
-        If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub chkExamenes_KeyPress(KeyAscii As Integer)
-        If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub chkManuales_KeyPress(KeyAscii As Integer)
-        If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub cmbTipoDoc_KeyPress(KeyAscii As Integer)
-        If KeyAscii = 13 Then SendKeys "{TAB}"
-End Sub
-Public Sub Nex()
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub

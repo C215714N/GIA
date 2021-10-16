@@ -386,7 +386,7 @@ Private Sub cmdBuscar1_Click()
         .Find "Cuenta='" & X & "'"
         If .EOF Or .BOF Then MsgBox "La Cuenta no es valida", vbOKOnly + vbInformation, "Cuentas": .MoveFirst:  Exit Sub
         lblCodCuenta.Caption = !codcuenta
-        txtNombreCuenta.Text = !cuenta
+        txtNombreCuenta.Text = !Cuenta
         txtDetalle.Text = !Detalle
     End With
 LineaError:
@@ -403,7 +403,7 @@ Private Sub cmdBuscar2_Click()
         .Find "CodCuenta=" & X
         If .EOF Or .BOF Then MsgBox "El Codigo de Cuenta no es valido", vbOKOnly + vbInformation, "Cuentas": .MoveFirst: Exit Sub
         lblCodCuenta.Caption = !codcuenta
-        txtNombreCuenta.Text = !cuenta
+        txtNombreCuenta.Text = !Cuenta
         txtDetalle.Text = !Detalle
     End With
 LineaError:
@@ -435,7 +435,7 @@ Private Sub cmdGrabar_Click()
             .Requery
                 .AddNew
                 !codcuenta = rsControl!codcuenta
-                !cuenta = txtNombreCuenta.Text
+                !Cuenta = txtNombreCuenta.Text
                 !Detalle = txtDetalle.Text
                 !tipo = cmbTipoCta.Text
                 .Update
@@ -448,7 +448,7 @@ Private Sub cmdGrabar_Click()
             .Requery
             .Find "codcuenta=" & Int(lblCodCuenta.Caption)
             !Detalle = txtDetalle.Text
-            !cuenta = txtNombreCuenta.Text
+            !Cuenta = txtNombreCuenta.Text
             !tipo = cmbTipoCta.Text
             .UpdateBatch
         End With
@@ -517,9 +517,9 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
 End Sub
 
 Private Sub txtDetalle_KeyPress(KeyAscii As Integer)
-   If KeyAscii = 13 Then SendKeys "{TAB}"
+   Continue
 End Sub
 
 Private Sub txtNombreCuenta_KeyPress(KeyAscii As Integer)
-   If KeyAscii = 13 Then SendKeys "{TAB}"
+   Continue
 End Sub

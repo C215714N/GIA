@@ -362,7 +362,7 @@ End If
 End Sub
 
 Private Sub cmbPago_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 
 Private Sub cmdVender_Click()
@@ -532,51 +532,6 @@ Sub cargarManuales()
             .AddItem ("Programación")
         End With
     
-    ElseIf txtCurso.Text = "Telefonía Celular" Then
-        With cmbManual
-            .AddItem ("Telefonía Celular")
-        End With
-    
-    ElseIf txtCurso.Text = "Armado y Reparación de PC y Redes" Then
-        With cmbManual
-            .AddItem ("Armado I")
-            .AddItem ("Armado II")
-            .AddItem ("Armado III")
-            .AddItem ("Armado IV")
-            .AddItem ("Redes I")
-            .AddItem ("Redes II")
-            .AddItem ("Redes III")
-        End With
-    
-    ElseIf txtCurso.Text = "Armado y Reparación de PC" Then
-        With cmbManual
-            .AddItem ("Armado I")
-            .AddItem ("Armado II")
-            .AddItem ("Armado III")
-            .AddItem ("Armado IV")
-        End With
-    
-    ElseIf txtCurso.Text = "Redes" Then
-        With cmbManual
-            .AddItem ("Redes I")
-            .AddItem ("Redes II")
-            .AddItem ("Redes III")
-        End With
-    
-    ElseIf txtCurso.Text = "Técnico en Pc nivel I" Then
-        With cmbManual
-            .AddItem ("TPC 1 Hardware")
-            .AddItem ("TPC 1 Software")
-        End With
-    
-    ElseIf txtCurso.Text = "Técnico en Pc nivel II" Then
-        With cmbManual
-            .AddItem ("TPC 2 Malware(Diagnostico)")
-            .AddItem ("TPC 2 Rep.Avanz.")
-            .AddItem ("TPC 2 Redes Informaticas")
-            .AddItem ("TPC 2 Redes (Servidores)")
-        End With
-    
     ElseIf txtCurso.Text = "Técnico en aire acondicionado" Then
         With cmbManual
             .AddItem ("Aire Acondicionado")
@@ -590,6 +545,7 @@ Sub cargarManuales()
     ElseIf txtCurso.Text = "Auxiliar de Farmacia" Then
         With cmbManual
             .AddItem ("Farmacia")
+            .AddItem ("Primeros Auxilios")
             .AddItem ("Lazo")
         End With
         
@@ -607,12 +563,13 @@ Sub cargarManuales()
         With cmbManual
             .AddItem ("Cuidador Dom. I")
             .AddItem ("Cuidador Dom. II")
+            .AddItem ("Primeros Auxilios")
             .AddItem ("Lazo")
         End With
     
     ElseIf txtCurso.Text = "Emergencias Médicas" Then
         With cmbManual
-            .AddItem ("Emergencias Médicas")
+            .AddItem ("Primeros Auxilios")
         End With
     End If
 End Sub

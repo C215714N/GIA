@@ -36,7 +36,7 @@ Begin VB.Form frmClave
       _ExtentX        =   2778
       _ExtentY        =   661
       _Version        =   393216
-      Format          =   273743873
+      Format          =   160628737
       CurrentDate     =   42125
    End
    Begin MSComCtl2.DTPicker DTPFecha 
@@ -57,7 +57,7 @@ Begin VB.Form frmClave
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   273743873
+      Format          =   160628737
       CurrentDate     =   41327
    End
    Begin VB.TextBox txtClave 
@@ -327,7 +327,6 @@ Private Sub cmdIngresar_Click()
         MsgBox "Esta intentando ingresar con una fecha muy tardia. Pongase en contacto con el soporte Técnico", vbCritical + vbOKOnly, "Gestion Integral del Alumno"
         Exit Sub
     End If
-   
 '''Configuracion proximo Mes - Fecha Futura
     dtpFechaFutura.Day = 1
     dtpFechaFutura.Month = Month(Date)
@@ -420,7 +419,7 @@ Private Sub cmdIngresar_Click()
             With rsSituacionDeCartera
                 If .State = 1 Then .Close
             '''Situacion al dia de la Fecha
-                .Open "SELECT cantidadcuotas * 30 -30 AS [Dias], count(codalumno) as [Total de Alumnos], sum(deuda) AS [Total Deuda], sum(cobrado) AS [Cobranza], sum(pago) AS [Total Cobrado], round(sum(cobrado) * 100 / sum(deuda), 2) AS [Porcentaje Cobrado], sum(deuda)-sum(cobrado) AS [Resto a Cobrar] FROM marcas WHERE cantidadcuotas > 0 GROUP BY cantidadcuotas", Cn, adOpenDynamic, adLockPessimistic
+                .Open "SELECT cantidadcuotas * 30 -30 AS [Dias], count(codalumno) as [Total de Alumnos], sum(deuda) AS [Deuda], sum(cobrado) AS [Cobranza], sum(pago) AS [Total Cobrado], sum(cobrado) * 100 / sum(deuda) AS [Porcentaje Cobrado], sum(deuda) - sum(cobrado) AS [Resto a Cobrar] FROM marcas WHERE cantidadcuotas > 0 GROUP BY cantidadcuotas", Cn, adOpenDynamic, adLockPessimistic
                 .MoveFirst
                
             '''Carga el Registro en la Tabla Situaciones de Cartera
@@ -431,15 +430,15 @@ Private Sub cmdIngresar_Click()
                         .Requery
                         .AddNew
                         !fecha = rsControl!ultimafecha
-                        !dias = rsSituacionDeCartera!dias
-                        !deuda = rsSituacionDeCartera!deuda
+                        !dias = rsSituacionDeCartera![dias]
+                        !deuda = rsSituacionDeCartera![deuda]
                         !cobrado = rsSituacionDeCartera![Total Cobrado]
                         !alumnos = rsSituacionDeCartera![Total de Alumnos]
-                        !Cobranza = rsSituacionDeCartera!Cobranza
+                        !Cobranza = rsSituacionDeCartera![Cobranza]
                         !porcentaje = rsSituacionDeCartera![Porcentaje Cobrado]
                         !resto = rsSituacionDeCartera![Resto a Cobrar]
-                        .UpdateBatch
                         rsSituacionDeCartera.MoveNext
+                        .UpdateBatch
                     Loop
                 End With
                 
@@ -457,7 +456,7 @@ Private Sub cmdIngresar_Click()
 
             ''' Totales de Ultima Fecha
                 .Close
-                .Open "SELECT cantidadcuotas * 30 - 30 , COUNT(codalumno), SUM(deuda), SUM(cobrado), SUM(pago), round(SUM(cobrado) * 100 / SUM(deuda),2), SUM(deuda) - sum(cobrado) FROM marcas WHERE cantidadcuotas > 0 GROUP BY cantidadcuotas", Cn, adOpenDynamic, adLockPessimistic
+                .Open "SELECT cantidadcuotas * 30 - 30 , COUNT(codalumno), SUM(deuda), SUM(cobrado), SUM(pago), SUM(cobrado) * 100 / SUM(deuda), SUM(deuda) - sum(cobrado) FROM marcas WHERE cantidadcuotas > 0 GROUP BY cantidadcuotas", Cn, adOpenDynamic, adLockPessimistic
                 .MoveFirst
         
                 Do Until .EOF
@@ -466,6 +465,7 @@ Private Sub cmdIngresar_Click()
                     Cobranza = Cobranza + !expr1003
                     totalcobrado = totalcobrado + !expr1004
                     resto = resto + !expr1006
+                    .UpdateBatch
                     .MoveNext
                 Loop
                 
@@ -505,6 +505,7 @@ Private Sub cmdIngresar_Click()
                 rsMarcar!CodAlumno = !CodAlumno
                 rsMarcar.Update
                 .Delete
+                .UpdateBatch
                 .Requery
             Loop
         End With
@@ -552,8 +553,8 @@ SituacionDeCartera:
                         !cantidadcuotas = 0
                         !cobrado = 0
                         !pago = 0
-                        .UpdateBatch
                         .MoveNext
+                        .UpdateBatch
                     ElseIf !CodAlumno = rsPlanDePago!CodAlumno Then
                         !cuota = rsPlanDePago!cuota
                         !deuda = rsPlanDePago!deuda
@@ -578,11 +579,9 @@ SituacionDeCartera:
                     End If
                 Loop
             End With
-
         Control
         rsControl.MoveFirst
         rsControl.UpdateBatch
-
         End If
           
 Recargo:
@@ -597,8 +596,8 @@ Recargo:
             Do Until .EOF
                 !recargoxfecha = True
                 !DeudaTotal = !DeudaTotal + rsControl!recargoporfecha
-                .UpdateBatch
                 .MoveNext
+                .UpdateBatch
             Loop
         End With
         
@@ -630,7 +629,7 @@ Private Sub cmdSalir_Click()
 End Sub
 
 Private Sub DTPFecha_KeyPress(KeyAscii As Integer)
-   If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 
 Private Sub Form_Load()
@@ -647,9 +646,9 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
 End Sub
 
 Private Sub txtClave_KeyPress(KeyAscii As Integer)
-   If KeyAscii = 13 Then cmdIngresar_Click
+    If KeyAscii = 13 Then cmdIngresar_Click
 End Sub
 
 Private Sub txtUsuario_KeyPress(KeyAscii As Integer)
-   If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub

@@ -83,7 +83,7 @@ Begin VB.Form frmPlanDePagoReingreso
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   152764417
+      Format          =   107937793
       CurrentDate     =   41353
    End
    Begin isButtonTest.isButton cmdAplicar 
@@ -247,16 +247,15 @@ Private Sub cmdAplicar_Click()
             !totalcobrado = 0
             !DeudaTotal = txtMonto.Text
             !CuotasDebidas = 1
-            !fechavto = dtpFecha.Value
+            !fechavto = DTPFecha.Value
             .Update
             txtNroCuota.Text = Int(txtNroCuota.Text) + 1
-            If dtpFecha.Month = 12 Then
-                dtpFecha.Month = 1
-                dtpFecha.Year = dtpFecha.Year + 1
+            If DTPFecha.Month = 12 Then
+                DTPFecha.Month = 1
+                DTPFecha.Year = DTPFecha.Year + 1
             Else
-                dtpFecha.Month = dtpFecha.Month + 1
+                DTPFecha.Month = DTPFecha.Month + 1
             End If
-            
         Loop
     End With
     '''cambia el estado a reingresado
@@ -286,13 +285,13 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
 End Sub
 
 Private Sub txtCantidadCuotas_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 
 Private Sub txtMonto_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 
 Private Sub txtNroCuota_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub

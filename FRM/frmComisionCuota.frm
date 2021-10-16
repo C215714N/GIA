@@ -476,7 +476,7 @@ Private Sub txtPorcentajeAsesor_keypress(KeyAscii As Integer)
 End Sub
 
 Private Sub txtNroFactura_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 
 Private Sub txtPagoParcial_KeyPress(KeyAscii As Integer)

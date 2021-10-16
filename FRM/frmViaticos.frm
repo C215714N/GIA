@@ -217,7 +217,7 @@ Begin VB.Form frmViaticos
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   127336449
+         Format          =   160694273
          CurrentDate     =   42277
       End
       Begin VB.Label Label4 
@@ -334,9 +334,11 @@ Private Sub Form_Load()
     Centrar Me
     DTPFecha.Value = Date
     Asistente
+    
     Set dtcAsistente.RowSource = rsPersonal
     dtcAsistente.BoundColumn = "Personal"
     dtcAsistente.ListField = "Personal"
+    
     formatoGrilla
 End Sub
 

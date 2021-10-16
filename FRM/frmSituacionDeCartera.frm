@@ -36,7 +36,7 @@ Begin VB.Form frmSituacionDeCartera
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   272171009
+      Format          =   127270913
       CurrentDate     =   41624
    End
    Begin VB.Frame Frame1 
@@ -504,7 +504,7 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub DTPFecha_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 
 Private Sub cmdBuscar_Click()

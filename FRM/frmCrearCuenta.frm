@@ -96,7 +96,7 @@ Private Sub cmdAgregar_Click()
         .Open "SELECT cuenta FROM cuentaspresupuesto WHERE cuenta='" & txtCuenta.Text & "'", Cn, adOpenDynamic, adLockPessimistic
         If .BOF Or .EOF Then
             .AddNew
-            !cuenta = txtCuenta.Text
+            !Cuenta = txtCuenta.Text
             .Update
             txtCuenta.Text = ""
             txtCuenta.SetFocus
@@ -122,5 +122,5 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
 End Sub
 
 Private Sub txtCuenta_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub

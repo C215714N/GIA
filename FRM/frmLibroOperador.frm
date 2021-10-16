@@ -207,7 +207,7 @@ Begin VB.Form frmLibroOperador
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   107413505
+         Format          =   160235521
          CurrentDate     =   41580
       End
       Begin isButtonTest.isButton cmdBuscar 
@@ -366,7 +366,7 @@ Private Sub grilla_DblClick()
 End Sub
 
 Private Sub txtAsistencia_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 
 Sub formatoGrilla()

@@ -70,10 +70,11 @@ Attribute VB_Name = "Declaraciones"
     
 ''' Gestion Servicio Técnico
     Global rsclientes               As New ADODB.Recordset
+    Global rsActualizarMarcas       As New ADODB.Recordset
     Global rsAnalisisInforme        As New ADODB.Recordset
     Global rsconsultarordenes       As New ADODB.Recordset
 
-'''DECLARAcion DE VARIABLES
+'''DECLARACION DE VARIABLES
     ''' Variables Control de Acceso
         Global Usuario              As String
         Global Clave                As String
@@ -88,8 +89,8 @@ Attribute VB_Name = "Declaraciones"
         Global Egresado             As Boolean
 
     ''' Variables Gestion Comercial
-        Global CodCurso         As Long
-        Global CodAlumno        As Long
-        Global Debe             As Single
-        Global Haber            As Single
-        Global Situacion        As Integer
+        Global CodCurso             As Long
+        Global CodAlumno            As Long
+        Global Debe                 As Single
+        Global Haber                As Single
+        Global Situacion            As Integer

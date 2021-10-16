@@ -68,7 +68,7 @@ Begin VB.Form frmPagoDeCuota
    Begin MSDataGridLib.DataGrid grilla 
       Height          =   3735
       Left            =   120
-      TabIndex        =   10
+      TabIndex        =   12
       Top             =   360
       Width           =   3735
       _ExtentX        =   6588
@@ -224,7 +224,7 @@ Begin VB.Form frmPagoDeCuota
    Begin isButtonTest.isButton cmdCobrar 
       Height          =   420
       Left            =   3960
-      TabIndex        =   12
+      TabIndex        =   5
       Top             =   3200
       Width           =   1335
       _ExtentX        =   2355
@@ -236,6 +236,7 @@ Begin VB.Form frmPagoDeCuota
       IconAlign       =   1
       CaptionAlign    =   1
       iNonThemeStyle  =   7
+      Enabled         =   0   'False
       HighlightColor  =   4194304
       FontHighlightColor=   14737632
       Tooltiptitle    =   ""
@@ -255,7 +256,7 @@ Begin VB.Form frmPagoDeCuota
    Begin isButtonTest.isButton cmdSalir 
       Height          =   420
       Left            =   3960
-      TabIndex        =   13
+      TabIndex        =   6
       Top             =   3700
       Width           =   1335
       _ExtentX        =   2355
@@ -299,7 +300,7 @@ Begin VB.Form frmPagoDeCuota
       ForeColor       =   &H8000000F&
       Height          =   225
       Left            =   120
-      TabIndex        =   11
+      TabIndex        =   13
       Top             =   120
       Width           =   1080
    End
@@ -319,7 +320,7 @@ Begin VB.Form frmPagoDeCuota
       ForeColor       =   &H8000000F&
       Height          =   225
       Left            =   3960
-      TabIndex        =   9
+      TabIndex        =   11
       Top             =   1920
       Width           =   1350
    End
@@ -339,7 +340,7 @@ Begin VB.Form frmPagoDeCuota
       ForeColor       =   &H8000000F&
       Height          =   225
       Left            =   3960
-      TabIndex        =   8
+      TabIndex        =   10
       Top             =   2520
       Width           =   1350
    End
@@ -359,7 +360,7 @@ Begin VB.Form frmPagoDeCuota
       ForeColor       =   &H8000000F&
       Height          =   225
       Left            =   3960
-      TabIndex        =   7
+      TabIndex        =   9
       Top             =   750
       Width           =   1350
    End
@@ -379,7 +380,7 @@ Begin VB.Form frmPagoDeCuota
       ForeColor       =   &H8000000F&
       Height          =   225
       Left            =   3960
-      TabIndex        =   6
+      TabIndex        =   8
       Top             =   1320
       Width           =   1350
    End
@@ -399,7 +400,7 @@ Begin VB.Form frmPagoDeCuota
       ForeColor       =   &H8000000F&
       Height          =   225
       Left            =   3960
-      TabIndex        =   5
+      TabIndex        =   7
       Top             =   120
       Width           =   1350
    End
@@ -409,6 +410,20 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Private Sub Form_Load()
+    Centrar Me
+    ContabilidadTemp
+    txtResta.Text = frmCobranza.txtAdeuda.Text
+    txtNroFactura.Text = ""
+    txtMonto.Text = ""
+    Adodc.CursorLocation = adUseClient
+    Adodc.ConnectionString = DbCon
+    Adodc.RecordSource = "SELECT * FROM contabilidadtemp"
+    Adodc.Refresh
+    Set grilla.DataSource = Adodc
+    formatoGrilla
+End Sub
+
 Private Sub cmbTipoPago_KeyPress(KeyAscii As Integer)
     If KeyAscii = 13 And txtNroFactura.Enabled = True Then
         txtNroFactura.SetFocus
@@ -486,12 +501,7 @@ Private Sub cmdCobrar_Click()
     End If
 
 continuar:
-    frmCobranza.Enabled = True
-    frmCobranza.Adodc.Refresh
-    frmCobranza.formatoGrilla
-    frmCobranza.txtAdeuda.Text = txtResta.Text
-    frmCobranza.cmdPagar.Enabled = False
-    cmdCobrar.Enabled = False
+    planPago
     Unload Me
 End Sub
 
@@ -511,20 +521,6 @@ Private Sub cmdSalir_Click()
     Unload Me
 End Sub
 
-Private Sub Form_Load()
-    Centrar Me
-    ContabilidadTemp
-    txtResta.Text = frmCobranza.txtAdeuda.Text
-    txtNroFactura.Text = ""
-    txtMonto.Text = ""
-    Adodc.CursorLocation = adUseClient
-    Adodc.ConnectionString = DbCon
-    Adodc.RecordSource = "SELECT * FROM contabilidadtemp"
-    Adodc.Refresh
-    Set grilla.DataSource = Adodc
-    formatoGrilla
-End Sub
-
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
     With rsContabilidadTemp
         .Requery
@@ -536,23 +532,12 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
             .MoveFirst
         Loop
     End With
-    
-    frmCobranza.Enabled = True
-    rsPlanDePago.Requery
-    frmCobranza.formatoGrilla
-    frmCobranza.txtAdeuda.Text = txtResta.Text
-    frmCobranza.cmdPagar.Enabled = False
-    cmdCobrar.Enabled = False
-
+    planPago
 End Sub
-
 
 Private Sub txtMonto_KeyPress(KeyAscii As Integer)
 If KeyAscii = 13 Then
-    If cmbTipoPago.Text = "" Then MsgBox "Debe elegir un Tipo de Pago", vbOKOnly + vbInformation, "Pago de Cuota": cmbTipoPago.SetFocus: Exit Sub
-    If txtNroFactura.Text = "" Then MsgBox "Debe agregar un numero de factura", vbOKOnly + vbInformation, "Pago de Cuota": txtNroFactura.SetFocus: Exit Sub
-    If txtMonto.Text = "" Then MsgBox "Debe agregar un monto a pagar", vbOKOnly + vbInformation, "Pago de Cuota": txtMonto.SetFocus: Exit Sub
-    cmdCobrar.Enabled = True
+    revision
     txtTotalPago.Text = CCur(txtTotalPago.Text) + CCur(txtMonto.Text)
     txtResta.Text = FormatCurrency(txtResta.Text) - FormatCurrency(txtMonto.Text)
     
@@ -565,9 +550,7 @@ If KeyAscii = 13 Then
         txtMonto.SetFocus
         Exit Sub
     End If
-    
-
-        
+            
     With rsContabilidadTemp
         .Requery
         .AddNew
@@ -602,7 +585,21 @@ End If
 End Sub
 
 Private Sub txtNroFactura_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
+End Sub
+Sub revision()
+    If cmbTipoPago.Text = "" Then MsgBox "Debe elegir un Tipo de Pago", vbOKOnly + vbInformation, "Pago de Cuota": cmbTipoPago.SetFocus: Exit Sub
+    If txtNroFactura.Text = "" Then MsgBox "Debe agregar un numero de factura", vbOKOnly + vbInformation, "Pago de Cuota": txtNroFactura.SetFocus: Exit Sub
+    If txtMonto.Text = "" Then MsgBox "Debe agregar un monto a pagar", vbOKOnly + vbInformation, "Pago de Cuota": txtMonto.SetFocus: Exit Sub
+    cmdCobrar.Enabled = True
+End Sub
+Sub planPago()
+    frmCobranza.Enabled = True
+    rsPlanDePago.Requery
+    frmCobranza.formatoGrilla
+    frmCobranza.txtAdeuda.Text = txtResta.Text
+    frmCobranza.cmdPagar.Enabled = False
+    cmdCobrar.Enabled = False
 End Sub
 
 Sub formatoGrilla()
@@ -611,6 +608,5 @@ Sub formatoGrilla()
     grilla.Columns(4).Width = 0
     grilla.Columns(2).Width = 800
     grilla.Columns(6).Width = 0
-
 End Sub
 

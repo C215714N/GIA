@@ -199,9 +199,9 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub txtCodNuevo_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 
 Private Sub txtCodViejo_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub

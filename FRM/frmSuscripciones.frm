@@ -436,7 +436,7 @@ Begin VB.Form frmSuscripciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   127533057
+         Format          =   126615553
          CurrentDate     =   41308
       End
       Begin VB.Label Label20 
@@ -908,7 +908,7 @@ Begin VB.Form frmSuscripciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   127533057
+         Format          =   126025729
          CurrentDate     =   41308
       End
       Begin MSDataListLib.DataCombo dtcAsistente 
@@ -1418,16 +1418,6 @@ Private Sub cmdNuevo_Click()
     Modi = False
 End Sub
 
-Private Sub dtcAsistente_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
-End Sub
-
-Private Sub dtcCapacitacion_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
-End Sub
-
-
-
 Private Sub dtcLocalidad_KeyPress(KeyAscii As Integer)
     If KeyAscii = 13 Then
         txtNacionalidad.SetFocus
@@ -1439,25 +1429,12 @@ Private Sub dtcLocalidad_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub dtpFechaNacimiento_Change()
-   
-    
-    If Month(dtpFechaNacimiento.Value) < Month(Date) Then
+    If (Month(dtpFechaNacimiento.Value) < Month(Date)) Or (Day(dtpFechaNacimiento.Value) <= Day(Date) And Month(dtpFechaNacimiento.Value) = Month(Date)) Then
         txtEdad.Text = DateDiff("yyyy", dtpFechaNacimiento.Value, Date)
-    ElseIf Day(dtpFechaNacimiento.Value) <= Day(Date) And Month(dtpFechaNacimiento.Value) = Month(Date) Then
-        txtEdad.Text = DateDiff("yyyy", dtpFechaNacimiento.Value, Date)
-    ElseIf Day(dtpFechaNacimiento.Value) > Day(Date) And Month(dtpFechaNacimiento.Value) >= Month(Date) Then
-        txtEdad.Text = DateDiff("yyyy", dtpFechaNacimiento.Value, Date) - 1
     Else
-      txtEdad.Text = DateDiff("yyyy", dtpFechaNacimiento.Value, Date) - 1
+        txtEdad.Text = DateDiff("yyyy", dtpFechaNacimiento.Value, Date) - 1
     End If
 End Sub
-
-
-
-Private Sub dtpFechaSuscripcion_KeyPress(KeyAscii As Integer)
-        If KeyPress = 13 Then cmbTipoPago.SetFocus
-End Sub
-
 Private Sub Form_Load()
     Centrar Me
     Suscripciones
@@ -1467,6 +1444,7 @@ Private Sub Form_Load()
     HabilitarBotones True, False
     HabilitarCuadros True, False
     Limpiar
+    
     Set dtcLocalidad.RowSource = rsLocalidades
     dtcLocalidad.BoundColumn = "localidad"
     dtcLocalidad.ListField = "localidad"
@@ -1474,6 +1452,7 @@ Private Sub Form_Load()
     Set dtcCapacitacion.RowSource = rsCapacitaciones
     dtcCapacitacion.BoundColumn = "capacitacion"
     dtcCapacitacion.ListField = "capacitacion"
+    
     Set dtcAsistente.RowSource = rsPersonal
     dtcAsistente.BoundColumn = "Personal"
     dtcAsistente.ListField = "Personal"
@@ -1548,75 +1527,82 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
     Unload Me
 End Sub
 Private Sub txtCP_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtDireccion_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtDocumento_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
     If KeyAscii = 46 Then KeyAscii = 0
 End Sub
 Private Sub txtGastoAdm_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtLocalidad_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtNacionalidad_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtNroFactura_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtNya_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtPT1_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtPT2_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtPT3_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtPT4_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtTel1_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtTel2_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtTel3_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtTel4_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtTotalCuotas_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtTotalCurso_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub txtTotalMatricula_KeyPress(KeyAscii As Integer)
-        If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub chkExamenes_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
-
 Private Sub chkManuales_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 Private Sub cmbTipoDoc_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
     KeyAscii = 0
 End Sub
 Private Sub cmbTipoPago_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
-
+Private Sub dtcAsistente_KeyPress(KeyAscii As Integer)
+    Continue
+End Sub
+Private Sub dtcCapacitacion_KeyPress(KeyAscii As Integer)
+    Continue
+End Sub
+Private Sub dtpFechaSuscripcion_KeyPress(KeyAscii As Integer)
+        If KeyPress = 13 Then cmbTipoPago.SetFocus
+End Sub

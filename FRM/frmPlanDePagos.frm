@@ -111,7 +111,7 @@ Begin VB.Form frmPlanDePagos
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   272171009
+      Format          =   117702657
       CurrentDate     =   41323
    End
    Begin VB.TextBox txtNroCuota 
@@ -150,7 +150,7 @@ Begin VB.Form frmPlanDePagos
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   272171009
+      Format          =   117702657
       CurrentDate     =   41323
    End
    Begin isButtonTest.isButton cmdCrearPlan 
@@ -341,9 +341,9 @@ Private Sub cmdCrearPlan_Click()
     grilla.Rows = 2
     grilla.Col = 0
     grilla.Row = 0
-    grilla.Text = "N° de Cuota"
+    grilla.Text = "N° Cuota"
     grilla.Col = 1
-    grilla.Text = "Fecha de Vencimiento"
+    grilla.Text = "Fecha Vto"
     grilla.Col = 2
     grilla.Text = "Deuda"
     grilla.Col = 0
@@ -351,7 +351,7 @@ Private Sub cmdCrearPlan_Click()
     grilla.ColWidth(1) = 2000
     
     With rsPlanDePago
-        Do Until NroCuota > Val(txtTotalCuotas.Text)
+        Do Until NroCuota > Int(txtTotalCuotas.Text)
             .Requery
             .AddNew
             !CodAlumno = lblCodAlumno.Caption
@@ -371,7 +371,6 @@ Private Sub cmdCrearPlan_Click()
                 !DeudaTotal = txtDeuda.Text
                 !CuotasDebidas = 1
             End If
-            
             .Update
             grilla.Text = NroCuota
             grilla.Col = 1

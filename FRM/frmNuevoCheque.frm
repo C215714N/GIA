@@ -103,7 +103,7 @@ Begin VB.Form frmNuevoCheque
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   120389633
+      Format          =   161218561
       CurrentDate     =   41782
    End
    Begin isButtonTest.isButton cmdAgregar 
@@ -302,7 +302,7 @@ Private Sub cmdCancelar_Click()
 End Sub
 
 Private Sub DTPFecha_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 
 Private Sub Form_Load()
@@ -311,17 +311,17 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub txtDestinatario_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 
 Private Sub txtFirma_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 
 Private Sub txtMonto_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 
 Private Sub txtNroCheque_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub

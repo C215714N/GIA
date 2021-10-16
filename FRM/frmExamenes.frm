@@ -54,7 +54,7 @@ Begin VB.Form frmExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   271974401
+         Format          =   160301057
          CurrentDate     =   41978
       End
       Begin VB.TextBox txtPromedio 
@@ -553,7 +553,7 @@ LineaError:
 End Sub
 
 Private Sub txtTeorico_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 
 Private Sub txtPractico_KeyPress(KeyAscii As Integer)
@@ -564,13 +564,12 @@ Private Sub txtPractico_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub txtPromedio_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then SendKeys "{TAB}"
+    Continue
 End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
     If lblOrigen.Caption = "Egresados" Then frmEgresados.Enabled = True
 End Sub
-
 Private Sub CargarModulos()
     If txtCurso.Text = "Operador de Pc" Then
         With cmbModulo
@@ -590,7 +589,7 @@ Private Sub CargarModulos()
             .AddItem ("Photoshop")
             .AddItem ("Page Maker")
         End With
-            
+        
     ElseIf txtCurso.Text = "Diseño Web" Then
         With cmbModulo
             .Clear
@@ -599,130 +598,59 @@ Private Sub CargarModulos()
             .AddItem ("Flash")
             .AddItem ("Dreamweaver")
         End With
-        
-    ElseIf txtCurso.Text = "Programación" Then
-        With cmbModulo
-            .Clear
-            .AddItem ("modulo I")
-            .AddItem ("modulo II")
-        End With
-    
+            
     ElseIf txtCurso.Text = "Programación + Access" Then
         With cmbModulo
             .Clear
             .AddItem ("Access")
-            .AddItem ("modulo I")
-            .AddItem ("modulo II")
+            .AddItem ("Modulo I")
+            .AddItem ("Modulo II")
         End With
-    
-    ElseIf txtCurso.Text = "Telefonía Celular" Then
-        With cmbModulo
-            .Clear
-            .AddItem ("modulo I")
-        End With
-    
-    ElseIf txtCurso.Text = "Armado y Reparación de PC y Redes" Then
-        With cmbModulo
-            .Clear
-            .AddItem ("Armado I")
-            .AddItem ("Armado II")
-            .AddItem ("Armado III")
-            .AddItem ("Armado IV")
-            .AddItem ("Redes I")
-            .AddItem ("Redes II")
-            .AddItem ("Redes III")
-        End With
-    
-    ElseIf txtCurso.Text = "Armado y Reparación de PC" Then
-        With cmbModulo
-            .Clear
-            .AddItem ("Armado I")
-            .AddItem ("Armado II")
-            .AddItem ("Armado III")
-            .AddItem ("Armado IV")
-        End With
-    
-    ElseIf txtCurso.Text = "Redes" Then
-        With cmbModulo
-            .Clear
-            .AddItem ("Redes I")
-            .AddItem ("Redes II")
-            .AddItem ("Redes III")
-        End With
-    
-    ElseIf txtCurso.Text = "Técnico en Pc nivel I" Then
+        
+    ElseIf txtCurso.Text = "Programación" Or txtCurso.Text = "Telefonía Celular" Then
         With cmbModulo
             .Clear
             .AddItem ("Modulo I")
             .AddItem ("Modulo II")
-            .AddItem ("Examen Final")
+        End With
+        
+    ElseIf txtCurso.Text = "Técnico en aire acondicionado" Or txtCurso.Text = "Electricidad domiciliaria" Then
+        With cmbModulo
+            .Clear
+            .AddItem ("Modulo I")
+            .AddItem ("Modulo II")
+            .AddItem ("Modulo III")
+            .AddItem ("Final")
         End With
     
-    ElseIf txtCurso.Text = "Técnico en Pc nivel II" Then
+    ElseIf txtCurso.Text = "Soporte Tecnico" Then
         With cmbModulo
             .Clear
             .AddItem ("Modulo I")
             .AddItem ("Modulo II")
             .AddItem ("Modulo III")
             .AddItem ("Modulo IV")
+            .AddItem ("Modulo V")
             .AddItem ("Examen Final")
         End With
-    
-    ElseIf txtCurso.Text = "Técnico en aire acondicionado" Or txtCurso.Text = "Electricidad domiciliaria" Then
-        With cmbModulo
-            .Clear
-            .AddItem ("Modulo I")
-            .AddItem ("Modulo II")
-        End With
-    
-    ElseIf txtCurso.Text = "Inglés" Or txtCurso.Text = "Inglés II" Then
-        With cmbModulo
-            .Clear
-            .AddItem ("Inglés I")
-            .AddItem ("Inglés II")
-            .AddItem ("Inglés III")
-        End With
-
-    ElseIf txtCurso.Text = "Extracc. Adm. Y Asist. Tec. Laborat." Then
-        With cmbModulo
-            .Clear
-            .AddItem ("Extraccionista I")
-            .AddItem ("Extraccionista II")
-            .AddItem ("Extraccionista III")
-        End With
         
-    ElseIf txtCurso.Text = "Auxiliar de Farmacia" Then
+    ElseIf txtCurso.Text = "Cuidador Domiciliario" Or txtCurso.Text = "Asistente Terapeutico" Or txtCurso.Text = "Auxiliar de Farmacia" Then
         With cmbModulo
             .Clear
-            .AddItem ("Auxiliar I")
-            .AddItem ("Auxiliar II")
-        End With
-
-    ElseIf txtCurso.Text = "Paneles Solares" Then
-        With cmbModulo
-            .Clear
-            .AddItem ("Paneles I")
-            .AddItem ("Paneles II")
-            .AddItem ("Paneles III")
-        End With
-
-    ElseIf txtCurso.Text = "Asistente Terapeutico" Or txtCurso.Text = "Cuidador Domiciliario" Then
-        With cmbModulo
-            .Clear
-            .AddItem ("Salud I")
-            .AddItem ("Salud II")
-            .AddItem ("Salud III")
-        End With
-            
-    ElseIf txtCurso.Text = "Emergencias Médicas" Then
-        With cmbModulo
-            .Clear
-            .AddItem ("Parcial")
+            .AddItem ("Parcial I")
+            .AddItem ("Parcial II")
+            .AddItem ("Parcial III")
             .AddItem ("Final")
         End With
-        
+    
+    ElseIf txtCurso.Text = "Emergencias Médicas" Or txtCurso.Text = "Extracc. Adm. Y Asist. Tec. Laborat." Then
+        With cmbModulo
+            .Clear
+            .AddItem ("Parcial I")
+            .AddItem ("Parcial II")
+            .AddItem ("Final")
+        End With
     End If
-    cmbModulo.SetFocus
 End Sub
 
 Sub formatoGrilla()
