@@ -36,7 +36,7 @@ Begin VB.Form frmSituacionDeCartera
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   127270913
+      Format          =   127205377
       CurrentDate     =   41624
    End
    Begin VB.Frame Frame1 
@@ -503,8 +503,8 @@ Private Sub Form_Load()
     DTPFecha.Value = Date
 End Sub
 
-Private Sub DTPFecha_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub DTPFecha_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
 
 Private Sub cmdBuscar_Click()
@@ -527,17 +527,17 @@ Private Sub cmdBuscar_Click()
                 resto = resto + !expr1006
                 .MoveNext
             Loop
-            txtAlumnos.Text = alumnos
-            txtDeuda.Text = FormatCurrency(deuda)
-            txtCobranza.Text = FormatCurrency(Cobranza)
-            txtCobrado.Text = totalcobrado
-            txtResto.Text = FormatCurrency(resto)
-            txtPorcentaje.Text = FormatCurrency(txtCobranza.Text) * 100 / FormatCurrency(txtDeuda.Text) & "%"
+            txtAlumnos.text = alumnos
+            txtDeuda.text = FormatCurrency(deuda)
+            txtCobranza.text = FormatCurrency(Cobranza)
+            txtCobrado.text = totalcobrado
+            txtResto.text = FormatCurrency(resto)
+            txtPorcentaje.text = FormatCurrency(txtCobranza.text) * 100 / FormatCurrency(txtDeuda.text) & "%"
             
-            If txtPorcentaje.Text = "100%" Then
-                txtPorcentaje.Text = "100%"
+            If txtPorcentaje.text = "100%" Then
+                txtPorcentaje.text = "100%"
             Else
-                txtPorcentaje.Text = Format(txtPorcentaje.Text, "##.##%")
+                txtPorcentaje.text = Format(txtPorcentaje.text, "##.##%")
             End If
         End With
         With rsSituacionDeCartera
@@ -557,12 +557,12 @@ Private Sub cmdBuscar_Click()
         With rsTotalesSituaciones
             If .State = 1 Then .Close
             .Open "SELECT * FROM totalessituaciones WHERE fecha=#" & Format(DTPFecha.Value, "mm/dd/yyyy") & "#", Cn, adOpenDynamic, adLockPessimistic
-            txtAlumnos.Text = !alumnos
-            txtDeuda.Text = !deuda
-            txtCobranza.Text = !Cobranza
-            txtCobrado.Text = !cobrado
-            txtPorcentaje.Text = !porcentaje
-            txtResto.Text = !resto
+            txtAlumnos.text = !alumnos
+            txtDeuda.text = !deuda
+            txtCobranza.text = !Cobranza
+            txtCobrado.text = !cobrado
+            txtPorcentaje.text = !porcentaje
+            txtResto.text = !resto
         End With
         cmdAnalizar.Enabled = False
     End If
@@ -572,23 +572,23 @@ Private Sub cmdBuscar_Click()
 End Sub
 
 Private Sub cmdAnalizar_Click()
-    Situacion = grilla.Columns(0).Text
+    Situacion = grilla.Columns(0).text
     Me.Enabled = False
     frmAnalisisSituacion.Show
-    frmAnalisisSituacion.txtResta.Text = grilla.Columns(6).Text
-    frmAnalisisSituacion.txtResta.Text = Format(frmAnalisisSituacion.txtResta.Text, "currency")
+    frmAnalisisSituacion.txtResta.text = grilla.Columns(6).text
+    frmAnalisisSituacion.txtResta.text = Format(frmAnalisisSituacion.txtResta.text, "currency")
 End Sub
 
 Private Sub cmdInforme_Click()
     Set dtrSituacion.DataSource = rsSituacionDeCartera
     dtrSituacion.Show
     dtrSituacion.Caption = "Situacion de Cartera"
-    dtrSituacion.Sections("Seccion5").Controls("etiqueta21").Caption = txtAlumnos.Text
-    dtrSituacion.Sections("Seccion5").Controls("etiqueta11").Caption = txtDeuda.Text
-    dtrSituacion.Sections("Seccion5").Controls("etiqueta12").Caption = txtCobranza.Text
-    dtrSituacion.Sections("Seccion5").Controls("etiqueta13").Caption = txtCobrado.Text
-    dtrSituacion.Sections("Seccion5").Controls("etiqueta14").Caption = txtPorcentaje.Text
-    dtrSituacion.Sections("Seccion5").Controls("etiqueta15").Caption = txtResto.Text
+    dtrSituacion.Sections("Seccion5").Controls("etiqueta21").Caption = txtAlumnos.text
+    dtrSituacion.Sections("Seccion5").Controls("etiqueta11").Caption = txtDeuda.text
+    dtrSituacion.Sections("Seccion5").Controls("etiqueta12").Caption = txtCobranza.text
+    dtrSituacion.Sections("Seccion5").Controls("etiqueta13").Caption = txtCobrado.text
+    dtrSituacion.Sections("Seccion5").Controls("etiqueta14").Caption = txtPorcentaje.text
+    dtrSituacion.Sections("Seccion5").Controls("etiqueta15").Caption = txtResto.text
     dtrSituacion.Sections("Seccion4").Controls("etiqueta25").Caption = DTPFecha.Value
 End Sub
 

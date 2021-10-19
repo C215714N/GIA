@@ -238,12 +238,12 @@ End Sub
 Private Sub cmdAceptar_Click()
     On Error GoTo LineaError:
     
-    frmCobranza.lblCodalumno.Caption = grilla.Columns(0).Text
-    frmCobranza.lblNyA.Caption = grilla.Columns(1).Text
-    If Trim(Len(frmCobranza.lblCodalumno.Caption)) = 1 Then frmCobranza.lblCodalumno.Caption = Format(frmCobranza.lblCodalumno.Caption, "0000#")
-    If Trim(Len(frmCobranza.lblCodalumno.Caption)) = 2 Then frmCobranza.lblCodalumno.Caption = Format(frmCobranza.lblCodalumno.Caption, "000##")
-    If Trim(Len(frmCobranza.lblCodalumno.Caption)) = 3 Then frmCobranza.lblCodalumno.Caption = Format(frmCobranza.lblCodalumno.Caption, "00###")
-    If Trim(Len(frmCobranza.lblCodalumno.Caption)) = 4 Then frmCobranza.lblCodalumno.Caption = Format(frmCobranza.lblCodalumno.Caption, "0####")
+    frmCobranza.lblCodAlumno.Caption = grilla.Columns(0).text
+    frmCobranza.lblNyA.Caption = grilla.Columns(1).text
+    If Trim(Len(frmCobranza.lblCodAlumno.Caption)) = 1 Then frmCobranza.lblCodAlumno.Caption = Format(frmCobranza.lblCodAlumno.Caption, "0000#")
+    If Trim(Len(frmCobranza.lblCodAlumno.Caption)) = 2 Then frmCobranza.lblCodAlumno.Caption = Format(frmCobranza.lblCodAlumno.Caption, "000##")
+    If Trim(Len(frmCobranza.lblCodAlumno.Caption)) = 3 Then frmCobranza.lblCodAlumno.Caption = Format(frmCobranza.lblCodAlumno.Caption, "00###")
+    If Trim(Len(frmCobranza.lblCodAlumno.Caption)) = 4 Then frmCobranza.lblCodAlumno.Caption = Format(frmCobranza.lblCodAlumno.Caption, "0####")
     frmCobranza.Show
     Unload Me
     Exit Sub
@@ -256,7 +256,7 @@ Private Sub cmdCancelar_Click()
     Unload Me
 End Sub
 Private Sub txtBuscar_Change()
-    If txtBuscar.Text = "" Then
+    If txtBuscar.text = "" Then
         cmdAceptar.Enabled = False
     Else
         cmdAceptar.Enabled = True
@@ -265,7 +265,7 @@ Private Sub txtBuscar_Change()
 End Sub
 
 Sub BuscarAlumno()
-    busca = UCase(Trim(txtBuscar.Text)) & "%"
+    busca = UCase(Trim(txtBuscar.text)) & "%"
     Adodc.RecordSource = "SELECT  codalumno as [Cod], nya as [Alumno], tipodoc as [Tipo],DNI as [N°], capac as [Capacitacion] FROM verificaciones WHERE codAlumno LIKE '" & busca & "' OR dni  LIKE '" & busca & "' OR nya  LIKE '" & busca & "' ORDER BY codalumno DESC, nya, dni"
     Adodc.Refresh
     Set grilla.DataSource = Adodc
@@ -286,6 +286,6 @@ Sub formatoGrilla()
     Next
 End Sub
 
-Private Sub txtBuscar_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtBuscar_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub

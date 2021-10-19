@@ -103,7 +103,7 @@ Begin VB.Form frmNuevoCheque
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   139067393
+      Format          =   362610689
       CurrentDate     =   41782
    End
    Begin isButtonTest.isButton cmdAgregar 
@@ -267,29 +267,29 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cmdAgregar_Click()
     On Error GoTo LineaError
-    If txtDestinatario.Text = "" Then MsgBox "Debe agregar el destinatario del cheque", vbCritical, "Cheques": txtDestinatario.SetFocus: Exit Sub
-    If txtNroCheque.Text = "" Then MsgBox "Debe agregar el numero del cheque", vbCritical, "Cheques": txtNroCheque.SetFocus: Exit Sub
-    If txtMonto.Text = "" Then MsgBox "Debe agregar el monto", vbCritical, "Cheques": txtMonto.SetFocus: Exit Sub
-    If cmbFirma.Text = "" Then MsgBox "Debe agregar el firmante", vbCritical, "Cheques": cmbFirma.SetFocus: Exit Sub
+    If txtDestinatario.text = "" Then MsgBox "Debe agregar el destinatario del cheque", vbCritical, "Cheques": txtDestinatario.SetFocus: Exit Sub
+    If txtNroCheque.text = "" Then MsgBox "Debe agregar el numero del cheque", vbCritical, "Cheques": txtNroCheque.SetFocus: Exit Sub
+    If txtMonto.text = "" Then MsgBox "Debe agregar el monto", vbCritical, "Cheques": txtMonto.SetFocus: Exit Sub
+    If cmbFirma.text = "" Then MsgBox "Debe agregar el firmante", vbCritical, "Cheques": cmbFirma.SetFocus: Exit Sub
 
     With rsCheques
         If .State = 1 Then .Close
         .Open "SELECT * FROM cheques", Cn, adOpenDynamic, adLockPessimistic
         .Requery
         .AddNew
-        !fecha = dtpFecha.Value
-        !destinatario = txtDestinatario.Text
-        !numerocheque = txtNroCheque.Text
-        !monto = txtMonto.Text
-        !firma = cmbFirma.Text
+        !fecha = DTPFecha.Value
+        !destinatario = txtDestinatario.text
+        !numerocheque = txtNroCheque.text
+        !monto = txtMonto.text
+        !firma = cmbFirma.text
         !estado = "SIN DEPOSITAR"
         .Update
     End With
     
     If MsgBox("¿Desea ingresar otro cheque?", vbQuestion + vbYesNo, "Cheques") = vbYes Then
-        txtDestinatario.Text = ""
-        txtMonto.Text = ""
-        txtNroCheque.Text = ""
+        txtDestinatario.text = ""
+        txtMonto.text = ""
+        txtNroCheque.text = ""
     Else
         Unload Me
     End If
@@ -300,27 +300,27 @@ Private Sub cmdCancelar_Click()
     Unload Me
 End Sub
 
-Private Sub DTPFecha_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub DTPFecha_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
 
 Private Sub Form_Load()
     Centrar Me
-    dtpFecha.Value = Date
+    DTPFecha.Value = Date
 End Sub
 
-Private Sub txtDestinatario_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtDestinatario_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
 
-Private Sub txtFirma_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtFirma_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
 
-Private Sub txtMonto_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtMonto_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
 
-Private Sub txtNroCheque_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtNroCheque_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub

@@ -272,7 +272,7 @@ Begin VB.Form frmPersonal
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   139001857
+         Format          =   125829121
          CurrentDate     =   41319
       End
       Begin VB.TextBox txtNya 
@@ -408,7 +408,7 @@ Begin VB.Form frmPersonal
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   139001857
+         Format          =   363134977
          CurrentDate     =   41319
       End
       Begin VB.Label Label10 

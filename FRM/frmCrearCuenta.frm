@@ -89,16 +89,16 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cmdAgregar_Click()
-    If txtCuenta.Text = "" Then MsgBox "Ingrese el nombre de la nueva cuenta", vbCritical, "Agregar Cuenta de Presupuesto": txtCuenta.SetFocus: Exit Sub
+    If txtCuenta.text = "" Then MsgBox "Ingrese el nombre de la nueva cuenta", vbCritical, "Agregar Cuenta de Presupuesto": txtCuenta.SetFocus: Exit Sub
     
     With rsCuentasPresupuesto
         If .State = 1 Then .Close
-        .Open "SELECT cuenta FROM cuentaspresupuesto WHERE cuenta='" & txtCuenta.Text & "'", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT cuenta FROM cuentaspresupuesto WHERE cuenta='" & txtCuenta.text & "'", Cn, adOpenDynamic, adLockPessimistic
         If .BOF Or .EOF Then
             .AddNew
-            !Cuenta = txtCuenta.Text
+            !Cuenta = txtCuenta.text
             .Update
-            txtCuenta.Text = ""
+            txtCuenta.text = ""
             txtCuenta.SetFocus
         Else
             MsgBox "La cuenta ya existe", vbCritical, "Cuentas de Presupuesto": txtCuenta.SetFocus
@@ -121,6 +121,6 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
     End With
 End Sub
 
-Private Sub txtCuenta_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtCuenta_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub

@@ -252,17 +252,17 @@ Private Sub cmdAceptar_Click()
     With rsPersonal
         If .BOF Or .EOF Then Exit Sub
         .Requery
-        .Find "NyA='" & grilla.Columns(0).Text & "'"
+        .Find "NyA='" & grilla.Columns(0).text & "'"
         frmPersonal.lblID.Caption = !ID
-        frmPersonal.txtNya.Text = !NyA
-        frmPersonal.txtDNI.Text = !dni
-        frmPersonal.cmbTipoDoc.Text = !tipodoc
-        frmPersonal.txtDireccion.Text = !direccion
-        frmPersonal.txtLocalidad.Text = !localidad
+        frmPersonal.txtNya.text = !NyA
+        frmPersonal.txtDNI.text = !dni
+        frmPersonal.cmbTipoDoc.text = !tipodoc
+        frmPersonal.txtDireccion.text = !direccion
+        frmPersonal.txtLocalidad.text = !localidad
         frmPersonal.dtpFechaNacimiento.Value = !Fechanacimiento
-        frmPersonal.dtcCargo.Text = !cargo
-        frmPersonal.txtTelCasa.Text = !telcasa
-        frmPersonal.txtTelCel.Text = !telcel
+        frmPersonal.dtcCargo.text = !cargo
+        frmPersonal.txtTelCasa.text = !telcasa
+        frmPersonal.txtTelCel.text = !telcel
         frmPersonal.dtpFechaIngreso.Value = !fechaingreso
     End With
     Unload Me
@@ -275,12 +275,12 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
     frmPersonal.Enabled = True
 End Sub
 Private Sub txtBuscar_Change()
-    If txtBuscar.Text = "" Then
+    If txtBuscar.text = "" Then
         cmdAceptar.Enabled = False
     Else
         cmdAceptar.Enabled = True
     End If
-    busca = UCase(Trim(txtBuscar.Text)) & "%"
+    busca = UCase(Trim(txtBuscar.text)) & "%"
     Adodc.RecordSource = "SELECT nya as [Apellido y Nombres],Direccion,Localidad, Telcasa as [Telefono Casa], telcel as Celular, Cargo FROM personal WHERE [nya] like '" & busca & "'"
     
     Adodc.Refresh
@@ -298,6 +298,6 @@ Sub formatoGrilla()
         End If
     Next
 End Sub
-Private Sub txtBuscar_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtBuscar_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub

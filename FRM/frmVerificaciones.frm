@@ -392,7 +392,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   137297921
+         Format          =   127664129
          CurrentDate     =   41308
       End
       Begin MSDataListLib.DataCombo dtcAsistente 
@@ -779,7 +779,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   169803777
+         Format          =   127664129
          CurrentDate     =   41308
       End
       Begin MSComCtl2.DTPicker DTPFechaVerificacion 
@@ -800,7 +800,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   169803777
+         Format          =   127664129
          CurrentDate     =   41308
       End
       Begin VB.Label Label17 
@@ -1224,21 +1224,21 @@ End Sub
 
 Private Sub cmdGrabar_Click()
     Dim codigo As Long
-    If txtNya.Text = "" Then MsgBox "Debe ingresar un Nombre de Alumno", vbOKOnly + vbInformation, "Suscripciones": txtNya.SetFocus: Exit Sub
-    If cmbTipoDoc.Text = "" Then MsgBox "Debe ingresar un Tipo de Documento", vbOKOnly + vbInformation, "Suscripciones": cmbTipoDoc.SetFocus: Exit Sub
-    If txtDocumento.Text = "" Then MsgBox "Debe ingresar un Numero de Documento", vbOKOnly + vbInformation, "Suscripciones": txtDocumento.SetFocus: Exit Sub
-    If txtDireccion.Text = "" Then MsgBox "Debe ingresar una Direccion", vbOKOnly + vbInformation, "Suscripciones": txtDireccion.SetFocus: Exit Sub
-    If txtCP.Text = "" Then MsgBox "Debe ingresar un Codigo Postal", vbOKOnly + vbInformation, "Suscripciones": txtCP.SetFocus: Exit Sub
-    If dtcLocalidad.Text = "" Then MsgBox "Debe ingresar una Localidad", vbOKOnly + vbInformation, "Suscripciones": txtLocalidad.SetFocus: Exit Sub
-    If txtNacionalidad.Text = "" Then MsgBox "Debe ingresar una Nacionalidad del Alumno", vbOKOnly + vbInformation, "Suscripciones": txtNacionalidad.SetFocus: Exit Sub
-    If txtEdad.Text = "" Then MsgBox "Debe ingresar la Edad del Alumno", vbOKOnly + vbInformation, "Suscripciones": txtEdad.SetFocus: Exit Sub
-    If dtcCapacitacion.Text = "" Then MsgBox "Debe ingresar una Capacitacion ", vbOKOnly + vbInformation, "Suscripciones": dtcCapacitacion.SetFocus: Exit Sub
-    If dtcAsistente.Text = "" Then MsgBox "Debe ingresar un Asistente", vbOKOnly + vbInformation, "Suscripciones": dtcAsistente.SetFocus: Exit Sub
-    If txtPT1.Text = "" Then MsgBox "Debe ingresar al menos un Telefono", vbOKOnly + vbInformation, "Suscripciones": txtPT1.SetFocus: Exit Sub
-    If txtTel1.Text = "" Then MsgBox "Debe ingresar al menos un Telefono", vbOKOnly + vbInformation, "Suscripciones": txtTel1.SetFocus: Exit Sub
-    If txtTotalCurso.Text = "" Or txtTotalCurso.Text = "0" Then MsgBox "Debe ingresar el Precio del Curso." & vbNewLine & "El mismo debe ser superior a Cero", vbOKOnly + vbInformation, "Suscripciones": txtTotalCurso.SetFocus: Exit Sub
-    If txtTotalCuotas.Text = "" Or txtTotalCuotas.Text = "0" Then MsgBox "Debe ingresar la Cantidad de Cuotas." & vbNewLine & "La misma debe ser superior a Cero", vbOKOnly + vbInformation, "Suscripciones": txtTotalCuotas.SetFocus: Exit Sub
-    If txtGastoAdm.Text = "" Then MsgBox "Debe ingresar el Gasto Administrativo", vbOKOnly + vbInformation, "Suscripciones": txtGastoAdm.SetFocus: Exit Sub
+    If txtNya.text = "" Then MsgBox "Debe ingresar un Nombre de Alumno", vbOKOnly + vbInformation, "Suscripciones": txtNya.SetFocus: Exit Sub
+    If cmbTipoDoc.text = "" Then MsgBox "Debe ingresar un Tipo de Documento", vbOKOnly + vbInformation, "Suscripciones": cmbTipoDoc.SetFocus: Exit Sub
+    If txtDocumento.text = "" Then MsgBox "Debe ingresar un Numero de Documento", vbOKOnly + vbInformation, "Suscripciones": txtDocumento.SetFocus: Exit Sub
+    If txtDireccion.text = "" Then MsgBox "Debe ingresar una Direccion", vbOKOnly + vbInformation, "Suscripciones": txtDireccion.SetFocus: Exit Sub
+    If txtCP.text = "" Then MsgBox "Debe ingresar un Codigo Postal", vbOKOnly + vbInformation, "Suscripciones": txtCP.SetFocus: Exit Sub
+    If dtcLocalidad.text = "" Then MsgBox "Debe ingresar una Localidad", vbOKOnly + vbInformation, "Suscripciones": txtLocalidad.SetFocus: Exit Sub
+    If txtNacionalidad.text = "" Then MsgBox "Debe ingresar una Nacionalidad del Alumno", vbOKOnly + vbInformation, "Suscripciones": txtNacionalidad.SetFocus: Exit Sub
+    If txtEdad.text = "" Then MsgBox "Debe ingresar la Edad del Alumno", vbOKOnly + vbInformation, "Suscripciones": txtEdad.SetFocus: Exit Sub
+    If dtcCapacitacion.text = "" Then MsgBox "Debe ingresar una Capacitacion ", vbOKOnly + vbInformation, "Suscripciones": dtcCapacitacion.SetFocus: Exit Sub
+    If dtcAsistente.text = "" Then MsgBox "Debe ingresar un Asistente", vbOKOnly + vbInformation, "Suscripciones": dtcAsistente.SetFocus: Exit Sub
+    If txtPT1.text = "" Then MsgBox "Debe ingresar al menos un Telefono", vbOKOnly + vbInformation, "Suscripciones": txtPT1.SetFocus: Exit Sub
+    If txtTel1.text = "" Then MsgBox "Debe ingresar al menos un Telefono", vbOKOnly + vbInformation, "Suscripciones": txtTel1.SetFocus: Exit Sub
+    If txtTotalCurso.text = "" Or txtTotalCurso.text = "0" Then MsgBox "Debe ingresar el Precio del Curso." & vbNewLine & "El mismo debe ser superior a Cero", vbOKOnly + vbInformation, "Suscripciones": txtTotalCurso.SetFocus: Exit Sub
+    If txtTotalCuotas.text = "" Or txtTotalCuotas.text = "0" Then MsgBox "Debe ingresar la Cantidad de Cuotas." & vbNewLine & "La misma debe ser superior a Cero", vbOKOnly + vbInformation, "Suscripciones": txtTotalCuotas.SetFocus: Exit Sub
+    If txtGastoAdm.text = "" Then MsgBox "Debe ingresar el Gasto Administrativo", vbOKOnly + vbInformation, "Suscripciones": txtGastoAdm.SetFocus: Exit Sub
 
     On Error GoTo LineaError
 
@@ -1246,7 +1246,7 @@ Private Sub cmdGrabar_Click()
         With rsControl
             .Find "ID=1"
             codigo = !CodAlumno
-            lblCodalumno.Caption = codigo
+            lblCodAlumno.Caption = codigo
             !CodAlumno = codigo + 1
             .UpdateBatch
         End With
@@ -1254,32 +1254,32 @@ Private Sub cmdGrabar_Click()
         With rsVerificaciones
             .Requery
             .AddNew
-            !CodAlumno = lblCodalumno.Caption
-            !NyA = txtNya.Text
-            !tipodoc = cmbTipoDoc.Text
-            !dni = txtDocumento.Text
-            !direccion = txtDireccion.Text
-            !cp = txtCP.Text
-            !localidad = dtcLocalidad.Text
-            !nacionalidad = txtNacionalidad.Text
-            !edad = txtEdad.Text
+            !CodAlumno = lblCodAlumno.Caption
+            !NyA = txtNya.text
+            !tipodoc = cmbTipoDoc.text
+            !dni = txtDocumento.text
+            !direccion = txtDireccion.text
+            !cp = txtCP.text
+            !localidad = dtcLocalidad.text
+            !nacionalidad = txtNacionalidad.text
+            !edad = txtEdad.text
             !fechanac = dtpFechaNacimiento.Value
-            !capac = dtcCapacitacion.Text
-            !Asistente = dtcAsistente.Text
-            !ptel1 = txtPT1.Text
-            !ptel2 = txtPT2.Text
-            !ptel3 = txtPT3.Text
-            !ptel4 = txtPT4.Text
-            !tel1 = txtTel1.Text
-            !tel2 = txtTel2.Text
-            !tel3 = txtTel3.Text
-            !tel4 = txtTel4.Text
-            !totalcurso = Int(txtTotalCurso.Text)
-            !cuotas = Int(txtTotalCuotas.Text)
-            !gastoadm = Int(txtGastoAdm.Text)
+            !capac = dtcCapacitacion.text
+            !Asistente = dtcAsistente.text
+            !ptel1 = txtPT1.text
+            !ptel2 = txtPT2.text
+            !ptel3 = txtPT3.text
+            !ptel4 = txtPT4.text
+            !tel1 = txtTel1.text
+            !tel2 = txtTel2.text
+            !tel3 = txtTel3.text
+            !tel4 = txtTel4.text
+            !totalcurso = Int(txtTotalCurso.text)
+            !cuotas = Int(txtTotalCuotas.text)
+            !gastoadm = Int(txtGastoAdm.text)
             !fechasus = dtpFechaSuscripcion.Value
             !FechaVerif = DTPFechaVerificacion.Value
-            !observaciones = txtObservaciones.Text
+            !observaciones = txtObservaciones.text
             !estado = "Activo"
             If chkManuales.Value = 1 Then
                 !manuales = True
@@ -1297,7 +1297,7 @@ Private Sub cmdGrabar_Click()
        
        With rsInformeSuscripciones
             If .State = 1 Then .Close
-            .Open "SELECT * FROM informesuscripciones WHERE curso='" & dtcCapacitacion.Text & "' AND asistente='" & dtcAsistente.Text & "' AND totalcurso=" & txtTotalCurso.Text & " AND verificado=0", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT * FROM informesuscripciones WHERE curso='" & dtcCapacitacion.text & "' AND asistente='" & dtcAsistente.text & "' AND totalcurso=" & txtTotalCurso.text & " AND verificado=0", Cn, adOpenDynamic, adLockPessimistic
             If .BOF Or .EOF Then MsgBox "El Alumno fue verificado con Exito" & vbNewLine & vbNewLine & "Recuerde que para una Correcta Gestion Administrativa debera asignarle un plan de pago, incluso si la capacitacion estuviese Completamente Becada", vbOKOnly + vbInformation: GoSub continuar
             .MoveFirst
             !fechaV = DTPFechaVerificacion.Value
@@ -1309,32 +1309,32 @@ Private Sub cmdGrabar_Click()
     Else
         With rsVerificaciones
             .Requery
-            .Find "Codalumno=" & lblCodalumno.Caption
-            .Find "CodAlumno='" & lblCodalumno.Caption & "'"
-            !NyA = txtNya.Text
-            !tipodoc = cmbTipoDoc.Text
-            !dni = txtDocumento.Text
-            !direccion = txtDireccion.Text
-            !cp = txtCP.Text
-            !localidad = dtcLocalidad.Text
-            !nacionalidad = txtNacionalidad.Text
-            !edad = txtEdad.Text
+            .Find "Codalumno=" & lblCodAlumno.Caption
+            .Find "CodAlumno='" & lblCodAlumno.Caption & "'"
+            !NyA = txtNya.text
+            !tipodoc = cmbTipoDoc.text
+            !dni = txtDocumento.text
+            !direccion = txtDireccion.text
+            !cp = txtCP.text
+            !localidad = dtcLocalidad.text
+            !nacionalidad = txtNacionalidad.text
+            !edad = txtEdad.text
             !fechanac = dtpFechaNacimiento.Value
-            !capac = dtcCapacitacion.Text
-            !Asistente = dtcAsistente.Text
-            !ptel1 = txtPT1.Text
-            !ptel2 = txtPT2.Text
-            !ptel3 = txtPT3.Text
-            !ptel4 = txtPT4.Text
-            !tel1 = txtTel1.Text
-            !tel2 = txtTel2.Text
-            !tel3 = txtTel3.Text
-            !tel4 = txtTel4.Text
-            !totalcurso = Int(txtTotalCurso.Text)
-            !cuotas = Int(txtTotalCuotas.Text)
-            !gastoadm = Int(txtGastoAdm.Text)
+            !capac = dtcCapacitacion.text
+            !Asistente = dtcAsistente.text
+            !ptel1 = txtPT1.text
+            !ptel2 = txtPT2.text
+            !ptel3 = txtPT3.text
+            !ptel4 = txtPT4.text
+            !tel1 = txtTel1.text
+            !tel2 = txtTel2.text
+            !tel3 = txtTel3.text
+            !tel4 = txtTel4.text
+            !totalcurso = Int(txtTotalCurso.text)
+            !cuotas = Int(txtTotalCuotas.text)
+            !gastoadm = Int(txtGastoAdm.text)
             !fechasus = dtpFechaSuscripcion.Value
-            !observaciones = txtObservaciones.Text
+            !observaciones = txtObservaciones.text
             !FechaVerif = DTPFechaVerificacion.Value
             !manuales = chkManuales.Value
             !dchoexamen = chkExamenes.Value
@@ -1344,10 +1344,10 @@ Private Sub cmdGrabar_Click()
             '''actualiza nombre en tabla de plan de pago
             With rsAnalisisDeCuenta
                 If .State = 1 Then .Close
-                .Open "SELECT * FROM PlanDePago WHERE codalumno=" & Int(lblCodalumno.Caption), Cn, adOpenDynamic, adLockPessimistic
+                .Open "SELECT * FROM PlanDePago WHERE codalumno=" & Int(lblCodAlumno.Caption), Cn, adOpenDynamic, adLockPessimistic
                 If .BOF Or .EOF Then MsgBox "Los datos fueron actualizados con Exito" & vbNewLine & vbNewLine & "Recuerde que para una Correcta Gestion Administrativa debera asignarle un plan de pago, incluso si la capacitacion estuviese Completamente Becada", vbOKOnly + vbInformation: GoSub continuar
                 .MoveFirst
-                !NyA = txtNya.Text
+                !NyA = txtNya.text
                 .UpdateBatch
                 .Requery
             End With
@@ -1355,10 +1355,10 @@ Private Sub cmdGrabar_Click()
     End If
 
 continuar:
-    If Trim(Len(lblCodalumno.Caption)) = 1 Then lblCodalumno.Caption = Format(lblCodalumno.Caption, "0000#")
-    If Trim(Len(lblCodalumno.Caption)) = 2 Then lblCodalumno.Caption = Format(lblCodalumno.Caption, "000##")
-    If Trim(Len(lblCodalumno.Caption)) = 3 Then lblCodalumno.Caption = Format(lblCodalumno.Caption, "00###")
-    If Trim(Len(lblCodalumno.Caption)) = 4 Then lblCodalumno.Caption = Format(lblCodalumno.Caption, "0####")
+    If Trim(Len(lblCodAlumno.Caption)) = 1 Then lblCodAlumno.Caption = Format(lblCodAlumno.Caption, "0000#")
+    If Trim(Len(lblCodAlumno.Caption)) = 2 Then lblCodAlumno.Caption = Format(lblCodAlumno.Caption, "000##")
+    If Trim(Len(lblCodAlumno.Caption)) = 3 Then lblCodAlumno.Caption = Format(lblCodAlumno.Caption, "00###")
+    If Trim(Len(lblCodAlumno.Caption)) = 4 Then lblCodAlumno.Caption = Format(lblCodAlumno.Caption, "0####")
 
     HabilitarBotones True, False
     HabilitarCuadros True, False
@@ -1367,7 +1367,7 @@ LineaError: ErrCode
 End Sub
 
 Private Sub cmdModificar_Click()
-    If lblCodalumno.Caption = "" Then
+    If lblCodAlumno.Caption = "" Then
         MsgBox "Primero debe Buscar a un Alumno Verificado", vbInformation + vbOKOnly, "Gestion Integral del Alumno"
     Else
         HabilitarCuadros False, True
@@ -1378,15 +1378,15 @@ Private Sub cmdModificar_Click()
 End Sub
 
 Private Sub cmdPlanDePago_Click()
-    If lblCodalumno.Caption = "" Then
+    If lblCodAlumno.Caption = "" Then
         MsgBox "Primero debe Buscar un Alumno", vbOKOnly + vbInformation, "Verificaciones"
     Else
         PlanDePago
         With rsPlanDePago
-            .Find "Codalumno='" & Val(lblCodalumno.Caption) & "'"
+            .Find "Codalumno='" & Val(lblCodAlumno.Caption) & "'"
             If .EOF Then
                 frmPlanDePagos.Show
-                If txtTotalCuotas.Text = 1 Then
+                If txtTotalCuotas.text = 1 Then
                     frmPlanDePagos.txtCuotaDos.Visible = False
                     frmPlanDePagos.dtpVtoDos.Visible = False
                 Else
@@ -1407,28 +1407,28 @@ Private Sub cmdVerificar_Click()
     Me.Enabled = False
     Modi = False
 End Sub
-Private Sub dtcAsistente_KeyPress(KeyAscii As Integer)
-        Continue
+Private Sub dtcAsistente_KeyPress(keyAscii As Integer)
+        Continue keyAscii
 End Sub
-Private Sub dtcCapacitacion_KeyPress(KeyAscii As Integer)
-        Continue
+Private Sub dtcCapacitacion_KeyPress(keyAscii As Integer)
+        Continue keyAscii
 End Sub
 
-Private Sub dtcLocalidad_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then
+Private Sub dtcLocalidad_KeyPress(keyAscii As Integer)
+    If keyAscii = 13 Then
         txtNacionalidad.SetFocus
         With rsLocalidades
-            .Find "localidad='" & dtcLocalidad.Text & "'"
-            txtCP.Text = !cp
+            .Find "localidad='" & dtcLocalidad.text & "'"
+            txtCP.text = !cp
         End With
     End If
 End Sub
 
 Private Sub dtpFechaNacimiento_Change()
     If (Month(dtpFechaNacimiento.Value) < Month(Date)) Or (Day(dtpFechaNacimiento.Value) <= Day(Date) And Month(dtpFechaNacimiento.Value) = Month(Date)) Then
-        txtEdad.Text = DateDiff("yyyy", dtpFechaNacimiento.Value, Date)
+        txtEdad.text = DateDiff("yyyy", dtpFechaNacimiento.Value, Date)
     Else
-        txtEdad.Text = DateDiff("yyyy", dtpFechaNacimiento.Value, Date) - 1
+        txtEdad.text = DateDiff("yyyy", dtpFechaNacimiento.Value, Date) - 1
     End If
 End Sub
 
@@ -1516,93 +1516,93 @@ Sub HabilitarCuadros(estado1 As Boolean, estado2 As Boolean)
 End Sub
 
 Sub Limpiar()
-    lblCodalumno.Caption = ""
-    txtNya.Text = ""
-    txtDireccion.Text = ""
-    txtEdad.Text = ""
-    txtCP.Text = ""
+    lblCodAlumno.Caption = ""
+    txtNya.text = ""
+    txtDireccion.text = ""
+    txtEdad.text = ""
+    txtCP.text = ""
     
-    txtNacionalidad.Text = ""
-    txtPT1.Text = ""
-    txtPT2.Text = ""
-    txtPT3.Text = ""
-    txtPT4.Text = ""
-    txtTel1.Text = ""
-    txtTel2.Text = ""
-    txtTel3.Text = ""
-    txtTel4.Text = ""
-    txtObservaciones.Text = ""
-    txtGastoAdm.Text = ""
-    txtTotalCuotas.Text = ""
-    txtTotalCurso.Text = ""
-    txtDocumento.Text = ""
+    txtNacionalidad.text = ""
+    txtPT1.text = ""
+    txtPT2.text = ""
+    txtPT3.text = ""
+    txtPT4.text = ""
+    txtTel1.text = ""
+    txtTel2.text = ""
+    txtTel3.text = ""
+    txtTel4.text = ""
+    txtObservaciones.text = ""
+    txtGastoAdm.text = ""
+    txtTotalCuotas.text = ""
+    txtTotalCurso.text = ""
+    txtDocumento.text = ""
     dtpFechaNacimiento.Value = Date
     dtpFechaSuscripcion.Value = Date
     chkManuales.Value = 0
     chkExamenes.Value = 0
 End Sub
 
-Private Sub txtCP_KeyPress(KeyAscii As Integer)
-        Continue
+Private Sub txtCP_KeyPress(keyAscii As Integer)
+        Continue keyAscii
 End Sub
-Private Sub txtDireccion_KeyPress(KeyAscii As Integer)
-        Continue
+Private Sub txtDireccion_KeyPress(keyAscii As Integer)
+        Continue keyAscii
 End Sub
-Private Sub txtDocumento_KeyPress(KeyAscii As Integer)
-    Continue
-    If KeyAscii = 46 Then KeyAscii = 0
+Private Sub txtDocumento_KeyPress(keyAscii As Integer)
+    Continue keyAscii
+    If keyAscii = 46 Then keyAscii = 0
 End Sub
-Private Sub txtEdad_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtEdad_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
-Private Sub txtGastoAdm_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtGastoAdm_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
-Private Sub txtLocalidad_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtLocalidad_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
-Private Sub txtNacionalidad_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtNacionalidad_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
-Private Sub txtNya_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtNya_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
-Private Sub txtPT1_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtPT1_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
-Private Sub txtPT2_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtPT2_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
-Private Sub txtPT3_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtPT3_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
-Private Sub txtPT4_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtPT4_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
-Private Sub txtTel1_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtTel1_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
-Private Sub txtTel2_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtTel2_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
-Private Sub txtTel3_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtTel3_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
-Private Sub txtTel4_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtTel4_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
-Private Sub txtTotalCuotas_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtTotalCuotas_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
-Private Sub txtTotalCurso_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtTotalCurso_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
-Private Sub chkExamenes_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub chkExamenes_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
-Private Sub chkManuales_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub chkManuales_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
-Private Sub cmbTipoDoc_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub cmbTipoDoc_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub

@@ -353,10 +353,10 @@ End Sub
 
 Private Sub cmdAceptar_Click()
     On Error GoTo LineaError
-    If txtCoordinador.Text = "" Then MsgBox "ingrese el valor de la comision del Coordinador", vbCritical, "Comision de Primera Cuota": txtCoordinador.SetFocus: Exit Sub
-    If txtPorcentajeAsesor.Text = "" Then MsgBox "Ingrese el porcentaje de comision del Asesor", vbCritical, "Comision de Primera Cuota": txtPorcentajeAsesor.SetFocus: Exit Sub
-    If txtPagoParcial.Text = "" Then MsgBox "Ingrese el pago parcial de la primera cuota", vbCritical, "Comision de Primera Cuota": txtPagoParcial.SetFocus: Exit Sub
-    If txtNroFactura.Text = "" Then MsgBox "Ingrese el numero de factura", vbCritical, "Comision de Primera Cuota": txtNroFactura.SetFocus: Exit Sub
+    If txtCoordinador.text = "" Then MsgBox "ingrese el valor de la comision del Coordinador", vbCritical, "Comision de Primera Cuota": txtCoordinador.SetFocus: Exit Sub
+    If txtPorcentajeAsesor.text = "" Then MsgBox "Ingrese el porcentaje de comision del Asesor", vbCritical, "Comision de Primera Cuota": txtPorcentajeAsesor.SetFocus: Exit Sub
+    If txtPagoParcial.text = "" Then MsgBox "Ingrese el pago parcial de la primera cuota", vbCritical, "Comision de Primera Cuota": txtPagoParcial.SetFocus: Exit Sub
+    If txtNroFactura.text = "" Then MsgBox "Ingrese el numero de factura", vbCritical, "Comision de Primera Cuota": txtNroFactura.SetFocus: Exit Sub
 
     With rsContabilidad
         If .State = 1 Then .Close
@@ -366,11 +366,11 @@ Private Sub cmdAceptar_Click()
             .AddNew
             !fecha = Date
             !Cuenta = "CAJA ADMINISTRACION"
-            !Detalle = "Parcial de 1° Cuota de " & frmPlanDePagos.lblCodalumno.Caption
-            !Debe = Int(lblTotalCuota1.Caption) - Int(txtPagoParcial.Text)
+            !Detalle = "Parcial de 1° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
+            !Debe = Int(lblTotalCuota1.Caption) - Int(txtPagoParcial.text)
             !Haber = Null
-            !nrofactura = txtNroFactura.Text
-            !CodAlumno = Int(frmPlanDePagos.lblCodalumno.Caption)
+            !nrofactura = txtNroFactura.text
+            !CodAlumno = Int(frmPlanDePagos.lblCodAlumno.Caption)
             !NroCuota = 1
             .Update
         '''DESCUENTO (Parcial 1° Cuota - HABER)
@@ -378,19 +378,19 @@ Private Sub cmdAceptar_Click()
             .AddNew
             !fecha = Date
             !Cuenta = "Descuento"
-            !Detalle = "Parcial de 1° Cuota de " & frmPlanDePagos.lblCodalumno.Caption
-            !Debe = Int(txtPagoParcial.Text)
-            !nrofactura = txtNroFactura.Text
+            !Detalle = "Parcial de 1° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
+            !Debe = Int(txtPagoParcial.text)
+            !nrofactura = txtNroFactura.text
             !Haber = Null
-            !CodAlumno = Int(frmPlanDePagos.lblCodalumno.Caption)
+            !CodAlumno = Int(frmPlanDePagos.lblCodAlumno.Caption)
             !NroCuota = 1
             .Update
         '''COMISION COORDINADOR (Comision 1° Cuota - DEBE)
             .AddNew
             !fecha = Date
             !Cuenta = "COMISIONES VARIAS"
-            !Detalle = "Comision Coord. 1° Cuota de " & frmPlanDePagos.lblCodalumno.Caption
-            !Debe = Int(txtCoordinador.Text)
+            !Detalle = "Comision Coord. 1° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
+            !Debe = Int(txtCoordinador.text)
             !Haber = Null
             !CodAlumno = Null
             !NroCuota = Null
@@ -400,9 +400,9 @@ Private Sub cmdAceptar_Click()
             .AddNew
             !fecha = Date
             !Cuenta = "CAJA ADMINISTRACION"
-            !Detalle = "Comision Coord. 1° Cuota de " & frmPlanDePagos.lblCodalumno.Caption
+            !Detalle = "Comision Coord. 1° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
             !Debe = Null
-            !Haber = Int(txtCoordinador.Text)
+            !Haber = Int(txtCoordinador.text)
             !CodAlumno = Null
             !NroCuota = Null
             .Update
@@ -411,7 +411,7 @@ Private Sub cmdAceptar_Click()
             .AddNew
             !fecha = Date
             !Cuenta = "HONORARIOS ASESORES"
-            !Detalle = "Comision de 1° Cuota de " & frmPlanDePagos.lblCodalumno.Caption
+            !Detalle = "Comision de 1° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
             !Debe = Int(lblComisionAsesor.Caption)
             !Haber = Null
             !CodAlumno = Null
@@ -422,7 +422,7 @@ Private Sub cmdAceptar_Click()
             .AddNew
             !fecha = Date
             !Cuenta = "CAJA ADMINISTRACION"
-            !Detalle = "Comision de 1° Cuota de " & frmPlanDePagos.lblCodalumno.Caption
+            !Detalle = "Comision de 1° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
             !Debe = Null
             !Haber = Int(lblComisionAsesor.Caption)
             !CodAlumno = Null
@@ -432,13 +432,13 @@ Private Sub cmdAceptar_Click()
     
     With rsPlanDePago
         If .State = 1 Then .Close
-        .Open "SELECT * FROM plandepago WHERE codalumno=" & Int(frmPlanDePagos.lblCodalumno.Caption), Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT * FROM plandepago WHERE codalumno=" & Int(frmPlanDePagos.lblCodAlumno.Caption), Cn, adOpenDynamic, adLockPessimistic
     '''Plan de Pago (Liquidacion de Cuota)
         .Requery
         !tipodepago = "PAG"
         !fechapago = Date
         !DeudaTotal = 0
-        !recibo = txtNroFactura.Text
+        !recibo = txtNroFactura.text
         !totalcobrado = Int(lblTotalCuota1.Caption)
         !CuotasDebidas = 0
         .UpdateBatch
@@ -457,45 +457,45 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
     End If
 End Sub
 
-Private Sub txtCoordinador_keypress(KeyAscii As Integer)
-    If KeyAscii = 13 Then
+Private Sub txtCoordinador_keypress(keyAscii As Integer)
+    If keyAscii = 13 Then
         FormatoNumeros
         CalcularComision
-        SendKeys "{TAB}"
+        Sendkeys "{TAB}"
     End If
 End Sub
 
-Private Sub txtPorcentajeAsesor_keypress(KeyAscii As Integer)
-    If KeyAscii = 13 Then
+Private Sub txtPorcentajeAsesor_keypress(keyAscii As Integer)
+    If keyAscii = 13 Then
         FormatoNumeros
         CalcularComision
-        SendKeys "{TAB}"
+        Sendkeys "{TAB}"
     End If
 End Sub
 
-Private Sub txtNroFactura_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtNroFactura_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
 
-Private Sub txtPagoParcial_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then
+Private Sub txtPagoParcial_KeyPress(keyAscii As Integer)
+    If keyAscii = 13 Then
         FormatoNumeros
         CalcularComision
-        SendKeys "{TAB}"
+        Sendkeys "{TAB}"
     End If
 End Sub
 
 Sub FormatoNumeros()
-    If txtCoordinador.Text = "" Then txtCoordinador.Text = 0
-    If txtPorcentajeAsesor.Text = "" Then txtPorcentajeAsesor.Text = 0
+    If txtCoordinador.text = "" Then txtCoordinador.text = 0
+    If txtPorcentajeAsesor.text = "" Then txtPorcentajeAsesor.text = 0
     If lblComisionAsesor.Caption = "" Then lblComisionAsesor.Caption = 0
-    If txtPagoParcial.Text = "" Then txtPagoParcial.Text = 0
+    If txtPagoParcial.text = "" Then txtPagoParcial.text = 0
     
 End Sub
 
 Sub CalcularComision()
-    lblComisionAsesor.Caption = FormatCurrency((Int(txtPorcentajeAsesor.Text) * Int(lblTotalCurso.Caption)) / 100)
-    lblTotalComisiones.Caption = FormatCurrency(Int(txtCoordinador.Text) + Int(lblComisionAsesor.Caption))
-    lblTotal.Caption = FormatCurrency(Int(lblTotalCuota1.Caption) - Int(lblTotalComisiones.Caption) - Int(txtPagoParcial.Text))
+    lblComisionAsesor.Caption = FormatCurrency((Int(txtPorcentajeAsesor.text) * Int(lblTotalCurso.Caption)) / 100)
+    lblTotalComisiones.Caption = FormatCurrency(Int(txtCoordinador.text) + Int(lblComisionAsesor.Caption))
+    lblTotal.Caption = FormatCurrency(Int(lblTotalCuota1.Caption) - Int(lblTotalComisiones.Caption) - Int(txtPagoParcial.text))
 End Sub
 

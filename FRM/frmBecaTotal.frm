@@ -323,7 +323,7 @@ Begin VB.Form frmBecaTotal
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   171245569
+         Format          =   363724801
          CurrentDate     =   42093
       End
       Begin isButtonTest.isButton cmdGrabar 
@@ -451,7 +451,7 @@ Begin VB.Form frmBecaTotal
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   137166849
+      Format          =   363724801
       CurrentDate     =   42089
    End
    Begin MSComCtl2.DTPicker dtpDesde 
@@ -472,7 +472,7 @@ Begin VB.Form frmBecaTotal
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   137166849
+      Format          =   363724801
       CurrentDate     =   42089
    End
    Begin VB.Frame Frame1 
@@ -594,19 +594,19 @@ Private Sub cmdGrabar_Click()
     On Error GoTo LineaError
     
     With rsAlumnosBecados
-        .Find "idreferencial=" & grilla.Columns(0).Text
-        !matricula = txtMatricula.Text
-        !Debe = txtDebe.Text
-        !comision = txtComision.Text
+        .Find "idreferencial=" & grilla.Columns(0).text
+        !matricula = txtMatricula.text
+        !Debe = txtDebe.text
+        !comision = txtComision.text
         !cancelacion = dtpCancelacion.Value
-        !observaciones = txtObservaciones.Text
+        !observaciones = txtObservaciones.text
         .UpdateBatch
     End With
     
     '''Restablece los parametros
-    txtMatricula.Text = ""
-    txtDebe.Text = ""
-    txtComision.Text = ""
+    txtMatricula.text = ""
+    txtDebe.text = ""
+    txtComision.text = ""
     dtpCancelacion.Value = Date
        
     Buscar
@@ -620,11 +620,11 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub grilla_Click()
-    txtMatricula.Text = grilla.Columns(5).Text
-    txtDebe.Text = grilla.Columns(6).Text
-    txtComision.Text = grilla.Columns(7).Text
-    dtpCancelacion.Value = grilla.Columns(9).Text
-    txtObservaciones.Text = grilla.Columns(10).Text
+    txtMatricula.text = grilla.Columns(5).text
+    txtDebe.text = grilla.Columns(6).text
+    txtComision.text = grilla.Columns(7).text
+    dtpCancelacion.Value = grilla.Columns(9).text
+    txtObservaciones.text = grilla.Columns(10).text
     cmdGrabar.Enabled = True
 End Sub
 
@@ -667,18 +667,18 @@ Sub formatoGrilla()
     Next
 End Sub
 
-Private Sub txtComision_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtComision_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
 
-Private Sub txtDebe_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtDebe_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
 
-Private Sub txtMatricula_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtMatricula_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
 
-Private Sub txtObservaciones_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtObservaciones_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub

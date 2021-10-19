@@ -487,8 +487,8 @@ Private Sub cmdBajarAsiento_Click()
             .UpdateBatch
         End With
         lblNroAsiento.Caption = nroasiento
-        txtNroFactura.Text = ""
-        txtDetalle.Text = ""
+        txtNroFactura.text = ""
+        txtDetalle.text = ""
         txtNroFactura.Locked = False
         txtNroFactura.SetFocus
         cmdBajarAsiento.Enabled = False
@@ -499,13 +499,13 @@ LineaError: ErrCode
 End Sub
 
 Private Sub cmdBajarCuenta_Click()
-    If txtNroFactura.Text = "" Then MsgBox "Debe ingresar un numero de factura", vbOKOnly + vbInformation, "Contabilidad": txtNroFactura.SetFocus: Exit Sub
-    If txtDetalle.Text = "" Then MsgBox "Debe ingresar un detalle", vbOKOnly + vbInformation, "Contabilidad": txtDetalle.SetFocus: Exit Sub
-    If dtcCuenta.Text = "" Then MsgBox "Debe ingresar una cuenta", vbOKOnly + vbInformation, "Contabilidad": dtcCuenta.SetFocus: Exit Sub
-    If txtHaber.Text = "" And txtDebe.Text = "" Then MsgBox "Debe ingresar un monto a la cuenta", vbOKOnly + vbInformation, "Contabilidad": txtDebe.SetFocus: Exit Sub
+    If txtNroFactura.text = "" Then MsgBox "Debe ingresar un numero de factura", vbOKOnly + vbInformation, "Contabilidad": txtNroFactura.SetFocus: Exit Sub
+    If txtDetalle.text = "" Then MsgBox "Debe ingresar un detalle", vbOKOnly + vbInformation, "Contabilidad": txtDetalle.SetFocus: Exit Sub
+    If dtcCuenta.text = "" Then MsgBox "Debe ingresar una cuenta", vbOKOnly + vbInformation, "Contabilidad": dtcCuenta.SetFocus: Exit Sub
+    If txtHaber.text = "" And txtDebe.text = "" Then MsgBox "Debe ingresar un monto a la cuenta", vbOKOnly + vbInformation, "Contabilidad": txtDebe.SetFocus: Exit Sub
 
-    Debe = Val(txtDebe.Text) + Debe
-    Haber = Haber + Val(txtHaber.Text)
+    Debe = Val(txtDebe.text) + Debe
+    Haber = Haber + Val(txtHaber.text)
     
     If Debe > 0 And Debe = Haber Then cmdBajarAsiento.Enabled = True
     On Error GoTo LineaError
@@ -513,27 +513,26 @@ Private Sub cmdBajarCuenta_Click()
         .Requery
         .AddNew
         !asiento = lblNroAsiento.Caption
-        !fecha = CDate(lblfecha.Caption)
-        !Cuenta = dtcCuenta.Text
-        !Detalle = txtDetalle.Text
+        !fecha = CDate(lblFecha.Caption)
+        !Cuenta = dtcCuenta.text
+        !Detalle = txtDetalle.text
         !NroCuota = Null
         !CodAlumno = Null
-        If txtDebe.Text = "" Then
+        If txtDebe.text = "" Then
             !Debe = Null
         Else
-            !Debe = txtDebe.Text
+            !Debe = txtDebe.text
         End If
-        If txtHaber.Text = "" Then
+        If txtHaber.text = "" Then
             !Haber = Null
         Else
-            !Haber = txtHaber.Text
+            !Haber = txtHaber.text
         End If
-        !nrofactura = txtNroFactura.Text
+        !nrofactura = txtNroFactura.text
         .Update
     End With
     formatoGrilla
     Limpiar
-
 LineaError: ErrCode
 End Sub
 
@@ -551,11 +550,6 @@ Private Sub cmdCancelar_Click()
     Unload Me
 End Sub
 
-
-Private Sub dtcCuenta_KeyPress(KeyAscii As Integer)
-    Continue
-End Sub
-
 Private Sub Form_Load()
     Centrar Me
     Cuentas
@@ -563,7 +557,7 @@ Private Sub Form_Load()
     Contabilidad
     ContabilidadTemp
     lblNroAsiento.Caption = rsControl!nroasiento
-    lblfecha.Caption = Date
+    lblFecha.Caption = Date
     Set dtcCuenta.RowSource = rsCuentas
     dtcCuenta.BoundColumn = "cuenta"
     dtcCuenta.ListField = "cuenta"
@@ -583,11 +577,10 @@ End Sub
 
 Sub Limpiar()
     txtNroFactura.Locked = True
-    dtcCuenta.Text = ""
-    'txtDetalle.Text = ""
+    dtcCuenta.text = ""
     dtcCuenta.SetFocus
-    txtDebe.Text = ""
-    txtHaber.Text = ""
+    txtDebe.text = ""
+    txtHaber.text = ""
 End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
@@ -601,22 +594,21 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
             .MoveFirst
         Loop
     End With
-
     Unload Me
 End Sub
 
-Private Sub txtDebe_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtDebe_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
-
-Private Sub txtDetalle_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtDetalle_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
-
-Private Sub txtHaber_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtHaber_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
-
-Private Sub txtNroFactura_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtNroFactura_KeyPress(keyAscii As Integer)
+    Continue keyAscii
+End Sub
+Private Sub dtcCuenta_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub

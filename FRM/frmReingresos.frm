@@ -174,22 +174,22 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cmdReingresar_Click()
-    If txtCodViejo.Text = "" Then MsgBox "Ingrese el codigo actual del alumno", vbCritical, "Control de Reingresos de Alumnos": txtCodViejo.SetFocus: Exit Sub
-    If txtCodNuevo.Text = "" Then MsgBox "Ingrese el nuevo codigo del alumno", vbCritical, "Control de Reingresos de Alumnos": txtCodNuevo.SetFocus: Exit Sub
+    If txtCodViejo.text = "" Then MsgBox "Ingrese el codigo actual del alumno", vbCritical, "Control de Reingresos de Alumnos": txtCodViejo.SetFocus: Exit Sub
+    If txtCodNuevo.text = "" Then MsgBox "Ingrese el nuevo codigo del alumno", vbCritical, "Control de Reingresos de Alumnos": txtCodNuevo.SetFocus: Exit Sub
     
     With rsLibro
         If .State = 1 Then .Close
-        .Open "SELECT * FROM librodeaula WHERE codalumno=" & Int(txtCodViejo.Text), Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT * FROM librodeaula WHERE codalumno=" & Int(txtCodViejo.text), Cn, adOpenDynamic, adLockPessimistic
         If .BOF Or .EOF Then Exit Sub
         .MoveFirst
         Do Until .EOF
-            !CodAlumno = Int(txtCodNuevo.Text)
+            !CodAlumno = Int(txtCodNuevo.text)
             .UpdateBatch
             .MoveNext
         Loop
         MsgBox "Se ha reingresado al alumno", , "Control de Reingresos de Alumnos"
-        txtCodViejo.Text = ""
-        txtCodNuevo.Text = ""
+        txtCodViejo.text = ""
+        txtCodNuevo.text = ""
         txtCodViejo.SetFocus
     End With
 End Sub
@@ -198,10 +198,10 @@ Private Sub Form_Load()
     Centrar Me
 End Sub
 
-Private Sub txtCodNuevo_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtCodNuevo_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
 
-Private Sub txtCodViejo_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtCodViejo_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub

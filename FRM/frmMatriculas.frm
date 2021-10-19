@@ -187,7 +187,7 @@ Begin VB.Form frmMatriculas
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   107741185
+         Format          =   127139841
          CurrentDate     =   42089
       End
       Begin MSComCtl2.DTPicker dtpHasta 
@@ -208,7 +208,7 @@ Begin VB.Form frmMatriculas
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   107741185
+         Format          =   127139841
          CurrentDate     =   42089
       End
       Begin isButtonTest.isButton cmdBuscar 

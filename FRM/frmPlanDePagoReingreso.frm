@@ -83,7 +83,7 @@ Begin VB.Form frmPlanDePagoReingreso
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   138346497
+      Format          =   125829121
       CurrentDate     =   41353
    End
    Begin isButtonTest.isButton cmdAplicar 
@@ -232,36 +232,36 @@ Attribute VB_Exposed = False
 Private Sub cmdAplicar_Click()
     On Error GoTo LineaError
     Dim CuotaMax As Integer
-    CuotaMax = Int(txtCantidadCuotas.Text) + Int(txtNroCuota.Text) - 1
+    CuotaMax = Int(txtCantidadCuotas.text) + Int(txtNroCuota.text) - 1
     ''genera las nuevas cuotas
     With rsPlanDePago
         If .State = 1 Then .Close
         .Open "SELECT * FROM plandepago", Cn, adOpenDynamic, adLockPessimistic
         .Requery
-        Do Until Int(txtNroCuota.Text) > CuotaMax
+        Do Until Int(txtNroCuota.text) > CuotaMax
             .AddNew
-            !CodAlumno = frmAnalisisDeCuotas.lblCodalumno.Caption
+            !CodAlumno = frmAnalisisDeCuotas.lblCodAlumno.Caption
             !NyA = frmAnalisisDeCuotas.lblNyA.Caption
-            !NroCuota = Int(txtNroCuota.Text)
-            !deuda = txtMonto.Text
+            !NroCuota = Int(txtNroCuota.text)
+            !deuda = txtMonto.text
             !totalcobrado = 0
-            !DeudaTotal = txtMonto.Text
+            !DeudaTotal = txtMonto.text
             !CuotasDebidas = 1
-            !fechavto = dtpFecha.Value
+            !fechavto = DTPFecha.Value
             .Update
-            txtNroCuota.Text = Int(txtNroCuota.Text) + 1
-            If dtpFecha.Month = 12 Then
-                dtpFecha.Month = 1
-                dtpFecha.Year = dtpFecha.Year + 1
+            txtNroCuota.text = Int(txtNroCuota.text) + 1
+            If DTPFecha.Month = 12 Then
+                DTPFecha.Month = 1
+                DTPFecha.Year = DTPFecha.Year + 1
             Else
-                dtpFecha.Month = dtpFecha.Month + 1
+                DTPFecha.Month = DTPFecha.Month + 1
             End If
         Loop
     End With
     '''cambia el estado a reingresado
     With rsVerificaciones
         If .State = 1 Then .Close
-        .Open "SELECT codalumno, estado FROM verificaciones WHERE codalumno=" & frmAnalisisDeCuotas.lblCodalumno.Caption, Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT codalumno, estado FROM verificaciones WHERE codalumno=" & frmAnalisisDeCuotas.lblCodAlumno.Caption, Cn, adOpenDynamic, adLockPessimistic
         .Requery
         .MoveFirst
         !estado = "Reingresado"
@@ -283,14 +283,14 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
     frmAnalisisDeCuotas.Enabled = True
 End Sub
 
-Private Sub txtCantidadCuotas_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtCantidadCuotas_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
 
-Private Sub txtMonto_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtMonto_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
 
-Private Sub txtNroCuota_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub txtNroCuota_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub

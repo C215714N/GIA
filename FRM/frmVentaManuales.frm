@@ -348,38 +348,38 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Private Sub cmbManual_KeyPress(KeyAscii As Integer)
-If KeyAscii = 13 Then
+Private Sub cmbManual_KeyPress(keyAscii As Integer)
+If keyAscii = 13 Then
     With rsManuales
         If .State = 1 Then .Close
-        .Open "SELECT stock,precio FROM manuales WHERE manual='" & cmbManual.Text & "'", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT stock,precio FROM manuales WHERE manual='" & cmbManual.text & "'", Cn, adOpenDynamic, adLockPessimistic
         If .BOF Or .EOF Then MsgBox "El manual no se ha registrado", vbCritical, "Venta de Manuales": cmbManual.SetFocus: Exit Sub
-        txtStock.Text = !stock
-        txtPrecio.Text = Format(!precio, "currency")
+        txtStock.text = !stock
+        txtPrecio.text = Format(!precio, "currency")
         cmbPago.SetFocus
     End With
 End If
 End Sub
 
-Private Sub cmbPago_KeyPress(KeyAscii As Integer)
-    Continue
+Private Sub cmbPago_KeyPress(keyAscii As Integer)
+    Continue keyAscii
 End Sub
 
 Private Sub cmdVender_Click()
     On Error GoTo LineaError
     
-    If cmbManual.Text = "" Then MsgBox "Elija manual", vbCritical, "Venta de Manuales": cmbManual.SetFocus: Exit Sub
-    If txtStock.Text = "" Then MsgBox "Controle el stock del manual", vbCritical, "Venta de Manuales": cmbManual.SetFocus: Exit Sub
-    If txtRecibo.Text = "" Then MsgBox "Ingrese numero de recibo", vbCritical, "Venta de Manuales": txtRecibo.SetFocus: Exit Sub
-    If cmbPago.Text = "" Then MsgBox "Elija forma de pago", vbCritical, "Venta de Manuales": cmbPago.SetFocus: Exit Sub
-    If Int(txtStock.Text) < 1 Then MsgBox "No hay manuales disponibles para vender", vbCritical, "Venta de Manuales": cmbManual.SetFocus: Exit Sub
+    If cmbManual.text = "" Then MsgBox "Elija manual", vbCritical, "Venta de Manuales": cmbManual.SetFocus: Exit Sub
+    If txtStock.text = "" Then MsgBox "Controle el stock del manual", vbCritical, "Venta de Manuales": cmbManual.SetFocus: Exit Sub
+    If txtRecibo.text = "" Then MsgBox "Ingrese numero de recibo", vbCritical, "Venta de Manuales": txtRecibo.SetFocus: Exit Sub
+    If cmbPago.text = "" Then MsgBox "Elija forma de pago", vbCritical, "Venta de Manuales": cmbPago.SetFocus: Exit Sub
+    If Int(txtStock.text) < 1 Then MsgBox "No hay manuales disponibles para vender", vbCritical, "Venta de Manuales": cmbManual.SetFocus: Exit Sub
     
     Dim Cuenta
 '''CONTROL DE STOCK
     With rsManuales
         If .State = 1 Then .Close
         .Open "SELECT * FROM manuales", Cn, adOpenDynamic, adLockPessimistic
-        .Find "manual='" & cmbManual.Text & "'"
+        .Find "manual='" & cmbManual.text & "'"
         !stock = !stock - 1
         .UpdateBatch
     End With
@@ -391,17 +391,17 @@ Private Sub cmdVender_Click()
         .Requery
         .AddNew
         !fecha = Date
-        !CodAlumno = Int(txtCodigo.Text)
-        !manual = cmbManual.Text
+        !CodAlumno = Int(txtCodigo.text)
+        !manual = cmbManual.text
         .Update
         .Close
-        .Open "SELECT Fecha, Manual FROM ventamanuales WHERE codalumno=" & Int(txtCodigo.Text) & " ORDER BY fecha", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT Fecha, Manual FROM ventamanuales WHERE codalumno=" & Int(txtCodigo.text) & " ORDER BY fecha", Cn, adOpenDynamic, adLockPessimistic
         Set grilla.DataSource = rsVentaManuales
     End With
     
 ''' GESTION CONTABLE - ASIENTO
     With cmbManual
-        If .Text = "Materiales 01" Or .Text = "Materiales 02" Or .Text = "Lazo" Then
+        If .text = "Materiales 01" Or .text = "Materiales 02" Or .text = "Lazo" Then
             Cuenta = "INSUMOS CURSOS"
         Else
             Cuenta = "MANUALES"
@@ -418,9 +418,9 @@ Private Sub cmdVender_Click()
             !asiento = Null
             !NroCuota = Null
             !CodAlumno = Null
-            !Detalle = txtAlumno.Text & " - " & cmbManual.Text
-            !nrofactura = txtRecibo.Text
-            !Haber = CSng(txtPrecio.Text)
+            !Detalle = txtAlumno.text & " - " & cmbManual.text
+            !nrofactura = txtRecibo.text
+            !Haber = CSng(txtPrecio.text)
             !Debe = Null
             !Cuenta = Cuenta
             .Update
@@ -428,17 +428,17 @@ Private Sub cmdVender_Click()
             .AddNew
             !fecha = Date
             
-            If cmbPago.Text = "Efectivo" Then
+            If cmbPago.text = "Efectivo" Then
                 !Cuenta = "CAJA ADMINISTRACION"
-            ElseIf cmbPago.Text = "Descuento" Then
+            ElseIf cmbPago.text = "Descuento" Then
                 !Cuenta = "Descuento"
             Else
                 !Cuenta = "DEBITO TARJETA CREDITO"
             End If
             
-            !Detalle = txtAlumno.Text & " - Manual de " & cmbManual.Text
-            !nrofactura = txtRecibo.Text
-            !Debe = CSng(txtPrecio.Text)
+            !Detalle = txtAlumno.text & " - Manual de " & cmbManual.text
+            !nrofactura = txtRecibo.text
+            !Debe = CSng(txtPrecio.text)
             !asiento = Null
             !NroCuota = Null
             !CodAlumno = Null
@@ -450,9 +450,9 @@ Private Sub cmdVender_Click()
     End If
     
 '''REESTABLECE LOS VALORES
-    txtStock.Text = ""
-    txtPrecio.Text = ""
-    txtRecibo.Text = ""
+    txtStock.text = ""
+    txtPrecio.text = ""
+    txtRecibo.text = ""
     txtCodigo.SetFocus
     formatoGrilla
 LineaError: ErrCode
@@ -464,20 +464,20 @@ Private Sub Form_Load()
 End Sub
 
 
-Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
+Private Sub txtCodigo_KeyPress(keyAscii As Integer)
     On Error GoTo LineaError
-    If KeyAscii = 13 Then
-        If txtCodigo.Text = "" Then MsgBox "Ingrese el codigo del alumno", vbOKOnly, "GIA - Examenes": txtCodigo.SetFocus: Exit Sub
+    If keyAscii = 13 Then
+        If txtCodigo.text = "" Then MsgBox "Ingrese el codigo del alumno", vbOKOnly, "GIA - Examenes": txtCodigo.SetFocus: Exit Sub
       
         With rsVerificaciones
             If .State = 1 Then .Close
-            .Open "SELECT nya,capac FROM verificaciones WHERE codalumno=" & Int(txtCodigo.Text), Cn, adOpenDynamic, adLockPessimistic
-            txtAlumno.Text = !NyA
-            txtCurso.Text = !capac
+            .Open "SELECT nya,capac FROM verificaciones WHERE codalumno=" & Int(txtCodigo.text), Cn, adOpenDynamic, adLockPessimistic
+            txtAlumno.text = !NyA
+            txtCurso.text = !capac
         End With
         With rsVentaManuales
             If .State = 1 Then .Close
-            .Open "SELECT Fecha, Manual FROM ventamanuales WHERE codalumno=" & Int(txtCodigo.Text) & " ORDER BY fecha", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT Fecha, Manual FROM ventamanuales WHERE codalumno=" & Int(txtCodigo.text) & " ORDER BY fecha", Cn, adOpenDynamic, adLockPessimistic
         End With
         Set grilla.DataSource = rsVentaManuales
         cmbManual.Clear
@@ -490,7 +490,7 @@ End Sub
 
 Sub cargarManuales()
 
-    If txtCurso.Text = "Operador de Pc" Then
+    If txtCurso.text = "Operador de Pc" Then
         With cmbManual
             .AddItem ("Windows")
             .AddItem ("Word")
@@ -499,12 +499,12 @@ Sub cargarManuales()
             .AddItem ("Power Point")
         End With
     
-    ElseIf txtCurso.Text = "Redes Sociales" Then
+    ElseIf txtCurso.text = "Redes Sociales" Then
         With cmbManual
             .AddItem ("Windows")
         End With
     
-    ElseIf txtCurso.Text = "Diseño Gráfico" Then
+    ElseIf txtCurso.text = "Diseño Gráfico" Then
         With cmbManual
             .AddItem ("Windows")
             .AddItem ("Corel Draw")
@@ -512,42 +512,42 @@ Sub cargarManuales()
             .AddItem ("Page Maker")
         End With
     
-    ElseIf txtCurso.Text = "Diseño Web" Then
+    ElseIf txtCurso.text = "Diseño Web" Then
         With cmbManual
             .AddItem ("FrontPage - Fireworks")
             .AddItem ("Flash")
             .AddItem ("Dreamweaver")
         End With
     
-    ElseIf txtCurso.Text = "Programación" Then
+    ElseIf txtCurso.text = "Programación" Then
         With cmbManual
             .AddItem ("Programación")
         End With
     
-    ElseIf txtCurso.Text = "Programación + Access" Then
+    ElseIf txtCurso.text = "Programación + Access" Then
         With cmbManual
             .AddItem ("Access")
             .AddItem ("Programación")
         End With
     
-    ElseIf txtCurso.Text = "Técnico en aire acondicionado" Then
+    ElseIf txtCurso.text = "Técnico en aire acondicionado" Then
         With cmbManual
             .AddItem ("Aire Acondicionado")
         End With
     
-    ElseIf txtCurso.Text = "Electricidad domiciliaria" Then
+    ElseIf txtCurso.text = "Electricidad domiciliaria" Then
         With cmbManual
             .AddItem ("Electricidad")
         End With
     
-    ElseIf txtCurso.Text = "Auxiliar de Farmacia" Then
+    ElseIf txtCurso.text = "Auxiliar de Farmacia" Then
         With cmbManual
             .AddItem ("Farmacia")
             .AddItem ("Primeros Auxilios")
             .AddItem ("Lazo")
         End With
         
-    ElseIf txtCurso.Text = "Extracc. Adm. Y Asist. Tec. Laborat." Then
+    ElseIf txtCurso.text = "Extracc. Adm. Y Asist. Tec. Laborat." Then
         With cmbManual
             .AddItem ("Extraccionista")
             .AddItem ("Guia Practica")
@@ -557,7 +557,7 @@ Sub cargarManuales()
             .AddItem ("Lazo")
         End With
         
-    ElseIf txtCurso.Text = "Asistente Terapeutico" Or txtCurso.Text = "Cuidador Domiciliario" Then
+    ElseIf txtCurso.text = "Asistente Terapeutico" Or txtCurso.text = "Cuidador Domiciliario" Then
         With cmbManual
             .AddItem ("Cuidador Dom. I")
             .AddItem ("Cuidador Dom. II")
@@ -565,7 +565,7 @@ Sub cargarManuales()
             .AddItem ("Lazo")
         End With
     
-    ElseIf txtCurso.Text = "Emergencias Médicas" Then
+    ElseIf txtCurso.text = "Emergencias Médicas" Then
         With cmbManual
             .AddItem ("Primeros Auxilios")
         End With

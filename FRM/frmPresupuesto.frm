@@ -269,7 +269,7 @@ Begin VB.Form frmPresupuesto
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "yyyy"
-         Format          =   127270915
+         Format          =   125960195
          CurrentDate     =   36526
          MaxDate         =   401876
          MinDate         =   36526

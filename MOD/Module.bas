@@ -2,7 +2,7 @@ Attribute VB_Name = "Declaraciones"
 ''' Conexion Base de Datos
     Global Cn                       As New ADODB.Connection
     Const PV                        As String = "Microsoft.Jet.OLEDB.4.0"
-    Const DB                        As String = "T:\Base-Moron.mdb"
+    Const DB                        As String = "T:\Base.mdb"
     Const PSW                       As String = "ascir"
     Public Const DbCon              As String = "Provider=" & PV & "; Data Source=" & DB & "; Persist Security Info=FALSE;Jet OLEDB:Database PASSWORD=" & PSW
 

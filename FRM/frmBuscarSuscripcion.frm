@@ -308,7 +308,7 @@ Private Sub cmdAceptar_Click()
         frmVerificaciones.HabilitarBotones False, True
         frmVerificaciones.txtNya.SetFocus
         frmVerificaciones.DTPFechaVerificacion.Value = Date
-        frmVerificaciones.lblCodalumno.Caption = ""
+        frmVerificaciones.lblCodAlumno.Caption = ""
         frmVerificaciones.txtNya.Text = grilla.Columns(1).Text
         frmVerificaciones.cmbTipoDoc.Text = grilla.Columns(2).Text
         frmVerificaciones.txtDocumento.Text = grilla.Columns(3).Text
