@@ -217,7 +217,7 @@ Begin VB.Form frmViaticos
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   160694273
+         Format          =   169738241
          CurrentDate     =   42277
       End
       Begin VB.Label Label4 
@@ -293,7 +293,7 @@ On Error GoTo LineaError
         .Open "SELECT * FROM viaticos", Cn, adOpenDynamic, adLockPessimistic
         .Requery
         .AddNew
-        !fecha = DTPFecha.Value
+        !fecha = dtpFecha.Value
         !asesor = dtcAsistente.Text
         
         If optMonto(0).Value = True Then
@@ -313,8 +313,7 @@ On Error GoTo LineaError
     Set grilla.DataSource = rsViaticos
     txtMonto.Text = ""
 
-LineaError:
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+LineaError: ErrCode
 End Sub
 
 Private Sub dtcAsistente_Change()
@@ -332,7 +331,7 @@ End Sub
 
 Private Sub Form_Load()
     Centrar Me
-    DTPFecha.Value = Date
+    dtpFecha.Value = Date
     Asistente
     
     Set dtcAsistente.RowSource = rsPersonal

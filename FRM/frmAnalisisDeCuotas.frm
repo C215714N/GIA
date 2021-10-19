@@ -526,19 +526,19 @@ Private Sub Form_Load()
     Set grilla1.DataSource = rsAnalisisDeCuenta
     Set grilla2.DataSource = rsHistorico
     formatoGrilla
-    lblCodAlumno.Caption = rsAnalisisDeCuenta!codigo
+    lblCodalumno.Caption = rsAnalisisDeCuenta!codigo
     lblNyA.Caption = rsAnalisisDeCuenta!Alumno
-    If Trim(Len(lblCodAlumno.Caption)) = 1 Then lblCodAlumno.Caption = Format(lblCodAlumno.Caption, "0000#")
-    If Trim(Len(lblCodAlumno.Caption)) = 2 Then lblCodAlumno.Caption = Format(lblCodAlumno.Caption, "000##")
-    If Trim(Len(lblCodAlumno.Caption)) = 3 Then lblCodAlumno.Caption = Format(lblCodAlumno.Caption, "00###")
-    If Trim(Len(lblCodAlumno.Caption)) = 4 Then lblCodAlumno.Caption = Format(lblCodAlumno.Caption, "0####")
+    If Trim(Len(lblCodalumno.Caption)) = 1 Then lblCodalumno.Caption = Format(lblCodalumno.Caption, "0000#")
+    If Trim(Len(lblCodalumno.Caption)) = 2 Then lblCodalumno.Caption = Format(lblCodalumno.Caption, "000##")
+    If Trim(Len(lblCodalumno.Caption)) = 3 Then lblCodalumno.Caption = Format(lblCodalumno.Caption, "00###")
+    If Trim(Len(lblCodalumno.Caption)) = 4 Then lblCodalumno.Caption = Format(lblCodalumno.Caption, "0####")
 End Sub
 
 Private Sub cmdEgresado_Click()
     If MsgBox("Confirma que el alumno ha egresado?", vbQuestion + vbYesNo, "Analisis de Cuotas") = vbYes Then
         With rsVerificaciones
             If .State = 1 Then .Close
-            .Open "SELECT codalumno as [Codigo], estado FROM verificaciones WHERE codalumno=" & frmAnalisisDeCuotas.lblCodAlumno.Caption, Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT codalumno as [Codigo], estado FROM verificaciones WHERE codalumno=" & frmAnalisisDeCuotas.lblCodalumno.Caption, Cn, adOpenDynamic, adLockPessimistic
             .Requery
             .MoveFirst
             !estado = "Egresado"
@@ -567,12 +567,7 @@ Private Sub cmdGrabar_Click()
     End With
     cmdGrabar.Enabled = False
 
-LineaError:
-    Select Case Err.Number
-        Case 3021
-            Resume Next
-        End Select
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+LineaError: ErrCode
 End Sub
 
 Private Sub cmdMarcar_Click()
@@ -589,7 +584,7 @@ Private Sub cmdDatos_Click()
     With rsVerificaciones
         .Requery
         .Find "CodAlumno=" & CodAlumno
-        frmVerificaciones.lblCodAlumno.Caption = !CodAlumno
+        frmVerificaciones.lblCodalumno.Caption = !CodAlumno
         frmVerificaciones.txtNya.Text = !NyA
         frmVerificaciones.cmbTipoDoc.Text = !tipodoc
         frmVerificaciones.txtDocumento.Text = !dni
@@ -637,10 +632,10 @@ Private Sub cmdDatos_Click()
         End If
     End With
         
-    If Trim(Len(frmVerificaciones.lblCodAlumno.Caption)) = 1 Then frmVerificaciones.lblCodAlumno.Caption = Format(frmVerificaciones.lblCodAlumno.Caption, "0000#")
-    If Trim(Len(frmVerificaciones.lblCodAlumno.Caption)) = 2 Then frmVerificaciones.lblCodAlumno.Caption = Format(frmVerificaciones.lblCodAlumno.Caption, "000##")
-    If Trim(Len(frmVerificaciones.lblCodAlumno.Caption)) = 3 Then frmVerificaciones.lblCodAlumno.Caption = Format(frmVerificaciones.lblCodAlumno.Caption, "00###")
-    If Trim(Len(frmVerificaciones.lblCodAlumno.Caption)) = 4 Then frmVerificaciones.lblCodAlumno.Caption = Format(frmVerificaciones.lblCodAlumno.Caption, "0####")
+    If Trim(Len(frmVerificaciones.lblCodalumno.Caption)) = 1 Then frmVerificaciones.lblCodalumno.Caption = Format(frmVerificaciones.lblCodalumno.Caption, "0000#")
+    If Trim(Len(frmVerificaciones.lblCodalumno.Caption)) = 2 Then frmVerificaciones.lblCodalumno.Caption = Format(frmVerificaciones.lblCodalumno.Caption, "000##")
+    If Trim(Len(frmVerificaciones.lblCodalumno.Caption)) = 3 Then frmVerificaciones.lblCodalumno.Caption = Format(frmVerificaciones.lblCodalumno.Caption, "00###")
+    If Trim(Len(frmVerificaciones.lblCodalumno.Caption)) = 4 Then frmVerificaciones.lblCodalumno.Caption = Format(frmVerificaciones.lblCodalumno.Caption, "0####")
 
     Analisis = True
 
@@ -656,24 +651,23 @@ Private Sub cmdReingresar_Click()
     grilla1.Row = rsAnalisisDeCuenta.RecordCount - 1
     frmPlanDePagoReingreso.txtNroCuota = Int(grilla1.Columns(0).Text) + 1
     frmPlanDePagoReingreso.txtCantidadCuotas = 1
-    frmPlanDePagoReingreso.DTPFecha.Value = grilla1.Columns(1).Text
+    frmPlanDePagoReingreso.dtpFecha.Value = grilla1.Columns(1).Text
     frmPlanDePagoReingreso.txtMonto.Text = grilla1.Columns(3).Text
     
-    If frmPlanDePagoReingreso.DTPFecha.Month = 12 Then
-        frmPlanDePagoReingreso.DTPFecha.Month = 1
-        frmPlanDePagoReingreso.DTPFecha.Year = frmPlanDePagoReingreso.DTPFecha.Year + 1
+    If frmPlanDePagoReingreso.dtpFecha.Month = 12 Then
+        frmPlanDePagoReingreso.dtpFecha.Month = 1
+        frmPlanDePagoReingreso.dtpFecha.Year = frmPlanDePagoReingreso.dtpFecha.Year + 1
     Else
-        If frmPlanDePagoReingreso.DTPFecha.Day > 28 Then
-            frmPlanDePagoReingreso.DTPFecha.Day = 28
-            frmPlanDePagoReingreso.DTPFecha.Month = frmPlanDePagoReingreso.DTPFecha.Month + 1
-        Else: frmPlanDePagoReingreso.DTPFecha.Month = frmPlanDePagoReingreso.DTPFecha.Month + 1
+        If frmPlanDePagoReingreso.dtpFecha.Day > 28 Then
+            frmPlanDePagoReingreso.dtpFecha.Day = 28
+            frmPlanDePagoReingreso.dtpFecha.Month = frmPlanDePagoReingreso.dtpFecha.Month + 1
+        Else: frmPlanDePagoReingreso.dtpFecha.Month = frmPlanDePagoReingreso.dtpFecha.Month + 1
         End If
     End If
     
     frmPlanDePagoReingreso.Show
     Me.Enabled = False
-LineaError:
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+LineaError: ErrCode
 End Sub
 
 Private Sub cmdBaja_Click()
@@ -728,11 +722,9 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
     ElseIf Label11.Caption = "frmAnalisisSituacion" Then
         frmAnalisisSituacion.Enabled = True
         rsAnalisisSituacionDeuda.Requery
-        frmAnalisisSituacion.grilla.Columns(2).Width = 800
     ElseIf Label11.Caption = "frmMarcas" Then
         frmMarcas.Enabled = True
         rsMarcas.Requery
-        frmMarcas.grilla.Columns(2).Width = 400
     End If
 
 End Sub

@@ -299,7 +299,7 @@ Begin VB.Form frmReservas
          Strikethrough   =   0   'False
       EndProperty
       MonthBackColor  =   16777215
-      StartOfWeek     =   127336450
+      StartOfWeek     =   138608642
       TitleBackColor  =   8930304
       TitleForeColor  =   16777215
       TrailingForeColor=   14737632
@@ -647,19 +647,7 @@ Private Sub btnEliminar_Click()
          End With
     End If
     
-LineaError:
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
-End Sub
-
-
-Private Sub btnmaÃ±ana_Click()
-    'Activa las opciones de horario del turno maÃ±ana
-    'rbtNadaTarde.Value = True
-    'rbtNadamaÃ±ana.Value = True
-    framemañana.Visible = True
-    frameTarde.Visible = False
-    'Desactivar los botones de modificar y eliminar
-    btnEliminar.Enabled = False
+LineaError: ErrCode
 End Sub
 
 Private Sub Reservas()
@@ -703,20 +691,6 @@ fecha = Format(MonthView1.Value, "mm/dd/yyyy")
     txtAsistencia.Text = ""
     lblAsistencia.Visible = False
 End Sub
-
-Private Sub btnTarde_Click()
-    'Activa las opciones de horario del turno tarde
-    framemaÃ±ana.Visible = False
-    frameTarde.Visible = True
-
-     'Desactivar los botones de modificar y eliminar
-    btnEliminar.Enabled = False
-   
-End Sub
-
-
-
-
 Private Sub cmdBuscar_Click()
     BuscarAlumno = True
     dtcAlumno.Visible = True
@@ -729,7 +703,6 @@ Private Sub cmdBuscar_Click()
     dtcAlumno.SetFocus
     cmdCancelar.Enabled = False
     cmdBuscar.Enabled = True
-
 End Sub
 
 Private Sub cmdCancelar_Click()
@@ -832,7 +805,7 @@ If BuscarAlumno = False Then
         If .State = 1 Then .Close
         .Open "SELECT codalumno,(nya + ' - ' + capac) as alumno FROM verificaciones WHERE capac='Operador de PC' or capac='Programación' or capac='Diseño Web' or capac='Diseño Gráfico' or capac='Programación + Access' or capac='Redes Sociales' ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
         .Find "alumno='" & dtcAlumno.Text & "'"
-        lblCodAlumno.Caption = !CodAlumno
+        lblCodalumno.Caption = !CodAlumno
     End With
 
     With rsReservas
@@ -863,7 +836,7 @@ If BuscarAlumno = False Then
                 !hora = rbt9.Caption
             End If
             !pa = ""
-            !CodAlumno = Int(lblCodAlumno.Caption)
+            !CodAlumno = Int(lblCodalumno.Caption)
             .Update
             .Close
     End With
@@ -884,13 +857,13 @@ Else
         If .State = 1 Then .Close
         .Open "SELECT codalumno,(nya + ' - ' + capac) as alumno FROM verificaciones WHERE capac='Operador de PC' or capac='Programación' or capac='Diseño Web' or capac='Diseño Gráfico' or capac='Programación + Access' or capac='Redes Sociales' ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
         .Find "alumno='" & dtcAlumno.Text & "'"
-        lblCodAlumno.Caption = !CodAlumno
+        lblCodalumno.Caption = !CodAlumno
     End With
 
     
     With rsReservas
         If .State = 1 Then .Close
-            .Open "SELECT nya as [Apellido y Nombre], pa as [P/A],Fecha, hora as Horario FROM Reservas WHERE codalumno=" & Int(lblCodAlumno.Caption) & " ORDER BY  fecha desc,hora", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT nya as [Apellido y Nombre], pa as [P/A],Fecha, hora as Horario FROM Reservas WHERE codalumno=" & Int(lblCodalumno.Caption) & " ORDER BY  fecha desc,hora", Cn, adOpenDynamic, adLockPessimistic
             Set grilla.DataSource = rsReservas
             lblreservas.Caption = rsReservas.RecordCount
     End With

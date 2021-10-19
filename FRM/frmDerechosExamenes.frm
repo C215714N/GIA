@@ -178,7 +178,7 @@ Begin VB.Form frmDerechosExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   125632513
+         Format          =   169934849
          CurrentDate     =   41978
       End
       Begin isButtonTest.isButton cmdAgregar 
@@ -467,7 +467,7 @@ Private Sub Form_Load()
     Centrar Me
     Control
     txtPrecio.Text = Format(rsControl!derechoExamen, "currency")
-    DTPFecha.Value = Date
+    dtpFecha.Value = Date
 End Sub
 
 Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
@@ -493,7 +493,7 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
             CargarModulos
             txtPrecio.Text = Format(rsControl!derechoExamen, "currency")
             cmbModulo.Enabled = True
-            DTPFecha.Enabled = True
+            dtpFecha.Enabled = True
             cmdAgregar.Enabled = True
             cmbModulo.SetFocus
             
@@ -516,7 +516,7 @@ Private Sub cmdAgregar_Click()
         .Requery
         .AddNew
         !CodAlumno = Int(txtCodigo.Text)
-        !fecha = DTPFecha.Value
+        !fecha = dtpFecha.Value
         !modulo = cmbModulo.Text
         .Update
         .Close
@@ -564,8 +564,7 @@ Private Sub cmdAgregar_Click()
     Else
         MsgBox "Recuerde realizar el asiento contable correspondiente a esta operacion", vbExclamation, "Derechos de Examenes"
     End If
-LineaError:
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+LineaError: ErrCode
 End Sub
 
 Private Sub txtRecibo_KeyPress(KeyAscii As Integer)

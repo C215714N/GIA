@@ -366,11 +366,11 @@ Private Sub cmdAceptar_Click()
             .AddNew
             !fecha = Date
             !Cuenta = "CAJA ADMINISTRACION"
-            !Detalle = "Parcial de 1° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
+            !Detalle = "Parcial de 1° Cuota de " & frmPlanDePagos.lblCodalumno.Caption
             !Debe = Int(lblTotalCuota1.Caption) - Int(txtPagoParcial.Text)
             !Haber = Null
             !nrofactura = txtNroFactura.Text
-            !CodAlumno = Int(frmPlanDePagos.lblCodAlumno.Caption)
+            !CodAlumno = Int(frmPlanDePagos.lblCodalumno.Caption)
             !NroCuota = 1
             .Update
         '''DESCUENTO (Parcial 1° Cuota - HABER)
@@ -378,18 +378,18 @@ Private Sub cmdAceptar_Click()
             .AddNew
             !fecha = Date
             !Cuenta = "Descuento"
-            !Detalle = "Parcial de 1° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
+            !Detalle = "Parcial de 1° Cuota de " & frmPlanDePagos.lblCodalumno.Caption
             !Debe = Int(txtPagoParcial.Text)
             !nrofactura = txtNroFactura.Text
             !Haber = Null
-            !CodAlumno = Int(frmPlanDePagos.lblCodAlumno.Caption)
+            !CodAlumno = Int(frmPlanDePagos.lblCodalumno.Caption)
             !NroCuota = 1
             .Update
         '''COMISION COORDINADOR (Comision 1° Cuota - DEBE)
             .AddNew
             !fecha = Date
             !Cuenta = "COMISIONES VARIAS"
-            !Detalle = "Comision Coord. 1° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
+            !Detalle = "Comision Coord. 1° Cuota de " & frmPlanDePagos.lblCodalumno.Caption
             !Debe = Int(txtCoordinador.Text)
             !Haber = Null
             !CodAlumno = Null
@@ -400,7 +400,7 @@ Private Sub cmdAceptar_Click()
             .AddNew
             !fecha = Date
             !Cuenta = "CAJA ADMINISTRACION"
-            !Detalle = "Comision Coord. 1° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
+            !Detalle = "Comision Coord. 1° Cuota de " & frmPlanDePagos.lblCodalumno.Caption
             !Debe = Null
             !Haber = Int(txtCoordinador.Text)
             !CodAlumno = Null
@@ -411,7 +411,7 @@ Private Sub cmdAceptar_Click()
             .AddNew
             !fecha = Date
             !Cuenta = "HONORARIOS ASESORES"
-            !Detalle = "Comision de 1° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
+            !Detalle = "Comision de 1° Cuota de " & frmPlanDePagos.lblCodalumno.Caption
             !Debe = Int(lblComisionAsesor.Caption)
             !Haber = Null
             !CodAlumno = Null
@@ -422,7 +422,7 @@ Private Sub cmdAceptar_Click()
             .AddNew
             !fecha = Date
             !Cuenta = "CAJA ADMINISTRACION"
-            !Detalle = "Comision de 1° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
+            !Detalle = "Comision de 1° Cuota de " & frmPlanDePagos.lblCodalumno.Caption
             !Debe = Null
             !Haber = Int(lblComisionAsesor.Caption)
             !CodAlumno = Null
@@ -432,7 +432,7 @@ Private Sub cmdAceptar_Click()
     
     With rsPlanDePago
         If .State = 1 Then .Close
-        .Open "SELECT * FROM plandepago WHERE codalumno=" & Int(frmPlanDePagos.lblCodAlumno.Caption), Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT * FROM plandepago WHERE codalumno=" & Int(frmPlanDePagos.lblCodalumno.Caption), Cn, adOpenDynamic, adLockPessimistic
     '''Plan de Pago (Liquidacion de Cuota)
         .Requery
         !tipodepago = "PAG"
@@ -445,9 +445,7 @@ Private Sub cmdAceptar_Click()
     End With
     aceptar = True
     Unload Me
-    
-LineaError:
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+LineaError: ErrCode
 End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)

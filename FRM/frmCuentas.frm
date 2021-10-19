@@ -389,8 +389,7 @@ Private Sub cmdBuscar1_Click()
         txtNombreCuenta.Text = !Cuenta
         txtDetalle.Text = !Detalle
     End With
-LineaError:
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+LineaError: ErrCode
 End Sub
 
 Private Sub cmdBuscar2_Click()
@@ -406,9 +405,7 @@ Private Sub cmdBuscar2_Click()
         txtNombreCuenta.Text = !Cuenta
         txtDetalle.Text = !Detalle
     End With
-LineaError:
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
-
+LineaError: ErrCode
 End Sub
 
 Private Sub cmdCancelar_Click()
@@ -456,11 +453,7 @@ Private Sub cmdGrabar_Click()
     HabilitarBotones True, False
     HabilitarCuadros True
 
-LineaError:
-    Select Case Err.Number
-        Case 3021
-            Resume Next
-        End Select
+LineaError: ErrCode
 End Sub
 
 Private Sub cmdModificar_Click()

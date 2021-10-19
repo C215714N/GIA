@@ -103,7 +103,7 @@ Begin VB.Form frmNuevoCheque
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   161218561
+      Format          =   139067393
       CurrentDate     =   41782
    End
    Begin isButtonTest.isButton cmdAgregar 
@@ -277,7 +277,7 @@ Private Sub cmdAgregar_Click()
         .Open "SELECT * FROM cheques", Cn, adOpenDynamic, adLockPessimistic
         .Requery
         .AddNew
-        !fecha = DTPFecha.Value
+        !fecha = dtpFecha.Value
         !destinatario = txtDestinatario.Text
         !numerocheque = txtNroCheque.Text
         !monto = txtMonto.Text
@@ -293,8 +293,7 @@ Private Sub cmdAgregar_Click()
     Else
         Unload Me
     End If
-LineaError:
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+LineaError: ErrCode
 End Sub
 
 Private Sub cmdCancelar_Click()
@@ -307,7 +306,7 @@ End Sub
 
 Private Sub Form_Load()
     Centrar Me
-    DTPFecha.Value = Date
+    dtpFecha.Value = Date
 End Sub
 
 Private Sub txtDestinatario_KeyPress(KeyAscii As Integer)

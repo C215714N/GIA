@@ -228,29 +228,6 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 
-Private Sub cmdAceptar_Click()
-    On Error GoTo LineaError:
-    
-    frmCobranza.lblCodAlumno.Caption = grilla.Columns(0).Text
-    frmCobranza.lblNyA.Caption = grilla.Columns(1).Text
-    If Trim(Len(frmCobranza.lblCodAlumno.Caption)) = 1 Then frmCobranza.lblCodAlumno.Caption = Format(frmCobranza.lblCodAlumno.Caption, "0000#")
-    If Trim(Len(frmCobranza.lblCodAlumno.Caption)) = 2 Then frmCobranza.lblCodAlumno.Caption = Format(frmCobranza.lblCodAlumno.Caption, "000##")
-    If Trim(Len(frmCobranza.lblCodAlumno.Caption)) = 3 Then frmCobranza.lblCodAlumno.Caption = Format(frmCobranza.lblCodAlumno.Caption, "00###")
-    If Trim(Len(frmCobranza.lblCodAlumno.Caption)) = 4 Then frmCobranza.lblCodAlumno.Caption = Format(frmCobranza.lblCodAlumno.Caption, "0####")
-    frmCobranza.Show
-    Unload Me
-    Exit Sub
-    
-LineaError:
-    MsgBox "Debe realizar una busqueda", vbOKOnly + vbCritical, "Gestion Integral del Alumno"
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
-    Exit Sub
-End Sub
-
-Private Sub cmdCancelar_Click()
-    Unload Me
-End Sub
-
 Private Sub Form_Load()
     Centrar Me
     Dim busca As String
@@ -258,7 +235,26 @@ Private Sub Form_Load()
     Adodc.CursorLocation = adUseClient
     Adodc.ConnectionString = DbCon
 End Sub
-
+Private Sub cmdAceptar_Click()
+    On Error GoTo LineaError:
+    
+    frmCobranza.lblCodalumno.Caption = grilla.Columns(0).Text
+    frmCobranza.lblNyA.Caption = grilla.Columns(1).Text
+    If Trim(Len(frmCobranza.lblCodalumno.Caption)) = 1 Then frmCobranza.lblCodalumno.Caption = Format(frmCobranza.lblCodalumno.Caption, "0000#")
+    If Trim(Len(frmCobranza.lblCodalumno.Caption)) = 2 Then frmCobranza.lblCodalumno.Caption = Format(frmCobranza.lblCodalumno.Caption, "000##")
+    If Trim(Len(frmCobranza.lblCodalumno.Caption)) = 3 Then frmCobranza.lblCodalumno.Caption = Format(frmCobranza.lblCodalumno.Caption, "00###")
+    If Trim(Len(frmCobranza.lblCodalumno.Caption)) = 4 Then frmCobranza.lblCodalumno.Caption = Format(frmCobranza.lblCodalumno.Caption, "0####")
+    frmCobranza.Show
+    Unload Me
+    Exit Sub
+    
+LineaError:
+    MsgBox "Debe realizar una busqueda", vbOKOnly + vbCritical, "Gestion Integral del Alumno"
+    ErrCode
+End Sub
+Private Sub cmdCancelar_Click()
+    Unload Me
+End Sub
 Private Sub txtBuscar_Change()
     If txtBuscar.Text = "" Then
         cmdAceptar.Enabled = False
@@ -291,5 +287,5 @@ Sub formatoGrilla()
 End Sub
 
 Private Sub txtBuscar_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then cmdAceptar_Click
+    Continue
 End Sub

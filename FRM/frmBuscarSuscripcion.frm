@@ -237,6 +237,15 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Private Sub Form_Load()
+    Centrar Me
+    Dim busca As String
+    Adodc.CursorLocation = adUseClient
+    Adodc.ConnectionString = DbCon
+    Adodc.RecordSource = "SELECT id, Nya as [Apellido y Nombres], tipoDoc as [Tipo], DNI as [N°], Direccion, CP, Localidad, Nacionalidad, Edad, FechaNac, Capac as [Capacitacion], Asistente, Tel1, Tel2, Tel3, Tel4, PTel1, PTel2, PTel3, PTel4, TotalCurso, Cuotas, GastoAdm, Fechasus, Observaciones, Manuales, DchoExamen, TotalMatricula, NroFactura FROM suscripciones WHERE [Nya] like '" & busca & "'"
+    Set grilla.DataSource = Adodc
+    formatoGrilla
+End Sub
 Private Sub cmdAceptar_Click()
     On Error GoTo LineaError
     If Adodc.Recordset.RecordCount = 0 Then MsgBox "Debe realizar una busqueda", vbOKOnly + vbCritical, "Gestion Integral del Alumno": Exit Sub
@@ -299,7 +308,7 @@ Private Sub cmdAceptar_Click()
         frmVerificaciones.HabilitarBotones False, True
         frmVerificaciones.txtNya.SetFocus
         frmVerificaciones.DTPFechaVerificacion.Value = Date
-        frmVerificaciones.lblCodAlumno.Caption = ""
+        frmVerificaciones.lblCodalumno.Caption = ""
         frmVerificaciones.txtNya.Text = grilla.Columns(1).Text
         frmVerificaciones.cmbTipoDoc.Text = grilla.Columns(2).Text
         frmVerificaciones.txtDocumento.Text = grilla.Columns(3).Text
@@ -348,8 +357,7 @@ Private Sub cmdAceptar_Click()
         Unload Me
     End If
     
-LineaError:
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+LineaError: ErrCode
 End Sub
 
 Private Sub cmdCancelar_Click()
@@ -361,15 +369,6 @@ Private Sub cmdCancelar_Click()
     End If
 End Sub
 
-Private Sub Form_Load()
-    Centrar Me
-    Dim busca As String
-    Adodc.CursorLocation = adUseClient
-    Adodc.ConnectionString = DbCon
-    Adodc.RecordSource = "SELECT id, Nya as [Apellido y Nombres], tipoDoc as [Tipo], DNI as [N°], Direccion, CP, Localidad, Nacionalidad, Edad, FechaNac, Capac as [Capacitacion], Asistente, Tel1, Tel2, Tel3, Tel4, PTel1, PTel2, PTel3, PTel4, TotalCurso, Cuotas, GastoAdm, Fechasus, Observaciones, Manuales, DchoExamen, TotalMatricula, NroFactura FROM suscripciones WHERE [Nya] like '" & busca & "'"
-    Set grilla.DataSource = Adodc
-    formatoGrilla
-End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
     Unload Me

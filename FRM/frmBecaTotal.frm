@@ -29,7 +29,6 @@ Begin VB.Form frmBecaTotal
       _ExtentX        =   13361
       _ExtentY        =   1508
       _Version        =   393217
-      Enabled         =   -1  'True
       MaxLength       =   1000
       Appearance      =   0
       TextRTF         =   $"frmBecaTotal.frx":10CA
@@ -324,7 +323,7 @@ Begin VB.Form frmBecaTotal
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   160628737
+         Format          =   171245569
          CurrentDate     =   42093
       End
       Begin isButtonTest.isButton cmdGrabar 
@@ -452,7 +451,7 @@ Begin VB.Form frmBecaTotal
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   160694273
+      Format          =   137166849
       CurrentDate     =   42089
    End
    Begin MSComCtl2.DTPicker dtpDesde 
@@ -473,7 +472,7 @@ Begin VB.Form frmBecaTotal
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   160694273
+      Format          =   137166849
       CurrentDate     =   42089
    End
    Begin VB.Frame Frame1 
@@ -612,12 +611,7 @@ Private Sub cmdGrabar_Click()
        
     Buscar
     
-LineaError:
-    Select Case Err.Number
-        Case 3021
-            Resume Next
-    End Select
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+LineaError: ErrCode
 End Sub
 Private Sub Form_Load()
     Centrar Me

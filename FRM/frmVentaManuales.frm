@@ -455,8 +455,7 @@ Private Sub cmdVender_Click()
     txtRecibo.Text = ""
     txtCodigo.SetFocus
     formatoGrilla
-LineaError:
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+LineaError: ErrCode
 End Sub
 
 Private Sub Form_Load()
@@ -486,8 +485,7 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
         cmbManual.SetFocus
     End If
     formatoGrilla
-LineaError:
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+LineaError: ErrCode
 End Sub
 
 Sub cargarManuales()

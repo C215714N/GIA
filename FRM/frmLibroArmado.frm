@@ -189,11 +189,7 @@ Private Sub cmdBuscar_Click()
     Set grilla.DataSource = rsAlumnosArmado
     formatoGrilla
     
-LineaError:
-    Select Case Err.Number
-        Case 3021
-            Resume Next
-        End Select
+LineaError: ErrCode
 End Sub
 
 Private Sub Form_Load()
@@ -221,7 +217,7 @@ Private Sub grilla_DblClick()
     With rsVerificaciones
         If .State = 1 Then .Close
         .Open "SELECT  nya, FechaVerif,cuotas ,capac FROM verificaciones WHERE codalumno=" & CodAlumno, Cn, adOpenDynamic, adLockPessimistic
-        frmLibro.lblCodAlumno.Caption = CodAlumno
+        frmLibro.lblCodalumno.Caption = CodAlumno
         frmLibro.lblAlumno.Caption = !NyA
         frmLibro.lblfecha.Caption = !FechaVerif
         frmLibro.lblDuracion.Caption = !cuotas & " Meses"

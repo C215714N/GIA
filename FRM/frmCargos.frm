@@ -121,6 +121,10 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Private Sub Form_Load()
+    Centrar Me
+    Cargos
+End Sub
 Private Sub cmdAgregar_Click()
     On Error GoTo LineaError
     If txtCargo.Text = "" Then MsgBox "Primero debe Agregar un Nuevo Cargo", vbOKOnly + vbInformation, "Cargos": txtCargo.SetFocus: Exit Sub
@@ -137,28 +141,18 @@ Private Sub cmdAgregar_Click()
             txtCargo.SetFocus
         End If
     End With
-LineaError:
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
-
+LineaError: ErrCode
 End Sub
-
-Private Sub cmdSalir_Click()
-    Unload Me
-End Sub
-
-Private Sub Form_Load()
-    Centrar Me
-    Cargos
-End Sub
-
-Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
-    Unload Me
-End Sub
-
 Private Sub txtCargo_Change()
     If txtCargo.Text = "" Then
         cmdAgregar.Enabled = False
     Else
         cmdAgregar.Enabled = True
     End If
+End Sub
+Private Sub cmdSalir_Click()
+    Unload Me
+End Sub
+Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
+    Unload Me
 End Sub

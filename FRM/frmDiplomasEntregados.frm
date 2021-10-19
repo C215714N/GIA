@@ -221,8 +221,7 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
       Set grilla.DataSource = rsExamenes
       formatoGrilla
     End If
-LineaError:
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+LineaError: ErrCode
 End Sub
 
 Sub formatoGrilla()

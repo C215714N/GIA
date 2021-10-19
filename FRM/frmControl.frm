@@ -600,8 +600,7 @@ Private Sub cmdGrabar_Click()
             Loop
         End With
     End If
-LineaError:
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+LineaError: ErrCode
 End Sub
 
 Private Sub cmdModificar_Click()

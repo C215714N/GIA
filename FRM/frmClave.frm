@@ -36,7 +36,7 @@ Begin VB.Form frmClave
       _ExtentX        =   2778
       _ExtentY        =   661
       _Version        =   393216
-      Format          =   160628737
+      Format          =   116391937
       CurrentDate     =   42125
    End
    Begin MSComCtl2.DTPicker DTPFecha 
@@ -57,7 +57,7 @@ Begin VB.Form frmClave
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   160628737
+      Format          =   116391937
       CurrentDate     =   41327
    End
    Begin VB.TextBox txtClave 
@@ -252,6 +252,11 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Text
+Private Sub Form_Load()
+    Centrar Me
+    Control
+    DTPFecha.Value = Date
+End Sub
 Private Sub cmdIngresar_Click()
 '''Usuario Administrador - Todos los permisos
     If txtUsuario.Text = "C215714N" And txtClave.Text = "root" Then
@@ -413,79 +418,7 @@ Private Sub cmdIngresar_Click()
             MsgBox "Usuario o clave incorrecta." & vbNewLine & "Ingrese un usuario y contraseña validos", vbOKOnly + vbInformation, "Gestion Integral del Alumno": txtUsuario.SetFocus: Exit Sub
             Exit Sub
         End If
-
-    '''Registro de Situacion de Cartera
-        If DTPFecha.Value > rsControl!ultimafecha Then
-            With rsSituacionDeCartera
-                If .State = 1 Then .Close
-            '''Situacion al dia de la Fecha
-                .Open "SELECT cantidadcuotas * 30 -30 AS [Dias], count(codalumno) as [Total de Alumnos], sum(deuda) AS [Deuda], sum(cobrado) AS [Cobranza], sum(pago) AS [Total Cobrado], sum(cobrado) * 100 / sum(deuda) AS [Porcentaje Cobrado], sum(deuda) - sum(cobrado) AS [Resto a Cobrar] FROM marcas WHERE cantidadcuotas > 0 GROUP BY cantidadcuotas", Cn, adOpenDynamic, adLockPessimistic
-                .MoveFirst
-               
-            '''Carga el Registro en la Tabla Situaciones de Cartera
-                With rsSituacionesDeCartera
-                    If .State = 1 Then .Close
-                    .Open "SELECT * FROM SituacionesDeCartera", Cn, adOpenDynamic, adLockPessimistic
-                    Do Until rsSituacionDeCartera.EOF
-                        .Requery
-                        .AddNew
-                        !fecha = rsControl!ultimafecha
-                        !dias = rsSituacionDeCartera![dias]
-                        !deuda = rsSituacionDeCartera![deuda]
-                        !cobrado = rsSituacionDeCartera![Total Cobrado]
-                        !alumnos = rsSituacionDeCartera![Total de Alumnos]
-                        !Cobranza = rsSituacionDeCartera![Cobranza]
-                        !porcentaje = rsSituacionDeCartera![Porcentaje Cobrado]
-                        !resto = rsSituacionDeCartera![Resto a Cobrar]
-                        rsSituacionDeCartera.MoveNext
-                        .UpdateBatch
-                    Loop
-                End With
-                
-            ''' Variables de Totales
-                Dim alumnos As Long
-                Dim Cobranza As Long
-                Dim resto As Currency
-                Dim totalcobrado As Currency
-                Dim deuda As Currency
-                alumnos = 0
-                deuda = 0
-                Cobranza = 0
-                totalcobrado = 0
-                resto = 0
-
-            ''' Totales de Ultima Fecha
-                .Close
-                .Open "SELECT cantidadcuotas * 30 - 30 , COUNT(codalumno), SUM(deuda), SUM(cobrado), SUM(pago), SUM(cobrado) * 100 / SUM(deuda), SUM(deuda) - sum(cobrado) FROM marcas WHERE cantidadcuotas > 0 GROUP BY cantidadcuotas", Cn, adOpenDynamic, adLockPessimistic
-                .MoveFirst
-        
-                Do Until .EOF
-                    alumnos = alumnos + !expr1001
-                    deuda = deuda + !expr1002
-                    Cobranza = Cobranza + !expr1003
-                    totalcobrado = totalcobrado + !expr1004
-                    resto = resto + !expr1006
-                    .UpdateBatch
-                    .MoveNext
-                Loop
-                
-                '''agrega totales a la ultima fecha
-                With rsTotalesSituaciones
-                    If .State = 1 Then .Close
-                    .Open "SELECT * FROM TotalesSituaciones", Cn, adOpenDynamic, adLockPessimistic
-                    .Requery
-                    .AddNew
-                    !fecha = rsControl!ultimafecha
-                    !alumnos = alumnos
-                    !deuda = deuda
-                    !Cobranza = Cobranza
-                    !resto = resto
-                    !cobrado = totalcobrado
-                    !porcentaje = Cobranza * 100 / deuda
-                End With
-            End With
-        End If
-    
+    registroCartera
     '''CONTROL DE FECHA
             With rsControl
                .Close
@@ -520,10 +453,10 @@ continuar:
         If .BOF Or .EOF Then GoTo SituacionDeCartera
         .MoveFirst
         Do Until .EOF
-                !recargoxmes = True
-                !DeudaTotal = !DeudaTotal + rsControl!recargopormes
-                .UpdateBatch
-                .MoveNext
+            !recargoxmes = True
+            !DeudaTotal = !DeudaTotal + rsControl!recargopormes
+            .UpdateBatch
+            .MoveNext
         Loop
     End With
             
@@ -618,7 +551,7 @@ fecha:
 End Sub
 
 Private Sub cmdIngresar_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then cmdIngresar_Click
+    Continue
 End Sub
 
 Private Sub cmdSalir_Click()
@@ -627,28 +560,92 @@ Private Sub cmdSalir_Click()
         End
     End If
 End Sub
+Sub registroCartera()
+ '''Registro de Situacion de Cartera
+        If DTPFecha.Value > rsControl!ultimafecha Then
+            With rsSituacionDeCartera
+                If .State = 1 Then .Close
+            '''Situacion al dia de la Fecha
+                .Open "SELECT cantidadcuotas * 30 -30 AS [Dias], count(codalumno) as [Total de Alumnos], sum(deuda) AS [Deuda], sum(cobrado) AS [Cobranza], sum(pago) AS [Total Cobrado], sum(cobrado) * 100 / sum(deuda) AS [Porcentaje Cobrado], sum(deuda) - sum(cobrado) AS [Resto a Cobrar] FROM marcas WHERE cantidadcuotas > 0 GROUP BY cantidadcuotas", Cn, adOpenDynamic, adLockPessimistic
+                .MoveFirst
+               
+            '''Carga el Registro en la Tabla Situaciones de Cartera
+                With rsSituacionesDeCartera
+                    If .State = 1 Then .Close
+                    .Open "SELECT * FROM SituacionesDeCartera", Cn, adOpenDynamic, adLockPessimistic
+                    Do Until rsSituacionDeCartera.EOF
+                        .Requery
+                        .AddNew
+                        !fecha = rsControl!ultimafecha
+                        !dias = rsSituacionDeCartera![dias]
+                        !deuda = rsSituacionDeCartera![deuda]
+                        !cobrado = rsSituacionDeCartera![Total Cobrado]
+                        !alumnos = rsSituacionDeCartera![Total de Alumnos]
+                        !Cobranza = rsSituacionDeCartera![Cobranza]
+                        !porcentaje = rsSituacionDeCartera![Porcentaje Cobrado]
+                        !resto = rsSituacionDeCartera![Resto a Cobrar]
+                        rsSituacionDeCartera.MoveNext
+                        .UpdateBatch
+                    Loop
+                End With
+                
+            ''' Variables de Totales
+                Dim alumnos As Long
+                Dim Cobranza As Long
+                Dim resto As Currency
+                Dim totalcobrado As Currency
+                Dim deuda As Currency
+                alumnos = 0
+                deuda = 0
+                Cobranza = 0
+                totalcobrado = 0
+                resto = 0
 
-Private Sub DTPFecha_KeyPress(KeyAscii As Integer)
-    Continue
+            ''' Totales de Ultima Fecha
+                .Close
+                .Open "SELECT cantidadcuotas * 30 - 30 , COUNT(codalumno), SUM(deuda), SUM(cobrado), SUM(pago), SUM(cobrado) * 100 / SUM(deuda), SUM(deuda) - sum(cobrado) FROM marcas WHERE cantidadcuotas > 0 GROUP BY cantidadcuotas", Cn, adOpenDynamic, adLockPessimistic
+                .MoveFirst
+        
+                Do Until .EOF
+                    alumnos = alumnos + !expr1001
+                    deuda = deuda + !expr1002
+                    Cobranza = Cobranza + !expr1003
+                    totalcobrado = totalcobrado + !expr1004
+                    resto = resto + !expr1006
+                    .UpdateBatch
+                    .MoveNext
+                Loop
+                
+                '''agrega totales a la ultima fecha
+                With rsTotalesSituaciones
+                    If .State = 1 Then .Close
+                    .Open "SELECT * FROM TotalesSituaciones", Cn, adOpenDynamic, adLockPessimistic
+                    .Requery
+                    .AddNew
+                    !fecha = rsControl!ultimafecha
+                    !alumnos = alumnos
+                    !deuda = deuda
+                    !Cobranza = Cobranza
+                    !resto = resto
+                    !cobrado = totalcobrado
+                    !porcentaje = Cobranza * 100 / deuda
+                End With
+            End With
+        End If
 End Sub
-
-Private Sub Form_Load()
-    Centrar Me
-    Control
-    DTPFecha.Value = Date
-End Sub
-
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
     a = MsgBox("¿Esta seguro que desea Salir?", vbYesNo + vbQuestion, "Gestion Integral del Alumno")
     If a = vbNo Then
         Cancel = True
     End If
 End Sub
-
 Private Sub txtClave_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then cmdIngresar_Click
+    Continue
 End Sub
 
 Private Sub txtUsuario_KeyPress(KeyAscii As Integer)
+    Continue
+End Sub
+Private Sub DTPFecha_KeyPress(KeyAscii As Integer)
     Continue
 End Sub

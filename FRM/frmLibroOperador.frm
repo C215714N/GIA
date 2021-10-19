@@ -207,7 +207,7 @@ Begin VB.Form frmLibroOperador
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   160235521
+         Format          =   169345025
          CurrentDate     =   41580
       End
       Begin isButtonTest.isButton cmdBuscar 
@@ -300,8 +300,7 @@ Private Sub cmdAsistencia_Click()
         '''refresca la grilla
         rsReservas.Requery
         formatoGrilla
-LineaError:
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+LineaError: ErrCode
 End Sub
 
 Private Sub cmdBuscar_Click()
@@ -309,7 +308,7 @@ Private Sub cmdBuscar_Click()
     If cmbHora.Text = "" Then MsgBox "Primero debe elegir un horario de turno", vbOKOnly + vbCritical, "Libro de Aula de las Reservas": cmbHora.SetFocus: Exit Sub
     
     ''' asigna formato fecha a la variable para la busqueda
-    fecha = Format(DTPFecha.Value, "mm/dd/yyyy")
+    fecha = Format(dtpFecha.Value, "mm/dd/yyyy")
     
     '''consulta de reservas
     With rsReservas
@@ -325,7 +324,7 @@ End Sub
 
 Private Sub Form_Load()
     Centrar Me
-    DTPFecha.Value = Date
+    dtpFecha.Value = Date
 End Sub
 
 Private Sub grilla_Click()
@@ -346,7 +345,7 @@ Private Sub grilla_DblClick()
     With rsVerificaciones
         If .State = 1 Then .Close
         .Open "SELECT  nya, FechaVerif,cuotas ,capac FROM verificaciones WHERE codalumno=" & CodAlumno, Cn, adOpenDynamic, adLockPessimistic
-        frmLibro.lblCodAlumno.Caption = CodAlumno
+        frmLibro.lblCodalumno.Caption = CodAlumno
         frmLibro.lblAlumno.Caption = !NyA
         frmLibro.lblfecha.Caption = !FechaVerif
         frmLibro.lblDuracion.Caption = !cuotas & " Meses"

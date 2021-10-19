@@ -221,7 +221,7 @@ Begin VB.Form frmAuditoria
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   127533057
+      Format          =   138543105
       CurrentDate     =   42492
    End
 End
@@ -230,6 +230,52 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Private Sub Form_Load()
+    Centrar Me
+    Dim contador As Integer
+    contador = 1
+    With rsMarcas
+        If .State = 1 Then .Close
+        .Open "SELECT codalumno FROM marcas ORDER BY codalumno", Cn, adOpenDynamic, adLockPessimistic
+        .MoveFirst
+        Do Until .EOF
+            If contador = !CodAlumno Then
+                .MoveNext
+                contador = contador + 1
+            Else
+                List1.AddItem (contador)
+                contador = contador + 1
+            End If
+        Loop
+    End With
+    lblMarcas.Caption = List1.ListCount
+    contador = 1
+    With rsPlanDePago
+        If .State = 1 Then .Close
+        .Open "SELECT distinct codalumno FROM plandepago WHERE codalumno>0 ORDER BY codalumno", Cn, adOpenDynamic, adLockPessimistic
+        .MoveFirst
+        Do Until .EOF
+            If contador = !CodAlumno Then
+                .MoveNext
+                contador = contador + 1
+            Else
+                List2.AddItem (contador)
+                contador = contador + 1
+            End If
+        Loop
+    End With
+    lblPlanDePago.Caption = List2.ListCount
+
+    dtpFechaFutura.Value = Date
+    If dtpFechaFutura.Month = 12 Then
+        dtpFechaFutura.Month = 1
+        dtpFechaFutura.Year = dtpFechaFutura.Year + 1
+    Else
+        dtpFechaFutura.Day = 25
+        dtpFechaFutura.Month = dtpFechaFutura.Month + 1
+    End If
+End Sub
+
 Private Sub btnActualizar_Click()
     Dim fechafutura As Date
     fechafutura = Format(dtpFechaFutura.Value, "mm/dd/yyyy")
@@ -280,12 +326,9 @@ Private Sub btnActualizar_Click()
                 .MoveNext
             End If
         Loop
-        
         MsgBox "La Base de Datos fue actualizada exitosamente", , "Auditoria"
     End With
 End Sub
-
-
 Private Sub cmdAgregar_Click()
     If MsgBox("¿Esta seguro que desea agregar estos codigos a la tabla MARCAS?", vbQuestion + vbYesNo, "GIA") = vbYes Then
             With rsActualizarMarcas
@@ -305,51 +348,5 @@ Private Sub cmdAgregar_Click()
                     List1.RemoveItem (0)
                 Loop
             End With
-    End If
-End Sub
-
-Private Sub Form_Load()
-    Centrar Me
-    Dim contador As Integer
-    contador = 1
-    With rsMarcas
-        If .State = 1 Then .Close
-        .Open "SELECT codalumno FROM marcas ORDER BY codalumno", Cn, adOpenDynamic, adLockPessimistic
-        .MoveFirst
-        Do Until .EOF
-            If contador = !CodAlumno Then
-                .MoveNext
-                contador = contador + 1
-            Else
-                List1.AddItem (contador)
-                contador = contador + 1
-            End If
-        Loop
-    End With
-    lblMarcas.Caption = List1.ListCount
-    contador = 1
-    With rsPlanDePago
-        If .State = 1 Then .Close
-        .Open "SELECT distinct codalumno FROM plandepago WHERE codalumno>0 ORDER BY codalumno", Cn, adOpenDynamic, adLockPessimistic
-        .MoveFirst
-        Do Until .EOF
-            If contador = !CodAlumno Then
-                .MoveNext
-                contador = contador + 1
-            Else
-                List2.AddItem (contador)
-                contador = contador + 1
-            End If
-        Loop
-    End With
-    lblPlanDePago.Caption = List2.ListCount
-
-    dtpFechaFutura.Value = Date
-    If dtpFechaFutura.Month = 12 Then
-        dtpFechaFutura.Month = 1
-        dtpFechaFutura.Year = dtpFechaFutura.Year + 1
-    Else
-        dtpFechaFutura.Day = 25
-        dtpFechaFutura.Month = dtpFechaFutura.Month + 1
     End If
 End Sub

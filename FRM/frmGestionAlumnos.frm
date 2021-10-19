@@ -292,8 +292,7 @@ Private Sub cmdAgregar_Click()
     txtCodAlumno.Text = ""
     txtCodAlumno.SetFocus
 
-LineaError:
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+LineaError: ErrCode
 End Sub
 
 Private Sub cmdQuitar_Click()
@@ -318,8 +317,7 @@ Private Sub cmdQuitar_Click()
         grilla.Columns(0).Width = 3000
         grilla.Columns(1).Width = 0
     End If
-LineaError:
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+LineaError: ErrCode
 End Sub
 
 Private Sub Form_Load()

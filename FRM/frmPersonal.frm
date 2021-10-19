@@ -272,7 +272,7 @@ Begin VB.Form frmPersonal
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   238419969
+         Format          =   139001857
          CurrentDate     =   41319
       End
       Begin VB.TextBox txtNya 
@@ -408,7 +408,7 @@ Begin VB.Form frmPersonal
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   110690305
+         Format          =   139001857
          CurrentDate     =   41319
       End
       Begin VB.Label Label10 
@@ -688,11 +688,7 @@ Private Sub cmdGrabar_Click()
     HabilitarCuadros True, False
     Limpiar
 
-LineaError:
-    Select Case Err.Number
-        Case 3021
-            Resume Next
-        End Select
+LineaError: ErrCode
 End Sub
 
 Private Sub cmdModificar_Click()

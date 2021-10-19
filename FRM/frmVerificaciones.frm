@@ -46,6 +46,7 @@ Begin VB.Form frmVerificaciones
          _ExtentX        =   8281
          _ExtentY        =   2778
          _Version        =   393217
+         Enabled         =   -1  'True
          MaxLength       =   1000
          Appearance      =   0
          AutoVerbMenu    =   -1  'True
@@ -391,7 +392,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   161153025
+         Format          =   137297921
          CurrentDate     =   41308
       End
       Begin MSDataListLib.DataCombo dtcAsistente 
@@ -778,7 +779,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   161153025
+         Format          =   169803777
          CurrentDate     =   41308
       End
       Begin MSComCtl2.DTPicker DTPFechaVerificacion 
@@ -799,7 +800,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   161153025
+         Format          =   169803777
          CurrentDate     =   41308
       End
       Begin VB.Label Label17 
@@ -1245,7 +1246,7 @@ Private Sub cmdGrabar_Click()
         With rsControl
             .Find "ID=1"
             codigo = !CodAlumno
-            lblCodAlumno.Caption = codigo
+            lblCodalumno.Caption = codigo
             !CodAlumno = codigo + 1
             .UpdateBatch
         End With
@@ -1253,7 +1254,7 @@ Private Sub cmdGrabar_Click()
         With rsVerificaciones
             .Requery
             .AddNew
-            !CodAlumno = lblCodAlumno.Caption
+            !CodAlumno = lblCodalumno.Caption
             !NyA = txtNya.Text
             !tipodoc = cmbTipoDoc.Text
             !dni = txtDocumento.Text
@@ -1308,8 +1309,8 @@ Private Sub cmdGrabar_Click()
     Else
         With rsVerificaciones
             .Requery
-            .Find "Codalumno=" & lblCodAlumno.Caption
-            .Find "CodAlumno='" & lblCodAlumno.Caption & "'"
+            .Find "Codalumno=" & lblCodalumno.Caption
+            .Find "CodAlumno='" & lblCodalumno.Caption & "'"
             !NyA = txtNya.Text
             !tipodoc = cmbTipoDoc.Text
             !dni = txtDocumento.Text
@@ -1343,7 +1344,7 @@ Private Sub cmdGrabar_Click()
             '''actualiza nombre en tabla de plan de pago
             With rsAnalisisDeCuenta
                 If .State = 1 Then .Close
-                .Open "SELECT * FROM PlanDePago WHERE codalumno=" & Int(lblCodAlumno.Caption), Cn, adOpenDynamic, adLockPessimistic
+                .Open "SELECT * FROM PlanDePago WHERE codalumno=" & Int(lblCodalumno.Caption), Cn, adOpenDynamic, adLockPessimistic
                 If .BOF Or .EOF Then MsgBox "Los datos fueron actualizados con Exito" & vbNewLine & vbNewLine & "Recuerde que para una Correcta Gestion Administrativa debera asignarle un plan de pago, incluso si la capacitacion estuviese Completamente Becada", vbOKOnly + vbInformation: GoSub continuar
                 .MoveFirst
                 !NyA = txtNya.Text
@@ -1354,25 +1355,19 @@ Private Sub cmdGrabar_Click()
     End If
 
 continuar:
-    If Trim(Len(lblCodAlumno.Caption)) = 1 Then lblCodAlumno.Caption = Format(lblCodAlumno.Caption, "0000#")
-    If Trim(Len(lblCodAlumno.Caption)) = 2 Then lblCodAlumno.Caption = Format(lblCodAlumno.Caption, "000##")
-    If Trim(Len(lblCodAlumno.Caption)) = 3 Then lblCodAlumno.Caption = Format(lblCodAlumno.Caption, "00###")
-    If Trim(Len(lblCodAlumno.Caption)) = 4 Then lblCodAlumno.Caption = Format(lblCodAlumno.Caption, "0####")
+    If Trim(Len(lblCodalumno.Caption)) = 1 Then lblCodalumno.Caption = Format(lblCodalumno.Caption, "0000#")
+    If Trim(Len(lblCodalumno.Caption)) = 2 Then lblCodalumno.Caption = Format(lblCodalumno.Caption, "000##")
+    If Trim(Len(lblCodalumno.Caption)) = 3 Then lblCodalumno.Caption = Format(lblCodalumno.Caption, "00###")
+    If Trim(Len(lblCodalumno.Caption)) = 4 Then lblCodalumno.Caption = Format(lblCodalumno.Caption, "0####")
 
     HabilitarBotones True, False
     HabilitarCuadros True, False
     
-LineaError:
-    Select Case Err.Number
-        Case 3021
-            Resume Next
-        End Select
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
-
+LineaError: ErrCode
 End Sub
 
 Private Sub cmdModificar_Click()
-    If lblCodAlumno.Caption = "" Then
+    If lblCodalumno.Caption = "" Then
         MsgBox "Primero debe Buscar a un Alumno Verificado", vbInformation + vbOKOnly, "Gestion Integral del Alumno"
     Else
         HabilitarCuadros False, True
@@ -1383,12 +1378,12 @@ Private Sub cmdModificar_Click()
 End Sub
 
 Private Sub cmdPlanDePago_Click()
-    If lblCodAlumno.Caption = "" Then
+    If lblCodalumno.Caption = "" Then
         MsgBox "Primero debe Buscar un Alumno", vbOKOnly + vbInformation, "Verificaciones"
     Else
         PlanDePago
         With rsPlanDePago
-            .Find "Codalumno='" & Val(lblCodAlumno.Caption) & "'"
+            .Find "Codalumno='" & Val(lblCodalumno.Caption) & "'"
             If .EOF Then
                 frmPlanDePagos.Show
                 If txtTotalCuotas.Text = 1 Then
@@ -1521,7 +1516,7 @@ Sub HabilitarCuadros(estado1 As Boolean, estado2 As Boolean)
 End Sub
 
 Sub Limpiar()
-    lblCodAlumno.Caption = ""
+    lblCodalumno.Caption = ""
     txtNya.Text = ""
     txtDireccion.Text = ""
     txtEdad.Text = ""

@@ -495,9 +495,7 @@ Private Sub cmdBajarAsiento_Click()
     Else
         MsgBox "No coinciden Debe y Haber", vbOKOnly + vbInformation, "Contabilidad"
     End If
-    
-LineaError:
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+LineaError: ErrCode
 End Sub
 
 Private Sub cmdBajarCuenta_Click()
@@ -536,9 +534,7 @@ Private Sub cmdBajarCuenta_Click()
     formatoGrilla
     Limpiar
 
-LineaError:
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
-
+LineaError: ErrCode
 End Sub
 
 Private Sub cmdCancelar_Click()

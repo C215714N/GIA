@@ -291,22 +291,36 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-
+Private Sub Form_Load()
+    Centrar Me
+    Dim CuotasDebidas As Integer
+    CuotasDebidas = (Situacion + 30) / 30
+    
+    If Situacion = 0 Then
+        Label1.Caption = "Analizado " & Situacion
+    Else
+        Label1.Caption = "Analizado - " & Situacion
+    End If
+    
+    With rsAnalisisSituacionDeuda
+        If .State = 1 Then .Close
+        .Open "SELECT codalumno as Alumno, Cuota, Deuda, fechaCompromiso as Compromiso, LPA FROM marcas WHERE cantidadcuotas=" & CuotasDebidas & " AND pago=0 ORDER BY codalumno", Cn, adOpenDynamic, adLockPessimistic
+    End With
+    Set Grilla.DataSource = rsAnalisisSituacionDeuda
+    formatoGrilla
+End Sub
 Private Sub cmdCerrar_Click()
     Unload Me
 End Sub
-
 Private Sub cmdCuotas_Click()
-        CodAlumno = grilla.Columns(0).Text
+        CodAlumno = Grilla.Columns(0).Text
         frmAnalisisDeCuotas.Show
         frmAnalisisDeCuotas.Label11.Caption = Me.Name
         Me.Enabled = False
-
 End Sub
-
 Private Sub cmdDatos_Click()
     frmVerificaciones.Label20.Caption = Me.Name
-    CodAlumno = grilla.Columns(0).Text
+    CodAlumno = Grilla.Columns(0).Text
     Me.Enabled = False
     Verificaciones
     frmVerificaciones.Show
@@ -322,17 +336,12 @@ Private Sub cmdDatos_Click()
         frmVerificaciones.dtcLocalidad.Text = !localidad
         frmVerificaciones.txtNacionalidad.Text = !nacionalidad
         
-        If Month(!fechanac) < Month(Date) Then
+        If (Month(!fechanac) < Month(Date)) Or (Day(!fechanac) <= Day(Date) And Month(!fechanac) = Month(Date)) Then
             frmVerificaciones.txtEdad.Text = DateDiff("yyyy", !fechanac, Date)
-        ElseIf Day(!fechanac) <= Day(Date) And Month(!fechanac) = Month(Date) Then
-            frmVerificaciones.txtEdad.Text = DateDiff("yyyy", !fechanac, Date)
-        ElseIf Day(!fechanac) > Day(Date) And Month(!fechanac) >= Month(Date) Then
-            frmVerificaciones.txtEdad.Text = DateDiff("yyyy", !fechanac, Date) - 1
-        Else
+        Else:
             frmVerificaciones.txtEdad.Text = DateDiff("yyyy", !fechanac, Date) - 1
         End If
 
-        
         frmVerificaciones.dtpFechaNacimiento.Value = !fechanac
         frmVerificaciones.dtcCapacitacion.Text = !capac
         frmVerificaciones.dtcAsistente.Text = !Asistente
@@ -360,7 +369,6 @@ Private Sub cmdDatos_Click()
         Else
             frmVerificaciones.chkExamenes.Value = 1
         End If
-
     End With
         
     If Trim(Len(frmVerificaciones.lblCodAlumno.Caption)) = 1 Then frmVerificaciones.lblCodAlumno.Caption = Format(frmVerificaciones.lblCodAlumno.Caption, "0000#")
@@ -373,29 +381,10 @@ End Sub
 
 Private Sub cmdMarcar_Click()
     frmMarcar.Label1.Caption = Me.Name
-    CodAlumno = grilla.Columns(0).Text
+    CodAlumno = Grilla.Columns(0).Text
     frmMarcar.Show
     Me.Enabled = False
 
-End Sub
-
-Private Sub Form_Load()
-    Centrar Me
-    Dim CuotasDebidas As Integer
-    CuotasDebidas = (Situacion + 30) / 30
-    
-    If Situacion = 0 Then
-        Label1.Caption = "Analizado " & Situacion
-    Else
-        Label1.Caption = "Analizado - " & Situacion
-    End If
-    
-    With rsAnalisisSituacionDeuda
-        If .State = 1 Then .Close
-        .Open "SELECT codalumno as Alumno, Cuota, Deuda, fechaCompromiso as Compromiso, LPA FROM marcas WHERE cantidadcuotas=" & CuotasDebidas & " AND pago=0 ORDER BY codalumno", Cn, adOpenDynamic, adLockPessimistic
-    End With
-    Set grilla.DataSource = rsAnalisisSituacionDeuda
-    formatoGrilla
 End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
@@ -410,6 +399,6 @@ Sub formatoGrilla()
         Else:
             w = 400 * N
         End If
-        grilla.Columns(N).Width = w
+        Grilla.Columns(N).Width = w
     Next
 End Sub

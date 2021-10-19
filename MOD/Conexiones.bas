@@ -135,7 +135,6 @@ Public Sub Localidades()
 End Sub
 
 Sub Centrar(frm As Form)
-'''Centra el Formulario en Pantalla
     frm.Top = (MDI.Height - frm.Height) \ 4 - 500
     frm.Left = (MDI.Width - frm.Width) \ 2
 End Sub
@@ -143,3 +142,12 @@ End Sub
 Sub Continue()
     If KeyAscii = 13 Then SendKeys "{TAB}"
 End Sub
+
+Sub ErrCode()
+    Select Case Err.Number
+        Case 3021
+            Resume Next
+        End Select
+    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+End Sub
+

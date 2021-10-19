@@ -83,7 +83,7 @@ Begin VB.Form frmPlanDePagoReingreso
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   107937793
+      Format          =   138346497
       CurrentDate     =   41353
    End
    Begin isButtonTest.isButton cmdAplicar 
@@ -240,28 +240,28 @@ Private Sub cmdAplicar_Click()
         .Requery
         Do Until Int(txtNroCuota.Text) > CuotaMax
             .AddNew
-            !CodAlumno = frmAnalisisDeCuotas.lblCodAlumno.Caption
+            !CodAlumno = frmAnalisisDeCuotas.lblCodalumno.Caption
             !NyA = frmAnalisisDeCuotas.lblNyA.Caption
             !NroCuota = Int(txtNroCuota.Text)
             !deuda = txtMonto.Text
             !totalcobrado = 0
             !DeudaTotal = txtMonto.Text
             !CuotasDebidas = 1
-            !fechavto = DTPFecha.Value
+            !fechavto = dtpFecha.Value
             .Update
             txtNroCuota.Text = Int(txtNroCuota.Text) + 1
-            If DTPFecha.Month = 12 Then
-                DTPFecha.Month = 1
-                DTPFecha.Year = DTPFecha.Year + 1
+            If dtpFecha.Month = 12 Then
+                dtpFecha.Month = 1
+                dtpFecha.Year = dtpFecha.Year + 1
             Else
-                DTPFecha.Month = DTPFecha.Month + 1
+                dtpFecha.Month = dtpFecha.Month + 1
             End If
         Loop
     End With
     '''cambia el estado a reingresado
     With rsVerificaciones
         If .State = 1 Then .Close
-        .Open "SELECT codalumno, estado FROM verificaciones WHERE codalumno=" & frmAnalisisDeCuotas.lblCodAlumno.Caption, Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT codalumno, estado FROM verificaciones WHERE codalumno=" & frmAnalisisDeCuotas.lblCodalumno.Caption, Cn, adOpenDynamic, adLockPessimistic
         .Requery
         .MoveFirst
         !estado = "Reingresado"
@@ -271,8 +271,7 @@ Private Sub cmdAplicar_Click()
     rsAnalisisDeCuenta.Requery
     frmAnalisisDeCuotas.formatoGrilla
     Unload Me
-LineaError:
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+LineaError: ErrCode
 End Sub
 
 Private Sub cmdCancelar_Click()

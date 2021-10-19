@@ -54,7 +54,7 @@ Begin VB.Form frmExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   160301057
+         Format          =   170065921
          CurrentDate     =   41978
       End
       Begin VB.TextBox txtPromedio 
@@ -438,7 +438,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub Form_Load()
     Centrar Me
-    DTPFecha.Value = Date
+    dtpFecha.Value = Date
 End Sub
 
 Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
@@ -467,8 +467,7 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
         Else: cmdAgregar.Enabled = True
         End If
     End If
-LineaError:
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+LineaError: ErrCode
 End Sub
 
 Private Sub cmbModulo_Change()
@@ -491,7 +490,7 @@ Private Sub cmdAgregar_Click()
             .Requery
             .AddNew
             !CodAlumno = Int(txtCodigo.Text)
-            !fecha = DTPFecha.Value
+            !fecha = dtpFecha.Value
             !T = txtTeorico.Text
             !P = txtPractico.Text
             !F = txtPromedio.Text
@@ -528,7 +527,7 @@ Private Sub cmdAgregar_Click()
                 .Requery
                 .AddNew
                 !CodAlumno = Int(txtCodigo.Text)
-                !fecha = DTPFecha.Value
+                !fecha = dtpFecha.Value
                 .Update
             End With
             With rsVerificaciones
@@ -548,8 +547,7 @@ Private Sub cmdAgregar_Click()
     txtPromedio.Text = ""
     Egresado = False
 
-LineaError:
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+LineaError: ErrCode
 End Sub
 
 Private Sub txtTeorico_KeyPress(KeyAscii As Integer)

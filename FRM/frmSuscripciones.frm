@@ -46,6 +46,7 @@ Begin VB.Form frmSuscripciones
          _ExtentX        =   8281
          _ExtentY        =   2778
          _Version        =   393217
+         Enabled         =   -1  'True
          MaxLength       =   1000
          Appearance      =   0
          AutoVerbMenu    =   -1  'True
@@ -436,7 +437,7 @@ Begin VB.Form frmSuscripciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   126615553
+         Format          =   137494529
          CurrentDate     =   41308
       End
       Begin VB.Label Label20 
@@ -908,7 +909,7 @@ Begin VB.Form frmSuscripciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   126025729
+         Format          =   138412033
          CurrentDate     =   41308
       End
       Begin MSDataListLib.DataCombo dtcAsistente 
@@ -1390,13 +1391,7 @@ Private Sub cmdGrabar_Click()
         Limpiar
     End If
 
-LineaError:
-    Select Case Err.Number
-        Case 3021
-            Resume Next
-        End Select
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
-
+LineaError: ErrCode
 End Sub
 
 Private Sub cmdModificar_Click()

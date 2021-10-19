@@ -238,6 +238,15 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Private Sub Form_Load()
+    Centrar Me
+    Dim busca As String
+    Adodc.CursorLocation = adUseClient
+    Adodc.ConnectionString = DbCon
+    Adodc.RecordSource = "SELECT nya as [Apellido y Nombres],Direccion,Localidad, Telcasa as [Telefono Casa], telcel as Celular, Cargo FROM personal WHERE [nya] like '" & busca & "'"
+    Set grilla.DataSource = Adodc
+    formatoGrilla
+End Sub
 Private Sub cmdAceptar_Click()
     On Error GoTo LineaError
     With rsPersonal
@@ -257,28 +266,14 @@ Private Sub cmdAceptar_Click()
         frmPersonal.dtpFechaIngreso.Value = !fechaingreso
     End With
     Unload Me
-LineaError:
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+LineaError: ErrCode
 End Sub
-
 Private Sub cmdCancelar_Click()
     Unload Me
 End Sub
-
-Private Sub Form_Load()
-    Centrar Me
-    Dim busca As String
-    Adodc.CursorLocation = adUseClient
-    Adodc.ConnectionString = DbCon
-    Adodc.RecordSource = "SELECT nya as [Apellido y Nombres],Direccion,Localidad, Telcasa as [Telefono Casa], telcel as Celular, Cargo FROM personal WHERE [nya] like '" & busca & "'"
-    Set grilla.DataSource = Adodc
-    formatoGrilla
-End Sub
-
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
     frmPersonal.Enabled = True
 End Sub
-
 Private Sub txtBuscar_Change()
     If txtBuscar.Text = "" Then
         cmdAceptar.Enabled = False
@@ -303,7 +298,6 @@ Sub formatoGrilla()
         End If
     Next
 End Sub
-    
 Private Sub txtBuscar_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then cmdAceptar_Click
+    Continue
 End Sub

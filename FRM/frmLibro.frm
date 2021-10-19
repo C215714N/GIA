@@ -577,7 +577,7 @@ On Error GoTo LineaError
             If .State = 1 Then .Close
                 .Open "SELECT * FROM LibroDeAula", Cn, adOpenDynamic, adLockPessimistic
                 .AddNew
-                !CodAlumno = Int(lblCodAlumno.Caption)
+                !CodAlumno = Int(lblCodalumno.Caption)
                 !numclase = Int(txtNumClase.Text)
                 !Tema = txtTema.Text
                 !fecha = Date
@@ -605,13 +605,7 @@ On Error GoTo LineaError
     
     botones True, False
     
-LineaError:
-    Select Case Err.Number
-        Case 3021
-            Resume Next
-        End Select
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
-
+LineaError: ErrCode
 End Sub
 
 Private Sub cmdEliminar_Click()
@@ -634,11 +628,7 @@ Private Sub cmdEliminar_Click()
     txtTema.Text = ""
     botones True, False
 
-LineaError:
-    Select Case Err.Number
-        Case 3021
-            Resume Next
-        End Select
+LineaError: ErrCode
 End Sub
 
 Private Sub cmdImprimir_Click()
@@ -705,10 +695,5 @@ On Error GoTo LineaError
         grilla.Columns(N).Width = w
     Next
         rsLibro.MoveLast
-
-LineaError:
-    Select Case Err.Number
-        Case 3021
-            Resume Next
-        End Select
+LineaError: ErrCode
 End Sub

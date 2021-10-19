@@ -35,7 +35,7 @@ Begin VB.Form frmModificarPlanDePago
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   108658689
+      Format          =   169345025
       CurrentDate     =   41353
    End
    Begin VB.TextBox txtMonto 
@@ -207,20 +207,20 @@ Private Sub cmdAplicar_Click()
     '''actualiza los datos
     With rsAnalisisDeCuenta
         If .State = 1 Then .Close
-        .Open "SELECT * FROM plandepago WHERE codalumno=" & Int(frmAnalisisDeCuotas.lblCodAlumno.Caption) & "and nrocuota>=" & Int(txtNroCuota.Text), Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT * FROM plandepago WHERE codalumno=" & Int(frmAnalisisDeCuotas.lblCodalumno.Caption) & "and nrocuota>=" & Int(txtNroCuota.Text), Cn, adOpenDynamic, adLockPessimistic
         Do Until .EOF
-            !fechavto = DTPFecha.Value
+            !fechavto = dtpFecha.Value
             !deuda = txtMonto.Text
             If !recargoxfecha = True Then !recargoxfecha = False
             If !recargoxmes = True Then !recargoxmes = False
             !DeudaTotal = txtMonto.Text
             .UpdateBatch
             .MoveNext
-            If DTPFecha.Month = 12 Then
-                DTPFecha.Month = 1
-                DTPFecha.Year = DTPFecha.Year + 1
+            If dtpFecha.Month = 12 Then
+                dtpFecha.Month = 1
+                dtpFecha.Year = dtpFecha.Year + 1
             Else
-                DTPFecha.Month = DTPFecha.Month + 1
+                dtpFecha.Month = dtpFecha.Month + 1
             End If
         Loop
     End With
@@ -233,8 +233,7 @@ Private Sub cmdAplicar_Click()
     End With
     Unload Me
     
-LineaError:
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+LineaError: ErrCode
 End Sub
 
 Private Sub cmdCancelar_Click()
@@ -243,7 +242,7 @@ End Sub
 
 Private Sub Form_Load()
     Centrar Me
-    DTPFecha.Value = Date
+    dtpFecha.Value = Date
 End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)

@@ -238,12 +238,20 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Text
+Private Sub Form_Load()
+    Centrar Me
+    Dim busca As String
+    Adodc.CursorLocation = adUseClient
+    Adodc.ConnectionString = DbCon
+    Adodc.RecordSource = "SELECT codalumno as [Codigo], Nya as [Alumno], tipoDoc as[Tipo], DNI as [N°], Direccion, CP, Localidad, Nacionalidad, Edad, FechaNac, capac as [Capacitacion], Asistente, Tel1, Tel2, Tel3, Tel4, PTel1, PTel2, PTel3, PTel4, TotalCurso, Cuotas, GastoAdm, FechaSus, FechaVerif, Observaciones, Manuales, DchoExamen, Estado FROM verificaciones WHERE [Nya] like '" & busca & "'"
+    Set grilla.DataSource = Adodc
+End Sub
 Private Sub cmdAceptar_Click()
     On Error GoTo LineaError
     If Adodc.Recordset.RecordCount = 0 Then MsgBox "Debe realizar una busqueda", vbOKOnly + vbCritical, "Gestion Integral del Alumno": Exit Sub
         
     If Analisis = False Then
-        frmVerificaciones.lblCodAlumno.Caption = grilla.Columns(0).Text
+        frmVerificaciones.lblCodalumno.Caption = grilla.Columns(0).Text
         frmVerificaciones.txtNya.Text = grilla.Columns(1).Text
         frmVerificaciones.cmbTipoDoc.Text = grilla.Columns(2).Text
         frmVerificaciones.txtDocumento.Text = grilla.Columns(3).Text
@@ -292,22 +300,22 @@ Private Sub cmdAceptar_Click()
         End If
         
         frmVerificaciones.Enabled = True
-        If Trim(Len(frmVerificaciones.lblCodAlumno.Caption)) = 1 Then frmVerificaciones.lblCodAlumno.Caption = Format(frmVerificaciones.lblCodAlumno.Caption, "0000#")
-        If Trim(Len(frmVerificaciones.lblCodAlumno.Caption)) = 2 Then frmVerificaciones.lblCodAlumno.Caption = Format(frmVerificaciones.lblCodAlumno.Caption, "000##")
-        If Trim(Len(frmVerificaciones.lblCodAlumno.Caption)) = 3 Then frmVerificaciones.lblCodAlumno.Caption = Format(frmVerificaciones.lblCodAlumno.Caption, "00###")
-        If Trim(Len(frmVerificaciones.lblCodAlumno.Caption)) = 4 Then frmVerificaciones.lblCodAlumno.Caption = Format(frmVerificaciones.lblCodAlumno.Caption, "0####")
+        If Trim(Len(frmVerificaciones.lblCodalumno.Caption)) = 1 Then frmVerificaciones.lblCodalumno.Caption = Format(frmVerificaciones.lblCodalumno.Caption, "0000#")
+        If Trim(Len(frmVerificaciones.lblCodalumno.Caption)) = 2 Then frmVerificaciones.lblCodalumno.Caption = Format(frmVerificaciones.lblCodalumno.Caption, "000##")
+        If Trim(Len(frmVerificaciones.lblCodalumno.Caption)) = 3 Then frmVerificaciones.lblCodalumno.Caption = Format(frmVerificaciones.lblCodalumno.Caption, "00###")
+        If Trim(Len(frmVerificaciones.lblCodalumno.Caption)) = 4 Then frmVerificaciones.lblCodalumno.Caption = Format(frmVerificaciones.lblCodalumno.Caption, "0####")
     Else
         CodAlumno = grilla.Columns(0).Text
         frmAnalisisDeCuotas.Show
         BotonMarcar = 0
         
-        frmAnalisisDeCuotas.lblCodAlumno.Caption = grilla.Columns(0).Text
+        frmAnalisisDeCuotas.lblCodalumno.Caption = grilla.Columns(0).Text
         frmAnalisisDeCuotas.lblNyA.Caption = grilla.Columns(1).Text
     
-        If Trim(Len(frmAnalisisDeCuotas.lblCodAlumno.Caption)) = 1 Then frmAnalisisDeCuotas.lblCodAlumno.Caption = Format(frmAnalisisDeCuotas.lblCodAlumno.Caption, "0000#")
-        If Trim(Len(frmAnalisisDeCuotas.lblCodAlumno.Caption)) = 2 Then frmAnalisisDeCuotas.lblCodAlumno.Caption = Format(frmAnalisisDeCuotas.lblCodAlumno.Caption, "000##")
-        If Trim(Len(frmAnalisisDeCuotas.lblCodAlumno.Caption)) = 3 Then frmAnalisisDeCuotas.lblCodAlumno.Caption = Format(frmAnalisisDeCuotas.lblCodAlumno.Caption, "00###")
-        If Trim(Len(frmAnalisisDeCuotas.lblCodAlumno.Caption)) = 4 Then frmAnalisisDeCuotas.lblCodAlumno.Caption = Format(frmAnalisisDeCuotas.lblCodAlumno.Caption, "0####")
+        If Trim(Len(frmAnalisisDeCuotas.lblCodalumno.Caption)) = 1 Then frmAnalisisDeCuotas.lblCodalumno.Caption = Format(frmAnalisisDeCuotas.lblCodalumno.Caption, "0000#")
+        If Trim(Len(frmAnalisisDeCuotas.lblCodalumno.Caption)) = 2 Then frmAnalisisDeCuotas.lblCodalumno.Caption = Format(frmAnalisisDeCuotas.lblCodalumno.Caption, "000##")
+        If Trim(Len(frmAnalisisDeCuotas.lblCodalumno.Caption)) = 3 Then frmAnalisisDeCuotas.lblCodalumno.Caption = Format(frmAnalisisDeCuotas.lblCodalumno.Caption, "00###")
+        If Trim(Len(frmAnalisisDeCuotas.lblCodalumno.Caption)) = 4 Then frmAnalisisDeCuotas.lblCodalumno.Caption = Format(frmAnalisisDeCuotas.lblCodalumno.Caption, "0####")
     
         If Usuario = "adm" And Clave = "2910" Then
             frmAnalisisDeCuotas.cmdBaja.Visible = False
@@ -337,8 +345,7 @@ Private Sub cmdAceptar_Click()
     End If
     Unload Me
     
-LineaError:
-    If Err.Number Then MsgBox ("Se ha producido un error:" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
+LineaError: ErrCode
 End Sub
 
 Private Sub cmdCancelar_Click()
@@ -346,14 +353,7 @@ Private Sub cmdCancelar_Click()
     Unload Me
 End Sub
 
-Private Sub Form_Load()
-    Centrar Me
-    Dim busca As String
-    Adodc.CursorLocation = adUseClient
-    Adodc.ConnectionString = DbCon
-    Adodc.RecordSource = "SELECT codalumno as [Codigo], Nya as [Alumno], tipoDoc as[Tipo], DNI as [N°], Direccion, CP, Localidad, Nacionalidad, Edad, FechaNac, capac as [Capacitacion], Asistente, Tel1, Tel2, Tel3, Tel4, PTel1, PTel2, PTel3, PTel4, TotalCurso, Cuotas, GastoAdm, FechaSus, FechaVerif, Observaciones, Manuales, DchoExamen, Estado FROM verificaciones WHERE [Nya] like '" & busca & "'"
-    Set grilla.DataSource = Adodc
-End Sub
+
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
     If Analisis = False Then frmVerificaciones.Enabled = True
