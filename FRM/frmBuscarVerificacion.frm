@@ -345,7 +345,7 @@ Private Sub cmdAceptar_Click()
     End If
     Unload Me
     
-LineaError: ErrCode
+LineaError: ErrCode Err
 End Sub
 
 Private Sub cmdCancelar_Click()
@@ -391,6 +391,6 @@ Sub formatoGrilla()
     Next
 End Sub
 
-Private Sub txtBuscar_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then cmdAceptar_Click
+Private Sub txtBuscar_KeyPress(keyAscii As Integer)
+    If keyAscii = 13 Then cmdAceptar_Click
 End Sub

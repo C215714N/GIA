@@ -103,7 +103,7 @@ Begin VB.Form frmNuevoCheque
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   362610689
+      Format          =   123666433
       CurrentDate     =   41782
    End
    Begin isButtonTest.isButton cmdAgregar 
@@ -267,10 +267,10 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cmdAgregar_Click()
     On Error GoTo LineaError
-    If txtDestinatario.text = "" Then MsgBox "Debe agregar el destinatario del cheque", vbCritical, "Cheques": txtDestinatario.SetFocus: Exit Sub
-    If txtNroCheque.text = "" Then MsgBox "Debe agregar el numero del cheque", vbCritical, "Cheques": txtNroCheque.SetFocus: Exit Sub
-    If txtMonto.text = "" Then MsgBox "Debe agregar el monto", vbCritical, "Cheques": txtMonto.SetFocus: Exit Sub
-    If cmbFirma.text = "" Then MsgBox "Debe agregar el firmante", vbCritical, "Cheques": cmbFirma.SetFocus: Exit Sub
+    If txtDestinatario.Text = "" Then MsgBox "Debe agregar el destinatario del cheque", vbCritical, "Cheques": txtDestinatario.SetFocus: Exit Sub
+    If txtNroCheque.Text = "" Then MsgBox "Debe agregar el numero del cheque", vbCritical, "Cheques": txtNroCheque.SetFocus: Exit Sub
+    If txtMonto.Text = "" Then MsgBox "Debe agregar el monto", vbCritical, "Cheques": txtMonto.SetFocus: Exit Sub
+    If cmbFirma.Text = "" Then MsgBox "Debe agregar el firmante", vbCritical, "Cheques": cmbFirma.SetFocus: Exit Sub
 
     With rsCheques
         If .State = 1 Then .Close
@@ -278,22 +278,22 @@ Private Sub cmdAgregar_Click()
         .Requery
         .AddNew
         !fecha = DTPFecha.Value
-        !destinatario = txtDestinatario.text
-        !numerocheque = txtNroCheque.text
-        !monto = txtMonto.text
-        !firma = cmbFirma.text
+        !destinatario = txtDestinatario.Text
+        !numerocheque = txtNroCheque.Text
+        !monto = txtMonto.Text
+        !firma = cmbFirma.Text
         !estado = "SIN DEPOSITAR"
         .Update
     End With
     
     If MsgBox("¿Desea ingresar otro cheque?", vbQuestion + vbYesNo, "Cheques") = vbYes Then
-        txtDestinatario.text = ""
-        txtMonto.text = ""
-        txtNroCheque.text = ""
+        txtDestinatario.Text = ""
+        txtMonto.Text = ""
+        txtNroCheque.Text = ""
     Else
         Unload Me
     End If
-LineaError: ErrCode
+LineaError: ErrCode Err
 End Sub
 
 Private Sub cmdCancelar_Click()

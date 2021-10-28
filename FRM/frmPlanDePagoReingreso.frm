@@ -83,7 +83,7 @@ Begin VB.Form frmPlanDePagoReingreso
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   125829121
+      Format          =   123207681
       CurrentDate     =   41353
    End
    Begin isButtonTest.isButton cmdAplicar 
@@ -232,24 +232,24 @@ Attribute VB_Exposed = False
 Private Sub cmdAplicar_Click()
     On Error GoTo LineaError
     Dim CuotaMax As Integer
-    CuotaMax = Int(txtCantidadCuotas.text) + Int(txtNroCuota.text) - 1
+    CuotaMax = Int(txtCantidadCuotas.Text) + Int(txtNroCuota.Text) - 1
     ''genera las nuevas cuotas
     With rsPlanDePago
         If .State = 1 Then .Close
         .Open "SELECT * FROM plandepago", Cn, adOpenDynamic, adLockPessimistic
         .Requery
-        Do Until Int(txtNroCuota.text) > CuotaMax
+        Do Until Int(txtNroCuota.Text) > CuotaMax
             .AddNew
             !CodAlumno = frmAnalisisDeCuotas.lblCodAlumno.Caption
             !NyA = frmAnalisisDeCuotas.lblNyA.Caption
-            !NroCuota = Int(txtNroCuota.text)
-            !deuda = txtMonto.text
+            !NroCuota = Int(txtNroCuota.Text)
+            !deuda = txtMonto.Text
             !totalcobrado = 0
-            !DeudaTotal = txtMonto.text
+            !DeudaTotal = txtMonto.Text
             !CuotasDebidas = 1
             !fechavto = DTPFecha.Value
             .Update
-            txtNroCuota.text = Int(txtNroCuota.text) + 1
+            txtNroCuota.Text = Int(txtNroCuota.Text) + 1
             If DTPFecha.Month = 12 Then
                 DTPFecha.Month = 1
                 DTPFecha.Year = DTPFecha.Year + 1
@@ -271,7 +271,7 @@ Private Sub cmdAplicar_Click()
     rsAnalisisDeCuenta.Requery
     frmAnalisisDeCuotas.formatoGrilla
     Unload Me
-LineaError: ErrCode
+LineaError: ErrCode Err
 End Sub
 
 Private Sub cmdCancelar_Click()

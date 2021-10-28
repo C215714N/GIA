@@ -386,10 +386,10 @@ Private Sub cmdBuscar1_Click()
         .Find "Cuenta='" & X & "'"
         If .EOF Or .BOF Then MsgBox "La Cuenta no es valida", vbOKOnly + vbInformation, "Cuentas": .MoveFirst:  Exit Sub
         lblCodCuenta.Caption = !codcuenta
-        txtNombreCuenta.text = !Cuenta
-        txtDetalle.text = !Detalle
+        txtNombreCuenta.Text = !Cuenta
+        txtDetalle.Text = !Detalle
     End With
-LineaError: ErrCode
+LineaError: ErrCode Err
 End Sub
 
 Private Sub cmdBuscar2_Click()
@@ -402,10 +402,10 @@ Private Sub cmdBuscar2_Click()
         .Find "CodCuenta=" & X
         If .EOF Or .BOF Then MsgBox "El Codigo de Cuenta no es valido", vbOKOnly + vbInformation, "Cuentas": .MoveFirst: Exit Sub
         lblCodCuenta.Caption = !codcuenta
-        txtNombreCuenta.text = !Cuenta
-        txtDetalle.text = !Detalle
+        txtNombreCuenta.Text = !Cuenta
+        txtDetalle.Text = !Detalle
     End With
-LineaError: ErrCode
+LineaError: ErrCode Err
 End Sub
 
 Private Sub cmdCancelar_Click()
@@ -419,9 +419,9 @@ Private Sub cmdCerrar_Click()
 End Sub
 
 Private Sub cmdGrabar_Click()
-    If txtNombreCuenta.text = "" Then MsgBox "Debe ingresar un nombre de cuenta", vbOKOnly + vbInformation, "Cuentas": txtNombreCuenta.SetFocus: Exit Sub
-    If txtDetalle.text = "" Then MsgBox "Debe ingresar un detalle de cuenta", vbOKOnly + vbInformation, "Cuentas": txtDetalle.SetFocus: Exit Sub
-    If cmbTipoCta.text = "" Then MsgBox "Debe elegir un tipo de cuenta", vbCritical + vbOKOnly, "Cuentas": cmbTipoCta.SetFocus: Exit Sub
+    If txtNombreCuenta.Text = "" Then MsgBox "Debe ingresar un nombre de cuenta", vbOKOnly + vbInformation, "Cuentas": txtNombreCuenta.SetFocus: Exit Sub
+    If txtDetalle.Text = "" Then MsgBox "Debe ingresar un detalle de cuenta", vbOKOnly + vbInformation, "Cuentas": txtDetalle.SetFocus: Exit Sub
+    If cmbTipoCta.Text = "" Then MsgBox "Debe elegir un tipo de cuenta", vbCritical + vbOKOnly, "Cuentas": cmbTipoCta.SetFocus: Exit Sub
     
     On Error GoTo LineaError
     
@@ -432,9 +432,9 @@ Private Sub cmdGrabar_Click()
             .Requery
                 .AddNew
                 !codcuenta = rsControl!codcuenta
-                !Cuenta = txtNombreCuenta.text
-                !Detalle = txtDetalle.text
-                !tipo = cmbTipoCta.text
+                !Cuenta = txtNombreCuenta.Text
+                !Detalle = txtDetalle.Text
+                !tipo = cmbTipoCta.Text
                 .Update
                 lblCodCuenta.Caption = rsControl!codcuenta
                 rsControl!codcuenta = rsControl!codcuenta + 1
@@ -444,16 +444,16 @@ Private Sub cmdGrabar_Click()
         With rsCuentas
             .Requery
             .Find "codcuenta=" & Int(lblCodCuenta.Caption)
-            !Detalle = txtDetalle.text
-            !Cuenta = txtNombreCuenta.text
-            !tipo = cmbTipoCta.text
+            !Detalle = txtDetalle.Text
+            !Cuenta = txtNombreCuenta.Text
+            !tipo = cmbTipoCta.Text
             .UpdateBatch
         End With
     End If
     HabilitarBotones True, False
     HabilitarCuadros True
 
-LineaError: ErrCode
+LineaError: ErrCode Err
 End Sub
 
 Private Sub cmdModificar_Click()
@@ -501,8 +501,8 @@ End Sub
 
 Sub Limpiar()
     lblCodCuenta.Caption = ""
-    txtNombreCuenta.text = ""
-    txtDetalle.text = ""
+    txtNombreCuenta.Text = ""
+    txtDetalle.Text = ""
 End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)

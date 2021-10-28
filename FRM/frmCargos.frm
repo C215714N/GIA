@@ -141,7 +141,7 @@ Private Sub cmdAgregar_Click()
             txtCargo.SetFocus
         End If
     End With
-LineaError: ErrCode
+LineaError: ErrCode Err
 End Sub
 Private Sub txtCargo_Change()
     If txtCargo.Text = "" Then

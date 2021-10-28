@@ -126,7 +126,6 @@ Sub Cobranza()
         .Open "SELECT * FROM PlanDePago WHERE codalumno=" & CodAlumno, Cn, adOpenDynamic, adLockPessimistic
     End With
 End Sub
-
 Public Sub Localidades()
     With rsLocalidades
         If .State = 1 Then .Close
@@ -140,9 +139,10 @@ Sub Centrar(frm As Form)
 End Sub
 
 Sub Continue(keyAscii As Integer)
-    If keyAscii = 13 Then Sendkeys "{TAB}"
+    If keyAscii = 13 Then SendKeys "{TAB}"
 End Sub
-Sub ErrCode()
+
+Sub ErrCode(Err)
     Select Case Err.Number
         Case 3021
             Resume Next

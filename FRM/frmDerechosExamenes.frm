@@ -178,7 +178,7 @@ Begin VB.Form frmDerechosExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   125960193
+         Format          =   278593537
          CurrentDate     =   41978
       End
       Begin isButtonTest.isButton cmdAgregar 
@@ -466,32 +466,32 @@ Attribute VB_Exposed = False
 Private Sub Form_Load()
     Centrar Me
     Control
-    txtPrecio.text = Format(rsControl!derechoExamen, "currency")
+    txtPrecio.Text = Format(rsControl!derechoExamen, "currency")
     DTPFecha.Value = Date
 End Sub
 
 Private Sub txtCodigo_KeyPress(keyAscii As Integer)
     If keyAscii = 13 Then
-        If txtCodigo.text = "" Then MsgBox "Ingrese el codigo del alumno", vbOKOnly, "GIA - Examenes": txtCodigo.SetFocus: Exit Sub
+        If txtCodigo.Text = "" Then MsgBox "Ingrese el codigo del alumno", vbOKOnly, "GIA - Examenes": txtCodigo.SetFocus: Exit Sub
             With rsVerificaciones
                 If .State = 1 Then .Close
-                .Open "SELECT nya,capac FROM verificaciones WHERE codalumno=" & Int(txtCodigo.text), Cn, adOpenDynamic, adLockPessimistic
+                .Open "SELECT nya,capac FROM verificaciones WHERE codalumno=" & Int(txtCodigo.Text), Cn, adOpenDynamic, adLockPessimistic
                 If .BOF = True And .EOF = True Then
                     MsgBox "No se encuentra el Codigo de Alumno" & vbNewLine & "Controle que el codigo ingresado sea correcto", vbExclamation, "Gestion Integral del Alumno - Gestion Integral del Alumno"
                 ElseIf .BOF = False Or .EOF = False Then
-                    txtAlumno.text = !NyA
-                    txtCurso.text = !capac
+                    txtAlumno.Text = !NyA
+                    txtCurso.Text = !capac
                 End If
             End With
             With rsDerechosExamenes
                 If .State = 1 Then .Close
-                .Open "SELECT Fecha, Modulo FROM derechoexamen WHERE codalumno=" & Int(txtCodigo.text) & " ORDER BY fecha", Cn, adOpenDynamic, adLockPessimistic
+                .Open "SELECT Fecha, Modulo FROM derechoexamen WHERE codalumno=" & Int(txtCodigo.Text) & " ORDER BY fecha", Cn, adOpenDynamic, adLockPessimistic
             End With
             
             Set grilla.DataSource = rsDerechosExamenes
             formatoGrilla
             CargarModulos
-            txtPrecio.text = Format(rsControl!derechoExamen, "currency")
+            txtPrecio.Text = Format(rsControl!derechoExamen, "currency")
             cmbModulo.Enabled = True
             DTPFecha.Enabled = True
             cmdAgregar.Enabled = True
@@ -506,21 +506,21 @@ End Sub
 
 Private Sub cmdAgregar_Click()
     On Error GoTo LineaError
-    If cmbModulo.text = "" Then MsgBox "Elija el modulo", vbOKOnly + vbCritical, "GIA - Examenes": cmbModulo.SetFocus: Exit Sub
-    If cmbPago.text = "" Then MsgBox "Elija el tipo de pago", vbOKOnly + vbCritical, "GIA - Examenes": cmbPago.SetFocus: Exit Sub
-    If txtRecibo.text = "" Then MsgBox "Ingrese el numero de recibo", vbOKOnly + vbCritical, "GIA - Examenes": txtRecibo.SetFocus: Exit Sub
+    If cmbModulo.Text = "" Then MsgBox "Elija el modulo", vbOKOnly + vbCritical, "GIA - Examenes": cmbModulo.SetFocus: Exit Sub
+    If cmbPago.Text = "" Then MsgBox "Elija el tipo de pago", vbOKOnly + vbCritical, "GIA - Examenes": cmbPago.SetFocus: Exit Sub
+    If txtRecibo.Text = "" Then MsgBox "Ingrese el numero de recibo", vbOKOnly + vbCritical, "GIA - Examenes": txtRecibo.SetFocus: Exit Sub
 '''CONSULTA - TABLA DERECHOS DE EXAMEN
     With rsDerechosExamenes
         .Close
         .Open "SELECT * FROM derechoexamen", Cn, adOpenDynamic, adLockPessimistic
         .Requery
         .AddNew
-        !CodAlumno = Int(txtCodigo.text)
+        !CodAlumno = Int(txtCodigo.Text)
         !fecha = DTPFecha.Value
-        !modulo = cmbModulo.text
+        !modulo = cmbModulo.Text
         .Update
         .Close
-        .Open "SELECT Fecha, Modulo as Modulo FROM derechoexamen WHERE codalumno=" & Int(txtCodigo.text) & " ORDER BY fecha", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT Fecha, Modulo as Modulo FROM derechoexamen WHERE codalumno=" & Int(txtCodigo.Text) & " ORDER BY fecha", Cn, adOpenDynamic, adLockPessimistic
         Set grilla.DataSource = rsDerechosExamenes
         formatoGrilla
     End With
@@ -536,25 +536,25 @@ Private Sub cmdAgregar_Click()
             !NroCuota = Null
             !CodAlumno = Null
             !Cuenta = "DERECHO DE EXAMEN"
-            !Detalle = txtAlumno.text & " - " & cmbModulo.text
-            !nrofactura = txtRecibo.text
-            !Haber = CSng(txtPrecio.text)
+            !Detalle = txtAlumno.Text & " - " & cmbModulo.Text
+            !nrofactura = txtRecibo.Text
+            !Haber = CSng(txtPrecio.Text)
             !Debe = Null
             .Update
             .Requery
             .AddNew
             !fecha = Date
             
-            If cmbPago.text = "Efectivo" Then
+            If cmbPago.Text = "Efectivo" Then
                 !Cuenta = "CAJA ADMINISTRACION"
-            ElseIf cmbPago.text = "Descuento" Then
+            ElseIf cmbPago.Text = "Descuento" Then
                 !Cuenta = "Descuento"
             Else
                 !Cuenta = "DEBITO TARJETA CREDITO"
             End If
-            !Detalle = txtAlumno.text & " - Derecho de Examen de " & cmbModulo.text
-            !nrofactura = txtRecibo.text
-            !Debe = CSng(txtPrecio.text)
+            !Detalle = txtAlumno.Text & " - Derecho de Examen de " & cmbModulo.Text
+            !nrofactura = txtRecibo.Text
+            !Debe = CSng(txtPrecio.Text)
             !asiento = Null
             !NroCuota = Null
             !CodAlumno = Null
@@ -564,7 +564,7 @@ Private Sub cmdAgregar_Click()
     Else
         MsgBox "Recuerde realizar el asiento contable correspondiente a esta operacion", vbExclamation, "Derechos de Examenes"
     End If
-LineaError: ErrCode
+LineaError: ErrCode Err
 End Sub
 
 Private Sub txtRecibo_KeyPress(keyAscii As Integer)
@@ -581,11 +581,11 @@ End Sub
 
 Private Sub cmdexamenes_Click()
     frmExamenes.Show
-    frmExamenes.txtCodigo.text = txtCodigo.text
+    frmExamenes.txtCodigo.Text = txtCodigo.Text
 End Sub
 
 Private Sub CargarModulos()
-    If txtCurso.text = "Operador de Pc" Then
+    If txtCurso.Text = "Operador de Pc" Then
         With cmbModulo
             .Clear
             .AddItem ("Windows")
@@ -595,7 +595,7 @@ Private Sub CargarModulos()
             .AddItem ("Power Point")
         End With
         
-    ElseIf txtCurso.text = "Diseño Gráfico" Then
+    ElseIf txtCurso.Text = "Diseño Gráfico" Then
         With cmbModulo
             .Clear
             .AddItem ("Windows")
@@ -604,7 +604,7 @@ Private Sub CargarModulos()
             .AddItem ("Page Maker")
         End With
         
-    ElseIf txtCurso.text = "Diseño Web" Then
+    ElseIf txtCurso.Text = "Diseño Web" Then
         With cmbModulo
             .Clear
             .AddItem ("Front Page")
@@ -613,7 +613,7 @@ Private Sub CargarModulos()
             .AddItem ("Dreamweaver")
         End With
             
-    ElseIf txtCurso.text = "Programación + Access" Then
+    ElseIf txtCurso.Text = "Programación + Access" Then
         With cmbModulo
             .Clear
             .AddItem ("Access")
@@ -621,14 +621,14 @@ Private Sub CargarModulos()
             .AddItem ("Modulo II")
         End With
         
-    ElseIf txtCurso.text = "Programación" Or txtCurso.text = "Telefonía Celular" Then
+    ElseIf txtCurso.Text = "Programación" Or txtCurso.Text = "Telefonía Celular" Then
         With cmbModulo
             .Clear
             .AddItem ("Modulo I")
             .AddItem ("Modulo II")
         End With
         
-    ElseIf txtCurso.text = "Técnico en aire acondicionado" Or txtCurso.text = "Electricidad domiciliaria" Then
+    ElseIf txtCurso.Text = "Técnico en aire acondicionado" Or txtCurso.Text = "Electricidad domiciliaria" Then
         With cmbModulo
             .Clear
             .AddItem ("Modulo I")
@@ -637,7 +637,7 @@ Private Sub CargarModulos()
             .AddItem ("Final")
         End With
     
-    ElseIf txtCurso.text = "Soporte Tecnico" Then
+    ElseIf txtCurso.Text = "Soporte Tecnico" Then
         With cmbModulo
             .Clear
             .AddItem ("Modulo I")
@@ -648,7 +648,7 @@ Private Sub CargarModulos()
             .AddItem ("Examen Final")
         End With
         
-    ElseIf txtCurso.text = "Cuidador Domiciliario" Or txtCurso.text = "Asistente Terapeutico" Or txtCurso.text = "Auxiliar de Farmacia" Then
+    ElseIf txtCurso.Text = "Cuidador Domiciliario" Or txtCurso.Text = "Asistente Terapeutico" Or txtCurso.Text = "Auxiliar de Farmacia" Then
         With cmbModulo
             .Clear
             .AddItem ("Parcial I")
@@ -657,7 +657,7 @@ Private Sub CargarModulos()
             .AddItem ("Final")
         End With
     
-    ElseIf txtCurso.text = "Emergencias Médicas" Or txtCurso.text = "Extracc. Adm. Y Asist. Tec. Laborat." Then
+    ElseIf txtCurso.Text = "Emergencias Médicas" Or txtCurso.Text = "Extracc. Adm. Y Asist. Tec. Laborat." Then
         With cmbModulo
             .Clear
             .AddItem ("Parcial I")

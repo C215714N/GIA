@@ -200,9 +200,9 @@ Private Sub Form_Load()
     Centrar Me
 End Sub
 
-Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
+Private Sub txtCodigo_KeyPress(keyAscii As Integer)
     On Error GoTo LineaError
-    If KeyAscii = 13 Then
+    If keyAscii = 13 Then
         If txtCodigo.Text = "" Then MsgBox "Ingrese el codigo del alumno", vbOKOnly, "GIA - Examenes": txtCodigo.SetFocus: Exit Sub
       
         With rsVerificaciones
@@ -221,7 +221,7 @@ Private Sub txtCodigo_KeyPress(KeyAscii As Integer)
       Set grilla.DataSource = rsExamenes
       formatoGrilla
     End If
-LineaError: ErrCode
+LineaError: ErrCode Err
 End Sub
 
 Sub formatoGrilla()

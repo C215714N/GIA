@@ -338,7 +338,7 @@ Private Sub cmdCancelar_Click()
 End Sub
 
 Private Sub cmdEliminar_Click()
-    If txtCurso.text = "" Then
+    If txtCurso.Text = "" Then
         MsgBox "Primero debe elegir una capacitacion", vbOKOnly + vbInformation, "Capacitacion"
     Else
         a = MsgBox("¿Esta seguro que desea eliminar esa capacitacion?", vbYesNo + vbQuestion, "Capacitaciones")
@@ -350,44 +350,44 @@ Private Sub cmdEliminar_Click()
                 .Update
             End With
             grilla.Refresh
-            txtCurso.text = ""
+            txtCurso.Text = ""
         End If
     End If
 End Sub
 
 Private Sub cmdGrabar_Click()
-    If txtCurso.text = "" Then MsgBox "Primero debe agregar el nombre del curso", vbOKOnly + vbInformation, "Capacitaciones": txtCurso.SetFocus: Exit Sub
+    If txtCurso.Text = "" Then MsgBox "Primero debe agregar el nombre del curso", vbOKOnly + vbInformation, "Capacitaciones": txtCurso.SetFocus: Exit Sub
     On Error GoTo LineaError
     
     If Modi = True Then
         With rsCapacitaciones
             .Requery
             .Find "capacitacion='" & lblID.Caption & "'"
-            !capacitacion = txtCurso.text
+            !capacitacion = txtCurso.Text
             .UpdateBatch
         End With
         HabilitarBotones True, False
         grilla.Enabled = True
         txtCurso.Locked = True
-        txtCurso.text = ""
+        txtCurso.Text = ""
     Else
         With rsCapacitaciones
             .Requery
             .AddNew
-            !capacitacion = txtCurso.text
+            !capacitacion = txtCurso.Text
             .Update
         End With
         HabilitarBotones True, False
         grilla.Enabled = True
         txtCurso.Locked = True
-        txtCurso.text = ""
+        txtCurso.Text = ""
     End If
     
-LineaError: ErrCode
+LineaError: ErrCode Err
 End Sub
 
 Private Sub cmdModificar_Click()
-    If txtCurso.text = "" Then
+    If txtCurso.Text = "" Then
         MsgBox "Primero debe elegir una capacitacion", vbOKOnly + vbInformation, "Capacitacion"
     Else
         txtCurso.Locked = False
@@ -403,7 +403,7 @@ Private Sub cmdNuevo_Click()
     HabilitarBotones False, True
     txtCurso.SetFocus
     grilla.Enabled = False
-    txtCurso.text = ""
+    txtCurso.Text = ""
     Modi = False
 End Sub
 
@@ -417,13 +417,13 @@ Private Sub Form_Load()
     Set grilla.DataSource = rsCapacitaciones
     grilla.Columns(0).Width = 3200
     txtCurso.Locked = True
-    txtCurso.text = ""
+    txtCurso.Text = ""
     HabilitarBotones True, False
 End Sub
 
 Private Sub grilla_Click()
-    lblID.Caption = grilla.text
-    txtCurso.text = grilla.text
+    lblID.Caption = grilla.Text
+    txtCurso.Text = grilla.Text
 End Sub
 
 Sub HabilitarBotones(estado1 As Boolean, estado2 As Boolean)

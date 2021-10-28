@@ -299,7 +299,7 @@ Begin VB.Form frmReservas
          Strikethrough   =   0   'False
       EndProperty
       MonthBackColor  =   16777215
-      StartOfWeek     =   125763586
+      StartOfWeek     =   123207682
       TitleBackColor  =   8930304
       TitleForeColor  =   16777215
       TrailingForeColor=   14737632
@@ -647,7 +647,7 @@ Private Sub btnEliminar_Click()
          End With
     End If
     
-LineaError: ErrCode
+LineaError: ErrCode Err
 End Sub
 
 Private Sub Reservas()
@@ -883,8 +883,8 @@ Else
 End If
 End Sub
 
-Private Sub txtAsistencia_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then
+Private Sub txtAsistencia_KeyPress(keyAscii As Integer)
+    If keyAscii = 13 Then
         With rsReservas
             Dim fecha As Date
             fecha = Format(MonthView1.Value, "mm/dd/yyyy")

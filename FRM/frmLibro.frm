@@ -577,7 +577,7 @@ On Error GoTo LineaError
             If .State = 1 Then .Close
                 .Open "SELECT * FROM LibroDeAula", Cn, adOpenDynamic, adLockPessimistic
                 .AddNew
-                !CodAlumno = Int(lblCodalumno.Caption)
+                !CodAlumno = Int(lblCodAlumno.Caption)
                 !numclase = Int(txtNumClase.Text)
                 !Tema = txtTema.Text
                 !fecha = Date
@@ -605,7 +605,7 @@ On Error GoTo LineaError
     
     botones True, False
     
-LineaError: ErrCode
+LineaError: ErrCode Err
 End Sub
 
 Private Sub cmdEliminar_Click()
@@ -628,7 +628,7 @@ Private Sub cmdEliminar_Click()
     txtTema.Text = ""
     botones True, False
 
-LineaError: ErrCode
+LineaError: ErrCode Err
 End Sub
 
 Private Sub cmdImprimir_Click()
@@ -695,5 +695,5 @@ On Error GoTo LineaError
         grilla.Columns(N).Width = w
     Next
         rsLibro.MoveLast
-LineaError: ErrCode
+LineaError: ErrCode Err
 End Sub

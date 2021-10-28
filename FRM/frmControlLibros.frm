@@ -336,7 +336,7 @@ Private Sub cmdAgregar_Click()
     txtStock.Text = ""
     txtPrecio.Text = ""
 
-LineaError: ErrCode
+LineaError: ErrCode Err
 End Sub
 
 Private Sub grilla_Click()

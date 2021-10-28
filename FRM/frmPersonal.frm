@@ -272,7 +272,7 @@ Begin VB.Form frmPersonal
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   125829121
+         Format          =   123535361
          CurrentDate     =   41319
       End
       Begin VB.TextBox txtNya 
@@ -408,7 +408,7 @@ Begin VB.Form frmPersonal
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   363134977
+         Format          =   123600897
          CurrentDate     =   41319
       End
       Begin VB.Label Label10 
@@ -618,8 +618,8 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Text
-Private Sub cmbTipoDoc_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then txtDNI.SetFocus
+Private Sub cmbTipoDoc_KeyPress(keyAscii As Integer)
+    If keyAscii = 13 Then txtDNI.SetFocus
 End Sub
 
 Private Sub cmdBuscar_Click()
@@ -688,7 +688,7 @@ Private Sub cmdGrabar_Click()
     HabilitarCuadros True, False
     Limpiar
 
-LineaError: ErrCode
+LineaError: ErrCode Err
 End Sub
 
 Private Sub cmdModificar_Click()
@@ -711,16 +711,16 @@ Private Sub cmdNuevo_Click()
     Modi = False
 End Sub
 
-Private Sub dtcCargo_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then dtpFechaIngreso.SetFocus
+Private Sub dtcCargo_KeyPress(keyAscii As Integer)
+    If keyAscii = 13 Then dtpFechaIngreso.SetFocus
 End Sub
 
-Private Sub dtpFechaIngreso_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then cmdGrabar.SetFocus
+Private Sub dtpFechaIngreso_KeyPress(keyAscii As Integer)
+    If keyAscii = 13 Then cmdGrabar.SetFocus
 End Sub
 
-Private Sub dtpFechaNacimiento_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then dtcCargo.SetFocus
+Private Sub dtpFechaNacimiento_KeyPress(keyAscii As Integer)
+    If keyAscii = 13 Then dtcCargo.SetFocus
 End Sub
 
 Private Sub Form_Load()
@@ -773,28 +773,28 @@ Sub Limpiar()
     dtcCargo.Text = ""
 End Sub
 
-Private Sub txtDireccion_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then txtLocalidad.SetFocus
+Private Sub txtDireccion_KeyPress(keyAscii As Integer)
+    If keyAscii = 13 Then txtLocalidad.SetFocus
 End Sub
 
-Private Sub txtDNI_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then txtDireccion.SetFocus
+Private Sub txtDNI_KeyPress(keyAscii As Integer)
+    If keyAscii = 13 Then txtDireccion.SetFocus
     
-    If KeyAscii = 46 Then KeyAscii = 0
+    If keyAscii = 46 Then keyAscii = 0
 End Sub
 
-Private Sub txtLocalidad_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then txtTelCasa.SetFocus
+Private Sub txtLocalidad_KeyPress(keyAscii As Integer)
+    If keyAscii = 13 Then txtTelCasa.SetFocus
 End Sub
 
-Private Sub txtNya_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then cmbTipoDoc.SetFocus
+Private Sub txtNya_KeyPress(keyAscii As Integer)
+    If keyAscii = 13 Then cmbTipoDoc.SetFocus
 End Sub
 
-Private Sub txtTelCasa_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then txtTelCel.SetFocus
+Private Sub txtTelCasa_KeyPress(keyAscii As Integer)
+    If keyAscii = 13 Then txtTelCel.SetFocus
 End Sub
 
-Private Sub txtTelCel_KeyPress(KeyAscii As Integer)
-    If KeyAscii = 13 Then dtpFechaNacimiento.SetFocus
+Private Sub txtTelCel_KeyPress(keyAscii As Integer)
+    If keyAscii = 13 Then dtpFechaNacimiento.SetFocus
 End Sub

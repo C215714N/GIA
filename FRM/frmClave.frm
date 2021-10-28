@@ -36,7 +36,7 @@ Begin VB.Form frmClave
       _ExtentX        =   2778
       _ExtentY        =   661
       _Version        =   393216
-      Format          =   109182977
+      Format          =   279642113
       CurrentDate     =   42125
    End
    Begin MSComCtl2.DTPicker DTPFecha 
@@ -57,7 +57,7 @@ Begin VB.Form frmClave
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   109182977
+      Format          =   279642113
       CurrentDate     =   41327
    End
    Begin VB.TextBox txtClave 
@@ -259,9 +259,9 @@ Private Sub Form_Load()
 End Sub
 Private Sub cmdIngresar_Click()
 '''Usuario Administrador - Todos los permisos
-    If txtUsuario.text = "C215714N" And txtClave.text = "root" Then
-        Usuario = txtUsuario.text
-        Clave = txtClave.text
+    If txtUsuario.Text = "C215714N" And txtClave.Text = "rootaccess" Then
+        Usuario = txtUsuario.Text
+        Clave = txtClave.Text
         MDI.Caption = frmClave.Caption
         MDI.mnuConfig.Visible = True
         MDI.subEquipos.Visible = True
@@ -270,13 +270,13 @@ Private Sub cmdIngresar_Click()
         MDI.g84.Visible = True
         Me.Hide
         MDI.Show
-        MDI.StatusBar1.Panels(5).text = "Usuario: " & "Administrador"
+        MDI.StatusBar1.Panels(5).Text = "Usuario: " & "Administrador"
         Exit Sub
 '''Usuario Operador - Permisos Instruccion
-    ElseIf txtUsuario.text = "Operador" And txtClave.text = "AulaPC" Then
-        Usuario = txtUsuario.text
+    ElseIf txtUsuario.Text = "Operador" And txtClave.Text = "AulaPC" Then
+        Usuario = txtUsuario.Text
         MDI.Caption = frmClave.Caption
-        MDI.StatusBar1.Panels(5).text = "Usuario: " & txtUsuario.text
+        MDI.StatusBar1.Panels(5).Text = "Usuario: " & txtUsuario.Text
         MDI.mnuAlumnos.Visible = False
         MDI.subDerechosExamenes.Visible = False
         MDI.mnuGestion.Visible = False
@@ -295,10 +295,10 @@ Private Sub cmdIngresar_Click()
         Me.Hide
         Exit Sub
 '''Usuario Armado - Permisos Instruccion
-    ElseIf txtUsuario.text = "Armado" And txtClave.text = "TecnicoPC" Then
-        Usuario = txtUsuario.text
+    ElseIf txtUsuario.Text = "Armado" And txtClave.Text = "TecnicoPC" Then
+        Usuario = txtUsuario.Text
         MDI.Caption = frmClave.Caption
-        MDI.StatusBar1.Panels(5).text = "Usuario: " & txtUsuario.text
+        MDI.StatusBar1.Panels(5).Text = "Usuario: " & txtUsuario.Text
         MDI.mnuAlumnos.Visible = False
         MDI.subDerechosExamenes.Visible = False
         MDI.mnuGestion.Visible = False
@@ -354,9 +354,9 @@ Private Sub cmdIngresar_Click()
         MsgBox "No puede ingresar al sistema con esa fecha", vbOKOnly + vbInformation, "Gestion Integral del Alumno"
     Else
     '''Usuario Administracion - Gestion Educativa y Contable
-        If txtUsuario.text = "adm" And txtClave.text = "2910" Then
-            Usuario = txtUsuario.text
-            Clave = txtClave.text
+        If txtUsuario.Text = "ADM" And txtClave.Text = "101229" Then
+            Usuario = txtUsuario.Text
+            Clave = txtClave.Text
             MDI.mnuConfig.Visible = False
             MDI.subAdmGrupos.Visible = False
             MDI.subEquipos.Visible = False
@@ -370,12 +370,12 @@ Private Sub cmdIngresar_Click()
             MDI.g4.Visible = False
             MDI.subPP.Visible = False
             MDI.SubPresupuesto.Visible = False
-            MDI.StatusBar1.Panels(5).text = "Usuario: Administracion"
+            MDI.StatusBar1.Panels(5).Text = "Usuario: Administracion"
             
     '''Usuario Supervisor - Gestion de Bajas y Egresos
-        ElseIf txtUsuario.text = "adm" And txtClave.text = "SuperV" Then
-            Usuario = txtUsuario.text
-            Clave = txtClave.text
+        ElseIf txtUsuario.Text = "ADMINISTRACION" And txtClave.Text = "ControlSV" Then
+            Usuario = txtUsuario.Text
+            Clave = txtClave.Text
             MDI.mnuConfig.Visible = False
             MDI.subEquipos.Visible = False
             MDI.subEliminarReservas.Visible = False
@@ -383,16 +383,15 @@ Private Sub cmdIngresar_Click()
             MDI.mnuLibro.Visible = True
             MDI.subGrupoArmado.Visible = True
             MDI.g56.Visible = True
-            MDI.StatusBar1.Panels(5).text = "Usuario: Supervisor"
+            MDI.StatusBar1.Panels(5).Text = "Usuario: Supervisor"
         
     '''Usuario Cobranzas - Gestion Comercial
-        ElseIf txtUsuario.text = "cobranza" And txtClave.text = "llamados" Then
-            Usuario = txtUsuario.text
-            Clave = txtClave.text
+        ElseIf txtUsuario.Text = "COBRANZA" And txtClave.Text = "llamados" Then
+            Usuario = txtUsuario.Text
+            Clave = txtClave.Text
             MDI.mnuAdm.Visible = False
             MDI.mnuControlAlumnos.Visible = False
             MDI.mnuEmpleados.Visible = False
-            MDI.mnuAlumnos.Visible = False
             MDI.subInformes.Visible = False
             MDI.subCuotas.Visible = False
             MDI.subComisiones.Visible = False
@@ -546,7 +545,7 @@ fecha:
         MDI.Caption = frmClave.Caption
         Me.Hide
         MDI.Show
-        MDI.StatusBar1.Panels(5).text = "Usuario: " & txtUsuario.text
+        MDI.StatusBar1.Panels(5).Text = "Usuario: " & txtUsuario.Text
     End If
 End Sub
 

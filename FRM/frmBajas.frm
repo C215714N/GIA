@@ -133,7 +133,7 @@ If cmbPagoBaja.Text = "" Then MsgBox "Defina si el alumno pago la baja": cmbPago
 
 With rsMarcar
     If .State = 1 Then .Close
-    .Open "SELECT * FROM marcas WHERE codalumno=" & frmAnalisisDeCuotas.lblCodalumno.Caption, Cn, adOpenDynamic, adLockPessimistic
+    .Open "SELECT * FROM marcas WHERE codalumno=" & frmAnalisisDeCuotas.lblCodAlumno.Caption, Cn, adOpenDynamic, adLockPessimistic
     .Requery
     .MoveFirst
 End With
@@ -144,7 +144,7 @@ With rsBajas
     .AddNew
     !motivo = txtmotivo.Text
     !fecha = Date
-    !CodAlumno = frmAnalisisDeCuotas.lblCodalumno.Caption
+    !CodAlumno = frmAnalisisDeCuotas.lblCodAlumno.Caption
     !pagobaja = cmbPagoBaja.Text
     !sitcartera = rsMarcar!cantidadcuotas * 30 - 30
     !NroCuota = rsMarcar!cuota
@@ -173,7 +173,7 @@ With rsPlanDePago
         
         With rsVerificaciones
             If .State = 1 Then .Close
-            .Open "SELECT codalumno, estado FROM verificaciones WHERE codalumno=" & frmAnalisisDeCuotas.lblCodalumno.Caption, Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT codalumno, estado FROM verificaciones WHERE codalumno=" & frmAnalisisDeCuotas.lblCodAlumno.Caption, Cn, adOpenDynamic, adLockPessimistic
             .Requery
             .MoveFirst
             !estado = "Baja"
@@ -183,7 +183,7 @@ With rsPlanDePago
         frmBajas.Hide
         frmAnalisisDeCuotas.Enabled = True
         
-LineaError: ErrCode
+LineaError: ErrCode Err
 End Sub
 
 Private Sub Form_Load()

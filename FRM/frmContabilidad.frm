@@ -487,25 +487,25 @@ Private Sub cmdBajarAsiento_Click()
             .UpdateBatch
         End With
         lblNroAsiento.Caption = nroasiento
-        txtNroFactura.text = ""
-        txtDetalle.text = ""
+        txtNroFactura.Text = ""
+        txtDetalle.Text = ""
         txtNroFactura.Locked = False
         txtNroFactura.SetFocus
         cmdBajarAsiento.Enabled = False
     Else
         MsgBox "No coinciden Debe y Haber", vbOKOnly + vbInformation, "Contabilidad"
     End If
-LineaError: ErrCode
+LineaError: ErrCode Err
 End Sub
 
 Private Sub cmdBajarCuenta_Click()
-    If txtNroFactura.text = "" Then MsgBox "Debe ingresar un numero de factura", vbOKOnly + vbInformation, "Contabilidad": txtNroFactura.SetFocus: Exit Sub
-    If txtDetalle.text = "" Then MsgBox "Debe ingresar un detalle", vbOKOnly + vbInformation, "Contabilidad": txtDetalle.SetFocus: Exit Sub
-    If dtcCuenta.text = "" Then MsgBox "Debe ingresar una cuenta", vbOKOnly + vbInformation, "Contabilidad": dtcCuenta.SetFocus: Exit Sub
-    If txtHaber.text = "" And txtDebe.text = "" Then MsgBox "Debe ingresar un monto a la cuenta", vbOKOnly + vbInformation, "Contabilidad": txtDebe.SetFocus: Exit Sub
+    If txtNroFactura.Text = "" Then MsgBox "Debe ingresar un numero de factura", vbOKOnly + vbInformation, "Contabilidad": txtNroFactura.SetFocus: Exit Sub
+    If txtDetalle.Text = "" Then MsgBox "Debe ingresar un detalle", vbOKOnly + vbInformation, "Contabilidad": txtDetalle.SetFocus: Exit Sub
+    If dtcCuenta.Text = "" Then MsgBox "Debe ingresar una cuenta", vbOKOnly + vbInformation, "Contabilidad": dtcCuenta.SetFocus: Exit Sub
+    If txtHaber.Text = "" And txtDebe.Text = "" Then MsgBox "Debe ingresar un monto a la cuenta", vbOKOnly + vbInformation, "Contabilidad": txtDebe.SetFocus: Exit Sub
 
-    Debe = Val(txtDebe.text) + Debe
-    Haber = Haber + Val(txtHaber.text)
+    Debe = Val(txtDebe.Text) + Debe
+    Haber = Haber + Val(txtHaber.Text)
     
     If Debe > 0 And Debe = Haber Then cmdBajarAsiento.Enabled = True
     On Error GoTo LineaError
@@ -513,27 +513,27 @@ Private Sub cmdBajarCuenta_Click()
         .Requery
         .AddNew
         !asiento = lblNroAsiento.Caption
-        !fecha = CDate(lblFecha.Caption)
-        !Cuenta = dtcCuenta.text
-        !Detalle = txtDetalle.text
+        !fecha = CDate(lblfecha.Caption)
+        !Cuenta = dtcCuenta.Text
+        !Detalle = txtDetalle.Text
         !NroCuota = Null
         !CodAlumno = Null
-        If txtDebe.text = "" Then
+        If txtDebe.Text = "" Then
             !Debe = Null
         Else
-            !Debe = txtDebe.text
+            !Debe = txtDebe.Text
         End If
-        If txtHaber.text = "" Then
+        If txtHaber.Text = "" Then
             !Haber = Null
         Else
-            !Haber = txtHaber.text
+            !Haber = txtHaber.Text
         End If
-        !nrofactura = txtNroFactura.text
+        !nrofactura = txtNroFactura.Text
         .Update
     End With
     formatoGrilla
     Limpiar
-LineaError: ErrCode
+LineaError: ErrCode Err
 End Sub
 
 Private Sub cmdCancelar_Click()
@@ -557,7 +557,7 @@ Private Sub Form_Load()
     Contabilidad
     ContabilidadTemp
     lblNroAsiento.Caption = rsControl!nroasiento
-    lblFecha.Caption = Date
+    lblfecha.Caption = Date
     Set dtcCuenta.RowSource = rsCuentas
     dtcCuenta.BoundColumn = "cuenta"
     dtcCuenta.ListField = "cuenta"
@@ -577,10 +577,10 @@ End Sub
 
 Sub Limpiar()
     txtNroFactura.Locked = True
-    dtcCuenta.text = ""
+    dtcCuenta.Text = ""
     dtcCuenta.SetFocus
-    txtDebe.text = ""
-    txtHaber.text = ""
+    txtDebe.Text = ""
+    txtHaber.Text = ""
 End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)

@@ -66,7 +66,7 @@ Begin VB.Form frmMarcar
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   169345025
+      Format          =   123666433
       CurrentDate     =   41341
    End
    Begin VB.CheckBox chkLlamar 
@@ -153,7 +153,7 @@ Private Sub cmdGrabar_Click()
         .Requery
         .Find "Codalumno=" & CodAlumno
         If .BOF Or .EOF Then MsgBox "El alumno no se puede gestionar", vbCritical, "Marcar": Exit Sub
-            !fechacompromiso = dtpFecha.Value
+            !fechacompromiso = DTPFecha.Value
             !fechagestion = Date
             If chkLlamar.Value = 1 Then
                 !LPA = "L"
@@ -171,12 +171,12 @@ Private Sub cmdGrabar_Click()
     End With
     Unload Me
     
-LineaError: ErrCode
+LineaError: ErrCode Err
 End Sub
 
 Private Sub Form_Load()
     Centrar Me
-    dtpFecha.Value = Date
+    DTPFecha.Value = Date
 End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)

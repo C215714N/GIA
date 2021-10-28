@@ -600,7 +600,7 @@ Private Sub cmdGrabar_Click()
             Loop
         End With
     End If
-LineaError: ErrCode
+LineaError: ErrCode Err
 End Sub
 
 Private Sub cmdModificar_Click()

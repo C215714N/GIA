@@ -29,6 +29,7 @@ Begin VB.Form frmBecaTotal
       _ExtentX        =   13361
       _ExtentY        =   1508
       _Version        =   393217
+      Enabled         =   -1  'True
       MaxLength       =   1000
       Appearance      =   0
       TextRTF         =   $"frmBecaTotal.frx":10CA
@@ -323,7 +324,7 @@ Begin VB.Form frmBecaTotal
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   363724801
+         Format          =   279642113
          CurrentDate     =   42093
       End
       Begin isButtonTest.isButton cmdGrabar 
@@ -451,7 +452,7 @@ Begin VB.Form frmBecaTotal
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   363724801
+      Format          =   279642113
       CurrentDate     =   42089
    End
    Begin MSComCtl2.DTPicker dtpDesde 
@@ -472,7 +473,7 @@ Begin VB.Form frmBecaTotal
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   363724801
+      Format          =   279642113
       CurrentDate     =   42089
    End
    Begin VB.Frame Frame1 
@@ -594,24 +595,24 @@ Private Sub cmdGrabar_Click()
     On Error GoTo LineaError
     
     With rsAlumnosBecados
-        .Find "idreferencial=" & grilla.Columns(0).text
-        !matricula = txtMatricula.text
-        !Debe = txtDebe.text
-        !comision = txtComision.text
+        .Find "idreferencial=" & grilla.Columns(0).Text
+        !matricula = txtMatricula.Text
+        !Debe = txtDebe.Text
+        !comision = txtComision.Text
         !cancelacion = dtpCancelacion.Value
-        !observaciones = txtObservaciones.text
+        !observaciones = txtObservaciones.Text
         .UpdateBatch
     End With
     
     '''Restablece los parametros
-    txtMatricula.text = ""
-    txtDebe.text = ""
-    txtComision.text = ""
+    txtMatricula.Text = ""
+    txtDebe.Text = ""
+    txtComision.Text = ""
     dtpCancelacion.Value = Date
        
     Buscar
     
-LineaError: ErrCode
+LineaError: ErrCode Err
 End Sub
 Private Sub Form_Load()
     Centrar Me
@@ -620,11 +621,11 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub grilla_Click()
-    txtMatricula.text = grilla.Columns(5).text
-    txtDebe.text = grilla.Columns(6).text
-    txtComision.text = grilla.Columns(7).text
-    dtpCancelacion.Value = grilla.Columns(9).text
-    txtObservaciones.text = grilla.Columns(10).text
+    txtMatricula.Text = grilla.Columns(5).Text
+    txtDebe.Text = grilla.Columns(6).Text
+    txtComision.Text = grilla.Columns(7).Text
+    dtpCancelacion.Value = grilla.Columns(9).Text
+    txtObservaciones.Text = grilla.Columns(10).Text
     cmdGrabar.Enabled = True
 End Sub
 

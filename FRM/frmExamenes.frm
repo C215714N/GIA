@@ -54,7 +54,7 @@ Begin VB.Form frmExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   125763585
+         Format          =   278528001
          CurrentDate     =   41978
       End
       Begin VB.TextBox txtPromedio 
@@ -444,20 +444,20 @@ End Sub
 Private Sub txtCodigo_KeyPress(keyAscii As Integer)
     On Error GoTo LineaError
     If keyAscii = 13 Then
-        If txtCodigo.text = "" Then MsgBox "Ingrese el Codigo del alumno", vbOKOnly, "GIA - Examenes": txtCodigo.SetFocus: Exit Sub
+        If txtCodigo.Text = "" Then MsgBox "Ingrese el Codigo del alumno", vbOKOnly, "GIA - Examenes": txtCodigo.SetFocus: Exit Sub
         With rsVerificaciones
             If .State = 1 Then .Close
-            .Open "SELECT nya,capac FROM verificaciones WHERE codalumno=" & Int(txtCodigo.text), Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT nya,capac FROM verificaciones WHERE codalumno=" & Int(txtCodigo.Text), Cn, adOpenDynamic, adLockPessimistic
                 If .BOF = True And .EOF = True Then
                     MsgBox "No se encuentra el Codigo de Alumno" & vbNewLine & "Controle que el codigo ingresado sea correcto", vbExclamation, "Gestion Integral del Alumno - Gestion Integral del Alumno"
                 ElseIf .BOF = False Or .EOF = False Then
-                    txtAlumno.text = !NyA
-                    txtCurso.text = !capac
+                    txtAlumno.Text = !NyA
+                    txtCurso.Text = !capac
                 End If
         End With
         With rsExamenes
             If .State = 1 Then .Close
-            .Open "SELECT Fecha, Modulo, Teorico as [T], Practico as [P], Promedio as [F] FROM examenes WHERE codalumno=" & Int(txtCodigo.text) & " ORDER BY fecha,id", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT Fecha, Modulo, Teorico as [T], Practico as [P], Promedio as [F] FROM examenes WHERE codalumno=" & Int(txtCodigo.Text) & " ORDER BY fecha,id", Cn, adOpenDynamic, adLockPessimistic
         End With
         Set grilla.DataSource = rsExamenes
         formatoGrilla
@@ -467,7 +467,7 @@ Private Sub txtCodigo_KeyPress(keyAscii As Integer)
         Else: cmdAgregar.Enabled = True
         End If
     End If
-LineaError: ErrCode
+LineaError: ErrCode Err
 End Sub
 
 Private Sub cmbModulo_Change()
@@ -476,37 +476,37 @@ End Sub
 
 Private Sub cmdAgregar_Click()
     On Error GoTo LineaError
-    If cmbModulo.text = "" Then MsgBox "Elija el modulo", vbOKOnly + vbCritical, "GIA - Examenes": cmbModulo.SetFocus: Exit Sub
-    If txtTeorico.text = "" Then MsgBox "Ingrese nota del Examen teorico", vbOKOnly + vbCritical, "GIA - Examenes": txtTeorico.SetFocus: Exit Sub
-    If txtPractico.text = "" Then MsgBox "Ingrese nota del Examen Practico", vbOKOnly + vbCritical, "GIA - Examenes": txtPractico.SetFocus: Exit Sub
-    If txtPromedio.text = "" Then MsgBox "Ingrese nota promedio", vbOKOnly + vbCritical, "GIA - Examenes": txtPromedio.SetFocus: Exit Sub
+    If cmbModulo.Text = "" Then MsgBox "Elija el modulo", vbOKOnly + vbCritical, "GIA - Examenes": cmbModulo.SetFocus: Exit Sub
+    If txtTeorico.Text = "" Then MsgBox "Ingrese nota del Examen teorico", vbOKOnly + vbCritical, "GIA - Examenes": txtTeorico.SetFocus: Exit Sub
+    If txtPractico.Text = "" Then MsgBox "Ingrese nota del Examen Practico", vbOKOnly + vbCritical, "GIA - Examenes": txtPractico.SetFocus: Exit Sub
+    If txtPromedio.Text = "" Then MsgBox "Ingrese nota promedio", vbOKOnly + vbCritical, "GIA - Examenes": txtPromedio.SetFocus: Exit Sub
         
 ''' CARGAR EXAMEN - TABLA EXAMENES
     With rsExamenes
-        .Find "Modulo='" & cmbModulo.text & "'"
+        .Find "Modulo='" & cmbModulo.Text & "'"
         If .BOF Or .EOF Then
             .Close
             .Open "SELECT CodAlumno, Fecha, Modulo, Teorico as [T], Practico as [P], Promedio as [F]  FROM examenes", Cn, adOpenDynamic, adLockPessimistic
             .Requery
             .AddNew
-            !CodAlumno = Int(txtCodigo.text)
+            !CodAlumno = Int(txtCodigo.Text)
             !fecha = DTPFecha.Value
-            !T = txtTeorico.text
-            !P = txtPractico.text
-            !F = txtPromedio.text
-            !modulo = cmbModulo.text
+            !T = txtTeorico.Text
+            !P = txtPractico.Text
+            !F = txtPromedio.Text
+            !modulo = cmbModulo.Text
             .Update
             .Close
     '''CONTROL EXAMEN (MODULOS CARGADOS)
         Else:
             MsgBox "El alumno ya ha rendido este modulo", vbCritical, "Examenes"
-            txtPromedio.text = ""
-            txtTeorico.text = ""
-            txtPractico.text = ""
+            txtPromedio.Text = ""
+            txtTeorico.Text = ""
+            txtPractico.Text = ""
             cmbModulo.SetFocus
             Exit Sub
         End If
-        .Open "SELECT Fecha, Modulo, Teorico as [T], Practico as [P], Promedio as [F] FROM examenes WHERE codalumno=" & Int(txtCodigo.text) & " ORDER BY fecha,id", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT Fecha, Modulo, Teorico as [T], Practico as [P], Promedio as [F] FROM examenes WHERE codalumno=" & Int(txtCodigo.Text) & " ORDER BY fecha,id", Cn, adOpenDynamic, adLockPessimistic
         Set grilla.DataSource = rsExamenes
         formatoGrilla
     
@@ -520,19 +520,19 @@ Private Sub cmdAgregar_Click()
         End If
     '''CARGAR ALUMNO - TABLA EGRESADOS
         If Egresado = True Then
-            MsgBox "El alumno " & txtAlumno.text & " ha egresado del curso de " & txtCurso.text, vbInformation, "Examenes"
+            MsgBox "El alumno " & txtAlumno.Text & " ha egresado del curso de " & txtCurso.Text, vbInformation, "Examenes"
             With rsEgresados
                 If .State = 1 Then .Close
                 .Open "SELECT * FROM egresados", Cn, adOpenDynamic, adLockPessimistic
                 .Requery
                 .AddNew
-                !CodAlumno = Int(txtCodigo.text)
+                !CodAlumno = Int(txtCodigo.Text)
                 !fecha = DTPFecha.Value
                 .Update
             End With
             With rsVerificaciones
                 If .State = 1 Then .Close
-                .Open "SELECT * FROM verificaciones WHERE codalumno=" & Int(txtCodigo.text), Cn, adOpenDynamic, adLockPessimistic
+                .Open "SELECT * FROM verificaciones WHERE codalumno=" & Int(txtCodigo.Text), Cn, adOpenDynamic, adLockPessimistic
                 .Requery
                 .MoveFirst
                 !estado = "Egresado"
@@ -542,12 +542,12 @@ Private Sub cmdAgregar_Click()
     End With
     
 ''' REESTABLECE EL FORMULARIO
-    txtPractico.text = ""
-    txtTeorico.text = ""
-    txtPromedio.text = ""
+    txtPractico.Text = ""
+    txtTeorico.Text = ""
+    txtPromedio.Text = ""
     Egresado = False
 
-LineaError: ErrCode
+LineaError: ErrCode Err
 End Sub
 
 Private Sub txtTeorico_KeyPress(keyAscii As Integer)
@@ -556,8 +556,8 @@ End Sub
 
 Private Sub txtPractico_KeyPress(keyAscii As Integer)
     If keyAscii = 13 Then
-        txtPromedio.text = (Int(txtTeorico.text) + Int(txtPractico.text)) / 2
-        Sendkeys "{TAB}"
+        txtPromedio.Text = (Int(txtTeorico.Text) + Int(txtPractico.Text)) / 2
+        SendKeys "{TAB}"
     End If
 End Sub
 
@@ -569,7 +569,7 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
     If lblOrigen.Caption = "Egresados" Then frmEgresados.Enabled = True
 End Sub
 Private Sub CargarModulos()
-    If txtCurso.text = "Operador de Pc" Then
+    If txtCurso.Text = "Operador de Pc" Then
         With cmbModulo
             .Clear
             .AddItem ("Windows")
@@ -579,7 +579,7 @@ Private Sub CargarModulos()
             .AddItem ("Power Point")
         End With
         
-    ElseIf txtCurso.text = "Diseño Gráfico" Then
+    ElseIf txtCurso.Text = "Diseño Gráfico" Then
         With cmbModulo
             .Clear
             .AddItem ("Windows")
@@ -588,7 +588,7 @@ Private Sub CargarModulos()
             .AddItem ("Page Maker")
         End With
         
-    ElseIf txtCurso.text = "Diseño Web" Then
+    ElseIf txtCurso.Text = "Diseño Web" Then
         With cmbModulo
             .Clear
             .AddItem ("Front Page")
@@ -597,7 +597,7 @@ Private Sub CargarModulos()
             .AddItem ("Dreamweaver")
         End With
             
-    ElseIf txtCurso.text = "Programación + Access" Then
+    ElseIf txtCurso.Text = "Programación + Access" Then
         With cmbModulo
             .Clear
             .AddItem ("Access")
@@ -605,14 +605,14 @@ Private Sub CargarModulos()
             .AddItem ("Modulo II")
         End With
         
-    ElseIf txtCurso.text = "Programación" Or txtCurso.text = "Telefonía Celular" Then
+    ElseIf txtCurso.Text = "Programación" Or txtCurso.Text = "Telefonía Celular" Then
         With cmbModulo
             .Clear
             .AddItem ("Modulo I")
             .AddItem ("Modulo II")
         End With
         
-    ElseIf txtCurso.text = "Técnico en aire acondicionado" Or txtCurso.text = "Electricidad domiciliaria" Then
+    ElseIf txtCurso.Text = "Técnico en aire acondicionado" Or txtCurso.Text = "Electricidad domiciliaria" Then
         With cmbModulo
             .Clear
             .AddItem ("Modulo I")
@@ -621,7 +621,7 @@ Private Sub CargarModulos()
             .AddItem ("Final")
         End With
     
-    ElseIf txtCurso.text = "Soporte Tecnico" Then
+    ElseIf txtCurso.Text = "Soporte Tecnico" Then
         With cmbModulo
             .Clear
             .AddItem ("Modulo I")
@@ -632,7 +632,7 @@ Private Sub CargarModulos()
             .AddItem ("Examen Final")
         End With
         
-    ElseIf txtCurso.text = "Cuidador Domiciliario" Or txtCurso.text = "Asistente Terapeutico" Or txtCurso.text = "Auxiliar de Farmacia" Then
+    ElseIf txtCurso.Text = "Cuidador Domiciliario" Or txtCurso.Text = "Asistente Terapeutico" Or txtCurso.Text = "Auxiliar de Farmacia" Then
         With cmbModulo
             .Clear
             .AddItem ("Parcial I")
@@ -641,7 +641,7 @@ Private Sub CargarModulos()
             .AddItem ("Final")
         End With
     
-    ElseIf txtCurso.text = "Emergencias Médicas" Or txtCurso.text = "Extracc. Adm. Y Asist. Tec. Laborat." Then
+    ElseIf txtCurso.Text = "Emergencias Médicas" Or txtCurso.Text = "Extracc. Adm. Y Asist. Tec. Laborat." Then
         With cmbModulo
             .Clear
             .AddItem ("Parcial I")

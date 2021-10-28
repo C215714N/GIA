@@ -238,8 +238,8 @@ End Sub
 Private Sub cmdAceptar_Click()
     On Error GoTo LineaError:
     
-    frmCobranza.lblCodAlumno.Caption = grilla.Columns(0).text
-    frmCobranza.lblNyA.Caption = grilla.Columns(1).text
+    frmCobranza.lblCodAlumno.Caption = grilla.Columns(0).Text
+    frmCobranza.lblNyA.Caption = grilla.Columns(1).Text
     If Trim(Len(frmCobranza.lblCodAlumno.Caption)) = 1 Then frmCobranza.lblCodAlumno.Caption = Format(frmCobranza.lblCodAlumno.Caption, "0000#")
     If Trim(Len(frmCobranza.lblCodAlumno.Caption)) = 2 Then frmCobranza.lblCodAlumno.Caption = Format(frmCobranza.lblCodAlumno.Caption, "000##")
     If Trim(Len(frmCobranza.lblCodAlumno.Caption)) = 3 Then frmCobranza.lblCodAlumno.Caption = Format(frmCobranza.lblCodAlumno.Caption, "00###")
@@ -250,13 +250,13 @@ Private Sub cmdAceptar_Click()
     
 LineaError:
     MsgBox "Debe realizar una busqueda", vbOKOnly + vbCritical, "Gestion Integral del Alumno"
-    ErrCode
+    ErrCode Err
 End Sub
 Private Sub cmdCancelar_Click()
     Unload Me
 End Sub
 Private Sub txtBuscar_Change()
-    If txtBuscar.text = "" Then
+    If txtBuscar.Text = "" Then
         cmdAceptar.Enabled = False
     Else
         cmdAceptar.Enabled = True
@@ -265,7 +265,7 @@ Private Sub txtBuscar_Change()
 End Sub
 
 Sub BuscarAlumno()
-    busca = UCase(Trim(txtBuscar.text)) & "%"
+    busca = UCase(Trim(txtBuscar.Text)) & "%"
     Adodc.RecordSource = "SELECT  codalumno as [Cod], nya as [Alumno], tipodoc as [Tipo],DNI as [N°], capac as [Capacitacion] FROM verificaciones WHERE codAlumno LIKE '" & busca & "' OR dni  LIKE '" & busca & "' OR nya  LIKE '" & busca & "' ORDER BY codalumno DESC, nya, dni"
     Adodc.Refresh
     Set grilla.DataSource = Adodc

@@ -35,7 +35,7 @@ Begin VB.Form frmModificarPlanDePago
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   169345025
+      Format          =   123666433
       CurrentDate     =   41353
    End
    Begin VB.TextBox txtMonto 
@@ -207,20 +207,20 @@ Private Sub cmdAplicar_Click()
     '''actualiza los datos
     With rsAnalisisDeCuenta
         If .State = 1 Then .Close
-        .Open "SELECT * FROM plandepago WHERE codalumno=" & Int(frmAnalisisDeCuotas.lblCodalumno.Caption) & "and nrocuota>=" & Int(txtNroCuota.Text), Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT * FROM plandepago WHERE codalumno=" & Int(frmAnalisisDeCuotas.lblCodAlumno.Caption) & "and nrocuota>=" & Int(txtNroCuota.Text), Cn, adOpenDynamic, adLockPessimistic
         Do Until .EOF
-            !fechavto = dtpFecha.Value
+            !fechavto = DTPFecha.Value
             !deuda = txtMonto.Text
             If !recargoxfecha = True Then !recargoxfecha = False
             If !recargoxmes = True Then !recargoxmes = False
             !DeudaTotal = txtMonto.Text
             .UpdateBatch
             .MoveNext
-            If dtpFecha.Month = 12 Then
-                dtpFecha.Month = 1
-                dtpFecha.Year = dtpFecha.Year + 1
+            If DTPFecha.Month = 12 Then
+                DTPFecha.Month = 1
+                DTPFecha.Year = DTPFecha.Year + 1
             Else
-                dtpFecha.Month = dtpFecha.Month + 1
+                DTPFecha.Month = DTPFecha.Month + 1
             End If
         Loop
     End With
@@ -233,7 +233,7 @@ Private Sub cmdAplicar_Click()
     End With
     Unload Me
     
-LineaError: ErrCode
+LineaError: ErrCode Err
 End Sub
 
 Private Sub cmdCancelar_Click()
@@ -242,7 +242,7 @@ End Sub
 
 Private Sub Form_Load()
     Centrar Me
-    dtpFecha.Value = Date
+    DTPFecha.Value = Date
 End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
