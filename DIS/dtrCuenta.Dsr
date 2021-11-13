@@ -4,10 +4,10 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrCuenta
    ClientHeight    =   8535
    ClientLeft      =   3000
    ClientTop       =   390
-   ClientWidth     =   13605
+   ClientWidth     =   15240
    Icon            =   "dtrCuenta.dsx":0000
    MDIChild        =   -1  'True
-   _ExtentX        =   23998
+   _ExtentX        =   26882
    _ExtentY        =   15055
    _Version        =   393216
    _DesignerVersion=   100684101

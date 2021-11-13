@@ -570,7 +570,7 @@ Attribute VB_Exposed = False
 Dim fecha As Date
 
 Private Sub cmdAgregar_Click()
-On Error GoTo LineaError
+On Error GoTo lineaError
     '''guarda la modificacion al libro de aula
     If ModiLibro = False Then
         With rsLibro
@@ -605,11 +605,11 @@ On Error GoTo LineaError
     
     botones True, False
     
-LineaError: ErrCode Err
+lineaError: ErrCode Err
 End Sub
 
 Private Sub cmdEliminar_Click()
-    On Error GoTo LineaError
+    On Error GoTo lineaError
     If txtTema.Text = "" Then MsgBox "Primero debe elegir una clase", vbCritical + vbOKOnly, "Libro de Aula": Exit Sub
     fecha = Format(Label10.Caption, "mm/dd/yyyy")
     With rsLibro
@@ -628,7 +628,7 @@ Private Sub cmdEliminar_Click()
     txtTema.Text = ""
     botones True, False
 
-LineaError: ErrCode Err
+lineaError: ErrCode Err
 End Sub
 
 Private Sub cmdImprimir_Click()
@@ -679,13 +679,15 @@ End Sub
 
 Private Sub grilla_Click()
     botones True, False
+    On Error GoTo lineaError
     txtTema.Text = grilla.Columns(2).Text
     txtNumClase.Text = grilla.Columns(0).Text
     Label10.Caption = grilla.Columns(1).Text
+lineaError: ErrCode Err
 End Sub
 
 Sub formatoGrilla()
-On Error GoTo LineaError
+On Error GoTo lineaError
     Dim w As Integer
     For N = 0 To 2 Step 1
         w = 300 + (N * 850)
@@ -695,5 +697,5 @@ On Error GoTo LineaError
         grilla.Columns(N).Width = w
     Next
         rsLibro.MoveLast
-LineaError: ErrCode Err
+lineaError: ErrCode Err
 End Sub

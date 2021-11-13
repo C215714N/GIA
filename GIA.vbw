@@ -1,5 +1,5 @@
 Declaraciones = 44, 56, 856, 417, C
-Conexiones = 9, 1, 709, 480, C
+Conexiones = 9, 1, 709, 480, Z
 frmVerificaciones = 150, 150, 638, 601, C, 0, 0, 812, 361, C
 frmViaticos = 125, 125, 646, 576, C, 110, 140, 988, 578, C
 frmAnalisisDeCuotas = 173, 18, 681, 469, C, -469, 16, 167, 447, C
@@ -65,7 +65,7 @@ MDI = 156, 156, 724, 490, C, 175, 175, 641, 626, C
 frmSuscripciones = 156, 156, 774, 668, C, 100, 100, 566, 551, C
 dtrNotas = 200, 200, 649, 651, C, 150, 150, 1065, 750, CZ
 dtrLibro = 0, 0, 0, 0, C, 125, 125, 1040, 725, CZ
-dtrCuenta = 0, 0, 0, 0, C, 100, 100, 1015, 700, CZ
+dtrCuenta = 0, 0, 0, 0, C, 100, 100, 1124, 700, CZ
 dtrBajas = 0, 0, 0, 0, C, 75, 75, 1091, 675, CZ
 dtrSituacion = 0, 0, 0, 0, C, 50, 50, 1074, 650, CZ
 dtrPresupuesto = 78, 78, 767, 351, C, 0, 0, 696, 460, CZ

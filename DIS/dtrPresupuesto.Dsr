@@ -11,7 +11,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrPresupuesto
    _ExtentY        =   11351
    _Version        =   393216
    _DesignerVersion=   100684101
-   ReportWidth     =   8955
+   ReportWidth     =   9075
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
       Name            =   "Arial"
       Size            =   8.25
@@ -59,18 +59,21 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrPresupuesto
          _Version        =   393216
          Name            =   "lblPresupuesto"
          Object.Left            =   30
-         Object.Top             =   60
-         Object.Width           =   8595
-         Object.Height          =   285
+         Object.Top             =   15
+         Object.Width           =   9045
+         Object.Height          =   315
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
-            Size            =   8.25
+            Size            =   12
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
+         ForeColor       =   -2147483633
+         BackColor       =   8930304
+         BackStyle       =   1
          Object.Caption         =   "PRESUPUESTO"
          Alignment       =   2
       EndProperty

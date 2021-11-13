@@ -11,7 +11,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
    _ExtentY        =   15055
    _Version        =   393216
    _DesignerVersion=   100684101
-   ReportWidth     =   11448
+   ReportWidth     =   11450
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
       Name            =   "Arial"
       Size            =   8.25
@@ -40,7 +40,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
          _Version        =   393216
          Name            =   "Etiqueta10"
          Object.Width           =   11448
-         Object.Height          =   300
+         Object.Height          =   345
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
             Size            =   12
