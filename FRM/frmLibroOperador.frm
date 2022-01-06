@@ -207,7 +207,7 @@ Begin VB.Form frmLibroOperador
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   124321793
+         Format          =   127664129
          CurrentDate     =   41580
       End
       Begin isButtonTest.isButton cmdBuscar 

@@ -66,7 +66,7 @@ Begin VB.Form frmMarcar
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   123666433
+      Format          =   127664129
       CurrentDate     =   41341
    End
    Begin VB.CheckBox chkLlamar 

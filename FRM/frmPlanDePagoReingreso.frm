@@ -83,7 +83,7 @@ Begin VB.Form frmPlanDePagoReingreso
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   123207681
+      Format          =   109051905
       CurrentDate     =   41353
    End
    Begin isButtonTest.isButton cmdAplicar 

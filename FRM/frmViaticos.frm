@@ -217,7 +217,7 @@ Begin VB.Form frmViaticos
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   122617857
+         Format          =   128057345
          CurrentDate     =   42277
       End
       Begin VB.Label Label4 

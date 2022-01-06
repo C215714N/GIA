@@ -46,6 +46,7 @@ Begin VB.Form frmSuscripciones
          _ExtentX        =   8281
          _ExtentY        =   2778
          _Version        =   393217
+         Enabled         =   -1  'True
          MaxLength       =   1000
          Appearance      =   0
          AutoVerbMenu    =   -1  'True
@@ -436,7 +437,7 @@ Begin VB.Form frmSuscripciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   123469825
+         Format          =   238813185
          CurrentDate     =   41308
       End
       Begin VB.Label Label20 
@@ -849,6 +850,7 @@ Begin VB.Form frmSuscripciones
          Height          =   360
          Left            =   120
          Locked          =   -1  'True
+         MaxLength       =   100
          TabIndex        =   3
          Top             =   1200
          Width           =   3495
@@ -908,7 +910,7 @@ Begin VB.Form frmSuscripciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   122290177
+         Format          =   238813185
          CurrentDate     =   41308
       End
       Begin MSDataListLib.DataCombo dtcAsistente 
@@ -1210,6 +1212,8 @@ Private Sub cmdCerrar_Click()
 End Sub
 
 Private Sub cmdGrabar_Click()
+    On Error GoTo LineaError
+    
     If txtNya.Text = "" Then MsgBox "Debe ingresar un Nombre de Alumno", vbOKOnly + vbInformation, "Suscripciones": txtNya.SetFocus: Exit Sub
     If cmbTipoDoc.Text = "" Then MsgBox "Debe ingresar un Tipo de Documento", vbOKOnly + vbInformation, "Suscripciones": cmbTipoDoc.SetFocus: Exit Sub
     If txtDocumento.Text = "" Then MsgBox "Debe ingresar un Numero de Documento", vbOKOnly + vbInformation, "Suscripciones": txtDocumento.SetFocus: Exit Sub
@@ -1227,8 +1231,6 @@ Private Sub cmdGrabar_Click()
     If cmbTipoPago.Text = "" Then MsgBox "Ingrese el tipo de pago de la Matricula", vbOKOnly + vbInformation, "Suscripciones": cmbTipoPago.SetFocus: Exit Sub
     If txtNroFactura.Text = "" Then MsgBox "Ingrese el Numero de Factura del pago de la Matricula", vbInformation, "Suscripciones": txtNroFactura.SetFocus: Exit Sub
     If txtTotalMatricula.Text = "" Then MsgBox "Debe ingresar el valor de la Matricula", vbOKOnly + vbInformation, "Suscripciones": txtTotalMatricula.SetFocus: Exit Sub
-    
-    On Error GoTo LineaError
     
     If Modi = False Then
         With rsSuscripciones
@@ -1598,5 +1600,5 @@ Private Sub dtcCapacitacion_KeyPress(keyAscii As Integer)
     Continue keyAscii
 End Sub
 Private Sub dtpFechaSuscripcion_KeyPress(keyAscii As Integer)
-        If KeyPress = 13 Then cmbTipoPago.SetFocus
+    If KeyPress = 13 Then cmbTipoPago.SetFocus
 End Sub

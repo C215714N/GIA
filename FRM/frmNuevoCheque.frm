@@ -103,7 +103,7 @@ Begin VB.Form frmNuevoCheque
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   123666433
+      Format          =   129040385
       CurrentDate     =   41782
    End
    Begin isButtonTest.isButton cmdAgregar 

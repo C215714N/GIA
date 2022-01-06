@@ -324,7 +324,7 @@ Begin VB.Form frmBecaTotal
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   279642113
+         Format          =   239337473
          CurrentDate     =   42093
       End
       Begin isButtonTest.isButton cmdGrabar 
@@ -452,7 +452,7 @@ Begin VB.Form frmBecaTotal
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   279642113
+      Format          =   239337473
       CurrentDate     =   42089
    End
    Begin MSComCtl2.DTPicker dtpDesde 
@@ -473,7 +473,7 @@ Begin VB.Form frmBecaTotal
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   279642113
+      Format          =   239337473
       CurrentDate     =   42089
    End
    Begin VB.Frame Frame1 

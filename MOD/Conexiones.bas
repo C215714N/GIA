@@ -145,7 +145,7 @@ End Sub
 Sub ErrCode(Err)
     Select Case Err.Number
         Case 3021
-            Continue 10
+            Resume Next
         Case Else
             If Err.Number Then MsgBox ("Se ha producido un error" & Chr(13) & "Codigo de error: " & Err.Number & Chr(13) & "Descripción: " & Err.Description)
     End Select

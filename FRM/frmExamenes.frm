@@ -54,7 +54,7 @@ Begin VB.Form frmExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   278528001
+         Format          =   129499137
          CurrentDate     =   41978
       End
       Begin VB.TextBox txtPromedio 

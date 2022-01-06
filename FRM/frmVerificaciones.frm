@@ -46,6 +46,7 @@ Begin VB.Form frmVerificaciones
          _ExtentX        =   8281
          _ExtentY        =   2778
          _Version        =   393217
+         Enabled         =   -1  'True
          MaxLength       =   1000
          Appearance      =   0
          AutoVerbMenu    =   -1  'True
@@ -283,6 +284,7 @@ Begin VB.Form frmVerificaciones
          Height          =   360
          Left            =   120
          Locked          =   -1  'True
+         MaxLength       =   100
          TabIndex        =   3
          Top             =   1200
          Width           =   3495
@@ -391,7 +393,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   280363009
+         Format          =   129302529
          CurrentDate     =   41308
       End
       Begin MSDataListLib.DataCombo dtcAsistente 
@@ -778,7 +780,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   280363009
+         Format          =   237961217
          CurrentDate     =   41308
       End
       Begin MSComCtl2.DTPicker DTPFechaVerificacion 
@@ -799,7 +801,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   280363009
+         Format          =   237961217
          CurrentDate     =   41308
       End
       Begin VB.Label Label17 
