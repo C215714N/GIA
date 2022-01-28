@@ -29,7 +29,6 @@ Begin VB.Form frmBecaTotal
       _ExtentX        =   13361
       _ExtentY        =   1508
       _Version        =   393217
-      Enabled         =   -1  'True
       MaxLength       =   1000
       Appearance      =   0
       TextRTF         =   $"frmBecaTotal.frx":10CA
@@ -324,7 +323,7 @@ Begin VB.Form frmBecaTotal
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   239337473
+         Format          =   127926273
          CurrentDate     =   42093
       End
       Begin isButtonTest.isButton cmdGrabar 
@@ -452,7 +451,7 @@ Begin VB.Form frmBecaTotal
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   239337473
+      Format          =   127991809
       CurrentDate     =   42089
    End
    Begin MSComCtl2.DTPicker dtpDesde 
@@ -473,7 +472,7 @@ Begin VB.Form frmBecaTotal
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   239337473
+      Format          =   127991809
       CurrentDate     =   42089
    End
    Begin VB.Frame Frame1 
@@ -639,7 +638,7 @@ Private Sub Buscar()
     
     With rsAlumnosBecados
         If .State = 1 Then .Close
-        .Open "SELECT sum(matricula),sum(debe),count(*) FROM alumnosbecados WHERE cancelacion BETWEEN #" & desde & "# AND #" & hasta & "#", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT sum(matricula),sum(debe),COUNT(*) FROM alumnosbecados WHERE cancelacion BETWEEN #" & desde & "# AND #" & hasta & "#", Cn, adOpenDynamic, adLockPessimistic
         lblTotalPagado.Caption = Format(!expr1000, "currency")
         lblTotalDebido.Caption = Format(!expr1001, "currency")
         lblAlumnos.Caption = !expr1002

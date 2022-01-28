@@ -46,7 +46,6 @@ Begin VB.Form frmVerificaciones
          _ExtentX        =   8281
          _ExtentY        =   2778
          _Version        =   393217
-         Enabled         =   -1  'True
          MaxLength       =   1000
          Appearance      =   0
          AutoVerbMenu    =   -1  'True
@@ -393,7 +392,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   129302529
+         Format          =   129236993
          CurrentDate     =   41308
       End
       Begin MSDataListLib.DataCombo dtcAsistente 
@@ -780,7 +779,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   237961217
+         Format          =   128581633
          CurrentDate     =   41308
       End
       Begin MSComCtl2.DTPicker DTPFechaVerificacion 
@@ -801,7 +800,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   237961217
+         Format          =   128581633
          CurrentDate     =   41308
       End
       Begin VB.Label Label17 
@@ -1224,7 +1223,9 @@ Private Sub cmdCerrar_Click()
 End Sub
 
 Private Sub cmdGrabar_Click()
+    On Error GoTo LineaError
     Dim codigo As Long
+    
     If txtNya.Text = "" Then MsgBox "Debe ingresar un Nombre de Alumno", vbOKOnly + vbInformation, "Suscripciones": txtNya.SetFocus: Exit Sub
     If cmbTipoDoc.Text = "" Then MsgBox "Debe ingresar un Tipo de Documento", vbOKOnly + vbInformation, "Suscripciones": cmbTipoDoc.SetFocus: Exit Sub
     If txtDocumento.Text = "" Then MsgBox "Debe ingresar un Numero de Documento", vbOKOnly + vbInformation, "Suscripciones": txtDocumento.SetFocus: Exit Sub
@@ -1241,8 +1242,6 @@ Private Sub cmdGrabar_Click()
     If txtTotalCuotas.Text = "" Or txtTotalCuotas.Text = "0" Then MsgBox "Debe ingresar la Cantidad de Cuotas." & vbNewLine & "La misma debe ser superior a Cero", vbOKOnly + vbInformation, "Suscripciones": txtTotalCuotas.SetFocus: Exit Sub
     If txtGastoAdm.Text = "" Then MsgBox "Debe ingresar el Gasto Administrativo", vbOKOnly + vbInformation, "Suscripciones": txtGastoAdm.SetFocus: Exit Sub
 
-    On Error GoTo LineaError
-
     If Modi = False Then
         With rsControl
             .Find "ID=1"
@@ -1250,6 +1249,7 @@ Private Sub cmdGrabar_Click()
             lblCodAlumno.Caption = codigo
             !CodAlumno = codigo + 1
             .UpdateBatch
+            .Requery
         End With
         
         With rsVerificaciones
@@ -1304,9 +1304,7 @@ Private Sub cmdGrabar_Click()
             !fechaV = DTPFechaVerificacion.Value
             !verificado = 1
             .UpdateBatch
-
-        End With
-
+            End With
     Else
         With rsVerificaciones
             .Requery

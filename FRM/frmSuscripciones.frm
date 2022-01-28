@@ -46,7 +46,6 @@ Begin VB.Form frmSuscripciones
          _ExtentX        =   8281
          _ExtentY        =   2778
          _Version        =   393217
-         Enabled         =   -1  'True
          MaxLength       =   1000
          Appearance      =   0
          AutoVerbMenu    =   -1  'True
@@ -437,7 +436,7 @@ Begin VB.Form frmSuscripciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   238813185
+         Format          =   128385025
          CurrentDate     =   41308
       End
       Begin VB.Label Label20 
@@ -910,7 +909,7 @@ Begin VB.Form frmSuscripciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   238813185
+         Format          =   128385025
          CurrentDate     =   41308
       End
       Begin MSDataListLib.DataCombo dtcAsistente 

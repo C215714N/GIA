@@ -178,7 +178,7 @@ Begin VB.Form frmDerechosExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   237764609
+         Format          =   170786817
          CurrentDate     =   41978
       End
       Begin isButtonTest.isButton cmdAgregar 
@@ -648,20 +648,12 @@ Private Sub CargarModulos()
             .AddItem ("Examen Final")
         End With
         
-    ElseIf txtCurso.Text = "Cuidador Domiciliario" Or txtCurso.Text = "Asistente Terapeutico" Or txtCurso.Text = "Auxiliar de Farmacia" Then
+    ElseIf txtCurso.Text = "Cuidador Domiciliario" Or txtCurso.Text = "Asistente Terapeutico" Or txtCurso.Text = "Auxiliar de Farmacia" Or txtCurso.Text = "Emergencias Médicas" Or txtCurso.Text = "Extracc. Adm. Y Asist. Tec. Laborat." Then
         With cmbModulo
             .Clear
             .AddItem ("Parcial I")
             .AddItem ("Parcial II")
             .AddItem ("Parcial III")
-            .AddItem ("Final")
-        End With
-    
-    ElseIf txtCurso.Text = "Emergencias Médicas" Or txtCurso.Text = "Extracc. Adm. Y Asist. Tec. Laborat." Then
-        With cmbModulo
-            .Clear
-            .AddItem ("Parcial I")
-            .AddItem ("Parcial II")
             .AddItem ("Final")
         End With
     End If

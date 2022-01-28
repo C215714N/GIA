@@ -176,7 +176,7 @@ Begin VB.Form frmConsultarCheques
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   272695297
+         Format          =   127467521
          CurrentDate     =   41782
       End
       Begin MSComCtl2.DTPicker dtpDesde 
@@ -198,7 +198,7 @@ Begin VB.Form frmConsultarCheques
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   272695297
+         Format          =   127467521
          CurrentDate     =   41782
       End
       Begin isButtonTest.isButton cmdBuscar 
@@ -531,7 +531,7 @@ Private Sub Busqueda()
         With rsCheques
             If .State = 1 Then .Close
             
-            .Open "SELECT count(*) FROM cheques WHERE fecha BETWEEN #" & fecha1 & "# AND #" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT COUNT(*) FROM cheques WHERE fecha BETWEEN #" & fecha1 & "# AND #" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
             lblCantidad.Caption = !expr1000
             .Close
             
@@ -552,7 +552,7 @@ Private Sub Busqueda()
     '''Consulta por FIRMA
         With rsCheques
             If .State = 1 Then .Close
-            .Open "SELECT count(*) FROM cheques WHERE firma='" & cmbFirma.Text & "'", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT COUNT(*) FROM cheques WHERE firma='" & cmbFirma.Text & "'", Cn, adOpenDynamic, adLockPessimistic
             lblCantidad.Caption = !expr1000
             .Close
             
@@ -575,7 +575,7 @@ Private Sub Busqueda()
     '''Consulta por FECHA & por FIRMA
         With rsCheques
             If .State = 1 Then .Close
-            .Open "SELECT count(*) FROM cheques WHERE fecha BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# AND firma='" & cmbFirma.Text & "'", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT COUNT(*) FROM cheques WHERE fecha BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# AND firma='" & cmbFirma.Text & "'", Cn, adOpenDynamic, adLockPessimistic
             lblCantidad.Caption = !expr1000
             .Close
             

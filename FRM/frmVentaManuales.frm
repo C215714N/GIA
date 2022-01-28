@@ -401,7 +401,7 @@ Private Sub cmdVender_Click()
     
 ''' GESTION CONTABLE - ASIENTO
     With cmbManual
-        If .Text = "Materiales 01" Or .Text = "Materiales 02" Or .Text = "Lazo" Then
+        If .Text = "Materiales 01" Or .Text = "Materiales 02" Or .Text = "Materiales 03" Or .Text = "Lazo" Then
             Cuenta = "INSUMOS CURSOS"
         Else
             Cuenta = "MANUALES"
@@ -554,6 +554,7 @@ Sub cargarManuales()
             .AddItem ("Primeros Auxilios")
             .AddItem ("Materiales 01")
             .AddItem ("Materiales 02")
+            .AddItem ("Materiales 03")
             .AddItem ("Lazo")
         End With
         
@@ -561,7 +562,7 @@ Sub cargarManuales()
         With cmbManual
             .AddItem ("Cuidador Dom. I")
             .AddItem ("Cuidador Dom. II")
-            .AddItem ("Primeros Auxilios")
+            .AddItem ("Covid-19")
             .AddItem ("Lazo")
         End With
     
