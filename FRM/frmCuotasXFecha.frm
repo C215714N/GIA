@@ -7,10 +7,10 @@ Begin VB.Form frmCuotasXFecha
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Cuotas Por Fecha"
-   ClientHeight    =   6090
+   ClientHeight    =   6930
    ClientLeft      =   3615
    ClientTop       =   2100
-   ClientWidth     =   5910
+   ClientWidth     =   6150
    BeginProperty Font 
       Name            =   "Century Gothic"
       Size            =   9.75
@@ -26,11 +26,11 @@ Begin VB.Form frmCuotasXFecha
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   6090
-   ScaleWidth      =   5910
+   ScaleHeight     =   6930
+   ScaleWidth      =   6150
    Begin MSAdodcLib.Adodc Adodc 
       Height          =   330
-      Left            =   4560
+      Left            =   3720
       Top             =   5880
       Visible         =   0   'False
       Width           =   1455
@@ -76,13 +76,13 @@ Begin VB.Form frmCuotasXFecha
       _Version        =   393216
    End
    Begin MSDataGridLib.DataGrid grilla 
-      Height          =   5175
+      Height          =   6015
       Left            =   120
       TabIndex        =   4
       Top             =   780
-      Width           =   4215
-      _ExtentX        =   7435
-      _ExtentY        =   9128
+      Width           =   4335
+      _ExtentX        =   7646
+      _ExtentY        =   10610
       _Version        =   393216
       AllowUpdate     =   0   'False
       ColumnHeaders   =   -1  'True
@@ -160,12 +160,12 @@ Begin VB.Form frmCuotasXFecha
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   273285121
+      Format          =   165150721
       CurrentDate     =   41345
    End
    Begin MSComCtl2.DTPicker dtpHasta 
       Height          =   375
-      Left            =   2280
+      Left            =   2400
       TabIndex        =   1
       Top             =   285
       Width           =   2055
@@ -181,16 +181,16 @@ Begin VB.Form frmCuotasXFecha
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   273285121
+      Format          =   165216257
       CurrentDate     =   41345
    End
    Begin isButtonTest.isButton cmdBuscar 
       Height          =   420
-      Left            =   4440
+      Left            =   4560
       TabIndex        =   11
       Top             =   240
-      Width           =   1335
-      _ExtentX        =   2355
+      Width           =   1455
+      _ExtentX        =   2566
       _ExtentY        =   741
       Icon            =   "frmCuotasXFecha.frx":10CA
       Style           =   8
@@ -215,11 +215,11 @@ Begin VB.Form frmCuotasXFecha
    End
    Begin isButtonTest.isButton cmdMarcar 
       Height          =   420
-      Left            =   4440
+      Left            =   4560
       TabIndex        =   12
-      Top             =   855
-      Width           =   1335
-      _ExtentX        =   2355
+      Top             =   840
+      Width           =   1455
+      _ExtentX        =   2566
       _ExtentY        =   741
       Icon            =   "frmCuotasXFecha.frx":19A4
       Style           =   8
@@ -246,11 +246,11 @@ Begin VB.Form frmCuotasXFecha
    End
    Begin isButtonTest.isButton cmdDatos 
       Height          =   420
-      Left            =   4440
+      Left            =   4560
       TabIndex        =   13
       Top             =   1440
-      Width           =   1335
-      _ExtentX        =   2355
+      Width           =   1455
+      _ExtentX        =   2566
       _ExtentY        =   741
       Icon            =   "frmCuotasXFecha.frx":227E
       Style           =   8
@@ -277,11 +277,11 @@ Begin VB.Form frmCuotasXFecha
    End
    Begin isButtonTest.isButton cmdCuotas 
       Height          =   420
-      Left            =   4440
+      Left            =   4560
       TabIndex        =   14
       Top             =   2040
-      Width           =   1335
-      _ExtentX        =   2355
+      Width           =   1455
+      _ExtentX        =   2566
       _ExtentY        =   741
       Icon            =   "frmCuotasXFecha.frx":2B58
       Style           =   8
@@ -308,11 +308,11 @@ Begin VB.Form frmCuotasXFecha
    End
    Begin isButtonTest.isButton cmdCerrar 
       Height          =   420
-      Left            =   4440
+      Left            =   4560
       TabIndex        =   15
       Top             =   5520
-      Width           =   1335
-      _ExtentX        =   2355
+      Width           =   1455
+      _ExtentX        =   2566
       _ExtentY        =   741
       Icon            =   "frmCuotasXFecha.frx":3432
       Style           =   8
@@ -339,11 +339,11 @@ Begin VB.Form frmCuotasXFecha
    End
    Begin isButtonTest.isButton cmdExportar 
       Height          =   420
-      Left            =   4440
+      Left            =   4560
       TabIndex        =   16
       Top             =   4920
-      Width           =   1335
-      _ExtentX        =   2355
+      Width           =   1455
+      _ExtentX        =   2566
       _ExtentY        =   741
       Icon            =   "frmCuotasXFecha.frx":3D0C
       Style           =   8
@@ -381,10 +381,10 @@ Begin VB.Form frmCuotasXFecha
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Left            =   4440
+      Left            =   4560
       TabIndex        =   9
       Top             =   4320
-      Width           =   1350
+      Width           =   1455
    End
    Begin VB.Label Label10 
       BackStyle       =   0  'Transparent
@@ -400,10 +400,10 @@ Begin VB.Form frmCuotasXFecha
       EndProperty
       ForeColor       =   &H8000000F&
       Height          =   255
-      Left            =   4440
+      Left            =   4560
       TabIndex        =   10
       Top             =   4080
-      Width           =   735
+      Width           =   1455
    End
    Begin VB.Label Label9 
       AutoSize        =   -1  'True
@@ -420,10 +420,10 @@ Begin VB.Form frmCuotasXFecha
       EndProperty
       ForeColor       =   &H8000000F&
       Height          =   225
-      Left            =   4440
+      Left            =   4560
       TabIndex        =   8
       Top             =   3360
-      Width           =   435
+      Width           =   1455
    End
    Begin VB.Label lblResta 
       Alignment       =   1  'Right Justify
@@ -438,10 +438,10 @@ Begin VB.Form frmCuotasXFecha
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Left            =   4440
+      Left            =   4560
       TabIndex        =   7
       Top             =   3600
-      Width           =   1350
+      Width           =   1455
    End
    Begin VB.Label Label8 
       AutoSize        =   -1  'True
@@ -458,7 +458,7 @@ Begin VB.Form frmCuotasXFecha
       EndProperty
       ForeColor       =   &H8000000F&
       Height          =   225
-      Left            =   4440
+      Left            =   4560
       TabIndex        =   6
       Top             =   2640
       Width           =   960
@@ -476,10 +476,10 @@ Begin VB.Form frmCuotasXFecha
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Left            =   4440
+      Left            =   4560
       TabIndex        =   5
       Top             =   2880
-      Width           =   1350
+      Width           =   1455
    End
    Begin VB.Label Label2 
       AutoSize        =   -1  'True
@@ -496,7 +496,7 @@ Begin VB.Form frmCuotasXFecha
       EndProperty
       ForeColor       =   &H8000000F&
       Height          =   225
-      Left            =   2280
+      Left            =   2400
       TabIndex        =   3
       Top             =   60
       Width           =   930

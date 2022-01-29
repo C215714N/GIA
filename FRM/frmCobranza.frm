@@ -11,7 +11,7 @@ Begin VB.Form frmCobranza
    ClientHeight    =   5385
    ClientLeft      =   4065
    ClientTop       =   1455
-   ClientWidth     =   5715
+   ClientWidth     =   7305
    FillStyle       =   7  'Diagonal Cross
    ForeColor       =   &H00E0E0E0&
    Icon            =   "frmCobranza.frx":0000
@@ -20,17 +20,16 @@ Begin VB.Form frmCobranza
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    ScaleHeight     =   5385
-   ScaleWidth      =   5715
+   ScaleWidth      =   7305
    Begin RichTextLib.RichTextBox txtObservaciones 
       Height          =   975
       Left            =   120
       TabIndex        =   18
       Top             =   4200
-      Width           =   3975
-      _ExtentX        =   7011
+      Width           =   5535
+      _ExtentX        =   9763
       _ExtentY        =   1720
       _Version        =   393217
-      Enabled         =   -1  'True
       MaxLength       =   1000
       Appearance      =   0
       AutoVerbMenu    =   -1  'True
@@ -97,8 +96,8 @@ Begin VB.Form frmCobranza
       Left            =   120
       TabIndex        =   10
       Top             =   840
-      Width           =   4000
-      _ExtentX        =   7064
+      Width           =   5565
+      _ExtentX        =   9816
       _ExtentY        =   5530
       _Version        =   393216
       AllowUpdate     =   0   'False
@@ -171,14 +170,14 @@ Begin VB.Form frmCobranza
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Left            =   4240
+      Left            =   5805
       TabIndex        =   5
       Top             =   2520
       Width           =   1335
    End
    Begin MSComCtl2.DTPicker DTPFechaPago 
       Height          =   360
-      Left            =   4240
+      Left            =   5805
       TabIndex        =   4
       Top             =   1800
       Width           =   1335
@@ -194,7 +193,7 @@ Begin VB.Form frmCobranza
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   126746625
+      Format          =   164823041
       CurrentDate     =   41326
    End
    Begin VB.TextBox txtFechaVto 
@@ -210,7 +209,7 @@ Begin VB.Form frmCobranza
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Left            =   4240
+      Left            =   5805
       TabIndex        =   3
       Top             =   1080
       Width           =   1335
@@ -228,14 +227,14 @@ Begin VB.Form frmCobranza
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Left            =   4240
+      Left            =   5805
       TabIndex        =   2
       Top             =   360
       Width           =   1335
    End
    Begin isButtonTest.isButton cmdDExamen 
       Height          =   420
-      Left            =   4250
+      Left            =   5805
       TabIndex        =   14
       Top             =   4200
       Width           =   1335
@@ -264,7 +263,7 @@ Begin VB.Form frmCobranza
    End
    Begin isButtonTest.isButton cmdManuales 
       Height          =   420
-      Left            =   4250
+      Left            =   5805
       TabIndex        =   15
       Top             =   3600
       Width           =   1335
@@ -293,7 +292,7 @@ Begin VB.Form frmCobranza
    End
    Begin isButtonTest.isButton cmdCerrar 
       Height          =   420
-      Left            =   4250
+      Left            =   5805
       TabIndex        =   16
       Top             =   4800
       Width           =   1335
@@ -322,7 +321,7 @@ Begin VB.Form frmCobranza
    End
    Begin isButtonTest.isButton cmdPagar 
       Height          =   420
-      Left            =   4250
+      Left            =   5805
       TabIndex        =   17
       Top             =   3000
       Width           =   1335
@@ -382,7 +381,7 @@ Begin VB.Form frmCobranza
       Left            =   1080
       TabIndex        =   0
       Top             =   360
-      Width           =   3050
+      Width           =   4605
    End
    Begin VB.Label Label7 
       BackStyle       =   0  'Transparent
@@ -455,14 +454,14 @@ Begin VB.Form frmCobranza
       EndProperty
       ForeColor       =   &H8000000F&
       Height          =   255
-      Left            =   4240
+      Left            =   5805
       TabIndex        =   9
       Top             =   2280
       Width           =   1215
    End
    Begin VB.Label Label3 
       BackStyle       =   0  'Transparent
-      Caption         =   "Fecha de Pago"
+      Caption         =   "Fecha Pago"
       BeginProperty Font 
          Name            =   "Century Gothic"
          Size            =   9.75
@@ -474,10 +473,10 @@ Begin VB.Form frmCobranza
       EndProperty
       ForeColor       =   &H8000000F&
       Height          =   255
-      Left            =   4240
+      Left            =   5805
       TabIndex        =   8
       Top             =   1560
-      Width           =   1335
+      Width           =   1455
    End
    Begin VB.Label Label2 
       BackStyle       =   0  'Transparent
@@ -493,7 +492,7 @@ Begin VB.Form frmCobranza
       EndProperty
       ForeColor       =   &H8000000F&
       Height          =   195
-      Left            =   4240
+      Left            =   5805
       TabIndex        =   7
       Top             =   840
       Width           =   1095
@@ -512,7 +511,7 @@ Begin VB.Form frmCobranza
       EndProperty
       ForeColor       =   &H8000000F&
       Height          =   255
-      Left            =   4240
+      Left            =   5805
       TabIndex        =   6
       Top             =   120
       Width           =   1335
@@ -548,7 +547,7 @@ Private Sub Form_Load()
     PlanDePago
     Adodc.CursorLocation = adUseClient
     Adodc.ConnectionString = DbCon
-    Adodc.RecordSource = "SELECT id, codalumno AS [Codigo], nya AS [Alumno], nrocuota as [N°], fechavto as [Vto], fechapago As [Fecha Pago], tipodepago, recibo, deuda As Monto, recargoxfecha, recargoxmes, deudatotal, totalcobrado, cuotasdebidas, observaciones, campo1, campo2 FROM plandepago WHERE codalumno =" & frmBuscarCobranza.grilla.Columns(0).Text & " ORDER BY nrocuota"
+    Adodc.RecordSource = "SELECT codalumno AS [Cod], nya AS [Alumno], nrocuota as [N°], fechavto as [Vto], fechapago As [Pago], tipodepago As [Sit], recibo, deuda As [Monto], deudatotal AS [Deuda], totalcobrado AS [Cobrado], Observaciones, CuotasDebidas AS [P] FROM plandepago WHERE codalumno =" & frmBuscarCobranza.grilla.Columns(0).Text & " ORDER BY nrocuota"
     Adodc.Refresh
     Set grilla.DataSource = Adodc
     formatoGrilla
@@ -560,10 +559,10 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
 End Sub
 
 Private Sub grilla_Click()
-    txtNroCuota.Text = grilla.Columns(3).Text
-    txtFechaVto.Text = grilla.Columns(4).Text
-    txtObservaciones.Text = grilla.Columns(14).Text
-    txtAdeuda.Text = grilla.Columns(11).Text
+    txtNroCuota.Text = grilla.Columns(2).Text
+    txtFechaVto.Text = grilla.Columns(3).Text
+    txtObservaciones.Text = grilla.Columns(10).Text
+    txtAdeuda.Text = grilla.Columns(8).Text
     txtAdeuda.Text = Format(txtAdeuda.Text, "currency")
     If grilla.Columns(11).Text = 0 Then
         cmdPagar.Enabled = False
@@ -574,14 +573,14 @@ End Sub
 
 Sub formatoGrilla()
     Dim w As Integer
-    For N = 0 To 16 Step 1
-        If N = 4 Or N = 5 Then
-            w = 1200
-        ElseIf N = 8 Then
-            w = 800
+    For N = 0 To 11 Step 1
+        If N >= 7 And N <= 9 Then
+            w = 900
             grilla.Columns(N).NumberFormat = "$ #####"
         ElseIf N = 3 Then
-            w = 300
+            w = 1200
+        ElseIf N = 2 Or N = 5 Then
+            w = 450
         Else:
             w = 0
         End If

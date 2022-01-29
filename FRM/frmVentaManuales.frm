@@ -544,6 +544,7 @@ Sub cargarManuales()
         With cmbManual
             .AddItem ("Farmacia")
             .AddItem ("Primeros Auxilios")
+            .AddItem ("Covid")
             .AddItem ("Lazo")
         End With
         
@@ -552,6 +553,7 @@ Sub cargarManuales()
             .AddItem ("Extraccionista")
             .AddItem ("Guia Practica")
             .AddItem ("Primeros Auxilios")
+            .AddItem ("Covid")
             .AddItem ("Materiales 01")
             .AddItem ("Materiales 02")
             .AddItem ("Materiales 03")
@@ -562,13 +564,14 @@ Sub cargarManuales()
         With cmbManual
             .AddItem ("Cuidador Dom. I")
             .AddItem ("Cuidador Dom. II")
-            .AddItem ("Covid-19")
+            .AddItem ("Covid")
             .AddItem ("Lazo")
         End With
     
     ElseIf txtCurso.Text = "Emergencias Médicas" Then
         With cmbManual
             .AddItem ("Primeros Auxilios")
+            .AddItem ("Covid")
         End With
     End If
 End Sub

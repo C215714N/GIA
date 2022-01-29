@@ -28,7 +28,6 @@ Begin VB.Form frmAnalisisDeCuotas
       _ExtentX        =   12885
       _ExtentY        =   1931
       _Version        =   393217
-      Enabled         =   -1  'True
       MaxLength       =   1000
       Appearance      =   0
       AutoVerbMenu    =   -1  'True
