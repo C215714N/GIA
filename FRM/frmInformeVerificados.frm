@@ -236,7 +236,7 @@ Begin VB.Form frmInformeVerificados
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   126943233
+      Format          =   117243905
       CurrentDate     =   41345
    End
    Begin MSComCtl2.DTPicker dtpHasta 
@@ -257,7 +257,7 @@ Begin VB.Form frmInformeVerificados
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   126943233
+      Format          =   117243905
       CurrentDate     =   41345
    End
    Begin isButtonTest.isButton cmdBuscar 

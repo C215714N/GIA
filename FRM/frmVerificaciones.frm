@@ -46,6 +46,7 @@ Begin VB.Form frmVerificaciones
          _ExtentX        =   8281
          _ExtentY        =   2778
          _Version        =   393217
+         Enabled         =   -1  'True
          MaxLength       =   1000
          Appearance      =   0
          AutoVerbMenu    =   -1  'True
@@ -392,7 +393,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   129236993
+         Format          =   117112833
          CurrentDate     =   41308
       End
       Begin MSDataListLib.DataCombo dtcAsistente 
@@ -779,7 +780,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   128581633
+         Format          =   117243905
          CurrentDate     =   41308
       End
       Begin MSComCtl2.DTPicker DTPFechaVerificacion 
@@ -800,7 +801,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   128581633
+         Format          =   117243905
          CurrentDate     =   41308
       End
       Begin VB.Label Label17 
@@ -1299,11 +1300,11 @@ Private Sub cmdGrabar_Click()
        With rsInformeSuscripciones
             If .State = 1 Then .Close
             .Open "SELECT * FROM informesuscripciones WHERE curso='" & dtcCapacitacion.Text & "' AND asistente='" & dtcAsistente.Text & "' AND totalcurso=" & txtTotalCurso.Text & " AND verificado=0", Cn, adOpenDynamic, adLockPessimistic
-            If .BOF Or .EOF Then MsgBox "El Alumno fue verificado con Exito" & vbNewLine & vbNewLine & "Recuerde que para una Correcta Gestion Administrativa debera asignarle un plan de pago, incluso si la capacitacion estuviese Completamente Becada", vbOKOnly + vbInformation: GoSub continuar
             .MoveFirst
             !fechaV = DTPFechaVerificacion.Value
-            !verificado = 1
+            !Verificado = 1
             .UpdateBatch
+            If .BOF Or .EOF Then MsgBox "El Alumno fue verificado con Exito" & vbNewLine & vbNewLine & "Recuerde que para una Correcta Gestion Administrativa debera asignarle un plan de pago, incluso si la capacitacion estuviese Completamente Becada", vbOKOnly + vbInformation: GoSub continuar
             End With
     Else
         With rsVerificaciones
@@ -1412,7 +1413,6 @@ End Sub
 Private Sub dtcCapacitacion_KeyPress(keyAscii As Integer)
         Continue keyAscii
 End Sub
-
 Private Sub dtcLocalidad_KeyPress(keyAscii As Integer)
     If keyAscii = 13 Then
         txtNacionalidad.SetFocus

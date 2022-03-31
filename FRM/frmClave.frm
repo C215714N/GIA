@@ -36,7 +36,7 @@ Begin VB.Form frmClave
       _ExtentX        =   2778
       _ExtentY        =   661
       _Version        =   393216
-      Format          =   117178369
+      Format          =   136642561
       CurrentDate     =   42125
    End
    Begin MSComCtl2.DTPicker DTPFecha 
@@ -57,7 +57,7 @@ Begin VB.Form frmClave
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   117178369
+      Format          =   136708097
       CurrentDate     =   41327
    End
    Begin VB.TextBox txtClave 
@@ -393,7 +393,6 @@ Private Sub cmdIngresar_Click()
             MDI.mnuControlAlumnos.Visible = False
             MDI.mnuEmpleados.Visible = False
             MDI.subInformes.Visible = False
-            MDI.subCuotas.Visible = False
             MDI.subComisiones.Visible = False
             MDI.mnuLibro.Visible = False
             MDI.mnuConfig.Visible = False
