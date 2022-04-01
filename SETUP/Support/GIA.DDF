@@ -7,12 +7,12 @@
 .Set CompressionType=MSZIP
 .Set CompressionLevel=7
 .Set CompressionMemory=21
-.Set CabinetNameTemplate="GIA.CAB"
+.Set CabinetNameTemplate="gia-moron.CAB"
 "Setup.Lst"
 "setup.exe"
 .Set Cabinet=on
 .Set Compress=on
-"GIA.exe"
+"gia-moron.exe"
 "msvbvm60.dll"
 "oleaut32.dll"
 "olepro32.dll"
@@ -32,7 +32,6 @@
 "CMDLGES.DLL"
 "MSDBRPTR.DLL"
 "MSSTDFMT.DLL"
-"STDFTES.DLL"
 "DBRPRES.DLL"
 "MSWINSCK.OCX"
 "WINSKES.DLL"
@@ -63,6 +62,7 @@
 "ADODCES.DLL"
 "HookMenu.ocx"
 "MSCOMCTL.OCX"
+"MSCMCES.DLL"
 "COMCTL32.OCX"
 "CMCTLES.DLL"
 "MSCHRT20.OCX"
@@ -72,6 +72,16 @@
 "MSCAL.OCX"
 "ieinfo5.ocx"
 "isButton.ocx"
+"DAO350.DLL"
+"MSJET35.DLL"
+"MSJTER35.DLL"
+"MSJINT35.DLL"
+"vbajet32.dll"
+"expsrv.dll"
+"MSRD2X35.DLL"
+"MSREPL35.DLL"
+"MSVCRT40.DLL"
+"VB5DB.DLL"
 "MDAC_TYP.EXE"
 "SETUP1.EXE"
 "VB6STKIT.DLL"
