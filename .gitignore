@@ -1,4 +1,6 @@
+# Registro
+*.log
+Thumbs.db
+# Temporales
 *.temp
 *.tmp
-gia*.exe
-Thumbs.db
