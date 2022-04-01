@@ -221,14 +221,15 @@ Handler3=PDWizard.WebPostDplySubWiz
 
 [Package|CR Software|Root]
 SubWizProgID=PDWizard.SetupPkgSubWiz
-BuildFolder=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\Setup
+BuildFolder=e:\home\windows\Documents\IDE\Proyectos\VB6\GIA\SETUP
 
 [Package|CR Software|Configure DAO ISAMs]
-Applicable=No
+Applicable=Yes
+Jet 2.x=Yes
 
 [Package|CR Software|Configure DAO ODBC]
-JetWorkspace=
-ODBCDirect=
+JetWorkspace=Yes
+ODBCDirect=Yes
 
 [Package|CR Software|Files Found]
 
@@ -243,6 +244,11 @@ C:\Windows\System32\msscript.ocx=
 C:\Windows\System32\DTCRT.DLL=
 C:\Windows\System32\DTCSERV.DLL=
 C:\Program Files\Common Files\System\ado\msado28.tlb=
+C:\Windows\System32\isButton.ocx=
+C:\Windows\System32\ieinfo5.ocx=
+C:\Program Files\Microsoft Visual Studio\VIntDev98\bin\DTCRT.DLL=
+C:\Program Files\Microsoft Visual Studio\VIntDev98\bin\DTCSERV.DLL=
+C:\Windows\System32\MSSTDFMT.DLL=
 
 [Package|CR Software|Out-of-Date Dependency Information]
 C:\Windows\System32\MSCAL.OCX=
@@ -253,13 +259,13 @@ C:\Windows\System32\COMCT332.OCX=
 C:\Windows\System32\MSSTDFMT.DLL=
 C:\Windows\System32\comdlg32.ocx=
 C:\Windows\System32\MSRDO20.DLL=
+C:\Windows\System32\MSCOMCTL.OCX=
 
 [Package|CR Software|Files Added]
 
 [Package|CR Software|Files Removed]
 
 [Package|CR Software|Files In Project]
-C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\GIA.exe=Yes
 C:\Windows\System32\msvbvm60.dll=Yes
 C:\Windows\System32\oleaut32.dll=Yes
 C:\Windows\System32\olepro32.dll=Yes
@@ -279,11 +285,9 @@ C:\Windows\System32\comdlg32.ocx=Yes
 C:\Windows\System32\CMDLGES.DLL=Yes
 C:\Windows\System32\MSDBRPTR.DLL=Yes
 C:\Windows\System32\MSSTDFMT.DLL=Yes
-C:\Windows\System32\STDFTES.DLL=Yes
 C:\Windows\System32\DBRPRES.DLL=Yes
 C:\Windows\System32\MSWINSCK.OCX=Yes
 C:\Windows\System32\WINSKES.DLL=Yes
-C:\Windows\System32\DTCSERV.DLL=Yes
 C:\Windows\System32\COMCT232.OCX=Yes
 C:\Windows\System32\CMCT2ES.DLL=Yes
 C:\Windows\System32\COMCT332.OCX=Yes
@@ -295,7 +299,6 @@ C:\Windows\System32\DBLSTES.DLL=Yes
 C:\Windows\System32\MSDATREP.OCX=Yes
 C:\Windows\System32\MSBIND.DLL=Yes
 C:\Windows\System32\DATRPES.DLL=Yes
-C:\Windows\System32\DTCRT.DLL=Yes
 C:\Windows\System32\MSDATGRD.OCX=Yes
 C:\Windows\System32\DATGDES.DLL=Yes
 C:\Windows\System32\MSDATLST.OCX=Yes
@@ -309,7 +312,6 @@ C:\Windows\System32\MSCC2ES.DLL=Yes
 C:\Windows\System32\MSADODC.OCX=Yes
 C:\Windows\System32\ADODCES.DLL=Yes
 C:\Windows\System32\HookMenu.ocx=Yes
-C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA\MSCOMCTL.OCX=Yes
 C:\Windows\System32\COMCTL32.OCX=Yes
 C:\Windows\System32\CMCTLES.DLL=Yes
 C:\Windows\System32\MSCHRT20.OCX=Yes
@@ -317,13 +319,28 @@ C:\Windows\System32\MSCH2ES.DLL=Yes
 C:\Windows\System32\MSCOMM32.OCX=Yes
 C:\Windows\System32\MSCOMES.DLL=Yes
 C:\Windows\System32\MSCAL.OCX=Yes
-C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\MOD\ieinfo5.ocx=Yes
-C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\MOD\isButton.ocx=Yes
 C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
 C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
 C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
 C:\Windows\System32\VB6STKIT.DLL=Yes
 C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+E:\home\windows\Documents\IDE\Proyectos\VB6\GIA\gia-moron.exe=Yes
+C:\Program Files\Microsoft Visual Studio\VIntDev98\bin\DTCSERV.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VIntDev98\bin\DTCRT.DLL=Yes
+C:\Windows\System32\MSCOMCTL.OCX=Yes
+C:\Windows\System32\MSCMCES.DLL=Yes
+C:\Windows\System32\ieinfo5.ocx=Yes
+C:\Windows\System32\isButton.ocx=Yes
+C:\Program Files\Common Files\Microsoft Shared\DAO\DAO350.DLL=Yes
+C:\Windows\System32\MSJET35.DLL=Yes
+C:\Windows\System32\MSJTER35.DLL=Yes
+C:\Windows\System32\MSJINT35.DLL=Yes
+C:\Windows\System32\vbajet32.dll=Yes
+C:\Windows\System32\expsrv.dll=Yes
+C:\Windows\System32\MSRD2X35.DLL=Yes
+C:\Windows\System32\MSREPL35.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=Yes
+C:\Windows\System32\VB5DB.DLL=Yes
 
 [Package|CR Software|Configure Registry Files]
 Applicable=No
@@ -397,11 +414,29 @@ C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPa
 C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
 C:\Windows\System32\VB6STKIT.DLL=$(WinSysPathSysFile)
 C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+E:\home\windows\Documents\IDE\Proyectos\VB6\GIA\gia-moron.exe=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VIntDev98\bin\DTCSERV.DLL=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VIntDev98\bin\DTCRT.DLL=$(WinSysPath)
+C:\Windows\System32\MSCOMCTL.OCX=$(WinSysPath)
+C:\Windows\System32\MSCMCES.DLL=$(WinSysPath)
+C:\Windows\System32\ieinfo5.ocx=$(WinSysPath)
+C:\Windows\System32\isButton.ocx=$(WinSysPath)
+C:\Program Files\Common Files\Microsoft Shared\DAO\DAO350.DLL=$(MSDAOPath)
+C:\Windows\System32\MSJET35.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\MSJTER35.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\MSJINT35.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\vbajet32.dll=$(WinSysPathSysFile)
+C:\Windows\System32\expsrv.dll=$(WinSysPathSysFile)
+C:\Windows\System32\MSRD2X35.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\MSREPL35.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=$(WinSysPathSysFile)
+C:\Windows\System32\VB5DB.DLL=$(WinSysPath)
 
 [Package|CR Software|Configure Shared Files]
 Applicable=Yes
 C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\GIA.exe=Yes
 C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+E:\home\windows\Documents\IDE\Proyectos\VB6\GIA\gia-moron.exe=Yes
 
 [Package|CR Software|Distribution]
 Type=single
@@ -420,11 +455,11 @@ StartIn1=$(AppPath)
 Key1=Icon1
 
 [Package|CR Software|Package]
-PackageFolder=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\Setup
-ProjectFolder=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX
+PackageFolder=e:\home\windows\Documents\IDE\Proyectos\VB6\GIA\SETUP
+ProjectFolder=E:\home\windows\Documents\IDE\Proyectos\VB6\GIA
 ServerSideCab=
-File1=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\Setup\setup.exe
-File2=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\Setup\Setup.Lst
-File3=C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\Setup\GIA.CAB
+File1=e:\home\windows\Documents\IDE\Proyectos\VB6\GIA\SETUP\setup.exe
+File2=e:\home\windows\Documents\IDE\Proyectos\VB6\GIA\SETUP\Setup.Lst
+File3=e:\home\windows\Documents\IDE\Proyectos\VB6\GIA\SETUP\gia-moron.CAB
 Handler1=PDWizard.FolderDplySubWiz
 Handler2=PDWizard.WebPostDplySubWiz
