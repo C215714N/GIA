@@ -324,9 +324,6 @@ C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
 C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
 C:\Windows\System32\VB6STKIT.DLL=Yes
 C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
-E:\home\windows\Documents\IDE\Proyectos\VB6\GIA\gia-moron.exe=Yes
-C:\Program Files\Microsoft Visual Studio\VIntDev98\bin\DTCSERV.DLL=Yes
-C:\Program Files\Microsoft Visual Studio\VIntDev98\bin\DTCRT.DLL=Yes
 C:\Windows\System32\MSCOMCTL.OCX=Yes
 C:\Windows\System32\MSCMCES.DLL=Yes
 C:\Windows\System32\ieinfo5.ocx=Yes
@@ -341,6 +338,9 @@ C:\Windows\System32\MSRD2X35.DLL=Yes
 C:\Windows\System32\MSREPL35.DLL=Yes
 C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=Yes
 C:\Windows\System32\VB5DB.DLL=Yes
+E:\home\windows\Documents\IDE\Proyectos\VB6\GIA\SETUP\Versions\GIA.exe=Yes
+C:\Windows\System32\DTCSERV.DLL=Yes
+C:\Windows\System32\DTCRT.DLL=Yes
 
 [Package|CR Software|Configure Registry Files]
 Applicable=No
@@ -431,12 +431,14 @@ C:\Windows\System32\MSRD2X35.DLL=$(WinSysPathSysFile)
 C:\Windows\System32\MSREPL35.DLL=$(WinSysPathSysFile)
 C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=$(WinSysPathSysFile)
 C:\Windows\System32\VB5DB.DLL=$(WinSysPath)
+E:\home\windows\Documents\IDE\Proyectos\VB6\GIA\SETUP\Versions\GIA.exe=$(AppPath)
 
 [Package|CR Software|Configure Shared Files]
 Applicable=Yes
 C:\Users\Windows\Documents\IDE\Proyectos\VB6\GIA 20XX\GIA.exe=Yes
 C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
 E:\home\windows\Documents\IDE\Proyectos\VB6\GIA\gia-moron.exe=Yes
+E:\home\windows\Documents\IDE\Proyectos\VB6\GIA\SETUP\Versions\GIA.exe=Yes
 
 [Package|CR Software|Distribution]
 Type=single
@@ -460,6 +462,6 @@ ProjectFolder=E:\home\windows\Documents\IDE\Proyectos\VB6\GIA
 ServerSideCab=
 File1=e:\home\windows\Documents\IDE\Proyectos\VB6\GIA\SETUP\setup.exe
 File2=e:\home\windows\Documents\IDE\Proyectos\VB6\GIA\SETUP\Setup.Lst
-File3=e:\home\windows\Documents\IDE\Proyectos\VB6\GIA\SETUP\gia-moron.CAB
+File3=e:\home\windows\Documents\IDE\Proyectos\VB6\GIA\SETUP\GIA.CAB
 Handler1=PDWizard.FolderDplySubWiz
 Handler2=PDWizard.WebPostDplySubWiz
