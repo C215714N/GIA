@@ -46,7 +46,6 @@ Begin VB.Form frmVerificaciones
          _ExtentX        =   8281
          _ExtentY        =   2778
          _Version        =   393217
-         Enabled         =   -1  'True
          MaxLength       =   1000
          Appearance      =   0
          AutoVerbMenu    =   -1  'True
@@ -393,7 +392,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   117112833
+         Format          =   128188417
          CurrentDate     =   41308
       End
       Begin MSDataListLib.DataCombo dtcAsistente 
@@ -780,7 +779,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   117243905
+         Format          =   127991809
          CurrentDate     =   41308
       End
       Begin MSComCtl2.DTPicker DTPFechaVerificacion 
@@ -801,7 +800,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   117243905
+         Format          =   127991809
          CurrentDate     =   41308
       End
       Begin VB.Label Label17 
@@ -1224,7 +1223,6 @@ Private Sub cmdCerrar_Click()
 End Sub
 
 Private Sub cmdGrabar_Click()
-    On Error GoTo LineaError
     Dim codigo As Long
     
     If txtNya.Text = "" Then MsgBox "Debe ingresar un Nombre de Alumno", vbOKOnly + vbInformation, "Suscripciones": txtNya.SetFocus: Exit Sub
@@ -1300,11 +1298,11 @@ Private Sub cmdGrabar_Click()
        With rsInformeSuscripciones
             If .State = 1 Then .Close
             .Open "SELECT * FROM informesuscripciones WHERE curso='" & dtcCapacitacion.Text & "' AND asistente='" & dtcAsistente.Text & "' AND totalcurso=" & txtTotalCurso.Text & " AND verificado=0", Cn, adOpenDynamic, adLockPessimistic
+            If .BOF Or .EOF Then MsgBox "El Alumno fue verificado con Exito" & vbNewLine & vbNewLine & "Recuerde que para una Correcta Gestion Administrativa debera asignarle un plan de pago, incluso si la capacitacion estuviese Completamente Becada", vbOKOnly + vbInformation: GoSub continuar
             .MoveFirst
             !fechaV = DTPFechaVerificacion.Value
-            !Verificado = 1
+            !verificado = 1
             .UpdateBatch
-            If .BOF Or .EOF Then MsgBox "El Alumno fue verificado con Exito" & vbNewLine & vbNewLine & "Recuerde que para una Correcta Gestion Administrativa debera asignarle un plan de pago, incluso si la capacitacion estuviese Completamente Becada", vbOKOnly + vbInformation: GoSub continuar
             End With
     Else
         With rsVerificaciones
@@ -1408,10 +1406,10 @@ Private Sub cmdVerificar_Click()
     Modi = False
 End Sub
 Private Sub dtcAsistente_KeyPress(keyAscii As Integer)
-        Continue keyAscii
+        continue keyAscii
 End Sub
 Private Sub dtcCapacitacion_KeyPress(keyAscii As Integer)
-        Continue keyAscii
+        continue keyAscii
 End Sub
 Private Sub dtcLocalidad_KeyPress(keyAscii As Integer)
     If keyAscii = 13 Then
@@ -1542,66 +1540,66 @@ Sub Limpiar()
 End Sub
 
 Private Sub txtCP_KeyPress(keyAscii As Integer)
-        Continue keyAscii
+        continue keyAscii
 End Sub
 Private Sub txtDireccion_KeyPress(keyAscii As Integer)
-        Continue keyAscii
+        continue keyAscii
 End Sub
 Private Sub txtDocumento_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
     If keyAscii = 46 Then keyAscii = 0
 End Sub
 Private Sub txtEdad_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtGastoAdm_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtLocalidad_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtNacionalidad_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtNya_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtPT1_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtPT2_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtPT3_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtPT4_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtTel1_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtTel2_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtTel3_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtTel4_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtTotalCuotas_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtTotalCurso_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub chkExamenes_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub chkManuales_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub cmbTipoDoc_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub

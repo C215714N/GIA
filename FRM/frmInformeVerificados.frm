@@ -236,7 +236,7 @@ Begin VB.Form frmInformeVerificados
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   117243905
+      Format          =   272302081
       CurrentDate     =   41345
    End
    Begin MSComCtl2.DTPicker dtpHasta 
@@ -257,7 +257,7 @@ Begin VB.Form frmInformeVerificados
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   117243905
+      Format          =   272302081
       CurrentDate     =   41345
    End
    Begin isButtonTest.isButton cmdBuscar 
@@ -339,7 +339,6 @@ Attribute VB_Exposed = False
     Dim fecha2 As Date
 
 Private Sub cmdBuscar_Click()
-    
     fecha1 = dtpDesde.Value
     fecha2 = dtpHasta.Value
     fecha1 = Format(fecha1, "mm/dd/yyyy")

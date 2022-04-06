@@ -46,6 +46,7 @@ Begin VB.Form frmSuscripciones
          _ExtentX        =   8281
          _ExtentY        =   2778
          _Version        =   393217
+         Enabled         =   -1  'True
          MaxLength       =   1000
          Appearance      =   0
          AutoVerbMenu    =   -1  'True
@@ -436,7 +437,7 @@ Begin VB.Form frmSuscripciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   128385025
+         Format          =   107937793
          CurrentDate     =   41308
       End
       Begin VB.Label Label20 
@@ -909,7 +910,7 @@ Begin VB.Form frmSuscripciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   128385025
+         Format          =   107675649
          CurrentDate     =   41308
       End
       Begin MSDataListLib.DataCombo dtcAsistente 
@@ -1211,8 +1212,6 @@ Private Sub cmdCerrar_Click()
 End Sub
 
 Private Sub cmdGrabar_Click()
-    On Error GoTo LineaError
-    
     If txtNya.Text = "" Then MsgBox "Debe ingresar un Nombre de Alumno", vbOKOnly + vbInformation, "Suscripciones": txtNya.SetFocus: Exit Sub
     If cmbTipoDoc.Text = "" Then MsgBox "Debe ingresar un Tipo de Documento", vbOKOnly + vbInformation, "Suscripciones": cmbTipoDoc.SetFocus: Exit Sub
     If txtDocumento.Text = "" Then MsgBox "Debe ingresar un Numero de Documento", vbOKOnly + vbInformation, "Suscripciones": txtDocumento.SetFocus: Exit Sub
@@ -1522,81 +1521,81 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
     Unload Me
 End Sub
 Private Sub txtCP_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtDireccion_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtDocumento_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
     If keyAscii = 46 Then keyAscii = 0
 End Sub
 Private Sub txtGastoAdm_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtLocalidad_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtNacionalidad_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtNroFactura_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtNya_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtPT1_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtPT2_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtPT3_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtPT4_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtTel1_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtTel2_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtTel3_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtTel4_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtTotalCuotas_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtTotalCurso_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub txtTotalMatricula_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub chkExamenes_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub chkManuales_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub cmbTipoDoc_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
     keyAscii = 0
 End Sub
 Private Sub cmbTipoPago_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub dtcAsistente_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub dtcCapacitacion_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub dtpFechaSuscripcion_KeyPress(keyAscii As Integer)
     If KeyPress = 13 Then cmbTipoPago.SetFocus
