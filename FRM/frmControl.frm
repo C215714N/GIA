@@ -4,18 +4,18 @@ Begin VB.Form frmControl
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Control"
-   ClientHeight    =   3555
+   ClientHeight    =   2790
    ClientLeft      =   5160
    ClientTop       =   3645
-   ClientWidth     =   5550
+   ClientWidth     =   6885
    ForeColor       =   &H00E0E0E0&
    Icon            =   "frmControl.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   3555
-   ScaleWidth      =   5550
+   ScaleHeight     =   2790
+   ScaleWidth      =   6885
    Begin VB.Frame Frame1 
       BackColor       =   &H00662200&
       Caption         =   "Control"
@@ -29,28 +29,105 @@ Begin VB.Form frmControl
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H8000000F&
-      Height          =   3375
+      Height          =   2655
       Left            =   120
       TabIndex        =   6
       Top             =   0
-      Width           =   3855
-      Begin VB.TextBox txtDerechoExamen 
-         Alignment       =   1  'Right Justify
+      Width           =   5175
+      Begin VB.Frame Frame3 
+         BackColor       =   &H00662200&
+         Caption         =   "Examenes"
          BeginProperty Font 
             Name            =   "Century Gothic"
             Size            =   9.75
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   360
-         Left            =   1320
-         Locked          =   -1  'True
-         TabIndex        =   18
-         Top             =   1320
-         Width           =   1095
+         ForeColor       =   &H8000000F&
+         Height          =   1815
+         Left            =   3840
+         TabIndex        =   22
+         Top             =   0
+         Width           =   1335
+         Begin VB.TextBox txtExamenFinal 
+            Alignment       =   1  'Right Justify
+            BeginProperty Font 
+               Name            =   "Century Gothic"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   360
+            Left            =   120
+            Locked          =   -1  'True
+            TabIndex        =   24
+            Top             =   1320
+            Width           =   1095
+         End
+         Begin VB.TextBox txtDerechoExamen 
+            Alignment       =   1  'Right Justify
+            BeginProperty Font 
+               Name            =   "Century Gothic"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   360
+            Left            =   120
+            Locked          =   -1  'True
+            TabIndex        =   23
+            Top             =   600
+            Width           =   1095
+         End
+         Begin VB.Label Label10 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Derecho"
+            BeginProperty Font 
+               Name            =   "Century Gothic"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H8000000F&
+            Height          =   255
+            Left            =   120
+            TabIndex        =   26
+            Top             =   360
+            Width           =   930
+         End
+         Begin VB.Label Label9 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Final"
+            BeginProperty Font 
+               Name            =   "Century Gothic"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H8000000F&
+            Height          =   255
+            Left            =   120
+            TabIndex        =   25
+            Top             =   1080
+            Width           =   510
+         End
       End
       Begin VB.Frame Frame2 
          BackColor       =   &H00662200&
@@ -159,10 +236,10 @@ Begin VB.Form frmControl
             Strikethrough   =   0   'False
          EndProperty
          Height          =   360
-         Left            =   120
+         Left            =   1320
          Locked          =   -1  'True
          TabIndex        =   5
-         Top             =   1320
+         Top             =   600
          Width           =   1095
       End
       Begin VB.TextBox txtSucursal 
@@ -176,11 +253,11 @@ Begin VB.Form frmControl
             Strikethrough   =   0   'False
          EndProperty
          Height          =   360
-         Left            =   120
+         Left            =   2640
          Locked          =   -1  'True
          TabIndex        =   4
-         Top             =   2760
-         Width           =   2295
+         Top             =   2160
+         Width           =   2415
       End
       Begin VB.TextBox txtEmpresa 
          BeginProperty Font 
@@ -196,8 +273,8 @@ Begin VB.Form frmControl
          Left            =   120
          Locked          =   -1  'True
          TabIndex        =   3
-         Top             =   2040
-         Width           =   3615
+         Top             =   2160
+         Width           =   2415
       End
       Begin VB.TextBox txtUltimaFecha 
          Alignment       =   2  'Center
@@ -211,10 +288,10 @@ Begin VB.Form frmControl
             Strikethrough   =   0   'False
          EndProperty
          Height          =   360
-         Left            =   1320
+         Left            =   120
          Locked          =   -1  'True
          TabIndex        =   1
-         Top             =   600
+         Top             =   1320
          Width           =   1095
       End
       Begin VB.TextBox txtNroAsiento 
@@ -229,10 +306,10 @@ Begin VB.Form frmControl
             Strikethrough   =   0   'False
          EndProperty
          Height          =   360
-         Left            =   2640
+         Left            =   1320
          Locked          =   -1  'True
          TabIndex        =   2
-         Top             =   2760
+         Top             =   1320
          Width           =   1095
       End
       Begin VB.TextBox txtCodAlumno 
@@ -253,26 +330,6 @@ Begin VB.Form frmControl
          Top             =   600
          Width           =   1095
       End
-      Begin VB.Label Label10 
-         AutoSize        =   -1  'True
-         BackStyle       =   0  'Transparent
-         Caption         =   "Der.Examen"
-         BeginProperty Font 
-            Name            =   "Century Gothic"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H8000000F&
-         Height          =   225
-         Left            =   1320
-         TabIndex        =   19
-         Top             =   1080
-         Width           =   960
-      End
       Begin VB.Label Label8 
          BackStyle       =   0  'Transparent
          Caption         =   "Matricula"
@@ -287,9 +344,9 @@ Begin VB.Form frmControl
          EndProperty
          ForeColor       =   &H8000000F&
          Height          =   255
-         Left            =   120
+         Left            =   1320
          TabIndex        =   12
-         Top             =   1080
+         Top             =   360
          Width           =   1200
       End
       Begin VB.Label Label7 
@@ -306,9 +363,9 @@ Begin VB.Form frmControl
          EndProperty
          ForeColor       =   &H8000000F&
          Height          =   195
-         Left            =   120
+         Left            =   2640
          TabIndex        =   11
-         Top             =   2520
+         Top             =   1920
          Width           =   960
       End
       Begin VB.Label Label6 
@@ -327,8 +384,8 @@ Begin VB.Form frmControl
          Height          =   195
          Left            =   120
          TabIndex        =   10
-         Top             =   1800
-         Width           =   720
+         Top             =   1920
+         Width           =   960
       End
       Begin VB.Label Label5 
          BackStyle       =   0  'Transparent
@@ -344,9 +401,9 @@ Begin VB.Form frmControl
          EndProperty
          ForeColor       =   &H8000000F&
          Height          =   195
-         Left            =   2640
+         Left            =   1320
          TabIndex        =   9
-         Top             =   2520
+         Top             =   1080
          Width           =   1080
       End
       Begin VB.Label Label4 
@@ -364,10 +421,10 @@ Begin VB.Form frmControl
          EndProperty
          ForeColor       =   &H8000000F&
          Height          =   240
-         Left            =   1320
+         Left            =   120
          TabIndex        =   8
-         Top             =   360
-         Width           =   1005
+         Top             =   1080
+         Width           =   1125
       End
       Begin VB.Label Label1 
          BackStyle       =   0  'Transparent
@@ -391,9 +448,9 @@ Begin VB.Form frmControl
    End
    Begin isButtonTest.isButton cmdGrabar 
       Height          =   420
-      Left            =   4080
-      TabIndex        =   20
-      Top             =   1200
+      Left            =   5400
+      TabIndex        =   18
+      Top             =   1560
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
@@ -420,9 +477,9 @@ Begin VB.Form frmControl
    End
    Begin isButtonTest.isButton cmdCancelar 
       Height          =   420
-      Left            =   4080
-      TabIndex        =   21
-      Top             =   1800
+      Left            =   5400
+      TabIndex        =   19
+      Top             =   960
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
@@ -449,9 +506,9 @@ Begin VB.Form frmControl
    End
    Begin isButtonTest.isButton cmdModificar 
       Height          =   420
-      Left            =   4080
-      TabIndex        =   22
-      Top             =   600
+      Left            =   5400
+      TabIndex        =   20
+      Top             =   360
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
@@ -480,9 +537,9 @@ Begin VB.Form frmControl
    End
    Begin isButtonTest.isButton cmdCerrar 
       Height          =   420
-      Left            =   4080
-      TabIndex        =   23
-      Top             =   2400
+      Left            =   5400
+      TabIndex        =   21
+      Top             =   2160
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
@@ -543,6 +600,7 @@ Private Sub cmdGrabar_Click()
         !sucursal = txtSucursal.Text
         !matricula = Int(txtMatricula.Text)
         !derechoExamen = txtDerechoExamen.Text
+        !examenFinal = txtExamenFinal.Text
         .UpdateBatch
         
         ''' actualiza barra de titulo del mdi
@@ -624,6 +682,7 @@ Private Sub Form_Load()
         txtSucursal.Text = !sucursal
         txtMatricula.Text = !matricula
         txtDerechoExamen.Text = !derechoExamen
+        txtExamenFinal.Text = !examenFinal
     End With
 End Sub
 
@@ -644,5 +703,5 @@ Sub HabilitarCuadros(estado1 As Boolean)
     txtSucursal.Locked = estado1
     txtMatricula.Locked = estado1
     txtDerechoExamen.Locked = estado1
+    txtExamenFinal.Locked = estado1
 End Sub
-

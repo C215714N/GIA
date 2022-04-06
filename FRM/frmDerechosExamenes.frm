@@ -178,7 +178,7 @@ Begin VB.Form frmDerechosExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   170786817
+         Format          =   164036609
          CurrentDate     =   41978
       End
       Begin isButtonTest.isButton cmdAgregar 
@@ -572,6 +572,11 @@ Private Sub txtRecibo_KeyPress(keyAscii As Integer)
 End Sub
 
 Private Sub cmbModulo_KeyPress(keyAscii As Integer)
+    If cmbModulo.Text = "Final" Then
+        txtPrecio.Text = Format(rsControl!examenFinal, "currency")
+    Else:
+        txtPrecio.Text = Format(rsControl!derechoExamen, "currency")
+    End If
     Continue keyAscii
 End Sub
 

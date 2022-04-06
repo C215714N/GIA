@@ -1,5 +1,6 @@
 # Registro
 *.log
+*.ldb
 Thumbs.db
 # Temporales
 *.temp
