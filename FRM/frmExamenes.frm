@@ -54,7 +54,7 @@ Begin VB.Form frmExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   170721281
+         Format          =   127926273
          CurrentDate     =   41978
       End
       Begin VB.TextBox txtPromedio 
@@ -551,7 +551,7 @@ LineaError: ErrCode Err
 End Sub
 
 Private Sub txtTeorico_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 
 Private Sub txtPractico_KeyPress(keyAscii As Integer)
@@ -562,7 +562,7 @@ Private Sub txtPractico_KeyPress(keyAscii As Integer)
 End Sub
 
 Private Sub txtPromedio_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
@@ -632,7 +632,7 @@ Private Sub CargarModulos()
             .AddItem ("Examen Final")
         End With
         
-    ElseIf txtCurso.Text = "Cuidador Domiciliario" Or txtCurso.Text = "Asistente Terapeutico" Or txtCurso.Text = "Auxiliar de Farmacia" Or txtCurso.Text = "Emergencias Médicas" Or txtCurso.Text = "Extracc. Adm. Y Asist. Tec. Laborat." Then
+    ElseIf txtCurso.Text = "Cuidador Domiciliario" Or txtCurso.Text = "Asistente Terapeutico" Or txtCurso.Text = "Auxiliar de Farmacia" Or txtCurso.Text = "Emergencias Médicas" Or txtCurso.Text = "Emergencias Medicas Sanitarias" Or txtCurso.Text = "Extracc. Adm. Y Asist. Tec. Laborat." Or txtCurso.Text = "Mandatario Automotor" Then
         With cmbModulo
             .Clear
             .AddItem ("Parcial I")

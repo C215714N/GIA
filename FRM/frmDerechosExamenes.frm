@@ -178,7 +178,7 @@ Begin VB.Form frmDerechosExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   164036609
+         Format          =   126877697
          CurrentDate     =   41978
       End
       Begin isButtonTest.isButton cmdAgregar 
@@ -568,20 +568,24 @@ LineaError: ErrCode Err
 End Sub
 
 Private Sub txtRecibo_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 
 Private Sub cmbModulo_KeyPress(keyAscii As Integer)
-    If cmbModulo.Text = "Final" Then
-        txtPrecio.Text = Format(rsControl!examenFinal, "currency")
-    Else:
-        txtPrecio.Text = Format(rsControl!derechoExamen, "currency")
-    End If
-    Continue keyAscii
+    With txtPrecio
+        If cmbModulo.Text = "Final" Then
+            .Text = Format(rsControl!examenFinal, "currency")
+        ElseIf cmbModulo.Text = "Modulo Final" Then
+            .Text = Format(rsControl!moduloFinal, "currency")
+        Else:
+            .Text = Format(rsControl!derechoExamen, "currency")
+        End If
+    End With
+    continue keyAscii
 End Sub
 
 Private Sub cmbPago_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 
 Private Sub cmdexamenes_Click()
@@ -653,13 +657,22 @@ Private Sub CargarModulos()
             .AddItem ("Examen Final")
         End With
         
-    ElseIf txtCurso.Text = "Cuidador Domiciliario" Or txtCurso.Text = "Asistente Terapeutico" Or txtCurso.Text = "Auxiliar de Farmacia" Or txtCurso.Text = "Emergencias Médicas" Or txtCurso.Text = "Extracc. Adm. Y Asist. Tec. Laborat." Then
+    ElseIf txtCurso.Text = "Cuidador Domiciliario" Or txtCurso.Text = "Asistente Terapeutico" Or txtCurso.Text = "Auxiliar de Farmacia" Or txtCurso.Text = "Emergencias Médicas" Or txtCurso.Text = "Emergencias Medicas Sanitarias" Or txtCurso.Text = "Extracc. Adm. Y Asist. Tec. Laborat." Then
         With cmbModulo
             .Clear
             .AddItem ("Parcial I")
             .AddItem ("Parcial II")
             .AddItem ("Parcial III")
             .AddItem ("Final")
+        End With
+    
+    ElseIf txtCurso.Text = "Mandatario Automotor" Then
+        With cmbModulo
+            .Clear
+            .AddItem ("Parcial I")
+            .AddItem ("Parcial II")
+            .AddItem ("Parcial III")
+            .AddItem ("Modulo Final")
         End With
     End If
 End Sub
