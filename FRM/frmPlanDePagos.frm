@@ -19,9 +19,8 @@ Begin VB.Form frmPlanDePagos
    ScaleHeight     =   5129.738
    ScaleMode       =   0  'User
    ScaleWidth      =   4485
-   Begin VB.TextBox txtCuotaDos 
+   Begin VB.TextBox txtNroCuota 
       Alignment       =   1  'Right Justify
-      Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Century Gothic"
          Size            =   9.75
@@ -33,15 +32,33 @@ Begin VB.Form frmPlanDePagos
       EndProperty
       Height          =   360
       Left            =   120
-      TabIndex        =   12
-      Text            =   "2"
+      TabIndex        =   14
+      Text            =   "0"
+      Top             =   840
+      Width           =   855
+   End
+   Begin VB.TextBox txtCuotaDos 
+      Alignment       =   1  'Right Justify
+      BeginProperty Font 
+         Name            =   "Century Gothic"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   360
+      Left            =   120
+      TabIndex        =   11
+      Text            =   "1"
       Top             =   1275
       Width           =   855
    End
    Begin MSFlexGridLib.MSFlexGrid grilla 
       Height          =   2655
       Left            =   120
-      TabIndex        =   10
+      TabIndex        =   9
       Top             =   1800
       Width           =   4250
       _ExtentX        =   7488
@@ -72,7 +89,7 @@ Begin VB.Form frmPlanDePagos
       EndProperty
       Height          =   360
       Left            =   3480
-      TabIndex        =   3
+      TabIndex        =   2
       Top             =   840
       Width           =   855
    End
@@ -89,14 +106,14 @@ Begin VB.Form frmPlanDePagos
       EndProperty
       Height          =   360
       Left            =   2520
-      TabIndex        =   2
+      TabIndex        =   1
       Top             =   840
       Width           =   855
    End
    Begin MSComCtl2.DTPicker DTPFechaVto 
       Height          =   360
       Left            =   1080
-      TabIndex        =   1
+      TabIndex        =   0
       Top             =   840
       Width           =   1335
       _ExtentX        =   2355
@@ -111,31 +128,13 @@ Begin VB.Form frmPlanDePagos
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   117702657
+      Format          =   111476737
       CurrentDate     =   41323
-   End
-   Begin VB.TextBox txtNroCuota 
-      Alignment       =   1  'Right Justify
-      BeginProperty Font 
-         Name            =   "Century Gothic"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   360
-      Left            =   120
-      TabIndex        =   0
-      Text            =   "1"
-      Top             =   840
-      Width           =   855
    End
    Begin MSComCtl2.DTPicker dtpVtoDos 
       Height          =   360
       Left            =   1080
-      TabIndex        =   11
+      TabIndex        =   10
       Top             =   1275
       Width           =   1335
       _ExtentX        =   2355
@@ -150,13 +149,13 @@ Begin VB.Form frmPlanDePagos
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   117702657
+      Format          =   131137537
       CurrentDate     =   41323
    End
    Begin isButtonTest.isButton cmdCrearPlan 
       Height          =   420
       Left            =   1560
-      TabIndex        =   13
+      TabIndex        =   12
       Top             =   4560
       Width           =   1335
       _ExtentX        =   2355
@@ -187,7 +186,7 @@ Begin VB.Form frmPlanDePagos
    Begin isButtonTest.isButton cmdSalir 
       Height          =   420
       Left            =   3000
-      TabIndex        =   14
+      TabIndex        =   13
       Top             =   4560
       Width           =   1335
       _ExtentX        =   2355
@@ -231,7 +230,7 @@ Begin VB.Form frmPlanDePagos
       ForeColor       =   &H8000000F&
       Height          =   240
       Left            =   3480
-      TabIndex        =   9
+      TabIndex        =   8
       Top             =   600
       Width           =   615
    End
@@ -248,7 +247,7 @@ Begin VB.Form frmPlanDePagos
       EndProperty
       Height          =   360
       Left            =   1080
-      TabIndex        =   8
+      TabIndex        =   7
       Top             =   150
       Width           =   3255
    End
@@ -266,7 +265,7 @@ Begin VB.Form frmPlanDePagos
       EndProperty
       Height          =   360
       Left            =   120
-      TabIndex        =   7
+      TabIndex        =   6
       Top             =   150
       Width           =   855
    End
@@ -286,7 +285,7 @@ Begin VB.Form frmPlanDePagos
       ForeColor       =   &H8000000F&
       Height          =   240
       Left            =   2520
-      TabIndex        =   6
+      TabIndex        =   5
       Top             =   600
       Width           =   720
    End
@@ -305,7 +304,7 @@ Begin VB.Form frmPlanDePagos
       ForeColor       =   &H8000000F&
       Height          =   255
       Left            =   1080
-      TabIndex        =   5
+      TabIndex        =   4
       Top             =   600
       Width           =   1335
    End
@@ -325,7 +324,7 @@ Begin VB.Form frmPlanDePagos
       ForeColor       =   &H8000000F&
       Height          =   255
       Left            =   120
-      TabIndex        =   4
+      TabIndex        =   3
       Top             =   600
       Width           =   630
    End
@@ -337,7 +336,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cmdCrearPlan_Click()
     Dim NroCuota As Integer
-    NroCuota = 1
+    NroCuota = txtNroCuota.Text
     grilla.Rows = 2
     grilla.Col = 0
     grilla.Row = 0
@@ -355,9 +354,9 @@ Private Sub cmdCrearPlan_Click()
             .Requery
             .AddNew
             !CodAlumno = lblCodAlumno.Caption
-            !NyA = lblNyA.Caption
+            !NyA = lblNya.Caption
             !NroCuota = NroCuota
-            If NroCuota = 1 Then
+            If NroCuota = txtNroCuota.Text Then
                 !fechavto = DTPFechaVto.Value
             Else
                 !fechavto = dtpVtoDos.Value
@@ -374,7 +373,7 @@ Private Sub cmdCrearPlan_Click()
             .Update
             grilla.Text = NroCuota
             grilla.Col = 1
-            If NroCuota = 1 Then
+            If NroCuota = txtNroCuota.Text Then
                 grilla.Text = DTPFechaVto.Value
             Else
                 grilla.Text = dtpVtoDos.Value
@@ -385,7 +384,7 @@ Private Sub cmdCrearPlan_Click()
             grilla.Col = 0
             grilla.Row = grilla.Row + 1
             NroCuota = NroCuota + 1
-            If NroCuota > 2 Then
+            If NroCuota > txtCuotaDos.Text Then
                 If dtpVtoDos.Month = 12 Then
                     dtpVtoDos.Month = 1
                     dtpVtoDos.Year = dtpVtoDos.Year + 1
@@ -428,11 +427,9 @@ Private Sub Form_Load()
     Centrar Me
     PlanDePago
     lblCodAlumno.Caption = frmVerificaciones.lblCodAlumno.Caption
-    lblNyA.Caption = frmVerificaciones.txtNya.Text
+    lblNya.Caption = frmVerificaciones.txtNya.Text
     txtTotalCuotas.Text = frmVerificaciones.txtTotalCuotas.Text
-    txtNroCuota.Locked = True
     txtDeuda.Text = Val(frmVerificaciones.txtTotalCurso.Text) / Val(txtTotalCuotas.Text)
-    txtDeuda.Locked = True
     DTPFechaVto.Value = Date
     dtpVtoDos.Value = Date
     cmdCrearPlan.Enabled = True
