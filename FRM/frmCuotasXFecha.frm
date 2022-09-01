@@ -160,7 +160,7 @@ Begin VB.Form frmCuotasXFecha
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   165150721
+      Format          =   104071169
       CurrentDate     =   41345
    End
    Begin MSComCtl2.DTPicker dtpHasta 
@@ -181,7 +181,7 @@ Begin VB.Form frmCuotasXFecha
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   165216257
+      Format          =   104071169
       CurrentDate     =   41345
    End
    Begin isButtonTest.isButton cmdBuscar 
@@ -571,13 +571,13 @@ If DateDiff("m", Date, dtpDesde.Value) = 1 And DateDiff("m", Date, dtpHasta.Valu
 Else
     With rsCuotasXFecha
         If .State = 1 Then .Close
-        .Open "SELECT sum(m.deuda) FROM plandepago as p,marcas as m WHERE fechavto BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# AND nrocuota>1 AND p.codalumno=m.codalumno AND cantidadcuotas=1", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT sum(m.deuda) FROM plandepago as p,marcas as m WHERE fechavto BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# AND nrocuota>=1 AND p.codalumno=m.codalumno AND cantidadcuotas=1", Cn, adOpenDynamic, adLockPessimistic
         lblDeudaTotal.Caption = Format(!expr1000, "currency")
     End With
     
     With rsCuotasXFecha
         If .State = 1 Then .Close
-        .Open "SELECT sum(deudatotal) FROM plandepago as p,marcas as m WHERE fechavto BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# AND nrocuota>1 AND p.codalumno=m.codalumno AND cuotasdebidas=1 AND cantidadcuotas=1", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT sum(deudatotal) FROM plandepago as p,marcas as m WHERE fechavto BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# AND nrocuota>=1 AND p.codalumno=m.codalumno AND cuotasdebidas=1 AND cantidadcuotas=1", Cn, adOpenDynamic, adLockPessimistic
         lblResta.Caption = Format(!expr1000, "currency")
     End With
     With rsCuotasXFecha
