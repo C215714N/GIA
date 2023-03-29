@@ -128,7 +128,7 @@ Begin VB.Form frmPlanDePagos
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   111476737
+      Format          =   131203073
       CurrentDate     =   41323
    End
    Begin MSComCtl2.DTPicker dtpVtoDos 
@@ -335,26 +335,13 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cmdCrearPlan_Click()
-    Dim NroCuota As Integer
-    NroCuota = txtNroCuota.Text
-    grilla.Rows = 2
-    grilla.Col = 0
-    grilla.Row = 0
-    grilla.Text = "N° Cuota"
-    grilla.Col = 1
-    grilla.Text = "Fecha Vto"
-    grilla.Col = 2
-    grilla.Text = "Deuda"
-    grilla.Col = 0
-    grilla.Row = 1
-    grilla.ColWidth(1) = 2000
-    
+    tabla
     With rsPlanDePago
         Do Until NroCuota > Int(txtTotalCuotas.Text)
             .Requery
             .AddNew
             !CodAlumno = lblCodAlumno.Caption
-            !NyA = lblNya.Caption
+            !NyA = lblNyA.Caption
             !NroCuota = NroCuota
             If NroCuota = txtNroCuota.Text Then
                 !fechavto = DTPFechaVto.Value
@@ -427,7 +414,7 @@ Private Sub Form_Load()
     Centrar Me
     PlanDePago
     lblCodAlumno.Caption = frmVerificaciones.lblCodAlumno.Caption
-    lblNya.Caption = frmVerificaciones.txtNya.Text
+    lblNyA.Caption = frmVerificaciones.txtNya.Text
     txtTotalCuotas.Text = frmVerificaciones.txtTotalCuotas.Text
     txtDeuda.Text = Val(frmVerificaciones.txtTotalCurso.Text) / Val(txtTotalCuotas.Text)
     DTPFechaVto.Value = Date
@@ -439,4 +426,24 @@ End Sub
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
     frmVerificaciones.Enabled = True
     Unload Me
+End Sub
+
+Sub tabla()
+    Dim NroCuota As Integer
+    NroCuota = txtNroCuota.Text
+    grilla.Rows = 2
+    grilla.Col = 0
+    grilla.Row = 0
+    grilla.Text = "N° Cuota"
+    grilla.Col = 1
+    grilla.Text = "Fecha Vto"
+    grilla.Col = 2
+    grilla.Text = "Deuda"
+    grilla.Col = 0
+    grilla.Row = 1
+    grilla.ColWidth(1) = 2000
+End Sub
+
+Public Sub revisar()
+    If DTPFechaVto.Value < dtpVtoDos.Value Then MsgBox ("la cuota siguiente no puede ser menor al primer vencimiento")
 End Sub
