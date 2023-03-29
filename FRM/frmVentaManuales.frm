@@ -362,7 +362,7 @@ End If
 End Sub
 
 Private Sub cmbPago_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 
 Private Sub cmdVender_Click()
@@ -408,46 +408,42 @@ Private Sub cmdVender_Click()
         End If
     End With
     
-    If MsgBox("¿Abona el total del precio?", vbYesNo + vbQuestion, "Venta de Manuales") = vbYes Then
-        With rsContabilidad
-            If .State = 1 Then .Close
-            .Open "SELECT * FROM contabilidad", Cn, adOpenDynamic, adLockPessimistic
-            .Requery
-            .AddNew
-            !fecha = Date
-            !asiento = Null
-            !NroCuota = Null
-            !CodAlumno = Null
-            !Detalle = txtAlumno.Text & " - " & cmbManual.Text
-            !nrofactura = txtRecibo.Text
-            !Haber = CSng(txtPrecio.Text)
-            !Debe = Null
-            !Cuenta = Cuenta
-            .Update
-            .Requery
-            .AddNew
-            !fecha = Date
-            
-            If cmbPago.Text = "Efectivo" Then
-                !Cuenta = "CAJA ADMINISTRACION"
-            ElseIf cmbPago.Text = "Descuento" Then
-                !Cuenta = "Descuento"
-            Else
-                !Cuenta = "DEBITO TARJETA CREDITO"
-            End If
-            
-            !Detalle = txtAlumno.Text & " - Manual de " & cmbManual.Text
-            !nrofactura = txtRecibo.Text
-            !Debe = CSng(txtPrecio.Text)
-            !asiento = Null
-            !NroCuota = Null
-            !CodAlumno = Null
-            !Haber = Null
-            .Update
-        End With
-    Else
-        MsgBox "Recuerde realizar el asiento contable correspondiente a esta operacion", vbExclamation, "Venta de Manuales"
-    End If
+    With rsContabilidad
+        If .State = 1 Then .Close
+        .Open "SELECT * FROM contabilidad", Cn, adOpenDynamic, adLockPessimistic
+        .Requery
+        .AddNew
+        !fecha = Date
+        !asiento = Null
+        !NroCuota = Null
+        !CodAlumno = Null
+        !Detalle = txtAlumno.Text & " - " & cmbManual.Text
+        !nrofactura = txtRecibo.Text
+        !Haber = CSng(txtPrecio.Text)
+        !Debe = Null
+        !Cuenta = Cuenta
+        .Update
+        .Requery
+        .AddNew
+        !fecha = Date
+        
+        If cmbPago.Text = "Efectivo" Then
+            !Cuenta = "CAJA ADMINISTRACION"
+        ElseIf cmbPago.Text = "Descuento" Then
+            !Cuenta = "Descuento"
+        Else
+            !Cuenta = "DEBITO TARJETA CREDITO"
+        End If
+        
+        !Detalle = txtAlumno.Text & " - Manual de " & cmbManual.Text
+        !nrofactura = txtRecibo.Text
+        !Debe = CSng(txtPrecio.Text)
+        !asiento = Null
+        !NroCuota = Null
+        !CodAlumno = Null
+        !Haber = Null
+        .Update
+    End With
     
 '''REESTABLECE LOS VALORES
     txtStock.Text = ""
@@ -533,6 +529,7 @@ Sub cargarManuales()
     ElseIf txtCurso.Text = "Técnico en aire acondicionado" Then
         With cmbManual
             .AddItem ("Aire Acondicionado")
+            .AddItem ("Refrigeracion")
         End With
     
     ElseIf txtCurso.Text = "Electricidad domiciliaria" Then
@@ -572,6 +569,13 @@ Sub cargarManuales()
         With cmbManual
             .AddItem ("Primeros Auxilios")
             .AddItem ("Covid")
+        End With
+    Else
+        With cmbManual
+            .AddItem ("Manual I")
+            .AddItem ("Manual II")
+            .AddItem ("Manual III")
+            .AddItem ("Manual IV")
         End With
     End If
 End Sub
