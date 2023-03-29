@@ -412,9 +412,9 @@ Attribute VB_Exposed = False
 Private Sub Form_Load()
     Centrar Me
     ContabilidadTemp
-    txtResta.text = frmCobranza.txtAdeuda.text
-    txtNroFactura.text = ""
-    txtMonto.text = ""
+    txtResta.Text = frmCobranza.txtAdeuda.Text
+    txtNroFactura.Text = ""
+    txtMonto.Text = ""
     Adodc.CursorLocation = adUseClient
     Adodc.ConnectionString = DbCon
     Adodc.RecordSource = "SELECT * FROM contabilidadtemp"
@@ -432,14 +432,15 @@ End Sub
 
 Private Sub cmdCobrar_Click()
     On Error GoTo continuar
+        revision
         Cobranza
     With rsCobranza
-        .Find "nrocuota=" & Int(frmCobranza.txtNroCuota.text)
-        !DeudaTotal = Val(txtResta.text)
-        !totalcobrado = !totalcobrado + Val(txtTotalPago.text)
+        .Find "nrocuota=" & Int(frmCobranza.txtNroCuota.Text)
+        !DeudaTotal = Val(txtResta.Text)
+        !totalcobrado = !totalcobrado + Val(txtTotalPago.Text)
         !fechapago = Date
-        !recibo = txtNroFactura.text
-        If Val(txtResta.text) = 0 Then
+        !recibo = txtNroFactura.Text
+        If Val(txtResta.Text) = 0 Then
             !CuotasDebidas = 0
             !tipodepago = "PAG"
         Else
@@ -469,26 +470,26 @@ Private Sub cmdCobrar_Click()
         Loop
     End With
     '''si paga cuota futura no lo baja a marcas
-    If Month(Format(frmCobranza.txtFechaVto.text, "dd/mm/yyyy")) > Month(Date) And Year(Format(frmCobranza.txtFechaVto.text, "mm/dd/yyyy")) >= Year(Date) Then
+    If Month(Format(frmCobranza.txtFechaVto.Text, "dd/mm/yyyy")) > Month(Date) And Year(Format(frmCobranza.txtFechaVto.Text, "mm/dd/yyyy")) >= Year(Date) Then
         GoTo continuar
     End If
     ''' si paga cuota 2 en adelante lo baja a marcas
-    If Int(frmCobranza.txtNroCuota.text) > 1 Then
+    If Int(frmCobranza.txtNroCuota.Text) > 0 Then
         Marcar
         With rsMarcar
             .Find "Codalumno=" & Int(frmCobranza.lblCodAlumno.Caption)
-            !cobrado = !cobrado + CSng(txtTotalPago.text)
+            !cobrado = !cobrado + CSng(txtTotalPago.Text)
             If !cobrado >= !deuda Then
                 !pago = 1
             End If
         .UpdateBatch
         End With
-    ElseIf Int(frmCobranza.txtNroCuota.text) = 1 And DateDiff("m", Date, frmCobranza.txtFechaVto.text) < 0 Then
+    ElseIf Int(frmCobranza.txtNroCuota.Text) = 0 And DateDiff("m", Date, frmCobranza.txtFechaVto.Text) < 0 Then
         Marcar
         With rsMarcar
             .Find "Codalumno=" & Int(frmCobranza.lblCodAlumno.Caption)
-            !cobrado = !cobrado + CSng(txtTotalPago.text)
-            If txtResta.text = "0" Then
+            !cobrado = !cobrado + CSng(txtTotalPago.Text)
+            If txtResta.Text = "0" Then
                 !pago = !pago + 1
             End If
         .UpdateBatch
@@ -530,15 +531,15 @@ Private Sub txtMonto_KeyPress(keyAscii As Integer)
 If keyAscii = 13 Then
     revision
     cmdCobrar.Enabled = True
-    txtTotalPago.text = CCur(txtTotalPago.text) + CCur(txtMonto.text)
-    txtResta.text = FormatCurrency(txtResta.text) - FormatCurrency(txtMonto.text)
+    txtTotalPago.Text = CCur(txtTotalPago.Text) + CCur(txtMonto.Text)
+    txtResta.Text = FormatCurrency(txtResta.Text) - FormatCurrency(txtMonto.Text)
     
-    If Val(txtResta.text) = 0 Then
+    If Val(txtResta.Text) = 0 Then
         cmbTipoPago.Enabled = False
-    ElseIf Val(txtResta.text) < 0 Then
+    ElseIf Val(txtResta.Text) < 0 Then
         MsgBox "El monto es superior a la deuda", vbOKOnly + vbInformation, "Pago de Cuota":
-        txtResta.text = Val(txtResta.text) + Val(txtTotalPago.text)
-        txtTotalPago.text = Val(txtTotalPago.text) - Val(txtMonto.text)
+        txtResta.Text = Val(txtResta.Text) + Val(txtTotalPago.Text)
+        txtTotalPago.Text = Val(txtTotalPago.Text) - Val(txtMonto.Text)
         txtMonto.SetFocus
         Exit Sub
     End If
@@ -546,16 +547,16 @@ If keyAscii = 13 Then
     With rsContabilidadTemp
         .Requery
         .AddNew
-        !nrofactura = txtNroFactura.text
-        !Debe = txtMonto.text
+        !nrofactura = txtNroFactura.Text
+        !Debe = txtMonto.Text
         !Haber = Null
         !fecha = Date
         !asiento = Null
         !CodAlumno = Val(frmCobranza.lblCodAlumno.Caption)
-        !NroCuota = Val(frmCobranza.txtNroCuota.text)
-        If cmbTipoPago.text = "Efectivo" Then
+        !NroCuota = Val(frmCobranza.txtNroCuota.Text)
+        If cmbTipoPago.Text = "Efectivo" Then
             !Cuenta = "CAJA ADMINISTRACION"
-        ElseIf cmbTipoPago.text = "Tarjeta" Then
+        ElseIf cmbTipoPago.Text = "Tarjeta" Then
             !Cuenta = "DEBITO TARJETA CREDITO"
         Else
             !Cuenta = "Descuento"
@@ -566,26 +567,26 @@ If keyAscii = 13 Then
     Adodc.Refresh
 
     txtNroFactura.Enabled = False
-    If Val(txtResta.text) = 0 Then
+    If Val(txtResta.Text) = 0 Then
         cmdCobrar.SetFocus
     Else
         cmbTipoPago.SetFocus
     End If
-    txtMonto.text = ""
+    txtMonto.Text = ""
     formatoGrilla
 End If
 End Sub
 Sub revision()
-    If cmbTipoPago.text = "" Then MsgBox "Debe elegir un Tipo de Pago", vbOKOnly + vbInformation, "Pago de Cuota": cmbTipoPago.SetFocus: Exit Sub
-    If txtNroFactura.text = "" Then MsgBox "Debe agregar un numero de factura", vbOKOnly + vbInformation, "Pago de Cuota": txtNroFactura.SetFocus: Exit Sub
-    If txtMonto.text = "" Then MsgBox "Debe agregar un monto a pagar", vbOKOnly + vbInformation, "Pago de Cuota": txtMonto.SetFocus: Exit Sub
+    If cmbTipoPago.Text = "" Then MsgBox "Debe elegir un Tipo de Pago", vbOKOnly + vbInformation, "Pago de Cuota": cmbTipoPago.SetFocus: Exit Sub
+    If txtNroFactura.Text = "" Then MsgBox "Debe agregar un numero de factura", vbOKOnly + vbInformation, "Pago de Cuota": txtNroFactura.SetFocus: Exit Sub
+    If txtMonto.Text = "" Then MsgBox "Debe agregar un monto a pagar", vbOKOnly + vbInformation, "Pago de Cuota": txtMonto.SetFocus: Exit Sub
 End Sub
 Sub planPago()
     frmCobranza.Enabled = True
     frmCobranza.Adodc.Refresh
     rsPlanDePago.Requery
     frmCobranza.formatoGrilla
-    frmCobranza.txtAdeuda.text = txtResta.text
+    frmCobranza.txtAdeuda.Text = txtResta.Text
     frmCobranza.cmdPagar.Enabled = False
     cmdCobrar.Enabled = False
 End Sub
@@ -599,5 +600,5 @@ Sub formatoGrilla()
 
 End Sub
 Private Sub txtNroFactura_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub

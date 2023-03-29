@@ -36,7 +36,7 @@ Begin VB.Form frmClave
       _ExtentX        =   2778
       _ExtentY        =   661
       _Version        =   393216
-      Format          =   136642561
+      Format          =   166789121
       CurrentDate     =   42125
    End
    Begin MSComCtl2.DTPicker DTPFecha 
@@ -57,7 +57,7 @@ Begin VB.Form frmClave
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   136708097
+      Format          =   166789121
       CurrentDate     =   41327
    End
    Begin VB.TextBox txtClave 
@@ -549,7 +549,7 @@ fecha:
 End Sub
 
 Private Sub cmdIngresar_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 
 Private Sub cmdSalir_Click()
@@ -642,8 +642,8 @@ Private Sub txtClave_KeyPress(keyAscii As Integer)
 End Sub
 
 Private Sub txtUsuario_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 Private Sub DTPFecha_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub

@@ -30,8 +30,8 @@ Begin VB.Form frmCuotasXFecha
    ScaleWidth      =   6150
    Begin MSAdodcLib.Adodc Adodc 
       Height          =   330
-      Left            =   3720
-      Top             =   5880
+      Left            =   4560
+      Top             =   6480
       Visible         =   0   'False
       Width           =   1455
       _ExtentX        =   2566
@@ -160,7 +160,7 @@ Begin VB.Form frmCuotasXFecha
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   104071169
+      Format          =   166526977
       CurrentDate     =   41345
    End
    Begin MSComCtl2.DTPicker dtpHasta 
@@ -181,7 +181,7 @@ Begin VB.Form frmCuotasXFecha
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   104071169
+      Format          =   166526977
       CurrentDate     =   41345
    End
    Begin isButtonTest.isButton cmdBuscar 
