@@ -6,7 +6,7 @@ Begin VB.Form frmAnalisisDeCuotas
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Analisis de Cuotas"
-   ClientHeight    =   5130
+   ClientHeight    =   6390
    ClientLeft      =   3885
    ClientTop       =   1845
    ClientWidth     =   8955
@@ -17,17 +17,18 @@ Begin VB.Form frmAnalisisDeCuotas
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   5130
+   ScaleHeight     =   6390
    ScaleWidth      =   8955
    Begin RichTextLib.RichTextBox txtObservaciones 
       Height          =   1095
-      Left            =   120
+      Left            =   100
       TabIndex        =   15
-      Top             =   3840
+      Top             =   5160
       Width           =   7305
       _ExtentX        =   12885
       _ExtentY        =   1931
       _Version        =   393217
+      Enabled         =   -1  'True
       MaxLength       =   1000
       Appearance      =   0
       AutoVerbMenu    =   -1  'True
@@ -46,7 +47,7 @@ Begin VB.Form frmAnalisisDeCuotas
       Height          =   420
       Left            =   7500
       TabIndex        =   10
-      Top             =   2700
+      Top             =   3300
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
@@ -75,7 +76,7 @@ Begin VB.Form frmAnalisisDeCuotas
       Height          =   420
       Left            =   7500
       TabIndex        =   11
-      Top             =   3900
+      Top             =   4500
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
@@ -104,7 +105,7 @@ Begin VB.Form frmAnalisisDeCuotas
       Height          =   420
       Left            =   7500
       TabIndex        =   12
-      Top             =   300
+      Top             =   900
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
@@ -135,7 +136,7 @@ Begin VB.Form frmAnalisisDeCuotas
       Height          =   420
       Left            =   7500
       TabIndex        =   13
-      Top             =   3300
+      Top             =   3900
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
@@ -166,7 +167,7 @@ Begin VB.Form frmAnalisisDeCuotas
       Height          =   420
       Left            =   7500
       TabIndex        =   14
-      Top             =   4500
+      Top             =   5100
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
@@ -194,13 +195,13 @@ Begin VB.Form frmAnalisisDeCuotas
       EndProperty
    End
    Begin MSDataGridLib.DataGrid grilla2 
-      Height          =   2895
-      Left            =   3800
+      Height          =   4215
+      Left            =   3795
       TabIndex        =   1
       Top             =   840
       Width           =   3600
       _ExtentX        =   6350
-      _ExtentY        =   5106
+      _ExtentY        =   7435
       _Version        =   393216
       AllowUpdate     =   0   'False
       ColumnHeaders   =   -1  'True
@@ -262,13 +263,13 @@ Begin VB.Form frmAnalisisDeCuotas
       EndProperty
    End
    Begin MSDataGridLib.DataGrid grilla1 
-      Height          =   2895
-      Left            =   100
+      Height          =   4215
+      Left            =   105
       TabIndex        =   0
       Top             =   825
       Width           =   3600
       _ExtentX        =   6350
-      _ExtentY        =   5106
+      _ExtentY        =   7435
       _Version        =   393216
       AllowUpdate     =   0   'False
       ColumnHeaders   =   -1  'True
@@ -333,7 +334,7 @@ Begin VB.Form frmAnalisisDeCuotas
       Height          =   420
       Left            =   7500
       TabIndex        =   7
-      Top             =   900
+      Top             =   1500
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
@@ -362,7 +363,7 @@ Begin VB.Form frmAnalisisDeCuotas
       Height          =   420
       Left            =   7500
       TabIndex        =   8
-      Top             =   1500
+      Top             =   2100
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
@@ -391,7 +392,7 @@ Begin VB.Form frmAnalisisDeCuotas
       Height          =   420
       Left            =   7500
       TabIndex        =   9
-      Top             =   2100
+      Top             =   2700
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741

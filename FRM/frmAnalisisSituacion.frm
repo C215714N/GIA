@@ -5,10 +5,10 @@ Begin VB.Form frmAnalisisSituacion
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Analisis Situacion de Deuda"
-   ClientHeight    =   4095
+   ClientHeight    =   6360
    ClientLeft      =   6795
    ClientTop       =   2775
-   ClientWidth     =   6390
+   ClientWidth     =   6750
    FillStyle       =   7  'Diagonal Cross
    ForeColor       =   &H00E0E0E0&
    Icon            =   "frmAnalisisSituacion.frx":0000
@@ -16,16 +16,16 @@ Begin VB.Form frmAnalisisSituacion
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   4095
-   ScaleWidth      =   6390
+   ScaleHeight     =   6360
+   ScaleWidth      =   6750
    Begin MSDataGridLib.DataGrid grilla 
-      Height          =   3800
+      Height          =   6075
       Left            =   120
       TabIndex        =   3
       Top             =   120
       Width           =   4695
       _ExtentX        =   8281
-      _ExtentY        =   6694
+      _ExtentY        =   10716
       _Version        =   393216
       AllowUpdate     =   0   'False
       HeadLines       =   1
@@ -96,20 +96,20 @@ Begin VB.Form frmAnalisisSituacion
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   360
+      Height          =   375
       Left            =   4920
       Locked          =   -1  'True
       TabIndex        =   2
-      Top             =   3480
-      Width           =   1335
+      Top             =   5760
+      Width           =   1695
    End
    Begin isButtonTest.isButton cmdMarcar 
       Height          =   420
       Left            =   4900
       TabIndex        =   5
       Top             =   120
-      Width           =   1335
-      _ExtentX        =   2355
+      Width           =   1695
+      _ExtentX        =   2990
       _ExtentY        =   741
       Icon            =   "frmAnalisisSituacion.frx":10CA
       Style           =   8
@@ -139,8 +139,8 @@ Begin VB.Form frmAnalisisSituacion
       Left            =   4900
       TabIndex        =   6
       Top             =   720
-      Width           =   1335
-      _ExtentX        =   2355
+      Width           =   1695
+      _ExtentX        =   2990
       _ExtentY        =   741
       Icon            =   "frmAnalisisSituacion.frx":19A4
       Style           =   8
@@ -170,8 +170,8 @@ Begin VB.Form frmAnalisisSituacion
       Left            =   4900
       TabIndex        =   7
       Top             =   1320
-      Width           =   1335
-      _ExtentX        =   2355
+      Width           =   1695
+      _ExtentX        =   2990
       _ExtentY        =   741
       Icon            =   "frmAnalisisSituacion.frx":227E
       Style           =   8
@@ -201,8 +201,8 @@ Begin VB.Form frmAnalisisSituacion
       Left            =   4900
       TabIndex        =   8
       Top             =   1920
-      Width           =   1335
-      _ExtentX        =   2355
+      Width           =   1695
+      _ExtentX        =   2990
       _ExtentY        =   741
       Icon            =   "frmAnalisisSituacion.frx":2B58
       Style           =   8
@@ -238,12 +238,12 @@ Begin VB.Form frmAnalisisSituacion
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   360
+      Height          =   375
       Left            =   4920
       TabIndex        =   4
       Top             =   2760
       Visible         =   0   'False
-      Width           =   1335
+      Width           =   1695
    End
    Begin VB.Label Label2 
       AutoSize        =   -1  'True
@@ -262,8 +262,8 @@ Begin VB.Form frmAnalisisSituacion
       Height          =   225
       Left            =   4920
       TabIndex        =   1
-      Top             =   3240
-      Width           =   435
+      Top             =   5520
+      Width           =   2355
    End
    Begin VB.Label Label1 
       AutoSize        =   -1  'True
@@ -283,7 +283,7 @@ Begin VB.Form frmAnalisisSituacion
       Left            =   4920
       TabIndex        =   0
       Top             =   2520
-      Width           =   810
+      Width           =   2250
    End
 End
 Attribute VB_Name = "frmAnalisisSituacion"
@@ -306,21 +306,21 @@ Private Sub Form_Load()
         If .State = 1 Then .Close
         .Open "SELECT codalumno as Alumno, Cuota, Deuda, fechaCompromiso as Compromiso, LPA FROM marcas WHERE cantidadcuotas=" & CuotasDebidas & " AND pago=0 ORDER BY codalumno", Cn, adOpenDynamic, adLockPessimistic
     End With
-    Set Grilla.DataSource = rsAnalisisSituacionDeuda
+    Set grilla.DataSource = rsAnalisisSituacionDeuda
     formatoGrilla
 End Sub
 Private Sub cmdCerrar_Click()
     Unload Me
 End Sub
 Private Sub cmdCuotas_Click()
-        CodAlumno = Grilla.Columns(0).Text
+        CodAlumno = grilla.Columns(0).Text
         frmAnalisisDeCuotas.Show
         frmAnalisisDeCuotas.Label11.Caption = Me.Name
         Me.Enabled = False
 End Sub
 Private Sub cmdDatos_Click()
     frmVerificaciones.Label20.Caption = Me.Name
-    CodAlumno = Grilla.Columns(0).Text
+    CodAlumno = grilla.Columns(0).Text
     Me.Enabled = False
     Verificaciones
     frmVerificaciones.Show
@@ -381,7 +381,7 @@ End Sub
 
 Private Sub cmdMarcar_Click()
     frmMarcar.Label1.Caption = Me.Name
-    CodAlumno = Grilla.Columns(0).Text
+    CodAlumno = grilla.Columns(0).Text
     frmMarcar.Show
     Me.Enabled = False
 
@@ -399,6 +399,6 @@ Sub formatoGrilla()
         Else:
             w = 400 * N
         End If
-        Grilla.Columns(N).Width = w
+        grilla.Columns(N).Width = w
     Next
 End Sub

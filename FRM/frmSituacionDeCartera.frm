@@ -9,7 +9,7 @@ Begin VB.Form frmSituacionDeCartera
    ClientHeight    =   5445
    ClientLeft      =   345
    ClientTop       =   2505
-   ClientWidth     =   8310
+   ClientWidth     =   8535
    ForeColor       =   &H00E0E0E0&
    Icon            =   "frmSituacionDeCartera.frx":0000
    LinkTopic       =   "Form1"
@@ -17,7 +17,7 @@ Begin VB.Form frmSituacionDeCartera
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    ScaleHeight     =   5445
-   ScaleWidth      =   8310
+   ScaleWidth      =   8535
    Begin MSComCtl2.DTPicker DTPFecha 
       Height          =   360
       Left            =   120
@@ -36,7 +36,7 @@ Begin VB.Form frmSituacionDeCartera
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   127205377
+      Format          =   131137537
       CurrentDate     =   41624
    End
    Begin VB.Frame Frame1 
@@ -56,7 +56,7 @@ Begin VB.Form frmSituacionDeCartera
       Left            =   6600
       TabIndex        =   7
       Top             =   240
-      Width           =   1575
+      Width           =   1815
       Begin VB.TextBox txtAlumnos 
          BeginProperty Font 
             Name            =   "Century Gothic"
@@ -72,7 +72,7 @@ Begin VB.Form frmSituacionDeCartera
          Locked          =   -1  'True
          TabIndex        =   13
          Top             =   480
-         Width           =   1355
+         Width           =   1575
       End
       Begin VB.TextBox txtDeuda 
          BeginProperty Font 
@@ -89,7 +89,7 @@ Begin VB.Form frmSituacionDeCartera
          Locked          =   -1  'True
          TabIndex        =   12
          Top             =   1080
-         Width           =   1355
+         Width           =   1575
       End
       Begin VB.TextBox txtCobranza 
          BeginProperty Font 
@@ -106,7 +106,7 @@ Begin VB.Form frmSituacionDeCartera
          Locked          =   -1  'True
          TabIndex        =   11
          Top             =   1680
-         Width           =   1355
+         Width           =   1575
       End
       Begin VB.TextBox txtResto 
          BeginProperty Font 
@@ -123,7 +123,7 @@ Begin VB.Form frmSituacionDeCartera
          Locked          =   -1  'True
          TabIndex        =   10
          Top             =   3480
-         Width           =   1355
+         Width           =   1575
       End
       Begin VB.TextBox txtPorcentaje 
          BeginProperty Font 
@@ -140,7 +140,7 @@ Begin VB.Form frmSituacionDeCartera
          Locked          =   -1  'True
          TabIndex        =   9
          Top             =   2880
-         Width           =   1355
+         Width           =   1575
       End
       Begin VB.TextBox txtCobrado 
          BeginProperty Font 
@@ -157,15 +157,15 @@ Begin VB.Form frmSituacionDeCartera
          Locked          =   -1  'True
          TabIndex        =   8
          Top             =   2280
-         Width           =   1355
+         Width           =   1575
       End
       Begin isButtonTest.isButton cmdAnalizar 
          Height          =   420
          Left            =   120
          TabIndex        =   3
          Top             =   3960
-         Width           =   1335
-         _ExtentX        =   2355
+         Width           =   1575
+         _ExtentX        =   2778
          _ExtentY        =   741
          Icon            =   "frmSituacionDeCartera.frx":10CA
          Style           =   8
@@ -195,8 +195,8 @@ Begin VB.Form frmSituacionDeCartera
          Left            =   120
          TabIndex        =   4
          Top             =   4440
-         Width           =   1335
-         _ExtentX        =   2355
+         Width           =   1575
+         _ExtentX        =   2778
          _ExtentY        =   741
          Icon            =   "frmSituacionDeCartera.frx":19A4
          Style           =   8
@@ -504,7 +504,7 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub DTPFecha_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 
 Private Sub cmdBuscar_Click()
@@ -527,17 +527,17 @@ Private Sub cmdBuscar_Click()
                 resto = resto + !expr1006
                 .MoveNext
             Loop
-            txtAlumnos.text = alumnos
-            txtDeuda.text = FormatCurrency(deuda)
-            txtCobranza.text = FormatCurrency(Cobranza)
-            txtCobrado.text = totalcobrado
-            txtResto.text = FormatCurrency(resto)
-            txtPorcentaje.text = FormatCurrency(txtCobranza.text) * 100 / FormatCurrency(txtDeuda.text) & "%"
+            txtAlumnos.Text = alumnos
+            txtDeuda.Text = FormatCurrency(deuda)
+            txtCobranza.Text = FormatCurrency(Cobranza)
+            txtCobrado.Text = totalcobrado
+            txtResto.Text = FormatCurrency(resto)
+            txtPorcentaje.Text = FormatCurrency(txtCobranza.Text) * 100 / FormatCurrency(txtDeuda.Text) & "%"
             
-            If txtPorcentaje.text = "100%" Then
-                txtPorcentaje.text = "100%"
+            If txtPorcentaje.Text = "100%" Then
+                txtPorcentaje.Text = "100%"
             Else
-                txtPorcentaje.text = Format(txtPorcentaje.text, "##.##%")
+                txtPorcentaje.Text = Format(txtPorcentaje.Text, "##.##%")
             End If
         End With
         With rsSituacionDeCartera
@@ -557,12 +557,12 @@ Private Sub cmdBuscar_Click()
         With rsTotalesSituaciones
             If .State = 1 Then .Close
             .Open "SELECT * FROM totalessituaciones WHERE fecha=#" & Format(DTPFecha.Value, "mm/dd/yyyy") & "#", Cn, adOpenDynamic, adLockPessimistic
-            txtAlumnos.text = !alumnos
-            txtDeuda.text = !deuda
-            txtCobranza.text = !Cobranza
-            txtCobrado.text = !cobrado
-            txtPorcentaje.text = !porcentaje
-            txtResto.text = !resto
+            txtAlumnos.Text = !alumnos
+            txtDeuda.Text = !deuda
+            txtCobranza.Text = !Cobranza
+            txtCobrado.Text = !cobrado
+            txtPorcentaje.Text = !porcentaje
+            txtResto.Text = !resto
         End With
         cmdAnalizar.Enabled = False
     End If
@@ -572,23 +572,23 @@ Private Sub cmdBuscar_Click()
 End Sub
 
 Private Sub cmdAnalizar_Click()
-    Situacion = grilla.Columns(0).text
+    Situacion = grilla.Columns(0).Text
     Me.Enabled = False
     frmAnalisisSituacion.Show
-    frmAnalisisSituacion.txtResta.text = grilla.Columns(6).text
-    frmAnalisisSituacion.txtResta.text = Format(frmAnalisisSituacion.txtResta.text, "currency")
+    frmAnalisisSituacion.txtResta.Text = grilla.Columns(6).Text
+    frmAnalisisSituacion.txtResta.Text = Format(frmAnalisisSituacion.txtResta.Text, "currency")
 End Sub
 
 Private Sub cmdInforme_Click()
     Set dtrSituacion.DataSource = rsSituacionDeCartera
     dtrSituacion.Show
     dtrSituacion.Caption = "Situacion de Cartera"
-    dtrSituacion.Sections("Seccion5").Controls("etiqueta21").Caption = txtAlumnos.text
-    dtrSituacion.Sections("Seccion5").Controls("etiqueta11").Caption = txtDeuda.text
-    dtrSituacion.Sections("Seccion5").Controls("etiqueta12").Caption = txtCobranza.text
-    dtrSituacion.Sections("Seccion5").Controls("etiqueta13").Caption = txtCobrado.text
-    dtrSituacion.Sections("Seccion5").Controls("etiqueta14").Caption = txtPorcentaje.text
-    dtrSituacion.Sections("Seccion5").Controls("etiqueta15").Caption = txtResto.text
+    dtrSituacion.Sections("Seccion5").Controls("etiqueta21").Caption = txtAlumnos.Text
+    dtrSituacion.Sections("Seccion5").Controls("etiqueta11").Caption = txtDeuda.Text
+    dtrSituacion.Sections("Seccion5").Controls("etiqueta12").Caption = txtCobranza.Text
+    dtrSituacion.Sections("Seccion5").Controls("etiqueta13").Caption = txtCobrado.Text
+    dtrSituacion.Sections("Seccion5").Controls("etiqueta14").Caption = txtPorcentaje.Text
+    dtrSituacion.Sections("Seccion5").Controls("etiqueta15").Caption = txtResto.Text
     dtrSituacion.Sections("Seccion4").Controls("etiqueta25").Caption = DTPFecha.Value
 End Sub
 
@@ -610,4 +610,3 @@ Private Sub formatoGrilla()
         End If
     Next
 End Sub
-
