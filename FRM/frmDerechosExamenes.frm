@@ -178,7 +178,7 @@ Begin VB.Form frmDerechosExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   126877697
+         Format          =   169476097
          CurrentDate     =   41978
       End
       Begin isButtonTest.isButton cmdAgregar 
@@ -467,7 +467,7 @@ Private Sub Form_Load()
     Centrar Me
     Control
     txtPrecio.Text = Format(rsControl!derechoExamen, "currency")
-    DTPFecha.Value = Date
+    dtpFecha.Value = Date
 End Sub
 
 Private Sub txtCodigo_KeyPress(keyAscii As Integer)
@@ -493,7 +493,7 @@ Private Sub txtCodigo_KeyPress(keyAscii As Integer)
             CargarModulos
             txtPrecio.Text = Format(rsControl!derechoExamen, "currency")
             cmbModulo.Enabled = True
-            DTPFecha.Enabled = True
+            dtpFecha.Enabled = True
             cmdAgregar.Enabled = True
             cmbModulo.SetFocus
             
@@ -516,7 +516,7 @@ Private Sub cmdAgregar_Click()
         .Requery
         .AddNew
         !CodAlumno = Int(txtCodigo.Text)
-        !fecha = DTPFecha.Value
+        !fecha = dtpFecha.Value
         !modulo = cmbModulo.Text
         .Update
         .Close
@@ -525,45 +525,41 @@ Private Sub cmdAgregar_Click()
         formatoGrilla
     End With
 '''GESTION CONTABLE - ASIENTO
-    If MsgBox("¿Abona el total del Derecho de Examen?", vbYesNo + vbQuestion, "Derechos de Examenes") = vbYes Then
-        With rsContabilidad
-            If .State = 1 Then .Close
-            .Open "SELECT * FROM contabilidad", Cn, adOpenDynamic, adLockPessimistic
-            .Requery
-            .AddNew
-            !fecha = Date
-            !asiento = Null
-            !NroCuota = Null
-            !CodAlumno = Null
-            !Cuenta = "DERECHO DE EXAMEN"
-            !Detalle = txtAlumno.Text & " - " & cmbModulo.Text
-            !nrofactura = txtRecibo.Text
-            !Haber = CSng(txtPrecio.Text)
-            !Debe = Null
-            .Update
-            .Requery
-            .AddNew
-            !fecha = Date
-            
-            If cmbPago.Text = "Efectivo" Then
-                !Cuenta = "CAJA ADMINISTRACION"
-            ElseIf cmbPago.Text = "Descuento" Then
-                !Cuenta = "Descuento"
-            Else
-                !Cuenta = "DEBITO TARJETA CREDITO"
-            End If
-            !Detalle = txtAlumno.Text & " - Derecho de Examen de " & cmbModulo.Text
-            !nrofactura = txtRecibo.Text
-            !Debe = CSng(txtPrecio.Text)
-            !asiento = Null
-            !NroCuota = Null
-            !CodAlumno = Null
-            !Haber = Null
-            .Update
-        End With
-    Else
-        MsgBox "Recuerde realizar el asiento contable correspondiente a esta operacion", vbExclamation, "Derechos de Examenes"
-    End If
+    With rsContabilidad
+        If .State = 1 Then .Close
+        .Open "SELECT * FROM contabilidad", Cn, adOpenDynamic, adLockPessimistic
+        .Requery
+        .AddNew
+        !fecha = Date
+        !asiento = Null
+        !NroCuota = Null
+        !CodAlumno = Null
+        !Cuenta = "DERECHO DE EXAMEN"
+        !Detalle = txtAlumno.Text & " - " & cmbModulo.Text
+        !nrofactura = txtRecibo.Text
+        !Haber = CSng(txtPrecio.Text)
+        !Debe = Null
+        .Update
+        .Requery
+        .AddNew
+        !fecha = Date
+        
+        If cmbPago.Text = "Efectivo" Then
+            !Cuenta = "CAJA ADMINISTRACION"
+        ElseIf cmbPago.Text = "Descuento" Then
+            !Cuenta = "Descuento"
+        Else
+            !Cuenta = "DEBITO TARJETA CREDITO"
+        End If
+        !Detalle = txtAlumno.Text & " - Derecho de Examen de " & cmbModulo.Text
+        !nrofactura = txtRecibo.Text
+        !Debe = CSng(txtPrecio.Text)
+        !asiento = Null
+        !NroCuota = Null
+        !CodAlumno = Null
+        !Haber = Null
+        .Update
+    End With
 LineaError: ErrCode Err
 End Sub
 
@@ -673,6 +669,19 @@ Private Sub CargarModulos()
             .AddItem ("Parcial II")
             .AddItem ("Parcial III")
             .AddItem ("Modulo Final")
+        End With
+    ElseIf txtCurso.Text = "Asistente en Cardiología" Then
+        With cmbModulo
+            .Clear
+            .AddItem ("Final")
+        End With
+    Else
+        With cmbModulo
+            .Clear
+            .AddItem ("Modulo I")
+            .AddItem ("Modulo II")
+            .AddItem ("Modulo III")
+            .AddItem ("Final")
         End With
     End If
 End Sub

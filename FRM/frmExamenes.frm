@@ -54,7 +54,7 @@ Begin VB.Form frmExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   127926273
+         Format          =   169279489
          CurrentDate     =   41978
       End
       Begin VB.TextBox txtPromedio 
@@ -438,7 +438,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub Form_Load()
     Centrar Me
-    DTPFecha.Value = Date
+    dtpFecha.Value = Date
 End Sub
 
 Private Sub txtCodigo_KeyPress(keyAscii As Integer)
@@ -461,6 +461,7 @@ Private Sub txtCodigo_KeyPress(keyAscii As Integer)
         End With
         Set grilla.DataSource = rsExamenes
         formatoGrilla
+        cmbModulo.Clear
         CargarModulos
         If rsExamenes.RecordCount = cmbModulo.ListCount Then
             cmdAgregar.Enabled = False
@@ -490,7 +491,7 @@ Private Sub cmdAgregar_Click()
             .Requery
             .AddNew
             !CodAlumno = Int(txtCodigo.Text)
-            !fecha = DTPFecha.Value
+            !fecha = dtpFecha.Value
             !T = txtTeorico.Text
             !P = txtPractico.Text
             !F = txtPromedio.Text
@@ -527,7 +528,7 @@ Private Sub cmdAgregar_Click()
                 .Requery
                 .AddNew
                 !CodAlumno = Int(txtCodigo.Text)
-                !fecha = DTPFecha.Value
+                !fecha = dtpFecha.Value
                 .Update
             End With
             With rsVerificaciones
@@ -571,7 +572,6 @@ End Sub
 Private Sub CargarModulos()
     If txtCurso.Text = "Operador de Pc" Then
         With cmbModulo
-            .Clear
             .AddItem ("Windows")
             .AddItem ("Word")
             .AddItem ("Excel")
@@ -581,7 +581,6 @@ Private Sub CargarModulos()
         
     ElseIf txtCurso.Text = "Diseño Gráfico" Then
         With cmbModulo
-            .Clear
             .AddItem ("Windows")
             .AddItem ("Corel Draw")
             .AddItem ("Photoshop")
@@ -590,7 +589,6 @@ Private Sub CargarModulos()
         
     ElseIf txtCurso.Text = "Diseño Web" Then
         With cmbModulo
-            .Clear
             .AddItem ("Front Page")
             .AddItem ("Fireworks")
             .AddItem ("Flash")
@@ -599,7 +597,6 @@ Private Sub CargarModulos()
             
     ElseIf txtCurso.Text = "Programación + Access" Then
         With cmbModulo
-            .Clear
             .AddItem ("Access")
             .AddItem ("Modulo I")
             .AddItem ("Modulo II")
@@ -614,7 +611,6 @@ Private Sub CargarModulos()
         
     ElseIf txtCurso.Text = "Técnico en aire acondicionado" Or txtCurso.Text = "Electricidad domiciliaria" Then
         With cmbModulo
-            .Clear
             .AddItem ("Modulo I")
             .AddItem ("Modulo II")
             .AddItem ("Modulo III")
@@ -623,7 +619,6 @@ Private Sub CargarModulos()
     
     ElseIf txtCurso.Text = "Soporte Tecnico" Then
         With cmbModulo
-            .Clear
             .AddItem ("Modulo I")
             .AddItem ("Modulo II")
             .AddItem ("Modulo III")
@@ -634,10 +629,20 @@ Private Sub CargarModulos()
         
     ElseIf txtCurso.Text = "Cuidador Domiciliario" Or txtCurso.Text = "Asistente Terapeutico" Or txtCurso.Text = "Auxiliar de Farmacia" Or txtCurso.Text = "Emergencias Médicas" Or txtCurso.Text = "Emergencias Medicas Sanitarias" Or txtCurso.Text = "Extracc. Adm. Y Asist. Tec. Laborat." Or txtCurso.Text = "Mandatario Automotor" Then
         With cmbModulo
-            .Clear
             .AddItem ("Parcial I")
             .AddItem ("Parcial II")
             .AddItem ("Parcial III")
+            .AddItem ("Final")
+        End With
+    ElseIf txtCurso.Text = "Asistente en Cardiología" Then
+        With cmbModulo
+            .AddItem ("Final")
+        End With
+    Else
+        With cmbModulo
+            .AddItem ("Modulo I")
+            .AddItem ("Modulo II")
+            .AddItem ("Modulo III")
             .AddItem ("Final")
         End With
     End If
