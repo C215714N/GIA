@@ -5,3 +5,7 @@ Thumbs.db
 # Temporales
 *.temp
 *.tmp
+# Instaladores
+SETUP/
+gia*exe
+GIA*exe
