@@ -431,9 +431,12 @@ Private Sub cmbTipoPago_KeyPress(keyAscii As Integer)
 End Sub
 
 Private Sub cmdCobrar_Click()
+    If cmbTipoPago.Text = "" Then MsgBox "Debe elegir un Tipo de Pago", vbOKOnly + vbInformation, "Pago de Cuota": cmbTipoPago.SetFocus: Exit Sub
+    If txtNroFactura.Text = "" Then MsgBox "Debe agregar un numero de factura", vbOKOnly + vbInformation, "Pago de Cuota": txtNroFactura.SetFocus: Exit Sub
+    If txtMonto.Text = "" Then MsgBox "Debe agregar un monto a pagar", vbOKOnly + vbInformation, "Pago de Cuota": txtMonto.SetFocus: Exit Sub
+
     On Error GoTo continuar
-        revision
-        Cobranza
+    Cobranza
     With rsCobranza
         .Find "nrocuota=" & Int(frmCobranza.txtNroCuota.Text)
         !DeudaTotal = Val(txtResta.Text)
@@ -572,14 +575,14 @@ If keyAscii = 13 Then
     Else
         cmbTipoPago.SetFocus
     End If
-    txtMonto.Text = ""
+    txtMonto.Text = 0
     formatoGrilla
 End If
 End Sub
 Sub revision()
-    If cmbTipoPago.Text = "" Then MsgBox "Debe elegir un Tipo de Pago", vbOKOnly + vbInformation, "Pago de Cuota": cmbTipoPago.SetFocus: Exit Sub
-    If txtNroFactura.Text = "" Then MsgBox "Debe agregar un numero de factura", vbOKOnly + vbInformation, "Pago de Cuota": txtNroFactura.SetFocus: Exit Sub
-    If txtMonto.Text = "" Then MsgBox "Debe agregar un monto a pagar", vbOKOnly + vbInformation, "Pago de Cuota": txtMonto.SetFocus: Exit Sub
+    If cmbTipoPago.Text = "" Then MsgBox "Debe elegir un Tipo de Pago", vbOKOnly + vbInformation, "Pago de Cuota": cmbTipoPago.SetFocus
+    If txtNroFactura.Text = "" Then MsgBox "Debe agregar un numero de factura", vbOKOnly + vbInformation, "Pago de Cuota": txtNroFactura.SetFocus
+    If txtMonto.Text = "" Then MsgBox "Debe agregar un monto a pagar", vbOKOnly + vbInformation, "Pago de Cuota": txtMonto.SetFocus
 End Sub
 Sub planPago()
     frmCobranza.Enabled = True
@@ -602,3 +605,4 @@ End Sub
 Private Sub txtNroFactura_KeyPress(keyAscii As Integer)
     continue keyAscii
 End Sub
+

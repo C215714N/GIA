@@ -83,7 +83,7 @@ Begin VB.Form frmPlanDePagoReingreso
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   109051905
+      Format          =   176816129
       CurrentDate     =   41353
    End
    Begin isButtonTest.isButton cmdAplicar 
@@ -143,6 +143,28 @@ Begin VB.Form frmPlanDePagoReingreso
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+   End
+   Begin MSComCtl2.DTPicker dtpLimite 
+      Height          =   240
+      Left            =   3000
+      TabIndex        =   10
+      Top             =   0
+      Visible         =   0   'False
+      Width           =   1335
+      _ExtentX        =   2355
+      _ExtentY        =   423
+      _Version        =   393216
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Century Gothic"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Format          =   176816129
+      CurrentDate     =   41353
    End
    Begin VB.Label Label4 
       BackStyle       =   0  'Transparent
@@ -232,14 +254,20 @@ Attribute VB_Exposed = False
 Private Sub cmdAplicar_Click()
     On Error GoTo LineaError
     Dim CuotaMax As Integer
+    Dim FechaLimite As Integer
     CuotaMax = Int(txtCantidadCuotas.Text) + Int(txtNroCuota.Text) - 1
-    ''genera las nuevas cuotas
+    FechaLimite = 25
+''' genera las nuevas cuotas
     With rsPlanDePago
         If .State = 1 Then .Close
         .Open "SELECT * FROM plandepago", Cn, adOpenDynamic, adLockPessimistic
         .Requery
         Do Until Int(txtNroCuota.Text) > CuotaMax
+        ''' Asignacion del Plan de Pago
             .AddNew
+            dtpLimite.Value = DTPFecha.Value
+            dtpLimite.Day = FechaLimite
+            
             !CodAlumno = frmAnalisisDeCuotas.lblCodAlumno.Caption
             !NyA = frmAnalisisDeCuotas.lblNyA.Caption
             !NroCuota = Int(txtNroCuota.Text)
@@ -248,7 +276,9 @@ Private Sub cmdAplicar_Click()
             !DeudaTotal = txtMonto.Text
             !CuotasDebidas = 1
             !fechavto = DTPFecha.Value
+            !FechaLimite = dtpLimite.Value
             .Update
+        ''' Cambio de Año
             txtNroCuota.Text = Int(txtNroCuota.Text) + 1
             If DTPFecha.Month = 12 Then
                 DTPFecha.Month = 1
@@ -284,13 +314,13 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
 End Sub
 
 Private Sub txtCantidadCuotas_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 
 Private Sub txtMonto_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 
 Private Sub txtNroCuota_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub

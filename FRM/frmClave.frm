@@ -36,7 +36,7 @@ Begin VB.Form frmClave
       _ExtentX        =   2778
       _ExtentY        =   661
       _Version        =   393216
-      Format          =   166789121
+      Format          =   177668097
       CurrentDate     =   42125
    End
    Begin MSComCtl2.DTPicker DTPFecha 
@@ -57,7 +57,7 @@ Begin VB.Form frmClave
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   166789121
+      Format          =   177668097
       CurrentDate     =   41327
    End
    Begin VB.TextBox txtClave 
@@ -489,11 +489,14 @@ SituacionDeCartera:
                     ElseIf !CodAlumno = rsPlanDePago!CodAlumno Then
                         !cuota = rsPlanDePago!cuota
                         !deuda = rsPlanDePago!deuda
+                        
+                    ''' Recargos meses anteriores
                         If rsPlanDePago!maxcuota = rsPlanDePago!ultimacuota And rsPlanDePago!Meses > rsPlanDePago!CuotasDebidas Then
                             !cantidadcuotas = rsPlanDePago!Meses
                         Else
                             !cantidadcuotas = rsPlanDePago!CuotasDebidas
                         End If
+                        
                         !cobrado = 0
                         !pago = 0
                         .UpdateBatch
@@ -516,16 +519,25 @@ SituacionDeCartera:
         End If
           
 Recargo:
-    ''' RECARGO FUERA DE FECHA
+    ''' RECARGO PRIMER VENCIMIENTO
         Control
         rsControl.MoveFirst
-        
         With rsPlanDePago
             If .State = 1 Then .Close
             .Open "SELECT * FROM plandepago WHERE fechavto<#" & fecha & "# AND cuotasdebidas>0 AND recargoxfecha=false", Cn, adOpenDynamic, adLockPessimistic
             On Error GoTo continuar
             Do Until .EOF
                 !recargoxfecha = True
+                !DeudaTotal = !DeudaTotal + rsControl!recargoporfecha
+                .MoveNext
+                .UpdateBatch
+            Loop
+        ''' RECARGO POR FECHA LIMITE
+            If .State = 1 Then .Close
+            .Open "SELECT * FROM plandepago WHERE fechaLimite<#" & fecha & "# AND cuotasdebidas>0 AND recargoxVto=false", Cn, adOpenDynamic, adLockPessimistic
+            On Error GoTo continuar
+            Do Until .EOF
+                !recargoxvto = True
                 !DeudaTotal = !DeudaTotal + rsControl!recargoporfecha
                 .MoveNext
                 .UpdateBatch

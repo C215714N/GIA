@@ -128,7 +128,7 @@ Begin VB.Form frmPlanDePagos
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   131203073
+      Format          =   130875393
       CurrentDate     =   41323
    End
    Begin MSComCtl2.DTPicker dtpVtoDos 
@@ -149,7 +149,7 @@ Begin VB.Form frmPlanDePagos
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   131137537
+      Format          =   130875393
       CurrentDate     =   41323
    End
    Begin isButtonTest.isButton cmdCrearPlan 
@@ -336,51 +336,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cmdCrearPlan_Click()
     tabla
-    With rsPlanDePago
-        Do Until NroCuota > Int(txtTotalCuotas.Text)
-            .Requery
-            .AddNew
-            !CodAlumno = lblCodAlumno.Caption
-            !NyA = lblNyA.Caption
-            !NroCuota = NroCuota
-            If NroCuota = txtNroCuota.Text Then
-                !fechavto = DTPFechaVto.Value
-            Else
-                !fechavto = dtpVtoDos.Value
-            End If
-            !deuda = txtDeuda.Text
-            !totalcobrado = 0
-            If Int(txtTotalCuotas.Text) = 1 And Int(txtDeuda.Text) = 1 Then
-                !DeudaTotal = 0
-                !CuotasDebidas = 0
-            Else
-                !DeudaTotal = txtDeuda.Text
-                !CuotasDebidas = 1
-            End If
-            .Update
-            grilla.Text = NroCuota
-            grilla.Col = 1
-            If NroCuota = txtNroCuota.Text Then
-                grilla.Text = DTPFechaVto.Value
-            Else
-                grilla.Text = dtpVtoDos.Value
-            End If
-            grilla.Col = 2
-            grilla.Text = txtDeuda.Text
-            grilla.Rows = grilla.Rows + 1
-            grilla.Col = 0
-            grilla.Row = grilla.Row + 1
-            NroCuota = NroCuota + 1
-            If NroCuota > txtCuotaDos.Text Then
-                If dtpVtoDos.Month = 12 Then
-                    dtpVtoDos.Month = 1
-                    dtpVtoDos.Year = dtpVtoDos.Year + 1
-                Else
-                    dtpVtoDos.Month = dtpVtoDos.Month + 1
-                End If
-            End If
-        Loop
-    End With
+    CrearPlan
     cmdCrearPlan.Enabled = False
     txtTotalCuotas.Enabled = False
     
@@ -414,7 +370,7 @@ Private Sub Form_Load()
     Centrar Me
     PlanDePago
     lblCodAlumno.Caption = frmVerificaciones.lblCodAlumno.Caption
-    lblNyA.Caption = frmVerificaciones.txtNya.Text
+    lblNya.Caption = frmVerificaciones.txtNya.Text
     txtTotalCuotas.Text = frmVerificaciones.txtTotalCuotas.Text
     txtDeuda.Text = Val(frmVerificaciones.txtTotalCurso.Text) / Val(txtTotalCuotas.Text)
     DTPFechaVto.Value = Date
@@ -430,7 +386,7 @@ End Sub
 
 Sub tabla()
     Dim NroCuota As Integer
-    NroCuota = txtNroCuota.Text
+    NroCuota = 0
     grilla.Rows = 2
     grilla.Col = 0
     grilla.Row = 0
@@ -446,4 +402,64 @@ End Sub
 
 Public Sub revisar()
     If DTPFechaVto.Value < dtpVtoDos.Value Then MsgBox ("la cuota siguiente no puede ser menor al primer vencimiento")
+End Sub
+
+Sub CrearPlan()
+    With rsPlanDePago
+        Dim FechaLimite As Integer
+        FechaLimite = 25
+        
+        Do Until NroCuota > Int(txtTotalCuotas.Text)
+            .Requery
+            .AddNew
+            !CodAlumno = lblCodAlumno.Caption
+            !NyA = lblNya.Caption
+            !NroCuota = NroCuota
+        ''' Vencimiento Cuotas y calculo fecha limite
+            If NroCuota >= 1 Then
+                !fechavto = dtpVtoDos.Value
+                DTPFechaVto.Value = dtpVtoDos.Value
+                DTPFechaVto.Day = FechaLimite
+                !FechaLimite = DTPFechaVto.Value
+            Else: !fechavto = DTPFechaVto.Value
+            End If
+            
+            !deuda = txtDeuda.Text
+            !totalcobrado = 0
+        ''' Alumnos Becados
+            If Int(txtTotalCuotas.Text) = 1 And Int(txtDeuda.Text) = 1 Then
+                !DeudaTotal = 0
+                !CuotasDebidas = 0
+        ''' Plan de Pago regular
+            Else
+                !DeudaTotal = txtDeuda.Text
+                !CuotasDebidas = 1
+            End If
+            .Update
+            grilla.Text = NroCuota
+            grilla.Col = 1
+            
+            If NroCuota >= 1 Then
+                grilla.Text = dtpVtoDos.Value
+            Else
+                grilla.Text = DTPFechaVto.Value
+            End If
+            
+            grilla.Col = 2
+            grilla.Text = txtDeuda.Text
+            grilla.Rows = grilla.Rows + 1
+            grilla.Col = 0
+            grilla.Row = grilla.Row + 1
+            NroCuota = NroCuota + 1
+            
+        ''' Cambio de Año
+            If NroCuota > txtCuotaDos.Text Then
+                If dtpVtoDos.Month = 12 Then
+                    dtpVtoDos.Month = 1
+                    dtpVtoDos.Year = dtpVtoDos.Year + 1
+                Else: dtpVtoDos.Month = dtpVtoDos.Month + 1
+                End If
+            End If
+        Loop
+    End With
 End Sub
