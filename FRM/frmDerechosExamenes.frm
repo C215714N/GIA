@@ -178,7 +178,7 @@ Begin VB.Form frmDerechosExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   169476097
+         Format          =   169082881
          CurrentDate     =   41978
       End
       Begin isButtonTest.isButton cmdAgregar 
@@ -467,7 +467,7 @@ Private Sub Form_Load()
     Centrar Me
     Control
     txtPrecio.Text = Format(rsControl!derechoExamen, "currency")
-    dtpFecha.Value = Date
+    DTPFecha.Value = Date
 End Sub
 
 Private Sub txtCodigo_KeyPress(keyAscii As Integer)
@@ -493,7 +493,7 @@ Private Sub txtCodigo_KeyPress(keyAscii As Integer)
             CargarModulos
             txtPrecio.Text = Format(rsControl!derechoExamen, "currency")
             cmbModulo.Enabled = True
-            dtpFecha.Enabled = True
+            DTPFecha.Enabled = True
             cmdAgregar.Enabled = True
             cmbModulo.SetFocus
             
@@ -516,7 +516,7 @@ Private Sub cmdAgregar_Click()
         .Requery
         .AddNew
         !CodAlumno = Int(txtCodigo.Text)
-        !fecha = dtpFecha.Value
+        !fecha = DTPFecha.Value
         !modulo = cmbModulo.Text
         .Update
         .Close
@@ -626,11 +626,19 @@ Private Sub CargarModulos()
             .AddItem ("Modulo II")
         End With
         
-    ElseIf txtCurso.Text = "Programación" Or txtCurso.Text = "Telefonía Celular" Then
+    ElseIf txtCurso.Text = "Programación" Then
         With cmbModulo
             .Clear
             .AddItem ("Modulo I")
             .AddItem ("Modulo II")
+        End With
+        
+    ElseIf txtCurso.Text = "Telefonía Celular" Then
+        With cmbModulo
+            .Clear
+            .AddItem ("Modulo I")
+            .AddItem ("Modulo II")
+            .AddItem ("Final")
         End With
         
     ElseIf txtCurso.Text = "Técnico en aire acondicionado" Or txtCurso.Text = "Electricidad domiciliaria" Then

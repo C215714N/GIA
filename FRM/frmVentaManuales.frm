@@ -526,10 +526,11 @@ Sub cargarManuales()
             .AddItem ("Programación")
         End With
     
-    ElseIf txtCurso.Text = "Técnico en aire acondicionado" Then
+    ElseIf txtCurso.Text = "Técnico en aire acondicionado" Or txtCurso.Text = "Refrigeración" Then
         With cmbManual
-            .AddItem ("Aire Acondicionado")
-            .AddItem ("Refrigeracion")
+            .AddItem ("Refrigeracion I")
+            .AddItem ("Refrigeracion II")
+            .AddItem ("Refrigeracion III")
         End With
     
     ElseIf txtCurso.Text = "Electricidad domiciliaria" Then
@@ -570,12 +571,9 @@ Sub cargarManuales()
             .AddItem ("Primeros Auxilios")
             .AddItem ("Covid")
         End With
-    Else
+    ElseIf txtCurso.Text = "Mandatario Automotor" Then
         With cmbManual
-            .AddItem ("Manual I")
-            .AddItem ("Manual II")
-            .AddItem ("Manual III")
-            .AddItem ("Manual IV")
+            .AddItem ("Mandatario")
         End With
     End If
 End Sub
