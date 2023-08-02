@@ -30,6 +30,7 @@ Begin VB.Form frmCobranza
       _ExtentX        =   9763
       _ExtentY        =   1720
       _Version        =   393217
+      Enabled         =   -1  'True
       MaxLength       =   1000
       Appearance      =   0
       AutoVerbMenu    =   -1  'True
@@ -193,7 +194,7 @@ Begin VB.Form frmCobranza
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   164823041
+      Format          =   172883969
       CurrentDate     =   41326
    End
    Begin VB.TextBox txtFechaVto 

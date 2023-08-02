@@ -6,18 +6,36 @@ Begin VB.Form frmPagoDeCuota
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Pago de Cuota"
-   ClientHeight    =   4305
+   ClientHeight    =   3030
    ClientLeft      =   13545
    ClientTop       =   2865
-   ClientWidth     =   5460
+   ClientWidth     =   7380
    ForeColor       =   &H00E0E0E0&
    Icon            =   "frmPagoDeCuota.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   4305
-   ScaleWidth      =   5460
+   ScaleHeight     =   3030
+   ScaleWidth      =   7380
+   Begin VB.TextBox txtComision 
+      Alignment       =   1  'Right Justify
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Century Gothic"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   360
+      Left            =   5640
+      TabIndex        =   1
+      Top             =   360
+      Width           =   1575
+   End
    Begin MSAdodcLib.Adodc Adodc 
       Height          =   330
       Left            =   0
@@ -66,13 +84,13 @@ Begin VB.Form frmPagoDeCuota
       _Version        =   393216
    End
    Begin MSDataGridLib.DataGrid grilla 
-      Height          =   3735
+      Height          =   2415
       Left            =   120
-      TabIndex        =   12
+      TabIndex        =   13
       Top             =   360
       Width           =   3735
       _ExtentX        =   6588
-      _ExtentY        =   6588
+      _ExtentY        =   4260
       _Version        =   393216
       AllowUpdate     =   0   'False
       HeadLines       =   1
@@ -144,10 +162,10 @@ Begin VB.Form frmPagoDeCuota
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Left            =   3960
-      TabIndex        =   4
-      Top             =   2760
-      Width           =   1355
+      Left            =   5640
+      TabIndex        =   5
+      Top             =   1800
+      Width           =   1575
    End
    Begin VB.TextBox txtTotalPago 
       Alignment       =   1  'Right Justify
@@ -163,10 +181,10 @@ Begin VB.Form frmPagoDeCuota
       EndProperty
       Height          =   360
       Left            =   3960
-      TabIndex        =   3
+      TabIndex        =   4
       Text            =   "0"
-      Top             =   2160
-      Width           =   1355
+      Top             =   1800
+      Width           =   1575
    End
    Begin VB.TextBox txtNroFactura 
       Alignment       =   1  'Right Justify
@@ -181,9 +199,9 @@ Begin VB.Form frmPagoDeCuota
       EndProperty
       Height          =   360
       Left            =   3960
-      TabIndex        =   1
-      Top             =   960
-      Width           =   1355
+      TabIndex        =   2
+      Top             =   1080
+      Width           =   1575
    End
    Begin VB.TextBox txtMonto 
       Alignment       =   1  'Right Justify
@@ -197,10 +215,10 @@ Begin VB.Form frmPagoDeCuota
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Left            =   3960
-      TabIndex        =   2
-      Top             =   1560
-      Width           =   1355
+      Left            =   5640
+      TabIndex        =   3
+      Top             =   1080
+      Width           =   1575
    End
    Begin VB.ComboBox cmbTipoPago 
       BeginProperty Font 
@@ -212,24 +230,24 @@ Begin VB.Form frmPagoDeCuota
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   360
+      Height          =   375
       ItemData        =   "frmPagoDeCuota.frx":10CA
       Left            =   3960
-      List            =   "frmPagoDeCuota.frx":10D7
+      List            =   "frmPagoDeCuota.frx":10DA
       Style           =   2  'Dropdown List
       TabIndex        =   0
       Top             =   360
-      Width           =   1355
+      Width           =   1575
    End
    Begin isButtonTest.isButton cmdCobrar 
       Height          =   420
       Left            =   3960
-      TabIndex        =   5
-      Top             =   3200
-      Width           =   1335
-      _ExtentX        =   2355
+      TabIndex        =   6
+      Top             =   2400
+      Width           =   1575
+      _ExtentX        =   2778
       _ExtentY        =   741
-      Icon            =   "frmPagoDeCuota.frx":10F9
+      Icon            =   "frmPagoDeCuota.frx":1106
       Style           =   8
       Caption         =   "     Cobrar"
       IconSize        =   18
@@ -254,13 +272,13 @@ Begin VB.Form frmPagoDeCuota
    End
    Begin isButtonTest.isButton cmdSalir 
       Height          =   420
-      Left            =   3960
-      TabIndex        =   6
-      Top             =   3700
-      Width           =   1335
-      _ExtentX        =   2355
+      Left            =   5640
+      TabIndex        =   7
+      Top             =   2400
+      Width           =   1575
+      _ExtentX        =   2778
       _ExtentY        =   741
-      Icon            =   "frmPagoDeCuota.frx":19D3
+      Icon            =   "frmPagoDeCuota.frx":19E0
       Style           =   8
       Caption         =   "     Volver"
       IconSize        =   18
@@ -283,6 +301,26 @@ Begin VB.Form frmPagoDeCuota
          Strikethrough   =   0   'False
       EndProperty
    End
+   Begin VB.Label Label7 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "Comision $"
+      BeginProperty Font 
+         Name            =   "Century Gothic"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H8000000F&
+      Height          =   255
+      Left            =   5640
+      TabIndex        =   15
+      Top             =   120
+      Width           =   1230
+   End
    Begin VB.Label Label6 
       AutoSize        =   -1  'True
       BackStyle       =   0  'Transparent
@@ -299,7 +337,7 @@ Begin VB.Form frmPagoDeCuota
       ForeColor       =   &H8000000F&
       Height          =   225
       Left            =   120
-      TabIndex        =   13
+      TabIndex        =   14
       Top             =   120
       Width           =   1080
    End
@@ -319,8 +357,8 @@ Begin VB.Form frmPagoDeCuota
       ForeColor       =   &H8000000F&
       Height          =   225
       Left            =   3960
-      TabIndex        =   11
-      Top             =   1920
+      TabIndex        =   12
+      Top             =   1560
       Width           =   1350
    End
    Begin VB.Label Label4 
@@ -338,9 +376,9 @@ Begin VB.Form frmPagoDeCuota
       EndProperty
       ForeColor       =   &H8000000F&
       Height          =   225
-      Left            =   3960
-      TabIndex        =   10
-      Top             =   2520
+      Left            =   5640
+      TabIndex        =   11
+      Top             =   1560
       Width           =   1350
    End
    Begin VB.Label Label3 
@@ -359,8 +397,8 @@ Begin VB.Form frmPagoDeCuota
       ForeColor       =   &H8000000F&
       Height          =   225
       Left            =   3960
-      TabIndex        =   9
-      Top             =   750
+      TabIndex        =   10
+      Top             =   870
       Width           =   1350
    End
    Begin VB.Label Label2 
@@ -378,9 +416,9 @@ Begin VB.Form frmPagoDeCuota
       EndProperty
       ForeColor       =   &H8000000F&
       Height          =   225
-      Left            =   3960
-      TabIndex        =   8
-      Top             =   1320
+      Left            =   5640
+      TabIndex        =   9
+      Top             =   840
       Width           =   1350
    End
    Begin VB.Label Label1 
@@ -399,7 +437,7 @@ Begin VB.Form frmPagoDeCuota
       ForeColor       =   &H8000000F&
       Height          =   225
       Left            =   3960
-      TabIndex        =   7
+      TabIndex        =   8
       Top             =   120
       Width           =   1350
    End
@@ -421,12 +459,17 @@ Private Sub Form_Load()
     Adodc.Refresh
     Set grilla.DataSource = Adodc
     formatoGrilla
+    Dim tipoPago As String
 End Sub
 Private Sub cmbTipoPago_KeyPress(keyAscii As Integer)
-    If keyAscii = 13 And txtNroFactura.Enabled = True Then
+    If keyAscii = 13 And cmbTipoPago.Text = "Comision" Then
+        txtComision.Enabled = True
+        txtComision.SetFocus
+    ElseIf keyAscii = 13 And txtNroFactura.Enabled = True Then
         txtNroFactura.SetFocus
     ElseIf keyAscii = 13 And txtNroFactura.Enabled = False Then
         txtMonto.SetFocus
+    Else: txtComision.Enabled = False
     End If
 End Sub
 
@@ -459,7 +502,7 @@ Private Sub cmdCobrar_Click()
             rsContabilidad.AddNew
             rsContabilidad!asiento = !asiento
             rsContabilidad!fecha = !fecha
-            rsContabilidad!Cuenta = !Cuenta
+            rsContabilidad!cuenta = !cuenta
             rsContabilidad!Detalle = !Detalle
             rsContabilidad!Debe = !Debe
             rsContabilidad!Haber = !Haber
@@ -476,7 +519,7 @@ Private Sub cmdCobrar_Click()
     If Month(Format(frmCobranza.txtFechaVto.Text, "dd/mm/yyyy")) > Month(Date) And Year(Format(frmCobranza.txtFechaVto.Text, "mm/dd/yyyy")) >= Year(Date) Then
         GoTo continuar
     End If
-    ''' si paga cuota 2 en adelante lo baja a marcas
+    ''' si paga cuota 1 en adelante lo baja a marcas
     If Int(frmCobranza.txtNroCuota.Text) > 0 Then
         Marcar
         With rsMarcar
@@ -547,27 +590,14 @@ If keyAscii = 13 Then
         Exit Sub
     End If
     
-    With rsContabilidadTemp
-        .Requery
-        .AddNew
-        !nrofactura = txtNroFactura.Text
-        !Debe = txtMonto.Text
-        !Haber = Null
-        !fecha = Date
-        !asiento = Null
-        !CodAlumno = Val(frmCobranza.lblCodAlumno.Caption)
-        !NroCuota = Val(frmCobranza.txtNroCuota.Text)
-        If cmbTipoPago.Text = "Efectivo" Then
-            !Cuenta = "CAJA ADMINISTRACION"
-        ElseIf cmbTipoPago.Text = "Tarjeta" Then
-            !Cuenta = "DEBITO TARJETA CREDITO"
-        Else
-            !Cuenta = "Descuento"
-        End If
-        !Detalle = "ALUMNO " & frmCobranza.lblCodAlumno.Caption
-        .Update
-    End With
-    Adodc.Refresh
+    tipoPago = cmbTipoPago.Text
+    If tipoPago = "Comision" Then
+        bajarAsiento tipoPago
+        tipoPago = "Salida"
+        bajarAsiento tipoPago
+        tipoPago = "Efectivo"
+    End If
+    bajarAsiento tipoPago
 
     txtNroFactura.Enabled = False
     If Val(txtResta.Text) = 0 Then
@@ -604,5 +634,41 @@ Sub formatoGrilla()
 End Sub
 Private Sub txtNroFactura_KeyPress(keyAscii As Integer)
     continue keyAscii
+End Sub
+Sub bajarAsiento(tipoPago)
+    With rsContabilidadTemp
+        .Requery
+        .AddNew
+        !nrofactura = txtNroFactura.Text
+        ''' Egreso por comision
+        If tipoPago = "Salida" Then
+            !Debe = Null
+            !Haber = txtComision.Text
+        Else
+            !Debe = txtMonto.Text
+            !Haber = Null
+        End If
+        !fecha = Date
+        !asiento = Null
+        !CodAlumno = Val(frmCobranza.lblCodAlumno.Caption)
+        !NroCuota = Val(frmCobranza.txtNroCuota.Text)
+        ''' Seleccion de cuenta
+        If tipoPago = "Efectivo" Or tipoPago = "Salida" Then
+            !cuenta = "CAJA ADMINISTRACION"
+        ElseIf tipoPago = "Comision" Then
+            !cuenta = "HONORARIOS ASESORES"
+        ElseIf tipoPago = "Tarjeta" Then
+            !cuenta = "DEBITO TARJETA CREDITO"
+        Else: !cuenta = "Descuento"
+        End If
+        
+        If tipoPago = "Comision" Or tipoPago = "Salida" Then
+            !Detalle = "COMISION CUOTA " & frmCobranza.txtNroCuota.Text & " ALUMNO " & frmCobranza.lblCodAlumno.Caption
+        Else:
+            !Detalle = "ALUMNO " & frmCobranza.lblCodAlumno.Caption & " CUOTA " & frmCobranza.txtNroCuota.Text
+        End If
+        .Update
+    End With
+    Adodc.Refresh
 End Sub
 

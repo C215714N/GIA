@@ -1,4 +1,4 @@
-Declaraciones = 44, 56, 856, 417, C
+Declaraciones = 44, 56, 856, 417, Z
 Conexiones = 23, -12, 723, 467, C
 frmVerificaciones = 150, 150, 638, 601, C, 0, 0, 812, 361, C
 frmViaticos = 125, 125, 646, 576, C, 110, 140, 988, 578, C
@@ -48,7 +48,7 @@ frmMarcas = 175, 175, 831, 564, C, 0, 0, 878, 438, C
 frmMatriculas = 50, 50, 558, 501, C, 22, 28, 900, 466, C
 frmModificarPlanDePago = 0, 0, 521, 451, C, 44, 56, 922, 494, C
 frmNuevoCheque = 66, 84, 944, 522, C, 66, 84, 944, 522, C
-frmPagoDeCuota = 26, 1, 878, 438, C, 71, 220, 949, 658, C
+frmPagoDeCuota = 26, 1, 878, 438, I, 71, 220, 949, 658, C
 frmPersonal = 0, 0, 636, 389, C, 175, 175, 663, 626, C
 frmPlanDePagoReingreso = 50, 50, 571, 501, C, 52, 143, 930, 581, C
 frmPlanDePagos = 100, 350, 978, 699, C, 154, 196, 1032, 634, C

@@ -239,7 +239,7 @@ Private Sub cmdAceptar_Click()
     On Error GoTo LineaError:
     
     frmCobranza.lblCodAlumno.Caption = grilla.Columns(0).Text
-    frmCobranza.lblNyA.Caption = grilla.Columns(1).Text
+    frmCobranza.lblNya.Caption = grilla.Columns(1).Text
     If Trim(Len(frmCobranza.lblCodAlumno.Caption)) = 1 Then frmCobranza.lblCodAlumno.Caption = Format(frmCobranza.lblCodAlumno.Caption, "0000#")
     If Trim(Len(frmCobranza.lblCodAlumno.Caption)) = 2 Then frmCobranza.lblCodAlumno.Caption = Format(frmCobranza.lblCodAlumno.Caption, "000##")
     If Trim(Len(frmCobranza.lblCodAlumno.Caption)) = 3 Then frmCobranza.lblCodAlumno.Caption = Format(frmCobranza.lblCodAlumno.Caption, "00###")
@@ -287,5 +287,5 @@ Sub formatoGrilla()
 End Sub
 
 Private Sub txtBuscar_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
