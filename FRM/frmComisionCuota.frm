@@ -28,7 +28,7 @@ Begin VB.Form frmComisionCuota
    Begin VB.TextBox lblComisionAsesor 
       Height          =   375
       Left            =   360
-      TabIndex        =   23
+      TabIndex        =   2
       Top             =   2280
       Width           =   1335
    End
@@ -47,13 +47,13 @@ Begin VB.Form frmComisionCuota
       ForeColor       =   &H8000000F&
       Height          =   2895
       Left            =   3720
-      TabIndex        =   14
+      TabIndex        =   18
       Top             =   0
       Width           =   1600
       Begin isButtonTest.isButton cmdAceptar 
          Height          =   420
          Left            =   120
-         TabIndex        =   4
+         TabIndex        =   9
          Top             =   2280
          Width           =   1335
          _ExtentX        =   2355
@@ -87,7 +87,7 @@ Begin VB.Form frmComisionCuota
          ForeColor       =   &H8000000F&
          Height          =   255
          Left            =   120
-         TabIndex        =   20
+         TabIndex        =   21
          Top             =   1560
          Width           =   975
       End
@@ -96,7 +96,7 @@ Begin VB.Form frmComisionCuota
          BorderStyle     =   1  'Fixed Single
          Height          =   360
          Left            =   120
-         TabIndex        =   19
+         TabIndex        =   8
          Top             =   1800
          Width           =   1335
       End
@@ -106,7 +106,7 @@ Begin VB.Form frmComisionCuota
          ForeColor       =   &H8000000F&
          Height          =   255
          Left            =   120
-         TabIndex        =   18
+         TabIndex        =   20
          Top             =   900
          Width           =   1335
       End
@@ -115,7 +115,7 @@ Begin VB.Form frmComisionCuota
          BorderStyle     =   1  'Fixed Single
          Height          =   360
          Left            =   120
-         TabIndex        =   17
+         TabIndex        =   7
          Top             =   1150
          Width           =   1335
       End
@@ -125,7 +125,7 @@ Begin VB.Form frmComisionCuota
          ForeColor       =   &H8000000F&
          Height          =   255
          Left            =   120
-         TabIndex        =   16
+         TabIndex        =   19
          Top             =   250
          Width           =   975
       End
@@ -134,7 +134,7 @@ Begin VB.Form frmComisionCuota
          BorderStyle     =   1  'Fixed Single
          Height          =   360
          Left            =   120
-         TabIndex        =   15
+         TabIndex        =   6
          Top             =   500
          Width           =   1335
       End
@@ -154,7 +154,7 @@ Begin VB.Form frmComisionCuota
       ForeColor       =   &H8000000F&
       Height          =   2895
       Left            =   120
-      TabIndex        =   5
+      TabIndex        =   11
       Top             =   0
       Width           =   3555
       Begin VB.Frame Frame4 
@@ -172,13 +172,13 @@ Begin VB.Form frmComisionCuota
          ForeColor       =   &H8000000F&
          Height          =   855
          Left            =   1800
-         TabIndex        =   10
+         TabIndex        =   15
          Top             =   240
          Width           =   1600
          Begin VB.TextBox txtNroFactura 
             Height          =   375
             Left            =   120
-            TabIndex        =   2
+            TabIndex        =   3
             Top             =   300
             Width           =   1335
          End
@@ -198,14 +198,14 @@ Begin VB.Form frmComisionCuota
          ForeColor       =   &H8000000F&
          Height          =   1695
          Left            =   1800
-         TabIndex        =   11
+         TabIndex        =   16
          Top             =   1080
          Width           =   1600
          Begin VB.TextBox txtPagoParcial 
             Alignment       =   1  'Right Justify
             Height          =   360
             Left            =   120
-            TabIndex        =   3
+            TabIndex        =   5
             Text            =   "0"
             Top             =   1200
             Width           =   1335
@@ -216,7 +216,7 @@ Begin VB.Form frmComisionCuota
             ForeColor       =   &H8000000F&
             Height          =   255
             Left            =   120
-            TabIndex        =   22
+            TabIndex        =   23
             Top             =   240
             Width           =   1335
          End
@@ -225,7 +225,7 @@ Begin VB.Form frmComisionCuota
             BorderStyle     =   1  'Fixed Single
             Height          =   360
             Left            =   120
-            TabIndex        =   13
+            TabIndex        =   4
             Top             =   480
             Width           =   1335
          End
@@ -235,7 +235,7 @@ Begin VB.Form frmComisionCuota
             ForeColor       =   &H8000000F&
             Height          =   255
             Left            =   120
-            TabIndex        =   12
+            TabIndex        =   17
             Top             =   960
             Width           =   1335
          End
@@ -255,14 +255,14 @@ Begin VB.Form frmComisionCuota
          ForeColor       =   &H8000000F&
          Height          =   855
          Left            =   120
-         TabIndex        =   9
+         TabIndex        =   0
          Top             =   240
          Width           =   1600
          Begin VB.TextBox txtCoordinador 
             Alignment       =   1  'Right Justify
             Height          =   375
             Left            =   120
-            TabIndex        =   0
+            TabIndex        =   10
             Top             =   300
             Width           =   1335
          End
@@ -282,7 +282,7 @@ Begin VB.Form frmComisionCuota
          ForeColor       =   &H8000000F&
          Height          =   1695
          Left            =   120
-         TabIndex        =   6
+         TabIndex        =   12
          Top             =   1080
          Width           =   1600
          Begin VB.TextBox txtPorcentajeAsesor 
@@ -298,7 +298,7 @@ Begin VB.Form frmComisionCuota
             ForeColor       =   &H8000000F&
             Height          =   255
             Left            =   120
-            TabIndex        =   21
+            TabIndex        =   22
             Top             =   240
             Width           =   1335
          End
@@ -308,7 +308,7 @@ Begin VB.Form frmComisionCuota
             ForeColor       =   &H8000000F&
             Height          =   255
             Left            =   120
-            TabIndex        =   8
+            TabIndex        =   14
             Top             =   960
             Width           =   1335
          End
@@ -327,7 +327,7 @@ Begin VB.Form frmComisionCuota
             EndProperty
             Height          =   375
             Left            =   1080
-            TabIndex        =   7
+            TabIndex        =   13
             Top             =   480
             Width           =   375
          End
@@ -363,8 +363,8 @@ Private Sub cmdAceptar_Click()
         '''CAJA ADMINISTRACION (Parcial 1° Cuota - DEBE)
             .AddNew
             !fecha = Date
-            !cuenta = "CAJA ADMINISTRACION"
-            !Detalle = "Parcial de 1° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
+            !Cuenta = "CAJA ADMINISTRACION"
+            !Detalle = "PARCIAL CUOTA 0 ALUMNO " & frmPlanDePagos.lblCodAlumno.Caption
             !Debe = Int(lblTotalCuota1.Caption) - Int(txtPagoParcial.Text)
             !Haber = Null
             !nrofactura = txtNroFactura.Text
@@ -375,8 +375,8 @@ Private Sub cmdAceptar_Click()
             .Requery
             .AddNew
             !fecha = Date
-            !cuenta = "Descuento"
-            !Detalle = "Parcial de 1° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
+            !Cuenta = "Descuento"
+            !Detalle = "PARCIAL CUOTA 0 ALUMNO " & frmPlanDePagos.lblCodAlumno.Caption
             !Debe = Int(txtPagoParcial.Text)
             !nrofactura = txtNroFactura.Text
             !Haber = Null
@@ -386,8 +386,8 @@ Private Sub cmdAceptar_Click()
         '''COMISION COORDINADOR (Comision 1° Cuota - DEBE)
             .AddNew
             !fecha = Date
-            !cuenta = "COMISIONES VARIAS"
-            !Detalle = "Comision Coord. 1° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
+            !Cuenta = "COMISIONES VARIAS"
+            !Detalle = "COMISION COORD. CUOTA 0 ALUMNO " & frmPlanDePagos.lblCodAlumno.Caption
             !Debe = Int(txtCoordinador.Text)
             !Haber = Null
             !CodAlumno = Null
@@ -397,8 +397,8 @@ Private Sub cmdAceptar_Click()
             .Requery
             .AddNew
             !fecha = Date
-            !cuenta = "CAJA ADMINISTRACION"
-            !Detalle = "Comision Coord. 1° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
+            !Cuenta = "CAJA ADMINISTRACION"
+            !Detalle = "COMISION COORD. CUOTA 0 ALUMNO " & frmPlanDePagos.lblCodAlumno.Caption
             !Debe = Null
             !Haber = Int(txtCoordinador.Text)
             !CodAlumno = Null
@@ -408,8 +408,8 @@ Private Sub cmdAceptar_Click()
             .Requery
             .AddNew
             !fecha = Date
-            !cuenta = "HONORARIOS ASESORES"
-            !Detalle = "Comision de 1° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
+            !Cuenta = "HONORARIOS ASESORES"
+            !Detalle = "COMISION CUOTA 0 ALUMNO " & frmPlanDePagos.lblCodAlumno.Caption
             !Debe = Int(lblComisionAsesor.Text)
             !Haber = Null
             !CodAlumno = Null
@@ -419,8 +419,8 @@ Private Sub cmdAceptar_Click()
             .Requery
             .AddNew
             !fecha = Date
-            !cuenta = "CAJA ADMINISTRACION"
-            !Detalle = "Comision de 1° Cuota de " & frmPlanDePagos.lblCodAlumno.Caption
+            !Cuenta = "CAJA ADMINISTRACION"
+            !Detalle = "COMISION CUOTA 0 ALUMNO " & frmPlanDePagos.lblCodAlumno.Caption
             !Debe = Null
             !Haber = Int(lblComisionAsesor.Text)
             !CodAlumno = Null
@@ -445,7 +445,6 @@ Private Sub cmdAceptar_Click()
     Unload Me
 LineaError: ErrCode Err
 End Sub
-
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
     If aceptar = True Then
         frmPlanDePagos.Enabled = True
@@ -469,7 +468,6 @@ Private Sub txtCoordinador_keypress(keyAscii As Integer)
         SendKeys "{TAB}"
     End If
 End Sub
-
 Private Sub txtPorcentajeAsesor_keypress(keyAscii As Integer)
     If keyAscii = 13 Then
         FormatoNumeros
@@ -477,38 +475,30 @@ Private Sub txtPorcentajeAsesor_keypress(keyAscii As Integer)
         SendKeys "{TAB}"
     End If
 End Sub
-
 Private Sub txtNroFactura_KeyPress(keyAscii As Integer)
     continue keyAscii
 End Sub
-
 Private Sub txtPagoParcial_KeyPress(keyAscii As Integer)
     If keyAscii = 13 Then
         FormatoNumeros
-        CalcularComision
+        CalcularPorcentaje
         SendKeys "{TAB}"
     End If
 End Sub
-
 Sub FormatoNumeros()
     If txtCoordinador.Text = "" Then txtCoordinador.Text = 0
     If txtPorcentajeAsesor.Text = "" Then txtPorcentajeAsesor.Text = 0
     If lblComisionAsesor.Text = "" Then lblComisionAsesor.Text = 0
     If txtPagoParcial.Text = "" Then txtPagoParcial.Text = 0
-    
 End Sub
-
 Sub CalcularComision()
     lblComisionAsesor.Text = FormatCurrency((Int(txtPorcentajeAsesor.Text) * Int(lblTotalCurso.Caption)) / 100)
     TotalComisiones
 End Sub
-
-
 Sub CalcularPorcentaje()
     txtPorcentajeAsesor.Text = FormatCurrency((Int(lblComisionAsesor.Text) * 100 / Int(lblTotalCurso.Caption)))
     TotalComisiones
 End Sub
-
 Sub TotalComisiones()
     lblTotalComisiones.Caption = FormatCurrency(Int(txtCoordinador.Text) + Int(lblComisionAsesor.Text))
     lblTotal.Caption = FormatCurrency(Int(lblTotalCuota1.Caption) - Int(lblTotalComisiones.Caption) - Int(txtPagoParcial.Text))
