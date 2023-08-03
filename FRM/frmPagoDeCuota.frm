@@ -419,7 +419,7 @@ Begin VB.Form frmPagoDeCuota
       Left            =   5640
       TabIndex        =   9
       Top             =   840
-      Width           =   1350
+      Width           =   1575
    End
    Begin VB.Label Label1 
       AutoSize        =   -1  'True
@@ -462,14 +462,13 @@ Private Sub Form_Load()
     Dim tipoPago As String
 End Sub
 Private Sub cmbTipoPago_KeyPress(keyAscii As Integer)
+    txtComision.Enabled = False
+    
     If keyAscii = 13 And cmbTipoPago.Text = "Comision" Then
         txtComision.Enabled = True
         txtComision.SetFocus
     ElseIf keyAscii = 13 And txtNroFactura.Enabled = True Then
         txtNroFactura.SetFocus
-    ElseIf keyAscii = 13 And txtNroFactura.Enabled = False Then
-        txtMonto.SetFocus
-    Else: txtComision.Enabled = False
     End If
 End Sub
 
@@ -502,7 +501,7 @@ Private Sub cmdCobrar_Click()
             rsContabilidad.AddNew
             rsContabilidad!asiento = !asiento
             rsContabilidad!fecha = !fecha
-            rsContabilidad!cuenta = !cuenta
+            rsContabilidad!Cuenta = !Cuenta
             rsContabilidad!Detalle = !Detalle
             rsContabilidad!Debe = !Debe
             rsContabilidad!Haber = !Haber
@@ -573,6 +572,11 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
     End With
     planPago
 End Sub
+
+Private Sub txtComision_KeyPress(keyAscii As Integer)
+    If keyAscii = 13 Then SendKeys "{TAB}"
+End Sub
+
 Private Sub txtMonto_KeyPress(keyAscii As Integer)
 If keyAscii = 13 Then
     revision
@@ -599,7 +603,6 @@ If keyAscii = 13 Then
     End If
     bajarAsiento tipoPago
 
-    txtNroFactura.Enabled = False
     If Val(txtResta.Text) = 0 Then
         cmdCobrar.SetFocus
     Else
@@ -642,9 +645,10 @@ Sub bajarAsiento(tipoPago)
         !nrofactura = txtNroFactura.Text
         ''' Egreso por comision
         If tipoPago = "Salida" Then
-            !Debe = Null
             !Haber = txtComision.Text
-        Else
+        ElseIf tipoPago = "Comision" Then
+            !Debe = txtComision.Text
+        Else:
             !Debe = txtMonto.Text
             !Haber = Null
         End If
@@ -654,12 +658,12 @@ Sub bajarAsiento(tipoPago)
         !NroCuota = Val(frmCobranza.txtNroCuota.Text)
         ''' Seleccion de cuenta
         If tipoPago = "Efectivo" Or tipoPago = "Salida" Then
-            !cuenta = "CAJA ADMINISTRACION"
+            !Cuenta = "CAJA ADMINISTRACION"
         ElseIf tipoPago = "Comision" Then
-            !cuenta = "HONORARIOS ASESORES"
+            !Cuenta = "HONORARIOS ASESORES"
         ElseIf tipoPago = "Tarjeta" Then
-            !cuenta = "DEBITO TARJETA CREDITO"
-        Else: !cuenta = "Descuento"
+            !Cuenta = "DEBITO TARJETA CREDITO"
+        Else: !Cuenta = "Descuento"
         End If
         
         If tipoPago = "Comision" Or tipoPago = "Salida" Then
