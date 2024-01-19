@@ -54,7 +54,7 @@ Begin VB.Form frmExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   167706625
+         Format          =   112328705
          CurrentDate     =   41978
       End
       Begin VB.TextBox txtPromedio 
@@ -608,7 +608,7 @@ Private Sub CargarModulos()
             .AddItem ("Modulo I")
             .AddItem ("Modulo II")
         End With
-    ElseIf txtCurso.Text = "Telefonía Celular" Then
+    ElseIf txtCurso.Text = "Telefonía Celular" Or txtCurso.Text = "Tecnico en Reparacion de Lavarropas y Secarropas" Then
         With cmbModulo
             .Clear
             .AddItem ("Modulo I")

@@ -575,6 +575,10 @@ Sub cargarManuales()
         With cmbManual
             .AddItem ("Mandatario")
         End With
+    ElseIf txtCurso.Text = "Tecnico en Reparacion de Lavarropas y Secarropas" Then
+        With cmbManual
+            .AddItem ("Lavarropas y Secarropas")
+        End With
     End If
 End Sub
 

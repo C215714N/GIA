@@ -178,7 +178,7 @@ Begin VB.Form frmDerechosExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   169082881
+         Format          =   165871617
          CurrentDate     =   41978
       End
       Begin isButtonTest.isButton cmdAgregar 
@@ -633,7 +633,7 @@ Private Sub CargarModulos()
             .AddItem ("Modulo II")
         End With
         
-    ElseIf txtCurso.Text = "Telefonía Celular" Then
+    ElseIf txtCurso.Text = "Telefonía Celular" Or txtCurso.Text = "Tecnico en Reparacion de Lavarropas y Secarropas" Then
         With cmbModulo
             .Clear
             .AddItem ("Modulo I")

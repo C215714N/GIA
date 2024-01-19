@@ -178,11 +178,11 @@ Begin VB.MDIForm MDI
          NumPanels       =   5
          BeginProperty Panel1 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   6
-            TextSave        =   "29/1/2022"
+            TextSave        =   "7/8/2023"
          EndProperty
          BeginProperty Panel2 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   5
-            TextSave        =   "02:47"
+            TextSave        =   "00:50"
          EndProperty
          BeginProperty Panel3 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   2
