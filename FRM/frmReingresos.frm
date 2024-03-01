@@ -4,10 +4,10 @@ Begin VB.Form frmReingresos
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Control de Reingresos"
-   ClientHeight    =   1665
+   ClientHeight    =   1710
    ClientLeft      =   5160
    ClientTop       =   2400
-   ClientWidth     =   4020
+   ClientWidth     =   4650
    BeginProperty Font 
       Name            =   "Century Gothic"
       Size            =   9.75
@@ -23,8 +23,8 @@ Begin VB.Form frmReingresos
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   1665
-   ScaleWidth      =   4020
+   ScaleHeight     =   1710
+   ScaleWidth      =   4650
    Begin VB.Frame Frame1 
       BackColor       =   &H00662200&
       Caption         =   "Codigo"
@@ -42,25 +42,25 @@ Begin VB.Form frmReingresos
       Left            =   120
       TabIndex        =   2
       Top             =   0
-      Width           =   3765
+      Width           =   4365
       Begin VB.TextBox txtCodNuevo 
          Height          =   360
-         Left            =   1320
+         Left            =   1560
          TabIndex        =   1
          Top             =   480
-         Width           =   855
+         Width           =   1215
       End
       Begin VB.TextBox txtCodViejo 
          Height          =   360
          Left            =   120
          TabIndex        =   0
          Top             =   480
-         Width           =   855
+         Width           =   1215
       End
       Begin isButtonTest.isButton cmdReingresar 
          Height          =   420
-         Left            =   2280
-         TabIndex        =   7
+         Left            =   2880
+         TabIndex        =   6
          Top             =   405
          Width           =   1335
          _ExtentX        =   2355
@@ -88,32 +88,12 @@ Begin VB.Form frmReingresos
             Strikethrough   =   0   'False
          EndProperty
       End
-      Begin VB.Label Label3 
-         Alignment       =   2  'Center
-         BackStyle       =   0  'Transparent
-         Caption         =   "--->"
-         BeginProperty Font 
-            Name            =   "Century Gothic"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H8000000F&
-         Height          =   255
-         Left            =   960
-         TabIndex        =   5
-         Top             =   540
-         Width           =   375
-      End
       Begin VB.Label Label2 
          BackStyle       =   0  'Transparent
          Caption         =   "Nuevo"
          ForeColor       =   &H8000000F&
          Height          =   255
-         Left            =   1320
+         Left            =   1560
          TabIndex        =   4
          Top             =   240
          Width           =   855
@@ -142,11 +122,11 @@ Begin VB.Form frmReingresos
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H00C0C0FF&
-      Height          =   450
+      Height          =   810
       Left            =   225
-      TabIndex        =   8
+      TabIndex        =   7
       Top             =   1065
-      Width           =   3735
+      Width           =   4215
    End
    Begin VB.Label Label4 
       BackStyle       =   0  'Transparent
@@ -163,7 +143,7 @@ Begin VB.Form frmReingresos
       ForeColor       =   &H00000080&
       Height          =   450
       Left            =   240
-      TabIndex        =   6
+      TabIndex        =   5
       Top             =   1080
       Width           =   3735
    End
@@ -174,22 +154,22 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cmdReingresar_Click()
-    If txtCodViejo.text = "" Then MsgBox "Ingrese el codigo actual del alumno", vbCritical, "Control de Reingresos de Alumnos": txtCodViejo.SetFocus: Exit Sub
-    If txtCodNuevo.text = "" Then MsgBox "Ingrese el nuevo codigo del alumno", vbCritical, "Control de Reingresos de Alumnos": txtCodNuevo.SetFocus: Exit Sub
+    If txtCodViejo.Text = "" Then MsgBox "Ingrese el codigo actual del alumno", vbCritical, "Control de Reingresos de Alumnos": txtCodViejo.SetFocus: Exit Sub
+    If txtCodNuevo.Text = "" Then MsgBox "Ingrese el nuevo codigo del alumno", vbCritical, "Control de Reingresos de Alumnos": txtCodNuevo.SetFocus: Exit Sub
     
     With rsLibro
         If .State = 1 Then .Close
-        .Open "SELECT * FROM librodeaula WHERE codalumno=" & Int(txtCodViejo.text), Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT * FROM librodeaula WHERE codalumno=" & Int(txtCodViejo.Text), Cn, adOpenDynamic, adLockPessimistic
         If .BOF Or .EOF Then Exit Sub
         .MoveFirst
         Do Until .EOF
-            !CodAlumno = Int(txtCodNuevo.text)
+            !CodAlumno = Int(txtCodNuevo.Text)
             .UpdateBatch
             .MoveNext
         Loop
         MsgBox "Se ha reingresado al alumno", , "Control de Reingresos de Alumnos"
-        txtCodViejo.text = ""
-        txtCodNuevo.text = ""
+        txtCodViejo.Text = ""
+        txtCodNuevo.Text = ""
         txtCodViejo.SetFocus
     End With
 End Sub
@@ -199,9 +179,9 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub txtCodNuevo_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub
 
 Private Sub txtCodViejo_KeyPress(keyAscii As Integer)
-    Continue keyAscii
+    continue keyAscii
 End Sub

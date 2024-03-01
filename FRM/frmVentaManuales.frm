@@ -558,7 +558,7 @@ Sub cargarManuales()
             .AddItem ("Lazo")
         End With
         
-    ElseIf txtCurso.Text = "Asistente Terapeutico" Or txtCurso.Text = "Cuidador Domiciliario" Then
+    ElseIf txtCurso.Text = "Asistente Terapeutico" Or txtCurso.Text = "Asistente en Enfermeria" Or txtCurso.Text = "Cuidador Domiciliario" Or txtCurso.Text = "Asistente en Enfermeria" Then
         With cmbManual
             .AddItem ("Cuidador Dom. I")
             .AddItem ("Cuidador Dom. II")
@@ -566,18 +566,30 @@ Sub cargarManuales()
             .AddItem ("Lazo")
         End With
     
-    ElseIf txtCurso.Text = "Emergencias Médicas" Then
+    ElseIf txtCurso.Text = "Emergencias Médicas" Or txtCurso.Text = "Emergencias Medicas Sanitarias" Or txtCurso.Text = "Emergencias Médicas Sanitarias" Then
         With cmbManual
             .AddItem ("Primeros Auxilios")
             .AddItem ("Covid")
         End With
+        
     ElseIf txtCurso.Text = "Mandatario Automotor" Then
         With cmbManual
             .AddItem ("Mandatario")
         End With
+        
     ElseIf txtCurso.Text = "Tecnico en Reparacion de Lavarropas y Secarropas" Then
         With cmbManual
             .AddItem ("Lavarropas y Secarropas")
+        End With
+
+    ElseIf txtCurso.Text = "Asistente en Cardiología" Then
+        With cmbManual
+            .AddItem ("Cardiologia")
+        End With
+
+    Else
+        With cmbManual
+            .AddItem ("Manual no Registrado")
         End With
     End If
 End Sub

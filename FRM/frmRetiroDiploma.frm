@@ -41,6 +41,7 @@ Begin VB.Form frmRetiroDiploma
       _ExtentX        =   2355
       _ExtentY        =   661
       _Version        =   393216
+      Enabled         =   0   'False
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Century Gothic"
          Size            =   9.75
@@ -50,7 +51,7 @@ Begin VB.Form frmRetiroDiploma
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   127336449
+      Format          =   109772801
       CurrentDate     =   42181
    End
    Begin isButtonTest.isButton cmdGrabar 

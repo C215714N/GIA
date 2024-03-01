@@ -45,6 +45,7 @@ Begin VB.Form frmExamenes
          _ExtentX        =   2355
          _ExtentY        =   635
          _Version        =   393216
+         Enabled         =   0   'False
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Century Gothic"
             Size            =   9.75
@@ -54,7 +55,7 @@ Begin VB.Form frmExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   112328705
+         Format          =   99811329
          CurrentDate     =   41978
       End
       Begin VB.TextBox txtPromedio 
@@ -616,25 +617,7 @@ Private Sub CargarModulos()
             .AddItem ("Final")
         End With
         
-    ElseIf txtCurso.Text = "Técnico en aire acondicionado" Or txtCurso.Text = "Electricidad domiciliaria" Then
-        With cmbModulo
-            .AddItem ("Modulo I")
-            .AddItem ("Modulo II")
-            .AddItem ("Modulo III")
-            .AddItem ("Final")
-        End With
-    
-    ElseIf txtCurso.Text = "Soporte Tecnico" Then
-        With cmbModulo
-            .AddItem ("Modulo I")
-            .AddItem ("Modulo II")
-            .AddItem ("Modulo III")
-            .AddItem ("Modulo IV")
-            .AddItem ("Modulo V")
-            .AddItem ("Examen Final")
-        End With
-        
-    ElseIf txtCurso.Text = "Cuidador Domiciliario" Or txtCurso.Text = "Asistente Terapeutico" Or txtCurso.Text = "Auxiliar de Farmacia" Or txtCurso.Text = "Emergencias Médicas" Or txtCurso.Text = "Emergencias Medicas Sanitarias" Or txtCurso.Text = "Extracc. Adm. Y Asist. Tec. Laborat." Or txtCurso.Text = "Mandatario Automotor" Then
+    ElseIf txtCurso.Text = "Cuidador Domiciliario" Or txtCurso.Text = "Asistente en Enfermeria" Or txtCurso.Text = "Asistente Terapeutico" Or txtCurso.Text = "Auxiliar de Farmacia" Or txtCurso.Text = "Emergencias Médicas" Or txtCurso.Text = "Emergencias Medicas Sanitarias" Or txtCurso.Text = "Extracc. Adm. Y Asist. Tec. Laborat." Or txtCurso.Text = "Mandatario Automotor" Then
         With cmbModulo
             .AddItem ("Parcial I")
             .AddItem ("Parcial II")
