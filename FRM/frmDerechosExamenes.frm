@@ -6,18 +6,18 @@ Begin VB.Form frmDerechosExamenes
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Derechos de Examen"
-   ClientHeight    =   4725
+   ClientHeight    =   5055
    ClientLeft      =   7245
    ClientTop       =   2280
-   ClientWidth     =   5730
+   ClientWidth     =   5865
    ForeColor       =   &H00E0E0E0&
    Icon            =   "frmDerechosExamenes.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   4725
-   ScaleWidth      =   5730
+   ScaleHeight     =   5055
+   ScaleWidth      =   5865
    Begin VB.TextBox txtCodigo 
       Alignment       =   1  'Right Justify
       BeginProperty Font 
@@ -48,7 +48,7 @@ Begin VB.Form frmDerechosExamenes
       EndProperty
       Height          =   360
       Left            =   1080
-      TabIndex        =   11
+      TabIndex        =   12
       Top             =   360
       Width           =   2775
    End
@@ -65,7 +65,7 @@ Begin VB.Form frmDerechosExamenes
       EndProperty
       Height          =   360
       Left            =   120
-      TabIndex        =   10
+      TabIndex        =   11
       Top             =   960
       Width           =   3735
    End
@@ -82,13 +82,31 @@ Begin VB.Form frmDerechosExamenes
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H8000000F&
-      Height          =   4335
+      Height          =   4935
       Left            =   3960
-      TabIndex        =   6
-      Top             =   240
-      Width           =   1635
+      TabIndex        =   7
+      Top             =   0
+      Width           =   1755
+      Begin VB.TextBox TxtDescuento 
+         Alignment       =   1  'Right Justify
+         BeginProperty Font 
+            Name            =   "Century Gothic"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   360
+         Left            =   150
+         TabIndex        =   5
+         Text            =   "0"
+         Top             =   3480
+         Width           =   1455
+      End
       Begin VB.TextBox txtPrecio 
-         Alignment       =   2  'Center
+         Alignment       =   1  'Right Justify
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Century Gothic"
@@ -103,7 +121,7 @@ Begin VB.Form frmDerechosExamenes
          Left            =   150
          TabIndex        =   4
          Top             =   2880
-         Width           =   1335
+         Width           =   1455
       End
       Begin VB.ComboBox cmbPago 
          BeginProperty Font 
@@ -115,14 +133,14 @@ Begin VB.Form frmDerechosExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   345
+         Height          =   360
          ItemData        =   "frmDerechosExamenes.frx":10CA
          Left            =   150
          List            =   "frmDerechosExamenes.frx":10D7
          Style           =   2  'Dropdown List
          TabIndex        =   2
          Top             =   1680
-         Width           =   1335
+         Width           =   1455
       End
       Begin VB.TextBox txtRecibo 
          BeginProperty Font 
@@ -138,7 +156,7 @@ Begin VB.Form frmDerechosExamenes
          Left            =   150
          TabIndex        =   3
          Top             =   2280
-         Width           =   1335
+         Width           =   1455
       End
       Begin VB.ComboBox cmbModulo 
          Enabled         =   0   'False
@@ -151,21 +169,21 @@ Begin VB.Form frmDerechosExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   345
+         Height          =   360
          ItemData        =   "frmDerechosExamenes.frx":10F9
          Left            =   150
          List            =   "frmDerechosExamenes.frx":10FB
          TabIndex        =   1
          Top             =   1080
-         Width           =   1335
+         Width           =   1455
       End
       Begin MSComCtl2.DTPicker dtpFecha 
          Height          =   375
          Left            =   150
-         TabIndex        =   5
+         TabIndex        =   6
          Top             =   480
-         Width           =   1335
-         _ExtentX        =   2355
+         Width           =   1455
+         _ExtentX        =   2566
          _ExtentY        =   661
          _Version        =   393216
          Enabled         =   0   'False
@@ -178,16 +196,16 @@ Begin VB.Form frmDerechosExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   108789761
+         Format          =   98500609
          CurrentDate     =   41978
       End
       Begin isButtonTest.isButton cmdAgregar 
          Height          =   420
          Left            =   150
-         TabIndex        =   18
-         Top             =   3300
-         Width           =   1335
-         _ExtentX        =   2355
+         TabIndex        =   19
+         Top             =   3900
+         Width           =   1455
+         _ExtentX        =   2566
          _ExtentY        =   741
          Icon            =   "frmDerechosExamenes.frx":10FD
          Style           =   8
@@ -213,10 +231,10 @@ Begin VB.Form frmDerechosExamenes
       Begin isButtonTest.isButton cmdExamenes 
          Height          =   420
          Left            =   150
-         TabIndex        =   19
-         Top             =   3800
-         Width           =   1335
-         _ExtentX        =   2355
+         TabIndex        =   20
+         Top             =   4395
+         Width           =   1455
+         _ExtentX        =   2566
          _ExtentY        =   741
          Icon            =   "frmDerechosExamenes.frx":19D7
          Style           =   8
@@ -239,6 +257,25 @@ Begin VB.Form frmDerechosExamenes
             Strikethrough   =   0   'False
          EndProperty
       End
+      Begin VB.Label Label9 
+         BackStyle       =   0  'Transparent
+         Caption         =   "Descuento"
+         BeginProperty Font 
+            Name            =   "Century Gothic"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H8000000F&
+         Height          =   255
+         Left            =   150
+         TabIndex        =   21
+         Top             =   3240
+         Width           =   1335
+      End
       Begin VB.Label Label5 
          BackStyle       =   0  'Transparent
          Caption         =   "Recibo"
@@ -254,7 +291,7 @@ Begin VB.Form frmDerechosExamenes
          ForeColor       =   &H8000000F&
          Height          =   255
          Left            =   150
-         TabIndex        =   17
+         TabIndex        =   18
          Top             =   2040
          Width           =   1335
       End
@@ -273,7 +310,7 @@ Begin VB.Form frmDerechosExamenes
          ForeColor       =   &H8000000F&
          Height          =   255
          Left            =   150
-         TabIndex        =   16
+         TabIndex        =   17
          Top             =   2640
          Width           =   1335
       End
@@ -292,7 +329,7 @@ Begin VB.Form frmDerechosExamenes
          ForeColor       =   &H8000000F&
          Height          =   255
          Left            =   150
-         TabIndex        =   15
+         TabIndex        =   16
          Top             =   1440
          Width           =   1335
       End
@@ -311,7 +348,7 @@ Begin VB.Form frmDerechosExamenes
          ForeColor       =   &H8000000F&
          Height          =   255
          Left            =   150
-         TabIndex        =   8
+         TabIndex        =   9
          Top             =   840
          Width           =   1335
       End
@@ -330,19 +367,19 @@ Begin VB.Form frmDerechosExamenes
          ForeColor       =   &H8000000F&
          Height          =   255
          Left            =   150
-         TabIndex        =   7
+         TabIndex        =   8
          Top             =   240
          Width           =   1335
       End
    End
    Begin MSDataGridLib.DataGrid grilla 
-      Height          =   3135
+      Height          =   3495
       Left            =   120
-      TabIndex        =   9
+      TabIndex        =   10
       Top             =   1440
       Width           =   3735
       _ExtentX        =   6588
-      _ExtentY        =   5530
+      _ExtentY        =   6165
       _Version        =   393216
       AllowUpdate     =   0   'False
       HeadLines       =   1
@@ -415,7 +452,7 @@ Begin VB.Form frmDerechosExamenes
       ForeColor       =   &H8000000F&
       Height          =   255
       Left            =   120
-      TabIndex        =   14
+      TabIndex        =   15
       Top             =   120
       Width           =   855
    End
@@ -434,7 +471,7 @@ Begin VB.Form frmDerechosExamenes
       ForeColor       =   &H8000000F&
       Height          =   255
       Left            =   1080
-      TabIndex        =   13
+      TabIndex        =   14
       Top             =   120
       Width           =   2775
    End
@@ -453,7 +490,7 @@ Begin VB.Form frmDerechosExamenes
       ForeColor       =   &H8000000F&
       Height          =   255
       Left            =   120
-      TabIndex        =   12
+      TabIndex        =   13
       Top             =   720
       Width           =   1335
    End
@@ -467,7 +504,7 @@ Private Sub Form_Load()
     Centrar Me
     Control
     txtPrecio.Text = Format(rsControl!derechoExamen, "currency")
-    dtpFecha.Value = Date
+    DTPFecha.Value = Date
 End Sub
 
 Private Sub txtCodigo_KeyPress(keyAscii As Integer)
@@ -493,7 +530,7 @@ Private Sub txtCodigo_KeyPress(keyAscii As Integer)
             CargarModulos
             txtPrecio.Text = Format(rsControl!derechoExamen, "currency")
             cmbModulo.Enabled = True
-            dtpFecha.Enabled = True
+            DTPFecha.Enabled = True
             cmdAgregar.Enabled = True
             cmbModulo.SetFocus
             
@@ -509,6 +546,8 @@ Private Sub cmdAgregar_Click()
     If cmbModulo.Text = "" Then MsgBox "Elija el modulo", vbOKOnly + vbCritical, "GIA - Examenes": cmbModulo.SetFocus: Exit Sub
     If cmbPago.Text = "" Then MsgBox "Elija el tipo de pago", vbOKOnly + vbCritical, "GIA - Examenes": cmbPago.SetFocus: Exit Sub
     If txtRecibo.Text = "" Then MsgBox "Ingrese el numero de recibo", vbOKOnly + vbCritical, "GIA - Examenes": txtRecibo.SetFocus: Exit Sub
+    Dim PrecioFinal As Currency
+    PrecioFinal = (CSng(txtPrecio.Text) - CSng(TxtDescuento.Text))
 '''CONSULTA - TABLA DERECHOS DE EXAMEN
     With rsDerechosExamenes
         .Close
@@ -516,7 +555,7 @@ Private Sub cmdAgregar_Click()
         .Requery
         .AddNew
         !CodAlumno = Int(txtCodigo.Text)
-        !fecha = dtpFecha.Value
+        !fecha = DTPFecha.Value
         !modulo = cmbModulo.Text
         .Update
         .Close
@@ -537,7 +576,7 @@ Private Sub cmdAgregar_Click()
         !Cuenta = "DERECHO DE EXAMEN"
         !Detalle = txtAlumno.Text & " - " & cmbModulo.Text
         !nrofactura = txtRecibo.Text
-        !Haber = CSng(txtPrecio.Text)
+        !Haber = PrecioFinal
         !Debe = Null
         .Update
         .Requery
@@ -553,7 +592,7 @@ Private Sub cmdAgregar_Click()
         End If
         !Detalle = txtAlumno.Text & " - Derecho de Examen de " & cmbModulo.Text
         !nrofactura = txtRecibo.Text
-        !Debe = CSng(txtPrecio.Text)
+        !Debe = PrecioFinal
         !asiento = Null
         !NroCuota = Null
         !CodAlumno = Null
