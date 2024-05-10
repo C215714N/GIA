@@ -128,7 +128,7 @@ Begin VB.Form frmPlanDePagos
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   174522369
+      Format          =   108527617
       CurrentDate     =   41323
    End
    Begin MSComCtl2.DTPicker dtpVtoDos 
@@ -149,7 +149,7 @@ Begin VB.Form frmPlanDePagos
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   174522369
+      Format          =   108527617
       CurrentDate     =   41323
    End
    Begin isButtonTest.isButton cmdCrearPlan 
@@ -370,7 +370,7 @@ Private Sub Form_Load()
     Centrar Me
     PlanDePago
     lblCodAlumno.Caption = frmVerificaciones.lblCodAlumno.Caption
-    lblNyA.Caption = frmVerificaciones.txtNya.Text
+    lblNya.Caption = frmVerificaciones.txtNya.Text
     txtTotalCuotas.Text = frmVerificaciones.txtTotalCuotas.Text
     txtDeuda.Text = Val(frmVerificaciones.txtTotalCurso.Text) / Val(txtTotalCuotas.Text)
     DTPFechaVto.Value = Date
@@ -413,7 +413,7 @@ Sub CrearPlan()
             .Requery
             .AddNew
             !CodAlumno = lblCodAlumno.Caption
-            !NyA = lblNyA.Caption
+            !NyA = lblNya.Caption
             !NroCuota = NroCuota
         ''' Vencimiento Cuotas y calculo fecha limite
             If NroCuota >= 1 Then

@@ -535,7 +535,14 @@ Sub cargarManuales()
     
     ElseIf txtCurso.Text = "Electricidad domiciliaria" Then
         With cmbManual
-            .AddItem ("Electricidad")
+            .AddItem ("Electricidad I")
+            .AddItem ("Electricidad II")
+            .AddItem ("Electricidad III")
+        End With
+        
+    ElseIf txtCurso.Text = "Electricidad domiciliaria" Then
+        With cmbManual
+            .AddItem ("Electricidad III")
         End With
     
     ElseIf txtCurso.Text = "Auxiliar de Farmacia" Then
@@ -585,6 +592,16 @@ Sub cargarManuales()
     ElseIf txtCurso.Text = "Asistente en Cardiología" Then
         With cmbManual
             .AddItem ("Cardiologia")
+        End With
+        
+    ElseIf txtCurso.Text = "Alarmas y camaras de Seguridad" Then
+        With cmbManual
+            .AddItem ("Alarmas")
+        End With
+        
+    ElseIf txtCurso.Text = "Estetica del Automotor y Ploteo General" Then
+        With cmbManual
+            .AddItem ("Automotor y Ploteo")
         End With
 
     Else
