@@ -5,23 +5,23 @@ Begin VB.Form frmUltimasCuotas
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "UltimasCuotas"
-   ClientHeight    =   4215
+   ClientHeight    =   4125
    ClientLeft      =   45
    ClientTop       =   435
-   ClientWidth     =   5790
+   ClientWidth     =   5070
    ForeColor       =   &H00E0E0E0&
    Icon            =   "frmUltimasCuotas.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   4215
-   ScaleWidth      =   5790
+   ScaleHeight     =   4125
+   ScaleWidth      =   5070
    Begin isButtonTest.isButton cmdBuscar 
       Height          =   420
-      Left            =   1560
+      Left            =   3600
       TabIndex        =   3
-      Top             =   300
+      Top             =   320
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   741
@@ -51,8 +51,8 @@ Begin VB.Form frmUltimasCuotas
       Left            =   120
       TabIndex        =   2
       Top             =   840
-      Width           =   5535
-      _ExtentX        =   9763
+      Width           =   4815
+      _ExtentX        =   8493
       _ExtentY        =   5530
       _Version        =   393216
       AllowUpdate     =   0   'False
@@ -128,7 +128,7 @@ Begin VB.Form frmUltimasCuotas
       Left            =   120
       TabIndex        =   1
       Top             =   360
-      Width           =   1335
+      Width           =   3375
    End
    Begin VB.Label Label8 
       AutoSize        =   -1  'True

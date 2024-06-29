@@ -5,10 +5,10 @@ Begin VB.Form frmVentaManuales
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Venta de Manuales"
-   ClientHeight    =   4380
+   ClientHeight    =   4830
    ClientLeft      =   5385
    ClientTop       =   450
-   ClientWidth     =   5715
+   ClientWidth     =   5820
    BeginProperty Font 
       Name            =   "Century Gothic"
       Size            =   9.75
@@ -24,8 +24,8 @@ Begin VB.Form frmVentaManuales
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   4380
-   ScaleWidth      =   5715
+   ScaleHeight     =   4830
+   ScaleWidth      =   5820
    Begin VB.Frame Frame1 
       BackColor       =   &H00662200&
       Caption         =   "Venta Manual"
@@ -39,34 +39,52 @@ Begin VB.Form frmVentaManuales
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H8000000F&
-      Height          =   3975
+      Height          =   4455
       Left            =   3960
       TabIndex        =   13
       Top             =   240
-      Width           =   1600
+      Width           =   1725
+      Begin VB.TextBox TxtDescuento 
+         Alignment       =   1  'Right Justify
+         BeginProperty Font 
+            Name            =   "Century Gothic"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   360
+         Left            =   120
+         TabIndex        =   19
+         Text            =   "0"
+         Top             =   3480
+         Width           =   1455
+      End
       Begin VB.TextBox txtRecibo 
          Height          =   375
          Left            =   120
          TabIndex        =   5
          Top             =   2880
-         Width           =   1335
+         Width           =   1455
       End
       Begin VB.ComboBox cmbPago 
-         Height          =   360
+         Height          =   375
          ItemData        =   "frmVentaManuales.frx":10CA
          Left            =   120
          List            =   "frmVentaManuales.frx":10D7
          Style           =   2  'Dropdown List
          TabIndex        =   4
          Top             =   2280
-         Width           =   1335
+         Width           =   1455
       End
       Begin VB.ComboBox cmbManual 
-         Height          =   360
+         Height          =   375
          Left            =   120
          TabIndex        =   1
          Top             =   480
-         Width           =   1335
+         Width           =   1455
       End
       Begin VB.TextBox txtStock 
          Alignment       =   2  'Center
@@ -75,7 +93,7 @@ Begin VB.Form frmVentaManuales
          Left            =   120
          TabIndex        =   2
          Top             =   1080
-         Width           =   1335
+         Width           =   1455
       End
       Begin VB.TextBox txtPrecio 
          Alignment       =   2  'Center
@@ -84,15 +102,15 @@ Begin VB.Form frmVentaManuales
          Left            =   120
          TabIndex        =   3
          Top             =   1680
-         Width           =   1335
+         Width           =   1455
       End
       Begin isButtonTest.isButton cmdVender 
          Height          =   420
          Left            =   120
          TabIndex        =   6
-         Top             =   3360
-         Width           =   1335
-         _ExtentX        =   2355
+         Top             =   3900
+         Width           =   1455
+         _ExtentX        =   2566
          _ExtentY        =   741
          Icon            =   "frmVentaManuales.frx":10F9
          Style           =   8
@@ -117,6 +135,16 @@ Begin VB.Form frmVentaManuales
             Strikethrough   =   0   'False
          EndProperty
          Value           =   -1  'True
+      End
+      Begin VB.Label Label9 
+         BackStyle       =   0  'Transparent
+         Caption         =   "Descuento"
+         ForeColor       =   &H8000000F&
+         Height          =   255
+         Left            =   120
+         TabIndex        =   20
+         Top             =   3240
+         Width           =   1335
       End
       Begin VB.Label Label7 
          BackStyle       =   0  'Transparent
@@ -221,13 +249,13 @@ Begin VB.Form frmVentaManuales
       Width           =   3735
    End
    Begin MSDataGridLib.DataGrid grilla 
-      Height          =   2775
+      Height          =   3255
       Left            =   120
       TabIndex        =   7
       Top             =   1440
       Width           =   3735
       _ExtentX        =   6588
-      _ExtentY        =   4895
+      _ExtentY        =   5741
       _Version        =   393216
       AllowUpdate     =   0   'False
       HeadLines       =   1
@@ -419,7 +447,7 @@ Private Sub cmdVender_Click()
         !CodAlumno = Null
         !Detalle = txtAlumno.Text & " - " & cmbManual.Text
         !nrofactura = txtRecibo.Text
-        !Haber = CSng(txtPrecio.Text)
+        !Haber = CSng(txtPrecio.Text) - CSng(TxtDescuento.Text)
         !Debe = Null
         !Cuenta = Cuenta
         .Update
@@ -437,7 +465,7 @@ Private Sub cmdVender_Click()
         
         !Detalle = txtAlumno.Text & " - Manual de " & cmbManual.Text
         !nrofactura = txtRecibo.Text
-        !Debe = CSng(txtPrecio.Text)
+        !Debe = CSng(txtPrecio.Text) - CSng(TxtDescuento.Text)
         !asiento = Null
         !NroCuota = Null
         !CodAlumno = Null
@@ -533,15 +561,10 @@ Sub cargarManuales()
             .AddItem ("Refrigeracion III")
         End With
     
-    ElseIf txtCurso.Text = "Electricidad domiciliaria" Then
+    ElseIf txtCurso.Text = "Electricidad domiciliaria" Or txtCurso.Text = "Electricidad Industrial" Then
         With cmbManual
             .AddItem ("Electricidad I")
             .AddItem ("Electricidad II")
-            .AddItem ("Electricidad III")
-        End With
-        
-    ElseIf txtCurso.Text = "Electricidad domiciliaria" Then
-        With cmbManual
             .AddItem ("Electricidad III")
         End With
     
