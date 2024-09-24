@@ -55,7 +55,7 @@ Begin VB.Form frmExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   61341697
+         Format          =   130220033
          CurrentDate     =   41978
       End
       Begin VB.TextBox txtPromedio 
@@ -595,7 +595,36 @@ Private Sub CargarModulos()
             .AddItem ("Flash")
             .AddItem ("Dreamweaver")
         End With
-            
+        
+    ElseIf txtCurso.Text = "HTML" Or txtCurso.Text = "Diseño Web con HTML" Then
+        With cmbModulo
+            .AddItem ("HTML")
+            .AddItem ("CSS")
+            .AddItem ("JS")
+        End With
+    ElseIf txtCurso.Text = "Desarrollo Web" Then
+        With cmbModulo
+            .AddItem ("Bootstrap")
+            .AddItem ("SASS")
+            .AddItem ("ES2022")
+        End With
+    ElseIf txtCurso.Text = "Aplicaciones Web" Then
+        With cmbModulo
+            .AddItem ("NodeJS")
+            .AddItem ("ReactJS")
+            .AddItem ("Typescript")
+        End With
+    ElseIf txtCurso.Text = "Programacion Web" Then
+        With cmbModulo
+            .AddItem ("MySQL")
+            .AddItem ("PHP")
+        End With
+    ElseIf txtCurso.Text = "Sist. Control de Versiones" Or txtCurso.Text = "Desarrollo Colaborativo" Then
+        With cmbModulo
+            .AddItem ("Git")
+            .AddItem ("GitHub")
+        End With
+        
     ElseIf txtCurso.Text = "Programación + Access" Then
         With cmbModulo
             .AddItem ("Access")

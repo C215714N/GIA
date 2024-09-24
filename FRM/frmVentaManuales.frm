@@ -542,7 +542,36 @@ Sub cargarManuales()
             .AddItem ("Flash")
             .AddItem ("Dreamweaver")
         End With
-    
+            
+    ElseIf txtCurso.Text = "HTML" Or txtCurso.Text = "Diseño Web con HTML" Then
+        With cmbManual
+            .AddItem ("HTML")
+            .AddItem ("CSS")
+            .AddItem ("JS")
+        End With
+    ElseIf txtCurso.Text = "Desarrollo Web" Then
+        With cmbManual
+            .AddItem ("Bootstrap")
+            .AddItem ("SASS")
+            .AddItem ("ES2022")
+        End With
+    ElseIf txtCurso.Text = "Aplicaciones Web" Then
+        With cmbManual
+            .AddItem ("NodeJS")
+            .AddItem ("ReactJS")
+            .AddItem ("Typescript")
+        End With
+    ElseIf txtCurso.Text = "Programacion Web" Then
+        With cmbManual
+            .AddItem ("MySQL")
+            .AddItem ("PHP")
+        End With
+    ElseIf txtCurso.Text = "Sist. Control de Versiones" Or txtCurso.Text = "Desarrollo Colaborativo" Then
+        With cmbManual
+            .AddItem ("Git")
+            .AddItem ("GitHub")
+        End With
+        
     ElseIf txtCurso.Text = "Programación" Then
         With cmbManual
             .AddItem ("Programación")
