@@ -277,14 +277,14 @@ Begin VB.Form frmReservas
       EndProperty
    End
    Begin MSComCtl2.MonthView MonthView1 
-      Height          =   2820
+      Height          =   2670
       Left            =   105
       TabIndex        =   1
       ToolTipText     =   "Seleccione la Fecha"
       Top             =   360
-      Width           =   3645
-      _ExtentX        =   6429
-      _ExtentY        =   4974
+      Width           =   3015
+      _ExtentX        =   5318
+      _ExtentY        =   4710
       _Version        =   393216
       ForeColor       =   8930304
       BackColor       =   6693376
@@ -299,7 +299,7 @@ Begin VB.Form frmReservas
          Strikethrough   =   0   'False
       EndProperty
       MonthBackColor  =   16777215
-      StartOfWeek     =   128778242
+      StartOfWeek     =   119472130
       TitleBackColor  =   8930304
       TitleForeColor  =   16777215
       TrailingForeColor=   14737632
@@ -717,10 +717,6 @@ Private Sub cmdCancelar_Click()
     cmdBuscar.Enabled = True
 End Sub
 
-
-
-
-
 Private Sub Form_Load()
     Centrar Me
     MonthView1.Value = Date
@@ -855,7 +851,7 @@ Error:
 Else
     With rsVerificaciones
         If .State = 1 Then .Close
-        .Open "SELECT codalumno,(nya + ' - ' + capac) as alumno FROM verificaciones WHERE capac='Operador de PC' or capac='Programación' or capac='Diseño Web' or capac='Diseño Gráfico' or capac='Programación + Access' or capac='Redes Sociales' ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT codalumno,(nya + ' - ' + capac) as alumno FROM verificaciones WHERE capacIN('Operador de PC', 'Operador Office Contable', 'Programación','Diseño Web','Diseño Gráfico','Programación + Access','Redes Sociales','Diseño Web con HTML', 'Desarrollo Web', 'Aplicaciones Web', 'Programacion Web', 'Sist. Control de Versiones') ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
         .Find "alumno='" & dtcAlumno.Text & "'"
         lblCodAlumno.Caption = !CodAlumno
     End With
