@@ -164,11 +164,11 @@ Begin VB.MDIForm MDI
          NumPanels       =   5
          BeginProperty Panel1 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   6
-            TextSave        =   "29/6/2024"
+            TextSave        =   "29/9/2024"
          EndProperty
          BeginProperty Panel2 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   5
-            TextSave        =   "01:32"
+            TextSave        =   "00:55"
          EndProperty
          BeginProperty Panel3 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   2
@@ -528,7 +528,7 @@ Private Sub subCopiarPresupuesto_Click()
     '''Carga el presupuesto del mes en curso
         With rsCuentasPresupuesto
             If .State = 1 Then .Close
-            .Open "SELECT * FROM presupuesto WHERE a¿o=" & Year(Date) & "and mes='" & MonthName(Month(Date)) & "'", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT * FROM presupuesto WHERE año=" & Year(Date) & "and mes='" & MonthName(Month(Date)) & "'", Cn, adOpenDynamic, adLockPessimistic
             .Requery
             .MoveFirst
         End With
@@ -548,9 +548,9 @@ Private Sub subCopiarPresupuesto_Click()
                 
                 If Month(Date) = 12 Then
                     !mes = "Enero"
-                    !a¿o = Year(Date) + 1
+                    !año = Year(Date) + 1
                 Else
-                    !a¿o = Year(Date)
+                    !año = Year(Date)
                     !mes = MonthName(Month(Date) + 1)
                 End If
                 .UpdateBatch

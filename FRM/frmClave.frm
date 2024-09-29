@@ -36,7 +36,7 @@ Begin VB.Form frmClave
       _ExtentX        =   2778
       _ExtentY        =   661
       _Version        =   393216
-      Format          =   108134401
+      Format          =   110428161
       CurrentDate     =   42125
    End
    Begin MSComCtl2.DTPicker DTPFecha 
@@ -57,7 +57,7 @@ Begin VB.Form frmClave
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   108134401
+      Format          =   110428161
       CurrentDate     =   41327
    End
    Begin VB.TextBox txtClave 
@@ -528,7 +528,7 @@ Recargo:
             On Error GoTo continuar
             Do Until .EOF
                 !recargoxfecha = True
-                !DeudaTotal = !DeudaTotal + rsControl!recargoPorFecha
+                !DeudaTotal = !DeudaTotal + rsControl!recargoporfecha
                 .MoveNext
                 .UpdateBatch
             Loop
