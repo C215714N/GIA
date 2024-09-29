@@ -299,7 +299,7 @@ Begin VB.Form frmReservas
          Strikethrough   =   0   'False
       EndProperty
       MonthBackColor  =   16777215
-      StartOfWeek     =   119472130
+      StartOfWeek     =   109510658
       TitleBackColor  =   8930304
       TitleForeColor  =   16777215
       TrailingForeColor=   14737632
@@ -662,7 +662,7 @@ fecha = Format(MonthView1.Value, "mm/dd/yyyy")
 
     With rsVerificaciones
         If .State = 1 Then .Close
-        .Open "SELECT codalumno,(nya + ' - ' + capac) as alumno FROM verificaciones WHERE capac='Operador de PC' or capac='Programación' or capac='Diseño Web' or capac='Diseño Gráfico' or capac='Programación + Access' or capac = 'Redes Sociales' ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT codalumno,(nya + ' - ' + capac) as alumno FROM verificaciones WHERE capac " + informatica + " ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
     End With
     
         ''' carga alumnos en DataCombo
@@ -723,7 +723,7 @@ Private Sub Form_Load()
     ''' consulta alumnos
     With rsVerificaciones
         If .State = 1 Then .Close
-        .Open "SELECT max(codalumno),nya,(nya + ' - ' + capac) as Alumno,capac FROM verificaciones WHERE capac='Operador de PC' or capac='Programación' or capac='Diseño Web' or capac='Diseño Gráfico' or capac='Programación + Access' or capac='Redes Sociales' GROUP BY nya,capac ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT max(codalumno),nya,(nya + ' - ' + capac) as Alumno,capac FROM verificaciones WHERE capac " + informatica + " GROUP BY nya,capac ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
     End With
 
         ''' carga alumnos en DataCombo
@@ -799,7 +799,7 @@ On Error GoTo Error
 If BuscarAlumno = False Then
     With rsVerificaciones
         If .State = 1 Then .Close
-        .Open "SELECT codalumno,(nya + ' - ' + capac) as alumno FROM verificaciones WHERE capac='Operador de PC' or capac='Programación' or capac='Diseño Web' or capac='Diseño Gráfico' or capac='Programación + Access' or capac='Redes Sociales' ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT codalumno,(nya + ' - ' + capac) as alumno FROM verificaciones WHERE capac " + informatica + " ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
         .Find "alumno='" & dtcAlumno.Text & "'"
         lblCodAlumno.Caption = !CodAlumno
     End With
@@ -851,7 +851,7 @@ Error:
 Else
     With rsVerificaciones
         If .State = 1 Then .Close
-        .Open "SELECT codalumno,(nya + ' - ' + capac) as alumno FROM verificaciones WHERE capacIN('Operador de PC', 'Operador Office Contable', 'Programación','Diseño Web','Diseño Gráfico','Programación + Access','Redes Sociales','Diseño Web con HTML', 'Desarrollo Web', 'Aplicaciones Web', 'Programacion Web', 'Sist. Control de Versiones') ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT codalumno,(nya + ' - ' + capac) as alumno FROM verificaciones WHERE capac " + informatica + " ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
         .Find "alumno='" & dtcAlumno.Text & "'"
         lblCodAlumno.Caption = !CodAlumno
     End With
@@ -868,7 +868,7 @@ Else
 
     With rsVerificaciones
         If .State = 1 Then .Close
-        .Open "SELECT codalumno,(nya + ' - ' + capac) as alumno FROM verificaciones WHERE capac='Operador de PC' or capac='Programación' or capac='Diseño Web' or capac='Diseño Gráfico' or capac='Programación + Access' ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT codalumno,(nya + ' - ' + capac) as alumno FROM verificaciones WHERE capac " + informatica + " ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
     End With
     
         ''' carga alumnos en DataCombo
