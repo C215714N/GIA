@@ -617,14 +617,19 @@ Sub cargarManuales()
             .AddItem ("Lazo")
         End With
         
-    ElseIf txtCurso.Text = "Asistente Terapeutico" Or txtCurso.Text = "Asistente en Enfermeria" Or txtCurso.Text = "Cuidador Domiciliario" Or txtCurso.Text = "Asistente en Enfermeria" Then
+    ElseIf txtCurso.Text = "Asistente en Enfermeria" Or txtCurso.Text = "Cuidador Domiciliario" Or txtCurso.Text = "Asistente en Enfermeria" Then
         With cmbManual
             .AddItem ("Cuidador Dom. I")
             .AddItem ("Cuidador Dom. II")
             .AddItem ("Covid")
             .AddItem ("Lazo")
         End With
-    
+        
+    ElseIf txtCurso.Text = "Asistente Terapeutico" Then
+        With cmbManual
+            .AddItem ("Asistente Terapeutico")
+        End With
+        
     ElseIf txtCurso.Text = "Emergencias Médicas" Or txtCurso.Text = "Emergencias Medicas Sanitarias" Or txtCurso.Text = "Emergencias Médicas Sanitarias" Then
         With cmbManual
             .AddItem ("Primeros Auxilios")
