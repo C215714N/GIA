@@ -133,6 +133,23 @@ Public Sub Localidades()
     End With
 End Sub
 
+Sub HighLevelAccess()
+
+With frmAnalisisDeCuotas
+    If Usuario = "c215714n" Or Usuario = "ADMINISTRACION" Or Usuario = "administracion" Or Usuario = "COBRANZA" Or Usuario = "cobranza" Then
+        .cmdBaja.Enabled = True
+        .cmdReingresar.Enabled = True
+        .cmdEditar.Enabled = True
+        .cmdEgresado.Enabled = True
+    Else
+        .cmdBaja.Enabled = False
+        .cmdReingresar.Enabled = False
+        .cmdEditar.Enabled = False
+        .cmdEgresado.Enabled = False
+    End If
+End With
+End Sub
+
 Sub Centrar(frm As Form)
     frm.Top = (MDI.Height - frm.Height) \ 4 - 500
     frm.Left = (MDI.Width - frm.Width) \ 2

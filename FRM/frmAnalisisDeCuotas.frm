@@ -28,7 +28,6 @@ Begin VB.Form frmAnalisisDeCuotas
       _ExtentX        =   12885
       _ExtentY        =   1931
       _Version        =   393217
-      Enabled         =   -1  'True
       MaxLength       =   1000
       Appearance      =   0
       AutoVerbMenu    =   -1  'True
@@ -87,6 +86,7 @@ Begin VB.Form frmAnalisisDeCuotas
       IconAlign       =   1
       CaptionAlign    =   1
       iNonThemeStyle  =   0
+      Enabled         =   0   'False
       Tooltiptitle    =   ""
       ToolTipIcon     =   0
       ToolTipType     =   0
@@ -116,6 +116,7 @@ Begin VB.Form frmAnalisisDeCuotas
       IconAlign       =   1
       CaptionAlign    =   1
       iNonThemeStyle  =   7
+      Enabled         =   0   'False
       HighlightColor  =   4194304
       FontHighlightColor=   14737632
       Tooltiptitle    =   ""
@@ -147,6 +148,7 @@ Begin VB.Form frmAnalisisDeCuotas
       IconAlign       =   1
       CaptionAlign    =   1
       iNonThemeStyle  =   7
+      Enabled         =   0   'False
       HighlightColor  =   4194304
       FontHighlightColor=   14737632
       Tooltiptitle    =   ""
@@ -178,6 +180,7 @@ Begin VB.Form frmAnalisisDeCuotas
       IconAlign       =   1
       CaptionAlign    =   1
       iNonThemeStyle  =   7
+      Enabled         =   0   'False
       HighlightColor  =   4194304
       FontHighlightColor=   14737632
       Tooltiptitle    =   ""
@@ -527,12 +530,15 @@ Private Sub Form_Load()
     Set grilla1.DataSource = rsAnalisisDeCuenta
     Set grilla2.DataSource = rsHistorico
     formatoGrilla
+        
     lblCodAlumno.Caption = rsAnalisisDeCuenta!codigo
-    lblNyA.Caption = rsAnalisisDeCuenta!Alumno
+    lblNya.Caption = rsAnalisisDeCuenta!Alumno
     If Trim(Len(lblCodAlumno.Caption)) = 1 Then lblCodAlumno.Caption = Format(lblCodAlumno.Caption, "0000#")
     If Trim(Len(lblCodAlumno.Caption)) = 2 Then lblCodAlumno.Caption = Format(lblCodAlumno.Caption, "000##")
     If Trim(Len(lblCodAlumno.Caption)) = 3 Then lblCodAlumno.Caption = Format(lblCodAlumno.Caption, "00###")
     If Trim(Len(lblCodAlumno.Caption)) = 4 Then lblCodAlumno.Caption = Format(lblCodAlumno.Caption, "0####")
+    
+    HighLevelAccess
 End Sub
 
 Private Sub cmdEgresado_Click()

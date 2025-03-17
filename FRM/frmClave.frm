@@ -36,7 +36,7 @@ Begin VB.Form frmClave
       _ExtentX        =   2778
       _ExtentY        =   661
       _Version        =   393216
-      Format          =   110428161
+      Format          =   60227585
       CurrentDate     =   42125
    End
    Begin MSComCtl2.DTPicker DTPFecha 
@@ -57,7 +57,7 @@ Begin VB.Form frmClave
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   110428161
+      Format          =   60227585
       CurrentDate     =   41327
    End
    Begin VB.TextBox txtClave 
@@ -271,6 +271,7 @@ Private Sub cmdIngresar_Click()
         Me.Hide
         MDI.Show
         MDI.StatusBar1.Panels(5).Text = "Usuario: " & "Administrador"
+        
         Exit Sub
 '''Usuario Operador - Permisos Instruccion
     ElseIf txtUsuario.Text = "Operador" And txtClave.Text = "AulaPC" Then
@@ -384,7 +385,7 @@ Private Sub cmdIngresar_Click()
             MDI.subGrupoArmado.Visible = True
             MDI.g56.Visible = True
             MDI.StatusBar1.Panels(5).Text = "Usuario: Supervisor"
-        
+            
     '''Usuario Cobranzas - Gestion Comercial
         ElseIf txtUsuario.Text = "COBRANZA" And txtClave.Text = "llamados" Then
             Usuario = txtUsuario.Text
@@ -410,7 +411,7 @@ Private Sub cmdIngresar_Click()
             MDI.SubPresupuesto.Visible = False
             MDI.subContabilidad.Visible = False
             MDI.g2.Visible = False
-       
+                        
        '''error de ingreso
         Else
             MsgBox "Usuario o clave incorrecta." & vbNewLine & "Ingrese un usuario y contraseña validos", vbOKOnly + vbInformation, "Gestion Integral del Alumno": txtUsuario.SetFocus: Exit Sub

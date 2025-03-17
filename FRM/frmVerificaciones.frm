@@ -46,7 +46,6 @@ Begin VB.Form frmVerificaciones
          _ExtentX        =   8281
          _ExtentY        =   2778
          _Version        =   393217
-         Enabled         =   -1  'True
          MaxLength       =   1000
          Appearance      =   0
          AutoVerbMenu    =   -1  'True
@@ -241,7 +240,7 @@ Begin VB.Form frmVerificaciones
          Top             =   1200
          Width           =   2655
          _ExtentX        =   4683
-         _ExtentY        =   661
+         _ExtentY        =   635
          _Version        =   393216
          Text            =   ""
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -393,7 +392,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   173146113
+         Format          =   106233857
          CurrentDate     =   41308
       End
       Begin MSDataListLib.DataCombo dtcAsistente 
@@ -403,8 +402,9 @@ Begin VB.Form frmVerificaciones
          Top             =   2400
          Width           =   2655
          _ExtentX        =   4683
-         _ExtentY        =   661
+         _ExtentY        =   635
          _Version        =   393216
+         Enabled         =   0   'False
          Style           =   2
          Text            =   ""
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -424,7 +424,7 @@ Begin VB.Form frmVerificaciones
          Top             =   2400
          Width           =   3495
          _ExtentX        =   6165
-         _ExtentY        =   661
+         _ExtentY        =   635
          _Version        =   393216
          Style           =   2
          Text            =   ""
@@ -780,7 +780,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   173211649
+         Format          =   106233857
          CurrentDate     =   41308
       End
       Begin MSComCtl2.DTPicker DTPFechaVerificacion 
@@ -801,7 +801,7 @@ Begin VB.Form frmVerificaciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   173211649
+         Format          =   106233857
          CurrentDate     =   41308
       End
       Begin VB.Label Label17 
@@ -1373,6 +1373,11 @@ Private Sub cmdModificar_Click()
         HabilitarBotones False, True
         txtNya.SetFocus
         Modi = True
+        
+        If Usuario = "ADM" Or Usuario = "adm" Then
+            dtcAsistente.Enabled = False
+            Else: dtcAsistente.Enabled = True
+        End If
     End If
 End Sub
 

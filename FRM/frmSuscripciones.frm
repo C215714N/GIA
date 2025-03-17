@@ -46,7 +46,6 @@ Begin VB.Form frmSuscripciones
          _ExtentX        =   8281
          _ExtentY        =   2778
          _Version        =   393217
-         Enabled         =   -1  'True
          MaxLength       =   1000
          Appearance      =   0
          AutoVerbMenu    =   -1  'True
@@ -437,7 +436,7 @@ Begin VB.Form frmSuscripciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   107937793
+         Format          =   106233857
          CurrentDate     =   41308
       End
       Begin VB.Label Label20 
@@ -879,7 +878,7 @@ Begin VB.Form frmSuscripciones
          Top             =   1200
          Width           =   2655
          _ExtentX        =   4683
-         _ExtentY        =   661
+         _ExtentY        =   635
          _Version        =   393216
          Text            =   ""
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -910,7 +909,7 @@ Begin VB.Form frmSuscripciones
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   107675649
+         Format          =   106233857
          CurrentDate     =   41308
       End
       Begin MSDataListLib.DataCombo dtcAsistente 
@@ -920,8 +919,9 @@ Begin VB.Form frmSuscripciones
          Top             =   2400
          Width           =   2655
          _ExtentX        =   4683
-         _ExtentY        =   661
+         _ExtentY        =   635
          _Version        =   393216
+         Enabled         =   0   'False
          Style           =   2
          Text            =   ""
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -941,7 +941,7 @@ Begin VB.Form frmSuscripciones
          Top             =   2400
          Width           =   3495
          _ExtentX        =   6165
-         _ExtentY        =   661
+         _ExtentY        =   635
          _Version        =   393216
          Style           =   2
          Text            =   ""
@@ -1401,6 +1401,11 @@ Private Sub cmdModificar_Click()
         HabilitarCuadros False, True
         txtNya.SetFocus
         Modi = True
+        
+        If Usuario = "ADM" Or Usuario = "adm" Then
+            dtcAsistente.Enabled = False
+            Else: dtcAsistente.Enabled = True
+        End If
     End If
 End Sub
 
@@ -1410,6 +1415,7 @@ Private Sub cmdNuevo_Click()
     Limpiar
     txtNya.SetFocus
     Modi = False
+    dtcAsistente.Enabled = True
 End Sub
 
 Private Sub dtcLocalidad_KeyPress(keyAscii As Integer)
