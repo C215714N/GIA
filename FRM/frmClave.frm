@@ -36,7 +36,7 @@ Begin VB.Form frmClave
       _ExtentX        =   2778
       _ExtentY        =   661
       _Version        =   393216
-      Format          =   60227585
+      Format          =   110231553
       CurrentDate     =   42125
    End
    Begin MSComCtl2.DTPicker DTPFecha 
@@ -57,7 +57,7 @@ Begin VB.Form frmClave
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   60227585
+      Format          =   110231553
       CurrentDate     =   41327
    End
    Begin VB.TextBox txtClave 
@@ -639,7 +639,7 @@ Sub registroCartera()
                     !Cobranza = Cobranza
                     !resto = resto
                     !cobrado = totalcobrado
-                    !porcentaje = Cobranza * 100 / deuda
+                    !porcentaje = (Cobranza / deuda) * 100
                 End With
             End With
         End If
