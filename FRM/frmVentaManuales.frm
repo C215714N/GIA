@@ -660,6 +660,19 @@ Sub cargarManuales()
         With cmbManual
             .AddItem ("Automotor y Ploteo")
         End With
+        
+    ElseIf txtCurso.Text = "Inglés Nivel I" Or txtCurso.Text = "Inglés Nivel 1" Then
+        With cmbManual
+            .AddItem ("Inglés I")
+        End With
+    ElseIf txtCurso.Text = "Inglés Nivel II" Or txtCurso.Text = "Inglés Nivel 2" Then
+        With cmbManual
+            .AddItem ("Inglés II")
+        End With
+    ElseIf txtCurso.Text = "Inglés Nivel III" Or txtCurso.Text = "Inglés Nivel 3" Then
+        With cmbManual
+            .AddItem ("Inglés III")
+        End With
 
     Else
         With cmbManual
