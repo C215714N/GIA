@@ -533,21 +533,13 @@ Sub cargarManuales()
             .AddItem ("Windows")
             .AddItem ("Corel Draw")
             .AddItem ("Photoshop")
-            .AddItem ("Page Maker")
+            .AddItem ("Illustrator")
         End With
     
-    ElseIf txtCurso.Text = "Diseño Web" Then
+    ElseIf txtCurso.Text = "Diseño Web" Or txtCurso.Text = "HTML" Or txtCurso.Text = "Diseño Web con HTML" Then
         With cmbManual
-            .AddItem ("FrontPage - Fireworks")
-            .AddItem ("Flash")
-            .AddItem ("Dreamweaver")
-        End With
-            
-    ElseIf txtCurso.Text = "HTML" Or txtCurso.Text = "Diseño Web con HTML" Then
-        With cmbManual
-            .AddItem ("HTML")
-            .AddItem ("CSS")
-            .AddItem ("JS")
+            .AddItem ("HTML y CSS")
+            .AddItem ("Javascript")
         End With
     ElseIf txtCurso.Text = "Desarrollo Web" Then
         With cmbManual
@@ -564,7 +556,7 @@ Sub cargarManuales()
     ElseIf txtCurso.Text = "Programacion Web" Then
         With cmbManual
             .AddItem ("MySQL")
-            .AddItem ("PHP")
+            .AddItem ("Programacion Web")
         End With
     ElseIf txtCurso.Text = "Sist. Control de Versiones" Or txtCurso.Text = "Desarrollo Colaborativo" Then
         With cmbManual
