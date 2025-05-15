@@ -196,7 +196,7 @@ Begin VB.Form frmDerechosExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   130220033
+         Format          =   110493697
          CurrentDate     =   41978
       End
       Begin isButtonTest.isButton cmdAgregar 
@@ -504,7 +504,7 @@ Private Sub Form_Load()
     Centrar Me
     Control
     txtPrecio.Text = Format(rsControl!derechoExamen, "currency")
-    DTPFecha.Value = Date
+    dtpFecha.Value = Date
 End Sub
 
 Private Sub txtCodigo_KeyPress(keyAscii As Integer)
@@ -530,7 +530,7 @@ Private Sub txtCodigo_KeyPress(keyAscii As Integer)
             CargarModulos
             txtPrecio.Text = Format(rsControl!derechoExamen, "currency")
             cmbModulo.Enabled = True
-            DTPFecha.Enabled = True
+            dtpFecha.Enabled = True
             cmdAgregar.Enabled = True
             cmbModulo.SetFocus
             
@@ -555,7 +555,7 @@ Private Sub cmdAgregar_Click()
         .Requery
         .AddNew
         !CodAlumno = Int(txtCodigo.Text)
-        !fecha = DTPFecha.Value
+        !fecha = dtpFecha.Value
         !modulo = cmbModulo.Text
         .Update
         .Close
@@ -645,23 +645,14 @@ Private Sub CargarModulos()
             .AddItem ("Windows")
             .AddItem ("Corel Draw")
             .AddItem ("Photoshop")
-            .AddItem ("Page Maker")
+            .AddItem ("Illustrator")
         End With
         
-    ElseIf txtCurso.Text = "Diseño Web" Then
-        With cmbModulo
-            .Clear
-            .AddItem ("Front Page")
-            .AddItem ("Fireworks")
-            .AddItem ("Flash")
-            .AddItem ("Dreamweaver")
-        End With
-                  
-    ElseIf txtCurso.Text = "HTML" Or txtCurso.Text = "Diseño Web con HTML" Then
+    ElseIf txtCurso.Text = "Diseño Web" Or txtCurso.Text = "HTML" Or txtCurso.Text = "Diseño Web con HTML" Then
         With cmbModulo
             .AddItem ("HTML")
             .AddItem ("CSS")
-            .AddItem ("JS")
+            .AddItem ("Javascript")
         End With
     ElseIf txtCurso.Text = "Desarrollo Web" Then
         With cmbModulo
