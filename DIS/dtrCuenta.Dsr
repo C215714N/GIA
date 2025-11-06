@@ -1,17 +1,17 @@
 VERSION 5.00
 Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrCuenta 
    Caption         =   "GIA - Detalle de Cuenta"
-   ClientHeight    =   8535
+   ClientHeight    =   4530
    ClientLeft      =   3000
    ClientTop       =   390
-   ClientWidth     =   15240
+   ClientWidth     =   9570
    Icon            =   "dtrCuenta.dsx":0000
    MDIChild        =   -1  'True
-   _ExtentX        =   26882
-   _ExtentY        =   15055
+   _ExtentX        =   16880
+   _ExtentY        =   7990
    _Version        =   393216
    _DesignerVersion=   100684101
-   ReportWidth     =   9060
+   ReportWidth     =   9255
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
       Name            =   "Arial"
       Size            =   8.25
@@ -556,7 +556,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrCuenta
    BeginProperty Section4 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "Seccion5"
-      Object.Height          =   618
+      Object.Height          =   816
       NumControls     =   2
       ItemType0       =   3
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 

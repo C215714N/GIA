@@ -11,7 +11,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
    _ExtentY        =   15055
    _Version        =   393216
    _DesignerVersion=   100684101
-   ReportWidth     =   11450
+   ReportWidth     =   11565
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
       Name            =   "Arial"
       Size            =   8.25
@@ -653,12 +653,14 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dtrBajas
    BeginProperty Section3 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "Seccion3"
+      Object.Height          =   1045
       NumControls     =   0
    EndProperty
    SectionCode4    =   8
    BeginProperty Section4 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "Seccion5"
+      Object.Height          =   1600
       NumControls     =   0
    EndProperty
 End
