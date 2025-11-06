@@ -299,7 +299,7 @@ Begin VB.Form frmReservas
          Strikethrough   =   0   'False
       EndProperty
       MonthBackColor  =   16777215
-      StartOfWeek     =   109445122
+      StartOfWeek     =   109707266
       TitleBackColor  =   8930304
       TitleForeColor  =   16777215
       TrailingForeColor=   14737632
@@ -609,7 +609,7 @@ Option Compare Text
 Private Sub btnAgregar_Click()
     dtcAlumno.Visible = True
     btnAceptar.Enabled = True
-    lblNya.Visible = True
+    lblNyA.Visible = True
     btnEliminar.Enabled = False
     btnAgregar.Enabled = False
     btnAsistencia.Enabled = False
@@ -624,9 +624,9 @@ End Sub
 Private Sub btnAsistencia_Click()
     dtcAlumno.Visible = True
     dtcAlumno.Enabled = False
-    lblNya.Visible = True
+    lblNyA.Visible = True
     txtAsistencia.Visible = True
-    lblasistencia.Visible = True
+    lblAsistencia.Visible = True
     btnAceptar.Enabled = False
     txtAsistencia.SetFocus
 End Sub
@@ -652,7 +652,7 @@ End Sub
 
 Private Sub Reservas()
     dtcAlumno.Visible = False
-    lblNya.Visible = False
+    lblNyA.Visible = False
     btnAceptar.Enabled = False
     btnEliminar.Enabled = False
     btnAsistencia.Enabled = True
@@ -674,7 +674,7 @@ fecha = Format(MonthView1.Value, "mm/dd/yyyy")
     With rsReservas
         If .State = 1 Then .Close
         .Open "SELECT nya as [Apellido y Nombre], pa as [P/A],Fecha, hora as Horario FROM Reservas WHERE fecha=#" & fecha & "# AND hora ='" & Index & "' ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
-        If .BOF Or .EOF Then lblreservas.Caption = 0: lblasistencia.Visible = False: txtAsistencia.Text = "": txtAsistencia.Visible = False: btnAgregar.Enabled = True: btnEliminar.Enabled = False: btnAsistencia.Enabled = False:  Exit Sub
+        If .BOF Or .EOF Then lblreservas.Caption = 0: lblAsistencia.Visible = False: txtAsistencia.Text = "": txtAsistencia.Visible = False: btnAgregar.Enabled = True: btnEliminar.Enabled = False: btnAsistencia.Enabled = False:  Exit Sub
     End With
     
     Set grilla.DataSource = rsReservas
@@ -689,13 +689,13 @@ fecha = Format(MonthView1.Value, "mm/dd/yyyy")
     End If
     txtAsistencia.Visible = False
     txtAsistencia.Text = ""
-    lblasistencia.Visible = False
+    lblAsistencia.Visible = False
 End Sub
 Private Sub cmdBuscar_Click()
     BuscarAlumno = True
     dtcAlumno.Visible = True
     btnAceptar.Enabled = True
-    lblNya.Visible = True
+    lblNyA.Visible = True
     btnEliminar.Enabled = False
     btnAgregar.Enabled = True
     btnAsistencia.Enabled = False
@@ -708,7 +708,7 @@ End Sub
 Private Sub cmdCancelar_Click()
     dtcAlumno.Visible = False
     btnAceptar.Enabled = False
-    lblNya.Visible = False
+    lblNyA.Visible = False
     btnEliminar.Enabled = False
     btnAgregar.Enabled = True
     btnAsistencia.Enabled = False
@@ -723,7 +723,7 @@ Private Sub Form_Load()
     ''' consulta alumnos
     With rsVerificaciones
         If .State = 1 Then .Close
-        .Open "SELECT max(codalumno),nya,(nya + ' - ' + capac) as Alumno,capac FROM verificaciones WHERE capac " + informatica + " AND estado IN('Activo','Reingresado') GROUP BY nya,capac ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT max(codalumno),nya,(nya + ' - ' + capac) as Alumno, capac FROM verificaciones WHERE capac " + informatica + " GROUP BY nya,capac ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
     End With
 
         ''' carga alumnos en DataCombo
@@ -734,7 +734,7 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub grilla_Click()
-    lblNya.Visible = True
+    lblNyA.Visible = True
     dtcAlumno.Text = grilla.Columns(0).Text
     dtcAlumno.Visible = True
     btnEliminar.Enabled = True
@@ -801,7 +801,7 @@ If BuscarAlumno = False Then
         If .State = 1 Then .Close
         .Open "SELECT codalumno,(nya + ' - ' + capac) as alumno FROM verificaciones WHERE capac " + informatica + " ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
         .Find "alumno='" & dtcAlumno.Text & "'"
-        lblCodAlumno.Caption = !CodAlumno
+        lblCodalumno.Caption = !CodAlumno
     End With
 
     With rsReservas
@@ -832,7 +832,7 @@ If BuscarAlumno = False Then
                 !hora = rbt9.Caption
             End If
             !pa = ""
-            !CodAlumno = Int(lblCodAlumno.Caption)
+            !CodAlumno = Int(lblCodalumno.Caption)
             .Update
             .Close
     End With
@@ -840,7 +840,7 @@ If BuscarAlumno = False Then
     'Determina el estado de los botones
     btnAceptar.Enabled = False
     dtcAlumno.Visible = False
-    lblNya.Visible = False
+    lblNyA.Visible = False
     btnAsistencia.Enabled = True
     cmdCancelar.Enabled = False
     cmdBuscar.Enabled = True
@@ -853,13 +853,13 @@ Else
         If .State = 1 Then .Close
         .Open "SELECT codalumno,(nya + ' - ' + capac) as alumno FROM verificaciones WHERE capac " + informatica + " ORDER BY nya", Cn, adOpenDynamic, adLockPessimistic
         .Find "alumno='" & dtcAlumno.Text & "'"
-        lblCodAlumno.Caption = !CodAlumno
+        lblCodalumno.Caption = !CodAlumno
     End With
 
     
     With rsReservas
         If .State = 1 Then .Close
-            .Open "SELECT nya as [Apellido y Nombre], pa as [P/A],Fecha, hora as Horario FROM Reservas WHERE codalumno=" & Int(lblCodAlumno.Caption) & " ORDER BY  fecha desc,hora", Cn, adOpenDynamic, adLockPessimistic
+            .Open "SELECT nya as [Apellido y Nombre], pa as [P/A],Fecha, hora as Horario FROM Reservas WHERE codalumno=" & Int(lblCodalumno.Caption) & " ORDER BY  fecha desc,hora", Cn, adOpenDynamic, adLockPessimistic
             Set grilla.DataSource = rsReservas
             lblreservas.Caption = rsReservas.RecordCount
     End With

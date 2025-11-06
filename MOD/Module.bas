@@ -96,5 +96,5 @@ Attribute VB_Name = "Declaraciones"
         Global Situacion            As Long
         
     ''' Variables de capacitacion
-        Public Const informatica As String = "IN('Operador de PC', 'Operador Office Contable', 'Programación','Diseño Web','Diseño Gráfico','Programación + Access','Redes Sociales','Diseño Web con HTML', 'Desarrollo Web', 'Aplicaciones Web', 'Programacion Web', 'Sist. Control de Versiones')"
+        Public Const informatica As String = "IN('Operador de PC', 'Operador Office Contable', 'Programación','Diseño Web','Diseño Gráfico','Programación + Access','Redes Sociales','Diseño Web con HTML', 'Desarrollo Web', 'Aplicaciones Web', 'Programacion Web', 'Sist. Control de Versiones') AND estado IN('Activo', 'Reingreso')"
         Public Const cursos As String = ""

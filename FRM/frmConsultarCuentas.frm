@@ -317,7 +317,7 @@ Begin VB.Form frmConsultarCuentas
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   272695297
+      Format          =   109445121
       CurrentDate     =   41334
    End
    Begin MSComCtl2.DTPicker dtpHasta 
@@ -338,7 +338,7 @@ Begin VB.Form frmConsultarCuentas
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   272695297
+      Format          =   109445121
       CurrentDate     =   41332
    End
    Begin isButtonTest.isButton cmdBuscar 
