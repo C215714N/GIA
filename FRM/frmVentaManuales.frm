@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Object = "{0C99FB1F-752D-420A-A24C-0186A09E67A8}#2.0#0"; "isButton.ocx"
-Begin VB.Form frmVentaManuales 
+Begin VB.Form as 
    BackColor       =   &H00662200&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Venta de Manuales"
@@ -371,7 +371,7 @@ Begin VB.Form frmVentaManuales
       Width           =   1335
    End
 End
-Attribute VB_Name = "frmVentaManuales"
+Attribute VB_Name = "as"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
@@ -631,6 +631,12 @@ Sub cargarManuales()
     ElseIf txtCurso.Text = "Mandatario Automotor" Then
         With cmbManual
             .AddItem ("Mandatario")
+        End With
+        
+        
+    ElseIf txtCurso.Text = "Oficial Tornero" Then
+        With cmbManual
+            .AddItem ("Torneria")
         End With
         
     ElseIf txtCurso.Text = "Tecnico en Reparacion de Lavarropas y Secarropas" Then

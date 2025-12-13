@@ -196,7 +196,7 @@ Begin VB.Form frmDerechosExamenes
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   110493697
+         Format          =   112590849
          CurrentDate     =   41978
       End
       Begin isButtonTest.isButton cmdAgregar 
@@ -740,6 +740,7 @@ Private Sub CargarModulos()
     ElseIf txtCurso.Text = "Asistente en Cardiología" Then
         With cmbModulo
             .Clear
+            .AddItem ("Parcial")
             .AddItem ("Final")
         End With
     Else
