@@ -83,7 +83,7 @@ Begin VB.Form frmPlanDePagoReingreso
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   176816129
+      Format          =   109838337
       CurrentDate     =   41353
    End
    Begin isButtonTest.isButton cmdAplicar 
@@ -163,7 +163,7 @@ Begin VB.Form frmPlanDePagoReingreso
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   176816129
+      Format          =   109838337
       CurrentDate     =   41353
    End
    Begin VB.Label Label4 
@@ -265,26 +265,26 @@ Private Sub cmdAplicar_Click()
         Do Until Int(txtNroCuota.Text) > CuotaMax
         ''' Asignacion del Plan de Pago
             .AddNew
-            dtpLimite.Value = DTPFecha.Value
+            dtpLimite.Value = dtpFecha.Value
             dtpLimite.Day = FechaLimite
             
             !CodAlumno = frmAnalisisDeCuotas.lblCodAlumno.Caption
-            !NyA = frmAnalisisDeCuotas.lblNyA.Caption
+            !NyA = frmAnalisisDeCuotas.lblNya.Caption
             !NroCuota = Int(txtNroCuota.Text)
             !deuda = txtMonto.Text
             !totalcobrado = 0
             !DeudaTotal = txtMonto.Text
             !CuotasDebidas = 1
-            !fechavto = DTPFecha.Value
+            !fechavto = dtpFecha.Value
             !FechaLimite = dtpLimite.Value
             .Update
         ''' Cambio de Año
             txtNroCuota.Text = Int(txtNroCuota.Text) + 1
-            If DTPFecha.Month = 12 Then
-                DTPFecha.Month = 1
-                DTPFecha.Year = DTPFecha.Year + 1
+            If dtpFecha.Month = 12 Then
+                dtpFecha.Month = 1
+                dtpFecha.Year = dtpFecha.Year + 1
             Else
-                DTPFecha.Month = DTPFecha.Month + 1
+                dtpFecha.Month = dtpFecha.Month + 1
             End If
         Loop
     End With
@@ -294,7 +294,7 @@ Private Sub cmdAplicar_Click()
         .Open "SELECT codalumno, estado FROM verificaciones WHERE codalumno=" & frmAnalisisDeCuotas.lblCodAlumno.Caption, Cn, adOpenDynamic, adLockPessimistic
         .Requery
         .MoveFirst
-        !estado = "Reingresado"
+        !estado = "Reingreso"
         .UpdateBatch
     End With
     
