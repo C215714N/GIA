@@ -160,7 +160,7 @@ Begin VB.Form frmCuotasXFecha
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   110362625
+      Format          =   110231553
       CurrentDate     =   41345
    End
    Begin MSComCtl2.DTPicker dtpHasta 
@@ -181,7 +181,7 @@ Begin VB.Form frmCuotasXFecha
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Format          =   110362625
+      Format          =   110231553
       CurrentDate     =   41345
    End
    Begin isButtonTest.isButton cmdBuscar 
@@ -551,7 +551,7 @@ If DateDiff("m", Date, dtpDesde.Value) = 1 And DateDiff("m", Date, dtpHasta.Valu
     Dim total As Currency
     With rsCuotasXFecha
         If .State = 1 Then .Close
-        .Open "SELECT sum(p.deudatotal) FROM plandepago as p INNER JOIN marcas as m ON p.codalumno=m.codalumno WHERE fechavto BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# and cantidadcuotas=1 AND pago=1 union SELECT sum(p.deudatotal) FROM plandepago as p INNER JOIN alumnosdelmes as a ON p.codalumno=a.codalumno WHERE fechavto BETWEEN #" & fecha1 & "# AND #" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT sum(p.deudatotal) FROM plandepago as p INNER JOIN marcas as m ON p.codalumno=m.codalumno WHERE fechavto BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# AND cantidadcuotas=1 AND pago=1 union SELECT sum(p.deudatotal) FROM plandepago as p INNER JOIN alumnosdelmes as a ON p.codalumno=a.codalumno WHERE fechavto BETWEEN #" & fecha1 & "# AND #" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
         total = 0
         .MoveFirst
         Do Until .EOF
@@ -563,9 +563,8 @@ If DateDiff("m", Date, dtpDesde.Value) = 1 And DateDiff("m", Date, dtpHasta.Valu
     End With
     With rsCuotasXFecha
         If .State = 1 Then .Close
-        .Open "SELECT p.codalumno as Alumno,p.nrocuota as N°, p.fechavto as Vencimiento, p.deudatotal as Deuda, p.tipoDePago as Estado FROM plandepago as p INNER JOIN marcas as m on p.codalumno=m.codalumno WHERE p.tipoDePago <> 'BAJA' fechavto BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# AND cantidadcuotas=1 AND pago=1 ORDER BY p.codalumno union SELECT p.codalumno as Alumno,p.nrocuota as N°, p.fechavto as Vencimiento, p.deudatotal as Deuda FROM plandepago as p INNER JOIN alumnosdelmes as a on p.codalumno=a.codalumno WHERE fechavto BETWEEN #" & fecha1 & "# AND #" & fecha2 & "#", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT p.codalumno as Alumno, p.nrocuota as N°, p.fechavto as Vencimiento, p.deudatotal as Deuda, p.tipoDePago as Estado FROM plandepago as p, marcas as m WHERE fechavto BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# AND cantidadcuotas=1 AND p.codalumno=m.codalumno AND (p.tipoDePago IS NULL OR p.tipoDePago LIKE 'par') ORDER BY p.codalumno UNION SELECT p.codalumno as Alumno, p.nrocuota as N°, p.fechavto as Vencimiento, p.deudatotal as Deuda, p.tipoDePago as Estado FROM plandepago as p, AlumnosDelMes a WHERE fechavto BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# AND p.codalumno=a.codalumno AND (p.tipoDePago IS NULL OR p.tipoDePago LIKE 'par')", Cn, adOpenDynamic, adLockPessimistic
     End With
-    
     lblTotalAlumnos.Caption = rsCuotasXFecha.RecordCount
     Set grilla.DataSource = rsCuotasXFecha
 Else
@@ -582,7 +581,7 @@ Else
     End With
     With rsCuotasXFecha
         If .State = 1 Then .Close
-        .Open "SELECT p.codalumno as Alumno, p.nrocuota as N°, p.fechavto as Vencimiento, p.deudatotal as Deuda, p.tipoDePago as Estado, M.fechacompromiso as Compromiso,M.LPA FROM plandepago as p, marcas as m WHERE fechavto BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# AND deudatotal > 0 AND cantidadcuotas=1 AND p.codalumno=m.codalumno AND (p.tipoDePago IS NULL OR p.tipoDePago LIKE 'par') ORDER BY p.codalumno", Cn, adOpenDynamic, adLockPessimistic
+        .Open "SELECT p.codalumno as Alumno, p.nrocuota as N°, p.fechavto as Vencimiento, p.deudatotal as Deuda, p.tipoDePago as Estado, m.fechacompromiso as Compromiso, m.LPA FROM plandepago as p, marcas as m WHERE fechavto BETWEEN #" & fecha1 & "# AND #" & fecha2 & "# AND deudatotal > 0 AND cantidadcuotas=1 AND p.codalumno=m.codalumno AND (p.tipoDePago IS NULL OR p.tipoDePago LIKE 'par') ORDER BY p.codalumno", Cn, adOpenDynamic, adLockPessimistic
     End With
 
     Set grilla.DataSource = rsCuotasXFecha
